@@ -1,0 +1,27 @@
+{
+  "source_jobs": 595,
+  "diff_verified_file_pairs": 588,
+  "failed_jobs": 7,
+  "failure_reasons": {
+    "Missing parentheses in call to 'print'. Did you mean print(...)? (<unknown>, line 288)": 1,
+    "HTTP retrieval failed: curl: (22) The requested URL returned error: 404\n": 6
+  },
+  "candidate_pairs": 717,
+  "candidate_groups": {
+    "correctness_candidate": 564,
+    "security_candidate": 153
+  },
+  "repositories": 63,
+  "cases": 458,
+  "exact_ast_pair_duplicates_collapsed": 4,
+  "exclusions": {
+    "no labelled changed-before context": 145,
+    "unresolved exact patch hash": 296,
+    "ValueError: outside 3–250 line context budget": 40,
+    "function deleted/renamed": 45,
+    "IndentationError: unexpected indent": 2,
+    "ValueError: no AST change": 16
+  },
+  "context": "Complete upstream functions including decorators/docstrings, 3–250 lines; enclosing module/class not included in function text",
+  "negative_interpretation": "After version is a counterpart fixed for the referenced change, not a verified universally clean negative"
+}

@@ -1,0 +1,28 @@
+{
+  "input_pairs": 1186,
+  "passed": 1146,
+  "statuses": {
+    "quarantine_source_context": 40,
+    "source_context_pass": 1146
+  },
+  "pass_cves": 494,
+  "quarantine_reasons": {
+    "Missing parentheses in call to 'print'. Did you mean print(...)? (<unknown>, line 126)": 1,
+    "invalid syntax (<unknown>, line 275)": 2,
+    "Qualified method identity differs between versions": 12,
+    "Missing parentheses in call to 'print'. Did you mean print(...)? (<unknown>, line 10)": 2,
+    "unexpected indent (<unknown>, line 1)": 2,
+    "leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers (<unknown>, line 112)": 2,
+    "Missing parentheses in call to 'print'. Did you mean print(...)? (<unknown>, line 1222)": 1,
+    "Missing parentheses in call to 'print'. Did you mean print(...)? (<unknown>, line 265)": 1,
+    "Missing parentheses in call to 'print'. Did you mean print(...)? (<unknown>, line 34)": 1,
+    "Missing parentheses in call to 'print'. Did you mean print(...)? (<unknown>, line 841)": 4,
+    "inconsistent use of tabs and spaces in indentation (<unknown>, line 35)": 2,
+    "Missing parentheses in call to 'print'. Did you mean print(...)? (<unknown>, line 45)": 1,
+    "Missing parentheses in call to 'print'. Did you mean print(...)? (<unknown>, line 302)": 1,
+    "cannot use except statement with tuple (<unknown>, line 165)": 1,
+    "'u' and 'r' prefixes are incompatible (<unknown>, line 1606)": 5,
+    "Missing parentheses in call to 'print'. Did you mean print(...)? (<unknown>, line 1016)": 1,
+    "outside 3–250 line context budget": 1
+  }
+}

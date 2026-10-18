@@ -1,0 +1,36 @@
+{
+  "input_pairs": 1186,
+  "decision_counts": {
+    "quarantine": 507,
+    "admit": 335,
+    "reject": 344
+  },
+  "recorded_decisions": 1186,
+  "source_blocked_pairs": 40,
+  "quarantine_blockers": {
+    "source_context": 40,
+    "issue_context_or_attribution": 467
+  },
+  "proposed_admissions": 335,
+  "pair_specific_inspections_recorded": 1146,
+  "not_issue_reviewed_and_quarantined": 40,
+  "additional_security_pairs": 335,
+  "additional_security_cves": 208,
+  "additional_repositories": 151,
+  "combined_pairs": 1052,
+  "combined_issue_groups": {
+    "correctness_candidate": 564,
+    "security_candidate": 488
+  },
+  "combined_security_cves": 273,
+  "preserved_upstream_files": 544,
+  "reviewer": "OpenCode assistant; source/advisory inspection, not independent human adjudication",
+  "status": "Full-pool triage decisions recorded; contextual quarantines remain unresolved. Admitted source/advisory snapshot is not independent human adjudication.",
+  "limits": [
+    "Source/advisory inspection is assistant-generated, distinct from HaPy human line labels",
+    "No reproduced vulnerability tests or independent human adjudication",
+    "After-code is not universally clean",
+    "Nonrandom review priority is not a population quality estimate",
+    "No model or final evaluation protocol selected"
+  ]
+}

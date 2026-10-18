@@ -1,0 +1,24 @@
+{
+  "metadata_cases": 793,
+  "metadata_sources": {
+    "cve": 152,
+    "crawl": 145,
+    "bugs-in-py": 496
+  },
+  "manual_line_vote_keys": 67951,
+  "excluded_auto_line_rows": 195953,
+  "same_user_conflicts": 0,
+  "majority_python_programming_bugfix_lines": 15342,
+  "cases_with_majority_python_programming_bugfix": 724,
+  "majority_case_sources": {
+    "cve": 124,
+    "bugs-in-py": 485,
+    "crawl": 115
+  },
+  "reference_rule": "At least two distinct manual reviewers, confident and unproblematic, mark a .py line programming and bug(fix) or bug(fix)+refactoring; commit index preserved from raw exports",
+  "notes": [
+    "Automated initial annotations are excluded",
+    "Line-purpose annotation is not a proof of program-wide cleanliness",
+    "HaPy-Bug publishes its derived dataset CC BY 4.0; this does not resolve BugsInPy framework licence"
+  ]
+}

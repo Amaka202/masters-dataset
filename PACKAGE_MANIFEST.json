@@ -1,0 +1,383 @@
+{
+  "status": "Packaged preparation checkpoint; not independent issue-label adjudication",
+  "snapshot_date": "2026-10-18",
+  "combined_pairs": 1052,
+  "security_pairs": 488,
+  "general_bug_origin_pairs": 564,
+  "security_cves": 273,
+  "unresolved_candidates_excluded": 507,
+  "source_files": {
+    "ADMIT_SECURITY_EXPANSION.py": "scripts/ADMIT_SECURITY_EXPANSION.py",
+    "BUILD_CANDIDATE_SPLITS.py": "scripts/BUILD_CANDIDATE_SPLITS.py",
+    "BUILD_HAPY_SOURCE_PAIRS.py": "scripts/BUILD_HAPY_SOURCE_PAIRS.py",
+    "CVEFIXES_EXTRACTION_PROGRESS.json": "evidence/base/CVEFIXES_EXTRACTION_PROGRESS.json",
+    "CVEFIXES_ORIGINAL_ARCHIVE.json": "attribution/CVEFIXES_ORIGINAL_ARCHIVE.json",
+    "CVEFIXES_ORIGINAL_ZIP_INDEX.json": "attribution/CVEFIXES_ORIGINAL_ZIP_INDEX.json",
+    "CVEFIXES_PYTHON_VALIDATION.json": "evidence/base/CVEFIXES_PYTHON_VALIDATION.json",
+    "CVEFIXES_SECURITY_ADMITTED_PAIRS.jsonl": "data/CVEFIXES_SECURITY_ADMITTED_PAIRS.jsonl",
+    "CVEFIXES_SECURITY_EXPANSION_FILTERED_CANDIDATES.jsonl": "evidence/review/CVEFIXES_SECURITY_EXPANSION_FILTERED_CANDIDATES.jsonl",
+    "CVEFIXES_SECURITY_EXPANSION_REVIEW_RESULTS.json": "evidence/review/CVEFIXES_SECURITY_EXPANSION_REVIEW_RESULTS.json",
+    "CVEFIXES_UPSTREAM_DATA_DICTIONARY.md": "attribution/CVEFIXES_UPSTREAM_DATA_DICTIONARY.md",
+    "CVEFIXES_UPSTREAM_LICENSE.txt": "attribution/CVEFIXES_UPSTREAM_LICENSE.txt",
+    "CVEFIXES_UPSTREAM_README.md": "attribution/CVEFIXES_UPSTREAM_README.md",
+    "DATASET_DECISION.md": "documentation/research/DATASET_DECISION.md",
+    "HAPY_BUG_AUDIT.py": "scripts/HAPY_BUG_AUDIT.py",
+    "HAPY_BUG_CANDIDATE_PAIRS.jsonl": "data/HAPY_BUG_CANDIDATE_PAIRS.jsonl",
+    "HAPY_BUG_CASE_METADATA.json": "evidence/base/HAPY_BUG_CASE_METADATA.json",
+    "HAPY_BUG_INDEPENDENT_EXPORT_VERIFICATION.json": "evidence/base/HAPY_BUG_INDEPENDENT_EXPORT_VERIFICATION.json",
+    "HAPY_BUG_MAJORITY_AUDIT.json": "evidence/base/HAPY_BUG_MAJORITY_AUDIT.json",
+    "HAPY_BUG_MAJORITY_PROGRAMMING_LINES.json": "evidence/base/HAPY_BUG_MAJORITY_PROGRAMMING_LINES.json",
+    "HAPY_BUG_OFFICIAL_RELEASE_METADATA.json": "attribution/HAPY_BUG_OFFICIAL_RELEASE_METADATA.json",
+    "HAPY_BUG_PUBLISHED_PROCESSING_EXCERPTS.txt": "evidence/base/HAPY_BUG_PUBLISHED_PROCESSING_EXCERPTS.txt",
+    "HAPY_BUG_RELEASE_INVENTORY.json": "evidence/base/HAPY_BUG_RELEASE_INVENTORY.json",
+    "HAPY_BUG_RELEASE_MANIFEST.json": "evidence/base/HAPY_BUG_RELEASE_MANIFEST.json",
+    "HAPY_BUG_SOURCE_BUILD_AUDIT.json": "evidence/base/HAPY_BUG_SOURCE_BUILD_AUDIT.json",
+    "HAPY_BUG_SOURCE_RECONSTRUCTION_LOG.jsonl": "evidence/base/HAPY_BUG_SOURCE_RECONSTRUCTION_LOG.jsonl",
+    "HAPY_BUG_UPSTREAM_SNAPSHOTS.zip": "evidence/sources/HAPY_BUG_UPSTREAM_SNAPSHOTS.zip",
+    "HAPY_CVEFIXES_ADMITTED_CANDIDATE_PAIRS.jsonl": "data/HAPY_CVEFIXES_ADMITTED_CANDIDATE_PAIRS.jsonl",
+    "HAPY_CVEFIXES_ADMITTED_NEAR_DUPLICATE_LINKS.json": "evidence/verification/HAPY_CVEFIXES_ADMITTED_NEAR_DUPLICATE_LINKS.json",
+    "HAPY_CVEFIXES_ADMITTED_SPLIT_AUDIT.json": "evidence/verification/HAPY_CVEFIXES_ADMITTED_SPLIT_AUDIT.json",
+    "HAPY_CVEFIXES_ADMITTED_TEST_BEFORE_ONLY_INPUTS.jsonl": "splits/HAPY_CVEFIXES_ADMITTED_TEST_BEFORE_ONLY_INPUTS.jsonl",
+    "HAPY_CVEFIXES_ADMITTED_TEST_CANDIDATES.jsonl": "splits/HAPY_CVEFIXES_ADMITTED_TEST_CANDIDATES.jsonl",
+    "HAPY_CVEFIXES_ADMITTED_TEST_REFERENCE_INDEX.jsonl": "splits/HAPY_CVEFIXES_ADMITTED_TEST_REFERENCE_INDEX.jsonl",
+    "HAPY_CVEFIXES_ADMITTED_TRAIN_BEFORE_ONLY_INPUTS.jsonl": "splits/HAPY_CVEFIXES_ADMITTED_TRAIN_BEFORE_ONLY_INPUTS.jsonl",
+    "HAPY_CVEFIXES_ADMITTED_TRAIN_CANDIDATES.jsonl": "splits/HAPY_CVEFIXES_ADMITTED_TRAIN_CANDIDATES.jsonl",
+    "HAPY_CVEFIXES_ADMITTED_TRAIN_REFERENCE_INDEX.jsonl": "splits/HAPY_CVEFIXES_ADMITTED_TRAIN_REFERENCE_INDEX.jsonl",
+    "HAPY_CVEFIXES_ADMITTED_VALIDATION_BEFORE_ONLY_INPUTS.jsonl": "splits/HAPY_CVEFIXES_ADMITTED_VALIDATION_BEFORE_ONLY_INPUTS.jsonl",
+    "HAPY_CVEFIXES_ADMITTED_VALIDATION_CANDIDATES.jsonl": "splits/HAPY_CVEFIXES_ADMITTED_VALIDATION_CANDIDATES.jsonl",
+    "HAPY_CVEFIXES_ADMITTED_VALIDATION_REFERENCE_INDEX.jsonl": "splits/HAPY_CVEFIXES_ADMITTED_VALIDATION_REFERENCE_INDEX.jsonl",
+    "INSPECT_SECURITY_CANDIDATES.py": "scripts/INSPECT_SECURITY_CANDIDATES.py",
+    "PROBE_CANDIDATE_SOURCES.py": "scripts/PROBE_CANDIDATE_SOURCES.py",
+    "PYTHON_CORPUS_BUILD.py": "scripts/PYTHON_CORPUS_BUILD.py",
+    "README.md": "documentation/research/README.md",
+    "SECURITY_ADMISSION_AUDIT.json": "evidence/verification/SECURITY_ADMISSION_AUDIT.json",
+    "SECURITY_ADMISSION_CVE_EVIDENCE.jsonl": "evidence/review/SECURITY_ADMISSION_CVE_EVIDENCE.jsonl",
+    "SECURITY_ADMISSION_DEPENDENCY_REVIEW.json": "evidence/review/SECURITY_ADMISSION_DEPENDENCY_REVIEW.json",
+    "SECURITY_ADMISSION_EVIDENCE_AUDIT.json": "evidence/verification/SECURITY_ADMISSION_EVIDENCE_AUDIT.json",
+    "SECURITY_ADMISSION_FINAL_DECISIONS.jsonl": "evidence/review/SECURITY_ADMISSION_FINAL_DECISIONS.jsonl",
+    "SECURITY_ADMISSION_FINDINGS.md": "documentation/research/SECURITY_ADMISSION_FINDINGS.md",
+    "SECURITY_ADMISSION_INDEPENDENT_VERIFICATION.json": "evidence/verification/SECURITY_ADMISSION_INDEPENDENT_VERIFICATION.json",
+    "SECURITY_ADMISSION_QUEUE_REVIEW.json": "evidence/review/SECURITY_ADMISSION_QUEUE_REVIEW.json",
+    "SECURITY_ADMISSION_RELEASE_MANIFEST.json": "evidence/verification/SECURITY_ADMISSION_RELEASE_MANIFEST.json",
+    "SECURITY_ADMISSION_REMAINING_QUEUE.jsonl": "evidence/review/SECURITY_ADMISSION_REMAINING_QUEUE.jsonl",
+    "SECURITY_ADMISSION_REVIEW_LEDGER.json": "evidence/review/SECURITY_ADMISSION_REVIEW_LEDGER.json",
+    "SECURITY_ADMISSION_REVIEW_PACKETS.jsonl": "evidence/review/SECURITY_ADMISSION_REVIEW_PACKETS.jsonl",
+    "SECURITY_ADMISSION_SOURCE_AUDIT.json": "evidence/verification/SECURITY_ADMISSION_SOURCE_AUDIT.json",
+    "SECURITY_ADMISSION_SOURCE_CONTEXTS.jsonl": "evidence/review/SECURITY_ADMISSION_SOURCE_CONTEXTS.jsonl",
+    "SECURITY_ADMISSION_SOURCE_DECISIONS.jsonl": "evidence/review/SECURITY_ADMISSION_SOURCE_DECISIONS.jsonl",
+    "SECURITY_ADMISSION_SOURCE_LOCATIONS.json": "evidence/review/SECURITY_ADMISSION_SOURCE_LOCATIONS.json",
+    "SECURITY_ADMISSION_UNRESOLVED_REVIEW.jsonl": "evidence/review/SECURITY_ADMISSION_UNRESOLVED_REVIEW.jsonl",
+    "SECURITY_ADMISSION_UPSTREAM_CHECKS.jsonl": "evidence/review/SECURITY_ADMISSION_UPSTREAM_CHECKS.jsonl",
+    "SECURITY_ADMISSION_UPSTREAM_SNAPSHOTS.zip": "evidence/sources/SECURITY_ADMISSION_UPSTREAM_SNAPSHOTS.zip",
+    "SECURITY_EXPANSION_AUDIT.py": "scripts/SECURITY_EXPANSION_AUDIT.py",
+    "SECURITY_EXPANSION_FINDINGS.md": "documentation/research/SECURITY_EXPANSION_FINDINGS.md",
+    "VERIFY_CORPUS_ARTIFACTS.py": "scripts/VERIFY_CORPUS_ARTIFACTS.py",
+    "VERIFY_SECURITY_ADMISSION.py": "scripts/VERIFY_SECURITY_ADMISSION.py"
+  },
+  "files": {
+    ".gitignore": {
+      "bytes": 109,
+      "sha256": "6f8dd95f1e9a743257c244012febc2937a0ac2305442865529a6f01e30ae59d7"
+    },
+    "LICENSE.md": {
+      "bytes": 1375,
+      "sha256": "f15485351a05b6e48d3927ef895e9a036dfb59827a91a9ac643207980874de4d"
+    },
+    "README.md": {
+      "bytes": 4694,
+      "sha256": "48dbbf19e6a661e072d01accc944e0b86ae76e4cad24fcd8a127035e1fc17fba"
+    },
+    "attribution/CVEFIXES_ORIGINAL_ARCHIVE.json": {
+      "bytes": 2275,
+      "sha256": "b79f314937876b9366041f05fd248d0a6e48d62274eab26dc9c0e4bf475b0cd4"
+    },
+    "attribution/CVEFIXES_ORIGINAL_ZIP_INDEX.json": {
+      "bytes": 1818,
+      "sha256": "6ac4e0980985baa0ed88fee7191bb5ac4894d395c57ad82b74394b2081da45e2"
+    },
+    "attribution/CVEFIXES_UPSTREAM_DATA_DICTIONARY.md": {
+      "bytes": 14736,
+      "sha256": "832e74388a1eb7ced540083a2d3b3605e89cba57f5e87880f7d46aab1e04a778"
+    },
+    "attribution/CVEFIXES_UPSTREAM_LICENSE.txt": {
+      "bytes": 391,
+      "sha256": "d7c551f89417ea50d10b436220bd95e75f9537bbcaecb3f5c8b9e432cd9fcf0d"
+    },
+    "attribution/CVEFIXES_UPSTREAM_README.md": {
+      "bytes": 3741,
+      "sha256": "5eed741587e7fe26ddd19bdbed71e24d457ad5a2f1733480398719b2ec0a00dd"
+    },
+    "attribution/HAPY_BUG_OFFICIAL_RELEASE_METADATA.json": {
+      "bytes": 6338,
+      "sha256": "146ac15576f99514c0cf5304444ebd4b49dcd9d72c397d6af12633da7fb61dc0"
+    },
+    "attribution/README.md": {
+      "bytes": 2473,
+      "sha256": "9b3fb48ba8c62f6c8523f4ae7df84bb8acc55f7c812fb0dcb2820c0ca3b6a487"
+    },
+    "data/CVEFIXES_SECURITY_ADMITTED_PAIRS.jsonl": {
+      "bytes": 2901176,
+      "sha256": "51d3718083cd2b3e1b7fbe86824220b367f6bad3fc782b1309a37625b6d47978"
+    },
+    "data/HAPY_BUG_CANDIDATE_PAIRS.jsonl": {
+      "bytes": 4800024,
+      "sha256": "989b1a648b57dd7ed247e9eba8926d0e97564ffee8547eb351304c0728bf3cca"
+    },
+    "data/HAPY_CVEFIXES_ADMITTED_CANDIDATE_PAIRS.jsonl": {
+      "bytes": 7701200,
+      "sha256": "361e56e2a4ac21af53c2cc4d9b7815213bb57e1057227f31553ba5b8f187a4c2"
+    },
+    "data/dataset.json": {
+      "bytes": 8594661,
+      "sha256": "3e846a508c6a50b2ed2c318b1e2f59d8268b0e4fc7898db9c959a00addb1d5b8"
+    },
+    "documentation/DATASET_GUIDE.md": {
+      "bytes": 3075,
+      "sha256": "5f32d82fb4f8da6901e4c479f2d2f8deb1a5090f315a5276929c11c9492282f0"
+    },
+    "documentation/REPRODUCING.md": {
+      "bytes": 4228,
+      "sha256": "26540a3676c6cac767ce7d0ee94a5e049ee9945b062eecfb316ffedc6755e0d1"
+    },
+    "documentation/research/DATASET_DECISION.md": {
+      "bytes": 5583,
+      "sha256": "a851a5b69e24f135a4703a50a4e655cb7ec155baa888b069dff8f7439842e853"
+    },
+    "documentation/research/README.md": {
+      "bytes": 4404,
+      "sha256": "412eb5bf9d897753eccd2c248190aa7b642ecacbda94d6f0e3a95d678a937755"
+    },
+    "documentation/research/SECURITY_ADMISSION_FINDINGS.md": {
+      "bytes": 28140,
+      "sha256": "e22471f7066d0e44b244c689d2d334b19d63c8923bf860685e4d277855e6b796"
+    },
+    "documentation/research/SECURITY_EXPANSION_FINDINGS.md": {
+      "bytes": 10520,
+      "sha256": "c7b24614266848ea992f5499ed1c0468ee85f8667958e7a027a35f2d44c41f85"
+    },
+    "evidence/base/CVEFIXES_EXTRACTION_PROGRESS.json": {
+      "bytes": 4037,
+      "sha256": "522e09e5f24d22b168ad03a99b4a2acb6df861042987d4ea2b78a9a7f31d1eab"
+    },
+    "evidence/base/CVEFIXES_PYTHON_VALIDATION.json": {
+      "bytes": 624,
+      "sha256": "f50554ed3565860aad328f06870609b0dec6b19eb1e51586c0f07161b8ad73ce"
+    },
+    "evidence/base/HAPY_BUG_CASE_METADATA.json": {
+      "bytes": 22678860,
+      "sha256": "a55f297fd85c47ac32720c79d3df47d6fdbe8a5a49c635201cb6236a5ed92480"
+    },
+    "evidence/base/HAPY_BUG_INDEPENDENT_EXPORT_VERIFICATION.json": {
+      "bytes": 1619,
+      "sha256": "e7d51aef5ddff7eca7d9cf8975626f894c4a574fa214234052a3091a90be5019"
+    },
+    "evidence/base/HAPY_BUG_MAJORITY_AUDIT.json": {
+      "bytes": 856,
+      "sha256": "de8527a8bba20ca58e8dff0e173adce367d0b7f40297cf9dab26e4b2161e2519"
+    },
+    "evidence/base/HAPY_BUG_MAJORITY_PROGRAMMING_LINES.json": {
+      "bytes": 7041696,
+      "sha256": "e792ffe0f636883b895be2e53bf4d1e6595580b9821dbe4cd9ad270ef5ab2bed"
+    },
+    "evidence/base/HAPY_BUG_PUBLISHED_PROCESSING_EXCERPTS.txt": {
+      "bytes": 12424,
+      "sha256": "37507b06da89cb2cd86e97db589ba3c6072c2a1036c72cbdddb7238e4c56f7ce"
+    },
+    "evidence/base/HAPY_BUG_RELEASE_INVENTORY.json": {
+      "bytes": 1679452,
+      "sha256": "4c2b3547d8b4f096b2ba467fcd7e8903b196777c60ab3b792b9d316030cd8a30"
+    },
+    "evidence/base/HAPY_BUG_RELEASE_MANIFEST.json": {
+      "bytes": 1343,
+      "sha256": "f3714166457b6ab9041971119f303ac0cfae069845b7a08e17e811d0c8851f4d"
+    },
+    "evidence/base/HAPY_BUG_SOURCE_BUILD_AUDIT.json": {
+      "bytes": 1059,
+      "sha256": "db5e164b0afb22898215e8677f0841d86158457df12e793a3ae976d9cde8f561"
+    },
+    "evidence/base/HAPY_BUG_SOURCE_RECONSTRUCTION_LOG.jsonl": {
+      "bytes": 170526,
+      "sha256": "72447f3c5beee23d9f8b70f316b3507b8924846cb57d945479efd2a041643d45"
+    },
+    "evidence/review/CVEFIXES_SECURITY_EXPANSION_FILTERED_CANDIDATES.jsonl": {
+      "bytes": 6413374,
+      "sha256": "4c44d635bf31f215b67b0c7d47cad70dce13090509a8aa69e0eecfe27487255a"
+    },
+    "evidence/review/CVEFIXES_SECURITY_EXPANSION_REVIEW_RESULTS.json": {
+      "bytes": 6709,
+      "sha256": "d8e3d6f14ce17c671e3c0e4bc610ffbda7a0b10672329291c3a7f8763a1b14f8"
+    },
+    "evidence/review/SECURITY_ADMISSION_CVE_EVIDENCE.jsonl": {
+      "bytes": 4920623,
+      "sha256": "26218addac01aff0fe9a56019a5d71d692455eaf9b8917efd48e99d27701232f"
+    },
+    "evidence/review/SECURITY_ADMISSION_DEPENDENCY_REVIEW.json": {
+      "bytes": 3832,
+      "sha256": "46b6b672efb139b0612d56cb19d795f19c409d09ee9741a1ed7010c1702e8f22"
+    },
+    "evidence/review/SECURITY_ADMISSION_FINAL_DECISIONS.jsonl": {
+      "bytes": 1144638,
+      "sha256": "494be5d97c27e29563c2a8b704fa5f5966b778457bb38a99a4cb90655533049b"
+    },
+    "evidence/review/SECURITY_ADMISSION_QUEUE_REVIEW.json": {
+      "bytes": 104882,
+      "sha256": "67072967de5f192849c743ed622493fe3d014758d510da737630d1e51caf686b"
+    },
+    "evidence/review/SECURITY_ADMISSION_REMAINING_QUEUE.jsonl": {
+      "bytes": 437424,
+      "sha256": "7c1b985fa5228f7e89f08c95ab1c96f73f42f37f398c11030c4684cdd6010f19"
+    },
+    "evidence/review/SECURITY_ADMISSION_REVIEW_LEDGER.json": {
+      "bytes": 35593,
+      "sha256": "3e9a809bcb8cf0531661f87f44bd62df67d68b09a535e0242f992c8b61a132cd"
+    },
+    "evidence/review/SECURITY_ADMISSION_REVIEW_PACKETS.jsonl": {
+      "bytes": 2658558,
+      "sha256": "203f06b769da842c879ddc0e2f702bb79b685413ee839877c3798957753657b8"
+    },
+    "evidence/review/SECURITY_ADMISSION_SOURCE_CONTEXTS.jsonl": {
+      "bytes": 6880877,
+      "sha256": "4f5dfe15176e3072c9950fbac9bfed146cb75934b05c2238c6a83be941936e33"
+    },
+    "evidence/review/SECURITY_ADMISSION_SOURCE_DECISIONS.jsonl": {
+      "bytes": 144927,
+      "sha256": "1816f0c48804b61dce8f2a2e12d86c55594a4ac721f57ea2fb6f794946966066"
+    },
+    "evidence/review/SECURITY_ADMISSION_SOURCE_LOCATIONS.json": {
+      "bytes": 941,
+      "sha256": "64b17ab9e94d14e6a8403ccb4dd33f540783400fc57f9c9d7ebde45d02a5e330"
+    },
+    "evidence/review/SECURITY_ADMISSION_UNRESOLVED_REVIEW.jsonl": {
+      "bytes": 418891,
+      "sha256": "85024e3dcd111e5f0ea651c3ecd3f4f8ca95d9782d0d5ad9eecd63110bd1b13d"
+    },
+    "evidence/review/SECURITY_ADMISSION_UPSTREAM_CHECKS.jsonl": {
+      "bytes": 421069,
+      "sha256": "05d2a4bdc3724d8c642cdec58bef1b3f84192adc4bf40a6f5951e2fa9f04bca9"
+    },
+    "evidence/sources/HAPY_BUG_UPSTREAM_SNAPSHOTS.zip": {
+      "bytes": 14576526,
+      "sha256": "1be935365703a2481c345119841376ba71a82493ab2809e0faec2c3b68977ec7"
+    },
+    "evidence/sources/SECURITY_ADMISSION_UPSTREAM_SNAPSHOTS.zip": {
+      "bytes": 3141052,
+      "sha256": "7a4b0408c73cc6b81fe9f10633e0d521479626c02f1760cbe3527b6928e66640"
+    },
+    "evidence/verification/HAPY_CVEFIXES_ADMITTED_NEAR_DUPLICATE_LINKS.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "evidence/verification/HAPY_CVEFIXES_ADMITTED_SPLIT_AUDIT.json": {
+      "bytes": 1076,
+      "sha256": "65a0200ecfd2cd73c79e588cff8b12b6cb5c42405911efc0f7e2cb14d93b3b75"
+    },
+    "evidence/verification/SECURITY_ADMISSION_AUDIT.json": {
+      "bytes": 1310,
+      "sha256": "7bbf276623d5212275721e283d3b65f3a39451931247236ad42db24734341fc0"
+    },
+    "evidence/verification/SECURITY_ADMISSION_EVIDENCE_AUDIT.json": {
+      "bytes": 157,
+      "sha256": "932a81414d09b055b294b5b8e02366614c97e92437e86ece632c425dac8baf10"
+    },
+    "evidence/verification/SECURITY_ADMISSION_INDEPENDENT_VERIFICATION.json": {
+      "bytes": 1481,
+      "sha256": "08a73d0e79b2a251226502a1031b9f725345c792a76eee744f3ea2a9b6723ba0"
+    },
+    "evidence/verification/SECURITY_ADMISSION_RELEASE_MANIFEST.json": {
+      "bytes": 7299,
+      "sha256": "e45335a608594a2d9e742198c29989434980c96ad51a6a1452bd45e502abadd6"
+    },
+    "evidence/verification/SECURITY_ADMISSION_SOURCE_AUDIT.json": {
+      "bytes": 1612,
+      "sha256": "9a5102ed29527cea0cd6b3365df0c3732dd19b4b33ff46c058325500251f26b5"
+    },
+    "scripts/ADMIT_SECURITY_EXPANSION.py": {
+      "bytes": 36374,
+      "sha256": "049c5d3f28d3c81bdee13f8e6ad9b6a8399edfafa86a37f62060e98f7bfb1582"
+    },
+    "scripts/BUILD_CANDIDATE_SPLITS.py": {
+      "bytes": 17514,
+      "sha256": "83c17d5d1e57a00711e9b1906cebf4462a662ba05d8abb08888b5b209b5ef934"
+    },
+    "scripts/BUILD_HAPY_SOURCE_PAIRS.py": {
+      "bytes": 13669,
+      "sha256": "58ab90c8ae9c400380c85729306e2ef828a36cc4c93244613cc4d87a7ae2a086"
+    },
+    "scripts/HAPY_BUG_AUDIT.py": {
+      "bytes": 11481,
+      "sha256": "96b72a3ed51f7016a6cdac151d349573d5a184519751ecd06722b8ecc0820776"
+    },
+    "scripts/INSPECT_SECURITY_CANDIDATES.py": {
+      "bytes": 6417,
+      "sha256": "60ddd5f313ffd58dbb92d8d15d3ff320ae4f754c35afb7c80a29b68806210785"
+    },
+    "scripts/PROBE_CANDIDATE_SOURCES.py": {
+      "bytes": 9470,
+      "sha256": "a399f1d472ca20afd80e97d98c5ae12e140a0faba4e3e093496096549e22bbf0"
+    },
+    "scripts/PYTHON_CORPUS_BUILD.py": {
+      "bytes": 16260,
+      "sha256": "842294dbf9ada0537d3687ee5b9cdca840ccbb8836ed4d0741f1ec7e16779114"
+    },
+    "scripts/SECURITY_EXPANSION_AUDIT.py": {
+      "bytes": 18494,
+      "sha256": "781788706d9efddcbf1e70a05930472927b92f8c7bd7aebdb7cf3ce6811c761c"
+    },
+    "scripts/VERIFY_CORPUS_ARTIFACTS.py": {
+      "bytes": 10150,
+      "sha256": "d9a137675b44cd42dcad78895f8f2aad2b2014f3178c3a61fe68af6c29780112"
+    },
+    "scripts/VERIFY_SECURITY_ADMISSION.py": {
+      "bytes": 14287,
+      "sha256": "dbb405301a7a6affdb045b017d5c89fb9edb02e3a38ebd300a86e12e88492793"
+    },
+    "scripts/package_dataset.py": {
+      "bytes": 5946,
+      "sha256": "c9f12f43bb6c2cf1b45f3ef8b4a4a53dc7f3062dbd43c575a80aae7af6513999"
+    },
+    "scripts/stage_workspace.py": {
+      "bytes": 1981,
+      "sha256": "39fd180bd981ca46adcf6535b4c37361402d0c392a8c5951a12bca4b5dcd04bf"
+    },
+    "scripts/verify_package.py": {
+      "bytes": 2923,
+      "sha256": "5670c0a4e49959420c93bebb558d256d27f86616af9d5768452652501d912566"
+    },
+    "splits/HAPY_CVEFIXES_ADMITTED_TEST_BEFORE_ONLY_INPUTS.jsonl": {
+      "bytes": 254126,
+      "sha256": "23227832620b2d33989dc0296938837346584a01cb7bee006f8f3b098ab3d245"
+    },
+    "splits/HAPY_CVEFIXES_ADMITTED_TEST_CANDIDATES.jsonl": {
+      "bytes": 1104355,
+      "sha256": "c9436ab155ab2583bb1a9687debbf25e01db4204373c9229cd7fcf01fbb6f360"
+    },
+    "splits/HAPY_CVEFIXES_ADMITTED_TEST_REFERENCE_INDEX.jsonl": {
+      "bytes": 51096,
+      "sha256": "8956d4f4fec50bd1cca2eaef64d8373dcb24644ecd1ffe3d24f8be9ceb7a4828"
+    },
+    "splits/HAPY_CVEFIXES_ADMITTED_TRAIN_BEFORE_ONLY_INPUTS.jsonl": {
+      "bytes": 1241765,
+      "sha256": "7d7524d986e631faaabda8c0e330402ca94246fa1f5e20b720cbf7a525bd25eb"
+    },
+    "splits/HAPY_CVEFIXES_ADMITTED_TRAIN_CANDIDATES.jsonl": {
+      "bytes": 5489470,
+      "sha256": "5cc15c0491e4746da7e894a6b649985836869c98f1ba06af9b8e7d505d9fb24a"
+    },
+    "splits/HAPY_CVEFIXES_ADMITTED_TRAIN_REFERENCE_INDEX.jsonl": {
+      "bytes": 250846,
+      "sha256": "51e2340002ce5ce3078c23ce7c482ed79523bd0fcb7ba25e2dc070577f42cb38"
+    },
+    "splits/HAPY_CVEFIXES_ADMITTED_VALIDATION_BEFORE_ONLY_INPUTS.jsonl": {
+      "bytes": 257270,
+      "sha256": "85dd30c736b00ee1e46ac40cd62bfbcf1104e8680588408e42341e37430aa8d1"
+    },
+    "splits/HAPY_CVEFIXES_ADMITTED_VALIDATION_CANDIDATES.jsonl": {
+      "bytes": 1126937,
+      "sha256": "ea58c030c13e651c89b71835de51c191457e09ade5f79303a716e46fae478836"
+    },
+    "splits/HAPY_CVEFIXES_ADMITTED_VALIDATION_REFERENCE_INDEX.jsonl": {
+      "bytes": 50920,
+      "sha256": "e2d6c7fdfd814cd1d60ebcfb7bc6afd7e1e2dd7b0cdae1298606416c11c22e6b"
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "sample_reviews": [
+    {
+      "pair_id": "CVEfixes:234972625470322:31534987156542",
+      "cves": [
+        "CVE-2024-34359"
+      ],
+      "decision": "source_advisory_supported",
+      "reason": "Advisory names the unsandboxed Jinja2 environment in Jinja2ChatFormatter; selected constructor replaces it with an immutable sandbox.",
+      "upstream_body_match": true,
+      "advisory_urls": [
+        "https://github.com/advisories/GHSA-56xg-wfcc-g829"
+      ],
+      "reviewer": "assistant source/advisory inspection; not independent human adjudication or reproduced failing tests"
+    },
+    {
+      "pair_id": "CVEfixes:221462273273842:221694810061732",
+      "cves": [
+        "CVE-2024-37301"
+      ],
+      "decision": "source_advisory_supported",
+      "reason": "Publisher advisory identifies server-side template injection; selected environment factory switches to SandboxedEnvironment, in the referenced patch.",
+      "upstream_body_match": true,
+      "advisory_urls": [
+        "https://github.com/advisories/GHSA-v5gf-r78h-55q6"
+      ],
+      "reviewer": "assistant source/advisory inspection; not independent human adjudication or reproduced failing tests"
+    },
+    {
+      "pair_id": "CVEfixes:37124422765174:171028133210182",
+      "cves": [
+        "CVE-2024-26134"
+      ],
+      "decision": "reject_python_pair",
+      "reason": "Advisory says the recorded commit introduced the crash, rather than fixing it; reported corruption concerns the native CBOR decoder. Do not label these Python before/after functions as this vulnerability/fix.",
+      "upstream_body_match": true,
+      "advisory_urls": [
+        "https://github.com/advisories/GHSA-375g-39jq-vq7m"
+      ],
+      "reviewer": "assistant source/advisory inspection; not independent human adjudication or reproduced failing tests"
+    },
+    {
+      "pair_id": "CVEfixes:118748627772256:179339447712205",
+      "cves": [
+        "CVE-2024-30251"
+      ],
+      "decision": "needs_issue_context",
+      "reason": "Advisory locates the minimal security fix in _read_chunk_from_length; sampled _get_part_reader only propagates parameters and is not established as the vulnerable function.",
+      "upstream_body_match": true,
+      "advisory_urls": [
+        "https://github.com/advisories/GHSA-5m98-qgg9-wh84"
+      ],
+      "reviewer": "assistant source/advisory inspection; not independent human adjudication or reproduced failing tests"
+    },
+    {
+      "pair_id": "CVEfixes:233486512677834:136865694333523",
+      "cves": [
+        "CVE-2019-25066"
+      ],
+      "decision": "source_advisory_supported",
+      "reason": "Advisory references this exact patch; the author identifies shell injection and the selected authenticate function adds quoting to the username interpolated into a shell command.",
+      "upstream_body_match": true,
+      "advisory_urls": [
+        "https://github.com/advisories/GHSA-p28j-xhp9-88wp"
+      ],
+      "reviewer": "assistant source/advisory inspection; not independent human adjudication or reproduced failing tests"
+    },
+    {
+      "pair_id": "CVEfixes:145591340700199:125551005275033",
+      "cves": [
+        "CVE-2024-4340"
+      ],
+      "decision": "source_advisory_supported",
+      "reason": "Advisory stack trace reaches flatten and references this patch; the selected function converts uncontrolled RecursionError to the library's SQLParseError. This does not prove all resource-exhaustion issues are eliminated.",
+      "upstream_body_match": true,
+      "advisory_urls": [
+        "https://github.com/advisories/GHSA-2m57-hf25-phgg"
+      ],
+      "reviewer": "assistant source/advisory inspection; not independent human adjudication or reproduced failing tests"
+    },
+    {
+      "pair_id": "CVEfixes:205290039003413:105819897026174",
+      "cves": [
+        "CVE-2015-6240"
+      ],
+      "decision": "reject_selected_function",
+      "reason": "Selected connect method changes its docstring and a diagnostic log message. It does not implement the symlink/environment escape fix.",
+      "upstream_body_match": true,
+      "advisory_urls": [
+        "https://github.com/advisories/GHSA-wwwh-47wp-m522"
+      ],
+      "reviewer": "assistant source/advisory inspection; not independent human adjudication or reproduced failing tests"
+    },
+    {
+      "pair_id": "CVEfixes:102817320279789:30565809177595",
+      "cves": [
+        "CVE-2021-4041"
+      ],
+      "decision": "needs_issue_context",
+      "reason": "Selected documentation-command argument builder is not the shell-execution sink identified by the advisory; relevant downstream context must be traced.",
+      "upstream_body_match": true,
+      "advisory_urls": [
+        "https://github.com/advisories/GHSA-6j58-grhv-2769"
+      ],
+      "reviewer": "assistant source/advisory inspection; not independent human adjudication or reproduced failing tests"
+    },
+    {
+      "pair_id": "CVEfixes:130125534823174:96907832057000",
+      "cves": [
+        "CVE-2018-1000089"
+      ],
+      "decision": "needs_issue_context",
+      "reason": "Security effect depends on Django's settings-name redaction and deployment configuration, not just this constructor's behaviour.",
+      "upstream_body_match": true,
+      "advisory_urls": [
+        "https://github.com/advisories/GHSA-qh9x-mc42-vg4g"
+      ],
+      "reviewer": "assistant source/advisory inspection; not independent human adjudication or reproduced failing tests"
+    },
+    {
+      "pair_id": "CVEfixes:4244925349306:119894775406109",
+      "cves": [
+        "CVE-2024-31451"
+      ],
+      "decision": "needs_issue_context",
+      "reason": "Source change restricts download URLs before writing files, but the complete file-write/route context and a detailed vulnerability reference need review.",
+      "upstream_body_match": true,
+      "advisory_urls": [],
+      "reviewer": "assistant source/advisory inspection; not independent human adjudication or reproduced failing tests"
+    }
+  ],
+  "sample_decisions": {
+    "source_advisory_supported": 4,
+    "reject_python_pair": 1,
+    "needs_issue_context": 4,
+    "reject_selected_function": 1
+  },
+  "sample_method": "Ten fixed nonrandom distinct-repository/CVE examples; not an estimated acceptance rate",
+  "post_review_candidate_function_pairs": 1186,
+  "post_review_candidate_distinct_cves": 507,
+  "combined_potential_security_cves": 572,
+  "combined_candidate_function_pairs_all_categories": 1903,
+  "supported_sample_pairs": 4,
+  "removed_after_review": 3,
+  "status": "Four source/advisory-supported additions demonstrated; full candidate pool is not validated gold",
+  "licence": "Both published datasets CC-BY-4.0; retain original attribution and applicable upstream code terms"
+}

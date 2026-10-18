@@ -1,0 +1,50 @@
+{
+  "status": "offline integrity/provenance/split verification passed; not issue-label adjudication",
+  "combined_pairs": 1052,
+  "function_versions_checked": 2104,
+  "unique_full_source_snapshots_checked": 1617,
+  "human_reference_lines_checked": 1875,
+  "admitted_additions_checked": 335,
+  "complete_pool_decisions_checked": 1186,
+  "split_counts": {
+    "train": {
+      "correctness_candidate": 400,
+      "security_candidate": 342
+    },
+    "validation": {
+      "correctness_candidate": 83,
+      "security_candidate": 73
+    },
+    "test": {
+      "correctness_candidate": 81,
+      "security_candidate": 73
+    }
+  },
+  "split_security_cve_counts": {
+    "train": 150,
+    "validation": 61,
+    "test": 62
+  },
+  "split_annotation_source_counts": {
+    "train": {
+      "HaPy-Bug": 523,
+      "CVEfixes": 219
+    },
+    "validation": {
+      "HaPy-Bug": 91,
+      "CVEfixes": 65
+    },
+    "test": {
+      "HaPy-Bug": 103,
+      "CVEfixes": 51
+    }
+  },
+  "cross_split_provenance_text_ast_violations": [],
+  "exhaustive_cross_split_near_duplicates": [],
+  "inference_inputs": "Opaque hashed identifier, Python language, before-code only. No CVE, after-code, commit message, or reference fields. Original source comments/docstrings preserved.",
+  "limits": [
+    "No semantic-clone or exhaustive fork proof",
+    "No assertion about public-model pretraining contamination",
+    "CVEfixes labels are assistant source/advisory judgements, not independent human gold"
+  ]
+}

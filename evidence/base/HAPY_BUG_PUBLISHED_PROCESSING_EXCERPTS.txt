@@ -1,0 +1,450 @@
+def get_bug_id(bug):
+    # build bug_id identyfier
+    
+    bug_id = ""
+    
+    if 'cve' in bug:
+        bug_id = bug['cve']['id']
+        
+    if not bug_id or "<missing" in bug_id:
+        bug_id = bug['projectName']
+        
+    return bug_id
+
+
+def to_user(x):
+    x = x.replace("auto_", "")
+    if x[0:3] in ['A_1', 'A_4', 'A_7']:
+        return 'E1'#'PP'
+    elif x[0:3] in ['A_2', 'A_5']:
+        return 'E2'#'MF'
+    elif x[0:3] in ['A_3', 'A_6']:
+        return 'E3'#'JN'
+    elif x[0:3] in ['A_7']:
+         return 'E*1'#'PP'
+    elif x[0] == 'B':
+        return 'U1'#'RW'
+    elif x[0] == 'C':
+        return 'U2' #'AK'
+    elif x[0] == 'D':
+        return 'U3' #'ŁH'
+    else:
+        return 'auto'
+
+--- CELL ---
+
+# Oznaczenia kategorii dla plików 
+
+files_categories = defaultdict(lambda: defaultdict(list))
+#lines_categories = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+lines_categories_an = defaultdict(lambda: defaultdict(lambda : defaultdict(lambda: defaultdict(lambda: defaultdict(list)))))
+
+anwsers = defaultdict(lambda: defaultdict(list))
+
+records = []
+records_initial = []
+
+
+def extract_annotated_lines(files, user, fid):
+    #enum_files = defaultdict(lambda: defaultdict(Counter))
+    ret = []
+    for id, file in enumerate(files):
+        fname = file['fileName']            
+        fcat = file['category']
+
+        for image in file['lines']:
+            for line in file['lines'][image]:
+                #enum_files[fname][image][line['lineNumber']] += 1
+                #lid = enum_files[fname][image][line['lineNumber']] 
+                ret.append((bug, user, fname, fid, fcat, image, line['lineNumber'], line['category']))
+    return ret
+    
+
+for bug in bugs2:
+    if len(bugs2[bug]) > 0:
+        for user in bugs2[bug]:
+            
+            anotation = bugs2[bug][user]
+
+            for fid, files in enumerate(bugs2[bug][user]["data"]['initialAnnotation']['diffsFiles']):
+                records_initial.extend(extract_annotated_lines(files, "auto_"+ user, fid))
+
+            for res in anotation['annotations']: 
+                # 0 bug type, 1 rev is sure, 2 - problematic
+                for fid, files in enumerate(res['result'][3]['value']['diffsFiles']):
+                    records.extend(extract_annotated_lines(files, user, fid))
+
+
+
+--- CELL ---
+
+records.extend(records_initial)
+df = pd.DataFrame(records)
+df_initial = pd.DataFrame(records_initial)
+
+df.columns = ['id', 'bundle', 'file', 'fileid', 'fcat', 'image', 'line', 'annotation']
+
+df['user'] = df['bundle'].apply(to_user)
+df['auto'] = df['bundle'].apply(lambda x: 'auto' in x)
+
+df['ds'] = df['id'].apply(lambda x: x.split("_")[0])
+df['bug'] = df['id'].apply(lambda x: x.split("_")[1])
+
+--- CELL ---
+
+users = df['user'].unique()
+
+display(df)
+
+files = df\
+    .groupby(['id', 'ds', 'file', 'fileid', 'fcat']).count().reset_index()\
+    .groupby(['ds', 'fcat']).count().reset_index()
+
+display(users, files)
+
+
+#files.to_dict()
+df.to_csv("collective.csv")
+df.to_json("collective.json")
+
+--- CELL ---
+
+ret_df = [] 
+per_line_match = []
+
+ret_flow = []
+
+users = df['user'].unique()
+
+def get_stats(z, u1, u2):
+    
+    z['match'] = (z['annotation_x'] == z['annotation_y'])
+
+    out = z.groupby(['ds', 'id', 'file', 'fileid']).agg(All=('match', 'count'), Match=('match', 'sum'))
+    
+    flow = z.reset_index().groupby(
+        ['ds', 'id','annotation_y', 'annotation_x', 'user_x','file', 'fileid',  'line', 'image']
+    ).agg(Count=('match', 'count'))
+    
+    out['u1'] = u1
+    out['u2'] = u2
+    
+    return out, flow
+
+for u in users:
+    
+    cond1 = (df['user'] == u) & ~(df['auto'])
+    cond2 = (df['user'] == u) & (df['auto'])
+    
+    z = df[cond1].merge(df[cond2], how='inner', on=['id','file', 'fileid', 'image','line','ds'])
+    
+    out, flow_auto = get_stats(z, u, 'AUTO')
+    
+    ret_flow.append(flow_auto)
+    ret_df.append(out)
+    
+
+    
+for u1, u2 in combinations(users,2):
+    
+    cond1 = (df['user'] == u1) & ~(df['auto'])
+    cond2 = (df['user'] == u2) & ~(df['auto'])
+
+    z = df[cond1].merge(df[cond2], how='inner', on=['id','file','fileid', 'image','line','ds'])
+
+    out, flow = get_stats(z, u1, u2)
+    
+    ret_df.append(out)
+
+ret_df = pd.concat(ret_df)
+
+--- CELL ---
+
+flow_auto
+
+--- CELL ---
+
+flow_auto = pd.concat(ret_flow)
+tmp = flow_auto.reset_index().groupby(['annotation_y', 'annotation_x']).sum().reset_index()
+S = tmp['Count'].sum()
+tmp['S'] = (tmp['Count'] / S) * 100
+#tmp
+tmp['auto'] = "A: " + tmp['annotation_y']
+tmp['user'] = "U: " + tmp['annotation_x']
+
+print(tmp[['auto', 'user', 'S']].to_csv(index=False))
+
+--- CELL ---
+
+
+
+def export_legend(legend, filename="legend.svg"):
+    fig  = legend.figure
+    fig.canvas.draw()
+    bbox  = legend.get_window_extent().transformed(fig.dpi_scale_trans.inverted())
+    fig.savefig(filename, dpi="figure", bbox_inches=bbox)
+
+
+
+def plot_percentage(df, cols, cols2, legend=True, filename=None):
+    
+    fig, axes = plt.subplots(figsize=(10,2), ncols=2, sharey=True)
+
+
+    # plot in groups
+    x_var, y_var = cols
+    df_grouped = df.groupby(x_var)[y_var].value_counts(normalize=True).unstack(y_var)
+    cmap = sns.color_palette("Set2", as_cmap=True)
+    ax = df_grouped.plot.barh(stacked=True, width=0.9, ax=axes[1], colormap=cmap)
+    
+    
+    # Plot total count
+    x_var2, y_var2 = cols2
+    df_grouped2 = df.groupby(x_var).count()[y_var]
+    
+    df_grouped2 /= df_grouped2.sum()
+    cmap = sns.color_palette("Set1", as_cmap=True)
+
+    df_grouped2.plot.barh(stacked=False, width=0.9, ax=axes[0], colormap=cmap)
+
+    if legend and filename:
+        legend = plt.legend(
+            bbox_to_anchor=(0.5, 1.20),
+            loc="lower center",
+            borderaxespad=0,
+            frameon=False,
+            ncol=8,
+        )
+        export_legend(legend, "legend_" + filename )
+    else:
+        ax.get_legend().remove()
+        
+    df_grouped.fillna(0)
+    for ix, row in df_grouped.reset_index(drop=True).iterrows():
+        #print(ix, row, )
+        cumulative = 0
+        for element in row:
+            if element == element and element >= 0.05:
+                #print(">>", element, ix)
+                plt.text(
+                    cumulative + element/3,
+                    ix,
+                    f"{int(element * 100)} %",
+                    va="center",
+                    ha="left",
+                    fontsize=8
+
+                )
+                cumulative += element
+    
+
+    #for ax in axes.flat:
+    #    ax.margins(0.1)
+        
+    #plt.autoscale(enable=True, axis='both', tight=True) # tight layout
+    #fig.subplots_adjust(wspace=0.7)
+
+    axes[0].xaxis.set_major_formatter(lambda x,y: str(int(x*100))+'%')
+    axes[1].xaxis.set_major_formatter(lambda x,y: str(int(x*100))+'%')
+
+    #ax.tick_params(axis='x', which='major', labelsize=8)
+    
+    # If you have positive numbers and want to invert the x-axis of the left plot
+    axes[0].invert_xaxis() 
+
+    
+    #plt.subplots_adjust(wspace=0, top=0.85, bottom=0.1, left=0.18, right=0.95)
+
+    #plt.setp(axes[0].yaxis.get_majorticklabels(), ha='center')
+    
+    #axes[0].set(yticks=y, yticklabels=job_r)
+
+    
+    axes[0].yaxis.tick_right()
+    plt.setp(axes[0].yaxis.get_majorticklabels(), ha='center')
+    axes[0].tick_params(axis=u'both', which=u'both',length=0)
+    
+    # Create offset transform by some points in x direction
+    dx = 35/72.
+    dy = 0 / 72.
+    offset = matplotlib.transforms.ScaledTranslation(dx, dy, fig.dpi_scale_trans)
+    # apply offset transform to all y ticklabels.
+    for label in axes[0].yaxis.get_majorticklabels():
+        label.set_transform(label.get_transform() + offset)
+
+    #fig[0]["right"].major_ticklabels.set_ha("center")
+
+    fig.subplots_adjust(wspace=0.5)
+
+    sns.despine(left=True, right=True)
+    axes[0].set_title("% of lines")
+    axes[1].set_title("% of annotations")
+    axes[0].set(ylabel=None)
+
+
+
+
+    plt.tight_layout()
+    fig.tight_layout()
+    if filename:
+        fig.savefig(filename)
+
+    
+
+plot_percentage(df[~df['auto']], ['fcat', 'annotation'], ['fcat', 'annotation'], legend = True, filename="fcat_annotations.svg")
+plot_percentage(df[~df['auto']], ['fcat', 'annotation'], ['fcat', 'annotation'], legend = False, filename="fcat_annotations.svg")
+
+
+--- CELL ---
+
+user_l = {}
+df_inter_rater = None
+users_ids = ['U1', 'U2', 'U3', 'E1', 'E2', 'E3']
+cols = ['id', 'file', 'fileid', 'image', 'line', 'annotation']
+colsj = cols[:-1]
+
+for user in users_ids:
+    filter = (df['user'] == user) & (df['auto'] == False)
+    if df_inter_rater is None:
+        df_inter_rater = df[filter][cols].copy()
+    else:
+        df_inter_rater = df_inter_rater.merge(df[filter][cols], left_on = colsj, right_on = colsj, suffixes=('', "_"+user), how='outer')
+
+    #df_inter_rater = df_inter_rater.drop_duplicates(subset=['id', 'file', 'image', 'line', 'annotation'])
+    
+    #tmp_g_debug = df_inter_rater.groupby(colsj).count().reset_index()
+    #display(tmp_g_debug[tmp_g_debug['annotation'] > 1])
+
+
+--- CELL ---
+
+filter = (df['auto'] == False)
+len(df[filter])/3, len(df[~filter])/3, 
+
+--- CELL ---
+
+df_inter_rater.columns = [ c if c != 'annotation' else 'annotation_U1' for c in df_inter_rater.columns]
+
+--- CELL ---
+
+Z = df[df['auto'] == True].groupby(cols).count().reset_index()
+
+--- CELL ---
+
+def users_vs_auto(row):
+    ret = Counter()
+    for u in users_ids:
+        u_val = row['annotation_' + u]
+        if not pd.isnull(u_val):
+            ret[u_val] += 1
+            val = u_val
+            
+    if sum(ret.values()) < 3: # Check if all 3 reviewers annotated line
+        print("Error")
+
+    if ret.most_common(1)[0][1] > 1:
+        consensus_type =  "%dxU" % (ret.most_common(1)[0][1])
+    else:
+        return "other"
+    
+    if ret.most_common(1)[0][0] == row["annotation"]:
+        consensus_type += " == A"
+    else:
+        consensus_type += " != A"
+    
+    return consensus_type
+
+--- CELL ---
+
+R['UvsA'] = R.apply(users_vs_auto, axis=1)
+R['ds'] = R['id'].map(lambda x: x.split("_")[0])
+
+--- CELL ---
+
+cuser_vs_auto = R.groupby(['ds', 'UvsA']).count().reset_index()
+
+--- CELL ---
+
+cuser_vs_auto
+
+--- CELL ---
+
+cuser_vs_auto['agreement'] = cuser_vs_auto['UvsA']
+
+cuser_vs_auto['sort'] = cuser_vs_auto['agreement'].map(lambda x: 0 if x[0]== "o" else int(x[0]))
+
+divide_sum = cuser_vs_auto.groupby(['ds']).sum('line')
+display(divide_sum)
+for ds in divide_sum.index:
+    cuser_vs_auto.loc[cuser_vs_auto['ds'] == ds, 'line'] /= divide_sum.loc[ds,'line']
+
+
+#cuser_vs_auto
+sns.barplot(cuser_vs_auto.sort_values('sort', ascending=True), y='agreement', x='line', hue='ds')
+
+
+legend = plt.legend(
+    bbox_to_anchor=(0.5, 1.20),
+    loc="lower center",
+    borderaxespad=0,
+    frameon=False,
+    ncol=3,
+)
+export_legend(legend, "legend_" + 'automatic_vs_users.svg' )
+plt.savefig('automatic_vs_users.svg')
+
+--- CELL ---
+
+tmp = flow_auto.reset_index()
+tmp['user_x'].unique()
+#tmp['match'] = tmp['annotation_y'] == tmp['annotation_x']
+tmp['type'] = tmp['user_x'].map(lambda x: x[0])
+
+--- CELL ---
+
+stats = df[~df['auto']].groupby(['ds', 'annotation']).count()['id'].reset_index().pivot(index='ds', columns='annotation')
+stats_org = stats.copy()
+S = stats.sum(axis=1)
+for c in stats.columns:
+    stats[c] /= S 
+    stats[c] *= 100
+    #stats['S']=S
+
+#stats_style = stats.style.format('{:.2f}\%', decimal='.', precision=2)
+stats.columns = [c[1] for c in stats.columns]
+
+--- CELL ---
+
+filter = cuser_vs_auto['UvsA'].map(lambda x: x.split("x")[0] == "3")
+cuser_vs_auto["UvsA"] == '3xU == A'
+
+#display(cuser_vs_auto)
+B_copy = cuser_vs_auto[['ds','UvsA', 'annotation']].pivot(index='ds', columns='UvsA')
+
+B_copy.columns = [pair[1] for pair in B_copy.columns]
+B_copy['3xU'] = (B_copy['3xU == A'] + B_copy['3xU != A'])/B_copy.sum(axis=1) * 100
+#B_copy['2xU'] = (B_copy['2xU == A'] + B_copy['2xU != A'])/B_copy.sum(axis=1)  * 100
+B_copy['2|3xU'] = (B_copy['2xU == A'] + B_copy['2xU != A']
+                   + B_copy['3xU == A'] + B_copy['3xU != A'])/B_copy.sum(axis=1)  * 100
+
+display(B_copy)
+
+
+--- CELL ---
+
+# consensus vs auto agreement
+tmp = pd.DataFrame(df_inter_rater.apply(consensus, axis=1).tolist())
+G = df_inter_rater.copy()
+G['consensus']= tmp
+
+Z = df[df['auto'] == True].groupby(cols).count().reset_index()
+R = Z.merge(G, left_on=colsj, right_on=colsj)
+#R = R[['consensus', 'annotation']]
+
+
+#df_inter_rater_format_for_auto = aggregate_raters(R.to_numpy())
+#fleiss_kappa(df_inter_rater_format_for_auto[0], method='fleiss')
+
+--- CELL ---
+
+# Fleiss kappa for annotatons when consensus != automation

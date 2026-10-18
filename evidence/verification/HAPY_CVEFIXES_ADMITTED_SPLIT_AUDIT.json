@@ -1,0 +1,42 @@
+{
+  "status": "candidate splits, not approved training/evaluation gold",
+  "seed": 0,
+  "target_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "pair_counts": {
+    "train": 742,
+    "validation": 156,
+    "test": 154
+  },
+  "repository_counts": {
+    "train": 92,
+    "validation": 55,
+    "test": 57
+  },
+  "group_counts": {
+    "train": {
+      "correctness_candidate": 400,
+      "security_candidate": 342
+    },
+    "validation": {
+      "correctness_candidate": 83,
+      "security_candidate": 73
+    },
+    "test": {
+      "correctness_candidate": 81,
+      "security_candidate": 73
+    }
+  },
+  "cross_split_key_violations": [],
+  "near_duplicate_definition": "5-token shingle Jaccard >=0.9; lexical tokens including identifiers/literals",
+  "cross_split_near_pairs_found_and_grouped": 0,
+  "cross_split_near_pairs_remaining": 0,
+  "limitations": [
+    "No semantic-clone or exhaustive fork-identity proof",
+    "No independent issue-level adjudication",
+    "Enough examples for model adaptation is not established by counts alone"
+  ]
+}

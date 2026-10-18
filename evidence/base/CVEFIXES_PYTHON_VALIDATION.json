@@ -1,0 +1,16 @@
+{
+  "archive_verified_md5": "4586a358977acfa4c60b1a2cdd096221",
+  "archive_sha256": "6acd55aaeb7ffcfc20fdcebf7df88d206f9892ef64b0f2a2e06864d5b44b3a83",
+  "sqlite_integrity_check": "ok",
+  "checks": {
+    "python_file_changes": 2753,
+    "non_python_file_changes": 0,
+    "python_method_versions": 7568,
+    "orphan_methods": 0,
+    "python_fixing_commits": 1059,
+    "python_cves": 1089,
+    "python_repositories": 533
+  },
+  "preserved_database": "/Users/chiamakacloudflare/Dev/masterproject/CVEFIXES_PYTHON.sqlite",
+  "label_status": "Original provenance retained; issue-level method labels not independently validated"
+}

@@ -1,0 +1,17 @@
+{
+  "upstream_doi": "10.6084/m9.figshare.24448663.v1",
+  "dataset_licence": "CC-BY-4.0",
+  "attribution": "Przymus, Fejzer, Narębski, Woźniak, Halada, Kazecki et al. (2025), HaPy-Bug",
+  "local_modifications": "Confident manual vote filtering; exact upstream patch/source reconstruction; function extraction; deduplication and grouped splits",
+  "file_sha256": {
+    "HAPY_BUG_CANDIDATE_PAIRS.jsonl": "989b1a648b57dd7ed247e9eba8926d0e97564ffee8547eb351304c0728bf3cca",
+    "HAPY_BUG_TRAIN_CANDIDATES.jsonl": "d1da97c781ec2bbf9bed44f5db6b8ecf97de9e4b50210505fe3a43d37f0ab535",
+    "HAPY_BUG_VALIDATION_CANDIDATES.jsonl": "fcb37d02ba04cbe1dc245146287f467da1e1e4896a7f311e8cff1ff461db8e37",
+    "HAPY_BUG_TEST_CANDIDATES.jsonl": "04167699062f1a980c8372215181ec41414d1df6c513d9f61ef87a7417cda500",
+    "HAPY_BUG_MAJORITY_PROGRAMMING_LINES.json": "e792ffe0f636883b895be2e53bf4d1e6595580b9821dbe4cd9ad270ef5ab2bed",
+    "HAPY_BUG_CASE_METADATA.json": "a55f297fd85c47ac32720c79d3df47d6fdbe8a5a49c635201cb6236a5ed92480",
+    "HAPY_BUG_OFFICIAL_RELEASE_METADATA.json": "146ac15576f99514c0cf5304444ebd4b49dcd9d72c397d6af12633da7fb61dc0",
+    "HAPY_BUG_SPLIT_AUDIT.json": "62fc941d22f64b97297f77fb767a54ea5919822392bffaa1773dcf07a8bbfa56",
+    "HAPY_BUG_UPSTREAM_SNAPSHOTS.zip": "1be935365703a2481c345119841376ba71a82493ab2809e0faec2c3b68977ec7"
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "status": "offline integrity/provenance/split verification passed; not issue-label adjudication",
+  "dataset_licences": "HaPy-Bug and CVEfixes dataset releases CC-BY-4.0; preserve original source terms",
+  "sources": [
+    "https://doi.org/10.6084/m9.figshare.24448663.v1",
+    "https://zenodo.org/records/13118970"
+  ],
+  "required_base_source_archive": "HAPY_BUG_UPSTREAM_SNAPSHOTS.zip",
+  "files": {
+    "CVEFIXES_SECURITY_ADMITTED_PAIRS.jsonl": {
+      "bytes": 2901176,
+      "sha256": "51d3718083cd2b3e1b7fbe86824220b367f6bad3fc782b1309a37625b6d47978"
+    },
+    "HAPY_CVEFIXES_ADMITTED_CANDIDATE_PAIRS.jsonl": {
+      "bytes": 7701200,
+      "sha256": "361e56e2a4ac21af53c2cc4d9b7815213bb57e1057227f31553ba5b8f187a4c2"
+    },
+    "HAPY_CVEFIXES_ADMITTED_NEAR_DUPLICATE_LINKS.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "HAPY_CVEFIXES_ADMITTED_SPLIT_AUDIT.json": {
+      "bytes": 1076,
+      "sha256": "65a0200ecfd2cd73c79e588cff8b12b6cb5c42405911efc0f7e2cb14d93b3b75"
+    },
+    "HAPY_CVEFIXES_ADMITTED_TEST_BEFORE_ONLY_INPUTS.jsonl": {
+      "bytes": 254126,
+      "sha256": "23227832620b2d33989dc0296938837346584a01cb7bee006f8f3b098ab3d245"
+    },
+    "HAPY_CVEFIXES_ADMITTED_TEST_CANDIDATES.jsonl": {
+      "bytes": 1104355,
+      "sha256": "c9436ab155ab2583bb1a9687debbf25e01db4204373c9229cd7fcf01fbb6f360"
+    },
+    "HAPY_CVEFIXES_ADMITTED_TEST_REFERENCE_INDEX.jsonl": {
+      "bytes": 51096,
+      "sha256": "8956d4f4fec50bd1cca2eaef64d8373dcb24644ecd1ffe3d24f8be9ceb7a4828"
+    },
+    "HAPY_CVEFIXES_ADMITTED_TRAIN_BEFORE_ONLY_INPUTS.jsonl": {
+      "bytes": 1241765,
+      "sha256": "7d7524d986e631faaabda8c0e330402ca94246fa1f5e20b720cbf7a525bd25eb"
+    },
+    "HAPY_CVEFIXES_ADMITTED_TRAIN_CANDIDATES.jsonl": {
+      "bytes": 5489470,
+      "sha256": "5cc15c0491e4746da7e894a6b649985836869c98f1ba06af9b8e7d505d9fb24a"
+    },
+    "HAPY_CVEFIXES_ADMITTED_TRAIN_REFERENCE_INDEX.jsonl": {
+      "bytes": 250846,
+      "sha256": "51e2340002ce5ce3078c23ce7c482ed79523bd0fcb7ba25e2dc070577f42cb38"
+    },
+    "HAPY_CVEFIXES_ADMITTED_VALIDATION_BEFORE_ONLY_INPUTS.jsonl": {
+      "bytes": 257270,
+      "sha256": "85dd30c736b00ee1e46ac40cd62bfbcf1104e8680588408e42341e37430aa8d1"
+    },
+    "HAPY_CVEFIXES_ADMITTED_VALIDATION_CANDIDATES.jsonl": {
+      "bytes": 1126937,
+      "sha256": "ea58c030c13e651c89b71835de51c191457e09ade5f79303a716e46fae478836"
+    },
+    "HAPY_CVEFIXES_ADMITTED_VALIDATION_REFERENCE_INDEX.jsonl": {
+      "bytes": 50920,
+      "sha256": "e2d6c7fdfd814cd1d60ebcfb7bc6afd7e1e2dd7b0cdae1298606416c11c22e6b"
+    },
+    "SECURITY_ADMISSION_AUDIT.json": {
+      "bytes": 1310,
+      "sha256": "7bbf276623d5212275721e283d3b65f3a39451931247236ad42db24734341fc0"
+    },
+    "SECURITY_ADMISSION_CVE_EVIDENCE.jsonl": {
+      "bytes": 4920623,
+      "sha256": "26218addac01aff0fe9a56019a5d71d692455eaf9b8917efd48e99d27701232f"
+    },
+    "SECURITY_ADMISSION_DEPENDENCY_REVIEW.json": {
+      "bytes": 3832,
+      "sha256": "46b6b672efb139b0612d56cb19d795f19c409d09ee9741a1ed7010c1702e8f22"
+    },
+    "SECURITY_ADMISSION_EVIDENCE_AUDIT.json": {
+      "bytes": 157,
+      "sha256": "932a81414d09b055b294b5b8e02366614c97e92437e86ece632c425dac8baf10"
+    },
+    "SECURITY_ADMISSION_FINAL_DECISIONS.jsonl": {
+      "bytes": 1144638,
+      "sha256": "494be5d97c27e29563c2a8b704fa5f5966b778457bb38a99a4cb90655533049b"
+    },
+    "SECURITY_ADMISSION_INDEPENDENT_VERIFICATION.json": {
+      "bytes": 1481,
+      "sha256": "08a73d0e79b2a251226502a1031b9f725345c792a76eee744f3ea2a9b6723ba0"
+    },
+    "SECURITY_ADMISSION_QUEUE_REVIEW.json": {
+      "bytes": 104882,
+      "sha256": "67072967de5f192849c743ed622493fe3d014758d510da737630d1e51caf686b"
+    },
+    "SECURITY_ADMISSION_REMAINING_QUEUE.jsonl": {
+      "bytes": 437424,
+      "sha256": "7c1b985fa5228f7e89f08c95ab1c96f73f42f37f398c11030c4684cdd6010f19"
+    },
+    "SECURITY_ADMISSION_REVIEW_LEDGER.json": {
+      "bytes": 35593,
+      "sha256": "3e9a809bcb8cf0531661f87f44bd62df67d68b09a535e0242f992c8b61a132cd"
+    },
+    "SECURITY_ADMISSION_REVIEW_PACKETS.jsonl": {
+      "bytes": 2658558,
+      "sha256": "203f06b769da842c879ddc0e2f702bb79b685413ee839877c3798957753657b8"
+    },
+    "SECURITY_ADMISSION_SOURCE_AUDIT.json": {
+      "bytes": 1612,
+      "sha256": "9a5102ed29527cea0cd6b3365df0c3732dd19b4b33ff46c058325500251f26b5"
+    },
+    "SECURITY_ADMISSION_SOURCE_CONTEXTS.jsonl": {
+      "bytes": 6880877,
+      "sha256": "4f5dfe15176e3072c9950fbac9bfed146cb75934b05c2238c6a83be941936e33"
+    },
+    "SECURITY_ADMISSION_SOURCE_DECISIONS.jsonl": {
+      "bytes": 144927,
+      "sha256": "1816f0c48804b61dce8f2a2e12d86c55594a4ac721f57ea2fb6f794946966066"
+    },
+    "SECURITY_ADMISSION_SOURCE_LOCATIONS.json": {
+      "bytes": 941,
+      "sha256": "64b17ab9e94d14e6a8403ccb4dd33f540783400fc57f9c9d7ebde45d02a5e330"
+    },
+    "SECURITY_ADMISSION_UNRESOLVED_REVIEW.jsonl": {
+      "bytes": 418891,
+      "sha256": "85024e3dcd111e5f0ea651c3ecd3f4f8ca95d9782d0d5ad9eecd63110bd1b13d"
+    },
+    "SECURITY_ADMISSION_UPSTREAM_CHECKS.jsonl": {
+      "bytes": 421069,
+      "sha256": "05d2a4bdc3724d8c642cdec58bef1b3f84192adc4bf40a6f5951e2fa9f04bca9"
+    },
+    "SECURITY_ADMISSION_UPSTREAM_SNAPSHOTS.zip": {
+      "bytes": 3141052,
+      "sha256": "7a4b0408c73cc6b81fe9f10633e0d521479626c02f1760cbe3527b6928e66640"
+    },
+    "HAPY_BUG_UPSTREAM_SNAPSHOTS.zip": {
+      "bytes": 14576526,
+      "sha256": "1be935365703a2481c345119841376ba71a82493ab2809e0faec2c3b68977ec7"
+    },
+    "ADMIT_SECURITY_EXPANSION.py": {
+      "bytes": 36374,
+      "sha256": "049c5d3f28d3c81bdee13f8e6ad9b6a8399edfafa86a37f62060e98f7bfb1582"
+    },
+    "VERIFY_SECURITY_ADMISSION.py": {
+      "bytes": 14287,
+      "sha256": "dbb405301a7a6affdb045b017d5c89fb9edb02e3a38ebd300a86e12e88492793"
+    },
+    "INSPECT_SECURITY_CANDIDATES.py": {
+      "bytes": 6417,
+      "sha256": "60ddd5f313ffd58dbb92d8d15d3ff320ae4f754c35afb7c80a29b68806210785"
+    },
+    "BUILD_CANDIDATE_SPLITS.py": {
+      "bytes": 17514,
+      "sha256": "83c17d5d1e57a00711e9b1906cebf4462a662ba05d8abb08888b5b209b5ef934"
+    },
+    "BUILD_HAPY_SOURCE_PAIRS.py": {
+      "bytes": 13669,
+      "sha256": "58ab90c8ae9c400380c85729306e2ef828a36cc4c93244613cc4d87a7ae2a086"
+    },
+    "PROBE_CANDIDATE_SOURCES.py": {
+      "bytes": 9470,
+      "sha256": "a399f1d472ca20afd80e97d98c5ae12e140a0faba4e3e093496096549e22bbf0"
+    },
+    "SECURITY_EXPANSION_AUDIT.py": {
+      "bytes": 18494,
+      "sha256": "781788706d9efddcbf1e70a05930472927b92f8c7bd7aebdb7cf3ce6811c761c"
+    },
+    "CVEFIXES_UPSTREAM_LICENSE.txt": {
+      "bytes": 391,
+      "sha256": "d7c551f89417ea50d10b436220bd95e75f9537bbcaecb3f5c8b9e432cd9fcf0d"
+    },
+    "SECURITY_ADMISSION_FINDINGS.md": {
+      "bytes": 28140,
+      "sha256": "e22471f7066d0e44b244c689d2d334b19d63c8923bf860685e4d277855e6b796"
+    },
+    "SECURITY_EXPANSION_FINDINGS.md": {
+      "bytes": 10520,
+      "sha256": "c7b24614266848ea992f5499ed1c0468ee85f8667958e7a027a35f2d44c41f85"
+    },
+    "DATASET_DECISION.md": {
+      "bytes": 5583,
+      "sha256": "a851a5b69e24f135a4703a50a4e655cb7ec155baa888b069dff8f7439842e853"
+    },
+    "README.md": {
+      "bytes": 4404,
+      "sha256": "412eb5bf9d897753eccd2c248190aa7b642ecacbda94d6f0e3a95d678a937755"
+    }
+  }
+}

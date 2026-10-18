@@ -1,0 +1,194 @@
+{
+  "url_public_html": "https://figshare.com/articles/dataset/HaPy-Bug_Human_Annotated_Python_Bug_Resolution_Dataset/24448663/1",
+  "files": [
+    {
+      "id": 52129346,
+      "name": "README.md",
+      "size": 6186,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/52129346",
+      "supplied_md5": "b0dec2a7aa222a1f22e5d3e46dc1b93e",
+      "computed_md5": "b0dec2a7aa222a1f22e5d3e46dc1b93e",
+      "mimetype": "text/plain"
+    },
+    {
+      "id": 52129358,
+      "name": "HaPy-Bug.tar.gz",
+      "size": 899156147,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/52129358",
+      "supplied_md5": "a97ea8d7027fcbbbfdd891de2faaa48b",
+      "computed_md5": "a97ea8d7027fcbbbfdd891de2faaa48b",
+      "mimetype": "application/x-gzip"
+    }
+  ],
+  "folder_structure": {},
+  "authors": [
+    {
+      "id": 14564009,
+      "full_name": "Piotr Przymus",
+      "first_name": "Piotr",
+      "last_name": "Przymus",
+      "is_active": true,
+      "url_name": "Piotr_Przymus",
+      "orcid_id": "0000-0001-9548-2388"
+    },
+    {
+      "id": 14563847,
+      "full_name": "Mikołaj Fejzer",
+      "first_name": "Mikołaj",
+      "last_name": "Fejzer",
+      "is_active": true,
+      "url_name": "Miko_aj_Fejzer",
+      "orcid_id": "0000-0003-1496-2289"
+    },
+    {
+      "id": 4992776,
+      "full_name": "Jakub Narębski",
+      "first_name": "Jakub",
+      "last_name": "Narębski",
+      "is_active": true,
+      "url_name": "Jakub_Nar_bski",
+      "orcid_id": "0000-0002-3296-3915"
+    },
+    {
+      "id": 17294537,
+      "full_name": "Radosław Woźniak",
+      "first_name": "Radosław",
+      "last_name": "Woźniak",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 20370422,
+      "full_name": "Łukasz Halada",
+      "first_name": "Łukasz",
+      "last_name": "Halada",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 17294535,
+      "full_name": "Aleksander Kazecki",
+      "first_name": "Aleksander",
+      "last_name": "Kazecki",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 17299243,
+      "full_name": "Mykhailo Molchanov",
+      "first_name": "Mykhailo",
+      "last_name": "Molchanov",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 14566692,
+      "full_name": "Krzysztof Stencel",
+      "first_name": "Krzysztof",
+      "last_name": "Stencel",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": "0000-0001-6356-4872"
+    }
+  ],
+  "custom_fields": [],
+  "figshare_url": "https://figshare.com/articles/dataset/HaPy-Bug_Human_Annotated_Python_Bug_Resolution_Dataset/24448663",
+  "download_disabled": false,
+  "description": "<p dir=\"ltr\">We present HaPy-Bug, a curated dataset of 793 Python source code commits associated with bug fixes, with each line of code annotated by three domain experts. The annotations offer insights into the purpose of modified files, changes at the line level, and reviewers’ confidence levels. We analyze HaPy-Bug to examine the distribution of file purposes, types of modifications, and tangled changes. Additionally, we explore its potential applications in bug tracking, the analysis of bug-fixing practices, and the development of repository analysis tools. HaPy-Bug serves as a valuable resource for advancing research in software maintenance and security.</p>",
+  "funding": "The work was created as a result of the research project no. 2022/06/X/ST6/00806 financed by the National Science Centre, Poland.",
+  "funding_list": [
+    {
+      "id": 27148308,
+      "title": "The work was created as a result of the research project no. 2022/06/X/ST6/00806 financed by the National Science Centre, Poland.",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    }
+  ],
+  "version": 1,
+  "status": "public",
+  "size": 899162333,
+  "created_date": "2025-02-04T17:56:58Z",
+  "modified_date": "2025-02-04T17:56:58Z",
+  "is_public": true,
+  "is_confidential": false,
+  "is_metadata_record": false,
+  "confidential_reason": "",
+  "metadata_reason": "",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "tags": [
+    "CVE survey",
+    "Mining Software Repository",
+    "software quaility"
+  ],
+  "keywords": [
+    "CVE survey",
+    "Mining Software Repository",
+    "software quaility"
+  ],
+  "categories": [
+    {
+      "id": 29182,
+      "title": "Empirical software engineering",
+      "parent_id": 29176,
+      "path": "/28798/29176/29182",
+      "source_id": "461202",
+      "taxonomy_id": 100
+    },
+    {
+      "id": 29197,
+      "title": "Software quality, processes and metrics",
+      "parent_id": 29176,
+      "path": "/28798/29176/29197",
+      "source_id": "461207",
+      "taxonomy_id": 100
+    },
+    {
+      "id": 28918,
+      "title": "Software and application security",
+      "parent_id": 28900,
+      "path": "/28798/28900/28918",
+      "source_id": "460406",
+      "taxonomy_id": 100
+    }
+  ],
+  "references": [],
+  "has_linked_file": false,
+  "citation": "Przymus, Piotr; Fejzer, Mikołaj; Narębski, Jakub; Woźniak, Radosław; Halada, Łukasz; Kazecki, Aleksander; et al. (2025). HaPy-Bug – Human Annotated Python Bug Resolution Dataset. figshare. Dataset. https://doi.org/10.6084/m9.figshare.24448663.v1",
+  "related_materials": [],
+  "is_embargoed": false,
+  "embargo_date": null,
+  "embargo_type": null,
+  "embargo_title": "",
+  "embargo_reason": "",
+  "embargo_options": [],
+  "id": 24448663,
+  "title": "HaPy-Bug – Human Annotated Python Bug Resolution Dataset",
+  "doi": "10.6084/m9.figshare.24448663.v1",
+  "handle": "",
+  "url": "https://api.figshare.com/v2/articles/24448663",
+  "published_date": "2025-02-04T17:56:58Z",
+  "thumb": "",
+  "defined_type": 3,
+  "defined_type_name": "dataset",
+  "group_id": null,
+  "url_private_api": "https://api.figshare.com/v2/account/articles/24448663",
+  "url_public_api": "https://api.figshare.com/v2/articles/24448663",
+  "url_private_html": "https://figshare.com/account/articles/24448663",
+  "timeline": {
+    "posted": "2025-02-04T17:56:58",
+    "firstOnline": "2025-02-04"
+  },
+  "resource_title": null,
+  "resource_doi": null
+}

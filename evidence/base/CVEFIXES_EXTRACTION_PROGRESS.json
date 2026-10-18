@@ -1,0 +1,45 @@
+{
+  "elapsed_seconds": 216,
+  "rows_seen": {
+    "fixes": 12923,
+    "commits": 12107,
+    "file_change": 51342,
+    "method_change": 277948,
+    "cve": 11873,
+    "cwe": 272,
+    "cwe_classification": 12198,
+    "repository": 4249
+  },
+  "rows_retained": {
+    "fixes": 12923,
+    "commits": 12107,
+    "file_change": 2753,
+    "method_change": 7568,
+    "cve": 11873,
+    "cwe": 272,
+    "cwe_classification": 12198,
+    "repository": 4249
+  },
+  "database_counts": {
+    "fixes": 12923,
+    "commits": 12107,
+    "file_change": 2753,
+    "method_change": 7568,
+    "cve": 11873,
+    "cwe": 272,
+    "cwe_classification": 12198,
+    "repository": 4249
+  },
+  "schemas": {
+    "fixes": "CREATE TABLE IF NOT EXISTS \"fixes\" (\n\"cve_id\" TEXT,\n  \"hash\" TEXT,\n  \"repo_url\" TEXT\n);\n",
+    "commits": "CREATE TABLE IF NOT EXISTS \"commits\" (\n\"hash\" TEXT,\n  \"repo_url\" TEXT,\n  \"author\" TEXT,\n  \"author_date\" TEXT,\n  \"author_timezone\" TEXT,\n  \"committer\" TEXT,\n  \"committer_date\" TEXT,\n  \"committer_timezone\" TEXT,\n  \"msg\" TEXT,\n  \"merge\" TEXT,\n  \"parents\" TEXT,\n  \"num_lines_added\" TEXT,\n  \"num_lines_deleted\" TEXT,\n  \"dmm_unit_complexity\" TEXT,\n  \"dmm_unit_interfacing\" TEXT,\n  \"dmm_unit_size\" TEXT\n);\n",
+    "file_change": "CREATE TABLE IF NOT EXISTS \"file_change\" (\n\"file_change_id\" TEXT,\n  \"hash\" TEXT,\n  \"filename\" TEXT,\n  \"old_path\" TEXT,\n  \"new_path\" TEXT,\n  \"change_type\" TEXT,\n  \"diff\" TEXT,\n  \"diff_parsed\" TEXT,\n  \"num_lines_added\" TEXT,\n  \"num_lines_deleted\" TEXT,\n  \"code_after\" TEXT,\n  \"code_before\" TEXT,\n  \"nloc\" TEXT,\n  \"complexity\" TEXT,\n  \"token_count\" TEXT,\n  \"programming_language\" TEXT\n);\n",
+    "method_change": "CREATE TABLE IF NOT EXISTS \"method_change\" (\n\"method_change_id\" TEXT,\n  \"file_change_id\" TEXT,\n  \"name\" TEXT,\n  \"signature\" TEXT,\n  \"parameters\" TEXT,\n  \"start_line\" TEXT,\n  \"end_line\" TEXT,\n  \"code\" TEXT,\n  \"nloc\" TEXT,\n  \"complexity\" TEXT,\n  \"token_count\" TEXT,\n  \"top_nesting_level\" TEXT,\n  \"before_change\" TEXT\n);\n",
+    "cve": "CREATE TABLE IF NOT EXISTS \"cve\" (\n\"cve_id\" TEXT,\n  \"published_date\" TEXT,\n  \"last_modified_date\" TEXT,\n  \"description\" TEXT,\n  \"nodes\" TEXT,\n  \"severity\" TEXT,\n  \"obtain_all_privilege\" TEXT,\n  \"obtain_user_privilege\" TEXT,\n  \"obtain_other_privilege\" TEXT,\n  \"user_interaction_required\" TEXT,\n  \"cvss2_vector_string\" TEXT,\n  \"cvss2_access_vector\" TEXT,\n  \"cvss2_access_complexity\" TEXT,\n  \"cvss2_authentication\" TEXT,\n  \"cvss2_confidentiality_impact\" TEXT,\n  \"cvss2_integrity_impact\" TEXT,\n  \"cvss2_availability_impact\" TEXT,\n  \"cvss2_base_score\" TEXT,\n  \"cvss3_vector_string\" TEXT,\n  \"cvss3_attack_vector\" TEXT,\n  \"cvss3_attack_complexity\" TEXT,\n  \"cvss3_privileges_required\" TEXT,\n  \"cvss3_user_interaction\" TEXT,\n  \"cvss3_scope\" TEXT,\n  \"cvss3_confidentiality_impact\" TEXT,\n  \"cvss3_integrity_impact\" TEXT,\n  \"cvss3_availability_impact\" TEXT,\n  \"cvss3_base_score\" TEXT,\n  \"cvss3_base_severity\" TEXT,\n  \"exploitability_score\" TEXT,\n  \"impact_score\" TEXT,\n  \"ac_insuf_info\" TEXT,\n  \"reference_json\" TEXT,\n  \"problemtype_json\" TEXT\n);\n",
+    "cwe": "CREATE TABLE IF NOT EXISTS \"cwe\" (\n\"index\" INTEGER,\n  \"cwe_id\" TEXT,\n  \"cwe_name\" TEXT,\n  \"description\" TEXT,\n  \"extended_description\" TEXT,\n  \"url\" TEXT,\n  \"is_category\" INTEGER\n);\n",
+    "cwe_classification": "CREATE TABLE IF NOT EXISTS \"cwe_classification\" (\n\"cve_id\" TEXT,\n  \"cwe_id\" TEXT\n);\n",
+    "repository": "CREATE TABLE IF NOT EXISTS \"repository\" (\n\"repo_url\" TEXT,\n  \"repo_name\" TEXT,\n  \"description\" TEXT,\n  \"date_created\" TEXT,\n  \"date_last_push\" TEXT,\n  \"homepage\" TEXT,\n  \"repo_language\" TEXT,\n  \"owner\" TEXT,\n  \"forks_count\" TEXT,\n  \"stars_count\" TEXT\n);\n"
+  },
+  "complete": true,
+  "archive_md5_verification": "Check CVEFIXES_ORIGINAL_ARCHIVE.json before final adoption"
+}

@@ -1,0 +1,42 @@
+{
+  "reviewer": "Assistant source inspection, not independent human adjudication or vulnerability reproduction",
+  "scope": "Tandoor CVE-2022-23071 attempted-fix review; downloaded dependency sources were inspected as inert data",
+  "repository": "github.com/tandoorrecipes/recipes",
+  "fixing_commit": "d48fe26a3529cc1ee903ffb2758dfd8f7efaba8c",
+  "requirements": {
+    "url": "https://raw.githubusercontent.com/TandoorRecipes/recipes/d48fe26a3529cc1ee903ffb2758dfd8f7efaba8c/requirements.txt",
+    "sha256": "bb11969e1fb8d4c966c31240a8e037885d4de92a5353b5155ccad74f617ab3c4",
+    "selected_lines": ["requests==2.27.1", "validators==0.19.0"]
+  },
+  "validators": {
+    "release_metadata_url": "https://pypi.org/pypi/validators/0.19.0/json",
+    "archive_url": "https://files.pythonhosted.org/packages/77/eb/e60e6704d8eb84be0648e4c667c559a210116ac2401099851abd0639a6a9/validators-0.19.0.tar.gz",
+    "archive_sha256": "dec45f4381f042f1e705cfa74949505b77f1e27e8b05409096fee8152c839cbe",
+    "archive_check": "Downloaded archive SHA256 matched the release metadata; members were read in memory without filesystem extraction or execution",
+    "url_module": {
+      "member": "validators-0.19.0/validators/url.py",
+      "sha256": "e9022e6b531237f610b8f6080f8b3cba3e418dd8649642daba7f090c85e3044e",
+      "public_branch_excerpt": "    result = pattern.match(value)\n    if not public:\n        return result\n\n    return result and not any(\n        (result.groupdict().get(key) for key in ('private_ip', 'private_host'))\n    )",
+      "ipv6_branch_excerpt": "    r\"\\[(\"\n    # 1:2:3:4:5:6:7:8\n    r\"([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|\"",
+      "compressed_ipv6_excerpt": "    # ::2:3:4:5:6:7:8  ::2:3:4:5:6:7:8 ::8       ::\n    r\":((:[0-9a-fA-F]{1,4}){1,7}|:)|\"",
+      "inspection": "The bracketed IPv6 alternative is outside named private_ip/private_host groups. Its compressed branch accepts ::1; public=True checks neither IPv6 address class nor resolved hostname addresses. Literal localhost and selected private IPv4 values are restricted, which is narrower than internal-destination confinement. No regex or downloaded validator was executed."
+    },
+    "decorator_module": {
+      "member": "validators-0.19.0/validators/utils.py",
+      "sha256": "f36224789aeeb5bcd11106ef98a6704668dde7f0b174873ddbe1207006f750f4",
+      "wrapper_excerpt": "    def wrapper(func, *args, **kwargs):\n        value = func(*args, **kwargs)\n        if not value:\n            return ValidationFailure(\n                func, func_args_as_dict(func, args, kwargs)\n            )\n        return True\n    return decorator(wrapper, func)"
+    }
+  },
+  "requests": {
+    "url": "https://raw.githubusercontent.com/psf/requests/v2.27.1/requests/sessions.py",
+    "sha256": "66ef98f583e5c1322cc85c7586f22b737ce2c9e169b853ea70eb92bb3f01356b",
+    "get_excerpt": "        kwargs.setdefault('allow_redirects', True)\n        return self.request('GET', url, **kwargs)",
+    "request_default_excerpt": "            auth=None, timeout=None, allow_redirects=True, proxies=None,",
+    "inspection": "Reviewed Tandoor GET calls supply no allow_redirects=False or per-hop URL validation. Redirect following is additional evidence against interpreting the initial lexical URL check as a general SSRF boundary."
+  },
+  "limits": [
+    "These retained excerpts and full-content digests are review evidence, not complete archived dependency modules; re-fetch the exact release to repeat full-source inspection.",
+    "No outbound request to a loopback/private endpoint, DNS resolution probe, imported dependency execution, or application test was performed.",
+    "The finding concerns whether the selected after-code establishes an effective fixing counterpart; it does not invalidate the CVE or establish every endpoint's exploitability."
+  ]
+}

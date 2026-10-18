@@ -1,0 +1,9 @@
+{
+  "cves": 507,
+  "states": {
+    "PUBLISHED": 507
+  },
+  "with_osv_advisory": 156,
+  "fetched_at_utc": "2026-10-18T10:37:25.417939+00:00",
+  "errors": 0
+}

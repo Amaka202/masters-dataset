@@ -1,0 +1,85 @@
+{
+  "url": "https://zenodo.org/records/13118970/files/CVEfixes_v1.0.8.zip?download=1",
+  "zenodo_record": "13118970",
+  "version": "v1.0.8",
+  "bytes": 12708711268,
+  "md5": "4586a358977acfa4c60b1a2cdd096221",
+  "sha256": "6acd55aaeb7ffcfc20fdcebf7df88d206f9892ef64b0f2a2e06864d5b44b3a83",
+  "members": [
+    {
+      "path": "CVEfixes_v1.0.8/",
+      "compressed_bytes": 0,
+      "uncompressed_bytes": 0
+    },
+    {
+      "path": "CVEfixes_v1.0.8/INSTALL.md",
+      "compressed_bytes": 1148,
+      "uncompressed_bytes": 2417
+    },
+    {
+      "path": "CVEfixes_v1.0.8/README.md",
+      "compressed_bytes": 1652,
+      "uncompressed_bytes": 3741
+    },
+    {
+      "path": "CVEfixes_v1.0.8/Examples/",
+      "compressed_bytes": 0,
+      "uncompressed_bytes": 0
+    },
+    {
+      "path": "CVEfixes_v1.0.8/Examples/query_CVEfixes.ipynb",
+      "compressed_bytes": 251933,
+      "uncompressed_bytes": 444025
+    },
+    {
+      "path": "CVEfixes_v1.0.8/Doc/",
+      "compressed_bytes": 0,
+      "uncompressed_bytes": 0
+    },
+    {
+      "path": "CVEfixes_v1.0.8/Doc/DataDictionary.md",
+      "compressed_bytes": 3523,
+      "uncompressed_bytes": 14736
+    },
+    {
+      "path": "CVEfixes_v1.0.8/Doc/ER_diagram.png",
+      "compressed_bytes": 273529,
+      "uncompressed_bytes": 304193
+    },
+    {
+      "path": "CVEfixes_v1.0.8/Doc/Bhandari-Naseer-Moonen_-_CVEfixes.pdf",
+      "compressed_bytes": 952665,
+      "uncompressed_bytes": 1004679
+    },
+    {
+      "path": "CVEfixes_v1.0.8/LICENSE.txt",
+      "compressed_bytes": 265,
+      "uncompressed_bytes": 391
+    },
+    {
+      "path": "CVEfixes_v1.0.8/Data/",
+      "compressed_bytes": 0,
+      "uncompressed_bytes": 0
+    },
+    {
+      "path": "CVEfixes_v1.0.8/Data/CVEfixes_v1.0.8.sql.gz",
+      "compressed_bytes": 12608519922,
+      "uncompressed_bytes": 12660640828
+    },
+    {
+      "path": "CVEfixes_v1.0.8/Data/CVEfixes_v1.0.8.log.gz",
+      "compressed_bytes": 27218017,
+      "uncompressed_bytes": 27824207
+    },
+    {
+      "path": "CVEfixes_v1.0.8/Data/cwec_v4.15.xml",
+      "compressed_bytes": 1702298,
+      "uncompressed_bytes": 14760193
+    },
+    {
+      "path": "CVEfixes_v1.0.8/Data/nvdcve-1.1-2024-07-23.tgz",
+      "compressed_bytes": 69783222,
+      "uncompressed_bytes": 71182245
+    }
+  ]
+}

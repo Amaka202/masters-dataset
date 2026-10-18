@@ -1,0 +1,10 @@
+{
+  "github.com/parisneo/lollms": {
+    "repository": "github.com/ParisNeo/lollms_legacy",
+    "reason": "Historical commits are available in the original author's lollms_legacy repository. The current ParisNeo/lollms repository was created in 2025 and does not contain the referenced 2024 history. Require exact commit, first-parent, full released module and decorated function matches; retain the original dataset repository identity for grouping."
+  },
+  "github.com/mnbikeways/database": {
+    "repository": "github.com/Marvin35/database",
+    "reason": "The original MNBikeways repository returns 404. GitHub commit search locates the exact referenced commit in this surviving public repository. This is an alternate source location, not a claim of verified ownership transfer. Require exact commit, first-parent, full released module and decorated function matches; retain the original dataset repository identity for grouping."
+  }
+}
