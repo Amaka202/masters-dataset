@@ -1,0 +1,132 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-059",
+  "review_date": "2026-10-31",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "Every candidate/status/category in complete repository queues of immutable operational plan 059.",
+  "selection_rule": {
+    "repositories": [
+      "github.com/yogeshojha/rengine"
+    ],
+    "candidate_count": 1,
+    "discovery_categories": [
+      "SEC-SHELL-QUOTING"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Final immutable operational singleton, one missing-context deferral. All742 training pairs now have current assistant consolidation proposals, not approved labels or independent issues. Preserve canonical bytes/splits, all833 discovery events and45 protected inputs. Common bounded before-only budget and knowledge policy, eligibility/security/context exceptions, taxonomy approval and independent roots remain researcher-pending; no substantive held-out adjudication or experiment freeze. Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:145370989713188:22504420177268",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "CMS detection request URL is interpolated into shell source before parsing; after URL is one argv element in shell-free subprocess call.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "CMS detection request URL is interpolated into shell source before parsing; after URL is one argv element in shell-free subprocess call. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Actual old CMSDetector.get reads request.query_params url and forwards it unchanged to selected get_cms_details inside exception handler. URL table mounts tools/cms_detector; handler has no local permission/validation declaration, retained REST_FRAMEWORK settings specify renderer/filter/pagination rather than permission override. Old os.system interpolates URL before urlparse, so downstream hostname parsing cannot guard shell interpretation. After explicit subprocess import and argv list retain fixed flags, append -u then raw URL as one value, Popen default shell=False and wait for completion. Named CPython3.8.13 POSIX branch invokes shell only when requested.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need installed DRF/middleware/global access policy, supported Python/platform and CMSeeK CLI version/argument parser, executable resolution and host process permissions. No assumption that application-user permission grants host shell authority, no unauthenticated deployment certification. Ordinary URL semantics and actual target parser option/URL treatment are separate contracts. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-trust web requester supplies shell syntax via URL to host command interpreter under service account. Exception response after os.system does not undo earlier command execution. No demonstrated payload/RCE or target request executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After fixed command string is split before appending URL, so URL remains a single argv element without shell parsing under named compatible runtime. No shell-only quotes retained around value (unlike earlier Gerapy finding). Narrow negative is this shell interpolation sink only; CMSeeK URL/option handling, network SSRF, derived result paths/read/delete, missing URL errors and every command elsewhere remain unadjudicated. No established new ordinary valid-input regression in retained transport.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch059 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need installed DRF/middleware/global access policy, supported Python/platform and CMSeeK CLI version/argument parser, executable resolution and host process permissions. No assumption that application-user permission grants host shell authority, no unauthenticated deployment certification. Ordinary URL semantics and actual target parser option/URL treatment are separate contracts.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "os.system(cms_detector_command)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "process = subprocess.Popen(subprocess_splitted_command)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_059_CONTEXT.json",
+          "path": "web/api/views.py",
+          "ref": "72a5fb2eb766c7b0334a3420af7576a60c95b182",
+          "needle": "class CMSDetector(APIView):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_059_CONTEXT.json",
+          "path": "web/api/views.py",
+          "ref": "72a5fb2eb766c7b0334a3420af7576a60c95b182",
+          "needle": "url = req.query_params.get('url')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_059_CONTEXT.json",
+          "path": "web/api/views.py",
+          "ref": "72a5fb2eb766c7b0334a3420af7576a60c95b182",
+          "needle": "response = get_cms_details(url)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_059_CONTRACTS.json",
+          "path": "web/api/urls.py",
+          "ref": "72a5fb2eb766c7b0334a3420af7576a60c95b182",
+          "needle": "'tools/cms_detector/'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_059_CONTEXT.json",
+          "path": "web/reNgine/common_func.py",
+          "ref": "8277cec0f008a0451371a92e7e0bf082ab3f0c34",
+          "needle": "import subprocess"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_059_CONTEXT.json",
+          "path": "web/reNgine/common_func.py",
+          "ref": "8277cec0f008a0451371a92e7e0bf082ab3f0c34",
+          "needle": "subprocess_splitted_command.append(url)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_059_CONTEXT.json",
+          "path": "web/reNgine/common_func.py",
+          "ref": "8277cec0f008a0451371a92e7e0bf082ab3f0c34",
+          "needle": "process.wait()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_059_CONTRACTS.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v3.8.13",
+          "needle": "shell=False, cwd=None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_059_CONTRACTS.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v3.8.13",
+          "needle": "args = [unix_shell, \"-c\"] + args"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_059_CONTRACTS.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v3.8.13",
+          "needle": "executable = args[0]"
+        }
+      ]
+    }
+  ]
+}

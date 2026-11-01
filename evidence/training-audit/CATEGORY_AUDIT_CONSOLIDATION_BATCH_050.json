@@ -1,0 +1,560 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-050",
+  "review_date": "2026-10-30",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All four MLflow training candidates/all discovery statuses; four mechanical families.",
+  "selection_rule": {
+    "repository": "github.com/mlflow/mlflow",
+    "discovery_categories": [
+      "SEC-HTML-ESCAPING",
+      "SEC-PATH-CONFINEMENT",
+      "SEC-TEMPLATE-SANDBOX"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "One missing-context and three security-boundary deferrals. Template context data is not compiled source, recipe Python/pickle already has execution authority, and sandbox is not HTML/resource security. Fragment producer persists through store/run URI composition into old false local confinement root; selected ban and sibling scheme check are distinct repairs. Earlier remote-file authority classifier has a preexisting default-deny model-source guard and explicit dangerous opt-out, removed by its own coordinated fix; no default bypass or mixed-version guard claim. Unsupported-header HTML reflection is admin-gated and victim-browser delivery remains unresolved. Four pins retain515 inert texts/eight exact peers/four first parents/eight archive inventories, with missing-path provenance retained by context inventories. Named Jinja3.1.2/Flask2.3.3/CPython3.10.13 contracts are not installed/all-version/deployed proof. No numerical budget/ordinary-knowledge freeze, independent issue certification or approval. Conditional inert-source deductions, not reproduced behavior. No retained MLflow/template/recipe/authentication/server/URI/model/artifact/filesystem/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:151134756098358:165179803376669",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Ordinary Jinja compiles the card template; after sandbox restricts private/internal attribute access, while a real lower-trust template-source privilege boundary remains unestablished.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate template-source compilation from rendered context data, HTML escaping and pickle/recipe authority; URI fragment/path reinterpretation from remote-file authority classification, dangerous-source configuration and model/run confinement; reflected response markup from browser delivery, admin authorization, CORS and JSON/form admission.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "CardTab constructor stores template and discovers variables; add_html only assigns context, not recursively compiled source. BaseCard.add_tab exposes arbitrary HTML templates and to_html invokes selected renderer. Matched train producer uses a fixed template with metrics as context; recipe code imports user Python from recipe_root. Step inspection loads a pickle before rendering, so attacker control over a serialized card is not by itself a new rendering-only capability. These establish rendering behavior, not a preexisting promise to isolate an otherwise unprivileged template author.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need an actual lower-authority source for self.template distinct from data passed through add_html and from already executable recipe/pickle input. Literal production caller scan and retained examples do not establish universal absence of such a path. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project producers/helpers/callers/configuration/authentication/URI/filesystem/template/browser contracts are adjudication-only, never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Jinja3.1.2 docs explicitly describe sandboxing untrusted templates and block private/internal attributes, but no matched service ingestion or otherwise lower-trust template author has been established here. An attacker already supplying recipe Python or pickle can already execute code; that alone does not demonstrate an added privilege crossing at to_html. Keep discovery ambiguity rather than infer security from sandbox/CVE alone.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After changes compiled-template execution to SandboxedEnvironment with the same BaseLoader/context. Named Jinja contract blocks private/internal attribute access and permits ordinary public safe calls. Negative is that access-control mechanism only, conditional on a template security duty: sandbox does not add HTML autoescape, sanitize output, make pickle safe or bound CPU/memory. Intentional disallowing unsafe template operations is not an independently established ordinary regression.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Retain exact template/context/pickle/recipe and named sandbox contracts, but defer security-boundary eligibility: lower-trust compiled-template source and missing prior capabilities are unresolved. No inference from arbitrary recipe/pickle execution or rendered HTML data to a rendering-specific privilege boundary.",
+      "dependence_reason": "Four selected functions/four mechanical families do not establish four independent issues. Preserve original IDs/source bytes/splits and discovery statuses/categories. The2023 header reflection and template sandbox changes are different duties. The earlier remote-file classifier fix removes an explicit dangerous file-source opt-out; the later fragment fix has that stricter classifier already and separately repairs run-URI scheme validation. No blanket backfill of earlier flag guards, later sibling repairs or CVE incomplete-fix equivalence. Family/connected-block descriptors remain separate from pending lineage/alias/backport/root-cause adjudication.",
+      "open_questions": [
+        "Researcher confirm actual installed Jinja/Flask/CPython versions, OS/symlink/CWD/path behavior, server/backend/artifact configuration, model/experiment permissions and hostile input capabilities; named historical contracts are comparisons, not installed/all-version/deployed certification. Resolve common before-only context policy and independent issue identities.",
+        "Conditional inert-source deductions, not reproduced behavior. No retained MLflow/template/recipe/authentication/server/URI/model/artifact/filesystem/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "jinja2.Environment(loader=jinja2.BaseLoader()).from_string(self.template)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "SandboxedEnvironment(loader=BaseLoader()).from_string(self.template)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/recipes/cards/__init__.py",
+          "ref": "42f57ff7be3a22e072f48b011ed2c5e15efd71b6",
+          "needle": "self.template = template"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/recipes/cards/__init__.py",
+          "ref": "42f57ff7be3a22e072f48b011ed2c5e15efd71b6",
+          "needle": "self._context[name] = html_content"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/recipes/cards/__init__.py",
+          "ref": "42f57ff7be3a22e072f48b011ed2c5e15efd71b6",
+          "needle": "tab = CardTab(name, html_template)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/recipes/cards/__init__.py",
+          "ref": "42f57ff7be3a22e072f48b011ed2c5e15efd71b6",
+          "needle": "return pickle.load(f)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/recipes/step.py",
+          "ref": "42f57ff7be3a22e072f48b011ed2c5e15efd71b6",
+          "needle": "card = BaseCard.load(card_path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/recipes/steps/train.py",
+          "ref": "42f57ff7be3a22e072f48b011ed2c5e15efd71b6",
+          "needle": "\"<h3 class='section-title'>Summary Metrics (Validation)</h3>{{ METRICS }} \""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/recipes/steps/train.py",
+          "ref": "42f57ff7be3a22e072f48b011ed2c5e15efd71b6",
+          "needle": "sys.path.append(self.recipe_root)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/recipes/steps/train.py",
+          "ref": "42f57ff7be3a22e072f48b011ed2c5e15efd71b6",
+          "needle": "importlib.import_module(_USER_DEFINED_TRAIN_STEP_MODULE)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTRACTS.json",
+          "path": "src/jinja2/sandbox.py",
+          "ref": "3.1.2",
+          "needle": "return not (attr.startswith(\"_\") or is_internal_attribute(obj, attr))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTRACTS.json",
+          "path": "docs/sandbox.rst",
+          "ref": "3.1.2",
+          "needle": "The sandbox alone is not a solution for perfect security."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_DELIVERY.json",
+          "path": "requirements/core-requirements.txt",
+          "ref": "42f57ff7be3a22e072f48b011ed2c5e15efd71b6",
+          "needle": "Jinja2<4,>=2.11"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTRACTS.json",
+          "path": "Doc/library/pickle.rst",
+          "ref": "v3.10.13",
+          "needle": "arbitrary code during unpickling"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:211071458352479:226250294290403",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unvalidated experiment artifact-location fragment persists into run URI; old model-source guard treats even a nonlocal run URI as a local confinement root.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate template-source compilation from rendered context data, HTML escaping and pickle/recipe authority; URI fragment/path reinterpretation from remote-file authority classification, dangerous-source configuration and model/run confinement; reflected response markup from browser delivery, admin authorization, CORS and JSON/form admission.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old handler and append helper explicitly validate decoded query traversal to prevent path reinterpretation attacks, while local model-source guard requires a source within the named run artifact directory. Matched file and SQL experiment stores retain nonlocal URI unchanged; run creation appends run/artifacts to its parsed path and preserves fragment. local_file_uri_to_path strips parsed components only for literal file:; other schemes retain the complete string and URL-decode it. Old _validate_source nevertheless resolves that whole nonlocal run string with pathlib as though it were a local directory. Thus a fragment with path traversal can distort the purported root independently of the actual remote artifact repository. Existing safety duty predates the new tests.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need experiment/run/model producers, scheme-sensitive resolver and scheme-insensitive local-file conversion, normalization, model registry storage and actual server-side artifact reader. Match the later parent, which already rejects remote-authority file URIs; do not import the earlier optional file-source flag. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project producers/helpers/callers/configuration/authentication/URI/filesystem/template/browser contracts are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional POSIX witness: a client allowed to create experiments/runs and register/read a model, without authority over arbitrary server files, supplies a nonlocal artifact location with a clean query and traversal-bearing fragment. URI append preserves that fragment; whole-string filesystem normalization can climb from the CWD-relative synthetic scheme/authority/run path to an ancestor containing an unauthorized local source. A local source under that falsely computed root then passes old guard. File-backed registry returns that source as download URI; scheme registry chooses LocalArtifactRepository and the model artifact handler sends a safe-named child file from it. Path validation of the child cannot repair an already false root. Requires allowed API actions, an existing readable source directory/file, suitable CWD/OS/symlink state and no external control rejecting the location; does not claim every URI/OS/backend/deployment.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Selected after rejects a nonempty parsed fragment before store mutation, preventing this new-experiment fragment producer. Same commit independently requires is_local_uri(run.info.artifact_uri) before deriving a local model-source root. Do not attribute that sibling repair to selected handler or claim the handler cures preexisting metadata, fragment-free nonlocal run roots, every traversal/encoding/symlink or an empty trailing delimiter. A fragment ban is an intentional input-safety restriction, not automatically ordinary compatibility regression. Negative is only this selected nonempty-fragment admission.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched producer-normalizer-root-validator-registry-reader contracts support a conditional unauthorized local read and selected fragment-producer repair. Essential external context exceeds bounded selected before text; defer common-context eligibility, preserving sibling-only scope and incomplete-fix lineage without automatically merging independent issues.",
+      "dependence_reason": "Four selected functions/four mechanical families do not establish four independent issues. Preserve original IDs/source bytes/splits and discovery statuses/categories. The2023 header reflection and template sandbox changes are different duties. The earlier remote-file classifier fix removes an explicit dangerous file-source opt-out; the later fragment fix has that stricter classifier already and separately repairs run-URI scheme validation. No blanket backfill of earlier flag guards, later sibling repairs or CVE incomplete-fix equivalence. Family/connected-block descriptors remain separate from pending lineage/alias/backport/root-cause adjudication.",
+      "open_questions": [
+        "Researcher confirm actual installed Jinja/Flask/CPython versions, OS/symlink/CWD/path behavior, server/backend/artifact configuration, model/experiment permissions and hostile input capabilities; named historical contracts are comparisons, not installed/all-version/deployed certification. Resolve common before-only context policy and independent issue identities.",
+        "Conditional inert-source deductions, not reproduced behavior. No retained MLflow/template/recipe/authentication/server/URI/model/artifact/filesystem/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "validate_query_string(parsed_artifact_locaion.query)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if parsed_artifact_locaion.fragment:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/store/tracking/file_store.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "resolved_artifact_uri = resolve_uri_if_local(artifact_uri)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/store/tracking/file_store.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "self.get_experiment(experiment_id).artifact_location,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/store/tracking/sqlalchemy_store.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "artifact_location = resolve_uri_if_local(artifact_location)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/store/tracking/sqlalchemy_store.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "experiment.artifact_location, run_id, SqlAlchemyStore.ARTIFACTS_FOLDER_NAME"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/utils/uri.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "return local_uri"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/utils/uri.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "new_parsed_uri = parsed_uri._replace(path=new_uri_path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/utils/uri.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "if \"..\" in query:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/utils/file_utils.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "if uri.startswith(\"file:\"):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/utils/file_utils.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "return urllib.request.url2pathname(path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/handlers.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "run_artifact_dir = pathlib.Path(local_file_uri_to_path(run.info.artifact_uri)).resolve()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/handlers.py",
+          "ref": "f8d51e21523238280ebcfdb378612afd7844eca8",
+          "needle": "if is_local_uri(run.info.artifact_uri):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/store/model_registry/file_store.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "return model_version.storage_location or model_version.source"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/handlers.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "artifact_repo = get_artifact_repository(artifact_uri)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/handlers.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "file_sender_response = send_file(file_path, mimetype=mime_type, as_attachment=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTRACTS.json",
+          "path": "mlflow/store/artifact/local_artifact_repo.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "remote_file_path = os.path.join(self.artifact_dir, os.path.normpath(remote_file_path))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTRACTS.json",
+          "path": "mlflow/store/artifact/local_artifact_repo.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "shutil.copy2(remote_file_path, local_path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTRACTS.json",
+          "path": "Lib/urllib/parse.py",
+          "ref": "v3.10.13",
+          "needle": "if allow_fragments and '#' in url:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_DELIVERY.json",
+          "path": "Lib/pathlib.py",
+          "ref": "v3.10.13",
+          "needle": "def resolve(self, strict=False):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_DELIVERY.json",
+          "path": "Lib/posixpath.py",
+          "ref": "v3.10.13",
+          "needle": "def realpath(filename, *, strict=False):"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:26682418100577:13728681899479",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Remote-authority file URI formerly classifies False but downstream local repository can discard its authority; after rejects this unsupported combination and removes dangerous-source opt-out in companion code.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate template-source compilation from rendered context data, HTML escaping and pickle/recipe authority; URI fragment/path reinterpretation from remote-file authority classification, dangerous-source configuration and model/run confinement; reflected response markup from browser delivery, admin authorization, CORS and JSON/form admission.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Classifier documents local-path recognition and returns False for remote-looking authorities before checking file scheme. Exact POSIX local_file_uri_to_path instead parses any file: and uses only .path; scheme-based artifact registry chooses LocalArtifactRepository for file irrespective of authority. This establishes an interpretation mismatch. But matched old model-source guard explicitly rejects file URIs by default and only allows past it under a documented dangerous opt-out; that broader prior security duty cannot be inferred from the new throw alone.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact callers, flag default and deliberate authority granted by opting out, repeated decoding/absolute-path validation, storage and eventual server-side file interpretation. On Windows conversion preserves UNC server name rather than dropping it, so POSIX inference is not portable. Empty-scheme True and prefix-based loopback tests are unchanged. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project producers/helpers/callers/configuration/authentication/URI/filesystem/template/browser contracts are adjudication-only, never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Default model registration is already denied for these remote-authority file URIs by MLFLOW_ALLOW_FILE_URI_AS_MODEL_VERSION_SOURCE=False. With True an absolute traversal-free URI can pass the nonlocal path checks and later map to a local path on POSIX, but the old flag explicitly warns it can permit arbitrary filesystem files. Its mere enablement is not enough to establish unauthorized access contrary to that intentionally risky policy. Other callers require their own lower-trust confinement duty; do not convert a fabricated URI/classifier return or advisory into a default-deployment bypass.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After raises for file scheme with remote-looking hostname before returning False. Companion code deletes flag and fallback check, making unsupported authority rejection unconditional at selected classifier; same-ref later classifier is already present in fragment case. Restrict negative to rejection of this input class, not all loopback prefixes, UNC/empty-scheme inputs, every model/run root or artifact backend. Removing explicitly risky remote-file support is intentional safety-policy tightening, not an automatic selected ordinary regression.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Record old default-deny guard, explicit dangerous opt-out and real scheme-to-local-path mismatch without promoting to a default security bypass. Actual lower-authority access contrary to an admitted old policy remains unresolved. Named after rejection is bounded; source-level contract/attribution/context and lineage remain pending.",
+      "dependence_reason": "Four selected functions/four mechanical families do not establish four independent issues. Preserve original IDs/source bytes/splits and discovery statuses/categories. The2023 header reflection and template sandbox changes are different duties. The earlier remote-file classifier fix removes an explicit dangerous file-source opt-out; the later fragment fix has that stricter classifier already and separately repairs run-URI scheme validation. No blanket backfill of earlier flag guards, later sibling repairs or CVE incomplete-fix equivalence. Family/connected-block descriptors remain separate from pending lineage/alias/backport/root-cause adjudication.",
+      "open_questions": [
+        "Researcher confirm actual installed Jinja/Flask/CPython versions, OS/symlink/CWD/path behavior, server/backend/artifact configuration, model/experiment permissions and hostile input capabilities; named historical contracts are comparisons, not installed/all-version/deployed certification. Resolve common before-only context policy and independent issue identities.",
+        "Conditional inert-source deductions, not reproduced behavior. No retained MLflow/template/recipe/authentication/server/URI/model/artifact/filesystem/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if parsed_uri.hostname and not ("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "is_remote_hostname = parsed_uri.hostname and not ("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/handlers.py",
+          "ref": "1af5a88a972986525d6573c0a4455070a16b4f27",
+          "needle": "if not MLFLOW_ALLOW_FILE_URI_AS_MODEL_VERSION_SOURCE.get() and is_file_uri(source):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/environment_variables.py",
+          "ref": "1af5a88a972986525d6573c0a4455070a16b4f27",
+          "needle": "\"MLFLOW_ALLOW_FILE_URI_AS_MODEL_VERSION_SOURCE\", False"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/environment_variables.py",
+          "ref": "1af5a88a972986525d6573c0a4455070a16b4f27",
+          "needle": "because it can allow access to arbitrary files on the specified filesystem"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/handlers.py",
+          "ref": "1af5a88a972986525d6573c0a4455070a16b4f27",
+          "needle": "source_path = re.sub(r\"/+\", \"/\", urllib.parse.urlparse(source).path.rstrip(\"/\"))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/handlers.py",
+          "ref": "1af5a88a972986525d6573c0a4455070a16b4f27",
+          "needle": "if resolved_path != source_path:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/handlers.py",
+          "ref": "1af5a88a972986525d6573c0a4455070a16b4f27",
+          "needle": "_validate_source(request_message.source, request_message.run_id)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/store/artifact/artifact_repository_registry.py",
+          "ref": "1af5a88a972986525d6573c0a4455070a16b4f27",
+          "needle": "_artifact_repository_registry.register(\"file\", LocalArtifactRepository)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/utils/file_utils.py",
+          "ref": "1af5a88a972986525d6573c0a4455070a16b4f27",
+          "needle": "path = parsed_path.path"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/utils/file_utils.py",
+          "ref": "1af5a88a972986525d6573c0a4455070a16b4f27",
+          "needle": "if is_windows() and parsed_path.netloc:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/store/artifact/local_artifact_repo.py",
+          "ref": "1af5a88a972986525d6573c0a4455070a16b4f27",
+          "needle": "self._artifact_dir = local_file_uri_to_path(self.artifact_uri)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/handlers.py",
+          "ref": "1af5a88a972986525d6573c0a4455070a16b4f27",
+          "needle": "artifact_uri = _get_model_registry_store().get_model_version_download_uri(name, version)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTRACTS.json",
+          "path": "mlflow/store/artifact/local_artifact_repo.py",
+          "ref": "1af5a88a972986525d6573c0a4455070a16b4f27",
+          "needle": "shutil.copy2(remote_file_path, local_path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/handlers.py",
+          "ref": "438a450714a3ca06285eeea34bdc6cf79d7f6cbc",
+          "needle": "def _validate_source(source: str, run_id: str) -> None:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/utils/uri.py",
+          "ref": "c01c02a315431fddd40f6b18f1d8791d4cdd20da",
+          "needle": "is_remote_hostname = parsed_uri.hostname and not ("
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:97828797279610:196264160346865",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unsupported request Content-Type is reflected into an ordinary Flask HTML error response; constant after message removes this reflection, while victim delivery remains unresolved.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate template-source compilation from rendered context data, HTML escaping and pickle/recipe authority; URI fragment/path reinterpretation from remote-file authority classification, dangerous-source configuration and model/run confinement; reflected response markup from browser delivery, admin authorization, CORS and JSON/form admission.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Selected old else branch interpolates request header into make_response(string,400). Named Flask2.3.3 make_response constructs response_class for string/tuple body and its actual Flask Response default_mimetype is text/html, irrespective of400 status. Matched import uses Flask make_response; decorator only catches MlflowException, and auth after hook returns errors unchanged. Existing error output treats header as data, not HTML; constant after message removes that precise data-to-markup interpretation.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need Flask response semantics, exact authentication/authorization hook and method route, victim-browser ability to transmit an unsupported header whose raw value reaches this response, and response rendering/CSP/proxy/CORS constraints. HTML form/JSON/flash paths are separate; arbitrary custom-header fetch cannot simply be treated as an executable victim navigation. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project producers/helpers/callers/configuration/authentication/URI/filesystem/template/browser contracts are adjudication-only, never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Header-to-HTML reflection is supported, but create_app installs _before_request and POST CREATE_USER validator admits only admins after authentication. Admin short-circuit is intentional, not absent auth; raw header control by an authorized API client does not establish execution in another victim authority. Standard forms constrain Content-Type and cross-origin custom-header requests may require preflight and do not automatically render returned HTML as a document. No realistic lower-trust victim-delivery route is established from the retained source, so preserve a security-boundary deferral rather than infer remote unauthenticated XSS or signup bypass.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After uses constant allowed-types message with400, so unsupported header no longer appears in this selected error response. Existing exact Content-Type form/JSON branches remain unchanged; companion JSON validation is elsewhere and not a whole auth-middleware rewrite. Negative is this reflection only, not every flash/alert/template sink, complete XSS policy, all parameterized media types or authorization correctness. No supported selected ordinary after regression assigned.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Bounded raw error reflection and its constant-message repair are established, but admin-gated browser/header/victim delivery and execution authority remain unresolved. Defer that dimension, preserving discovery supported status without silently equating raw reflection with a demonstrated victim XSS boundary.",
+      "dependence_reason": "Four selected functions/four mechanical families do not establish four independent issues. Preserve original IDs/source bytes/splits and discovery statuses/categories. The2023 header reflection and template sandbox changes are different duties. The earlier remote-file classifier fix removes an explicit dangerous file-source opt-out; the later fragment fix has that stricter classifier already and separately repairs run-URI scheme validation. No blanket backfill of earlier flag guards, later sibling repairs or CVE incomplete-fix equivalence. Family/connected-block descriptors remain separate from pending lineage/alias/backport/root-cause adjudication.",
+      "open_questions": [
+        "Researcher confirm actual installed Jinja/Flask/CPython versions, OS/symlink/CWD/path behavior, server/backend/artifact configuration, model/experiment permissions and hostile input capabilities; named historical contracts are comparisons, not installed/all-version/deployed certification. Resolve common before-only context policy and independent issue identities.",
+        "Conditional inert-source deductions, not reproduced behavior. No retained MLflow/template/recipe/authentication/server/URI/model/artifact/filesystem/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return make_response(f\"Invalid content type: '{content_type}'\", 400)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return make_response(message, 400)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/auth/__init__.py",
+          "ref": "4b8bb73ea5e30e3df312ae4ce9d1d3825a6faf09",
+          "needle": "from flask import Flask, Response, flash, make_response, render_template_string, request"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/auth/__init__.py",
+          "ref": "4b8bb73ea5e30e3df312ae4ce9d1d3825a6faf09",
+          "needle": "# only admins can create user, but admins won't reach this validator"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/auth/__init__.py",
+          "ref": "4b8bb73ea5e30e3df312ae4ce9d1d3825a6faf09",
+          "needle": "(CREATE_USER, \"POST\"): validate_can_create_user"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/auth/__init__.py",
+          "ref": "4b8bb73ea5e30e3df312ae4ce9d1d3825a6faf09",
+          "needle": "    # admins don't need to be authorized\n    if sender_is_admin():\n        return\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/auth/__init__.py",
+          "ref": "4b8bb73ea5e30e3df312ae4ce9d1d3825a6faf09",
+          "needle": "    if request.authorization is None:\n        return make_basic_auth_response()\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/auth/__init__.py",
+          "ref": "4b8bb73ea5e30e3df312ae4ce9d1d3825a6faf09",
+          "needle": "if 400 <= resp.status_code < 600:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/auth/__init__.py",
+          "ref": "4b8bb73ea5e30e3df312ae4ce9d1d3825a6faf09",
+          "needle": "app.before_request(_before_request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTEXT.json",
+          "path": "mlflow/server/auth/__init__.py",
+          "ref": "4b8bb73ea5e30e3df312ae4ce9d1d3825a6faf09",
+          "needle": "view_func=create_user,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_CONTRACTS.json",
+          "path": "src/flask/app.py",
+          "ref": "2.3.3",
+          "needle": "if isinstance(rv, (str, bytes, bytearray)) or isinstance(rv, _abc_Iterator):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_DELIVERY.json",
+          "path": "src/flask/wrappers.py",
+          "ref": "2.3.3",
+          "needle": "default_mimetype: str | None = \"text/html\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_050_DELIVERY.json",
+          "path": "requirements/core-requirements.txt",
+          "ref": "4b8bb73ea5e30e3df312ae4ce9d1d3825a6faf09",
+          "needle": "Flask<4"
+        }
+      ]
+    }
+  ]
+}

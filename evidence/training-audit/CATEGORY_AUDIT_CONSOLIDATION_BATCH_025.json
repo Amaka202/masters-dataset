@@ -1,0 +1,901 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-025",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All nine Nautobot training candidates across every discovery status; this repository has no null-category candidates.",
+  "selection_rule": {
+    "repository": "github.com/nautobot/nautobot",
+    "discovery_categories": [
+      "SEC-HTML-ESCAPING",
+      "SEC-RESOURCE-AUTHORIZATION"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 827,
+    "sha256": "8b0f0e74c6a9a96b62ac9ca15164b9eeaceb87d10e5b070fc1d8c52fa3a6f359"
+  },
+  "interpretation": "Three missing-context, four selected-attribution and two explicit paired-negative deferrals. Matched standard ErrorDict and RegexValidator formatting routes already escape old data; renderer downgrade is necessary for newly changed consumers but no independent old helper bypass is isolated. Concrete DeviceType import/form/model/message contracts resolve prior missing producer/sink context under a separate file-author/operator boundary. Append only two discovery revision2 events (renderer supported-to-ambiguous, import ambiguous-to-supported); preserve all825 prefix events, categories/families/source bytes/splits/prior batches and45 protected inputs. New link target-fragment escaping and unconditional protected-dependency URL calls introduce supported after-contract regressions. Nine rows/two mechanical families are not adjudicated issues. All application, dependency, browser/template/regex/auth/ORM/DB/Git/Celery programs, requests/payloads and upstream tests remain inert; deductions are not reproduced results.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:128109415549446:51065032558903",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Invalid-filter message composition is not a demonstrated old defect for the standard already-escaped ErrorDict path.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve HTML escaping versus resource authorization. Distinguish already escaped ErrorDict/ErrorList values, validator percent-formatting loss of safety markers, raw user/config/model text, intentional HTML fragments, renderer trust-marker production and caller escaping duties. Request control is not automatically a cross-principal audience; coarse change permission is not per-repository authorization. No new leaf or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Stock django-filter23.1 errors returns self.form.errors, explicitly an ErrorDict. In the retained lockfile-matched Django3.2.23, ErrorDict/ErrorList are html_safe and their as_ul methods use format_html/format_html_join, escaping ordinary field/error text. Old f-string interpolation therefore already embeds escaped structured HTML; new format_html honors its __html__ and embeds that same representation. Replacing mark_safe around this value is not alone an old reflected-XSS witness. An admitted different plain-unsafe errors producer or unsafe custom message would require its actual old contract; neither broad advisory membership nor a hypothetical custom override establishes a local differential.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need BaseFilterSet inheritance, actual errors type, ErrorDict/ErrorList html_safe/format_html composition and Django message rendering. Standard SafeData is not equivalent to raw attacker text; compare matched complete versions. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old producers/helpers/models/permissions/dependencies/templates, after, advisories, tests, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "A request can influence filter values, but standard error representation escapes those values before this selected interpolation. Its message normally returns to the requesting session. Neither a cross-principal script audience nor an old unsafe/new safe result is established on that stock route. Alternate custom producers remain open, not universally safe.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No selected old-positive/new-negative HTML pair is isolated for the matched standard errors domain. New format_html does not re-escape __html__ objects. This is not a universal claim about custom filters, deliberately safe error messages or other message sinks.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The ordinary matched old path is already escaped, or the helper change is necessary for newly changed consumers but does not isolate an old selected-component failure. Preserve ambiguity rather than borrow sibling/advisory blame.",
+      "dependence_reason": "Preserve fix-family:4447f982bbac68a90e4c and exact/AST/span/history relationships. Eight HTML rows from one coordinated commit/CVE are one mechanical family, including renderer producer and multiple consumers; one repository-authorization row is a second family. Nine functions/two families are review units, not independently adjudicated issues. Generic sibling methods share a full source file without becoming the same selected function.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/form/filter/model/permission contracts, real actor/input ownership and final sink audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No Nautobot/Django/Jinja/filter/HTML/browser/regex/auth/ORM/DB/Git/Celery/job/CPython/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "mark_safe(f\"Invalid filters were specified: {self.filterset.errors}\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "format_html(\"Invalid filters were specified: {}\", self.filterset.errors)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django_filters/filterset.py",
+          "ref": "23.1",
+          "needle": "return self.form.errors"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/forms/utils.py",
+          "ref": "3.2.23",
+          "needle": "class ErrorDict(dict):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/forms/utils.py",
+          "ref": "3.2.23",
+          "needle": "format_html_join('', '<li>{}{}</li>', self.items())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/forms/utils.py",
+          "ref": "3.2.23",
+          "needle": "format_html_join('', '<li>{}</li>', ((e,) for e in self))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/utils/html.py",
+          "ref": "3.2.23",
+          "needle": "if hasattr(text, '__html__'):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "nautobot/core/templates/base_django.html",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "{{ message }}"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:175975646701724:230015022262627",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Custom link renderer formats editable text/group/URL into trusted HTML; after also escapes its own target attribute fragment.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve HTML escaping versus resource authorization. Distinguish already escaped ErrorDict/ErrorList values, validator percent-formatting loss of safety markers, raw user/config/model text, intentional HTML fragments, renderer trust-marker production and caller escaping duties. Request control is not automatically a cross-principal audience; coarse change permission is not per-repository authorization. No new leaf or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "CustomLink text, group and target URL are editable CharFields; the old renderer interpolates them using ordinary format and marks the entire fragment safe. A plain group name or literal rendered markup can escape its text/attribute role. Old user-facing link rendering should preserve data boundaries. Exact Django-Jinja backend autoescape does not sanitize literal template markup, and its render returns SafeString; after value-wise format_html therefore also requires the coordinated plain-string render_jinja2 change. Existing new_window=True separately promises to force a new window.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need model/form/edit-view admission, reader object page/simple-tag path, whole-fragment composition, django-jinja SafeString and CPython string-concatenation semantics. Need constants and HTML attribute parsing to bound after behavior; do not combine after consumers with the old safe-marked helper. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old producers/helpers/models/permissions/dependencies/templates, after, advisories, tests, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A user allowed to create/change CustomLink content can set an applicable link group/text that another object-page reader sees without needing that reader privilege. Plain group names supply a direct lower-trust text-to-HTML route even independently of template evaluation. Requires legitimate editor permission and a reader viewing the relevant content type; no anonymous write, template sandbox escape, concrete deployment or universal URL-scheme sanitization is assumed.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Value-wise escaping plus the matched helper downgrade closes the selected raw-HTML composition path, but The selected after passes ordinary string link_target = ' target=\"_blank\"' through format_html as an operand occupying the unquoted attribute-fragment slot in LINK_BUTTON/GROUP_LINK. Django conditional_escape escapes its quote characters, producing target=&quot;_blank&quot; instead of target=\"_blank\". HTML unquoted-value character-reference rules put those decoded quotes into the attribute value; they are not delimiter syntax. The target is consequently the ordinary name containing quote characters, not the reserved _blank keyword. Repeated ordinary activations can reuse that named browsing context instead of forcing a fresh window as the existing new_window flag and old literal _blank require. Both grouped and ungrouped new_window=True paths are affected; false remains the empty fragment. This is an introduced supported Boolean-feature regression, deduced from retained HTML/Django contracts rather than executed browser behavior.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "The old HTML-escaping violation has a supported lower-trust route, but after introduces a failure of an existing ordinary link/deletion-error contract; it cannot serve as an unqualified paired negative.",
+      "dependence_reason": "Preserve fix-family:4447f982bbac68a90e4c and exact/AST/span/history relationships. Eight HTML rows from one coordinated commit/CVE are one mechanical family, including renderer producer and multiple consumers; one repository-authorization row is a second family. Nine functions/two families are review units, not independently adjudicated issues. Generic sibling methods share a full source file without becoming the same selected function.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/form/filter/model/permission contracts, real actor/input ownership and final sink audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No Nautobot/Django/Jinja/filter/HTML/browser/regex/auth/ORM/DB/Git/Celery/job/CPython/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "LINK_BUTTON.format(link_rendered, link_target, cl.button_class, text_rendered)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "LINK_BUTTON, link_rendered, link_target, cl.button_class, text_rendered"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                    link_rendered = render_jinja2(cl.target_url, link_context)\n                    link_target = ' target=\"_blank\"' if cl.new_window else \"\"\n                    template_code += LINK_BUTTON.format(link_rendered, link_target, cl.button_class, text_rendered)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    link_rendered = render_jinja2(cl.target_url, link_context)\n                    link_target = ' target=\"_blank\"' if cl.new_window else \"\"\n                    template_code += format_html(\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "LINK_BUTTON ="
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "GROUP_LINK ="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/extras/models/models.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "new_window = models.BooleanField(help_text=\"Force link to open in a new window\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/extras/models/models.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "class CustomLink("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/extras/views.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "class CustomLinkEditView("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "nautobot/core/templates/generic/object_retrieve.html",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "{% custom_links object %}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django_jinja/backend.py",
+          "ref": "2.10.2",
+          "needle": "return mark_safe(self._process_template("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_PEERS.json",
+          "path": "nautobot/core/utils/data.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d",
+          "needle": "return \"\" + template.render(context=context)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/utils/html.py",
+          "ref": "3.2.23",
+          "needle": "args_safe = map(conditional_escape, args)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_DELIVERY.json",
+          "path": "sections/browsers.include",
+          "ref": "html5.2",
+          "needle": "    <li>If the given browsing context name is not <code>_blank</code> and there exists a\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_DELIVERY.json",
+          "path": "sections/syntax.include",
+          "ref": "html5.2",
+          "needle": "Attribute value (unquoted) state"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "The selected after passes ordinary string link_target = ' target=\"_blank\"' through format_html as an operand occupying the unquoted attribute-fragment slot in LINK_BUTTON/GROUP_LINK. Django conditional_escape escapes its quote characters, producing target=&quot;_blank&quot; instead of target=\"_blank\". HTML unquoted-value character-reference rules put those decoded quotes into the attribute value; they are not delimiter syntax. The target is consequently the ordinary name containing quote characters, not the reserved _blank keyword. Repeated ordinary activations can reuse that named browsing context instead of forcing a fresh window as the existing new_window flag and old literal _blank require. Both grouped and ungrouped new_window=True paths are affected; false remains the empty fragment. This is an introduced supported Boolean-feature regression, deduced from retained HTML/Django contracts rather than executed browser behavior."
+    },
+    {
+      "pair_id": "CVEfixes:21295446428673:79807861444183",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Job button renderer trusts editable text/group/error/object fields as whole HTML before escaping individual values.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve HTML escaping versus resource authorization. Distinguish already escaped ErrorDict/ErrorList values, validator percent-formatting loss of safety markers, raw user/config/model text, intentional HTML fragments, renderer trust-marker production and caller escaping duties. Request control is not automatically a cross-principal audience; coarse change permission is not per-repository authorization. No new leaf or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old job_buttons inserts editable rendered text and group/name values using raw format/f-strings and marks the complete buttons/forms safe. Old creator/editor permission is not permission to execute browser code as every object-page reader. Disabled button state checks job-run permissions, not HTML safety; displaying a disabled button still renders its group/label. After preserves only fixed/nested audited fragments as safe and formats operands, with the matched renderer downgrade required for user-template results.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need JobButton model/form/edit view, applicability and reader object template, literal button/modal/form constants, run-permission disabled-state condition, old django-jinja marker and coordinated after helper. Job execution is separate from display. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old producers/helpers/models/permissions/dependencies/templates, after, advisories, tests, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A legitimate JobButton editor can place markup in an applicable group/text field displayed to a different object-page reader, including a reader without job-run permission. The browser-rendering boundary is crossed before the job endpoint or CSRF-protected submit; no ability to run a job, unauthenticated editing, sandbox break or actual victim browser is assumed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After formats data operands, retains safe fixed li/hidden-input/nested fragments, and uses the coordinated plain-render helper so template output is escaped. This is a mechanism-local HTML-composition negative for ordinary model strings, not general URL policy, intentional __html__ providers, job authorization, all JavaScript contexts or complete application cleanliness.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched old admission, sink and conditional lower-trust delivery support the selected repair, but its essential old project/runtime/template/permission contracts are missing from a uniform before-only function.",
+      "dependence_reason": "Preserve fix-family:4447f982bbac68a90e4c and exact/AST/span/history relationships. Eight HTML rows from one coordinated commit/CVE are one mechanical family, including renderer producer and multiple consumers; one repository-authorization row is a second family. Nine functions/two families are review units, not independently adjudicated issues. Generic sibling methods share a full source file without becoming the same selected function.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/form/filter/model/permission contracts, real actor/input ownership and final sink audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No Nautobot/Django/Jinja/filter/HTML/browser/regex/auth/ORM/DB/Git/Celery/job/CPython/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return mark_safe(buttons_html + forms_html)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return buttons_html + forms_html"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "GROUP_DROPDOWN ="
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                        buttons_html += format_html(NO_CONFIRM_BUTTON, **template_args)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            \"hidden_inputs\": hidden_inputs,\n            \"disabled\": \"\" if context[\"user\"].has_perms((\"extras.run_jobbutton\", \"extras.run_job\")) else \"disabled\",\n        }\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/extras/models/jobs.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "class JobButton("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/extras/views.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "class JobButtonUIViewSet("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "nautobot/core/templates/generic/object_retrieve.html",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "{% job_buttons object %}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_PEERS.json",
+          "path": "nautobot/core/utils/data.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d",
+          "needle": "return \"\" + template.render(context=context)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django_jinja/backend.py",
+          "ref": "2.10.2",
+          "needle": "return mark_safe(self._process_template("
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:236838846013906:236190291572357",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Repository operation checks coarse change permission but looks up a target without applying object constraints.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve HTML escaping versus resource authorization. Distinguish already escaped ErrorDict/ErrorList values, validator percent-formatting loss of safety markers, raw user/config/model text, intentional HTML fragments, renderer trust-marker production and caller escaping duties. Request control is not automatically a cross-principal audience; coarse change permission is not per-repository authorization. No new leaf or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old ObjectPermissionBackend.has_perm with no object returnsTrue if the permission exists for some objects, explicitly not necessarily the requested repository. RestrictedQuerySet.restrict separately filters permission constraints. Thus the selected global extras.change_gitrepository gate does not authorize every UUID. Old post wrappers pass that UUID to the helper, which looks up unrestricted GitRepository and enqueues its operation when workers exist. Existing object-scoped permission documentation supports this duty without borrowing the advisory-wide anonymous endpoint claim.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact same-version permission backend, queryset restriction/constraints, route/post wrapper, worker availability, enqueue helper and JobResult producer, plus GitRepositorySync/DryRun worker consumers. A UUID is an identifier, not authorization. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old producers/helpers/models/permissions/dependencies/templates, after, advisories, tests, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An active authenticated user with change permission constrained to repositoryA can name readable-but-not-changeable repositoryB and submit the normal CSRF-admitted POST while a worker and registered job are available. The old helper enqueues B by pk. The enqueue producer contains no B ownership check, and matched sync/dry-run methods operate on the passed repository. Additional worker/task admission is a prerequisite, not assumed bypassed; no anonymous access, EXEMPT_VIEW_PERMISSIONS override, Git command, network request or deployed worker is claimed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After restrict(request.user,\"change\") precedes UUID lookup and enqueue, so a B outside those object constraints fails lookup before func. Coarse gate and worker check remain. This is a bounded per-repository enqueue-authorization negative, not anonymous-endpoint coverage, CSRF certification, all worker/task permissions or all Git/storage safety.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched old admission, sink and conditional lower-trust delivery support the selected repair, but its essential old project/runtime/template/permission contracts are missing from a uniform before-only function.",
+      "dependence_reason": "Preserve fix-family:78b846bad9e9de7aa086 and exact/AST/span/history relationships. Eight HTML rows from one coordinated commit/CVE are one mechanical family, including renderer producer and multiple consumers; one repository-authorization row is a second family. Nine functions/two families are review units, not independently adjudicated issues. Generic sibling methods share a full source file without becoming the same selected function.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/form/filter/model/permission contracts, real actor/input ownership and final sink audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No Nautobot/Django/Jinja/filter/HTML/browser/regex/auth/ORM/DB/Git/Celery/job/CPython/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "repository = get_object_or_404(GitRepository, pk=pk)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "repository = get_object_or_404(GitRepository.objects.restrict(request.user, \"change\"), pk=pk)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not request.user.has_perm(\"extras.change_gitrepository\"):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "class GitRepositorySyncView("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/core/authentication.py",
+          "ref": "dd623e6c3307f48b6357fcc91925bcad5192abfb^",
+          "needle": "if obj is None:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/core/authentication.py",
+          "ref": "dd623e6c3307f48b6357fcc91925bcad5192abfb^",
+          "needle": "but not necessarily a specific object"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/core/models/querysets.py",
+          "ref": "dd623e6c3307f48b6357fcc91925bcad5192abfb^",
+          "needle": "qs = self.filter(attrs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/core/models/querysets.py",
+          "ref": "dd623e6c3307f48b6357fcc91925bcad5192abfb",
+          "needle": "qs = self.filter(attrs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/extras/datasources/git.py",
+          "ref": "dd623e6c3307f48b6357fcc91925bcad5192abfb^",
+          "needle": "return JobResult.enqueue_job(job_model, user, repository=repository.pk)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "nautobot/extras/models/jobs.py",
+          "ref": "dd623e6c3307f48b6357fcc91925bcad5192abfb^",
+          "needle": "cls.objects.create("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "nautobot/extras/models/jobs.py",
+          "ref": "dd623e6c3307f48b6357fcc91925bcad5192abfb^",
+          "needle": "job_model.job_task.apply_async("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_ACTIONS.json",
+          "path": "nautobot/core/jobs/__init__.py",
+          "ref": "dd623e6c3307f48b6357fcc91925bcad5192abfb^",
+          "needle": "ensure_git_repository(repository, logger=self.logger)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_ACTIONS.json",
+          "path": "nautobot/core/jobs/__init__.py",
+          "ref": "dd623e6c3307f48b6357fcc91925bcad5192abfb^",
+          "needle": "git_repository_dry_run(repository, logger=self.logger)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:259971022501482:56568760643377",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Protected-deletion message marks stored object representations safe; after removes the optional-URL fallback.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve HTML escaping versus resource authorization. Distinguish already escaped ErrorDict/ErrorList values, validator percent-formatting loss of safety markers, raw user/config/model text, intentional HTML fragments, renderer trust-marker production and caller escaping duties. Request control is not automatically a cross-principal audience; coarse change permission is not per-repository authorization. No new leaf or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old helper interpolates root obj_list strings into strong markup and marks the entire error safe; it also inserts no-URL dependent strings raw. Exact Manufacturer.name CharField and __str__ plus ManufacturerForm admit ordinary markup-bearing name data. A DeviceType references Manufacturer with PROTECT, and generic ObjectDeleteView catches ProtectedError and invokes this helper. Rendering stored names as data is an existing HTML duty. Independently, the old helper explicitly accepts dependencies without get_absolute_url.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need concrete model/form/string/protected-FK producer, deletion caller and shared messages template, Django protected-object contract and after generator. A deletion failure branch and cross-user name ownership are essential, not just possible object.__str__. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old producers/helpers/models/permissions/dependencies/templates, after, advisories, tests, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A user allowed to rename a Manufacturer but without a different reader/deleter privilege can supply a stored name. When an authorized other user attempts deletion of that Manufacturer while a DeviceType still references it, PROTECT causes this helper to render the root name into the deleter message. Thus the victim need not submit attacker markup themselves. Existing dependency and successful authenticated/CSRF-admitted deletion attempt are prerequisites; no arbitrary model acceptance, anonymous write or actual deletion/browser execution is assumed.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After format_html escapes joined ordinary root-name strings, closing the witnessed root-name HTML path. But Old handle_protectederror explicitly handles a protected dependency lacking get_absolute_url by rendering its string. Django ProtectedError/PROTECT admits related model objects without requiring a URL method. The new generator unconditionally invokes dependent.get_absolute_url for each of the first50 dependencies. An admitted no-URL protected model that previously produced an error message therefore raises AttributeError before messages.error. This is an introduced failure of the helper explicit optional-URL input contract, conditional on such a protected dependency; the ordinary built-in Manufacturer/DeviceType security witness does have URLs and is not falsely claimed to exhibit this separate failure. No plugin, ORM deletion or request executes.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "The old HTML-escaping violation has a supported lower-trust route, but after introduces a failure of an existing ordinary link/deletion-error contract; it cannot serve as an unqualified paired negative.",
+      "dependence_reason": "Preserve fix-family:4447f982bbac68a90e4c and exact/AST/span/history relationships. Eight HTML rows from one coordinated commit/CVE are one mechanical family, including renderer producer and multiple consumers; one repository-authorization row is a second family. Nine functions/two families are review units, not independently adjudicated issues. Generic sibling methods share a full source file without becoming the same selected function.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/form/filter/model/permission contracts, real actor/input ownership and final sink audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No Nautobot/Django/Jinja/filter/HTML/browser/regex/auth/ORM/DB/Git/Celery/job/CPython/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "f\"Unable to delete <strong>{', '.join(str(obj) for obj in obj_list)}</strong>. \""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "((dependent.get_absolute_url(), dependent) for dependent in protected_objects[:50])"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if hasattr(dependent, \"get_absolute_url\"):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "dependent_objects.append(str(dependent))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/dcim/models/devices.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "class Manufacturer("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/dcim/models/devices.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "\n    name = models.CharField(max_length=100, unique=True)\n    description = models.CharField(max_length=200, blank=True)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/dcim/models/devices.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "    description = models.CharField(max_length=200, blank=True)\n\n    class Meta:\n        ordering = [\"name\"]\n\n    def __str__(self):\n        return self.name\n\n\n@extras_features(\n    \"custom_links\",\n    \"custom_validators\",\n    \"export_templates\",\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/dcim/models/devices.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "manufacturer = models.ForeignKey(to=\"dcim.Manufacturer\", on_delete=models.PROTECT"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/dcim/forms.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "class ManufacturerForm("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_PEERS.json",
+          "path": "nautobot/core/views/generic.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "handle_protectederror([obj], request, e)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "nautobot/core/templates/base_django.html",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "{{ message }}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/db/models/deletion.py",
+          "ref": "3.2.23",
+          "needle": "self.protected_objects = protected_objects"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_MESSAGES.json",
+          "path": "django/contrib/messages/storage/cookie.py",
+          "ref": "3.2.23",
+          "needle": "obj[3] = mark_safe(obj[3])"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Old handle_protectederror explicitly handles a protected dependency lacking get_absolute_url by rendering its string. Django ProtectedError/PROTECT admits related model objects without requiring a URL method. The new generator unconditionally invokes dependent.get_absolute_url for each of the first50 dependencies. An admitted no-URL protected model that previously produced an error message therefore raises AttributeError before messages.error. This is an introduced failure of the helper explicit optional-URL input contract, conditional on such a protected dependency; the ordinary built-in Manufacturer/DeviceType security witness does have URLs and is not falsely claimed to exhibit this separate failure. No plugin, ORM deletion or request executes."
+    },
+    {
+      "pair_id": "CVEfixes:274355322654615:101401304602009",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Custom-field validator message safety marker is ordinarily removed by ValidationError percent-formatting before HTML rendering.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve HTML escaping versus resource authorization. Distinguish already escaped ErrorDict/ErrorList values, validator percent-formatting loss of safety markers, raw user/config/model text, intentional HTML fragments, renderer trust-marker production and caller escaping duties. Request control is not automatically a cross-principal audience; coarse change permission is not per-repository authorization. No new leaf or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The selected old RegexValidator receives a mark_safe message containing stored regex text. However exact Django3.2.23 RegexValidator raises ValidationError with truthy params={value: value}; ValidationError.__iter__ applies message %= error.params. SafeString has no percent-format override, and the retained CPython3 comparison formats to an ordinary string. ErrorList then conditionally escapes it; the form-error template also renders via standard autoescaping. Thus the ordinary admitted error route does not preserve the unsafe marker inferred from the selected producer. Alternate direct message/safe consumers need an actual old contract, not the broad custom-link advisory.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact to_form_field caller, RegexValidator params, ValidationError iteration and ErrorList consumption, CPython formatting semantics, custom-field form mixin and form template. No regex is compiled or executed. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old producers/helpers/models/permissions/dependencies/templates, after, advisories, tests, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "A custom-field editor may control validation_regex and another user may trigger invalid data, but in the matched stock form-error path that regex becomes escaped text before the victim HTML sink. No selected old unsafe/new safe security differential is established there. Different message access/render paths remain unresolved, not proven safe or borrowed from link/button fields.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No selected old-positive/new-negative HTML pair is established for the matched stock validator/form route. New format_html escapes the producer message but does not establish that old standard error display executed it; percent-format coercion remains. This is not regex-complexity safety, generic custom-form coverage or a new taxonomy assignment.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The ordinary matched old path is already escaped, or the helper change is necessary for newly changed consumers but does not isolate an old selected-component failure. Preserve ambiguity rather than borrow sibling/advisory blame.",
+      "dependence_reason": "Preserve fix-family:4447f982bbac68a90e4c and exact/AST/span/history relationships. Eight HTML rows from one coordinated commit/CVE are one mechanical family, including renderer producer and multiple consumers; one repository-authorization row is a second family. Nine functions/two families are review units, not independently adjudicated issues. Generic sibling methods share a full source file without becoming the same selected function.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/form/filter/model/permission contracts, real actor/input ownership and final sink audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No Nautobot/Django/Jinja/filter/HTML/browser/regex/auth/ORM/DB/Git/Celery/job/CPython/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "message=mark_safe(f\"Values must match this regex: <code>{self.validation_regex}</code>\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "message=format_html(\"Values must match this regex: <code>{}</code>\", self.validation_regex)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/core/validators.py",
+          "ref": "3.2.23",
+          "needle": "        if invalid_input:\n            raise ValidationError(self.message, code=self.code, params={'value': value})\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/core/exceptions.py",
+          "ref": "3.2.23",
+          "needle": "message %= error.params"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/forms/utils.py",
+          "ref": "3.2.23",
+          "needle": "return next(iter(error))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/utils/safestring.py",
+          "ref": "3.2.23",
+          "needle": "class SafeString(str, SafeData):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "Objects/unicodeobject.c",
+          "ref": "v3.10.13",
+          "needle": "PyUnicode_Format(PyObject *format, PyObject *args)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/extras/forms/mixins.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "                self.fields[field_name] = cf.to_form_field(\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "nautobot/core/templates/utilities/render_field.html",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "<div class=\"form-group{% if field.errors %} has-error{% endif %}\">\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:44778668750512:186209848525601",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Renderer trust-marker downgrade enables newly escaping consumers, without an isolated old helper defect on the retained old sinks.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve HTML escaping versus resource authorization. Distinguish already escaped ErrorDict/ErrorList values, validator percent-formatting loss of safety markers, raw user/config/model text, intentional HTML fragments, renderer trust-marker production and caller escaping duties. Request control is not automatically a cross-principal audience; coarse change permission is not per-repository authorization. No new leaf or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Django-Jinja2.10.2 deliberately returns mark_safe(rendered). Exact CPython3 concatenation with a leading ordinary empty string removes that SafeString subtype, and new format_html consumers need this downgrade. But old custom_links/job_buttons already use raw format then whole-result mark_safe, so their vulnerability persists even with plain helper output. Exact old computed_fields instead calls escape(value), which unconditionally escapes even SafeData; its changed conditional-escaping consumer cannot retroactively prove an old helper bypass. Selected helper body promises rendering, not an established old plain-string-only API duty. No remaining concrete old marker-sensitive unsafe sink has been isolated.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need precise backend SafeString, CPython concatenation, old and new consumers and unconditional versus conditional escape distinction. SafeString emission alone and necessity for newly changed format_html consumers do not establish a separate prior helper defect. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old producers/helpers/models/permissions/dependencies/templates, after, advisories, tests, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Lower-trust template editors can reach the vulnerable old link/button whole-fragment sinks, but those sinks ignore the helper safety marker. The retained old computed-field sink explicitly escapes its value. A separate old consumer that trusted this helper marker across an unauthorized browser boundary remains unresolved; do not transfer sibling blame or infer universal renderer safety.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After returns a plain string under the pinned comparison semantics, not sanitized text or a safe URL/template sandbox. Combined after consumers escape it; old unsafe consumers still do not. No independent old-positive/new-negative selected-helper pair is certified. Preserve ambiguous attribution and shared family, with an append-only supported-to-ambiguous discovery correction.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The ordinary matched old path is already escaped, or the helper change is necessary for newly changed consumers but does not isolate an old selected-component failure. Preserve ambiguity rather than borrow sibling/advisory blame.",
+      "dependence_reason": "Preserve fix-family:4447f982bbac68a90e4c and exact/AST/span/history relationships. Eight HTML rows from one coordinated commit/CVE are one mechanical family, including renderer producer and multiple consumers; one repository-authorization row is a second family. Nine functions/two families are review units, not independently adjudicated issues. Generic sibling methods share a full source file without becoming the same selected function.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/form/filter/model/permission contracts, real actor/input ownership and final sink audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No Nautobot/Django/Jinja/filter/HTML/browser/regex/auth/ORM/DB/Git/Celery/job/CPython/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return template.render(context=context)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return \"\" + template.render(context=context)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django_jinja/backend.py",
+          "ref": "2.10.2",
+          "needle": "return mark_safe(self._process_template(self.template.render, context, request))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "Objects/unicodeobject.c",
+          "ref": "v3.10.13",
+          "needle": "return PyUnicode_FromObject(right);"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "Objects/unicodeobject.c",
+          "ref": "v3.10.13",
+          "needle": "return _PyUnicode_Copy(obj);"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_PEERS.json",
+          "path": "nautobot/extras/templatetags/custom_links.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "return mark_safe(template_code)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_PEERS.json",
+          "path": "nautobot/extras/templatetags/job_buttons.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "return mark_safe(buttons_html + forms_html)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_DELIVERY.json",
+          "path": "nautobot/extras/templatetags/computed_fields.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "{escape(value)}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/utils/html.py",
+          "ref": "3.2.23",
+          "needle": "def escape(text):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_PEERS.json",
+          "path": "nautobot/extras/templatetags/custom_links.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d",
+          "needle": "                    template_code += format_html(\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:902395637795:135226588682121",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Invalid-filter message composition is not a demonstrated old defect for the standard already-escaped ErrorDict path.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve HTML escaping versus resource authorization. Distinguish already escaped ErrorDict/ErrorList values, validator percent-formatting loss of safety markers, raw user/config/model text, intentional HTML fragments, renderer trust-marker production and caller escaping duties. Request control is not automatically a cross-principal audience; coarse change permission is not per-repository authorization. No new leaf or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Stock django-filter23.1 errors returns self.form.errors, explicitly an ErrorDict. In the retained lockfile-matched Django3.2.23, ErrorDict/ErrorList are html_safe and their as_ul methods use format_html/format_html_join, escaping ordinary field/error text. Old f-string interpolation therefore already embeds escaped structured HTML; new format_html honors its __html__ and embeds that same representation. Replacing mark_safe around this value is not alone an old reflected-XSS witness. An admitted different plain-unsafe errors producer or unsafe custom message would require its actual old contract; neither broad advisory membership nor a hypothetical custom override establishes a local differential.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need BaseFilterSet inheritance, actual errors type, ErrorDict/ErrorList html_safe/format_html composition and Django message rendering. Standard SafeData is not equivalent to raw attacker text; compare matched complete versions. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old producers/helpers/models/permissions/dependencies/templates, after, advisories, tests, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "A request can influence filter values, but standard error representation escapes those values before this selected interpolation. Its message normally returns to the requesting session. Neither a cross-principal script audience nor an old unsafe/new safe result is established on that stock route. Alternate custom producers remain open, not universally safe.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No selected old-positive/new-negative HTML pair is isolated for the matched standard errors domain. New format_html does not re-escape __html__ objects. This is not a universal claim about custom filters, deliberately safe error messages or other message sinks.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The ordinary matched old path is already escaped, or the helper change is necessary for newly changed consumers but does not isolate an old selected-component failure. Preserve ambiguity rather than borrow sibling/advisory blame.",
+      "dependence_reason": "Preserve fix-family:4447f982bbac68a90e4c and exact/AST/span/history relationships. Eight HTML rows from one coordinated commit/CVE are one mechanical family, including renderer producer and multiple consumers; one repository-authorization row is a second family. Nine functions/two families are review units, not independently adjudicated issues. Generic sibling methods share a full source file without becoming the same selected function.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/form/filter/model/permission contracts, real actor/input ownership and final sink audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No Nautobot/Django/Jinja/filter/HTML/browser/regex/auth/ORM/DB/Git/Celery/job/CPython/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "mark_safe(f\"Invalid filters were specified: {filterset.errors}\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "format_html(\"Invalid filters were specified: {}\", filterset.errors)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django_filters/filterset.py",
+          "ref": "23.1",
+          "needle": "return self.form.errors"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/forms/utils.py",
+          "ref": "3.2.23",
+          "needle": "class ErrorDict(dict):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/forms/utils.py",
+          "ref": "3.2.23",
+          "needle": "format_html_join('', '<li>{}{}</li>', self.items())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/forms/utils.py",
+          "ref": "3.2.23",
+          "needle": "format_html_join('', '<li>{}</li>', ((e,) for e in self))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/utils/html.py",
+          "ref": "3.2.23",
+          "needle": "if hasattr(text, '__html__'):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "nautobot/core/templates/base_django.html",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "{{ message }}"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:902395637795:240653218551071",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Successful JSON/YAML import puts a plain model string into a trusted success-message link.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve HTML escaping versus resource authorization. Distinguish already escaped ErrorDict/ErrorList values, validator percent-formatting loss of safety markers, raw user/config/model text, intentional HTML fragments, renderer trust-marker production and caller escaping duties. Request control is not automatically a cross-principal audience; coarse change permission is not per-repository authorization. No new leaf or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old DeviceTypeImportView uses DeviceTypeImportForm, whose Meta includes the ordinary model CharField and explicitly retains compatibility with the netbox-community device-type library. DeviceType.__str__ returns self.model, not preescaped HTML; the generic import saves and checks its allowed queryset before composing the selected mark_safe success message. Django Message preserves a safe message for the base template {{ message }} output. After format_html escapes the object representation while preserving a fixed link structure. This is existing data-display safety, not a new import feature.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need concrete old import view/form/model/__str__, JSON/YAML data admission, object creation/add permissions and post-save queryset gate, message SafeData behavior and shared base template. The prior ambiguous missing-model/sink hypothesis is now pinned; imported data ownership must still be distinguished from request identity. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old producers/helpers/models/permissions/dependencies/templates, after, advisories, tests, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A less-trusted catalog/file author can supply a DeviceType model name in otherwise valid JSON/YAML which a different authorized operator chooses to import, the existing external-library-compatible use case. Successful validation and all listed add/object permissions are required. The success flash returns to that importing operator, not automatically other users: cross-principal input ownership is the file/catalog author versus operator/browser. A user typing its own already-known markup alone is not the security witness. No direct unauthorized POST, CSRF bypass, malicious parser execution, concrete catalog compromise or deployed victim is assumed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After format_html escapes the ordinary DeviceType string in the success link, removing the witnessed file-data-to-active-HTML path. Object URLs are model-generated and not a demonstrated script URL here. This is a bounded message-composition negative, not all import parsers/files, model permissions, generic safe-string __str__ providers or complete application correctness.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched old admission, sink and conditional lower-trust delivery support the selected repair, but its essential old project/runtime/template/permission contracts are missing from a uniform before-only function.",
+      "dependence_reason": "Preserve fix-family:4447f982bbac68a90e4c and exact/AST/span/history relationships. Eight HTML rows from one coordinated commit/CVE are one mechanical family, including renderer producer and multiple consumers; one repository-authorization row is a second family. Nine functions/two families are review units, not independently adjudicated issues. Generic sibling methods share a full source file without becoming the same selected function.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/form/filter/model/permission contracts, real actor/input ownership and final sink audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No Nautobot/Django/Jinja/filter/HTML/browser/regex/auth/ORM/DB/Git/Celery/job/CPython/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "mark_safe(f'Imported object: <a href=\"{obj.get_absolute_url()}\">{obj}</a>')"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "format_html('Imported object: <a href=\"{}\">{}</a>', obj.get_absolute_url(), obj)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                        self.queryset.get(pk=obj.pk)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/dcim/views.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "class DeviceTypeImportView("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/dcim/views.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "\"dcim.add_devicetype\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/dcim/forms.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "class DeviceTypeImportForm("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/dcim/forms.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "compatible with the netbox-community/devicetype-library repo"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/dcim/models/devices.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "model = models.CharField(max_length=100)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025.json",
+          "path": "nautobot/dcim/models/devices.py",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "return self.model"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/contrib/messages/storage/base.py",
+          "ref": "3.2.23",
+          "needle": "class Message:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "nautobot/core/templates/base_django.html",
+          "ref": "54abe23331b6c3d0d82bf1b028c679b1d200920d^",
+          "needle": "{{ message }}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_RUNTIME.json",
+          "path": "django/template/base.py",
+          "ref": "3.2.23",
+          "needle": "def render_value_in_context(value, context):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_MESSAGES.json",
+          "path": "django/contrib/messages/storage/cookie.py",
+          "ref": "3.2.23",
+          "needle": "is_safedata = 1 if isinstance(obj.message, SafeData) else 0"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_025_MESSAGES.json",
+          "path": "django/contrib/messages/storage/cookie.py",
+          "ref": "3.2.23",
+          "needle": "obj[3] = mark_safe(obj[3])"
+        }
+      ]
+    }
+  ]
+}

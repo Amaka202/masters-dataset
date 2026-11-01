@@ -1,0 +1,1197 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-054",
+  "review_date": "2026-10-31",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All five planned repository queues: querybook2/zenml2/ihatemoney2/keycloak-httpd-client-install2/Zope2; seven mechanical families.",
+  "selection_rule": {
+    "repositories": [
+      "github.com/jdennis/keycloak-httpd-client-install",
+      "github.com/pinterest/querybook",
+      "github.com/spiral-project/ihatemoney",
+      "github.com/zenml-io/zenml",
+      "github.com/zopefoundation/zope"
+    ],
+    "candidate_count": 10,
+    "discovery_categories": [
+      "SEC-HTML-ESCAPING",
+      "SEC-PREDICTABLE-FILE-TARGET",
+      "SEC-RESOURCE-AUTHORIZATION",
+      "SEC-SECRET-ARGUMENT-EXPOSURE",
+      "SEC-SENSITIVE-ACTION-REAUTH"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Five missing-context, one security-boundary and four paired-negative deferrals. Three introduced failures: ZenML pending activation-token loss, Keycloak default logging startup, Keycloak password-file Namespace mismatch. Later ZenML retains earlier token loss; new admin/reauth policy does not prove old absent-field escalation or historical reauth duty. Used/unused ORM consumers, configured callback HTML/CSP and restricted/trusted Zope paths separated. Five pins retain501 inert texts/twenty exact peers/seven parents/fourteen archive inventories; wrong-path404 and out-of-version named comparisons preserved separately from pinned actual contracts. Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/browser/template/ORM/authentication/password/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:143522177495804:164787330867542",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "OAuth callback interpolates nonempty request error into an HTML heading before authentication; after escapes it in HTML text context.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate HTML text escaping from OAuth state/redirect policy; per-account authority and token-preservation from newly introduced admin/reauth policies; ORM project binding from SQL injection; predictable log target from argv secret transport; restricted template member access from intentional trusted traversal.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing error reporting should display provider/request error as text, not execute or trust its HTML. Exact auth middleware ignores callback path; generic init_app registers callback, and Okta inherits that registration. Project pins Flask2.2.2 whose string return is a response with text/html default. Named MarkupSafe2.1.1 native/C implementations encode metacharacters; HTTP query values are ordinary strings, not caller-created __html__ objects.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need backend selection/route exposure, Flask request and response behavior, MarkupSafe import, browser and effective CSP. No valid OAuth code or completed token exchange is needed for nonempty error early return. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/helper/runtime/browser/configuration contracts are adjudication-only, never selectively injected into detection.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional victim follows attacker-controlled callback URL on affected configured backend: query error becomes same-origin HTML under old string response. Active script impact additionally needs effective browser/CSP permission; do not infer all installations expose this backend or permit script.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After Markup.escape encodes source metacharacters before f-string embedding; resulting entities remain HTML text in heading under matched response semantics. Narrow negative excludes OAuth state validation, session next redirects, custom wrappers, all response headers or other XSS routes.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Actual lower-trust query/route/HTML-response chain retained; defer common runtime/browser/backend/CSP context and preserve one callback family.",
+      "dependence_reason": "Ten representations span seven mechanical families, not ten independent issues. Querybook callbacks share one fix; ihatemoney used/unused helpers share one family; Zope engines share one issue. ZenML successive selected after/before bytes match despite distinct mechanical families; Keycloak password after equals subsequent log-path before exactly. Preserve historical linkage without automatically merging distinct mechanisms, plus canonical IDs/bytes/splits, all discovery statuses/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm historical authority/reauth policy, installed versions, supported callers/backends, filesystem/log/process readership, template author privileges and actual browser/CSP delivery. No advisory/new tests/new consumer alone establishes an old selected duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/browser/template/ORM/authentication/password/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return f\"<h1>Error: {request.args.get('error')}</h1>\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "Markup.escape(request.args.get('error'))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "querybook/server/app/auth/__init__.py",
+          "ref": "1b91cb8eef5e51ee1de7084a6e59d194c7978c07",
+          "needle": "ignore_paths = [\"/ping/\"] + getattr(auth, \"ignore_paths\", [])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "querybook/server/app/auth/oauth_auth.py",
+          "ref": "1b91cb8eef5e51ee1de7084a6e59d194c7978c07",
+          "needle": "ignore_paths = [OAUTH_CALLBACK_PATH]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "querybook/server/app/auth/oauth_auth.py",
+          "ref": "1b91cb8eef5e51ee1de7084a6e59d194c7978c07",
+          "needle": "OAUTH_CALLBACK_PATH, \"oauth_callback\", self.oauth_callback"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "requirements/base.txt",
+          "ref": "1b91cb8eef5e51ee1de7084a6e59d194c7978c07",
+          "needle": "flask==2.2.2"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "src/flask/app.py",
+          "ref": "2.2.2",
+          "needle": "if isinstance(rv, (str, bytes, bytearray))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "src/flask/wrappers.py",
+          "ref": "2.2.2",
+          "needle": "default_mimetype = \"text/html\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "src/markupsafe/__init__.py",
+          "ref": "2.1.1",
+          "needle": "def escape(cls, s: t.Any) -> \"Markup\":"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "src/markupsafe/_native.py",
+          "ref": "2.1.1",
+          "needle": ".replace(\"<\", \"&lt;\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_DELIVERY.json",
+          "path": "src/markupsafe/_speedups.c",
+          "ref": "2.1.1",
+          "needle": "\t\t\tbreak; \\\n\t\tcase '<': \\\n\t\tcase '>': \\\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "querybook/server/app/auth/oauth_auth.py",
+          "ref": "88a7f10495bf5ed1a556ade51a2f2794e403c063",
+          "needle": "from flask import Markup"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "querybook/server/app/auth/okta_auth.py",
+          "ref": "1b91cb8eef5e51ee1de7084a6e59d194c7978c07",
+          "needle": "class OktaLoginManager(OAuthLoginManager):"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:205529764677586:205754730947334",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Okta callback interpolates nonempty request error into an HTML heading before authentication; after escapes it in HTML text context.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate HTML text escaping from OAuth state/redirect policy; per-account authority and token-preservation from newly introduced admin/reauth policies; ORM project binding from SQL injection; predictable log target from argv secret transport; restricted template member access from intentional trusted traversal.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing error reporting should display provider/request error as text, not execute or trust its HTML. Exact auth middleware ignores callback path; generic init_app registers callback, and Okta inherits that registration. Project pins Flask2.2.2 whose string return is a response with text/html default. Named MarkupSafe2.1.1 native/C implementations encode metacharacters; HTTP query values are ordinary strings, not caller-created __html__ objects.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need backend selection/route exposure, Flask request and response behavior, MarkupSafe import, browser and effective CSP. No valid OAuth code or completed token exchange is needed for nonempty error early return. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/helper/runtime/browser/configuration contracts are adjudication-only, never selectively injected into detection.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional victim follows attacker-controlled callback URL on affected configured backend: query error becomes same-origin HTML under old string response. Active script impact additionally needs effective browser/CSP permission; do not infer all installations expose this backend or permit script.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After Markup.escape encodes source metacharacters before f-string embedding; resulting entities remain HTML text in heading under matched response semantics. Narrow negative excludes OAuth state validation, session next redirects, custom wrappers, all response headers or other XSS routes.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Actual lower-trust query/route/HTML-response chain retained; defer common runtime/browser/backend/CSP context and preserve one callback family.",
+      "dependence_reason": "Ten representations span seven mechanical families, not ten independent issues. Querybook callbacks share one fix; ihatemoney used/unused helpers share one family; Zope engines share one issue. ZenML successive selected after/before bytes match despite distinct mechanical families; Keycloak password after equals subsequent log-path before exactly. Preserve historical linkage without automatically merging distinct mechanisms, plus canonical IDs/bytes/splits, all discovery statuses/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm historical authority/reauth policy, installed versions, supported callers/backends, filesystem/log/process readership, template author privileges and actual browser/CSP delivery. No advisory/new tests/new consumer alone establishes an old selected duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/browser/template/ORM/authentication/password/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return f\"<h1>Error: {request.args.get('error')}</h1>\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "Markup.escape(request.args.get('error'))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "querybook/server/app/auth/__init__.py",
+          "ref": "1b91cb8eef5e51ee1de7084a6e59d194c7978c07",
+          "needle": "ignore_paths = [\"/ping/\"] + getattr(auth, \"ignore_paths\", [])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "querybook/server/app/auth/oauth_auth.py",
+          "ref": "1b91cb8eef5e51ee1de7084a6e59d194c7978c07",
+          "needle": "ignore_paths = [OAUTH_CALLBACK_PATH]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "querybook/server/app/auth/oauth_auth.py",
+          "ref": "1b91cb8eef5e51ee1de7084a6e59d194c7978c07",
+          "needle": "OAUTH_CALLBACK_PATH, \"oauth_callback\", self.oauth_callback"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "requirements/base.txt",
+          "ref": "1b91cb8eef5e51ee1de7084a6e59d194c7978c07",
+          "needle": "flask==2.2.2"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "src/flask/app.py",
+          "ref": "2.2.2",
+          "needle": "if isinstance(rv, (str, bytes, bytearray))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "src/flask/wrappers.py",
+          "ref": "2.2.2",
+          "needle": "default_mimetype = \"text/html\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "src/markupsafe/__init__.py",
+          "ref": "2.1.1",
+          "needle": "def escape(cls, s: t.Any) -> \"Markup\":"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "src/markupsafe/_native.py",
+          "ref": "2.1.1",
+          "needle": ".replace(\"<\", \"&lt;\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_DELIVERY.json",
+          "path": "src/markupsafe/_speedups.c",
+          "ref": "2.1.1",
+          "needle": "\t\t\tbreak; \\\n\t\tcase '<': \\\n\t\tcase '>': \\\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "querybook/server/app/auth/okta_auth.py",
+          "ref": "88a7f10495bf5ed1a556ade51a2f2794e403c063",
+          "needle": "from flask import Markup"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "querybook/server/app/auth/okta_auth.py",
+          "ref": "1b91cb8eef5e51ee1de7084a6e59d194c7978c07",
+          "needle": "class OktaLoginManager(OAuthLoginManager):"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:209347387734097:139126355474868",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Old cross-user update relies on a no-op permission helper when RBAC is disabled; after adds admin policy but destroys omitted activation-token state on ordinary updates.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate HTML text escaping from OAuth state/redirect policy; per-account authority and token-preservation from newly introduced admin/reauth policies; ORM project binding from SQL injection; predictable log target from argv secret transport; restricted template member access from intentional trusted traversal.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing endpoint/user-store contract updates supplied profile fields while invitation/deactivation uses persistent activation credentials. Old UserUpdate has no is_admin field: new admin status is not an old writable-field escalation. Actual old permission helper returns when RBAC disabled, allowing other-user field changes; whether that violates previously admitted shared-server authority policy requires confirmation rather than new-policy back-projection.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact UserUpdate/SQL schema/get_user response projection/Pydantic assignment and exclude_unset semantics, existing invitation producer and activation verifier. For a permitted admin update of another inactive invited user, unrelated profile update should not silently revoke its still-pending token. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/helper/runtime/browser/configuration contracts are adjudication-only, never selectively injected into detection.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Cross-account mutation is source-reachable under disabled RBAC; legitimate authority boundary under old admin-less policy remains unresolved. Self activation-token alteration bypasses the dedicated token lifecycle but actual user authority must be adjudicated. No claim old clients could set absent is_admin.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After assigns user.activation_token from ordinary UserResponse. SQL to_model omits token field, leaving its default None even when the stored invitation hash exists. Assignment marks activation_token set in named compatible Pydantic1.10.13; exclude_unset includes it and schema hashes None as None, clearing the stored pending token. Old omitted field remains unset. This is introduced invitation-preservation regression, not a double-hash claim or reproduced request. Admin restrictions do not protect permitted profile updates from this state loss.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Defer after-negative use for introduced persistent invitation-token loss; preserve unresolved historical authority/new admin policy separately.",
+      "dependence_reason": "Ten representations span seven mechanical families, not ten independent issues. Querybook callbacks share one fix; ihatemoney used/unused helpers share one family; Zope engines share one issue. ZenML successive selected after/before bytes match despite distinct mechanical families; Keycloak password after equals subsequent log-path before exactly. Preserve historical linkage without automatically merging distinct mechanisms, plus canonical IDs/bytes/splits, all discovery statuses/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm historical authority/reauth policy, installed versions, supported callers/backends, filesystem/log/process readership, template author privileges and actual browser/CSP delivery. No advisory/new tests/new consumer alone establishes an old selected duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/browser/template/ORM/authentication/password/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        user = zen_store().get_user(user_name_or_id)\n        if user.id != auth_context.user.id:\n            verify_permission_for_model(user, action=Action.UPDATE)\n\n        updated_user = zen_store().update_user(\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "user_update.activation_token = user.activation_token"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_stores/sql_zen_store.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "return user.to_model("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_stores/schemas/user_schemas.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "body=UserResponseBody("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/models/v2/core/user.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "    )\n    activation_token: Optional[str] = Field(\n        default=None, max_length=STR_FIELD_MAX_LENGTH\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_stores/schemas/user_schemas.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "for field, value in user_update.dict(exclude_unset=True).items():"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_stores/schemas/user_schemas.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "self, field, user_update.create_hashed_activation_token()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/models/v2/core/user.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "if secret is None:\n            return None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "pydantic/main.py",
+          "ref": "v1.10.13",
+          "needle": "self.__fields_set__.add(name)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_server/routers/users_endpoints.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "        # add back the original unhashed activation token, if generated, to\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/cli/user_management.py",
+          "ref": "8a8085d2df730d6fc7f2c02d8699c1896beefe67",
+          "needle": "token is generated and a link to the dashboard is provided"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "pyproject.toml",
+          "ref": "8a8085d2df730d6fc7f2c02d8699c1896beefe67",
+          "needle": "pydantic = \"<1.11, >=1.9.0\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_server/rbac/utils.py",
+          "ref": "8a8085d2df730d6fc7f2c02d8699c1896beefe67",
+          "needle": "    \"\"\"\n    if not server_config().rbac_enabled:\n        return page\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/models/v2/core/user.py",
+          "ref": "8a8085d2df730d6fc7f2c02d8699c1896beefe67",
+          "needle": "class UserUpdate(UserRequest):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "src/zenml/models/v2/base/update.py",
+          "ref": "8a8085d2df730d6fc7f2c02d8699c1896beefe67",
+          "needle": "_cls.__config__.extra = Extra.ignore"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_stores/schemas/user_schemas.py",
+          "ref": "8a8085d2df730d6fc7f2c02d8699c1896beefe67",
+          "needle": "for field, value in user_update.dict(exclude_unset=True).items():"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Matched ordinary SQL get_user returns response with default activation_token=None. New unconditional selected assignment makes omitted field set, so schema exclude_unset persists None and invalidates an outstanding invitation on an otherwise permitted profile update. Existing old producer/consumer supports preservation duty; no retained model/hash/database/request executes."
+    },
+    {
+      "pair_id": "CVEfixes:267181908008455:238947164217209",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Password update adds current-password reauthentication and prohibits other-user password changes; earlier invitation-token clearing persists.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate HTML text escaping from OAuth state/redirect policy; per-account authority and token-preservation from newly introduced admin/reauth policies; ORM project binding from SQL injection; predictable log target from argv secret transport; restricted template member access from intentional trusted traversal.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing authenticated update/store and invitation preservation are supported. Old selected self-password change uses valid AuthContext and no current-password check; after introduces that additional knowledge policy. Dedicated server-side UserAuthModel verifier compares supplied password against stored hash. A stolen-session threat is conditional, and a new stronger reauth rule alone does not establish old token-authenticated operation violated its historical supported policy.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need session/password authority model, authorize configuration, exact verifier/store schemas and token lifecycle. Old cross-user branch already has admin/RBAC guards from earlier fix; do not claim arbitrary unauthenticated or unprivileged other-user password access. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/helper/runtime/browser/configuration contracts are adjudication-only, never selectively injected into detection.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Under a historical policy that session-only capability must not permit persistent credential replacement, bearer-session possession without current password gives extra authority; that policy is researcher-pending. Existing permission-checked admin reset is not automatically unauthorized merely because after bans it.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After requires non-None old_password for own non-None password and uses matched verifier; other-user password updates are deliberately rejected. UserSchema skips old_password, so no accidental plaintext attribute persistence is inferred. However unchanged activation_token assignment still clears pending invitations on permitted unrelated admin profile updates through ordinary response default None and exclude_unset. Residual contract failure, not introduced by password check; negative is unestablished for selected component.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Record residual invitation-token loss and defer paired negative while separately preserving historical reauth-policy uncertainty and lineage.",
+      "dependence_reason": "Ten representations span seven mechanical families, not ten independent issues. Querybook callbacks share one fix; ihatemoney used/unused helpers share one family; Zope engines share one issue. ZenML successive selected after/before bytes match despite distinct mechanical families; Keycloak password after equals subsequent log-path before exactly. Preserve historical linkage without automatically merging distinct mechanisms, plus canonical IDs/bytes/splits, all discovery statuses/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm historical authority/reauth policy, installed versions, supported callers/backends, filesystem/log/process readership, template author privileges and actual browser/CSP delivery. No advisory/new tests/new consumer alone establishes an old selected duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/browser/template/ORM/authentication/password/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "user_update.activation_token = user.activation_token"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if user_update.old_password is None:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_stores/sql_zen_store.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "return user.to_model("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_stores/schemas/user_schemas.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "body=UserResponseBody("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/models/v2/core/user.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "    )\n    activation_token: Optional[str] = Field(\n        default=None, max_length=STR_FIELD_MAX_LENGTH\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_stores/schemas/user_schemas.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "for field, value in user_update.dict(exclude_unset=True).items():"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_stores/schemas/user_schemas.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "self, field, user_update.create_hashed_activation_token()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/models/v2/core/user.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "if secret is None:\n            return None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "pydantic/main.py",
+          "ref": "v1.10.13",
+          "needle": "self.__fields_set__.add(name)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_server/routers/users_endpoints.py",
+          "ref": "b95f083efffa56831cd41d8ed536aeb0b6038fa3",
+          "needle": "        # add back the original unhashed activation token, if generated, to\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/cli/user_management.py",
+          "ref": "8a8085d2df730d6fc7f2c02d8699c1896beefe67",
+          "needle": "token is generated and a link to the dashboard is provided"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "pyproject.toml",
+          "ref": "8a8085d2df730d6fc7f2c02d8699c1896beefe67",
+          "needle": "pydantic = \"<1.11, >=1.9.0\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_AUTH.json",
+          "path": "src/zenml/models/v2/misc/user_auth.py",
+          "ref": "58cb3d987372c91eb605853c35325701733337c2",
+          "needle": "return pwd_context.verify(plain_password, password_hash)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_stores/schemas/user_schemas.py",
+          "ref": "58cb3d987372c91eb605853c35325701733337c2",
+          "needle": "if field == \"old_password\":\n                continue"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_stores/schemas/user_schemas.py",
+          "ref": "31e6fec8e70962abf7665f68fb29abe82f1cdb4d",
+          "needle": "body=UserResponseBody("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/models/v2/core/user.py",
+          "ref": "31e6fec8e70962abf7665f68fb29abe82f1cdb4d",
+          "needle": "    )\n    activation_token: Optional[str] = Field(\n        default=None, max_length=STR_FIELD_MAX_LENGTH\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/zenml/zen_stores/sql_zen_store.py",
+          "ref": "31e6fec8e70962abf7665f68fb29abe82f1cdb4d",
+          "needle": "return user.to_model("
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Unchanged selected token-preservation assignment copies ordinary response default None into an explicitly set update field, so SQL schema persists None and invalidates a pending invitation on otherwise permitted unrelated updates. Failure already exists in this before revision; new password policy does not repair it."
+    },
+    {
+      "pair_id": "CVEfixes:76443919450240:279220393089113",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unused name lookup constrains unrelated Project table rather than selected Person membership; after binds Person.project_id.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate HTML text escaping from OAuth state/redirect policy; per-account authority and token-preservation from newly introduced admin/reauth policies; ORM project binding from SQL injection; predictable log target from argv secret transport; restricted template member access from intentional trusted traversal.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Name/project API promises a person in the specified project. Old filter includes Project.id but no Person.project_id equality/join. Named SQLAlchemy1.3.18 WHERE/FROM inference can include both tables without inferring relationship join. Same-name persons can yield multiple identities or wrong project; after binds foreign key directly. Functional query repair predates new tests.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need ORM schema, FROM inference/one semantics, valid project and uniqueness policy. Literal exact-ref archive retrieval retains no production get_by_name caller beyond definition; bounded absence is not exhaustive future/custom integration proof. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/helper/runtime/browser/configuration contracts are adjudication-only, never selectively injected into detection.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Wrong-project primitive has no retained lower-trust application consumer. Reachable get sibling mutations cannot be inherited by this unused helper. Preserve original proposed security exclusion as discovery history; consolidation defers boundary rather than relabels/deletes canonical example.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After returns only Person rows whose foreign key equals supplied project.id under named ORM assumptions. Still one() raises for zero/multiple same-project names; no new unique-name requirement or SQL-injection finding. No standalone security-negative eligibility established absent admitted consumer.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Existing membership-query duty supported but selected unused helper lacks actual security delivery; keep one family with used get.",
+      "dependence_reason": "Ten representations span seven mechanical families, not ten independent issues. Querybook callbacks share one fix; ihatemoney used/unused helpers share one family; Zope engines share one issue. ZenML successive selected after/before bytes match despite distinct mechanical families; Keycloak password after equals subsequent log-path before exactly. Preserve historical linkage without automatically merging distinct mechanisms, plus canonical IDs/bytes/splits, all discovery statuses/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm historical authority/reauth policy, installed versions, supported callers/backends, filesystem/log/process readership, template author privileges and actual browser/CSP delivery. No advisory/new tests/new consumer alone establishes an old selected duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/browser/template/ORM/authentication/password/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                Person.query.filter(Person.name == name)\n                .filter(Project.id == project.id)\n                .one()\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                Person.query.filter(Person.name == name)\n                .filter(Person.project_id == project.id)\n                .one()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "ihatemoney/models.py",
+          "ref": "040d76af83411fb58ab400dc4eac909191a3e5fa",
+          "needle": "    id = db.Column(db.Integer, primary_key=True)\n    project_id = db.Column(db.String(64), db.ForeignKey(\"project.id\"))\n    bills = db.relationship(\"Bill\", backref=\"payer\")\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "lib/sqlalchemy/orm/query.py",
+          "ref": "rel_1_3_18",
+          "needle": "The criterion is any SQL expression object applicable to the"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "lib/sqlalchemy/sql/selectable.py",
+          "ref": "rel_1_3_18",
+          "needle": "_from_objects(self._whereclause)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "lib/sqlalchemy/orm/query.py",
+          "ref": "rel_1_3_18",
+          "needle": "if ret is None:\n                raise orm_exc.NoResultFound"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "ihatemoney/api/common.py",
+          "ref": "040d76af83411fb58ab400dc4eac909191a3e5fa",
+          "needle": "class MemberHandler(Resource):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "ihatemoney/api/common.py",
+          "ref": "040d76af83411fb58ab400dc4eac909191a3e5fa",
+          "needle": "if not member or member.project != project:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "ihatemoney/forms.py",
+          "ref": "040d76af83411fb58ab400dc4eac909191a3e5fa",
+          "needle": "person.project = project"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:76443919450240:53072873880806",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Used member-ID lookup validates existence of unrelated Project instead of Person membership, enabling cross-project mutation; after binds Person.project_id.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate HTML text escaping from OAuth state/redirect policy; per-account authority and token-preservation from newly introduced admin/reauth policies; ORM project binding from SQL injection; predictable log target from argv secret transport; restricted template member access from intentional trusted traversal.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Current/explicit project is established by web session or API project credentials; caller supplies member id. Old ORM filter has no relationship join. Actual web edit/remove and API PUT/delete use selected get before saving, deleting or deactivating. API GET has a separate member.project check, so do not attribute its guarded read as an unguarded consumer.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact project authorization, ORM implicit FROM/one semantics, caller form validation and mutation. Ordinary valid caller-project plus known other-project member ID meets old predicate when target exists. No credentialless access or assumption all delete paths hard-delete. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/helper/runtime/browser/configuration contracts are adjudication-only, never selectively injected into detection.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Authenticated participant in one project can nominate another project Person at used edit/remove paths lacking secondary membership checks. form.save can even rebind person.project. Current project credential/session gate does not authorize other-project person. Global administrator semantics and nonexistent/multiple-result errors separate.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After direct foreign-key filter denies other-project IDs via no result and preserves valid in-project selection. Some callers map no result imperfectly; no all-route graceful404 claim. Sibling web reactivate retains a separate direct query, so no application-wide authorization repair certification.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Actual project gate/mutation/ORM binding supports selected repair; common caller/runtime context and global sibling routes exceed before-only scope.",
+      "dependence_reason": "Ten representations span seven mechanical families, not ten independent issues. Querybook callbacks share one fix; ihatemoney used/unused helpers share one family; Zope engines share one issue. ZenML successive selected after/before bytes match despite distinct mechanical families; Keycloak password after equals subsequent log-path before exactly. Preserve historical linkage without automatically merging distinct mechanisms, plus canonical IDs/bytes/splits, all discovery statuses/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm historical authority/reauth policy, installed versions, supported callers/backends, filesystem/log/process readership, template author privileges and actual browser/CSP delivery. No advisory/new tests/new consumer alone establishes an old selected duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/browser/template/ORM/authentication/password/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                Person.query.filter(Person.name == name)\n                .filter(Project.id == project.id)\n                .one()\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                Person.query.filter(Person.name == name)\n                .filter(Person.project_id == project.id)\n                .one()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "ihatemoney/models.py",
+          "ref": "040d76af83411fb58ab400dc4eac909191a3e5fa",
+          "needle": "    id = db.Column(db.Integer, primary_key=True)\n    project_id = db.Column(db.String(64), db.ForeignKey(\"project.id\"))\n    bills = db.relationship(\"Bill\", backref=\"payer\")\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "lib/sqlalchemy/orm/query.py",
+          "ref": "rel_1_3_18",
+          "needle": "The criterion is any SQL expression object applicable to the"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "lib/sqlalchemy/sql/selectable.py",
+          "ref": "rel_1_3_18",
+          "needle": "_from_objects(self._whereclause)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "lib/sqlalchemy/orm/query.py",
+          "ref": "rel_1_3_18",
+          "needle": "if ret is None:\n                raise orm_exc.NoResultFound"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "ihatemoney/api/common.py",
+          "ref": "040d76af83411fb58ab400dc4eac909191a3e5fa",
+          "needle": "class MemberHandler(Resource):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "ihatemoney/api/common.py",
+          "ref": "040d76af83411fb58ab400dc4eac909191a3e5fa",
+          "needle": "if not member or member.project != project:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "ihatemoney/forms.py",
+          "ref": "040d76af83411fb58ab400dc4eac909191a3e5fa",
+          "needle": "person.project = project"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "ihatemoney/web.py",
+          "ref": "040d76af83411fb58ab400dc4eac909191a3e5fa",
+          "needle": "member = Person.query.get(member_id, g.project)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "ihatemoney/models.py",
+          "ref": "040d76af83411fb58ab400dc4eac909191a3e5fa",
+          "needle": "person = Person.query.get(member_id, self)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "ihatemoney/models.py",
+          "ref": "040d76af83411fb58ab400dc4eac909191a3e5fa",
+          "needle": "db.session.delete(person)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "ihatemoney/web.py",
+          "ref": "040d76af83411fb58ab400dc4eac909191a3e5fa",
+          "needle": "if session.get(project.id) or is_admin:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "ihatemoney/api/common.py",
+          "ref": "040d76af83411fb58ab400dc4eac909191a3e5fa",
+          "needle": "if project and check_password_hash(project.password, auth.password):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2017-15111:0:keycloak_httpd_client/keycloak_cli.py:main",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Predictable shared /tmp log destination reaches ordinary append-mode writer; after bare relative default breaks unchanged directory initialization.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate HTML text escaping from OAuth state/redirect policy; per-account authority and token-preservation from newly introduced admin/reauth policies; ORM project binding from SQL injection; predictable log target from argv secret transport; restricted template member access from intentional trusted traversal.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old CLI promises logging while performing admin REST operations, and selected default flows to configure_logging before operation dispatch. Shared predictable target can be attacker-precreated where local filesystem policy permits. RotatingFileHandler defaults append and actual file open follows ordinary path behavior; no selected exclusive/no-follow/ownership protection.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need local attacker creation/symlink permissions, process write authority, OS symlink protections, logging writer and cwd policy. Absolute old /tmp dirname exists. After bare program.log dirname is empty under named Python2.7.14/3.6.3 POSIX contract; configure_logging attempts makedirs before try/REST exception handlers. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/helper/runtime/browser/configuration contracts are adjudication-only, never selectively injected into detection.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-privilege local filesystem actor controls predictable /tmp log link and process can append to redirected target. Hardened protected-symlink policy/ownership may prevent this; not every platform or arbitrary-file overwrite/RCE. Moving location is not universal permission/symlink hardening.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "New default has no directory component, so dirname gives empty string, exists is false and makedirs reaches mkdir of empty pathname, which errors on normal POSIX. This introduced default invocation regression occurs before logging/authentication dispatch even with trusted cwd; therefore moving path cannot establish usable paired negative. Explicit ./filename avoids this particular dirname failure but is not the default. Retained password-file mismatch also persists from previous fix.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Explicitly defer paired negative for introduced default log-path startup failure; preserve local trust assumptions and exact predecessor linkage.",
+      "dependence_reason": "Ten representations span seven mechanical families, not ten independent issues. Querybook callbacks share one fix; ihatemoney used/unused helpers share one family; Zope engines share one issue. ZenML successive selected after/before bytes match despite distinct mechanical families; Keycloak password after equals subsequent log-path before exactly. Preserve historical linkage without automatically merging distinct mechanisms, plus canonical IDs/bytes/splits, all discovery statuses/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm historical authority/reauth policy, installed versions, supported callers/backends, filesystem/log/process readership, template author privileges and actual browser/CSP delivery. No advisory/new tests/new consumer alone establishes an old selected duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/browser/template/ORM/authentication/password/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "default='/tmp/{prog_name}.log'.format("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "default='{prog_name}.log'.format("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "keycloak_httpd_client/keycloak_cli.py",
+          "ref": "c3121b271abaaa1a76de2b9ae89dacde0105cd75",
+          "needle": "log_dir = os.path.dirname(options.log_file)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "keycloak_httpd_client/keycloak_cli.py",
+          "ref": "c3121b271abaaa1a76de2b9ae89dacde0105cd75",
+          "needle": "os.makedirs(log_dir)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "keycloak_httpd_client/keycloak_cli.py",
+          "ref": "c3121b271abaaa1a76de2b9ae89dacde0105cd75",
+          "needle": "options.log_file, backupCount=LOG_FILE_ROTATION_COUNT)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "Lib/logging/handlers.py",
+          "ref": "v3.6.3",
+          "needle": "def __init__(self, filename, mode='a', maxBytes=0"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.6.3",
+          "needle": "return open(self.baseFilename, self.mode, encoding=self.encoding)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "Lib/posixpath.py",
+          "ref": "v3.6.3",
+          "needle": "    sep = _get_sep(p)\n    i = p.rfind(sep) + 1\n    head, tail = p[:i], p[i:]\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "Lib/posixpath.py",
+          "ref": "v3.6.3",
+          "needle": "head = p[:i]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "Lib/genericpath.py",
+          "ref": "v3.6.3",
+          "needle": "        os.stat(path)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "Lib/os.py",
+          "ref": "v3.6.3",
+          "needle": "mkdir(name, mode)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "keycloak_httpd_client/keycloak_cli.py",
+          "ref": "07f26e213196936fb328ea0c1d5a66a09d8b5440",
+          "needle": "os.makedirs(log_dir)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "keycloak_httpd_client/keycloak_cli.py",
+          "ref": "07f26e213196936fb328ea0c1d5a66a09d8b5440",
+          "needle": "options.admin_password = options.keycloak_admin_password_file.readline().strip()"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Bare relative default feeds unchanged configure_logging: dirname empty, exists false, makedirs empty raises before protected command dispatch. Old /tmp dirname works under ordinary POSIX availability. Contract deduction only; no filesystem or retained CLI executes."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2017-15112:0:keycloak_httpd_client/keycloak_cli.py:main",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Admin credential supplied as required command-line value; after removes plaintext argv option but password-file/stdin reader dereferences wrong Namespace attribute.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate HTML text escaping from OAuth state/redirect policy; per-account authority and token-preservation from newly introduced admin/reauth policies; ORM project binding from SQL injection; predictable log target from argv secret transport; restricted template member access from intentional trusted traversal.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old required -p/--admin-password supplies password to actual OAuth fetch_token; credential confidentiality excludes lower-trust process/history readership when configured. Intentional CLI option retirement in favor of -P file/stdin or environment is documented; not itself an accidental compatibility regression. Replacement advertised password-file/stdin path should operate.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need OS argv/proc readership and shell history/invocation policy. New argparse long option creates admin_password_file, not keycloak_admin_password_file. FileType handles hyphen stdin. Actual connection/password consumption and exception boundaries retained. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/helper/runtime/browser/configuration contracts are adjudication-only, never selectively injected into detection.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-trust local observer can read argv/history containing old password. Same-user/root capabilities, proc hidepid/platform restrictions, secret environment and operator shell usage remain distinct; no universal public process listing or claim all replacement channels are secret.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After removes required password argument and provides environment fallback. But non-None admin_password_file branch reads undeclared keycloak_admin_password_file before surrounding connection try; ordinary file or hyphen stdin raises AttributeError rather than supplying credential. Introduced replacement-transport regression; not just deliberate old-option removal. Existing /tmp log default separately persists in this version, linked to following fix.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Defer paired negative for introduced advertised file/stdin operation failure; distinguish intentional argv-option retirement and conditional local secret exposure.",
+      "dependence_reason": "Ten representations span seven mechanical families, not ten independent issues. Querybook callbacks share one fix; ihatemoney used/unused helpers share one family; Zope engines share one issue. ZenML successive selected after/before bytes match despite distinct mechanical families; Keycloak password after equals subsequent log-path before exactly. Preserve historical linkage without automatically merging distinct mechanisms, plus canonical IDs/bytes/splits, all discovery statuses/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm historical authority/reauth policy, installed versions, supported callers/backends, filesystem/log/process readership, template author privileges and actual browser/CSP delivery. No advisory/new tests/new consumer alone establishes an old selected duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/browser/template/ORM/authentication/password/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "group.add_argument('-p', '--admin-password',"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "options.admin_password = options.keycloak_admin_password_file.readline().strip()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "keycloak_httpd_client/keycloak_cli.py",
+          "ref": "bee4ab8391b843a744e594d5006a07a2bb818379",
+          "needle": "password=self.password,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "keycloak_httpd_client/keycloak_cli.py",
+          "ref": "c3121b271abaaa1a76de2b9ae89dacde0105cd75",
+          "needle": "group.add_argument('-P', '--admin-password-file',"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "Lib/argparse.py",
+          "ref": "v3.6.3",
+          "needle": "dest = dest.replace('-', '_')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "Lib/argparse.py",
+          "ref": "v3.6.3",
+          "needle": "setattr(namespace, self.dest, values)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "Lib/argparse.py",
+          "ref": "v3.6.3",
+          "needle": "if string == '-':"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "keycloak_httpd_client/keycloak_cli.py",
+          "ref": "c3121b271abaaa1a76de2b9ae89dacde0105cd75",
+          "needle": "options.admin_password = os.environ['KEYCLOAK_ADMIN_PASSWORD']"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Argparse declares admin_password_file; selected nonempty file/stdin branch dereferences undeclared keycloak_admin_password_file before connection try. No earlier matching destination exists, so advertised replacement transport fails. No credential/CLI/file operation executes."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-32674:0:src/Products/PageTemplates/Expressions.py:boboAwareZopeTraverse",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Classic TALES restricted fallback traverses non-OFS members without Zope authorization; after validates result before exposing next object.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate HTML text escaping from OAuth state/redirect policy; per-account authority and token-preservation from newly introduced admin/reauth policies; ORM project binding from SQL injection; predictable log target from argv secret transport; restricted template member access from intentional trusted traversal.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing untrusted template engine uses restricted member traversal, not merely an underscore naming filter. Exact pinned zope.traversing4.4.1 adapts to ordinary getattr/item lookup without AccessControl policy; OFS restrictedTraverse already delegates security. Actual engine traverser/security-context wiring retained. AccessControl5.0 standard policy raises Unauthorized on disallowed access; selected after catches and converts to NotFound.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need template author/expression capability, non-OFS protected member chain, adapter registrations, active security policy and classic/Chameleon engine selection. Authorized public module/object access does not authorize every public-named descendant. Custom policies/adapters and side-effectful property evaluation need separate review. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/helper/runtime/browser/configuration contracts are adjudication-only, never selectively injected into detection.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-privilege template author can use public-name traversal from permitted object to a member the standard Zope policy would reject. Old leading-underscore check alone cannot enforce role/member grants. No arbitrary filesystem execution or general sandbox bypass certification; actual principals/content permissions remain prerequisites.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After standard restricted fallback validates each returned member before continuation and maps Unauthorized to NotFound. Explicit single underscore compatibility bypass remains intentional. Classic trusted traverser remains a separate unrestricted routine. Lookup occurs before validation; not a universal side-effect guard, namespace-adapter sandbox or custom false-return-policy certification.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Actual untrusted/trusted engine separation and pinned traversal/security policy support selected restricted repair; defer missing object/principal/runtime context and preserve one shared issue.",
+      "dependence_reason": "Ten representations span seven mechanical families, not ten independent issues. Querybook callbacks share one fix; ihatemoney used/unused helpers share one family; Zope engines share one issue. ZenML successive selected after/before bytes match despite distinct mechanical families; Keycloak password after equals subsequent log-path before exactly. Preserve historical linkage without automatically merging distinct mechanisms, plus canonical IDs/bytes/splits, all discovery statuses/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm historical authority/reauth policy, installed versions, supported callers/backends, filesystem/log/process readership, template author privileges and actual browser/CSP delivery. No advisory/new tests/new consumer alone establishes an old selected duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/browser/template/ORM/authentication/password/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            object = object.restrictedTraverse(name)\n        else:\n            object = traversePathElement(object, name, path_items,\n                                         request=request)\n    return object\n\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "validate(object, object, name, found)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "versions-prod.cfg",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "AccessControl = 5.0"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "versions-prod.cfg",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "zope.traversing = 4.4.1"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_DELIVERY.json",
+          "path": "src/zope/traversing/adapters.py",
+          "ref": "4.4.1",
+          "needle": "attr = getattr(subject, name, _marker)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_DELIVERY.json",
+          "path": "src/zope/traversing/adapters.py",
+          "ref": "4.4.1",
+          "needle": "return traversable.traverse(nm, further_path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_DELIVERY.json",
+          "path": "src/AccessControl/ImplPython.py",
+          "ref": "5.0",
+          "needle": "        if roles is _noroles:\n            return policy.validate(accessed, container, name, value,\n                                   self._context)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_DELIVERY.json",
+          "path": "src/AccessControl/ImplPython.py",
+          "ref": "5.0",
+          "needle": "                        context,\n                    )\n                raise Unauthorized(name, value)\n\n        containerbase = aq_base(container)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/OFS/Traversable.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "return self.unrestrictedTraverse(path, default, restricted=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/Products/PageTemplates/ZopePageTemplate.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "security.addContext(self)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/Products/PageTemplates/ZopePageTemplate.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "result = self.pt_render(extra_context=bound_names)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/Products/PageTemplates/Expressions.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "_TRAVERSER = staticmethod(boboAwareZopeTraverse)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/Products/PageTemplates/expression.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "traverse_method = 'restrictedTraverse'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/Products/PageTemplates/expression.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "traverse_method = 'unrestrictedTraverse'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/Products/PageTemplates/expression.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "return createChameleonEngine(untrusted=False, **ovr)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-32674:0:src/Products/PageTemplates/expression.py:BoboAwareZopeTraverse.traverse",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Chameleon restricted fallback traverses non-OFS members without Zope authorization; after validates result before exposing next object.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate HTML text escaping from OAuth state/redirect policy; per-account authority and token-preservation from newly introduced admin/reauth policies; ORM project binding from SQL injection; predictable log target from argv secret transport; restricted template member access from intentional trusted traversal.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing untrusted template engine uses restricted member traversal, not merely an underscore naming filter. Exact pinned zope.traversing4.4.1 adapts to ordinary getattr/item lookup without AccessControl policy; OFS restrictedTraverse already delegates security. Actual engine traverser/security-context wiring retained. AccessControl5.0 standard policy raises Unauthorized on disallowed access; selected after catches and converts to NotFound.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need template author/expression capability, non-OFS protected member chain, adapter registrations, active security policy and classic/Chameleon engine selection. Authorized public module/object access does not authorize every public-named descendant. Custom policies/adapters and side-effectful property evaluation need separate review. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/helper/runtime/browser/configuration contracts are adjudication-only, never selectively injected into detection.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-privilege template author can use public-name traversal from permitted object to a member the standard Zope policy would reject. Old leading-underscore check alone cannot enforce role/member grants. No arbitrary filesystem execution or general sandbox bypass certification; actual principals/content permissions remain prerequisites.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After standard restricted fallback validates each returned member before continuation and maps Unauthorized to NotFound. Explicit single underscore compatibility bypass remains intentional. Class method explicitly preserves trusted subclass traverse_method=unrestrictedTraverse; do not call that intentional policy a residual restricted-mode flaw. Lookup occurs before validation; not a universal side-effect guard, namespace-adapter sandbox or custom false-return-policy certification.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Actual untrusted/trusted engine separation and pinned traversal/security policy support selected restricted repair; defer missing object/principal/runtime context and preserve one shared issue.",
+      "dependence_reason": "Ten representations span seven mechanical families, not ten independent issues. Querybook callbacks share one fix; ihatemoney used/unused helpers share one family; Zope engines share one issue. ZenML successive selected after/before bytes match despite distinct mechanical families; Keycloak password after equals subsequent log-path before exactly. Preserve historical linkage without automatically merging distinct mechanisms, plus canonical IDs/bytes/splits, all discovery statuses/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm historical authority/reauth policy, installed versions, supported callers/backends, filesystem/log/process readership, template author privileges and actual browser/CSP delivery. No advisory/new tests/new consumer alone establishes an old selected duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/browser/template/ORM/authentication/password/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "request=request)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "validate(base, base, name, found)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "versions-prod.cfg",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "AccessControl = 5.0"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTRACTS.json",
+          "path": "versions-prod.cfg",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "zope.traversing = 4.4.1"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_DELIVERY.json",
+          "path": "src/zope/traversing/adapters.py",
+          "ref": "4.4.1",
+          "needle": "attr = getattr(subject, name, _marker)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_DELIVERY.json",
+          "path": "src/zope/traversing/adapters.py",
+          "ref": "4.4.1",
+          "needle": "return traversable.traverse(nm, further_path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_DELIVERY.json",
+          "path": "src/AccessControl/ImplPython.py",
+          "ref": "5.0",
+          "needle": "        if roles is _noroles:\n            return policy.validate(accessed, container, name, value,\n                                   self._context)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_DELIVERY.json",
+          "path": "src/AccessControl/ImplPython.py",
+          "ref": "5.0",
+          "needle": "                        context,\n                    )\n                raise Unauthorized(name, value)\n\n        containerbase = aq_base(container)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/OFS/Traversable.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "return self.unrestrictedTraverse(path, default, restricted=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/Products/PageTemplates/ZopePageTemplate.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "security.addContext(self)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/Products/PageTemplates/ZopePageTemplate.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "result = self.pt_render(extra_context=bound_names)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/Products/PageTemplates/Expressions.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "_TRAVERSER = staticmethod(boboAwareZopeTraverse)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/Products/PageTemplates/expression.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "traverse_method = 'restrictedTraverse'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/Products/PageTemplates/expression.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "traverse_method = 'unrestrictedTraverse'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_054_CONTEXT_UNIQUE.json",
+          "path": "src/Products/PageTemplates/expression.py",
+          "ref": "15e521bb5f80e8fdcaef6319764132b20a2eaad7",
+          "needle": "return createChameleonEngine(untrusted=False, **ovr)"
+        }
+      ]
+    }
+  ],
+  "authored_correction": {
+    "original_unregistered_proposal": "CATEGORY_AUDIT_CONSOLIDATION_BATCH_054.json",
+    "sha256": "b93b5e369aa4b26097ecb4200d368017b6262b5dcca400886be458bba1e811a0",
+    "reason": "Original proposal cannot validate ambiguous identical ref/path sources in context collector. New lookup view removes only duplicate entries; all original evidence and proposal bytes preserved. Current proposal review revision remains1 because original never entered validated current history."
+  }
+}

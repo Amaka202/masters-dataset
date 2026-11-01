@@ -1,0 +1,420 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-041",
+  "review_date": "2026-10-27",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All five Saleor training candidates/all discovery statuses including two null categories; three mechanical families with nested/outer overlap.",
+  "selection_rule": {
+    "repository": "github.com/saleor/saleor",
+    "discovery_categories": [
+      null,
+      "SEC-CSRF-CREDENTIAL-SOURCE",
+      "SEC-RESOURCE-AUTHORIZATION"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Three missing-context, one nonrepair exclusion and one security-boundary deferral. Empty explicit optional String falls back to cookie while caller skips CSRF; csrf_exempt form-POST and Secure/SameSite=None issuance establish conditional ambient credential use without the required binding. Lax/third-party blocking and response readability remain qualified; no automatic token-theft/account-takeover claim. Cleaner already rejects empty actual tokens and only changes missing/invalid classification; preserve its null nonrepair exclusion. JWT setup messages do not establish sensitive other-user disclosure, and new typed branch is not the separately fixed generic formatter or all-subclass enum certification. MANAGE_USERS-only actor can reach another customer root; old root-ID orders loader/callback returns non-drafts without MANAGE_ORDERS/ownership. Nested/outer one overlapping mechanism, not two issues. Four pins retain149 inert texts/six exact peers/three resolved parents/six complete context archive inventories plus three old delivery searches and explicit absent paths. Locked-era PyJWT2.5.0/Graphene2.1.9/Django3.2.18/3.2.25 are semantic comparisons, not installed/all-version/browser proof. Preserve all833 ledger events/statuses/categories/hashes/families, canonical bytes/splits, prior authored batches and45 protected inputs. Five functions/three families are not independent issue counts; no retained program, payload, vulnerability request or upstream test executes.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:127733048439986:116675720247251",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Empty explicit refresh-token input is treated as cookie fallback while the caller treats it as explicit credential supply.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve CSRF credential-source selection, ancillary JWT error classification, actual sensitive exception disclosure and resource-specific order authorization as distinct mechanisms. Model/user root visibility is not authority over all nested data; reflected actor-controlled token errors are not another customer secret. No new leaf/approved eligibility/independent-issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old perform_mutation sets need_csrf only when argument is None, then old helper uses falsey fallback to refreshToken cookie. Graphene String accepts the empty string, so explicit empty input selects an ambient valid cookie without clean_csrf_token. Public mutation docs require CSRF when credential comes from the cookie. Matched route is csrf_exempt, POST view accepts form-encoded queries, and configured refresh middleware emits HttpOnly/Secure/SameSite=None when DEBUG=False; DEBUG=True instead uses Lax. Caller validates cookie JWT/user, issues an access token and updates last_login. Thus no attacker reading the HttpOnly cookie is required for credential use, but browser cookie admission and actual request/user state still matter.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need caller None predicate, optional GraphQL scalar coercion, route/POST/form admission, cookie setter/debug/browser policy and token/user/state consumers. Function alone does not show which branch requires CSRF or whether a browser sends the cookie. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. GraphQL routes/input coercion/browser-cookie policy, context/auth/error/schema/loader/permission/caller facts, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Under an accepted Secure/SameSite=None valid refresh cookie and actual cross-site POST delivery, an attacker-controlled empty explicit argument can induce cookie-authorized token issuance/last_login update without the required CSRF value. Third-party-cookie blocking or DEBUG Lax can prevent that cross-site delivery. Returned access-token theft/account takeover additionally needs response-readability/CORS or another exfiltration path; that is not established here. The demonstrated boundary is ambient credential use without the documented CSRF binding, not universal token disclosure.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After cookie fallback is limited to None, matching the caller predicate. Empty string stays explicit and is rejected by JWT payload decoding instead of using the cookie; cleaner change alters missing versus invalid error classification. None still requires a matching CSRF value for a cookie credential; a valid explicit refresh token remains an explicit credential route by design. Negative covers the empty-argument/cookie mismatch only, not every CSRF/JWT/browser/CORS/last-login behavior. No supported after-contract regression is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched old credential/caller/browser or schema/root/permission/loader contracts support the conditional selected mechanism, but omitted project facts prevent the intended bounded function-only admission; do not inject those facts selectively.",
+      "dependence_reason": "Five selected functions/three mechanical families are not independent issues. Refresh helper/cleaner share fix-family:dce38c32f46dcf66a7b4; changed missing/invalid error classification is not another CSRF bypass. JWT exception conversion fix-family:e6ae3408aaa265317a18 shares its fix with generic formatter sanitization but does not inherit that formatter selected mechanism. Nested/outer orders callbacks share fix-family:364d9da16f3b9f6dab11 and overlap the same source: select one experimental representation only after adjudication; do not count two disclosure issues. The2022/2023/2024 parents have different schema/auth/browser policies; never backfill later code into earlier snapshots or infer family mergers from shared models/frameworks.",
+      "open_questions": [
+        "Researcher confirm actual cookie delivery/third-party policy, account/session state, CSRF-required operation and token-response readability, requestor permission grants and user-root reachability, exception content/DEBUG/plugin paths, before-only budget and one nested/outer experimental representation. Runtime/framework comparisons are not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No retained Saleor/GraphQL/JWT/crypto/token/CSRF/cookie/browser/HTTP/Django/scalar/lazy/auth/permission/ORM/DB/parser/regex/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "refresh_token = refresh_token or request.COOKIES.get("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        request = info.context\n        if refresh_token is None:\n            refresh_token = request.COOKIES.get(JWT_REFRESH_TOKEN_COOKIE_NAME, None)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "need_csrf = refresh_token is None"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "cls.clean_csrf_token(csrf_token, payload)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "user.save(update_fields=[\"last_login\", \"updated_at\"])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_DELIVERY.json",
+          "path": "saleor/urls.py",
+          "ref": "8699ee03cd33159c320cd96229897683ded6ae2d",
+          "needle": "csrf_exempt(GraphQLView.as_view(backend=backend, schema=schema))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/graphql/views.py",
+          "ref": "8699ee03cd33159c320cd96229897683ded6ae2d",
+          "needle": "return request.POST"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/core/middleware.py",
+          "ref": "8699ee03cd33159c320cd96229897683ded6ae2d",
+          "needle": "samesite=\"None\" if secure else \"Lax\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/graphql/account/mutations/authentication/utils.py",
+          "ref": "8699ee03cd33159c320cd96229897683ded6ae2d",
+          "needle": "payload = jwt_decode(token)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTRACTS.json",
+          "path": "graphene/types/scalars.py",
+          "ref": "v2.1.9",
+          "needle": "return six.text_type(value)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:127733048439986:242211954108213",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Token cleaner already rejects an empty credential; after changes ancillary missing/invalid classification.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve CSRF credential-source selection, ancillary JWT error classification, actual sensitive exception disclosure and resource-specific order authorization as distinct mechanisms. Model/user root visibility is not authority over all nested data; reflected actor-controlled token errors are not another customer secret. No new leaf/approved eligibility/independent-issue count.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Old clean_refresh_token rejects any falsey token before get_refresh_token_payload. In the vulnerable path it receives a nonempty valid cookie selected upstream, so it does not observe the original empty GraphQL argument or decide the CSRF gate. After get_refresh_token leaves empty input explicit, the cleaner changes None-only missing classification and delegates empty text to JWT decode, which yields typed validation error. Old cleaner did not authorize cookie selection or promise accepting empty tokens. Error classification migration alone does not establish a separate prior selected security or correctness violation.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need upstream original argument, credential source, need_csrf decision and JWT error wrapper. Selected cleaner sees only resolved token; shared fix does not attribute upstream fallback to it. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. GraphQL routes/input coercion/browser-cookie policy, context/auth/error/schema/loader/permission/caller facts, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No selected old CSRF bypass is established: empty actual input is already rejected, and nonempty cookie content lacks original-source information. Ancillary error classification is not another unsafe credential sink.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After still rejects empty/None credentials, with different missing/invalid codes. It cooperates with actual upstream selection repair, not an isolated before-positive/after-negative CSRF pair. Preserve null category/nonrepair exclusion and do not invent a separate general-bug label or universal JWT validation guarantee.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "Old cleaner already rejects empty input; upstream fallback supplies the nonempty cookie. Changed missing/invalid classification is coordinated ancillary behavior, not a supported selected CSRF repair; preserve null-category nonrepair exclusion.",
+      "dependence_reason": "Five selected functions/three mechanical families are not independent issues. Refresh helper/cleaner share fix-family:dce38c32f46dcf66a7b4; changed missing/invalid error classification is not another CSRF bypass. JWT exception conversion fix-family:e6ae3408aaa265317a18 shares its fix with generic formatter sanitization but does not inherit that formatter selected mechanism. Nested/outer orders callbacks share fix-family:364d9da16f3b9f6dab11 and overlap the same source: select one experimental representation only after adjudication; do not count two disclosure issues. The2022/2023/2024 parents have different schema/auth/browser policies; never backfill later code into earlier snapshots or infer family mergers from shared models/frameworks.",
+      "open_questions": [
+        "Researcher confirm actual cookie delivery/third-party policy, account/session state, CSRF-required operation and token-response readability, requestor permission grants and user-root reachability, exception content/DEBUG/plugin paths, before-only budget and one nested/outer experimental representation. Runtime/framework comparisons are not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No retained Saleor/GraphQL/JWT/crypto/token/CSRF/cookie/browser/HTTP/Django/scalar/lazy/auth/permission/ORM/DB/parser/regex/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not refresh_token:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    def clean_refresh_token(cls, refresh_token):\n        if refresh_token is None:\n            raise ValidationError(\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "refresh_token = cls.get_refresh_token(info, refresh_token)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "payload = cls.clean_refresh_token(refresh_token)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/graphql/account/mutations/authentication/utils.py",
+          "ref": "8699ee03cd33159c320cd96229897683ded6ae2d",
+          "needle": "except jwt.DecodeError:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/graphql/account/mutations/authentication/utils.py",
+          "ref": "8699ee03cd33159c320cd96229897683ded6ae2d",
+          "needle": "code=AccountErrorCode.JWT_DECODE_ERROR.value"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:269103117572430:265523516097266",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "New mutation JWT setup catch converts an exception to a generic typed error; sensitive disclosure is not established.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve CSRF credential-source selection, ancillary JWT error classification, actual sensitive exception disclosure and resource-specific order authorization as distinct mechanisms. Model/user root visibility is not authority over all nested data; reflected actor-controlled token errors are not another customer secret. No new leaf/approved eligibility/independent-issue count.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old mutate calls setup_context_user before permission checking/perform_mutation ValidationError handling. Matched context uses SimpleLazyObject(authenticate), setup forces _setup, auth backend decodes a Saleor token and can raise InvalidTokenError with fixed account-state messages. Retained locked PyJWT2.5.0 decoding/signature failures use fixed or input-derived messages; no retained producer establishes private other-user data in the selected exception. Old generic GraphQL formatter exposes str(error), class and DEBUG-only stack traces, while after same commit separately sanitizes broad unhandled errors. That separate repair cannot establish a selected secret-bearing JWT setup path or an old typed-JWT-envelope contract.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need lazy auth producer/backend/plugin configuration, exact PyJWT subclass/message, GraphQL formatter/DEBUG and response content. Returning a new generic typed response is not alone proof of old confidentiality violation. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. GraphQL routes/input coercion/browser-cookie policy, context/auth/error/schema/loader/permission/caller facts, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Public mutation invocation can trigger JWT setup failure, but fixed invalid-token/signature/account-state messages or reflected actor-controlled token syntax are not demonstrated another-user secret disclosure. Plugin/custom exception content and DEBUG stack information need concrete delivery/secret evidence. Do not import every exception admitted by the separately changed broad formatter.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After catches InvalidTokenError during setup and routes fixed Invalid token through handle_errors; broad formatter also sanitizes unallowed messages when DEBUG=False. Negative is only that caught boundary/message substitution, not all setup exceptions/DEBUG/plugin secrets or every subclass typed-error serialization. ProductErrorCode lacks jwt_invalid_token while get_error_code_from_error preserves non-Django codes, so compatible public error-enum consumption must be checked rather than claiming all mutation envelopes work; no old typed-envelope duty or independently supported old-contract after regression is established here. Selected security pair remains unestablished.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "A new JWT catch/typed error is real behavior, but retained setup producers do not establish another user secret in those exception messages or an old typed-envelope requirement. Defer security delivery without inheriting the separately changed broad formatter CVE.",
+      "dependence_reason": "Five selected functions/three mechanical families are not independent issues. Refresh helper/cleaner share fix-family:dce38c32f46dcf66a7b4; changed missing/invalid error classification is not another CSRF bypass. JWT exception conversion fix-family:e6ae3408aaa265317a18 shares its fix with generic formatter sanitization but does not inherit that formatter selected mechanism. Nested/outer orders callbacks share fix-family:364d9da16f3b9f6dab11 and overlap the same source: select one experimental representation only after adjudication; do not count two disclosure issues. The2022/2023/2024 parents have different schema/auth/browser policies; never backfill later code into earlier snapshots or infer family mergers from shared models/frameworks.",
+      "open_questions": [
+        "Researcher confirm actual cookie delivery/third-party policy, account/session state, CSRF-required operation and token-response readability, requestor permission grants and user-root reachability, exception content/DEBUG/plugin paths, before-only budget and one nested/outer experimental representation. Runtime/framework comparisons are not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No retained Saleor/GraphQL/JWT/crypto/token/CSRF/cookie/browser/HTTP/Django/scalar/lazy/auth/permission/ORM/DB/parser/regex/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    def mutate(cls, root, info: ResolveInfo, **data):\n        disallow_replica_in_context(info.context)\n        setup_context_user(info.context)\n\n        if not cls.check_permissions(info.context, data=data):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        return one_of_permissions_or_auth_filter_required(context, all_permissions)\n\n    @classmethod\n    def mutate(cls, root, info: ResolveInfo, **data):\n        disallow_replica_in_context(info.context)\n        try:\n            setup_context_user(info.context)\n        except jwt.InvalidTokenError:\n            return cls.handle_errors(\n                ValidationError(\n                    \"Invalid token\", code=AccountErrorCode.JWT_INVALID_TOKEN.value\n                )\n            )\n\n        if not cls.check_permissions(info.context, data=data):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            return response\n        except ValidationError as e:\n            return cls.handle_errors(e)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            setup_context_user(info.context)\n        except jwt.InvalidTokenError:\n            return cls.handle_errors(\n                ValidationError(\n                    \"Invalid token\", code=AccountErrorCode.JWT_INVALID_TOKEN.value\n                )\n            )\n\n        if not cls.check_permissions(info.context, data=data):\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/graphql/core/context.py",
+          "ref": "791372b11a119ff7108760803cad473e964d4e49",
+          "needle": "context.user._setup()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_DELIVERY.json",
+          "path": "saleor/graphql/context.py",
+          "ref": "791372b11a119ff7108760803cad473e964d4e49",
+          "needle": "request.user = SimpleLazyObject(user)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/core/auth_backend.py",
+          "ref": "791372b11a119ff7108760803cad473e964d4e49",
+          "needle": "Invalid token. User does not exist or is inactive."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTRACTS.json",
+          "path": "jwt/api_jws.py",
+          "ref": "2.5.0",
+          "needle": "raise InvalidSignatureError(\"Signature verification failed\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/graphql/utils/__init__.py",
+          "ref": "791372b11a119ff7108760803cad473e964d4e49",
+          "needle": "result = {\"message\": str(error)}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/graphql/utils/__init__.py",
+          "ref": "31bce881ccccf0d79a9b14ecb6ca3138d1edeec1",
+          "needle": "result[\"message\"] = INTERNAL_ERROR_MESSAGE"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTRACTS.json",
+          "path": "saleor/graphql/core/utils/error_codes.py",
+          "ref": "31bce881ccccf0d79a9b14ecb6ca3138d1edeec1",
+          "needle": "return code"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTRACTS.json",
+          "path": "saleor/product/error_codes.py",
+          "ref": "31bce881ccccf0d79a9b14ecb6ca3138d1edeec1",
+          "needle": "class ProductErrorCode(Enum):"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:53262628826719:157803500758048",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Other-customer orders leak to a customer-management actor lacking order-management permission; nested/outer duplicate path.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve CSRF credential-source selection, ancillary JWT error classification, actual sensitive exception disclosure and resource-specific order authorization as distinct mechanisms. Model/user root visibility is not authority over all nested data; reflected actor-controlled token errors are not another customer secret. No new leaf/approved eligibility/independent-issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old public AccountQueries.user resolver admits MANAGE_USERS independently of MANAGE_ORDERS, and resolve_user returns customer roots for a requestor holding that permission. The selected orders field is not protected by the nearby events-field decorator. OrdersByUserLoader queries by root user ID and returns those order objects. Old callback only filters drafts for non-order-managers and performs no ownership check, so an authenticated actor with customer-management permission but not order-management permission can request another customer root and receive its non-draft orders. This is a concrete delegated role/resource boundary, not anonymous arbitrary-user enumeration or an assumption that any user ID is reachable. The declared permissions split, self reduced-view duty and exact route/loader establish the old contract; new tests are corroboration only.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need outer root.id loader and promise callback, requestor/user/app preference, schema permission decorators, customer root resolver and actual role grants. The nested representation omits more of that path; the outer still lacks root reachability and policy helpers. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. GraphQL routes/input coercion/browser-cookie policy, context/auth/error/schema/loader/permission/caller facts, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Matched schema and customer resolver establish an actor authorized to manage customer records but not orders; the nested field exposes another customer non-draft order data beyond that authority. Actual permission assignment/customer existence and authorized GraphQL request remain prerequisites. App actors use the helper preference and are not identical to an ordinary self user. No claim of anonymous access, all user-field disclosure, draft exposure or universal channel authorization is made.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After a non-order-manager is allowed the draft-filtered view only when root equals context.user; otherwise raises PermissionDenied before connection construction. Order managers retain their existing route; self users retain non-draft view under actual root admission, and apps without order permission fail the owner comparison. Negative is cross-user non-manager order resolution under matched schema/loader/identity, not all metadata/user fields/channels or overall GraphQL authorization. No independently supported after-contract regression is established. Nested/outer records represent one overlapping mechanism, not two independent negatives.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched old credential/caller/browser or schema/root/permission/loader contracts support the conditional selected mechanism, but omitted project facts prevent the intended bounded function-only admission; do not inject those facts selectively.",
+      "dependence_reason": "Five selected functions/three mechanical families are not independent issues. Refresh helper/cleaner share fix-family:dce38c32f46dcf66a7b4; changed missing/invalid error classification is not another CSRF bypass. JWT exception conversion fix-family:e6ae3408aaa265317a18 shares its fix with generic formatter sanitization but does not inherit that formatter selected mechanism. Nested/outer orders callbacks share fix-family:364d9da16f3b9f6dab11 and overlap the same source: select one experimental representation only after adjudication; do not count two disclosure issues. The2022/2023/2024 parents have different schema/auth/browser policies; never backfill later code into earlier snapshots or infer family mergers from shared models/frameworks.",
+      "open_questions": [
+        "Researcher confirm actual cookie delivery/third-party policy, account/session state, CSRF-required operation and token-response readability, requestor permission grants and user-root reachability, exception content/DEBUG/plugin paths, before-only budget and one nested/outer experimental representation. Runtime/framework comparisons are not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No retained Saleor/GraphQL/JWT/crypto/token/CSRF/cookie/browser/HTTP/Django/scalar/lazy/auth/permission/ORM/DB/parser/regex/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not requester.has_perm(OrderPermissions.MANAGE_ORDERS):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                if root == info.context.user:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return OrdersByUserLoader(info.context).load(root.id).then(_resolve_orders)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    raise PermissionDenied()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/graphql/account/schema.py",
+          "ref": "035bf705cee15553c31fca5d918df5c438817e67",
+          "needle": "return resolve_user(info, id, email)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/graphql/account/resolvers.py",
+          "ref": "035bf705cee15553c31fca5d918df5c438817e67",
+          "needle": "requester, [AccountPermissions.MANAGE_USERS, OrderPermissions.MANAGE_ORDERS]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/graphql/order/dataloaders.py",
+          "ref": "035bf705cee15553c31fca5d918df5c438817e67",
+          "needle": "user_id__in=keys"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_DELIVERY.json",
+          "path": "saleor/graphql/utils/__init__.py",
+          "ref": "035bf705cee15553c31fca5d918df5c438817e67",
+          "needle": "def get_user_or_app_from_context(context):"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:53262628826719:244766087824779",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Other-customer orders leak to a customer-management actor lacking order-management permission; nested/outer duplicate path.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve CSRF credential-source selection, ancillary JWT error classification, actual sensitive exception disclosure and resource-specific order authorization as distinct mechanisms. Model/user root visibility is not authority over all nested data; reflected actor-controlled token errors are not another customer secret. No new leaf/approved eligibility/independent-issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old public AccountQueries.user resolver admits MANAGE_USERS independently of MANAGE_ORDERS, and resolve_user returns customer roots for a requestor holding that permission. The selected orders field is not protected by the nearby events-field decorator. OrdersByUserLoader queries by root user ID and returns those order objects. Old callback only filters drafts for non-order-managers and performs no ownership check, so an authenticated actor with customer-management permission but not order-management permission can request another customer root and receive its non-draft orders. This is a concrete delegated role/resource boundary, not anonymous arbitrary-user enumeration or an assumption that any user ID is reachable. The declared permissions split, self reduced-view duty and exact route/loader establish the old contract; new tests are corroboration only.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need outer root.id loader and promise callback, requestor/user/app preference, schema permission decorators, customer root resolver and actual role grants. The nested representation omits more of that path; the outer still lacks root reachability and policy helpers. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. GraphQL routes/input coercion/browser-cookie policy, context/auth/error/schema/loader/permission/caller facts, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Matched schema and customer resolver establish an actor authorized to manage customer records but not orders; the nested field exposes another customer non-draft order data beyond that authority. Actual permission assignment/customer existence and authorized GraphQL request remain prerequisites. App actors use the helper preference and are not identical to an ordinary self user. No claim of anonymous access, all user-field disclosure, draft exposure or universal channel authorization is made.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After a non-order-manager is allowed the draft-filtered view only when root equals context.user; otherwise raises PermissionDenied before connection construction. Order managers retain their existing route; self users retain non-draft view under actual root admission, and apps without order permission fail the owner comparison. Negative is cross-user non-manager order resolution under matched schema/loader/identity, not all metadata/user fields/channels or overall GraphQL authorization. No independently supported after-contract regression is established. Nested/outer records represent one overlapping mechanism, not two independent negatives.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched old credential/caller/browser or schema/root/permission/loader contracts support the conditional selected mechanism, but omitted project facts prevent the intended bounded function-only admission; do not inject those facts selectively.",
+      "dependence_reason": "Five selected functions/three mechanical families are not independent issues. Refresh helper/cleaner share fix-family:dce38c32f46dcf66a7b4; changed missing/invalid error classification is not another CSRF bypass. JWT exception conversion fix-family:e6ae3408aaa265317a18 shares its fix with generic formatter sanitization but does not inherit that formatter selected mechanism. Nested/outer orders callbacks share fix-family:364d9da16f3b9f6dab11 and overlap the same source: select one experimental representation only after adjudication; do not count two disclosure issues. The2022/2023/2024 parents have different schema/auth/browser policies; never backfill later code into earlier snapshots or infer family mergers from shared models/frameworks.",
+      "open_questions": [
+        "Researcher confirm actual cookie delivery/third-party policy, account/session state, CSRF-required operation and token-response readability, requestor permission grants and user-root reachability, exception content/DEBUG/plugin paths, before-only budget and one nested/outer experimental representation. Runtime/framework comparisons are not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No retained Saleor/GraphQL/JWT/crypto/token/CSRF/cookie/browser/HTTP/Django/scalar/lazy/auth/permission/ORM/DB/parser/regex/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not requester.has_perm(OrderPermissions.MANAGE_ORDERS):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                if root == info.context.user:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return OrdersByUserLoader(info.context).load(root.id).then(_resolve_orders)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    raise PermissionDenied()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/graphql/account/schema.py",
+          "ref": "035bf705cee15553c31fca5d918df5c438817e67",
+          "needle": "return resolve_user(info, id, email)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/graphql/account/resolvers.py",
+          "ref": "035bf705cee15553c31fca5d918df5c438817e67",
+          "needle": "requester, [AccountPermissions.MANAGE_USERS, OrderPermissions.MANAGE_ORDERS]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_CONTEXT.json",
+          "path": "saleor/graphql/order/dataloaders.py",
+          "ref": "035bf705cee15553c31fca5d918df5c438817e67",
+          "needle": "user_id__in=keys"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_041_DELIVERY.json",
+          "path": "saleor/graphql/utils/__init__.py",
+          "ref": "035bf705cee15553c31fca5d918df5c438817e67",
+          "needle": "def get_user_or_app_from_context(context):"
+        }
+      ]
+    }
+  ]
+}

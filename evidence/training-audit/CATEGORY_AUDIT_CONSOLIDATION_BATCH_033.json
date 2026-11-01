@@ -1,0 +1,519 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-033",
+  "review_date": "2026-10-26",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All six OpenStack Swift training candidates, including both supported reader rows and four ambiguous producer/policy rows in the single shared deserialization family; no null categories exist in this repository.",
+  "selection_rule": {
+    "repository": "github.com/openstack/swift",
+    "discovery_categories": [
+      "SEC-DESERIALIZATION-ALLOWLIST"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 832,
+    "sha256": "77d3003fbedadf6b27134179e2da0b0164693a1eb7ee572a1850a8d9ba10771c"
+  },
+  "interpretation": "Two missing-context reader deferrals, three selected-attribution producer/constructor deferrals and one explicit middleware paired-negative deferral. Cache flags/raw data can cross into cPickle object construction under actual hostile cache control; public tenant object writes do not alone establish that access. Single reader checks response key before loads; bulk reader decodes rows before requested-key selection, but literal production search finds no bulk caller beyond definitions, so actual bulk invocation stays conditional. New policy/JSON producer migration is not three isolated old security defects. Exact config/PasteDeploy text plus advertised Python2.6 ordering disables both flags for textual0/1 modes; integer default2 works, and explicit actual integer0/1 intentionally remains unsafe. The documented staged migration retains old cached-value interoperability, so text0/1 rejection/JSON cache poisoning introduces a supported after integration failure rather than an unsupported Python3 crash or universal deserialization bypass. Four evidence files retain64 inert texts/four deduplicated full archive peers; exact dependency packages and protocol/runtime comparisons are not deployment or whole-range proof. Preserve all832 discovery events, two supported/four ambiguous statuses, categories, original IDs/hashes/family/splits, earlier batches and45 protected inputs. Six functions/two files/one family are not independently adjudicated issues. All retained programs, payloads, vulnerability requests and upstream tests remain inert; findings are conditional source deductions, not reproduced results.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2012-4406:0:swift/common/memcached.py:MemcacheRing.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Ring constructor initializes newly introduced serialization policy for guarded reader/writer consumers.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate cache bytes-to-process object construction from trusted application serialization, new policy-state initialization and middleware configuration/rolling-cache compatibility. All six retain their historical deserialization discovery leaf; that does not assign the after configuration regression to the same mechanism or make every writer/constructor a security positive. No narrow-leaf/final taxonomy or independent-issue decision is approved.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old constructor builds ring/server/error/pool/timeouts correctly and has no deserializer or preexisting missing allow_pickle flag contract. After adds _allow_pickle and _allow_unpickle; matched readers/writers consume the new state. _allow_unpickle=allow_unpickle or allow_pickle deliberately lets a legacy pickle writer read its own values. A new policy producer needed by a repaired consumer does not isolate an old selected constructor defect.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old/new reader/writer consumers, state semantics and middleware/API flag types; local ring setup alone has no cache-controlled object construction sink. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helper/caller/global/dependency/configuration facts, after, labels, IDs, patches, metadata, tests, advisories and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No old selected constructor lower-trust loads operation is established. The reader siblings support a real cache-to-process security boundary under their own conditions; constructor necessity does not transfer that local attribution.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "New defaults deny pickle only with matched consumers. Explicit allow_pickle/allow_unpickle admit intentionally insecure compatibility; the old constructor has no isolated positive/negative deserialization pair. Configuration parsing and arbitrary application object-type policy remain outside this constructor claim.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The selected writer/constructor coordinates the new format/policy API without an isolated old selected object-construction violation. Shared CVE membership and necessity to the matched reader repair do not establish an old local security-positive pair.",
+      "dependence_reason": "Preserve fix-family:c98f0cc20c121951c2ca and all exact/AST/span/history links. Six selected functions/two full files are one CVE/fix family. get/get_multi share the cache-data construction root; writer format/state changes and middleware settings are coordinated components. The string-mode migration bug is an after integration mechanism, not six independent old issues. Complete55-module literal bulk-call retrieval finds only method definitions in Swift production source; existing inert tests admit the public bulk API, but do not prove an installed bulk service caller or dynamic-call completeness. Source/family counts do not establish independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm actual cache access/transport control and requested-key delivery, public bulk API versus installed service invocation, legacy cached-data and migration admission, supported/deployed runtime/dependencies, selected attribution and bounded after-negative. CPython2.6.8/2.7.3 and memcached1.4.2 are comparisons; old setup explicitly advertises Python2.6, not Python3 mixed-type semantics. PasteDeploy1.3.3/simplejson2.0.9 match exact historical dependency pins, not proof of installation.",
+        "Conditional source deductions, not reproduced results. No Swift/memcached/cache/network/socket/WSGI/PasteDeploy/configuration/pickle/JSON/codec/parser/regex/Python2/C/native/dependency/application program, serialized payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._io_timeout = io_timeout"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._allow_unpickle = allow_unpickle or allow_pickle"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "allow_pickle=False, allow_unpickle=False"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    if line[0].upper() == 'VALUE' and line[1] == key:\n                        size = int(line[3])\n                        value = fp.read(size)\n                        if int(line[2]) & PICKLE_FLAG:\n                            if self._allow_unpickle:\n                                value = pickle.loads(value)\n                            else:\n                                value = None\n                        elif int(line[2]) & JSON_FLAG:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                        if int(line[2]) & PICKLE_FLAG:\n                            value = pickle.loads(value)\n                        fp.readline()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTEXT.json",
+          "path": "etc/memcache.conf-sample",
+          "ref": "e1ff51c04554d51616d2845f92ab726cb0e5831a",
+          "needle": "0 = older, insecure pickle serialization"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2012-4406:0:swift/common/memcached.py:MemcacheRing.get",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Single cache get unpickles flagged matching-key network data before returning application values.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate cache bytes-to-process object construction from trusted application serialization, new policy-state initialization and middleware configuration/rolling-cache compatibility. All six retain their historical deserialization discovery leaf; that does not assign the after configuration regression to the same mechanism or make every writer/constructor a security positive. No narrow-leaf/final taxonomy or independent-issue decision is approved.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old cache client returns cached application values, not authority to import/call arbitrary Python objects. It imports cPickle as pickle and obtains bytes/flags over a plain socket in _get_conns. memcached1.4.2 text protocol permits clients to store opaque flags and arbitrary data blocks, then returns those flags with VALUE. An actor able to overwrite a consumed key/flags or supply a server response can therefore cross from cache storage/transport authority into the Swift process through loads. get requires the response key to match its MD5 key; hashing is addressing, not authentication. get_multi decodes VALUE rows before selecting requested keys. The CPython2.6.8 comparison resolves GLOBAL and invokes reconstructed callables through REDUCE; a surrounding exception handler cannot undo their side effects. Ordinary object-upload/metadata access alone is not proof of raw cache/flag control.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need imported C unpickler, socket/protocol provenance, cache key/flag control, actual deployment and new policy default/override. Installed ordinary get consumers include proxy account/container metadata and tempauth token lookup. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helper/caller/global/dependency/configuration facts, after, labels, IDs, patches, metadata, tests, advisories and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional trust boundary is a lower-trust cache writer, compromised cache server or response-controlling actor versus the Swift process authority. Requires valid framing, a pickle flag and reader invocation; overwriting a single-get entry also needs the relevant hashed key and applicable cache timing. Public object writes, an arbitrary website or a CVE title alone do not establish this access. Default cache address is localhost and actual deployment isolation is unestablished. No cache connection, serialized payload, unpickler or exploit is executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After refuses PICKLE_FLAG values when effective _allow_unpickle isFalse and deserializes JSON only in the JSON_FLAG branch; the constructor default disables pickle and unpickle. Both flags set still take the pickle-deny branch. Explicit compatibility modes/programmatic flags can intentionally re-enable pickle and are not clean negatives. This is only refusal of flagged pickle under that effective policy, not cache authenticity, auth metadata integrity, JSON/resource limits, protocol framing or every deployment. Middleware string-mode breakage is separately attributed and does not make this deny branch a new code-execution bypass.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The cache-to-unpickler boundary is supported under explicit cache-response/write-control and invocation conditions, but actual cache provenance, protocol flags, imported C unpickler and effective policy are omitted project/runtime facts. Defer strict before-only admission without injecting them.",
+      "dependence_reason": "Preserve fix-family:c98f0cc20c121951c2ca and all exact/AST/span/history links. Six selected functions/two full files are one CVE/fix family. get/get_multi share the cache-data construction root; writer format/state changes and middleware settings are coordinated components. The string-mode migration bug is an after integration mechanism, not six independent old issues. Complete55-module literal bulk-call retrieval finds only method definitions in Swift production source; existing inert tests admit the public bulk API, but do not prove an installed bulk service caller or dynamic-call completeness. Source/family counts do not establish independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm actual cache access/transport control and requested-key delivery, public bulk API versus installed service invocation, legacy cached-data and migration admission, supported/deployed runtime/dependencies, selected attribution and bounded after-negative. CPython2.6.8/2.7.3 and memcached1.4.2 are comparisons; old setup explicitly advertises Python2.6, not Python3 mixed-type semantics. PasteDeploy1.3.3/simplejson2.0.9 match exact historical dependency pins, not proof of installation.",
+        "Conditional source deductions, not reproduced results. No Swift/memcached/cache/network/socket/WSGI/PasteDeploy/configuration/pickle/JSON/codec/parser/regex/Python2/C/native/dependency/application program, serialized payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                        if int(line[2]) & PICKLE_FLAG:\n                            value = pickle.loads(value)\n                        fp.readline()\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    if line[0].upper() == 'VALUE' and line[1] == key:\n                        size = int(line[3])\n                        value = fp.read(size)\n                        if int(line[2]) & PICKLE_FLAG:\n                            if self._allow_unpickle:\n                                value = pickle.loads(value)\n                            else:\n                                value = None\n                        elif int(line[2]) & JSON_FLAG:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "import cPickle as pickle"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if line[0].upper() == 'VALUE' and line[1] == key:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "sock.connect((host, int(port)))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                            else:\n                                value = None\n                        elif int(line[2]) & JSON_FLAG:\n                            value = json.loads(value)\n                        fp.readline()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTRACTS.json",
+          "path": "doc/protocol.txt",
+          "ref": "1.4.2",
+          "needle": "this field is opaque to the server."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTEXT.json",
+          "path": "swift/common/middleware/tempauth.py",
+          "ref": "ef3f8bb335de47439211e3e72835ffa50beb3559",
+          "needle": "        memcache_token_key = '%s/token/%s' % (self.reseller_prefix, token)\n        cached_auth_data = memcache_client.get(memcache_token_key)\n        if cached_auth_data:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_RUNTIME.json",
+          "path": "Modules/cPickle.c",
+          "ref": "v2.6.8",
+          "needle": "ob = Instance_New(callable, arg_tup);"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTEXT.json",
+          "path": "doc/source/deployment_guide.rst",
+          "ref": "ef3f8bb335de47439211e3e72835ffa50beb3559",
+          "needle": "Swift does\nnot do any caching of actual object data."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2012-4406:0:swift/common/memcached.py:MemcacheRing.get_multi",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Bulk cache get unpickles each flagged VALUE row before requested-key result filtering.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate cache bytes-to-process object construction from trusted application serialization, new policy-state initialization and middleware configuration/rolling-cache compatibility. All six retain their historical deserialization discovery leaf; that does not assign the after configuration regression to the same mechanism or make every writer/constructor a security positive. No narrow-leaf/final taxonomy or independent-issue decision is approved.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old cache client returns cached application values, not authority to import/call arbitrary Python objects. It imports cPickle as pickle and obtains bytes/flags over a plain socket in _get_conns. memcached1.4.2 text protocol permits clients to store opaque flags and arbitrary data blocks, then returns those flags with VALUE. An actor able to overwrite a consumed key/flags or supply a server response can therefore cross from cache storage/transport authority into the Swift process through loads. get requires the response key to match its MD5 key; hashing is addressing, not authentication. get_multi decodes VALUE rows before selecting requested keys. The CPython2.6.8 comparison resolves GLOBAL and invokes reconstructed callables through REDUCE; a surrounding exception handler cannot undo their side effects. Ordinary object-upload/metadata access alone is not proof of raw cache/flag control.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need same cache/unpickler/policy facts plus actual bulk API invocation. Existing old bulk test admits requested-key order/misses, while the exhaustive literal Swift production search finds definitions only; no installed bulk endpoint is asserted. An unsolicited VALUE row is processed before the later key selection. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helper/caller/global/dependency/configuration facts, after, labels, IDs, patches, metadata, tests, advisories and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional trust boundary is a lower-trust cache writer, compromised cache server or response-controlling actor versus the Swift process authority. Requires valid framing, a pickle flag and reader invocation; overwriting a single-get entry also needs the relevant hashed key and applicable cache timing. Public object writes, an arbitrary website or a CVE title alone do not establish this access. Default cache address is localhost and actual deployment isolation is unestablished. No cache connection, serialized payload, unpickler or exploit is executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After refuses PICKLE_FLAG values when effective _allow_unpickle isFalse and deserializes JSON only in the JSON_FLAG branch; the constructor default disables pickle and unpickle. Both flags set still take the pickle-deny branch. Explicit compatibility modes/programmatic flags can intentionally re-enable pickle and are not clean negatives. This is only refusal of flagged pickle under that effective policy, not cache authenticity, auth metadata integrity, JSON/resource limits, protocol framing or every deployment. Middleware string-mode breakage is separately attributed and does not make this deny branch a new code-execution bypass.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The cache-to-unpickler boundary is supported under explicit cache-response/write-control and invocation conditions, but actual cache provenance, protocol flags, imported C unpickler and effective policy are omitted project/runtime facts. Defer strict before-only admission without injecting them.",
+      "dependence_reason": "Preserve fix-family:c98f0cc20c121951c2ca and all exact/AST/span/history links. Six selected functions/two full files are one CVE/fix family. get/get_multi share the cache-data construction root; writer format/state changes and middleware settings are coordinated components. The string-mode migration bug is an after integration mechanism, not six independent old issues. Complete55-module literal bulk-call retrieval finds only method definitions in Swift production source; existing inert tests admit the public bulk API, but do not prove an installed bulk service caller or dynamic-call completeness. Source/family counts do not establish independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm actual cache access/transport control and requested-key delivery, public bulk API versus installed service invocation, legacy cached-data and migration admission, supported/deployed runtime/dependencies, selected attribution and bounded after-negative. CPython2.6.8/2.7.3 and memcached1.4.2 are comparisons; old setup explicitly advertises Python2.6, not Python3 mixed-type semantics. PasteDeploy1.3.3/simplejson2.0.9 match exact historical dependency pins, not proof of installation.",
+        "Conditional source deductions, not reproduced results. No Swift/memcached/cache/network/socket/WSGI/PasteDeploy/configuration/pickle/JSON/codec/parser/regex/Python2/C/native/dependency/application program, serialized payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                        if int(line[2]) & PICKLE_FLAG:\n                            value = pickle.loads(value)\n                        responses[line[1]] = value\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    if line[0].upper() == 'VALUE':\n                        size = int(line[3])\n                        value = fp.read(size)\n                        if int(line[2]) & PICKLE_FLAG:\n                            if self._allow_unpickle:\n                                value = pickle.loads(value)\n                            else:\n                                value = None\n                        elif int(line[2]) & JSON_FLAG:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if line[0].upper() == 'VALUE':"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "responses[line[1]] = value"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for key in keys:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                            else:\n                                value = None\n                        elif int(line[2]) & JSON_FLAG:\n                            value = json.loads(value)\n                        responses[line[1]] = value\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "sock.connect((host, int(port)))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTEXT.json",
+          "path": "test/unit/common/test_memcached.py",
+          "ref": "ef3f8bb335de47439211e3e72835ffa50beb3559",
+          "needle": "memcache_client.get_multi(('some_key2', 'some_key1',"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTRACTS.json",
+          "path": "doc/protocol.txt",
+          "ref": "1.4.2",
+          "needle": "- <data block> is a chunk of arbitrary 8-bit data"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_RUNTIME.json",
+          "path": "Modules/cPickle.c",
+          "ref": "v2.6.8",
+          "needle": "        if (len < 2) return bad_readline();\n        if ((class_name = PyString_FromStringAndSize(s, len - 1))) {\n            class = find_class(module_name, class_name,\n                               self->find_class);\n            Py_DECREF(class_name);\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2012-4406:0:swift/common/memcached.py:MemcacheRing.set",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Single writer migrates trusted application serialization for the new guarded-reader policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate cache bytes-to-process object construction from trusted application serialization, new policy-state initialization and middleware configuration/rolling-cache compatibility. All six retain their historical deserialization discovery leaf; that does not assign the after configuration regression to the same mechanism or make every writer/constructor a security positive. No narrow-leaf/final taxonomy or independent-issue decision is approved.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old set/set_multi serialize application values with pickle.dumps and set PICKLE_FLAG. Matched old get/get_multi decode that format; ordinary Swift producers write JSON-compatible account/container mappings and tempauth expiry/group data. The disclosed unsafe primitive is loading attacker-controlled cache bytes, not writing those trusted application values. An independent cache writer can choose bytes and flags regardless of these producers. After JSON writing supplies data acceptable to the newly guarded reader, with explicit pickle compatibility available. New consumer requirements do not establish a preexisting producer format-selection duty; nor is every pickle-capable Python type assumed to be a historically promised live Swift cache value.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual application value types and old/new reader format/flags, serializer backend and effective configuration. Avoid mixing new JSON producers with old readers unless examining the separately admitted rolling-compatibility path. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helper/caller/global/dependency/configuration facts, after, labels, IDs, patches, metadata, tests, advisories and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No selected application object with unauthorized object-construction behavior or a writer-only lower-trust authority crossing is established. The real cache-reader boundary is separate. Pickle dumps may invoke methods of an already admitted Python object, but no such lower-trust object producer is retained; arbitrary encoded request/cache bytes do not become those executable objects merely by writing them.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After uses JSON_FLAG and JSON serialization by default or PICKLE_FLAG when allowed. serialize=False keeps raw-value behavior. This coordinates the matched reader repair but does not make a standalone old writer-positive/new writer-negative pair or ensure arbitrary Python type fidelity. Old readers do not decode JSON_FLAG; rolling format compatibility needs effective middleware modes, whose string parsing failure is attributed there. No supported independent selected-writer after-contract failure is established under correct matching policy/consumers.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The selected writer/constructor coordinates the new format/policy API without an isolated old selected object-construction violation. Shared CVE membership and necessity to the matched reader repair do not establish an old local security-positive pair.",
+      "dependence_reason": "Preserve fix-family:c98f0cc20c121951c2ca and all exact/AST/span/history links. Six selected functions/two full files are one CVE/fix family. get/get_multi share the cache-data construction root; writer format/state changes and middleware settings are coordinated components. The string-mode migration bug is an after integration mechanism, not six independent old issues. Complete55-module literal bulk-call retrieval finds only method definitions in Swift production source; existing inert tests admit the public bulk API, but do not prove an installed bulk service caller or dynamic-call completeness. Source/family counts do not establish independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm actual cache access/transport control and requested-key delivery, public bulk API versus installed service invocation, legacy cached-data and migration admission, supported/deployed runtime/dependencies, selected attribution and bounded after-negative. CPython2.6.8/2.7.3 and memcached1.4.2 are comparisons; old setup explicitly advertises Python2.6, not Python3 mixed-type semantics. PasteDeploy1.3.3/simplejson2.0.9 match exact historical dependency pins, not proof of installation.",
+        "Conditional source deductions, not reproduced results. No Swift/memcached/cache/network/socket/WSGI/PasteDeploy/configuration/pickle/JSON/codec/parser/regex/Python2/C/native/dependency/application program, serialized payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        if serialize:\n            value = pickle.dumps(value, PICKLE_PROTOCOL)\n            flags |= PICKLE_FLAG\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        elif serialize:\n            value = json.dumps(value)\n            flags |= JSON_FLAG\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            value = pickle.dumps(value, PICKLE_PROTOCOL)\n            flags |= PICKLE_FLAG\n        for (server, fp, sock) in self._get_conns(key):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            value = json.dumps(value)\n            flags |= JSON_FLAG\n        for (server, fp, sock) in self._get_conns(key):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        flags = 0\n        if serialize and self._allow_pickle:\n            value = pickle.dumps(value, PICKLE_PROTOCOL)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTEXT.json",
+          "path": "swift/common/middleware/tempauth.py",
+          "ref": "ef3f8bb335de47439211e3e72835ffa50beb3559",
+          "needle": "memcache_client.set(memcache_token_key, (expires, groups),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTEXT.json",
+          "path": "swift/proxy/server.py",
+          "ref": "ef3f8bb335de47439211e3e72835ffa50beb3559",
+          "needle": "{'status': result_code, 'container_count': container_count}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTEXT.json",
+          "path": "tools/pip-requires",
+          "ref": "ef3f8bb335de47439211e3e72835ffa50beb3559",
+          "needle": "simplejson==2.0.9"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2012-4406:0:swift/common/memcached.py:MemcacheRing.set_multi",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Bulk writer migrates trusted application serialization for the new guarded-reader policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate cache bytes-to-process object construction from trusted application serialization, new policy-state initialization and middleware configuration/rolling-cache compatibility. All six retain their historical deserialization discovery leaf; that does not assign the after configuration regression to the same mechanism or make every writer/constructor a security positive. No narrow-leaf/final taxonomy or independent-issue decision is approved.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old set/set_multi serialize application values with pickle.dumps and set PICKLE_FLAG. Matched old get/get_multi decode that format; ordinary Swift producers write JSON-compatible account/container mappings and tempauth expiry/group data. The disclosed unsafe primitive is loading attacker-controlled cache bytes, not writing those trusted application values. An independent cache writer can choose bytes and flags regardless of these producers. After JSON writing supplies data acceptable to the newly guarded reader, with explicit pickle compatibility available. New consumer requirements do not establish a preexisting producer format-selection duty; nor is every pickle-capable Python type assumed to be a historically promised live Swift cache value.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual application value types and old/new reader format/flags, serializer backend and effective configuration. Avoid mixing new JSON producers with old readers unless examining the separately admitted rolling-compatibility path. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helper/caller/global/dependency/configuration facts, after, labels, IDs, patches, metadata, tests, advisories and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No selected application object with unauthorized object-construction behavior or a writer-only lower-trust authority crossing is established. The real cache-reader boundary is separate. Pickle dumps may invoke methods of an already admitted Python object, but no such lower-trust object producer is retained; arbitrary encoded request/cache bytes do not become those executable objects merely by writing them.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After uses JSON_FLAG and JSON serialization by default or PICKLE_FLAG when allowed. serialize=False keeps raw-value behavior. This coordinates the matched reader repair but does not make a standalone old writer-positive/new writer-negative pair or ensure arbitrary Python type fidelity. Old readers do not decode JSON_FLAG; rolling format compatibility needs effective middleware modes, whose string parsing failure is attributed there. No supported independent selected-writer after-contract failure is established under correct matching policy/consumers.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The selected writer/constructor coordinates the new format/policy API without an isolated old selected object-construction violation. Shared CVE membership and necessity to the matched reader repair do not establish an old local security-positive pair.",
+      "dependence_reason": "Preserve fix-family:c98f0cc20c121951c2ca and all exact/AST/span/history links. Six selected functions/two full files are one CVE/fix family. get/get_multi share the cache-data construction root; writer format/state changes and middleware settings are coordinated components. The string-mode migration bug is an after integration mechanism, not six independent old issues. Complete55-module literal bulk-call retrieval finds only method definitions in Swift production source; existing inert tests admit the public bulk API, but do not prove an installed bulk service caller or dynamic-call completeness. Source/family counts do not establish independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm actual cache access/transport control and requested-key delivery, public bulk API versus installed service invocation, legacy cached-data and migration admission, supported/deployed runtime/dependencies, selected attribution and bounded after-negative. CPython2.6.8/2.7.3 and memcached1.4.2 are comparisons; old setup explicitly advertises Python2.6, not Python3 mixed-type semantics. PasteDeploy1.3.3/simplejson2.0.9 match exact historical dependency pins, not proof of installation.",
+        "Conditional source deductions, not reproduced results. No Swift/memcached/cache/network/socket/WSGI/PasteDeploy/configuration/pickle/JSON/codec/parser/regex/Python2/C/native/dependency/application program, serialized payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                value = pickle.dumps(value, PICKLE_PROTOCOL)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                value = json.dumps(value)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                flags |= PICKLE_FLAG\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                flags |= JSON_FLAG\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            if serialize and self._allow_pickle:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTEXT.json",
+          "path": "swift/common/middleware/tempauth.py",
+          "ref": "ef3f8bb335de47439211e3e72835ffa50beb3559",
+          "needle": "memcache_client.set(memcache_token_key, (expires, groups),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTEXT.json",
+          "path": "swift/proxy/server.py",
+          "ref": "ef3f8bb335de47439211e3e72835ffa50beb3559",
+          "needle": "{'status': result_code, 'container_count': container_count}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTEXT.json",
+          "path": "tools/pip-requires",
+          "ref": "ef3f8bb335de47439211e3e72835ffa50beb3559",
+          "needle": "simplejson==2.0.9"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2012-4406:0:swift/common/middleware/memcache.py:MemcacheMiddleware.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Middleware compares text serialization modes with integers, breaking retained legacy-cache migration.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate cache bytes-to-process object construction from trusted application serialization, new policy-state initialization and middleware configuration/rolling-cache compatibility. All six retain their historical deserialization discovery leaf; that does not assign the after configuration regression to the same mechanism or make every writer/constructor a security positive. No narrow-leaf/final taxonomy or independent-issue decision is approved.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old middleware provides a shared cache through env[swift.cache]; old tempauth writes expiry/groups tuples and reads/unpacks them while valid, and old bulk tests admit list roundtrips. After explicitly retains old cached-value compatibility through the documented mode0 then1 staged migration to avoid cache poisoning/instant flush. That retained old data/consumer behavior supplies the compatibility duty; the new configuration key alone is not an old missing-option defect. Before selected middleware contains no loads and correctly instantiates the old ring. Its security attribution remains coordinated; its new unconverted text-mode comparisons independently obstruct the retained legacy-data path.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need advertised Python2 runtime mixed-type ordering, ConfigParser/PasteDeploy value types, actual default versus text versus programmatic integer modes, legacy cache records and old/new reader/writer/application consumers. Mode names/comments or constructor-only mocks do not establish effective flags. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helper/caller/global/dependency/configuration facts, after, labels, IDs, patches, metadata, tests, advisories and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Default integer2 and textual legacy modes deny unpickling, so this bug does not establish a permissive deserialization bypass. Explicit actual integer0/1 intentionally allow insecure compatibility. The supported after failure is cached-value/token compatibility/availability; cache-to-process execution remains the reader siblings conditional boundary. Neither public tenant cache injection nor universal token compromise is established.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Both real configuration routes yield text: ConfigParser.get for memcache.conf and exactly pinned PasteDeploy1.3.3 parser.get for filter local_conf. The selected after never converts serialization_format before comparing it with integer0/1. Under the advertised Python2.6 runtime comparison, numeric types sort before str, so text modes0/1/2 are neither equal to0 nor <=1. They all disable pickle and unpickle. This is a silent policy/migration mismatch, not the Python3 TypeError of an unsupported runtime. Omitted settings use actual integer2 and correctly select the secure default; programmatic integer0/1 can work and deliberately remain unsafe. A legacy pickled expiry/groups entry that old tempauth get_groups accepted becomes a miss on the new node even when the operator requests the documented legacy mode0/1. New JSON writes under text mode0 can also reach old nodes, whose readers return raw JSON bytes instead of decoded structured values. The mode0/1 staged path explicitly preserves old cached-value interoperability, so this is an introduced after integration failure of that retained old behavior, not just absence of an unrelated new feature. No token, cache, config, comparison or interpreter is executed.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "The new middleware compares configuration strings with integers under the retained advertised Python2 runtime, silently selecting JSON-only behavior for documented legacy modes. This introduces a supported legacy cached-value/consumer compatibility failure during the explicitly retained migration path. Defer paired-negative use; old middleware security attribution stays coordinated.",
+      "dependence_reason": "Preserve fix-family:c98f0cc20c121951c2ca and all exact/AST/span/history links. Six selected functions/two full files are one CVE/fix family. get/get_multi share the cache-data construction root; writer format/state changes and middleware settings are coordinated components. The string-mode migration bug is an after integration mechanism, not six independent old issues. Complete55-module literal bulk-call retrieval finds only method definitions in Swift production source; existing inert tests admit the public bulk API, but do not prove an installed bulk service caller or dynamic-call completeness. Source/family counts do not establish independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm actual cache access/transport control and requested-key delivery, public bulk API versus installed service invocation, legacy cached-data and migration admission, supported/deployed runtime/dependencies, selected attribution and bounded after-negative. CPython2.6.8/2.7.3 and memcached1.4.2 are comparisons; old setup explicitly advertises Python2.6, not Python3 mixed-type semantics. PasteDeploy1.3.3/simplejson2.0.9 match exact historical dependency pins, not proof of installation.",
+        "Conditional source deductions, not reproduced results. No Swift/memcached/cache/network/socket/WSGI/PasteDeploy/configuration/pickle/JSON/codec/parser/regex/Python2/C/native/dependency/application program, serialized payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.memcache = MemcacheRing("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "allow_unpickle=(serialization_format <= 1)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "env['swift.cache'] = self.memcache"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "serialization_format = conf.get('memcache_serialization_support')"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "memcache_conf.get('memcache',\n                                              'memcache_serialization_support')"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "serialization_format = 2"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "allow_pickle=(serialization_format == 0)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_RUNTIME.json",
+          "path": "Lib/ConfigParser.py",
+          "ref": "v2.6.8",
+          "needle": "cursect[optname] = optval"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_RUNTIME.json",
+          "path": "Lib/ConfigParser.py",
+          "ref": "v2.6.8",
+          "needle": "return self._interpolate(section, option, value, d)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_RUNTIME.json",
+          "path": "Objects/object.c",
+          "ref": "v2.6.8",
+          "needle": "/* different type: compare type names; numbers are smaller */"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTRACTS.json",
+          "path": "paste/deploy/loadwsgi.py",
+          "ref": "1.3.3",
+          "needle": "local_conf[option] = self.parser.get(section, option)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTEXT.json",
+          "path": "tools/pip-requires",
+          "ref": "ef3f8bb335de47439211e3e72835ffa50beb3559",
+          "needle": "pastedeploy==1.3.3"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTEXT.json",
+          "path": "etc/memcache.conf-sample",
+          "ref": "e1ff51c04554d51616d2845f92ab726cb0e5831a",
+          "needle": "upgrade with 0, then set to 1 and reload"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_CONTEXT.json",
+          "path": "swift/common/middleware/tempauth.py",
+          "ref": "ef3f8bb335de47439211e3e72835ffa50beb3559",
+          "needle": "        if cached_auth_data:\n            expires, groups = cached_auth_data\n            if expires < time():\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_PEERS.json",
+          "path": "swift/common/memcached.py",
+          "ref": "ef3f8bb335de47439211e3e72835ffa50beb3559",
+          "needle": "                        if int(line[2]) & PICKLE_FLAG:\n                            value = pickle.loads(value)\n                        fp.readline()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_033_PEERS.json",
+          "path": "swift/common/memcached.py",
+          "ref": "e1ff51c04554d51616d2845f92ab726cb0e5831a",
+          "needle": "                        elif int(line[2]) & JSON_FLAG:\n                            value = json.loads(value)\n                        fp.readline()\n"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Both real configuration routes yield text: ConfigParser.get for memcache.conf and exactly pinned PasteDeploy1.3.3 parser.get for filter local_conf. The selected after never converts serialization_format before comparing it with integer0/1. Under the advertised Python2.6 runtime comparison, numeric types sort before str, so text modes0/1/2 are neither equal to0 nor <=1. They all disable pickle and unpickle. This is a silent policy/migration mismatch, not the Python3 TypeError of an unsupported runtime. Omitted settings use actual integer2 and correctly select the secure default; programmatic integer0/1 can work and deliberately remain unsafe. A legacy pickled expiry/groups entry that old tempauth get_groups accepted becomes a miss on the new node even when the operator requests the documented legacy mode0/1. New JSON writes under text mode0 can also reach old nodes, whose readers return raw JSON bytes instead of decoded structured values. The mode0/1 staged path explicitly preserves old cached-value interoperability, so this is an introduced after integration failure of that retained old behavior, not just absence of an unrelated new feature. No token, cache, config, comparison or interpreter is executed.",
+      "additional_after_concerns": [
+        "New middleware tests pass text2 and inspect successful construction/cache server selection; they do not establish textual legacy-mode flags or mixed-node cache value decoding. The configuration failure belongs here, not to every correctly gated reader/writer/constructor. This is not proof that preserving arbitrary old Python object types is required under the secure JSON-only policy."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1333 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-019",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All20 remaining Ansible training candidates outside the prior five broad-leaf cases, including both null categories.",
+  "selection_rule": {
+    "repository": "github.com/ansible/ansible",
+    "discovery_categories": [
+      "CORR-DELIMITER-PARSING",
+      "CORR-DUPLICATE-COUNTING",
+      "CORR-METADATA-NORMALIZATION",
+      "CORR-NULL-BOUNDARY",
+      "CORR-OMITTED-OPTION-DEFAULT",
+      "CORR-PATH-NORMALIZATION",
+      "CORR-TEXT-ENCODING",
+      "CORR-URL-COMPOSITION",
+      "CORR-WHITESPACE-LOSS",
+      "SEC-PATH-CONFINEMENT",
+      null
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 811,
+    "sha256": "a8458c2712f92ddee97ecf55a8c85c861a310552b024ceb487949d2f4e3cfb11"
+  },
+  "interpretation": "Training-only historical contract review: distinguish guest-to-host symlink isolation from newly broken file transfer, residual PAM singleton deletion, coordinated banner content repair/new idempotence mismatch, supported Python2 UTF-8 lookup, documented local-file delimiter grammar versus URL support assumptions, API pagination, existing POWER fixtures, wording/diagnostic promises, string-semver schema versus new malformed-version tolerance, UNC roots and omitted quantity. Three append-only revisions resolve lookup context, narrow delimiter duty without status change, and withdraw unsupported malformed-version duty. All prior bytes/batches, taxonomy, splits and released inputs stay preserved. No dataset/dependency program, shell/transfer/device/PAM/template, archive/facts/subscription, parser, payload or upstream test executes. Proposals/independent issue counts remain pending.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:205290039003413:170200192627685",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Host-side file copy follows a guest-controlled symlink outside jail; the replacement introduces transfer-contract failures.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old transfer API promises copying an ordinary file between controller and jail. Normalization prepends a host path but shutil.copyfile resolves guest-controlled symlinks as host paths. New dd runs through an argv helper invoking /bin/sh -c after chroot/jexec. This supports the isolation repair conditionally for ordinary non-shell-special path spellings, without certifying all transfer behavior.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched old normalization/copy helper, root/plugin setup, exact new command generation/default executable and pipe/stream semantics. Historical plugin uses basestring and text-file streams, consistent with Python2; do not infer a Python3 byte-iteration failure as the supported historical witness. Old setup has unpinned dependencies rather than a Python-version classifier. CPython2.7.10 subprocess text is comparison, not installed-version proof. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A guest can control a symlink in its filesystem while the controller runs the local connection as root. Old host-side copy follows that link using host filesystem semantics; lexical normalization does not provide OS isolation. The retained CVE-2015-6240 context and matched helpers support that guest-to-host file-access boundary. Root/plugin selection, chosen transferred path and guest link control are prerequisites; this is not an anonymous remote exploit or six independent issues.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After copies only p.stdout.read(BUFSIZE) once, iterating over that one returned string. communicate drains/returns the remaining stdout but it is not written to out_file, so ordinary files larger than the one buffer are truncated where old copyfile copied them whole. Also, an ordinary admitted filename containing a space was handled by old filesystem copy but now enters an unquoted dd if=/of= shell string and is split into extra operands. For zone this splitting occurs in the host shell; for jail/chroot in the guest shell. These are introduced functional failures, not a claim of demonstrated attacker-controlled host-shell execution. Isolation of the bounded safe-name symlink route is separate from a whole-after negative.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve the old repaired mechanism while explicitly withholding a clean after-function negative under the recorded introduced or retained contract failure.",
+      "dependence_reason": "Preserve fix-family:bfc7e6f373f288426931 and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        vvv(\"FETCH %s TO %s\" % (in_path, out_path), host=self.jail)\n\n        self._copy_file(in_path, out_path)\n\n    def close(self):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for chunk in p.stdout.read(BUFSIZE):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def _generate_cmd("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def _buffered_exec_command("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "p = subprocess.Popen(local_cmd, shell=isinstance(local_cmd, basestring),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "setup.py",
+          "ref": "ca2f2c4ebd7b5e097eab0a710f79c1f63badf95b^",
+          "needle": "install_requires="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_RUNTIME.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v2.7.10",
+          "needle": "def communicate(self, input=None):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "shutil.copyfile(in_path, out_path)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "One-buffer output truncation is newly introduced relative to old full copy for ordinary larger files. Unquoted dd shell operand composition newly breaks ordinary space-containing paths accepted by old filesystem-copy semantics. Preserve these source-deduced failures and conditional isolation repair separately; no shell, transfer, symlink, payload or Python2 runtime is executed."
+    },
+    {
+      "pair_id": "CVEfixes:205290039003413:250602669831027",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Host-side file copy follows a guest-controlled symlink outside jail; the replacement introduces transfer-contract failures.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old transfer API promises copying an ordinary file between controller and jail. Normalization prepends a host path but shutil.copyfile resolves guest-controlled symlinks as host paths. New dd runs through an argv helper invoking /bin/sh -c after chroot/jexec. This supports the isolation repair conditionally for ordinary non-shell-special path spellings, without certifying all transfer behavior.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched old normalization/copy helper, root/plugin setup, exact new command generation/default executable and pipe/stream semantics. Historical plugin uses basestring and text-file streams, consistent with Python2; do not infer a Python3 byte-iteration failure as the supported historical witness. Old setup has unpinned dependencies rather than a Python-version classifier. CPython2.7.10 subprocess text is comparison, not installed-version proof. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A guest can control a symlink in its filesystem while the controller runs the local connection as root. Old host-side copy follows that link using host filesystem semantics; lexical normalization does not provide OS isolation. The retained CVE-2015-6240 context and matched helpers support that guest-to-host file-access boundary. Root/plugin selection, chosen transferred path and guest link control are prerequisites; this is not an anonymous remote exploit or six independent issues.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Also, an ordinary admitted filename containing a space was handled by old filesystem copy but now enters an unquoted dd if=/of= shell string and is split into extra operands. For zone this splitting occurs in the host shell; for jail/chroot in the guest shell. These are introduced functional failures, not a claim of demonstrated attacker-controlled host-shell execution. Isolation of the bounded safe-name symlink route is separate from a whole-after negative.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve the old repaired mechanism while explicitly withholding a clean after-function negative under the recorded introduced or retained contract failure.",
+      "dependence_reason": "Preserve fix-family:bfc7e6f373f288426931 and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        vvv(\"PUT %s TO %s\" % (in_path, out_path), host=self.jail)\n\n        self._copy_file(in_path, out_path)\n\n    def fetch_file(self, in_path, out_path):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._buffered_exec_command('dd of=%s'"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def _generate_cmd("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def _buffered_exec_command("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "p = subprocess.Popen(local_cmd, shell=isinstance(local_cmd, basestring),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "setup.py",
+          "ref": "ca2f2c4ebd7b5e097eab0a710f79c1f63badf95b^",
+          "needle": "install_requires="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_RUNTIME.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v2.7.10",
+          "needle": "def communicate(self, input=None):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "shutil.copyfile(in_path, out_path)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Unquoted dd shell operand composition newly breaks ordinary space-containing paths accepted by old filesystem-copy semantics. Preserve these source-deduced failures and conditional isolation repair separately; no shell, transfer, symlink, payload or Python2 runtime is executed."
+    },
+    {
+      "pair_id": "CVEfixes:228122187183378:173658112815904",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Host-side file copy follows a guest-controlled symlink outside chroot; the replacement introduces transfer-contract failures.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old transfer API promises copying an ordinary file between controller and chroot. Normalization prepends a host path but shutil.copyfile resolves guest-controlled symlinks as host paths. New dd runs through an argv helper invoking /bin/sh -c after chroot/jexec. This supports the isolation repair conditionally for ordinary non-shell-special path spellings, without certifying all transfer behavior.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched old normalization/copy helper, root/plugin setup, exact new command generation/default executable and pipe/stream semantics. Historical plugin uses basestring and text-file streams, consistent with Python2; do not infer a Python3 byte-iteration failure as the supported historical witness. Old setup has unpinned dependencies rather than a Python-version classifier. CPython2.7.10 subprocess text is comparison, not installed-version proof. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A guest can control a symlink in its filesystem while the controller runs the local connection as root. Old host-side copy follows that link using host filesystem semantics; lexical normalization does not provide OS isolation. The retained CVE-2015-6240 context and matched helpers support that guest-to-host file-access boundary. Root/plugin selection, chosen transferred path and guest link control are prerequisites; this is not an anonymous remote exploit or six independent issues.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After copies only p.stdout.read(BUFSIZE) once, iterating over that one returned string. communicate drains/returns the remaining stdout but it is not written to out_file, so ordinary files larger than the one buffer are truncated where old copyfile copied them whole. Also, an ordinary admitted filename containing a space was handled by old filesystem copy but now enters an unquoted dd if=/of= shell string and is split into extra operands. For zone this splitting occurs in the host shell; for jail/chroot in the guest shell. These are introduced functional failures, not a claim of demonstrated attacker-controlled host-shell execution. Isolation of the bounded safe-name symlink route is separate from a whole-after negative.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve the old repaired mechanism while explicitly withholding a clean after-function negative under the recorded introduced or retained contract failure.",
+      "dependence_reason": "Preserve fix-family:bfc7e6f373f288426931 and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        vvv(\"FETCH %s TO %s\" % (in_path, out_path), host=self.chroot)\n        if not os.path.exists(in_path):\n            raise errors.AnsibleFileNotFound(\"file or module does not exist: %s\" % in_path)\n        try:\n            shutil.copyfile(in_path, out_path)\n        except shutil.Error:\n            traceback.print_exc()\n            raise errors.AnsibleError(\"failed to copy: %s and %s are the same\" % (in_path, out_path))\n        except IOError:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for chunk in p.stdout.read(BUFSIZE):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def _generate_cmd("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def _buffered_exec_command("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "p = subprocess.Popen(local_cmd, shell=isinstance(local_cmd, basestring),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "setup.py",
+          "ref": "952166f48eb0f5797b75b160fd156bbe1e8fc647^",
+          "needle": "install_requires="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_RUNTIME.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v2.7.10",
+          "needle": "def communicate(self, input=None):"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "One-buffer output truncation is newly introduced relative to old full copy for ordinary larger files. Unquoted dd shell operand composition newly breaks ordinary space-containing paths accepted by old filesystem-copy semantics. Preserve these source-deduced failures and conditional isolation repair separately; no shell, transfer, symlink, payload or Python2 runtime is executed."
+    },
+    {
+      "pair_id": "CVEfixes:228122187183378:250276774416268",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Host-side file copy follows a guest-controlled symlink outside chroot; the replacement introduces transfer-contract failures.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old transfer API promises copying an ordinary file between controller and chroot. Normalization prepends a host path but shutil.copyfile resolves guest-controlled symlinks as host paths. New dd runs through an argv helper invoking /bin/sh -c after chroot/jexec. This supports the isolation repair conditionally for ordinary non-shell-special path spellings, without certifying all transfer behavior.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched old normalization/copy helper, root/plugin setup, exact new command generation/default executable and pipe/stream semantics. Historical plugin uses basestring and text-file streams, consistent with Python2; do not infer a Python3 byte-iteration failure as the supported historical witness. Old setup has unpinned dependencies rather than a Python-version classifier. CPython2.7.10 subprocess text is comparison, not installed-version proof. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A guest can control a symlink in its filesystem while the controller runs the local connection as root. Old host-side copy follows that link using host filesystem semantics; lexical normalization does not provide OS isolation. The retained CVE-2015-6240 context and matched helpers support that guest-to-host file-access boundary. Root/plugin selection, chosen transferred path and guest link control are prerequisites; this is not an anonymous remote exploit or six independent issues.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Also, an ordinary admitted filename containing a space was handled by old filesystem copy but now enters an unquoted dd if=/of= shell string and is split into extra operands. For zone this splitting occurs in the host shell; for jail/chroot in the guest shell. These are introduced functional failures, not a claim of demonstrated attacker-controlled host-shell execution. Isolation of the bounded safe-name symlink route is separate from a whole-after negative.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve the old repaired mechanism while explicitly withholding a clean after-function negative under the recorded introduced or retained contract failure.",
+      "dependence_reason": "Preserve fix-family:bfc7e6f373f288426931 and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        vvv(\"PUT %s TO %s\" % (in_path, out_path), host=self.chroot)\n        if not os.path.exists(in_path):\n            raise errors.AnsibleFileNotFound(\"file or module does not exist: %s\" % in_path)\n        try:\n            shutil.copyfile(in_path, out_path)\n        except shutil.Error:\n            traceback.print_exc()\n            raise errors.AnsibleError(\"failed to copy: %s and %s are the same\" % (in_path, out_path))\n        except IOError:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._buffered_exec_command('dd of=%s'"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def _generate_cmd("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def _buffered_exec_command("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "p = subprocess.Popen(local_cmd, shell=isinstance(local_cmd, basestring),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "setup.py",
+          "ref": "952166f48eb0f5797b75b160fd156bbe1e8fc647^",
+          "needle": "install_requires="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_RUNTIME.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v2.7.10",
+          "needle": "def communicate(self, input=None):"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Unquoted dd shell operand composition newly breaks ordinary space-containing paths accepted by old filesystem-copy semantics. Preserve these source-deduced failures and conditional isolation repair separately; no shell, transfer, symlink, payload or Python2 runtime is executed."
+    },
+    {
+      "pair_id": "CVEfixes:66092256452548:200398033091932",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Host-side file copy follows a guest-controlled symlink outside zone; the replacement introduces transfer-contract failures.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old transfer API promises copying an ordinary file between controller and zone. Normalization prepends a host path but shutil.copyfile resolves guest-controlled symlinks as host paths. New dd runs through zlogin via a shell=True host command string; its default executable is None, unlike the jail/chroot helper. Plain dd path operands resolve in the selected zone. This supports the isolation repair conditionally for ordinary non-shell-special path spellings, without certifying all transfer behavior.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched old normalization/copy helper, root/plugin setup, exact new command generation/default executable and pipe/stream semantics. Historical plugin uses basestring and text-file streams, consistent with Python2; do not infer a Python3 byte-iteration failure as the supported historical witness. Old setup has unpinned dependencies rather than a Python-version classifier. CPython2.7.10 subprocess text is comparison, not installed-version proof. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A guest can control a symlink in its filesystem while the controller runs the local connection as root. Old host-side copy follows that link using host filesystem semantics; lexical normalization does not provide OS isolation. The retained CVE-2015-6240 context and matched helpers support that guest-to-host file-access boundary. Root/plugin selection, chosen transferred path and guest link control are prerequisites; this is not an anonymous remote exploit or six independent issues.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After copies only p.stdout.read(BUFSIZE) once, iterating over that one returned string. communicate drains/returns the remaining stdout but it is not written to out_file, so ordinary files larger than the one buffer are truncated where old copyfile copied them whole. Also, an ordinary admitted filename containing a space was handled by old filesystem copy but now enters an unquoted dd if=/of= shell string and is split into extra operands. For zone this splitting occurs in the host shell; for jail/chroot in the guest shell. These are introduced functional failures, not a claim of demonstrated attacker-controlled host-shell execution. Isolation of the bounded safe-name symlink route is separate from a whole-after negative.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve the old repaired mechanism while explicitly withholding a clean after-function negative under the recorded introduced or retained contract failure.",
+      "dependence_reason": "Preserve fix-family:bfc7e6f373f288426931 and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        vvv(\"FETCH %s TO %s\" % (in_path, out_path), host=self.zone)\n\n        self._copy_file(in_path, out_path)\n\n    def close(self):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for chunk in p.stdout.read(BUFSIZE):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def _generate_cmd("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def _buffered_exec_command("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "p = subprocess.Popen(local_cmd, shell=isinstance(local_cmd, basestring),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "setup.py",
+          "ref": "ca2f2c4ebd7b5e097eab0a710f79c1f63badf95b^",
+          "needle": "install_requires="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_RUNTIME.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v2.7.10",
+          "needle": "def communicate(self, input=None):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "shutil.copyfile(in_path, out_path)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "One-buffer output truncation is newly introduced relative to old full copy for ordinary larger files. Unquoted dd shell operand composition newly breaks ordinary space-containing paths accepted by old filesystem-copy semantics. Preserve these source-deduced failures and conditional isolation repair separately; no shell, transfer, symlink, payload or Python2 runtime is executed."
+    },
+    {
+      "pair_id": "CVEfixes:66092256452548:71707492299438",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Host-side file copy follows a guest-controlled symlink outside zone; the replacement introduces transfer-contract failures.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old transfer API promises copying an ordinary file between controller and zone. Normalization prepends a host path but shutil.copyfile resolves guest-controlled symlinks as host paths. New dd runs through zlogin via a shell=True host command string; its default executable is None, unlike the jail/chroot helper. Plain dd path operands resolve in the selected zone. This supports the isolation repair conditionally for ordinary non-shell-special path spellings, without certifying all transfer behavior.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched old normalization/copy helper, root/plugin setup, exact new command generation/default executable and pipe/stream semantics. Historical plugin uses basestring and text-file streams, consistent with Python2; do not infer a Python3 byte-iteration failure as the supported historical witness. Old setup has unpinned dependencies rather than a Python-version classifier. CPython2.7.10 subprocess text is comparison, not installed-version proof. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A guest can control a symlink in its filesystem while the controller runs the local connection as root. Old host-side copy follows that link using host filesystem semantics; lexical normalization does not provide OS isolation. The retained CVE-2015-6240 context and matched helpers support that guest-to-host file-access boundary. Root/plugin selection, chosen transferred path and guest link control are prerequisites; this is not an anonymous remote exploit or six independent issues.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Also, an ordinary admitted filename containing a space was handled by old filesystem copy but now enters an unquoted dd if=/of= shell string and is split into extra operands. For zone this splitting occurs in the host shell; for jail/chroot in the guest shell. These are introduced functional failures, not a claim of demonstrated attacker-controlled host-shell execution. Isolation of the bounded safe-name symlink route is separate from a whole-after negative.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve the old repaired mechanism while explicitly withholding a clean after-function negative under the recorded introduced or retained contract failure.",
+      "dependence_reason": "Preserve fix-family:bfc7e6f373f288426931 and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        vvv(\"PUT %s TO %s\" % (in_path, out_path), host=self.zone)\n\n        self._copy_file(in_path, out_path)\n\n    def fetch_file(self, in_path, out_path):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._buffered_exec_command('dd of=%s'"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def _generate_cmd("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def _buffered_exec_command("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "p = subprocess.Popen(local_cmd, shell=isinstance(local_cmd, basestring),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "setup.py",
+          "ref": "ca2f2c4ebd7b5e097eab0a710f79c1f63badf95b^",
+          "needle": "install_requires="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_RUNTIME.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v2.7.10",
+          "needle": "def communicate(self, input=None):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "shutil.copyfile(in_path, out_path)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Unquoted dd shell operand composition newly breaks ordinary space-containing paths accepted by old filesystem-copy semantics. Preserve these source-deduced failures and conditional isolation repair separately; no shell, transfer, symlink, payload or Python2 runtime is executed."
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-10:0:lib/ansible/modules/system/pamd.py:PamdService.remove",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Removing a terminal nonhead PAM rule dereferences an absent next node; singleton-head deletion still fails after.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old PamdService builds a linked list from service lines, without an automatic sentinel. Appended nonhead terminal nodes have next=None, and removing such a matched rule dereferences next.prev. Guard repairs that existing case. The public absent operation also permits a singleton matching rule; no minimum two-line input is advertised.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need constructor/append, PamdRule initialization, matching and absent-state/write consumers. The same fix initializes rule prev/next, so old first-rule failures cannot all be assigned to this selected tail guard. Do not mix old uninitialized head attributes with new initialized nodes. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After now removes a nonhead tail without dereferencing next. However after construction of a single-rule service initializes prev/next=None; removing that head sets _head=None and still executes current_line.next.prev=None. Old singleton removal also failed (including missing rule-link attributes), so record a retained deletion-contract failure, not a newly introduced null guard regression. Serialization also has separate minimum-line assumptions; no complete PAM-edit negative or auth bypass is asserted.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve the old repaired mechanism while explicitly withholding a clean after-function negative under the recorded introduced or retained contract failure.",
+      "dependence_reason": "Preserve fix-family:3d185655d70f8ccc0a7c and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "current_line.next.prev = current_line.prev"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if current_line.next is not None:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for line in content.splitlines():"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._head = self._tail = pamd_line"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "current_line.next.prev = None"
+        },
+        {
+          "kind": "fix",
+          "needle": "+        self.prev = None"
+        },
+        {
+          "kind": "fix",
+          "needle": "+        self.next = None"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Supported singleton service deletion still fails in the after head branch; before already failed that contract, with link initialization and null dereference differing across matched versions. This is residual failure without invented introduction chronology, separate from the repaired nonhead-tail access."
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-11:0:lib/ansible/modules/network/ios/ios_banner.py:map_config_to_obj",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Fallback banner parser strips requested content whitespace and its replacement introduces a newline/idempotence mismatch.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old module promises configuring the supplied multiline banner text in running configuration, including a file lookup example. There is no advertised general strip-all-space policy; no-empty-lines restriction is distinct from leading/trailing spaces in nonempty lines. On fallback old regex capture applies strip(), erasing boundary spaces before comparison. Preserve whitespace in user configuration data rather than treat every content edit as formatter style. End-to-end repair is coordinated across the three components.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old module text contract/main pipeline, IOS command/config transport and preserved delimiter/frame newlines. Retained old IOS12 fixture and old no-change/create tests establish supported newline spellings; tests are not executed device behavior. No arbitrary alternative delimiter/inline-config support is inferred from the removed broad regex alone. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Matched new parser retains the newline immediately before the closing ^C delimiter, while map_params_to_obj leaves non-newline-terminated input unchanged and map_obj_to_commands compares exact strings. The old no-change test explicitly passes fixture.strip(); under the new coherent pipeline the same body becomes body+newline in have and is rewritten repeatedly. This concern originates in parser normalization, not a separate defect in every selected companion. Old matched fallback strips the delimiter-adjacent newline and the same nonterminated desired input compares equal. Record this source-deduced introduced idempotence regression, not a clean after parser.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve the old repaired mechanism while explicitly withholding a clean after-function negative under the recorded introduced or retained contract failure.",
+      "dependence_reason": "Preserve fix-family:9d935e37a44ff3563763 and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "output = re.search(r'\\^C(.*?)\\^C', out, re.S).group(1).strip()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "output = str((out.split(regex))[1].split(\"^C\\n\")[0])"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "accepts a multiline string, with no empty lines."
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "want = map_params_to_obj(module)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "have = map_config_to_obj(module)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "test/units/modules/network/ios/test_ios_banner.py",
+          "ref": "52f3ce8a808f943561803bd664e695fed1841fe8^",
+          "needle": "    def test_ios_banner_nochange(self):\n        banner_text = load_fixture('ios_banner_show_banner.txt').strip()\n        set_module_args(dict(banner='login', text=banner_text))\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "test/units/modules/network/ios/fixtures/ios_banner_show_running_config_ios12.txt",
+          "ref": "52f3ce8a808f943561803bd664e695fed1841fe8^",
+          "needle": "banner exec ^C"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "lib/ansible/module_utils/network/ios/ios.py",
+          "ref": "52f3ce8a808f943561803bd664e695fed1841fe8",
+          "needle": "cfg = to_text(out, errors='surrogate_then_replace').strip()"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Matched new parser retains the newline immediately before the closing ^C delimiter, while map_params_to_obj leaves non-newline-terminated input unchanged and map_obj_to_commands compares exact strings. The old no-change test explicitly passes fixture.strip(); under the new coherent pipeline the same body becomes body+newline in have and is rewritten repeatedly. This concern originates in parser normalization, not a separate defect in every selected companion. The old no-change fixture and nonterminated creation strings predate the fix; final runtime/eligibility approval remains pending."
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-11:0:lib/ansible/modules/network/ios/ios_banner.py:map_obj_to_commands",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Command builder strips meaningful outer spaces/tabs from banner content.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old module promises configuring the supplied multiline banner text in running configuration, including a file lookup example. There is no advertised general strip-all-space policy; no-empty-lines restriction is distinct from leading/trailing spaces in nonempty lines. After desired state reaches this builder, old strip() erases spaces/tabs before framing the command. Preserve whitespace in user configuration data rather than treat every content edit as formatter style. End-to-end repair is coordinated across the three components.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old module text contract/main pipeline, IOS command/config transport and preserved delimiter/frame newlines. Retained old IOS12 fixture and old no-change/create tests establish supported newline spellings; tests are not executed device behavior. No arbitrary alternative delimiter/inline-config support is inferred from the removed broad regex alone. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "For the coordinated fixture with matching body newline spelling, after preserves non-newline spaces/tabs in desired/output content. No full pipeline negative: Matched new parser retains the newline immediately before the closing ^C delimiter, while map_params_to_obj leaves non-newline-terminated input unchanged and map_obj_to_commands compares exact strings. The old no-change test explicitly passes fixture.strip(); under the new coherent pipeline the same body becomes body+newline in have and is rewritten repeatedly. This concern originates in parser normalization, not a separate defect in every selected companion.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported, but essential historical producer/helper/consumer/runtime semantics are omitted from the strict selected before function.",
+      "dependence_reason": "Preserve fix-family:9d935e37a44ff3563763 and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "banner_cmd += want['text'].strip()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "banner_cmd += want['text'].strip('\\n')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "accepts a multiline string, with no empty lines."
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "want = map_params_to_obj(module)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "have = map_config_to_obj(module)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "test/units/modules/network/ios/test_ios_banner.py",
+          "ref": "52f3ce8a808f943561803bd664e695fed1841fe8^",
+          "needle": "    def test_ios_banner_nochange(self):\n        banner_text = load_fixture('ios_banner_show_banner.txt').strip()\n        set_module_args(dict(banner='login', text=banner_text))\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "test/units/modules/network/ios/fixtures/ios_banner_show_running_config_ios12.txt",
+          "ref": "52f3ce8a808f943561803bd664e695fed1841fe8^",
+          "needle": "banner exec ^C"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "lib/ansible/module_utils/network/ios/ios.py",
+          "ref": "52f3ce8a808f943561803bd664e695fed1841fe8",
+          "needle": "cfg = to_text(out, errors='surrogate_then_replace').strip()"
+        }
+      ],
+      "additional_after_concerns": [
+        "Matched new parser retains the newline immediately before the closing ^C delimiter, while map_params_to_obj leaves non-newline-terminated input unchanged and map_obj_to_commands compares exact strings. The old no-change test explicitly passes fixture.strip(); under the new coherent pipeline the same body becomes body+newline in have and is rewritten repeatedly. This concern originates in parser normalization, not a separate defect in every selected companion. Preserve a contextual pipeline after concern without inheriting sibling-parser blame or an additional independent issue."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-11:0:lib/ansible/modules/network/ios/ios_banner.py:map_params_to_obj",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Desired-state mapper strips requested banner whitespace before command comparison.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old module promises configuring the supplied multiline banner text in running configuration, including a file lookup example. There is no advertised general strip-all-space policy; no-empty-lines restriction is distinct from leading/trailing spaces in nonempty lines. Old str(text).strip() changes desired user content before comparing and building commands. Preserve whitespace in user configuration data rather than treat every content edit as formatter style. End-to-end repair is coordinated across the three components.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old module text contract/main pipeline, IOS command/config transport and preserved delimiter/frame newlines. Retained old IOS12 fixture and old no-change/create tests establish supported newline spellings; tests are not executed device behavior. No arbitrary alternative delimiter/inline-config support is inferred from the removed broad regex alone. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "For the coordinated fixture with matching body newline spelling, after preserves non-newline spaces/tabs in desired/output content. No full pipeline negative: Matched new parser retains the newline immediately before the closing ^C delimiter, while map_params_to_obj leaves non-newline-terminated input unchanged and map_obj_to_commands compares exact strings. The old no-change test explicitly passes fixture.strip(); under the new coherent pipeline the same body becomes body+newline in have and is rewritten repeatedly. This concern originates in parser normalization, not a separate defect in every selected companion.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported, but essential historical producer/helper/consumer/runtime semantics are omitted from the strict selected before function.",
+      "dependence_reason": "Preserve fix-family:9d935e37a44ff3563763 and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "text = str(text).strip()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "text = module.params['text']"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "accepts a multiline string, with no empty lines."
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "want = map_params_to_obj(module)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "have = map_config_to_obj(module)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "test/units/modules/network/ios/test_ios_banner.py",
+          "ref": "52f3ce8a808f943561803bd664e695fed1841fe8^",
+          "needle": "    def test_ios_banner_nochange(self):\n        banner_text = load_fixture('ios_banner_show_banner.txt').strip()\n        set_module_args(dict(banner='login', text=banner_text))\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "test/units/modules/network/ios/fixtures/ios_banner_show_running_config_ios12.txt",
+          "ref": "52f3ce8a808f943561803bd664e695fed1841fe8^",
+          "needle": "banner exec ^C"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "lib/ansible/module_utils/network/ios/ios.py",
+          "ref": "52f3ce8a808f943561803bd664e695fed1841fe8",
+          "needle": "cfg = to_text(out, errors='surrogate_then_replace').strip()"
+        }
+      ],
+      "additional_after_concerns": [
+        "Matched new parser retains the newline immediately before the closing ^C delimiter, while map_params_to_obj leaves non-newline-terminated input unchanged and map_obj_to_commands compares exact strings. The old no-change test explicitly passes fixture.strip(); under the new coherent pipeline the same body becomes body+newline in have and is rewritten repeatedly. This concern originates in parser normalization, not a separate defect in every selected companion. Preserve a contextual pipeline after concern without inheriting sibling-parser blame or an additional independent issue."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-12:0:lib/ansible/plugins/lookup/env.py:LookupModule.run",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Supported Python2 lookup returns raw UTF-8 environment bytes into text rendering instead of decoded text.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old setup explicitly advertises Python2.7 and the lookup returns controller environment values. Exact already-existing py3compat.environ is _TextEnviron(encoding=utf-8): it decodes Python2 values through to_text but returns Python3 values unchanged. Old os.getenv returns raw Python2 environment bytes. Matched Templar._lookup comma-joins and wrap_var preserves bytes; _finalize returns that value. Historical Jinja2.10.3 compiler/runtime/_compat compare ordinary nonnative output conversion to unicode, so non-ASCII UTF-8 bytes hit implicit ASCII decoding where decoded after text succeeds. Revise the ambiguous discovery to contextual support, not a claim all os.getenv or Python3 behavior is wrong.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need supported old Python2 runtime, UTF-8 value, unchanged compatibility wrapper, unsafe byte/text classes and nonnative Jinja rendering. Retained dependency tag is comparison, not installed-version proof; old requirements list unpinned jinja2. Helper-return mocks alone did not establish this path. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For the supported Python2 UTF-8 lookup-to-text witness, the new wrapper supplies Unicode before joining/rendering. Python3 uses the existing text environment; missing variables retain the empty default. Non-UTF-8 environment encodings, arbitrary template modes and deployed dependency behavior are not certified. No environment read, renderer or compatibility helper is executed.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported, but essential historical producer/helper/consumer/runtime semantics are omitted from the strict selected before function.",
+      "dependence_reason": "Preserve fix-family:eae523efbb063e9fc764 and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "ret.append(os.getenv(var, ''))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "ret.append(py3compat.environ.get(var, ''))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "lib/ansible/utils/py3compat.py",
+          "ref": "2fa8f9cfd80daf32c7d222190edf7cfc7234582a^",
+          "needle": "environ = _TextEnviron(encoding='utf-8')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "lib/ansible/utils/py3compat.py",
+          "ref": "2fa8f9cfd80daf32c7d222190edf7cfc7234582a^",
+          "needle": "if PY3:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "lib/ansible/utils/py3compat.py",
+          "ref": "2fa8f9cfd80daf32c7d222190edf7cfc7234582a^",
+          "needle": "self._value_cache[value] = to_text(value, encoding=self.encoding,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "setup.py",
+          "ref": "2fa8f9cfd80daf32c7d222190edf7cfc7234582a^",
+          "needle": "Programming Language :: Python :: 2.7"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "lib/ansible/template/__init__.py",
+          "ref": "2fa8f9cfd80daf32c7d222190edf7cfc7234582a^",
+          "needle": "ran = wrap_var(\",\".join(ran))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "lib/ansible/template/__init__.py",
+          "ref": "2fa8f9cfd80daf32c7d222190edf7cfc7234582a^",
+          "needle": "return thing if thing is not None else ''"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_RUNTIME.json",
+          "path": "lib/ansible/utils/unsafe_proxy.py",
+          "ref": "2fa8f9cfd80daf32c7d222190edf7cfc7234582a^",
+          "needle": "v = AnsibleUnsafeBytes(v)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_RUNTIME.json",
+          "path": "jinja2/runtime.py",
+          "ref": "2.10.3",
+          "needle": "to_string = text_type"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_RUNTIME.json",
+          "path": "jinja2/_compat.py",
+          "ref": "2.10.3",
+          "needle": "text_type = unicode"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_RUNTIME.json",
+          "path": "jinja2/compiler.py",
+          "ref": "2.10.3",
+          "needle": "self.write('to_string(')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_RUNTIME.json",
+          "path": "requirements.txt",
+          "ref": "2fa8f9cfd80daf32c7d222190edf7cfc7234582a^",
+          "needle": "jinja2"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-13:0:lib/ansible/cli/galaxy.py:GalaxyCLI.execute_install",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Unconditional name:version splitting corrupts already-supported colon-bearing local collection archive paths.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Selected old docstring explicitly accepts a local tar archive, and old included installation docs advertise direct tarballs. For an existing POSIX archive path such as /tmp/acme:tools.tar.gz, partition(:) changes the filename and invents a version before the old downstream isfile branch can consume it. After checks existing files first. Old downstream also has a URL-download branch, but the selected old CLI docstring does not explicitly promise positional URLs. Narrow the discovery support to the established file-path contract instead of relying solely on a new URL test.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need real existing-file admission, old CLI docs, downstream archive/URL classification and name:version syntax. Paths/URLs are not accessed or parsed here. Direct URL acceptance and supported schemes are a separately bounded compatibility question; the downstream URL branch alone is not a full old positional-CLI promise. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For an admitted existing colon-bearing file, after retains the entire name and wildcard requirement; ordinary collection:version still takes the delimiter branch. HTTP(S) names are also preserved after, but no universal URL/file/Windows-path parsing, archive safety or old URL-support obligation is certified. Matching classification must use the same source revision.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported, but essential historical producer/helper/consumer/runtime semantics are omitted from the strict selected before function.",
+      "dependence_reason": "Preserve fix-family:214a34d0b91d3054b856 and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "name, dummy, requirement = collection_input.partition(':')"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if os.path.isfile(to_bytes(collection_input, errors='surrogate_or_strict'))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "or it can be a local tar archive file."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_CONTRACTS.json",
+          "path": "docs/docsite/rst/shared_snippets/installing_collections.txt",
+          "ref": "694ef5660d45fcb97c9beea5b2750f6eadcf5e93^",
+          "needle": "You can also directly use the tarball from your build:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "lib/ansible/galaxy/collection.py",
+          "ref": "694ef5660d45fcb97c9beea5b2750f6eadcf5e93^",
+          "needle": "if os.path.isfile(to_bytes(collection, errors='surrogate_or_strict')):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "lib/ansible/galaxy/collection.py",
+          "ref": "694ef5660d45fcb97c9beea5b2750f6eadcf5e93^",
+          "needle": "elif urlparse(collection).scheme:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-14:0:lib/ansible/galaxy/api.py:GalaxyAPI.fetch_role_related",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Pagination concatenates an API-prefixed base with an already API-prefixed continuation path.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old fetch_role_related promises the list of role-related items, not only page1. g_connect updates api_server to the real /api root; _urljoin is slash-stripped string concatenation rather than RFC urljoin. With a returned /api/v1/... continuation, old composition duplicates /api and a swallowed fetch failure yields incomplete results. After derives scheme/netloc-only base for this continuation. Existing role-version issue reports latest-version failures, but its body does not itself prove the exact continuation response; source/conditional API response establish the bounded mechanism.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact decorator base mutation, string _urljoin, returned next_link form and actual role/version consumer. Attributed issue64355 is a mutable user report, not immutable API documentation or reproduced backend behavior. Do not treat its complete body as an exact next_link trace it does not contain. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For origin-rooted /api continuation paths under the described API root, after avoids duplicated /api and accumulates the following results. Relative-prefix deployments, absolute URLs, trust/credential stripping, malformed pagination and the changed warning visibility are not covered by a universal negative.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported, but essential historical producer/helper/consumer/runtime semantics are omitted from the strict selected before function.",
+      "dependence_reason": "Preserve fix-family:ea6fcbfe25a518ee0ab9 and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            results = data['results']\n            done = (data.get('next_link', None) is None)\n            while not done:\n                url = _urljoin(self.api_server, data['next_link'])\n                data = self._call_galaxy(url)\n                results += data['results']\n                done = (data.get('next_link', None) is None)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "url = _urljoin(base_url, data['next_link'])"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.api_server = n_url"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def _urljoin(*args):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                url = _urljoin(self.api_server, data['next_link'])\n                data = self._call_galaxy(url)\n                results += data['results']\n                done = (data.get('next_link', None) is None)\n        except Exception as e:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_ISSUES.json",
+          "path": "issues/64355",
+          "ref": "issue snapshot 2026-10-25",
+          "needle": "The latest version of the role (3.7.0) should be installed."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-16:0:lib/ansible/module_utils/facts/hardware/linux.py:LinuxHardware.get_cpu_facts",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "POWER cpuinfo processor and cpu-description records increment the same count twice.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old retained POWER7/POWER8 fixtures already identify ppc64/ppc64le and contain one processor record plus one cpu description per logical CPU. Both increment i; only ARM architectures previously override it with processor_occurence. Old expected16/48 values encoded the defect for8/24 processors. New ppc prefix chooses the existing processor-only counter. Existing platform fixtures establish support, not the newly changed expected numbers alone.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual old cpuinfo records, collected architecture producer, socket/core/Xen branches and count consumers. No host /proc or hardware is probed. Architecture must be supplied: collected_facts=None still cannot select the POWER override, a conditional caller limitation rather than an invented universal fix. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For the retained ppc fixture with architecture supplied and without a competing socket topology, after counts processor records once and gives8/24 instead of16/48. No universal physical-socket/core/vCPU topology, Xen or missing-architecture negative follows. Old processor descriptive list may still contain both numeric and model values; that list is not the selected count contract.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported, but essential historical producer/helper/consumer/runtime semantics are omitted from the strict selected before function.",
+      "dependence_reason": "Preserve fix-family:53aedf0718fe1ed2af4c and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "startswith(('armv', 'aarch'))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "startswith(('armv', 'aarch', 'ppc'))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_FACTS.json",
+          "path": "test/units/module_utils/facts/fixtures/cpuinfo/ppc64-power7-rhel7-8cpu-cpuinfo",
+          "ref": "93d9d640380252084855885ad27873b4377898ec^",
+          "needle": "processor\t: 0"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_FACTS.json",
+          "path": "test/units/module_utils/facts/fixtures/cpuinfo/ppc64le-power8-24cpu-cpuinfo",
+          "ref": "93d9d640380252084855885ad27873b4377898ec^",
+          "needle": "processor       : 0"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "test/units/module_utils/facts/hardware/linux_data.py",
+          "ref": "93d9d640380252084855885ad27873b4377898ec^",
+          "needle": "'architecture': 'ppc64'"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "processor_occurence += 1"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            if xen_paravirt:\n                cpu_facts['processor_count'] = i\n                cpu_facts['processor_cores'] = i\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-18:0:lib/ansible/cli/galaxy.py:GalaxyCLI.execute_init",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Skeleton placeholder and success-message wording become role/collection-specific.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Old selected generator already creates the chosen role/collection skeleton. The two changed strings add the object type to description placeholder and success message; metadata construction, file decisions and operations are unchanged. No established machine-consumed wording/schema failure or old runtime defect is shown. Keep the null-category exclusion as nonrepair, not a new feature or assumed style defect elsewhere.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need an actual prior output consumer/contract before reversing this proposal. File/template operations elsewhere in this long selected function do not turn two wording edits into a security or algorithm repair. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No old-positive/after-negative runtime pair is established. New placeholders/messages are more explicit but do not certify generic skeleton/template/file safety or repair adjacent logic.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected change is placeholder/success wording without an established old selected runtime or output-contract failure; retain the original canonical row.",
+      "dependence_reason": "Preserve fix-family:1c58890669b9f22e84ef and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "description='your description'"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "description='your {0} description'.format(galaxy_type)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-5:0:lib/ansible/module_utils/common/validation.py:check_required_arguments",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Missing required-argument names are sorted in an otherwise unchanged diagnostic.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old API detects the same missing keys, raises the same TypeError and returns the same empty list when valid. Its docstring promises missing-argument failure but no alphabetical diagnostic ordering. New sorted expectations and minor-change framing do not establish an old functional order promise or settle non-style diagnostic eligibility.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need supported dictionary-order/runtime behavior and an actual consumer/user requirement for deterministic ordering. Do not import unrelated test-framework fixes from the same patch or automatically exclude all informative error output. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After orders the message deterministically for comparable ordinary string keys; detection/type/control behavior is unchanged. No approved old failure or paired semantic negative follows until the diagnostic contract is established.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "A changed behavior is visible, but prior supported-input, diagnostic-order or malformed-version tolerance obligations remain unsettled.",
+      "dependence_reason": "Preserve fix-family:98816a72cca2100b48bc and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\", \".join(missing)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "\", \".join(sorted(missing))"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-6:0:lib/ansible/galaxy/collection.py:CollectionRequirement.from_path",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Installed collection version normalization expands tolerance beyond an explicitly string/semver metadata contract.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old metadata definition explicitly declares version type str and must be compatible with semantic versioning. Raw numeric/empty manifest values can visibly break internal requirements.split or LooseVersion paths, and old build parsing does not fully enforce every declared type. But producer permissiveness is not proof that numeric or empty versions are promised valid installed metadata, nor that tolerant fallback rather than rejection is the old contract. Newly added numeric/empty tests establish new expectations. Revise supported discovery to ambiguous prior malformed-version duty; preserve the conditional type failure.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old metadata schema/producer/manifest builder and matched constructor/add_requirement/_meets_requirements. The same fix also relaxes unknown-version policy elsewhere; those new semantics cannot establish this selected old normalization promise. Distinguish a concrete internal error on malformed metadata from an accepted-input correctness duty. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After stringifies scalar versions and maps an empty/unparsed LooseVersion to wildcard, but this is not an approved old-positive/new-negative pair. It is not full semantic-version validation: arbitrary nonempty text, lists/maps/nulls and unknown-version dependency policy are not certified. Preserve the existing resolver family and prior broad-case judgments.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "A changed behavior is visible, but prior supported-input, diagnostic-order or malformed-version tolerance obligations remain unsettled.",
+      "dependence_reason": "Preserve fix-family:c811c11c513ed23d136c and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "version = manifest['version']"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "version = to_text(manifest['version'], errors='surrogate_or_strict')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "lib/ansible/galaxy/data/collections_galaxy_meta.yml",
+          "ref": "4881af2e7e0506ada0225fd764e874e20569d5b2^",
+          "needle": "Must be compatible with semantic versioning."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019.json",
+          "path": "lib/ansible/galaxy/data/collections_galaxy_meta.yml",
+          "ref": "4881af2e7e0506ada0225fd764e874e20569d5b2^",
+          "needle": "- key: version"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for req in list(requirements.split(',')):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def _get_galaxy_yml("
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'version': version,"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-8:0:lib/ansible/plugins/shell/powershell.py:ShellModule.join_path",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Removing empty path fragments drops the leading separators of an existing Windows UNC root.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old PowerShell shell plugin handles Windows paths and unquotes inputs; splitting every component on backslash and filtering empties erases the double leading separator of a UNC server/share, changing an absolute UNC path to a relative spelling. After ntpath normalizes each part, retains the first root and strips later separators to prevent ntpath.join replacing that root. This is an existing path-representation duty, not new platform adoption.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact _unquote/callers and historical Windows ntpath semantics under a uniform ordinary API policy. Do not run PowerShell, path operations or expand a UNC network location. Retained old shell tests concern CLIXML parsing, not an explicit UNC join promise; new join tests alone cannot establish prior duties. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For a nonempty quoted/unquoted UNC first component and ordinary later components after retains the UNC prefix/share. Dot segments, home expansion, empty/no-argument calls, alternate drive roots and all Windows path policy are not universally certified; no path-confined or injection-safe claim follows.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported, but essential historical producer/helper/consumer/runtime semantics are omitted from the strict selected before function.",
+      "dependence_reason": "Preserve fix-family:a86bb18060c51c2748b6 and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "parts.extend([a for a in arg.split('\\\\') if a])"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return ntpath.join(parts[0],"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def _unquote("
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-9:0:lib/ansible/modules/packaging/os/redhat_subscription.py:Rhsm.subscribe_by_pool_ids",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Omitted pool quantity is replaced by1 before the subscription server can choose a required minimum.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old module docs distinguish a bare pool ID from a dict with an explicit quantity, without promising default1. Main synthesizes1/stringifies; subscribe_by_pool_ids always emits --quantity. Exact earlier issue66478 reports a documented bare-ID request on a two-socket RHEL server failing with quantity-multiple-of2/return-code1, whereas subscription itself can proceed. Matched fix preserves None and omits the flag. This is existing bare-pool subscription behavior, not a wholly new option; the two components jointly implement it.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old option contract, caller/consumer representation, run_command error handling and subscription-manager/Candlepin version semantics. Attributed issue is a mutable body with complete API response, not independently reproduced stdout or deployed-version proof. A helper supplied with new None while retaining the old caller would be a mixed-version witness. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For the coherent new bare-ID path, main preserves None and the command builder emits no --quantity; explicit quantities still serialize to native text. No actual successful registration, all server/entitlement policies, null-dict values, type validation or general credential handling is certified. Preserve this single coordinated family, not two independent successful repairs.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported, but essential historical producer/helper/consumer/runtime semantics are omitted from the strict selected before function.",
+      "dependence_reason": "Preserve fix-family:50322b2f65934b58361e and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "args = [SUBMAN_CMD, 'attach', '--pool', pool_id, '--quantity', quantity]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if quantity is not None:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "If the quantity is provided, it is used to consume multiple"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "args.extend(['--quantity', to_native(quantity)])"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "pool_ids[pool_id] = quantity"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_ISSUES.json",
+          "path": "issues/66478",
+          "ref": "issue snapshot 2026-10-25",
+          "needle": "Quantity needs to be a multiple of 2"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_ansible-9:0:lib/ansible/modules/packaging/os/redhat_subscription.py:main",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Omitted pool quantity is replaced by1 before the subscription server can choose a required minimum.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current narrow discovery leaf or null boundary. Historical support/API/input promises, actual selected effect, security delivery, task scope and paired-negative failures are separate. A permissive producer, changed test, shared fix or shell/PAM/network context does not automatically establish an old defect or exploit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old module docs distinguish a bare pool ID from a dict with an explicit quantity, without promising default1. Main synthesizes1/stringifies; subscribe_by_pool_ids always emits --quantity. Exact earlier issue66478 reports a documented bare-ID request on a two-socket RHEL server failing with quantity-multiple-of2/return-code1, whereas subscription itself can proceed. Matched fix preserves None and omits the flag. This is existing bare-pool subscription behavior, not a wholly new option; the two components jointly implement it.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old option contract, caller/consumer representation, run_command error handling and subscription-manager/Candlepin version semantics. Attributed issue is a mutable body with complete API response, not independently reproduced stdout or deployed-version proof. A helper supplied with new None while retaining the old caller would be a mixed-version witness. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. All helpers, callers, fixtures, reports, after code and labels stay adjudication-only, never selectively injected into detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed obligation concerns configuration content/idempotence, Unicode lookup, argument/path/metadata handling, fact counting or omitted subscription quantity. Operators select these privileged APIs and tasks. No realistic lower-trust source-to-privileged execution, authorization bypass or victim-delivery boundary is demonstrated by this selected functional edit; do not infer one merely from PAM, PowerShell, templates, archives, credentials or network context.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For the coherent new bare-ID path, main preserves None and the command builder emits no --quantity; explicit quantities still serialize to native text. No actual successful registration, all server/entitlement policies, null-dict values, type validation or general credential handling is certified. Preserve this single coordinated family, not two independent successful repairs.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported, but essential historical producer/helper/consumer/runtime semantics are omitted from the strict selected before function.",
+      "dependence_reason": "Preserve fix-family:50322b2f65934b58361e and all existing exact/AST/function-history/span links. Six chroot/jail/zone transfers share one CVE family; three banner components and two subscription components share their respective coordinated families. A function, platform, fixture or selected component is not an independent adjudicated issue.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/API/platform/configuration and exact before-only context/after-negative eligibility; independent issue identities and final approval remain pending.",
+        "All traces are inert-text deductions, not reproduced results. No Ansible, shell/subprocess, transfer/isolation, device/PAM, template/lookup/environment, archive/collection, facts/subscription, parser, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "pool_id, quantity = value, 1"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "pool_id, quantity = value, None"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "If the quantity is provided, it is used to consume multiple"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "args.extend(['--quantity', to_native(quantity)])"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "pool_ids[pool_id] = quantity"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_019_ISSUES.json",
+          "path": "issues/66478",
+          "ref": "issue snapshot 2026-10-25",
+          "needle": "Quantity needs to be a multiple of 2"
+        }
+      ]
+    }
+  ]
+}

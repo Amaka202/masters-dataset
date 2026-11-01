@@ -1,0 +1,1491 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-006",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All 31 Keras training candidates in the three broad discovery leaves at the fixed checkpoint. Companion source, docs and regression text are adjudication evidence, not additional selected inputs or independent issues.",
+  "selection_rule": {
+    "repository": "github.com/keras-team/keras",
+    "discovery_categories": [
+      "CORR-INCOMPLETE-CASE-HANDLING",
+      "CORR-STATE-TRANSITION",
+      "CORR-CONTEXT-PROPAGATION"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 758,
+    "sha256": "5472506d5a8be9e1c3173cd299cef9f920fe00b2e6cdcdfc5abf0fd03bd86a91"
+  },
+  "interpretation": "Both exact archived selections and retained fixing diffs inspected as inert text. Manual traces are deductions, not executions or reproduced failures. Preserve dependency/runtime, prior contract, selected attribution, missing context and same-contract paired-negative dimensions. No Keras/TensorFlow/model/callback/initializer/image/Sequence/dataset program or test executed. All researcher statuses pending.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-10:0:keras/engine/training_utils.py:standardize_weights",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Class-weight normalization indexes a second shape dimension before checking target rank.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Missing rank-one target handling is separate from the same patch changing joint sample/class-weight policy.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old helper accepts a NumPy target array and rejects class weighting only for rank greater than two. With rank one and no sample_weight, y.shape[1] is unavailable. The new len(y.shape)==2 branch preserves rank-one labels for class lookup. The old warning explicitly ignores class_weight when sample_weight exists; multiplication is a policy change, not independent proof of an old defect.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The bounds failure is local, but normal training target normalization/reachability, accepted label representations and broadcasting policy are external. A new direct helper test does not establish every public training route passes rank one here.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Target weighting is functional model-input processing; no adversary-to-authority boundary or security guarantee is established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Rank-one class lookup with dictionary covering every label and no simultaneous sample weights. Zero-width rank-two targets still leave y_classes undefined after the patch; temporal/multiplicative weight correctness and general clean code are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer function-only admission for target-shape and caller invariants; retain only the narrow rank mechanism as contextually supported.",
+      "dependence_reason": "One Keras-10 family; rank repair and weighting policy share a commit without becoming independently adjudicated issues.",
+      "open_questions": [
+        "Pin actual old callers and accepted target rank without executing arrays or training.",
+        "Keep multiplicative policy, empty rank-two residual and strict input budget separate."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "elif isinstance(class_weight, dict):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if y.shape[1] > 1:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if len(y.shape) == 2:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'`class_weight` argument will be ignored.'"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-11:0:keras/engine/training_generator.py:evaluate_generator",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Nominal Sequence recognition becomes marker/structural recognition during evaluation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Foreign producer API recognition is not automatically a repaired prior automatic-step promise.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The old nominal branch rejects omitted steps for an object outside keras.utils.Sequence. Exact pre-fix image.py defines local Sequence adapters but ImageDataGenerator inherits flow from external image.ImageDataGenerator; a local adapter definition does not prove that inherited method returns it. Old public docs tie omitted-step inference to keras.utils.Sequence; old image examples explicitly supply steps. The new integration case establishes intended broader recognition, not a historical foreign-Sequence inference contract. The actual dependency producer/version and prior promise remain unresolved.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The evaluation nominal restriction and branch consequences are visible, but producer class/MRO, inherited flow, external dependency and promised inference are not. Prediction is source-analogous; the new integration assertions exercise fitting and evaluation.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The functional witness is step inference or iterator routing. No untrusted-object privilege boundary or security fix is established by duck typing.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conditional routing of a conforming foreign Sequence with the coordinated is_sequence helper. A truthy marker or inclusion of attribute names in dir does not prove callable methods, valid batches, worker safety or arbitrary-object compatibility.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer prior-contract eligibility; discovery revision2 now preserves ambiguity rather than presuming a supported foreign-producer repair.",
+      "dependence_reason": "All three Keras-11 consumers remain one fixing family. Training/validation branches and prediction analogy are not separate independent issues.",
+      "open_questions": [
+        "Pin a concrete supported dependency flow producer and the old no-explicit-steps contract.",
+        "Keep explicit-step generator support, nominal local Sequence support and structural expansion distinct."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "batch_sizes = []\n    is_sequence = isinstance(generator, Sequence)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "batch_sizes = []\n    use_sequence_api = is_sequence(generator)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/preprocessing/image.py",
+          "ref": "d6b5c5ebb410e3366c9d7aca41977a60134bfe10^",
+          "needle": "class Iterator(image.Iterator, utils.Sequence):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/preprocessing/image.py",
+          "ref": "d6b5c5ebb410e3366c9d7aca41977a60134bfe10^",
+          "needle": "class ImageDataGenerator(image.ImageDataGenerator):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/engine/training.py",
+          "ref": "d6b5c5ebb410e3366c9d7aca41977a60134bfe10^",
+          "needle": "The use of `keras.utils.Sequence` guarantees the ordering"
+        },
+        {
+          "kind": "fix",
+          "needle": "getattr(seq, 'use_sequence_api', False)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-11:0:keras/engine/training_generator.py:fit_generator",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Nominal Sequence recognition becomes marker/structural recognition during fitting/validation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Foreign producer API recognition is not automatically a repaired prior automatic-step promise.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The old nominal branch rejects omitted steps for an object outside keras.utils.Sequence. Exact pre-fix image.py defines local Sequence adapters but ImageDataGenerator inherits flow from external image.ImageDataGenerator; a local adapter definition does not prove that inherited method returns it. Old public docs tie omitted-step inference to keras.utils.Sequence; old image examples explicitly supply steps. The new integration case establishes intended broader recognition, not a historical foreign-Sequence inference contract. The actual dependency producer/version and prior promise remain unresolved.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The fitting/validation nominal restriction and branch consequences are visible, but producer class/MRO, inherited flow, external dependency and promised inference are not. Prediction is source-analogous; the new integration assertions exercise fitting and evaluation.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The functional witness is step inference or iterator routing. No untrusted-object privilege boundary or security fix is established by duck typing.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conditional routing of a conforming foreign Sequence with the coordinated is_sequence helper. A truthy marker or inclusion of attribute names in dir does not prove callable methods, valid batches, worker safety or arbitrary-object compatibility.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer prior-contract eligibility; discovery revision2 now preserves ambiguity rather than presuming a supported foreign-producer repair.",
+      "dependence_reason": "All three Keras-11 consumers remain one fixing family. Training/validation branches and prediction analogy are not separate independent issues.",
+      "open_questions": [
+        "Pin a concrete supported dependency flow producer and the old no-explicit-steps contract.",
+        "Keep explicit-step generator support, nominal local Sequence support and structural expansion distinct."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "model._make_test_function()\n\n    is_sequence = isinstance(generator, Sequence)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "model._make_test_function()\n\n    use_sequence_api = is_sequence(generator)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/preprocessing/image.py",
+          "ref": "d6b5c5ebb410e3366c9d7aca41977a60134bfe10^",
+          "needle": "class Iterator(image.Iterator, utils.Sequence):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/preprocessing/image.py",
+          "ref": "d6b5c5ebb410e3366c9d7aca41977a60134bfe10^",
+          "needle": "class ImageDataGenerator(image.ImageDataGenerator):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/engine/training.py",
+          "ref": "d6b5c5ebb410e3366c9d7aca41977a60134bfe10^",
+          "needle": "The use of `keras.utils.Sequence` guarantees the ordering"
+        },
+        {
+          "kind": "fix",
+          "needle": "getattr(seq, 'use_sequence_api', False)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-11:0:keras/engine/training_generator.py:predict_generator",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Nominal Sequence recognition becomes marker/structural recognition during prediction.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Foreign producer API recognition is not automatically a repaired prior automatic-step promise.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The old nominal branch rejects omitted steps for an object outside keras.utils.Sequence. Exact pre-fix image.py defines local Sequence adapters but ImageDataGenerator inherits flow from external image.ImageDataGenerator; a local adapter definition does not prove that inherited method returns it. Old public docs tie omitted-step inference to keras.utils.Sequence; old image examples explicitly supply steps. The new integration case establishes intended broader recognition, not a historical foreign-Sequence inference contract. The actual dependency producer/version and prior promise remain unresolved.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The prediction nominal restriction and branch consequences are visible, but producer class/MRO, inherited flow, external dependency and promised inference are not. Prediction is source-analogous; the new integration assertions exercise fitting and evaluation.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The functional witness is step inference or iterator routing. No untrusted-object privilege boundary or security fix is established by duck typing.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conditional routing of a conforming foreign Sequence with the coordinated is_sequence helper. A truthy marker or inclusion of attribute names in dir does not prove callable methods, valid batches, worker safety or arbitrary-object compatibility.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer prior-contract eligibility; discovery revision2 now preserves ambiguity rather than presuming a supported foreign-producer repair.",
+      "dependence_reason": "All three Keras-11 consumers remain one fixing family. Training/validation branches and prediction analogy are not separate independent issues.",
+      "open_questions": [
+        "Pin a concrete supported dependency flow producer and the old no-explicit-steps contract.",
+        "Keep explicit-step generator support, nominal local Sequence support and structural expansion distinct."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "all_outs = []\n    is_sequence = isinstance(generator, Sequence)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "all_outs = []\n    use_sequence_api = is_sequence(generator)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/preprocessing/image.py",
+          "ref": "d6b5c5ebb410e3366c9d7aca41977a60134bfe10^",
+          "needle": "class Iterator(image.Iterator, utils.Sequence):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/preprocessing/image.py",
+          "ref": "d6b5c5ebb410e3366c9d7aca41977a60134bfe10^",
+          "needle": "class ImageDataGenerator(image.ImageDataGenerator):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/engine/training.py",
+          "ref": "d6b5c5ebb410e3366c9d7aca41977a60134bfe10^",
+          "needle": "The use of `keras.utils.Sequence` guarantees the ordering"
+        },
+        {
+          "kind": "fix",
+          "needle": "getattr(seq, 'use_sequence_api', False)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-13:0:keras/engine/training_generator.py:fit_generator",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "The no-worker validation Sequence branch iterates training data and loses inferred validation length.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Actual source/step propagation, not a generalized statistical leakage claim.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old branch binds val_data=validation_data but calls iter_sequence_infinite(generator), unlike the worker branch. Its eventual model.evaluate_generator receives that training iterator and validation_steps. With explicit steps it evaluates the wrong source; with omitted steps the plain iterator no longer carries nominal Sequence inference. The repair selects val_data and forwards its length. The helper only repeats its supplied sequence.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Wrong variable and worker-branch asymmetry are visible, but iteration semantics and evaluate_generator step requirements are omitted. This 244-line function also awaits the common numerical budget.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Wrong validation source affects reported results; a privacy disclosure, adversarial training or other security boundary is not established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "No-worker nominal Sequence validation with matching helper/evaluation interface. Not all validation state, arbitrary iterators, worker lifecycle or model quality.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextually supported source substitution; defer strict function-only eligibility for helper/consumer facts.",
+      "dependence_reason": "Keras-13 is a different mechanism from later Keras-11 recognition. Common fit source/history does not prove independent roots or justify a merge.",
+      "open_questions": [
+        "Preserve distinct training/validation source identities in manual traces.",
+        "Freeze common missing-helper context and long-function budget."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "val_enqueuer_gen = iter_sequence_infinite(generator)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "val_enqueuer_gen = iter_sequence_infinite(val_data)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "val_outs = model.evaluate_generator("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/engine/training_utils.py",
+          "ref": "a07253d8269e1b750f0a64767cc9a07da8a3b7ea^",
+          "needle": "def iter_sequence_infinite(seq):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-18:0:keras/backend/tensorflow_backend.py:Function.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Constructor rejects documented TensorFlow Session.run options/run_metadata as leftover kwargs.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Existing accepted-key validation failure is separate from subsequent coordinated callable propagation.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old Function class docs explicitly list options and run_metadata. Constructor consumes feed_dict/fetches then rejects all remaining kwargs, preventing documented nonempty options/metadata from reaching execution. Pop of those named keys repairs that rejection; the copy preserves their legacy-path representation. Python **kwargs already creates a local mapping, so no old caller-dict mutation is inferred.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Residual-key rejection is visible, but old documented keys, factory validation and callable/legacy routing are outside the selected constructor.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Run tracing controls are a functional API contract. No log confidentiality, privilege boundary or attacker reachability is established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Admission of documented keys with jointly changed callable and legacy consumers. Actual metadata support depends on TensorFlow capability/version; constructor-only replacement and universal options support are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer before-only admission for critical class/API and version-routing contracts.",
+      "dependence_reason": "Constructor and selected _call companion share one options/metadata fixing family; rejection and plumbing are not independently counted bugs.",
+      "open_questions": [
+        "Pin actual TensorFlow callable metadata capabilities and legacy fallback, not just commit wording.",
+        "Keep caller mapping ownership distinct from the new internal copy."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "`options`, `run_metadata`"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.session_kwargs = session_kwargs"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.run_options = session_kwargs.pop('options', None)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.run_metadata = session_kwargs.pop('run_metadata', None)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-18:0:keras/backend/tensorflow_backend.py:Function._call",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Callable invocation gains metadata forwarding after the constructor begins admitting it.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Newly enabled plumbing is not reachable old silent loss under the rejecting constructor.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Under the matching old constructor, nonempty run_metadata is rejected before _call. No normal old construction path carrying that setting is established. The new field/argument forwards the newly admitted setting through the repaired class; using only the new constructor with old _call manufactures a mixed-version omission.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The metadata argument is absent locally, but constructor rejection, field ownership, callable signature and version routing are missing.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Execution tracing propagation is functional; no separate security boundary is evidenced.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected-component repair negative. Coordinated metadata forwarding only; old/new constructor, _make_callable and routing must match.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Defer selected attribution consistently with earlier correct-old-interface forwarding components.",
+      "dependence_reason": "Same Keras-18 family as constructor; no independent issue for the downstream argument edge.",
+      "open_questions": [
+        "Decide repair-component eligibility or establish a supported old metadata initialization path.",
+        "Keep TensorFlow version fallback and matching interfaces explicit."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "fetched = self._callable_fn(*array_vals)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "fetched = self._callable_fn(*array_vals, run_metadata=self.run_metadata)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if session_kwargs:\n            raise ValueError('Some keys in session_kwargs are not '"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-1:0:keras/backend/tensorflow_backend.py:print_tensor",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Tensor printing gains symbolic graph scope and a tf.print dependency with stdout output.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "TensorFlow-version/mode compatibility and output-channel policy require separate prior-contract evidence.",
+      "existing_contract": "unresolved_runtime_support",
+      "contract_reason": "Old docs require evaluation-triggered printing while returning an identical tensor. tf.Print historically provides that in TF1 graph mode. The old file already has a TF2 symbolic decorator and version dispatch, but does not pin which TF2 prerelease/API was supported for this function. New stdout assertion does not itself establish an old stdout promise; printing to another stream is not automatically failure to print.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The old tf.Print call is visible, but TensorFlow API availability, symbolic/eager graph ownership and channel contract are external. setup.py advertises multiple backends without pinning TensorFlow.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Printing user/model data may have application risks, but no specific disclosure boundary or security repair is evidenced here.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conditional tf.print/control-dependency/identity path under a compatible TensorFlow runtime. No universal TF1/TF2 or stream-compatibility negative established.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer exact prior runtime/API promise instead of inferring a fault from renamed TensorFlow operations.",
+      "dependence_reason": "One multi-mechanism Keras-1 commit family covers printing, updates and seeds; do not count functions or backend modes as independent issues.",
+      "open_questions": [
+        "Pin the actually supported TensorFlow version/mode and previous output-channel guarantee.",
+        "Do not treat a new stdout test or TF2 migration as sufficient old-defect evidence."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return tf.Print(x, [x], message)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "op = tf.print(message, x, output_stream=sys.stdout)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Decorator used in TensorFlow 2.0 to enter the Keras graph."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "setup.py",
+          "ref": "8e23a3ec47a2ccbf6cdd222a80886c6b9f17264f^",
+          "needle": "version='2.2.4'"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-1:0:keras/backend/tensorflow_backend.py:update",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "update wraps assignment in a dependency and returns an identity tensor.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Operation-versus-tensor return compatibility depends on exact variable type, TensorFlow API and evaluation consumer.",
+      "existing_contract": "unresolved_runtime_support",
+      "contract_reason": "Old update directly returns tf_state_ops.assign(x, new_x) under @symbolic. The old contract returns the updated variable, but assignment return types/side effects vary by TensorFlow resource/ref variable and mode. The complete old backend delegates variable creation and evaluation to version-sensitive APIs. The new K.eval test does not prove every supported old backend returned an unusable Operation or skipped assignment; no such unpinned universal failure is asserted.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Selected code does not define tf_state_ops return semantics, variable representation, @symbolic graph scope or K.eval/function consumers. An exact dependency pin is still missing.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Variable mutation is a functional backend operation; no authorization or adversarial state boundary is established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conditional identity read after the assignment dependency under matching runtime/variable semantics. No universal TF1/TF2, repeated-evaluation, gradient or concurrency negative is established.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer runtime-contract eligibility until a concrete supported old return/evaluation mismatch is evidenced.",
+      "dependence_reason": "All three update wrappers share Keras-1 family with printing and seeds. Different arithmetic operations are not independently adjudicated issues.",
+      "open_questions": [
+        "Pin assignment return types for the supported ref/resource variable and TensorFlow mode.",
+        "Read exact evaluation consumer contracts as text; never execute assignment or backend tests."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return tf_state_ops.assign(x, new_x)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "op = tf_state_ops.assign(x, new_x)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return to_dense(x).eval(session=get_session())"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "v = tf_keras_backend.variable("
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-1:0:keras/backend/tensorflow_backend.py:update_add",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "update_add wraps assignment in a dependency and returns an identity tensor.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Operation-versus-tensor return compatibility depends on exact variable type, TensorFlow API and evaluation consumer.",
+      "existing_contract": "unresolved_runtime_support",
+      "contract_reason": "Old update_add directly returns tf_state_ops.assign_add(x, increment) under @symbolic. The old contract returns the updated variable, but assignment return types/side effects vary by TensorFlow resource/ref variable and mode. The complete old backend delegates variable creation and evaluation to version-sensitive APIs. The new K.eval test does not prove every supported old backend returned an unusable Operation or skipped assignment; no such unpinned universal failure is asserted.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Selected code does not define tf_state_ops return semantics, variable representation, @symbolic graph scope or K.eval/function consumers. An exact dependency pin is still missing.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Variable mutation is a functional backend operation; no authorization or adversarial state boundary is established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conditional identity read after the assignment dependency under matching runtime/variable semantics. No universal TF1/TF2, repeated-evaluation, gradient or concurrency negative is established.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer runtime-contract eligibility until a concrete supported old return/evaluation mismatch is evidenced.",
+      "dependence_reason": "All three update wrappers share Keras-1 family with printing and seeds. Different arithmetic operations are not independently adjudicated issues.",
+      "open_questions": [
+        "Pin assignment return types for the supported ref/resource variable and TensorFlow mode.",
+        "Read exact evaluation consumer contracts as text; never execute assignment or backend tests."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return tf_state_ops.assign_add(x, increment)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "op = tf_state_ops.assign_add(x, increment)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return to_dense(x).eval(session=get_session())"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "v = tf_keras_backend.variable("
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-1:0:keras/backend/tensorflow_backend.py:update_sub",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "update_sub wraps assignment in a dependency and returns an identity tensor.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Operation-versus-tensor return compatibility depends on exact variable type, TensorFlow API and evaluation consumer.",
+      "existing_contract": "unresolved_runtime_support",
+      "contract_reason": "Old update_sub directly returns tf_state_ops.assign_sub(x, decrement) under @symbolic. The old contract returns the updated variable, but assignment return types/side effects vary by TensorFlow resource/ref variable and mode. The complete old backend delegates variable creation and evaluation to version-sensitive APIs. The new K.eval test does not prove every supported old backend returned an unusable Operation or skipped assignment; no such unpinned universal failure is asserted.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Selected code does not define tf_state_ops return semantics, variable representation, @symbolic graph scope or K.eval/function consumers. An exact dependency pin is still missing.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Variable mutation is a functional backend operation; no authorization or adversarial state boundary is established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conditional identity read after the assignment dependency under matching runtime/variable semantics. No universal TF1/TF2, repeated-evaluation, gradient or concurrency negative is established.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer runtime-contract eligibility until a concrete supported old return/evaluation mismatch is evidenced.",
+      "dependence_reason": "All three update wrappers share Keras-1 family with printing and seeds. Different arithmetic operations are not independently adjudicated issues.",
+      "open_questions": [
+        "Pin assignment return types for the supported ref/resource variable and TensorFlow mode.",
+        "Read exact evaluation consumer contracts as text; never execute assignment or backend tests."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return tf_state_ops.assign_sub(x, decrement)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "op = tf_state_ops.assign_sub(x, decrement)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return to_dense(x).eval(session=get_session())"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "v = tf_keras_backend.variable("
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-1:0:keras/initializers.py:RandomNormal.__call__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "RandomNormal advances its explicit seed after each initializer call.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Stateful sequence-of-samples policy is distinct from deterministic seed reproducibility and random distribution parameters.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old RandomNormal docs say the integer seeds the random generator; they do not specify successive calls of one seeded instance must produce distinct values. Backend random_normal owns random-operation and graph/eager semantics. New test_statefulness requires different successive samples, but is new policy evidence rather than proof of an old independence contract. Same seed does not by itself prove identical output across all backends or mode combinations.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The old call forwards shape/dtype/seed consistently. Missing class seed contract and dependency random-generator semantics determine whether advancing state is required.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "These are neural-network initializers without a cryptographic unpredictability or adversarial randomness contract.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Only conditional explicit-seed advancement. The mutable seed also changes later get_config serialization; distribution, cryptographic quality, backend determinism and independence of all samples are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer prior statefulness eligibility; do not infer a correctness defect merely from adding seed mutation.",
+      "dependence_reason": "Four selected initializers and unselected Orthogonal companion share one Keras-1 family. Neither initializer class nor seed choice is an independent issue count.",
+      "open_questions": [
+        "Establish the old repeated-call semantics separately from reproducibility across instances.",
+        "Keep backend/mode effects and changed serialized seed state explicit."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "class RandomNormal(Initializer):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "class RandomNormal(Initializer):"
+        },
+        {
+          "kind": "fix",
+          "needle": "+def test_statefulness(initializer):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-1:0:keras/initializers.py:RandomUniform.__call__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "RandomUniform advances its explicit seed after each initializer call.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Stateful sequence-of-samples policy is distinct from deterministic seed reproducibility and random distribution parameters.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old RandomUniform docs say the integer seeds the random generator; they do not specify successive calls of one seeded instance must produce distinct values. Backend random_uniform owns random-operation and graph/eager semantics. New test_statefulness requires different successive samples, but is new policy evidence rather than proof of an old independence contract. Same seed does not by itself prove identical output across all backends or mode combinations.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The old call forwards shape/dtype/seed consistently. Missing class seed contract and dependency random-generator semantics determine whether advancing state is required.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "These are neural-network initializers without a cryptographic unpredictability or adversarial randomness contract.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Only conditional explicit-seed advancement. The mutable seed also changes later get_config serialization; distribution, cryptographic quality, backend determinism and independence of all samples are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer prior statefulness eligibility; do not infer a correctness defect merely from adding seed mutation.",
+      "dependence_reason": "Four selected initializers and unselected Orthogonal companion share one Keras-1 family. Neither initializer class nor seed choice is an independent issue count.",
+      "open_questions": [
+        "Establish the old repeated-call semantics separately from reproducibility across instances.",
+        "Keep backend/mode effects and changed serialized seed state explicit."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "class RandomUniform(Initializer):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "class RandomUniform(Initializer):"
+        },
+        {
+          "kind": "fix",
+          "needle": "+def test_statefulness(initializer):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-1:0:keras/initializers.py:TruncatedNormal.__call__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "TruncatedNormal advances its explicit seed after each initializer call.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Stateful sequence-of-samples policy is distinct from deterministic seed reproducibility and random distribution parameters.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old TruncatedNormal docs say the integer seeds the random generator; they do not specify successive calls of one seeded instance must produce distinct values. Backend truncated_normal owns random-operation and graph/eager semantics. New test_statefulness requires different successive samples, but is new policy evidence rather than proof of an old independence contract. Same seed does not by itself prove identical output across all backends or mode combinations.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The old call forwards shape/dtype/seed consistently. Missing class seed contract and dependency random-generator semantics determine whether advancing state is required.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "These are neural-network initializers without a cryptographic unpredictability or adversarial randomness contract.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Only conditional explicit-seed advancement. The mutable seed also changes later get_config serialization; distribution, cryptographic quality, backend determinism and independence of all samples are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer prior statefulness eligibility; do not infer a correctness defect merely from adding seed mutation.",
+      "dependence_reason": "Four selected initializers and unselected Orthogonal companion share one Keras-1 family. Neither initializer class nor seed choice is an independent issue count.",
+      "open_questions": [
+        "Establish the old repeated-call semantics separately from reproducibility across instances.",
+        "Keep backend/mode effects and changed serialized seed state explicit."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "class TruncatedNormal(Initializer):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "class TruncatedNormal(Initializer):"
+        },
+        {
+          "kind": "fix",
+          "needle": "+def test_statefulness(initializer):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-1:0:keras/initializers.py:VarianceScaling.__call__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "VarianceScaling advances its explicit seed after each initializer call.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Stateful sequence-of-samples policy is distinct from deterministic seed reproducibility and random distribution parameters.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old VarianceScaling docs say the integer seeds the random generator; they do not specify successive calls of one seeded instance must produce distinct values. Backend truncated_normal/random_uniform owns random-operation and graph/eager semantics. New test_statefulness requires different successive samples, but is new policy evidence rather than proof of an old independence contract. Same seed does not by itself prove identical output across all backends or mode combinations.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The old call forwards shape/dtype/seed consistently. Missing class seed contract and dependency random-generator semantics determine whether advancing state is required.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "These are neural-network initializers without a cryptographic unpredictability or adversarial randomness contract.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Only conditional explicit-seed advancement. The mutable seed also changes later get_config serialization; distribution, cryptographic quality, backend determinism and independence of all samples are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer prior statefulness eligibility; do not infer a correctness defect merely from adding seed mutation.",
+      "dependence_reason": "Four selected initializers and unselected Orthogonal companion share one Keras-1 family. Neither initializer class nor seed choice is an independent issue count.",
+      "open_questions": [
+        "Establish the old repeated-call semantics separately from reproducibility across instances.",
+        "Keep backend/mode effects and changed serialized seed state explicit."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "class VarianceScaling(Initializer):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "class VarianceScaling(Initializer):"
+        },
+        {
+          "kind": "fix",
+          "needle": "+def test_statefulness(initializer):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-23:0:keras/engine/sequential.py:Sequential.add",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Nested Sequential shape probing bypasses the existing lazy-build guard.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Premature missing-attribute access, not a general promise to accept empty or multi-output nested models.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old add accepts Model/Sequential and already has a hasattr(batch_input_shape) branch followed by explicit lazy-build fallback. Within nested-model traversal it accesses batch_input_shape/dtype before that guard, defeating the same shape-absent case. Removing the duplicate access restores the existing fallback. The old raises doc still says unknown shape is an error, so preserve that stale-text tension rather than treating every shape case as newly supported.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Premature versus guarded access is visible, but Layer/Model subtype, deferred Dense shape attributes and eventual build trigger lie outside the function.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Model composition is functional. No attacker-config deserialization boundary is established by this shape probe.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Nonempty nested lazy-build models with a deepest layer lacking input shape. Nested empty child indexing, multi-output rules and general serialization/build correctness remain outside scope.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer bounded admission for missing class/build invariants despite the local contradictory guard.",
+      "dependence_reason": "One Keras-23 family; nesting depth and multiple new regression assertions are not independent issues.",
+      "open_questions": [
+        "Confirm old supported deferred model/layer attribute invariants and stale doc wording.",
+        "Keep nested-empty/multi-output residuals outside the narrow repair."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "first_layer = first_layer.layers[0]\n                    batch_shape = first_layer.batch_input_shape"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if hasattr(first_layer, 'batch_input_shape'):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "build the model lazily on `fit`/etc."
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if hasattr(first_layer, 'batch_input_shape'):"
+        },
+        {
+          "kind": "fix",
+          "needle": "-                    batch_shape = first_layer.batch_input_shape"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-24:0:keras/callbacks.py:TensorBoard.set_model",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Activation histogram construction treats a list of layer outputs as one tensor.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Heterogeneous-output histogram failure, not a claim all tensor lists are invalid or all summaries are repaired.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old callback offers activation histograms and traverses layer.output without separating multiple outputs. A layer returning tensors of differing rank/shape cannot be assumed representable as the single dense value expected by one histogram operation. The new per-output branch removes that assumption. The retained regression deliberately combines rank-three and rank-two outputs; equal-shaped lists may convert successfully, so no blanket list rejection is claimed. Exact historical TensorFlow conversion details still need pinning.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Histogram call is local but supported layer.output representation, concrete heterogeneous shapes and TensorFlow tensor conversion are external. The callback is not fully inferable from its selected function alone.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Activation reporting is functional telemetry; no lower-trust exposure or confidentiality repair is evidenced.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Separate histograms for list elements with indexed names under compatible layer/TF APIs. Tuple outputs, absent/multiply connected outputs, gradients and all summary naming/lifecycle remain outside scope.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer function-only admission and pin dependency conversion before final approval.",
+      "dependence_reason": "One Keras-24 histogram family; outputs and summary names do not represent independent issues.",
+      "open_questions": [
+        "Pin same-revision Layer.output and TensorFlow histogram/conversion contracts.",
+        "Keep heterogeneous versus stackable outputs and mechanism-local negative scope distinct."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "tf.summary.histogram('{}_out'.format(layer.name),\n                                         layer.output)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for i, output in enumerate(layer.output):"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    inp_pair = Lambda(lambda x: x)([inp_3d, inp_2d])  # test a layer with a list of output tensors"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-29:0:keras/engine/training.py:Model._fit_loop",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Epoch fit resets raw metric configuration rather than the resolved stateful functions.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Metric lifecycle reset omission, not arbitrary loss/metric arithmetic or three independent faults.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old compile docs accept a metrics dictionary, store that dictionary in self.metrics and normalize it via _collect_metrics. Iterating the raw mapping yields names, so isinstance(m, Layer) fails and reset is skipped. Resolved metric functions already register state updates. The coordinated dedicated list records those functions and resets them. test_on_batch only invokes the compiled test function and does not perform a hidden reset, so generator accumulation is not rescued there.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The epoch fit reset loop is visible, but dictionary ownership, resolved function registration and accumulator/reset semantics are outside the selection. Stateful final-output handling matters in evaluation.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Stale metric accumulators affect evaluation/training reports; no demonstrated authorization, privacy or adversarial-model boundary.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Reset of registered stateful metric functions at this loop boundary with coordinated compile registration. Deduplication of shared metric instances, validation/training accumulator interactions and universal metric correctness are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextually supported old lifecycle failure; defer strict before-only eligibility for compile/state invariants.",
+      "dependence_reason": "All Keras-29 reset consumers share one family. The Keras-30 generator after bytes equal Keras-29 generator before bytes; earlier native-input support does not repair later reset state.",
+      "open_questions": [
+        "Keep actual resolved metric objects, mapping keys and weighted metrics distinct.",
+        "Preserve common family and exact-version lineage without converting them into independent issue counts."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.metrics = metrics or []"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "nested_metrics = _collect_metrics(metrics, self.output_names)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.metrics_updates += metric_fn.updates"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.stateful_metric_functions.append(metric_fn)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "outputs = self.test_function(ins)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-29:0:keras/engine/training.py:Model._test_loop",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Array evaluation resets raw metric configuration rather than the resolved stateful functions.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Metric lifecycle reset omission, not arbitrary loss/metric arithmetic or three independent faults.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old compile docs accept a metrics dictionary, store that dictionary in self.metrics and normalize it via _collect_metrics. Iterating the raw mapping yields names, so isinstance(m, Layer) fails and reset is skipped. Resolved metric functions already register state updates. The coordinated dedicated list records those functions and resets them. test_on_batch only invokes the compiled test function and does not perform a hidden reset, so generator accumulation is not rescued there.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The array evaluation reset loop is visible, but dictionary ownership, resolved function registration and accumulator/reset semantics are outside the selection. Stateful final-output handling matters in evaluation.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Stale metric accumulators affect evaluation/training reports; no demonstrated authorization, privacy or adversarial-model boundary.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Reset of registered stateful metric functions at this loop boundary with coordinated compile registration. Deduplication of shared metric instances, validation/training accumulator interactions and universal metric correctness are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextually supported old lifecycle failure; defer strict before-only eligibility for compile/state invariants.",
+      "dependence_reason": "All Keras-29 reset consumers share one family. The Keras-30 generator after bytes equal Keras-29 generator before bytes; earlier native-input support does not repair later reset state.",
+      "open_questions": [
+        "Keep actual resolved metric objects, mapping keys and weighted metrics distinct.",
+        "Preserve common family and exact-version lineage without converting them into independent issue counts."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.metrics = metrics or []"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "nested_metrics = _collect_metrics(metrics, self.output_names)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.metrics_updates += metric_fn.updates"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.stateful_metric_functions.append(metric_fn)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "outputs = self.test_function(ins)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-29:0:keras/engine/training.py:Model.evaluate_generator",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Generator evaluation resets raw metric configuration rather than the resolved stateful functions.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Metric lifecycle reset omission, not arbitrary loss/metric arithmetic or three independent faults.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old compile docs accept a metrics dictionary, store that dictionary in self.metrics and normalize it via _collect_metrics. Iterating the raw mapping yields names, so isinstance(m, Layer) fails and reset is skipped. Resolved metric functions already register state updates. The coordinated dedicated list records those functions and resets them. test_on_batch only invokes the compiled test function and does not perform a hidden reset, so generator accumulation is not rescued there.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The generator evaluation reset loop is visible, but dictionary ownership, resolved function registration and accumulator/reset semantics are outside the selection. Stateful final-output handling matters in evaluation.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Stale metric accumulators affect evaluation/training reports; no demonstrated authorization, privacy or adversarial-model boundary.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Reset of registered stateful metric functions at this loop boundary with coordinated compile registration. Deduplication of shared metric instances, validation/training accumulator interactions and universal metric correctness are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextually supported old lifecycle failure; defer strict before-only eligibility for compile/state invariants.",
+      "dependence_reason": "All Keras-29 reset consumers share one family. The Keras-30 generator after bytes equal Keras-29 generator before bytes; earlier native-input support does not repair later reset state.",
+      "open_questions": [
+        "Keep actual resolved metric objects, mapping keys and weighted metrics distinct.",
+        "Preserve common family and exact-version lineage without converting them into independent issue counts."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.metrics = metrics or []"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "nested_metrics = _collect_metrics(metrics, self.output_names)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.metrics_updates += metric_fn.updates"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.stateful_metric_functions.append(metric_fn)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "outputs = self.test_function(ins)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-30:0:keras/engine/training.py:Model.evaluate_generator",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Generator batch accounting gains a unit step size for bound native tensors with absent external inputs.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Feature parity with array loops does not alone prove an existing generator input contract.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old generator docs describe test_on_batch-style array inputs; ordinary batch-size extraction fails for None/empty containers. Commit explicitly says fit/evaluate_generator do not yet support framework-native tensors while array loops do. New regression adds (None,None) generation for bound tensors. The old broad cross-reference leaves an interpretation question, not an established prior generator promise. Empty NumPy sample arrays are not interchangeable with bound-tensor placeholders.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "None/empty extraction is visible, but model input binding, native tensor lifecycle and old supported generator formats are missing.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Bound model input routing is functional; no security boundary is established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conditional unit accounting for bound-native-data tensors, not acceptance of every empty array. The after selection still contains the later Keras-29 stateful-metric reset fault.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer existing contract instead of promoting newly added generator parity to a historical defect.",
+      "dependence_reason": "Exact after == Keras-29 evaluate_generator before. Preserve shared-version dependence and distinct native-input/reset mechanisms; no independent issue proof.",
+      "open_questions": [
+        "Resolve the old generator acceptance promise for framework-native inputs.",
+        "Retain residual reset failure and avoid an all-empty-inputs negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if isinstance(x, list):\n                    batch_size = x[0].shape[0]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "outs_per_batch.append(outs)\n\n                if x is None or len(x) == 0:"
+        },
+        {
+          "kind": "fix",
+          "needle": "+                        # step-size = 1 for data tensors"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-32:0:keras/callbacks.py:ReduceLROnPlateau.on_epoch_end",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Patience threshold is tested before counting the current non-improving epoch.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Counter transition ordering is separate from epsilon-to-min_delta API migration.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old class docs reduce learning rate after patience epochs without improvement; _reset starts wait at zero and clears cooldown. For patience two after an improvement, first failed epoch leaves wait one; second checks one before incrementing, so first reduction occurs on the third failed epoch. Old successful reduction resets zero then increments to one immediately. Moving increment before threshold removes both ordering inconsistencies. This is a manual source trace, not a callback run.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Threshold and mutation are visible but zero initialization, monitor comparator, prior docs and cooldown-state rules are external.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Learning-rate scheduling is functional state handling; no demonstrated attacker or security authority crossing.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Positive patience, actual monitored values, no active cooldown and reducible lr: current failure counted before threshold and reduction leaves wait zero. Missing metric, min_lr saturation, cooldown boundary semantics and renamed API compatibility are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer strict before-only eligibility for state/contract context.",
+      "dependence_reason": "One Keras-32 family; first-delay and post-reduction count are related manifestations, not independently counted issues.",
+      "open_questions": [
+        "Preserve patience/reset witness assumptions and qualify cooldown/min_lr residuals.",
+        "Do not infer a scheduling defect from the separate parameter rename."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "quantity and if no improvement is seen for a 'patience' number"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.cooldown_counter = 0\n        self.wait = 0"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "elif not self.in_cooldown():\n                if self.wait >= self.patience:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "elif not self.in_cooldown():\n                self.wait += 1"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-33:0:keras/preprocessing/text.py:text_to_word_sequence",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Two-string maketrans construction rejects a documented multi-character separator.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "A missing accepted string case, not arbitrary tokenizer equivalence or security sanitization.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old function documents split as a string, not a single character. With nonempty filters and a nonempty multi-character separator, len(split * len(filters)) differs from len(filters), violating standard two-string maketrans requirements on Python3 and Python2 byte-text paths. Old Python2 Unicode path already builds ordinal-to-string mapping and accepts longer replacements. The new Python3 mapping / Python2 replace fallback addresses the omitted case.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "conditional_on_ordinary_api_semantics",
+      "context_reason": "Input contract and incompatible length construction are local. Conditional retain assumes common knowledge of standard maketrans/translate semantics and the ordinary Python2/3 alias binding retained in the module; that runtime/API allowance must be frozen consistently. No helper implementation is added to detection input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Token separation is functional preprocessing, not a demonstrated security sanitizer, crypto hash or authority boundary.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Nonempty multi-character separator under matching string runtime, with filters not creating destructive separator overlap. Empty separator remains invalid for str.split; sequential Python2 replacements can reprocess inserted filter characters and are not universally equivalent to one-pass translation.",
+      "experimental_subset_proposal": "conditional_retain",
+      "subset_reason": "Conditional retain under the common standard-library semantics policy, pending researcher approval and final runtime/input budget.",
+      "dependence_reason": "One Keras-33 family; text encodings and Python branches are not independent issue counts.",
+      "open_questions": [
+        "Approve one common ordinary-Python-API knowledge rule and runtime coverage.",
+        "Keep empty separator and Python2 cascading replacements outside this narrow negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\"\"\"Converts a text to a sequence of words (or tokens).\n\n    # Arguments\n        text: Input text (string).\n        filters: Sequence of characters to filter out.\n        lower: Whether to convert the input to lowercase.\n        split: Sentence split marker (string)."
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "translate_map = maketrans(filters, split * len(filters))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "maketrans = str.maketrans"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "translate_dict = dict((c, split) for c in filters)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-34:0:keras/engine/training.py:Model.evaluate_generator",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "No-worker evaluation calls next on a Sequence without obtaining its iterator.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Already documented nominal Sequence/no-worker support, distinct from later foreign structural recognition.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected docs accept keras.utils.Sequence and workers=0. Exact old Sequence requires __getitem__ and __len__, has on_epoch_end, and does not require next/__next__. A compliant indexable object therefore need not satisfy next(generator). The matching repair calls iter and adds a repeating Sequence.__iter__. The added regression exercises fitting; direct evaluation/prediction support follows the inspected corresponding branch and old contract, not a claimed executed assertion.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The accepted-input docs, no-worker branch and next call are local. Sequence protocol and repeating traversal implementation remain outside the selected function.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed consequence is iterator protocol refusal. No adversarial resource guarantee or security repair is asserted; empty traversal residual is separate.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Nonempty nominal Sequence iterator acquisition with matching __iter__ implementation and bounded positive steps. Empty Sequence can spin without yielding; epoch callbacks, arbitrary repetition and worker correctness are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer function-only admission for critical external Sequence contract despite contextual support.",
+      "dependence_reason": "Both selected Keras-34 methods and unselected fitting companion share one family. Different consumers do not establish independent issues.",
+      "open_questions": [
+        "Keep compliant indexable Sequence versus iterator protocols distinct.",
+        "Qualify empty/repeating traversal and missing epoch-end notification; no generator may be run."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "output_generator = generator\n\n            while steps_done < steps:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "output_generator = iter(generator)\n                else:\n                    output_generator = generator\n\n            while steps_done < steps:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/utils/data_utils.py",
+          "ref": "4b74fc5418944c9f449eb88ed4b40ada280fa5ca^",
+          "needle": "Every `Sequence` must implements the `__getitem__` and the `__len__` methods."
+        },
+        {
+          "kind": "fix",
+          "needle": "+        \"\"\"Create an infinite generator that iterate over the Sequence.\"\"\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-34:0:keras/engine/training.py:Model.predict_generator",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "No-worker prediction calls next on a Sequence without obtaining its iterator.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Already documented nominal Sequence/no-worker support, distinct from later foreign structural recognition.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected docs accept keras.utils.Sequence and workers=0. Exact old Sequence requires __getitem__ and __len__, has on_epoch_end, and does not require next/__next__. A compliant indexable object therefore need not satisfy next(generator). The matching repair calls iter and adds a repeating Sequence.__iter__. The added regression exercises fitting; direct evaluation/prediction support follows the inspected corresponding branch and old contract, not a claimed executed assertion.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The accepted-input docs, no-worker branch and next call are local. Sequence protocol and repeating traversal implementation remain outside the selected function.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed consequence is iterator protocol refusal. No adversarial resource guarantee or security repair is asserted; empty traversal residual is separate.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Nonempty nominal Sequence iterator acquisition with matching __iter__ implementation and bounded positive steps. Empty Sequence can spin without yielding; epoch callbacks, arbitrary repetition and worker correctness are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer function-only admission for critical external Sequence contract despite contextual support.",
+      "dependence_reason": "Both selected Keras-34 methods and unselected fitting companion share one family. Different consumers do not establish independent issues.",
+      "open_questions": [
+        "Keep compliant indexable Sequence versus iterator protocols distinct.",
+        "Qualify empty/repeating traversal and missing epoch-end notification; no generator may be run."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "output_generator = generator\n\n            if verbose == 1:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "output_generator = iter(generator)\n                else:\n                    output_generator = generator\n\n            if verbose == 1:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/utils/data_utils.py",
+          "ref": "4b74fc5418944c9f449eb88ed4b40ada280fa5ca^",
+          "needle": "Every `Sequence` must implements the `__getitem__` and the `__len__` methods."
+        },
+        {
+          "kind": "fix",
+          "needle": "+        \"\"\"Create an infinite generator that iterate over the Sequence.\"\"\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-35:0:keras/preprocessing/image.py:DirectoryIterator._get_batches_of_transformed_samples",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Preprocessing moves before resize/augmentation but changes the callback representation from NumPy tensor to PIL image.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Established ordering concern and a broken/unestablished paired negative are separate dimensions.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old ImageDataGenerator docs explicitly say preprocessing runs before any other modification and accepts/returns a rank-three NumPy tensor of the same shape. Old DirectoryIterator resizes/augments before standardize calls the callback, violating that ordering. The new path calls it on load_img output before img_to_array; exact load_img returns a PIL image. New PIL resize fixture does not establish compatibility with the unchanged tensor callback contract.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Selected operation order is visible, but callback invocation inside old standardize and documented representation/ordering are outside it.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Image preprocessing order/representation is functional. No untrusted-image exploit, arbitrary-callback authority boundary or security repair is established.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved negative for the same old tensor-callback contract. The after path supplies PIL and can invalidate callbacks expecting ndarray operations. Coordinated removal from standardize also changes other direct standardize consumers. The shape-only new regression does not verify old callback semantics or general value equivalence.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Explicit paired-negative deferral: preserve supported old ordering duty without pretending it is unknown merely to accommodate an invalid fixed counterpart.",
+      "dependence_reason": "One Keras-35 family with NumpyArrayIterator and standardize companions. Directory/tensor pipelines are not independently counted bugs.",
+      "open_questions": [
+        "Resolve the callback representation regression and whether any valid same-contract before/after pair can be admitted.",
+        "Do not execute images, callbacks or fixtures to test the mismatch."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "The function will run before any other modification on it."
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "one image (Numpy tensor with rank 3),"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "img = pil_image.open(path)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if self.preprocessing_function:\n            x = self.preprocessing_function(x)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "img = self.image_data_generator.preprocessing_function(img)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+            return img.resize((1, 1))"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "After-code passes a documented tensor callback a PIL image before conversion. Keep old ordering support explicit; no same-contract repaired negative is approved."
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-3:0:keras/models.py:_clone_functional_model",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Single None mask truncates zip registration for a multi-output non-masking layer.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Mask-output arity normalization, not all cloning or model-equivalence behavior.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old clone contract reproduces a functional model with new weights. Exact base Layer.compute_mask returns None for a non-masking layer with no incoming masks; exact to_list(None) returns [None]. Zip of multiple reference outputs, cloned outputs and one mask registers only the first output, leaving a needed later output absent. New [None]*len(output_tensors) repairs both single/multi-input non-masking cases. New boolean .all equality assertions are weak; source arity trace supplies the mechanism.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Zip and output-presence assertion are local, but compute_mask, supports_masking and to_list(None) semantics determine the short list and are omitted.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Cloning trusted model topology is functional; no deserialization trust boundary or security repair is evidenced.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Correct None-mask arity for supported non-masking multi-output layers with no incompatible incoming mask. Not all masking-enabled custom layers, clone weights, raw input tensors or value equivalence.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer before-only eligibility for missing helper/layer semantics despite exact contextual support.",
+      "dependence_reason": "One Keras-3 family; two branches/output tensors are not independent issues.",
+      "open_questions": [
+        "Preserve no-input-mask witness and distinguish shape construction from weak prediction equality checks.",
+        "Do not generalize this fix to every supports_masking custom implementation."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for x, y, mask in zip(reference_output_tensors,"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "output_masks = [None] * len(output_tensors)\n                    computed_tensors"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/engine/base_layer.py",
+          "ref": "c13d2723d01212d09dfdda39b0ad439803ec9230^",
+          "needle": "# masking not explicitly supported: return None as mask\n            return None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_006.json",
+          "path": "keras/utils/generic_utils.py",
+          "ref": "c13d2723d01212d09dfdda39b0ad439803ec9230^",
+          "needle": "return [x]"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    assert(pred_a.all() == pred_new_a.all())"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-45:0:keras/layers/recurrent.py:LSTMCell.call",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Implementation-one LSTM gates add absent bias values when use_bias is false.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Supported optional-bias case, not all recurrent/backpropagation or backend behavior.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old LSTMCell docs support use_bias false, and build sets all four gate bias slices to None in that case. Implementation one nevertheless adds each bias unconditionally, unlike implementation two. Guarded bias_add preserves the documented no-bias dot computations. Concrete exception details depend on the backend, but absent bias cannot be assumed a valid additive tensor.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Branch asymmetry is local; None production and use_bias constructor/build contract are missing from the selected call.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Optional model arithmetic is functional. No security boundary or adversarial model guarantee is established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "No-bias implementation-one gate computation under supported backend tensor semantics. Dropout state, arbitrary backends, gradients and all recurrent math remain outside scope.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer strict bounded admission for omitted build state and backend semantics.",
+      "dependence_reason": "One Keras-45 family; four gates and implementation variants do not certify independent issues.",
+      "open_questions": [
+        "Pin exact supported backend addition/bias semantics without running a layer.",
+        "Keep use_bias false producer and common before-only context policy explicit."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "x_i = K.dot(inputs_i, self.kernel_i) + self.bias_i"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.bias_i = None\n            self.bias_f = None"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "x_i = K.bias_add(x_i, self.bias_i)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+                           'use_bias': False},"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-4:0:keras/optimizers.py:TFOptimizer.get_updates",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Native optimizer gradient call changes its second parameter from positional to var_list keyword.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Subclass compatibility is not automatically wrong positional binding in the native base signature.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "New regression overrides compute_gradients(self, loss, **kwargs), accepting var_list only by keyword and rejecting a second positional argument. It establishes the desired custom override compatibility. It does not establish a bug in conventional native TensorFlow signatures whose second argument is already var_list, or a prior wrapper guarantee for an override narrowing that positional interface. Exact supported TensorFlow signature/version and historical subclass interoperability promise remain unresolved.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Call-style change is local; native and override signatures plus supported subclass requirements are external.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Gradient argument forwarding is functional; no demonstrated security trust boundary.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conditional interoperability with the illustrated keyword-only override. No universal gradient correctness, constraint handling, iteration or optimizer compatibility negative.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer prior supported-subclass contract rather than inheriting the test method name as a correctness label.",
+      "dependence_reason": "One Keras-4 family; native/custom optimizer routes are not independent issue counts.",
+      "open_questions": [
+        "Pin the historical TensorFlow signature and supported overriding contract.",
+        "Distinguish a compatible keyword call from proof the original positional call misbound ordinary var_list."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "grads = self.optimizer.compute_gradients(loss, params)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "grads = self.optimizer.compute_gradients(loss, var_list=params)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+        def compute_gradients(self, loss, **kwargs):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-8:0:keras/engine/network.py:Network.from_config",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Deferred shared-layer calls are retried without preserving each layer call order.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Ordered dependency deferral/node-index correspondence, not arbitrary deserialization safety or malformed-graph termination.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old factory promises reconstruction from get_config and explicitly queues calls whose inbound nodes do not yet exist. It pops a layer list, requeues an unavailable earlier call, then still executes available later calls of that same layer. When layer calls append inbound nodes, their numeric indices can change, while downstream config still refers to original indices. New exception/break preserves the unprocessed ordered suffix. Existing source already recognizes cross-depth shared layers; new fixture illustrates ordering, not a new generic shared-layer feature.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Queue, nested signal producer, caller and numeric consumers are in the selected outer function. Exact get_config ordering and layer-call append semantics remain outside it; the long function budget also awaits approval.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional graph reconstruction does not establish a lower-trust config security contract. custom_objects execution/deserialization risks are separate and unadjudicated.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Per-layer pending-call order with matching LookupError helper. No no-progress detection for invalid/cyclic configs; arbitrary user-deserializer LookupError may be mistaken for dependency deferral. Not a safe-deserialization negative.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextually supported ordered factory repair; defer strict before-only eligibility for serialization/node invariants.",
+      "dependence_reason": "Enclosing factory contains the selected process_node helper; verified source overlap and one Keras-8 family prohibit counting two independent reconstruction issues.",
+      "open_questions": [
+        "Pin get_config ordering and layer node-append semantics from the exact revision.",
+        "Retain enclosing/nested overlap; qualify invalid-graph progress and broad LookupError catch."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for node_data in unprocessed_nodes.pop(layer):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "in case of layer shared at different topological depths"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except LookupError:\n                            break"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "unprocessed_nodes[layer] = node_data_list[node_index:]"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-8:0:keras/engine/network.py:Network.from_config.process_node",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Node processor changes unavailable-input signalling from requeue/return to LookupError.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "A coordinated signal producer is separate from the enclosing incorrect scheduling decision.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old helper requeues the unavailable call and returns under its matching no-result interface. Wrong continuation/order occurs in the outer consumer that executes the remaining list. The new exception enables the new outer break; no separate old local producer obligation to signal failure is established. New helper with old consumer raises uncaught; old helper with new consumer reports apparent success. Neither mixed-version trace is an old defect witness.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Local requeue is visible, but later-call scheduling, node numbering and new exception consumer are outside this nested selection.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "No independent deserialization/security boundary is established by this internal signal change.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected-helper repair negative; only coordinated ordered deferral with the enclosing factory.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Defer attribution consistently with earlier old-interface-correct producers/forwarders; discovery revision2 now records ambiguity.",
+      "dependence_reason": "Contained in the selected factory and same Keras-8 family. One overlapping root, not two independent issues.",
+      "open_questions": [
+        "Decide repair-only component eligibility under the same common rule as prior producer cases.",
+        "Keep overlap, matching protocol versions and external layer contract explicit."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "add_unprocessed_node(layer, node_data)\n                    return"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "raise LookupError"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for node_data in unprocessed_nodes.pop(layer):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except LookupError:\n                            break"
+        }
+      ]
+    }
+  ]
+}

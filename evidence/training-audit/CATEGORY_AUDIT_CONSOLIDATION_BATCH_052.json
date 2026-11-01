@@ -1,0 +1,1246 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-052",
+  "review_date": "2026-10-30",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "User-requested ten-candidate batch: all Sentry4/QAnything4/SciPy2 training candidates, all discovery statuses/categories; four mechanical families.",
+  "selection_rule": {
+    "repositories": [
+      "github.com/getsentry/sentry",
+      "github.com/netease-youdao/qanything",
+      "github.com/scipy/scipy"
+    ],
+    "candidate_count": 10,
+    "discovery_categories": [
+      "SEC-CORS-ORIGIN-BOUNDARY",
+      "SEC-RESOURCE-AUTHORIZATION",
+      "SEC-SQL-PARAMETERIZATION",
+      "SEC-WORKSPACE-DIRECTORY-TRUST"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Seven missing-context, one selected-attribution, one security-boundary and one introduced paired-negative deferral. QAnything deletion second UPDATE has user-first parameters against id-first placeholders; ordinary File soft-delete regression retained with unresolved old selected UPDATE gates. Name helper lacks retained caller; actual check/file-name producers are distinct. Sentry CORS cookie policy separates Python None from SameSite=None and same-site from same-origin; nested/outer overlap retained. Download project/organization scopes remain distinct. SciPy shared-temp trust tied to old shelve/compiler consumers, POSIX assumptions and atomic private roots, not all-platform/race-free certification. Four evidence pins retain227 inert texts/twenty exact peers/four first parents/eight archive inventories. Connector wrong-path404 provenance retained separately from corrected contracts; IETF used TLS-verified curl fallback. Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/query/browser/session/filesystem/compiler/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:134313634415275:249299252899106",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Request-authorized route project is used for rate accounting but old debug-file identifier lookup is global before streaming.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate resource lookup scope from route-project accounting; project-bound artifact bundles from organization-bound release files; CORS origin delimiters from browser cookie delivery and CSRF; SQL literal binding from reachable caller/authorization and second-query argument order; writable directories from trusted owner/mode/symlink selection and downstream artifact use.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "ProjectEndpoint resolves active route project and checks object permissions. DebugFilesEndpoint adds ProjectReleasePermission plus has_download_permission on that same project, then forwards request GET id. Existing ProjectDebugFile has project_id/file relations and endpoint documents project DIFs, independently of added tests. Old global lookup does not inherit the route permission merely because its rate-limit key contains project.id.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need inherited route-project resolution/permission, role gate, request id and model/file relations; do not assume unauthenticated access or that every user can pass the role gate. Actual usable file id and readable backing storage remain conditional. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and callers/helpers/models/configuration/framework/SQL/browser/filesystem contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A non-superuser who can legitimately download files for project A can supply a known other-project debug-file row id. Before query ignores project A and streams the other row file; route permission and project-keyed limit do not authorize that object. Target-id discovery is a prerequisite, not proof of automatic compromise.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After requires both id and project_id=authorized project before file read, with no match404. Bound to this lookup under matched inherited permission/model contract; not every endpoint, ownership race or file-storage policy. Ancillary rate response403-to429 does not establish the security mechanism.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Local object-scope repair supported, but real route/permission/id/model context exceeds selected before; defer function-only eligibility.",
+      "dependence_reason": "Ten representations span four mechanical families, not ten independent issues. Two Sentry download endpoints share one fix/CVE; CORS outer decorator contains the selected nested wrapper and is not a second root. Four QAnything queries share one SQL fix while their callers/gates and after obligations differ. Two SciPy selectors share workspace-trust helpers/fix. Preserve canonical IDs/source bytes/splits, discovery categories/revisions, family/connected-block/overlap descriptors and pending alias/backport/root-cause/representation adjudication. Operational batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed connector/framework/runtime, SQL mode/charset, request authentication/input controls, configured project/origin/temp policy and experimental representation; comparison sources do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/query/browser/session/filesystem/compiler/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "debug_file = ProjectDebugFile.objects.filter(id=debug_file_id).first()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "id=debug_file_id, project_id=project.id"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/bases/project.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "self.check_object_permissions(request, project)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/bases/project.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "request.access.has_project_access(project)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/bases/project.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "        \"GET\": [\"project:read\", \"project:write\", \"project:admin\", \"project:releases\"],\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/endpoints/debug_files.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "return roles.get(current_role).priority >= roles.get(required_role).priority"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/endpoints/debug_files.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "if not request.user.is_authenticated:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/endpoints/debug_files.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "return self.download(request.GET.get(\"id\"), project)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/models/debugfile.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "project_id = BoundedBigIntegerField(null=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/models/debugfile.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "file = FlexibleForeignKey(\"sentry.File\")"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:203256363645183:11151637562554",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Predictable default catalog workspace accepts an existing writable attacker-controlled path without validating owner/mode/final symlink.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate resource lookup scope from route-project accounting; project-bound artifact bundles from organization-bound release files; CORS origin delimiters from browser cookie delivery and CSRF; SQL literal binding from reachable caller/authorization and second-query argument order; writable directories from trusted owner/mode/symlink selection and downstream artifact use.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old docstring explicitly promises private compiled/catalog store to prevent a bad module. Home-first then shared-temp fallback selection and is_writable only establish victim write access. Old catalog search always appends default_dir; get_catalog opens shelve and get_cataloged_functions reads cat[code], whose named Python2.7.5 shelf operation unpickles. This is an old trusted-artifact duty, not a new private-cache feature.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need chosen home/temp environment, POSIX uid/permissions and a lower-authority local user able to precreate/write selected fallback directory or symlink. Home-first usable private directory avoids fallback. Cached-path acceptance and catalog consumer matter; do not silently substitute universal Windows ACL security. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and callers/helpers/models/configuration/framework/SQL/browser/filesystem contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Under shared-temp precreation and actual fallback selection, another local account can control catalog artifacts later treated as victim-process Python objects. Mode0700 on mkdir does not repair already-existing attacker-writable path. Reading selected shelve entry invokes unpickling; no malicious pickle/module was created or executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After cache and POSIX candidate acceptance use check_dir: directory, writable, exact0700, victim uid and no final symlink; otherwise validated matching root or atomic mkdtemp fallback. Rejects this unsafe selected-root reuse under named POSIX/runtime conditions. Not race-free component traversal, validation of every nested catalog/symlink, same-user adversary exclusion or Windows ACL proof.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Old trusted catalog duty, conditional local-user crossing and matched selector repair supported; defer deployment/consumer/runtime context and keep shared workspace family.",
+      "dependence_reason": "Ten representations span four mechanical families, not ten independent issues. Two Sentry download endpoints share one fix/CVE; CORS outer decorator contains the selected nested wrapper and is not a second root. Four QAnything queries share one SQL fix while their callers/gates and after obligations differ. Two SciPy selectors share workspace-trust helpers/fix. Preserve canonical IDs/source bytes/splits, discovery categories/revisions, family/connected-block/overlap descriptors and pending alias/backport/root-cause/representation adjudication. Operational batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed connector/framework/runtime, SQL mode/charset, request authentication/input controls, configured project/origin/temp policy and experimental representation; comparison sources do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/query/browser/session/filesystem/compiler/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "os.access(default_dir.cached_path, os.W_OK)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "check_dir(default_dir.cached_path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "3162880a80d5c4d2a5ca283c3c3c30a039f2bf44",
+          "needle": "tmp = tempfile.TemporaryFile(prefix=prefix,dir=dir)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "bd296e0336420b840fcd2faabb97084fd252a973",
+          "needle": "stat.S_IMODE(im_dir_stat.st_mode) == 0o0700"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "bd296e0336420b840fcd2faabb97084fd252a973",
+          "needle": "return proc_uid == im_dir_stat.st_uid"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "bd296e0336420b840fcd2faabb97084fd252a973",
+          "needle": "return not os.path.islink(im_dir)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "bd296e0336420b840fcd2faabb97084fd252a973",
+          "needle": "        writable = is_writable(im_dir)\n        if sys.platform != 'win32':\n            try:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v2.7.5",
+          "needle": "_os.mkdir(file, 0700)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v2.7.5",
+          "needle": "            return (fd, _os.path.abspath(file))\n        except OSError, e:\n            if e.errno == _errno.EEXIST:\n                continue # try again\n            raise\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "bd296e0336420b840fcd2faabb97084fd252a973",
+          "needle": "if check_dir(path):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "bd296e0336420b840fcd2faabb97084fd252a973",
+          "needle": "tmp_dir_path = create_temp_dir(temp_dir_name, tmp_dir=tmp_dir)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "3162880a80d5c4d2a5ca283c3c3c30a039f2bf44",
+          "needle": "search_order.append(default_dir())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "3162880a80d5c4d2a5ca283c3c3c30a039f2bf44",
+          "needle": "                or os.path.exists(catalog_file)):\n        sh = shelve.open(catalog_file,mode)\n    else:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "3162880a80d5c4d2a5ca283c3c3c30a039f2bf44",
+          "needle": "function_list += cat[code]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "Lib/shelve.py",
+          "ref": "v2.7.5",
+          "needle": "value = Unpickler(f).load()"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:203256363645183:238314481290205",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Predictable intermediate build directory reuses existing shared-temp path without trust checks before compiler object output.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate resource lookup scope from route-project accounting; project-bound artifact bundles from organization-bound release files; CORS origin delimiters from browser cookie delivery and CSRF; SQL literal binding from reachable caller/authorization and second-query argument order; writable directories from trusted owner/mode/symlink selection and downstream artifact use.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selector returns temp/whoami/pythonXY_intermediate after exists check; private creation mode applies only if absent. Old ext_tools.compile passes it to build_extension; build_tools appends compiler directory and passes --build-temp to distutils. Named Python2.7.5 build_ext directs compiler object output there. Existing build-workspace integrity duty predates added helper tests.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need local attacker ability to precreate/modify shared-temp username root, actual compiler consumer, uid/mode/temp-parent policy and ordinary artifact paths. Does not establish an unauthenticated network route or universally reproducible code execution. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and callers/helpers/models/configuration/framework/SQL/browser/filesystem contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A lower-authority local user controlling predictable reused workspace can tamper with object/output paths or artifacts used by higher-authority build. Specific resulting overwrite/execution depends on compiler/linker/cache/file targets; do not infer arbitrary execution solely from the directory name.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After validates discovered randomized per-user root or creates one atomically with0700, then selects interpreter child. Existing child only gets isdir, not independent owner/symlink validation; root privacy is the relevant condition. Negative confined to unsafe shared-temp root reuse, not all inner symlinks/TOCTOU, nonsticky temp parents, same-user attackers or Windows ACL safety. No supported ordinary selected regression assigned.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Selected unsafe reuse and coordinated trusted-root repair supported with compiler consumer, but contextual local-user/filesystem/runtime eligibility remains deferred.",
+      "dependence_reason": "Ten representations span four mechanical families, not ten independent issues. Two Sentry download endpoints share one fix/CVE; CORS outer decorator contains the selected nested wrapper and is not a second root. Four QAnything queries share one SQL fix while their callers/gates and after obligations differ. Two SciPy selectors share workspace-trust helpers/fix. Preserve canonical IDs/source bytes/splits, discovery categories/revisions, family/connected-block/overlap descriptors and pending alias/backport/root-cause/representation adjudication. Operational batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed connector/framework/runtime, SQL mode/charset, request authentication/input controls, configured project/origin/temp policy and experimental representation; comparison sources do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/query/browser/session/filesystem/compiler/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "path = os.path.join(tempfile.gettempdir(),\"%s\"%whoami(),python_name)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "im_dir = find_valid_temp_dir(intermediate_dir_prefix(), tmp_dir)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "3162880a80d5c4d2a5ca283c3c3c30a039f2bf44",
+          "needle": "tmp = tempfile.TemporaryFile(prefix=prefix,dir=dir)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "bd296e0336420b840fcd2faabb97084fd252a973",
+          "needle": "stat.S_IMODE(im_dir_stat.st_mode) == 0o0700"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "bd296e0336420b840fcd2faabb97084fd252a973",
+          "needle": "return proc_uid == im_dir_stat.st_uid"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "bd296e0336420b840fcd2faabb97084fd252a973",
+          "needle": "return not os.path.islink(im_dir)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "bd296e0336420b840fcd2faabb97084fd252a973",
+          "needle": "        writable = is_writable(im_dir)\n        if sys.platform != 'win32':\n            try:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v2.7.5",
+          "needle": "_os.mkdir(file, 0700)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v2.7.5",
+          "needle": "            return (fd, _os.path.abspath(file))\n        except OSError, e:\n            if e.errno == _errno.EEXIST:\n                continue # try again\n            raise\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "bd296e0336420b840fcd2faabb97084fd252a973",
+          "needle": "return create_temp_dir(intermediate_dir_prefix(), py_im_dir, tmp_dir)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/catalog.py",
+          "ref": "bd296e0336420b840fcd2faabb97084fd252a973",
+          "needle": "if not os.path.isdir(im_dir):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/ext_tools.py",
+          "ref": "3162880a80d5c4d2a5ca283c3c3c30a039f2bf44",
+          "needle": "temp = catalog.intermediate_dir()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "scipy/weave/build_tools.py",
+          "ref": "3162880a80d5c4d2a5ca283c3c3c30a039f2bf44",
+          "needle": "'--build-temp',temp_dir]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "Lib/distutils/command/build_ext.py",
+          "ref": "v2.7.5",
+          "needle": "output_dir=self.build_temp,"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:260854861546769:158475476729976",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Knowledge-base-name helper formats raw quoted id values into SELECT; after binds values, but retained retrieval finds no production caller for this particular helper.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate resource lookup scope from route-project accounting; project-bound artifact bundles from organization-bound release files; CORS origin delimiters from browser cookie delivery and CSRF; SQL literal binding from reachable caller/authorization and second-query argument order; writable directories from trusted owner/mode/symlink selection and downstream artifact use.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Method promises names for supplied ids; old joins quoted str values directly into SQL while execute_query_ forwards to cursor.execute. After creates one placeholder per id. Exact parent/fix archive literal inventory over qanything_kernel retains this definition, with no other matched call to get_knowledge_base_name; absence of a literal call is bounded retrieval evidence, not proof the method is dead.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual historical caller or external supported API with lower-trust unrestricted ids. New knowledge-base route generates KB+uuid hex, and inspected list_kbs calls get_knowledge_bases instead, so sibling request id injection does not establish this method reachability. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and callers/helpers/models/configuration/framework/SQL/browser/filesystem contracts are adjudication-only, never selective detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Conditional SQL syntax control is local if unrestricted ids reach it, but no retained lower-trust producer for this selected helper is established. Do not promote broad SQL advisory or nearby request handlers to a demonstrated boundary for this row.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After binds supplied ids in order under matched connector semantics. Named connector8.2.0 ordinary backslash-mode sequential value conversion/escaping/quoting supports bounded literal binding; it is client-side substitution, not necessarily server-side prepared statements. Pure and C-extension implementations differ. Pure converter tests sql_mode equality with NO_BACKSLASH_ESCAPES, so combined-mode/charset/C-extension behavior is not certified; no all-mode negative. Empty IN lists, non-list ids, all queries and identity authorization are separate. Actual selected security eligibility remains pending a caller.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Local raw-query construction and binding change retained; preserve discovery ambiguity and unresolved caller/input boundary.",
+      "dependence_reason": "Ten representations span four mechanical families, not ten independent issues. Two Sentry download endpoints share one fix/CVE; CORS outer decorator contains the selected nested wrapper and is not a second root. Four QAnything queries share one SQL fix while their callers/gates and after obligations differ. Two SciPy selectors share workspace-trust helpers/fix. Preserve canonical IDs/source bytes/splits, discovery categories/revisions, family/connected-block/overlap descriptors and pending alias/backport/root-cause/representation adjudication. Operational batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed connector/framework/runtime, SQL mode/charset, request authentication/input controls, configured project/origin/temp policy and experimental representation; comparison sources do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/query/browser/session/filesystem/compiler/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    def get_knowledge_base_name(self, kb_ids):\n        kb_ids_str = ','.join(\"'{}'\".format(str(x)) for x in kb_ids)\n        query = \"SELECT user_id, kb_id, kb_name FROM KnowledgeBase WHERE kb_id IN ({}) AND deleted = 0\".format(kb_ids_str)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return self.execute_query_(query, query_params, fetch=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/connector/database/mysql/mysql_client.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "cursor.execute(query, params)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "requirements.txt",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "mysql-connector-python==8.2.0"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/cursor.py",
+          "ref": "8.2.0",
+          "needle": "            elif isinstance(params, (list, tuple)):\n                psub = _ParamSubstitutor(self._process_params(params))\n                stmt = RE_PY_PARAM.sub(psub, stmt)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/cursor.py",
+          "ref": "8.2.0",
+          "needle": "stmt = RE_PY_PARAM.sub(psub, stmt)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/conversion.py",
+          "ref": "8.2.0",
+          "needle": "def escape(value: Any, sql_mode: Optional[str] = None) -> Any:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/conversion.py",
+          "ref": "8.2.0",
+          "needle": "        if isinstance(value, (bytes, bytearray)):\n            if sql_mode == \"NO_BACKSLASH_ESCAPES\":\n                return value.replace(b\"'\", b\"''\")\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/pooling.py",
+          "ref": "8.2.0",
+          "needle": "if CMySQLConnection and not use_pure:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/connection_cext.py",
+          "ref": "8.2.0",
+          "needle": "result = self._cmysql.convert_to_mysql(*params)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/qanything_server/handler.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "kb_id = 'KB' + uuid.uuid4().hex"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/qanything_server/handler.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "kb_infos = local_doc_qa.milvus_summary.get_knowledge_bases(user_id)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:260854861546769:2015196646636",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Request knowledge-base ids enter raw SELECT syntax before membership rejection; binding only user_id leaves formatted ids unprotected.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate resource lookup scope from route-project accounting; project-bound artifact bundles from organization-bound release files; CORS origin delimiters from browser cookie delivery and CSRF; SQL literal binding from reachable caller/authorization and second-query argument order; writable directories from trusted owner/mode/symlink selection and downstream artifact use.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old caller obtains kb_ids via safe_get and invokes check_kb_exist before vector deletion. safe_get returns form/query/JSON without SQL escaping; user-id regex does not validate kb_ids. DB execution precedes set-difference rejection, so unknown-id rejection cannot prevent query interpretation. Existing existence/ownership check must treat supplied ids as values.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need POST route, safe_get, id sequence shape, actual DB connector/mode/charset and lower-trust access to service. Set comparison constrains later effects but not already-issued SQL. Do not assume arbitrary multi-statement privileges or that request user_id is authenticated identity. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and callers/helpers/models/configuration/framework/SQL/browser/filesystem contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An admitted service client supplies arbitrary kb-id text reaching SQL syntax before any returned-id membership rejection. That grants query-structure control beyond ordinary literal existence check under ordinary MySQL parsing. Observable data/timing/error or later mutation depends on query and DB privileges; no payload/query was executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After constructs placeholders and kb_ids+[user_id] matching SELECT placeholder order; returned set logic unchanged. Named connector8.2.0 ordinary backslash-mode sequential value conversion/escaping/quoting supports bounded literal binding; it is client-side substitution, not necessarily server-side prepared statements. Pure and C-extension implementations differ. Pure converter tests sql_mode equality with NO_BACKSLASH_ESCAPES, so combined-mode/charset/C-extension behavior is not certified; no all-mode negative. Empty IN lists, non-list ids, all queries and identity authorization are separate.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Actual request-to-query-before-rejection chain and local binding repair supported; connector/caller/auth/mode facts exceed selected before-only context.",
+      "dependence_reason": "Ten representations span four mechanical families, not ten independent issues. Two Sentry download endpoints share one fix/CVE; CORS outer decorator contains the selected nested wrapper and is not a second root. Four QAnything queries share one SQL fix while their callers/gates and after obligations differ. Two SciPy selectors share workspace-trust helpers/fix. Preserve canonical IDs/source bytes/splits, discovery categories/revisions, family/connected-block/overlap descriptors and pending alias/backport/root-cause/representation adjudication. Operational batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed connector/framework/runtime, SQL mode/charset, request authentication/input controls, configured project/origin/temp policy and experimental representation; comparison sources do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/query/browser/session/filesystem/compiler/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "AND deleted = 0 AND user_id = %s\".format(kb_ids_str)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "query_params = kb_ids + [user_id]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/connector/database/mysql/mysql_client.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "cursor.execute(query, params)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "requirements.txt",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "mysql-connector-python==8.2.0"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/cursor.py",
+          "ref": "8.2.0",
+          "needle": "            elif isinstance(params, (list, tuple)):\n                psub = _ParamSubstitutor(self._process_params(params))\n                stmt = RE_PY_PARAM.sub(psub, stmt)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/cursor.py",
+          "ref": "8.2.0",
+          "needle": "stmt = RE_PY_PARAM.sub(psub, stmt)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/conversion.py",
+          "ref": "8.2.0",
+          "needle": "def escape(value: Any, sql_mode: Optional[str] = None) -> Any:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/conversion.py",
+          "ref": "8.2.0",
+          "needle": "        if isinstance(value, (bytes, bytearray)):\n            if sql_mode == \"NO_BACKSLASH_ESCAPES\":\n                return value.replace(b\"'\", b\"''\")\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/pooling.py",
+          "ref": "8.2.0",
+          "needle": "if CMySQLConnection and not use_pure:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/connection_cext.py",
+          "ref": "8.2.0",
+          "needle": "result = self._cmysql.convert_to_mysql(*params)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/utils/general_utils.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "return req.json[attr]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/qanything_server/handler.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "    debug_logger.info(\"delete_knowledge_base %s\", user_id)\n    kb_ids = safe_get(req, 'kb_ids')\n    not_exist_kb_ids = local_doc_qa.milvus_summary.check_kb_exist(user_id, kb_ids)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/qanything_server/handler.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "    kb_ids = safe_get(req, 'kb_ids')\n    not_exist_kb_ids = local_doc_qa.milvus_summary.check_kb_exist(user_id, kb_ids)\n    if not_exist_kb_ids:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/qanything_server/sanic_api.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "app.add_route(delete_knowledge_base, \"/api/local_doc_qa/delete_knowledge_base\", methods=['POST'])"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:260854861546769:270276051786338",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Apostrophe-only manual filename escaping leaves existing backslashes unescaped in formatted batched MySQL IN literals.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate resource lookup scope from route-project accounting; project-bound artifact bundles from organization-bound release files; CORS origin delimiters from browser cookie delivery and CSRF; SQL literal binding from reachable caller/authorization and second-query argument order; writable directories from trusted owner/mode/symlink selection and downstream artifact use.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Soft upload_files decodes request file.name, removes full-width ranges and truncates bytes, not ASCII backslash/apostrophe syntax; soft upload_weblink passes url directly. Both call selected existence helper after a valid knowledge-base gate, so a valid own KB is sufficient for filename-query admission. Old user/kb placeholders do not sanitize separately formatted filenames. Connector8.2.0 ordinary cursor escapes only passed params, leaving inline names unchanged.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need soft upload route, ordinary valid user/KB, filename/URL producer, cleaner, batch construction and MySQL parsing/connector. No reliance on unknown-id bypass; lower-trust names can coexist with an otherwise authorized existing KB. Actual SQL mode/charset and external upload transport remain conditional. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and callers/helpers/models/configuration/framework/SQL/browser/filesystem contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Under ordinary backslash escapes, an existing input backslash before an apostrophe changes whether the newly inserted escape protects that quote, allowing literal-boundary changes. NO_BACKSLASH_ESCAPES separately defeats this manual escape policy. Short ASCII input survives cleaner/truncation; no claim of actual server compromise or payload execution.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After binds each batch filename followed by kb_id,user_id in correct placeholder order, retaining batches100. Named connector8.2.0 ordinary backslash-mode sequential value conversion/escaping/quoting supports bounded literal binding; it is client-side substitution, not necessarily server-side prepared statements. Pure and C-extension implementations differ. Pure converter tests sql_mode equality with NO_BACKSLASH_ESCAPES, so combined-mode/charset/C-extension behavior is not certified; no all-mode negative. Empty IN lists, non-list ids, all queries and identity authorization are separate. Scope is this filename query, not upload path safety or all database operations.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Selected escaping defect and matched filename binding supported with actual producers; defer connector/mode/caller context without universal SQL-mode certification.",
+      "dependence_reason": "Ten representations span four mechanical families, not ten independent issues. Two Sentry download endpoints share one fix/CVE; CORS outer decorator contains the selected nested wrapper and is not a second root. Four QAnything queries share one SQL fix while their callers/gates and after obligations differ. Two SciPy selectors share workspace-trust helpers/fix. Preserve canonical IDs/source bytes/splits, discovery categories/revisions, family/connected-block/overlap descriptors and pending alias/backport/root-cause/representation adjudication. Operational batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed connector/framework/runtime, SQL mode/charset, request authentication/input controls, configured project/origin/temp policy and experimental representation; comparison sources do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/query/browser/session/filesystem/compiler/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "file_names_str ="
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "query_params = batch_file_names + [kb_id, user_id]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/connector/database/mysql/mysql_client.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "cursor.execute(query, params)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "requirements.txt",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "mysql-connector-python==8.2.0"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/cursor.py",
+          "ref": "8.2.0",
+          "needle": "            elif isinstance(params, (list, tuple)):\n                psub = _ParamSubstitutor(self._process_params(params))\n                stmt = RE_PY_PARAM.sub(psub, stmt)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/cursor.py",
+          "ref": "8.2.0",
+          "needle": "stmt = RE_PY_PARAM.sub(psub, stmt)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/conversion.py",
+          "ref": "8.2.0",
+          "needle": "def escape(value: Any, sql_mode: Optional[str] = None) -> Any:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/conversion.py",
+          "ref": "8.2.0",
+          "needle": "        if isinstance(value, (bytes, bytearray)):\n            if sql_mode == \"NO_BACKSLASH_ESCAPES\":\n                return value.replace(b\"'\", b\"''\")\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/pooling.py",
+          "ref": "8.2.0",
+          "needle": "if CMySQLConnection and not use_pure:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/connection_cext.py",
+          "ref": "8.2.0",
+          "needle": "result = self._cmysql.convert_to_mysql(*params)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/qanything_server/handler.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "file_name = urllib.parse.unquote(file.name, encoding='UTF-8')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/qanything_server/handler.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "file_name = truncate_filename(file_name)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/qanything_server/handler.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "local_doc_qa.milvus_summary.check_file_exist_by_name(user_id, kb_id, file_names)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/qanything_server/handler.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "local_doc_qa.milvus_summary.check_file_exist_by_name(user_id, kb_id, [url])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/utils/general_utils.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "return new_filename"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/cursor.py",
+          "ref": "8.2.0",
+          "needle": "res = [escape(value, sql_mode) for value in res]"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:260854861546769:90609108934075",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Knowledge-base deletion binds raw ids after repair but reuses user-first parameters in a second query requiring ids first and user last.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate resource lookup scope from route-project accounting; project-bound artifact bundles from organization-bound release files; CORS origin delimiters from browser cookie delivery and CSRF; SQL literal binding from reachable caller/authorization and second-query argument order; writable directories from trusted owner/mode/symlink selection and downstream artifact use.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing method deliberately soft-deletes both KnowledgeBase and File rows; File foreign-key ON DELETE CASCADE cannot cascade an UPDATE of the deleted flag. Actual caller first checks all kb ids and deletes vector partitions before SQL deletion, so sibling existence-check injection does not itself prove arbitrary attacker syntax reaches these UPDATEs. Ordinary valid own-KB deletion does reach both updates.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched request/id-set/vector gates and schema/connector. For a single ordinary generated KB id distinct from user id, the after second query substitutes user id into File.kb_id and KB id into KnowledgeBase.user_id. In an ordinary database lacking such mismatched rows, child File.deleted remains false even after parent soft deletion. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and callers/helpers/models/configuration/framework/SQL/browser/filesystem contracts are adjudication-only, never selective detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Raw id interpolation is conditional syntax risk if unrestricted ids reach these updates; selected retained caller has validation/vector gates and no independent bypass is established. Keep selected security boundary unresolved despite sibling query injection. The after ordinary argument-order failure is independently supported without a malicious id.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After first UPDATE uses [user_id]+kb_ids correctly. Second UPDATE has kb placeholders then user_id but receives same user-first sequence, so it can update no intended child files or wrong matching rows. This introduces an ordinary two-table soft-delete failure; it is not residual old SQL injection. Binding removes direct inline ids only under matched connector conditions; selected paired negative remains unestablished. Named connector8.2.0 ordinary backslash-mode sequential value conversion/escaping/quoting supports bounded literal binding; it is client-side substitution, not necessarily server-side prepared statements. Pure and C-extension implementations differ. Pure converter tests sql_mode equality with NO_BACKSLASH_ESCAPES, so combined-mode/charset/C-extension behavior is not certified; no all-mode negative. Empty IN lists, non-list ids, all queries and identity authorization are separate.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Defer paired-negative use: selected repaired deletion introduces second-query binding-order regression; preserve unresolved old selected UPDATE reachability/security boundary and existing discovery ambiguity.",
+      "dependence_reason": "Ten representations span four mechanical families, not ten independent issues. Two Sentry download endpoints share one fix/CVE; CORS outer decorator contains the selected nested wrapper and is not a second root. Four QAnything queries share one SQL fix while their callers/gates and after obligations differ. Two SciPy selectors share workspace-trust helpers/fix. Preserve canonical IDs/source bytes/splits, discovery categories/revisions, family/connected-block/overlap descriptors and pending alias/backport/root-cause/representation adjudication. Operational batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed connector/framework/runtime, SQL mode/charset, request authentication/input controls, configured project/origin/temp policy and experimental representation; comparison sources do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/query/browser/session/filesystem/compiler/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "query = \"\"\"UPDATE File SET deleted = 1 WHERE kb_id IN ({})"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "query_params = [user_id] + kb_ids"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/connector/database/mysql/mysql_client.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "cursor.execute(query, params)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "requirements.txt",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "mysql-connector-python==8.2.0"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/cursor.py",
+          "ref": "8.2.0",
+          "needle": "            elif isinstance(params, (list, tuple)):\n                psub = _ParamSubstitutor(self._process_params(params))\n                stmt = RE_PY_PARAM.sub(psub, stmt)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/cursor.py",
+          "ref": "8.2.0",
+          "needle": "stmt = RE_PY_PARAM.sub(psub, stmt)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/conversion.py",
+          "ref": "8.2.0",
+          "needle": "def escape(value: Any, sql_mode: Optional[str] = None) -> Any:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/conversion.py",
+          "ref": "8.2.0",
+          "needle": "        if isinstance(value, (bytes, bytearray)):\n            if sql_mode == \"NO_BACKSLASH_ESCAPES\":\n                return value.replace(b\"'\", b\"''\")\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/pooling.py",
+          "ref": "8.2.0",
+          "needle": "if CMySQLConnection and not use_pure:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "lib/mysql/connector/connection_cext.py",
+          "ref": "8.2.0",
+          "needle": "result = self._cmysql.convert_to_mysql(*params)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/qanything_server/handler.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "milvus.delete_partition(kb_id)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/qanything_server/handler.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "local_doc_qa.milvus_summary.delete_knowledge_base(user_id, kb_ids)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/connector/database/mysql/mysql_client.py",
+          "ref": "8ef920de008594e6e48fe4c81c19e0d67bd31ed6",
+          "needle": "FOREIGN KEY (kb_id) REFERENCES KnowledgeBase(kb_id) ON DELETE CASCADE"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/connector/database/mysql/mysql_client.py",
+          "ref": "35753b892c2c4361b318d68dfa3e251c85ce889c",
+          "needle": "query = \"UPDATE File SET deleted = 1 WHERE kb_id IN ({}) AND kb_id IN (SELECT kb_id FROM KnowledgeBase WHERE user_id = %s)\".format(placeholders)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "qanything_kernel/connector/database/mysql/mysql_client.py",
+          "ref": "35753b892c2c4361b318d68dfa3e251c85ce889c",
+          "needle": "        query_params = [user_id] + kb_ids\n        self.execute_query_(query, query_params, commit=True)\n\n"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Second after UPDATE expects kb_ids then user_id but reuses [user_id]+kb_ids; for an ordinary valid distinct user/KB with no mismatched rows, intended File rows remain undeleted after KnowledgeBase soft delete. FK ON DELETE CASCADE does not apply to UPDATE deleted. Conditional source-contract deduction, not an executed SQL result."
+    },
+    {
+      "pair_id": "CVEfixes:26695807228249:162601659861075",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Nested CORS response wrapper admits suffix-matching hostname without a label boundary when granting credentialed response access.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate resource lookup scope from route-project accounting; project-bound artifact bundles from organization-bound release files; CORS origin delimiters from browser cookie delivery and CSRF; SQL literal binding from reachable caller/authorization and second-query argument order; writable directories from trusted owner/mode/symlink selection and downstream artifact use.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old comment intends only base host/subdomains, but raw origin.endswith(basehost) admits an extra prefix within the same hostname label. Origin header is reflected and credential header set on the response; Endpoint dispatch uses this decorator, supports session auth and accepts default wildcard origins before its endpoint permission checks. Selected outer span contains all nested policy changes, not a separate faulty outer decision.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need nonempty configured basehost, attacker-controlled distinct origin, authenticated permitted GET endpoint, victim session and browser credential/cookie policy. Python SESSION_COOKIE_SAMESITE=None omits attribute under named Django2.2.28; it is not the string SameSite=None and modern default Lax does not generally permit cross-site fetch cookies. Conditional same-scheme/same-registrable-domain hostile prefix-sibling of a configured subdomain can still be same-site while being a different origin, if attacker actually controls it; no such deployment/control is asserted. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and callers/helpers/models/configuration/framework/SQL/browser/filesystem contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "If hostile suffix-matching distinct origin can cause a credential-including request with victim cookies to a sensitive permitted endpoint, reflected origin plus true credential flag allows response reading that browser SOP would otherwise block. Same-site is not same-origin, so a permitted same-site sibling configuration is one conditional witness despite Lax. Empty basehost, missing victim cookies, restrictive allowed origins, failed endpoint permission or third-party-cookie blocking can prevent it. No automatic account compromise/CSRF claim.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After requires ://basehost or .basehost suffix, rejecting the missing-label-boundary case for ordinary serialized browser origins. Legitimately allowed subdomains remain trusted; port/case/URL normalization, null origins, CSRF and every cookie deployment are not certified. Nested wrapper is actual selected header sink.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Conditional real response/header/browser chain supports nested local repair but project/config/browser prerequisites exceed selected before.",
+      "dependence_reason": "Ten representations span four mechanical families, not ten independent issues. Two Sentry download endpoints share one fix/CVE; CORS outer decorator contains the selected nested wrapper and is not a second root. Four QAnything queries share one SQL fix while their callers/gates and after obligations differ. Two SciPy selectors share workspace-trust helpers/fix. Preserve canonical IDs/source bytes/splits, discovery categories/revisions, family/connected-block/overlap descriptors and pending alias/backport/root-cause/representation adjudication. Operational batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed connector/framework/runtime, SQL mode/charset, request authentication/input controls, configured project/origin/temp policy and experimental representation; comparison sources do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/query/browser/session/filesystem/compiler/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if origin.endswith(basehost):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if origin.endswith((\"://\" + basehost, \".\" + basehost)):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/base.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "SessionAuthentication,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/base.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "@allow_cors_options"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/utils/http.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "rv: str | None = request.META.get(\"HTTP_ORIGIN\", \"null\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/utils/http.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "if settings.SENTRY_ALLOW_ORIGIN in (\"*\", None):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/conf/server.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "SENTRY_ALLOW_ORIGIN = None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/conf/server.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "SESSION_COOKIE_SAMESITE = None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/options/defaults.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "default=os.environ.get(\"SENTRY_SYSTEM_BASE_HOSTNAME\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "django/http/response.py",
+          "ref": "2.2.28",
+          "needle": "if samesite:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "draft-ietf-httpbis-rfc6265bis-12.txt",
+          "ref": "draft-ietf-httpbis-rfc6265bis-12",
+          "needle": "origin with a scheme and registered domain of \"https\" and"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "files/en-us/web/http/guides/cors/index.md",
+          "ref": "main",
+          "needle": "credentials: \"include\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "files/en-us/web/http/guides/cors/index.md",
+          "ref": "main",
+          "needle": "third-party cookie policies will still apply."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "rest_framework/authentication.py",
+          "ref": "3.12.4",
+          "needle": "user = getattr(request._request, 'user', None)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/base.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "if not is_valid_origin(origin, allowed=allowed_origins):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/endpoints/debug_files.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "return self.download(request.GET.get(\"id\"), project)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:26695807228249:56254439499420",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Outer CORS decorator containing the same nested wrapper admits suffix-matching hostname without a label boundary when granting credentialed response access.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate resource lookup scope from route-project accounting; project-bound artifact bundles from organization-bound release files; CORS origin delimiters from browser cookie delivery and CSRF; SQL literal binding from reachable caller/authorization and second-query argument order; writable directories from trusted owner/mode/symlink selection and downstream artifact use.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old comment intends only base host/subdomains, but raw origin.endswith(basehost) admits an extra prefix within the same hostname label. Origin header is reflected and credential header set on the response; Endpoint dispatch uses this decorator, supports session auth and accepts default wildcard origins before its endpoint permission checks. Selected outer span contains all nested policy changes, not a separate faulty outer decision.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need nonempty configured basehost, attacker-controlled distinct origin, authenticated permitted GET endpoint, victim session and browser credential/cookie policy. Python SESSION_COOKIE_SAMESITE=None omits attribute under named Django2.2.28; it is not the string SameSite=None and modern default Lax does not generally permit cross-site fetch cookies. Conditional same-scheme/same-registrable-domain hostile prefix-sibling of a configured subdomain can still be same-site while being a different origin, if attacker actually controls it; no such deployment/control is asserted. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and callers/helpers/models/configuration/framework/SQL/browser/filesystem contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "If hostile suffix-matching distinct origin can cause a credential-including request with victim cookies to a sensitive permitted endpoint, reflected origin plus true credential flag allows response reading that browser SOP would otherwise block. Same-site is not same-origin, so a permitted same-site sibling configuration is one conditional witness despite Lax. Empty basehost, missing victim cookies, restrictive allowed origins, failed endpoint permission or third-party-cookie blocking can prevent it. No automatic account compromise/CSRF claim.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After requires ://basehost or .basehost suffix, rejecting the missing-label-boundary case for ordinary serialized browser origins. Legitimately allowed subdomains remain trusted; port/case/URL normalization, null origins, CSRF and every cookie deployment are not certified. Outer export supplies no independently isolated negative; preserve containment and defer representation attribution.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Same selected nested policy is contained in outer decorator; defer independent selected representation and retain canonical overlapping sources.",
+      "dependence_reason": "Ten representations span four mechanical families, not ten independent issues. Two Sentry download endpoints share one fix/CVE; CORS outer decorator contains the selected nested wrapper and is not a second root. Four QAnything queries share one SQL fix while their callers/gates and after obligations differ. Two SciPy selectors share workspace-trust helpers/fix. Preserve canonical IDs/source bytes/splits, discovery categories/revisions, family/connected-block/overlap descriptors and pending alias/backport/root-cause/representation adjudication. Operational batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed connector/framework/runtime, SQL mode/charset, request authentication/input controls, configured project/origin/temp policy and experimental representation; comparison sources do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/query/browser/session/filesystem/compiler/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if origin.endswith(basehost):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if origin.endswith((\"://\" + basehost, \".\" + basehost)):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/base.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "SessionAuthentication,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/base.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "@allow_cors_options"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/utils/http.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "rv: str | None = request.META.get(\"HTTP_ORIGIN\", \"null\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/utils/http.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "if settings.SENTRY_ALLOW_ORIGIN in (\"*\", None):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/conf/server.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "SENTRY_ALLOW_ORIGIN = None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/conf/server.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "SESSION_COOKIE_SAMESITE = None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/options/defaults.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "default=os.environ.get(\"SENTRY_SYSTEM_BASE_HOSTNAME\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "django/http/response.py",
+          "ref": "2.2.28",
+          "needle": "if samesite:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "draft-ietf-httpbis-rfc6265bis-12.txt",
+          "ref": "draft-ietf-httpbis-rfc6265bis-12",
+          "needle": "origin with a scheme and registered domain of \"https\" and"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "files/en-us/web/http/guides/cors/index.md",
+          "ref": "main",
+          "needle": "credentials: \"include\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTRACTS.json",
+          "path": "files/en-us/web/http/guides/cors/index.md",
+          "ref": "main",
+          "needle": "third-party cookie policies will still apply."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_DELIVERY.json",
+          "path": "rest_framework/authentication.py",
+          "ref": "3.12.4",
+          "needle": "user = getattr(request._request, 'user', None)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/base.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "if not is_valid_origin(origin, allowed=allowed_origins):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/endpoints/debug_files.py",
+          "ref": "8d836eae82c5728192a76ccb78cae8b1b5621d26",
+          "needle": "return self.download(request.GET.get(\"id\"), project)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:48376280294679:267673220929327",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Project-authorized artifact endpoint downloads a global File id before repair; after typed identifiers enforce project artifact-bundle or organization release-file scope.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate resource lookup scope from route-project accounting; project-bound artifact bundles from organization-bound release files; CORS origin delimiters from browser cookie delivery and CSRF; SQL literal binding from reachable caller/authorization and second-query argument order; writable directories from trusted owner/mode/symlink selection and downstream artifact use.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old ProjectReleasePermission plus has_download_permission authorize route project, then GET download forwards global File id to selected method. ProjectArtifactBundle ties artifact bundle to project, and ReleaseFile has organization_id/release_id with deprecated nullable project_id. Existing listing queries use project relations; selected global File query discards all relationship checks. New typed id producers/caller are coordinated protocol change, not independent proof by tests.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual request gate, authorized project, model/storage relations and old/new producer format. After artifact_bundle branch filters project relation; release_file branch deliberately filters organization rather than project. Whether same-organization cross-project release sharing is authorized remains a researcher policy question; do not describe this after as universal project isolation. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and callers/helpers/models/configuration/framework/SQL/browser/filesystem contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional admitted project-A downloader with known global File id can obtain unrelated stored file before owner/project/organization relation is checked. Project-specific rate counter does not enforce target ownership. Knowing an id and actual stored file access remain prerequisites; no unauthenticated download or every storage file claim.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After accepts type/row-id from matched new URL producer, filters project artifact-bundle membership or release-file organization, then resolves its backing file. Bound negative is cross-project artifact bundles/cross-organization release files for valid typed ids, not every same-org release/project policy. split requires exactly one slash and valid numeric row id; malformed-input exception behavior is not certified, and intentional matched typed protocol change is not itself an accidental ordinary regression.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Selected unscoped read and scoped typed lookup supported, with deliberately distinct project/organization negatives; defer caller/model/policy context and preserve shared download family.",
+      "dependence_reason": "Ten representations span four mechanical families, not ten independent issues. Two Sentry download endpoints share one fix/CVE; CORS outer decorator contains the selected nested wrapper and is not a second root. Four QAnything queries share one SQL fix while their callers/gates and after obligations differ. Two SciPy selectors share workspace-trust helpers/fix. Preserve canonical IDs/source bytes/splits, discovery categories/revisions, family/connected-block/overlap descriptors and pending alias/backport/root-cause/representation adjudication. Operational batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed connector/framework/runtime, SQL mode/charset, request authentication/input controls, configured project/origin/temp policy and experimental representation; comparison sources do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/query/browser/session/filesystem/compiler/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; only own retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "file = File.objects.filter(id=file_id).first()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    projectartifactbundle__project_id=project.id,\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/bases/project.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "self.check_object_permissions(request, project)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/bases/project.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "request.access.has_project_access(project)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/bases/project.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "        \"GET\": [\"project:read\", \"project:write\", \"project:admin\", \"project:releases\"],\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/endpoints/debug_files.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "return roles.get(current_role).priority >= roles.get(required_role).priority"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/endpoints/debug_files.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "if not request.user.is_authenticated:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/endpoints/artifact_lookup.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "return self.download_file(request.GET.get(\"download\"), project)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/models/artifactbundle.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "project_id = BoundedBigIntegerField(db_index=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/models/releasefile.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "project_id = BoundedBigIntegerField(null=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/models/releasefile.py",
+          "ref": "8e308bbb054ee8d834b81b60c4c442e334d308fd",
+          "needle": "organization_id = BoundedBigIntegerField()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/endpoints/artifact_lookup.py",
+          "ref": "e932b15435bf36239431eaa3790a6bcfa47046a9",
+          "needle": "                ReleaseFile.objects.filter(id=ty_id, organization_id=project.organization.id)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/endpoints/artifact_lookup.py",
+          "ref": "e932b15435bf36239431eaa3790a6bcfa47046a9",
+          "needle": "\"url\": url_constructor.url_for_file_id(\"release_file\", release_file.id)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_052_CONTEXT.json",
+          "path": "src/sentry/api/endpoints/artifact_lookup.py",
+          "ref": "e932b15435bf36239431eaa3790a6bcfa47046a9",
+          "needle": "return self.download_file(download_id, project)"
+        }
+      ]
+    }
+  ]
+}

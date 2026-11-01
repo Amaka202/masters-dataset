@@ -1,0 +1,410 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-045",
+  "review_date": "2026-10-28",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All four bcfg2 training candidates/all statuses; one shared shell-fix family.",
+  "selection_rule": {
+    "repository": "github.com/solj/bcfg2",
+    "discovery_categories": [
+      "SEC-SHELL-QUOTING"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "evidence_field_qualifications": [
+    {
+      "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTRACTS.json",
+      "path": "cves/2011/3xxx/CVE-2011-3211.json",
+      "ref": "retrieved-2026-10-27",
+      "actual_collection_date": "2026-10-28",
+      "reason": "The ref is an inherited collector label, not a verified collection/publication timestamp. Retain immutable source bytes/hash and qualify this date here."
+    }
+  ],
+  "interpretation": "One missing-context, one security-boundary and two paired-negative deferrals. Signing old shell operands are server-config/temp-derived, so preserve ambiguous old selected security attribution; matched after request helper changes to argv but retains shell=True, invoking bare openssl rather than req and breaking old ordinary certificate-generation integration. Key verifier quotes paths but remains behind a prior CA gate; do not borrow execution/spoofing at that sibling sink as isolated key-verifier delivery. CA verifier has conditionally client-influenced cached path, with actual Basic-auth non-root user/global-password/default-profile/session metadata chain; not anonymous or all first-time requests. SSHbase DNS-error shell fallback shares that conditional identity source, while after retains list output passed to get_skn address set, silently omitting successful fallback addresses; named IPv4 Python/IPv6 getent comparison supports an ordinary witness. Request-helper failure is introduced, DNS-list failure residual, neither a new old security-positive. Four pins retain60 inert texts/four exact full-file peers/one resolved first parent/two archive inventories with missing-path provenance. CPython2.7.2, OpenSSL1.0.0d and glibc2.13 are semantic comparisons, not installed/all-version proof. Maintenance backport has a different file set excluding SSLCA, not automatic identical repair/alias equivalence. Four functions/one family are not independent issues. Preserve all833 ledger events/statuses/categories/hashes/families,45 protected inputs, canonical bytes/splits and prior authored evidence. Researcher approval pending; common before-only budget/ordinary-knowledge policy unfrozen. No retained program/payload/vulnerability-target request/upstream test executes.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:183164955987669:144194999452801",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Signing command changes trusted-config shell interpolation to argv; matched new request helper loses its intended arguments under shell=True.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate shell syntax interpretation, utility option grammar, trusted server configuration, hostname/alias admission, certificate validation and command success, request-helper calling convention, DNS fallback output typing and known-hosts rendering. A shell=True string alone is not a selected remotely supplied operand; shared-CVE sibling paths and prior insecure gates do not establish independent old positives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old SSLCA documentation promises generating a requested certificate using the specified key and configured CA, and get_cert/build_cert/build_request implement that old duty. Selected signing operands ca_config/days/passphrase come from server configuration, and req is a mkstemp path; client hostname/aliases are written into request configuration rather than interpolated into this selected signing command. The sibling build_request has a hostname-derived key operand, which is a different shell sink. Retain the existing ambiguous old selected injection finding; supported legitimate certificate-generation duty does not establish an independent old signing security positive.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact HandleEvent config producers, request/temp-file helper, certificate/key/cache state and POSIX subprocess semantics. Normal documented explicit string fields suffice for the introduced helper failure; no malformed config, integer argument, malicious hostname or speculative template control is needed. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Authentication/metadata/profile/cache/configuration state, helpers/callers, POSIX shell/process/OpenSSL/getent/DNS/runtime contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No lower-trust selected signing operand is established by the retained server config/temp provenance. Authentication/hostname control does not turn hostname content inside a request file into shell syntax in this exact command. Keep security delivery/attribution unresolved and do not borrow the sibling request-key command or assume writable server configuration/TMPDIR. Passphrase remains an argv operand after; removing shell interpretation is not secret-confidentiality certification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Selected after uses argv without shell, but its same-ref build_request helper changes cmd to a list while retaining shell=True. Named CPython2.7.2 POSIX implementation prepends /bin/sh -c: only openssl is the command string; req and remaining intended options become shell positional arguments. Retained OpenSSL1.0.0d enters its no-argument interactive dispatcher instead of the request subcommand. With ordinary noninteractive stdin at EOF, no CSR is written to the already-created request file; with waiting stdin the helper can wait for unrelated input. Generation cannot follow its old documented contract. The failure occurs in the helper before selected signing, not in the now-shell-free signing call; record introduced integration regression without claiming a new old selected security-positive. Do not certify default numeric argv handling or all OpenSSL formats.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Old selected remote injection remains ambiguous/configuration-derived, but the exact after call graph breaks the separately established ordinary certificate-generation contract before signing. Explicitly defer its paired negative for the introduced helper calling-convention regression; preserve discovery status/category and do not invent old exploit attribution.",
+      "dependence_reason": "Four functions/two files/one mechanical family fix-family:17ab514eba467eb8b018 share one exact fix and resolved first parent, not four independently adjudicated issues. SSLCA certificate creation, cached CA verification, gated key verification and SSHbase DNS fallback have distinct provenance and reachability; do not borrow a sibling command as a selected local injection witness. The new request-helper invocation failure is an integration regression, not a new old signing security positive. The DNS fallback list/consumer mismatch is a residual functional failure, not another admitted security issue. Retained maintenance commit describes backporting shell fixes but changes a different file set without SSLCA, so its title alone establishes no identical SSLCA repair or full alias equivalence. Preserve source/family/connected-block descriptors and canonical identities; issue counts require researcher adjudication.",
+      "open_questions": [
+        "Researcher confirm actual Python/POSIX/OpenSSL/getent/NSS versions, enabled plugins, authentication/profile policy, admitted identity/alias and filesystem characters, cached certificate/key state and prior CA gate, process input/output/status containment and service privileges. Public advisory alone does not prove anonymous remote root. Resolve uniform before-only context/knowledge policy and independent issue identity; historical comparisons are not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No retained shell/subprocess/OpenSSL/getent/DNS/certificate/authentication/metadata/XML/configuration/runtime/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "cert = Popen(cmd, shell=True, stdout=PIPE).stdout.read()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "cert = Popen(cmd, stdout=PIPE).stdout.read()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTEXT.json",
+          "path": "doc/server/plugins/generators/sslca.txt",
+          "ref": "ed85e40bcbce07cc5e2d67b985e48c836d0a9079",
+          "needle": "the matching key/cert is generated"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "req = self.build_request(key_filename, req_config, entry)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "cp.set('req_distinguished_name', 'CN', metadata.hostname)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "req = tempfile.mkstemp()[1]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTEXT.json",
+          "path": "src/lib/Server/Plugins/SSLCA.py",
+          "ref": "f4a35efec1b6a1e54d61cf1b8bfc83dd1d89eef7",
+          "needle": "cmd = [\"openssl\", \"req\", \"-new\", \"-config\", req_config,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTEXT.json",
+          "path": "src/lib/Server/Plugins/SSLCA.py",
+          "ref": "f4a35efec1b6a1e54d61cf1b8bfc83dd1d89eef7",
+          "needle": "res = Popen(cmd, shell=True, stdout=PIPE).stdout.read()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTRACTS.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v2.7.2",
+          "needle": "args = [\"/bin/sh\", \"-c\"] + args"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTRACTS.json",
+          "path": "Doc/library/subprocess.rst",
+          "ref": "v2.7.2",
+          "needle": "any additional items will be treated as additional arguments to the shell"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTRACTS.json",
+          "path": "apps/openssl.c",
+          "ref": "OpenSSL_1_0_0d",
+          "needle": "if (Argc != 1)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTRACTS.json",
+          "path": "apps/openssl.c",
+          "ref": "OpenSSL_1_0_0d",
+          "needle": "if (!fgets(p,n,stdin))"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Matched build_cert after still invokes build_request. That helper now passes an argument list with shell=True, so retained POSIX subprocess semantics execute bare openssl rather than openssl req with its options. Named OpenSSL no-argument dispatcher reads interactive stdin, leaving the mkstemp request file without a CSR under ordinary EOF or waiting for input. This is newly introduced in the coordinated helper and violates old documented certificate creation; it is not an introduced defect at the selected signing Popen or proof of old selected remote injection."
+    },
+    {
+      "pair_id": "CVEfixes:183164955987669:215096833756511",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unquoted certificate/key paths enter modulus/hash shell pipelines, behind a separately required CA-verification gate.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate shell syntax interpretation, utility option grammar, trusted server configuration, hostname/alias admission, certificate validation and command success, request-helper calling convention, DNS fallback output typing and known-hosts rendering. A shell=True string alone is not a selected remotely supplied operand; shared-CVE sibling paths and prior insecure gates do not establish independent old positives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old get_cert derives cert/key hostfile paths from metadata.hostname, requires an existing certificate entry, and verify_cert invokes the CA verifier before this method. This selected method inserts those complete paths unquoted into intentional openssl-to-md5 pipelines. Thus admitted metacharacter paths can be shell syntax if this API is reached. After pipes.quote escapes the entire path while preserving the fixed pipeline; named CPython2.7.2 implementation uses single-quote escaping and handles embedded apostrophes. Old modulus/key-match duty is evidenced, but the earlier CA gate remains a real independent prerequisite.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need metadata/auth admission, existing certificate/key files and exact success of the old CA verifier, plus POSIX pipes.quote and utility/pipeline behavior. A client with an admitted hostname does not automatically get past that gate; command failures and their hash outputs are not a certificate proof. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Authentication/metadata/profile/cache/configuration state, helpers/callers, POSIX shell/process/OpenSSL/getent/DNS/runtime contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Matched Basic authentication and Metadata code admit a new non-root ASCII username as identity under allowed global-password/default-profile policy, without a DNS hostname-character restriction, so remote client influence is concrete rather than an arbitrary request-string assumption. However this selected key check only follows successful old CA verification of the same filename. A metacharacter name can already alter that earlier unquoted CA command or make its exact output check fail. Do not count prior CA command execution/output spoofing as a new independent delivery proof for this selected pipeline. Keep realistic selected reachability unresolved rather than erase the gate or claim anonymous root.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After quotes each path as one POSIX shell word; it does not remove the intentional pipeline or establish all utility return-status, hash/algorithm, cache, certificate-trust or authentication correctness. No independently supported after regression is assigned here under the retained admitted RSA/POSIX shape. The separate request-helper regression belongs to generation and cannot be attributed as a newly introduced key-verifier defect. Negative is limited to path shell interpretation if the gated method is actually invoked.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Local quoting mechanism and metadata admission are evidenced, but an independently admitted lower-trust invocation past the earlier CA gate is not established without borrowing execution/spoofing at that sibling sink. Preserve explicit security-delivery deferral and one shared family.",
+      "dependence_reason": "Four functions/two files/one mechanical family fix-family:17ab514eba467eb8b018 share one exact fix and resolved first parent, not four independently adjudicated issues. SSLCA certificate creation, cached CA verification, gated key verification and SSHbase DNS fallback have distinct provenance and reachability; do not borrow a sibling command as a selected local injection witness. The new request-helper invocation failure is an integration regression, not a new old signing security positive. The DNS fallback list/consumer mismatch is a residual functional failure, not another admitted security issue. Retained maintenance commit describes backporting shell fixes but changes a different file set without SSLCA, so its title alone establishes no identical SSLCA repair or full alias equivalence. Preserve source/family/connected-block descriptors and canonical identities; issue counts require researcher adjudication.",
+      "open_questions": [
+        "Researcher confirm actual Python/POSIX/OpenSSL/getent/NSS versions, enabled plugins, authentication/profile policy, admitted identity/alias and filesystem characters, cached certificate/key state and prior CA gate, process input/output/status containment and service privileges. Public advisory alone does not prove anonymous remote root. Resolve uniform before-only context/knowledge policy and independent issue identity; historical comparisons are not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No retained shell/subprocess/OpenSSL/getent/DNS/certificate/authentication/metadata/XML/configuration/runtime/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "cmd = \"openssl x509 -noout -modulus -in %s | openssl md5\" % cert"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "pipes.quote(cert)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if self.verify_cert_against_ca(filename, entry):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if self.verify_cert_against_key(filename, key_filename):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        filename = \"\".join([path, '/', path.rsplit('/', 1)[1],\n                            '.H_', metadata.hostname])\n        if filename not in list(self.entries.keys()):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "pipes.quote(key)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTRACTS.json",
+          "path": "Lib/pipes.py",
+          "ref": "v2.7.2",
+          "needle": "file.replace("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTEXT.json",
+          "path": "src/lib/Server/Plugins/Metadata.py",
+          "ref": "ed85e40bcbce07cc5e2d67b985e48c836d0a9079",
+          "needle": "if user not in self.uuid:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTEXT.json",
+          "path": "src/lib/Server/Plugins/Metadata.py",
+          "ref": "ed85e40bcbce07cc5e2d67b985e48c836d0a9079",
+          "needle": "addr_is_valid = True"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_DELIVERY.json",
+          "path": "src/lib/SSLServer.py",
+          "ref": "ed85e40bcbce07cc5e2d67b985e48c836d0a9079",
+          "needle": "username, password = auth_content.split(\":\")"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:183164955987669:51271707003712",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Hostname-derived cached certificate path enters the CA-verification shell command unquoted.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate shell syntax interpretation, utility option grammar, trusted server configuration, hostname/alias admission, certificate validation and command success, request-helper calling convention, DNS fallback output typing and known-hosts rendering. A shell=True string alone is not a selected remotely supplied operand; shared-CVE sibling paths and prior insecure gates do not establish independent old positives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old cache producer/get_cert includes metadata.hostname in certificate filename, and existing-entry path invokes this verifier before any successful CA decision. Server config produces chaincert, but the cert operand has a distinct client identity source. Basic-auth handler decodes and forwards username; old Metadata accepts a new non-root username as identity, bypasses address checking for that UUID method, requires the allowed global/client password, caches identity for the connection address and can create a client under a public default profile. Lowercasing/XML string storage do not impose a DNS hostname-character grammar. This is an evidenced conditional old auth-to-metadata-to-command path, not merely advisory attribution.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need same-ref Basic authentication/Metadata/Core binding and default-profile/configuration state, existing certificate entry/key state, filesystem-admitted identity characters, POSIX command execution and OpenSSL output convention. Direct arbitrary name text without those producers/cache gates is not an admitted network witness. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Authentication/metadata/profile/cache/configuration state, helpers/callers, POSIX shell/process/OpenSSL/getent/DNS/runtime contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An actor admitted by the global-password/nonsecure identity policy can influence hostname-derived filename text. If a matching cached certificate entry exists and configured SSLCA path is requested, shell syntax can be interpreted before certificate validity/exact OK-output checks; cache content need not first validate to reach this sink. No first-time uncached certificate request, anonymous credential bypass, arbitrary server-config write or root daemon privilege is assumed. Prior request generation may be another sink but is not substituted for this selected command.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After passes fixed openssl verify options and both operands through shell-free argv, removing shell metacharacter interpretation at this command. Named OpenSSL verification prints the provided filename and OK convention used by existing comparison. This is not general filesystem confinement, trust/expiry validation, privilege/secret protection or all option parsing. Separate generation helper failure is not introduced in this cached CA-verification method; matched existing cache/valid files may still be verified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Conditional old cached-path shell repair and authenticated identity boundary are supported, but auth/profile/cache/configuration/utility facts are absent from bounded selected before text. Defer common-context eligibility without claiming universal first-request or anonymous exploitation.",
+      "dependence_reason": "Four functions/two files/one mechanical family fix-family:17ab514eba467eb8b018 share one exact fix and resolved first parent, not four independently adjudicated issues. SSLCA certificate creation, cached CA verification, gated key verification and SSHbase DNS fallback have distinct provenance and reachability; do not borrow a sibling command as a selected local injection witness. The new request-helper invocation failure is an integration regression, not a new old signing security positive. The DNS fallback list/consumer mismatch is a residual functional failure, not another admitted security issue. Retained maintenance commit describes backporting shell fixes but changes a different file set without SSLCA, so its title alone establishes no identical SSLCA repair or full alias equivalence. Preserve source/family/connected-block descriptors and canonical identities; issue counts require researcher adjudication.",
+      "open_questions": [
+        "Researcher confirm actual Python/POSIX/OpenSSL/getent/NSS versions, enabled plugins, authentication/profile policy, admitted identity/alias and filesystem characters, cached certificate/key state and prior CA gate, process input/output/status containment and service privileges. Public advisory alone does not prove anonymous remote root. Resolve uniform before-only context/knowledge policy and independent issue identity; historical comparisons are not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No retained shell/subprocess/OpenSSL/getent/DNS/certificate/authentication/metadata/XML/configuration/runtime/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "cmd = \"openssl verify -CAfile %s %s\" % (chaincert, cert)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "res = Popen([\"openssl\", \"verify\", \"-CAfile\", chaincert, cert],"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if filename in list(self.entries.keys()) and self.verify_cert(filename,"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        filename = \"\".join([path, '/', path.rsplit('/', 1)[1],\n                            '.H_', metadata.hostname])\n        if filename not in list(self.entries.keys()):\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_DELIVERY.json",
+          "path": "src/lib/SSLServer.py",
+          "ref": "ed85e40bcbce07cc5e2d67b985e48c836d0a9079",
+          "needle": "return self.server.instance.authenticate(cert, username,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTEXT.json",
+          "path": "src/lib/Server/Plugins/Metadata.py",
+          "ref": "ed85e40bcbce07cc5e2d67b985e48c836d0a9079",
+          "needle": "client = user"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTEXT.json",
+          "path": "src/lib/Server/Plugins/Metadata.py",
+          "ref": "ed85e40bcbce07cc5e2d67b985e48c836d0a9079",
+          "needle": "if password != self.password:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTEXT.json",
+          "path": "src/lib/Server/Plugins/Metadata.py",
+          "ref": "ed85e40bcbce07cc5e2d67b985e48c836d0a9079",
+          "needle": "self.session_cache[address] = (time.time(), client)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTEXT.json",
+          "path": "src/lib/Server/Plugins/Metadata.py",
+          "ref": "ed85e40bcbce07cc5e2d67b985e48c836d0a9079",
+          "needle": "self.set_profile(client, self.default, (None, None))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTEXT.json",
+          "path": "src/lib/Server/Core.py",
+          "ref": "ed85e40bcbce07cc5e2d67b985e48c836d0a9079",
+          "needle": "return glist[0].Entries[entry.tag][entry.get('name')](entry,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTRACTS.json",
+          "path": "apps/verify.c",
+          "ref": "OpenSSL_1_0_0d",
+          "needle": "fprintf(stdout,\"%s: \",(file == NULL)?\"stdin\":file);"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:218064823303445:109660602875662",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "DNS-error getent fallback interpolates admitted metadata name into shell; after still returns list incompatible with known-hosts address-set consumer.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate shell syntax interpretation, utility option grammar, trusted server configuration, hostname/alias admission, certificate validation and command success, request-helper calling convention, DNS fallback output typing and known-hosts rendering. A shell=True string alone is not a selected remotely supplied operand; shared-CVE sibling paths and prior insecure gates do not establish independent old positives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old SSHbase get_skn iterates all metadata hostname/aliases and calls get_ipcache_entry before adding its first returned item to a set of IP addresses. Metadata query/Basic-auth/default-profile path supplies conditionally client-influenced names; aliases may instead be administrator configured. Cache miss and socket.gaierror lead to unquoted getent hosts command. Separately, existing getent fallback is intentionally used as a name-service lookup and must supply an address usable by that old consumer. CPython2.7.2 gethostbyname is IPv4-only; glibc2.13 getent hosts tries IPv6 first and can successfully resolve an ordinary AAAA-only name/alias after the Python IPv4 lookup fails.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need metadata query/admission and get_skn consumer, DNS failure type and cache state, named NSS/getent output, subprocess argv policy and actual plugin render path. Output type and the set.add use are outside the selected function; standard runtime semantics alone do not establish actual deployment/delivery. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Authentication/metadata/profile/cache/configuration state, helpers/callers, POSIX shell/process/OpenSSL/getent/DNS/runtime contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Under an allowed shared-password identity/default-profile policy, an admitted name containing shell syntax can enter metadata and a known-hosts regeneration. If it is uncached and gethostbyname raises the caught gaierror, raw name reaches the old shell command. Successful DNS, positive/negative cache hit, disabled plugin or different admission policy avoids that sink. Metadata aliases are a distinct server-managed source, not arbitrary remotely editable aliases. This supports conditional command interpretation under service privileges, not anonymous root or arbitrary hostname acceptance by every runtime.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After shell-free argv removes shell syntax at this fallback, not getent option grammar or DNS integrity. It retains stdout.read().strip().split() as ipaddr, returns/caches that list as tuple item zero, and matched get_skn calls set.add on it. For an ordinary successful getent fallback (e.g. admitted AAAA-only alias under named IPv4 Python/IPv6 getent semantics), list is unhashable; the broad per-name catch silently skips that resolved IP. Later cache hits retain the same bad type. Hostnames/other aliases may still render; do not claim global render abort or a new security positive. This producer/consumer failure predates the shell fix and remains after: explicit residual paired-negative deferral.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Supported old shell fallback repair remains context-dependent, and selected after retains a demonstrable list-versus-address consumer contract failure on successful ordinary fallback. Record residual failure and defer the selected negative, without changing discovery status/category or inventing a second independent security issue.",
+      "dependence_reason": "Four functions/two files/one mechanical family fix-family:17ab514eba467eb8b018 share one exact fix and resolved first parent, not four independently adjudicated issues. SSLCA certificate creation, cached CA verification, gated key verification and SSHbase DNS fallback have distinct provenance and reachability; do not borrow a sibling command as a selected local injection witness. The new request-helper invocation failure is an integration regression, not a new old signing security positive. The DNS fallback list/consumer mismatch is a residual functional failure, not another admitted security issue. Retained maintenance commit describes backporting shell fixes but changes a different file set without SSLCA, so its title alone establishes no identical SSLCA repair or full alias equivalence. Preserve source/family/connected-block descriptors and canonical identities; issue counts require researcher adjudication.",
+      "open_questions": [
+        "Researcher confirm actual Python/POSIX/OpenSSL/getent/NSS versions, enabled plugins, authentication/profile policy, admitted identity/alias and filesystem characters, cached certificate/key state and prior CA gate, process input/output/status containment and service privileges. Public advisory alone does not prove anonymous remote root. Resolve uniform before-only context/knowledge policy and independent issue identity; historical comparisons are not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No retained shell/subprocess/OpenSSL/getent/DNS/certificate/authentication/metadata/XML/configuration/runtime/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "cmd = \"getent hosts %s\" % client"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "ipaddr = Popen([\"getent\", \"hosts\", client],"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "newips.add(self.get_ipcache_entry(name)[0])"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "newips.add(self.get_ipcache_entry(name)[0])"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "stdout=PIPE).stdout.read().strip().split()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                ipaddr = socket.gethostbyname(client)\n                self.ipcache[client] = (ipaddr, client)\n                return (ipaddr, client)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "names[cmeta.hostname].update(cmeta.aliases)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTEXT.json",
+          "path": "src/lib/Server/Plugins/Metadata.py",
+          "ref": "ed85e40bcbce07cc5e2d67b985e48c836d0a9079",
+          "needle": "return [self.by_name(name) for name in self.all_clients()]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTEXT.json",
+          "path": "src/lib/Server/Plugins/Metadata.py",
+          "ref": "ed85e40bcbce07cc5e2d67b985e48c836d0a9079",
+          "needle": "self.session_cache[address] = (time.time(), client)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTRACTS.json",
+          "path": "Doc/library/socket.rst",
+          "ref": "v2.7.2",
+          "needle": ":func:`gethostbyname` does not support IPv6 name resolution"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTRACTS.json",
+          "path": "nss/getent.c",
+          "ref": "glibc-2.13",
+          "needle": "else if ((host = gethostbyname2 (key[i], AF_INET6)) == NULL)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_045_CONTRACTS.json",
+          "path": "nss/getent.c",
+          "ref": "glibc-2.13",
+          "needle": "printf (\"%-15s %s\", ip, host->h_name);"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Both exact versions store/return getent output split into a list as tuple item zero. Same-ref get_skn adds that item to an address set, raising TypeError and suppressing the resolved address in its broad per-name catch. Named CPython IPv4-only resolution plus glibc IPv6-capable getent establishes an ordinary successful-fallback shape, such as an admitted AAAA-only alias; repeated cache hits keep the wrong type. This is residual before/after and not all-known-hosts failure, new shell introduction or independently admitted security-positive."
+    }
+  ]
+}

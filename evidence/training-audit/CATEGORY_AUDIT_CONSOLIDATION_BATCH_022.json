@@ -1,0 +1,1871 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-022",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All17 Radicale training candidates: one regex-policy row and all16 Windows traversal rows across two storage backends; no null-category candidates exist here.",
+  "selection_rule": {
+    "repository": "github.com/unrud/radicale",
+    "discovery_categories": [
+      "SEC-REGEX-POLICY-INJECTION",
+      "SEC-PATH-CONFINEMENT"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 825,
+    "sha256": "82a7ed0370f99633102502587bb7f84cfd867aee911c754570fb24bfffa40229"
+  },
+  "interpretation": "Training-only exact historical contract/delivery/attribution review. Five direct path constructors now have concrete from_path/exists/DAV classification or href consumers; one has an introduced .props-CWD regression. Eleven inherited filepath consumers do not isolate an old conversion defect locally; distinguish actual timestamps/JSON/name/whole-file effects and obstructed nonempty multifilesystem serialization/item-delete routes. One literal-login regex repair remains contextual. Fourteen append-only discovery revisions promote five direct caller traces and withdraw nine consumer-attribution claims, preserving all811 old events, canonical sources, taxonomy, splits and45 release inputs. Seventeen candidates/two mechanical families are not independently adjudicated issues. All Radicale/auth/regex/ConfigParser, DAV/XML/calendar/path/Windows/filesystem/storage, dependency/application programs, payloads and upstream tests remain inert.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:193597207056014:180205556361792",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Authenticated login metacharacters enter owner-policy regular expressions as syntax.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old module explicitly interpolates %(login)s/%(path)s into regex policy strings. Built-in owner_only and owner_write use ^%(login)s(/.*)?$ as a literal-owner namespace boundary. A successfully authenticated username such as .* broadens that pattern, matching other users collections. Matched htpasswd compares stored login==user literally and imposes no regex-metacharacter rejection; an already provisioned such account is a realistic conditional witness, not a self-registration or password bypass claim. New re.escape defaults preserve literal interpretation.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need DEFINED_RIGHTS, ConfigParser interpolation, selected auth backend/login admission, authorized caller and actual request read/write filters. Custom admin regexes are intentionally regex syntax; user/path data is the lower-trust interpolation input. Not a backtracking/regex-availability claim. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Successfully authenticated lower-trust login text is inserted into administrator owner-policy regex, expanding grants across logical owner namespaces. Exact htpasswd literal admission, built-in templates and request rights filters support this boundary under a provisioned metacharacter account and configured owner policy. Default rights none is not this vulnerability witness; no unauthenticated exploit or arbitrary account provisioning is assumed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For default owner patterns and admitted .* login, after escapes regex metacharacters before interpolation, so they no longer wildcard another owner namespace. Custom {0} capture-group substitutions remain a separate unescaped channel; unrestricted format braces, malformed ConfigParser values, all custom policies or all authentication behavior are not certified. No regex, parser or authentication is executed.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The direct selected repair is contextually supported, but old policy/caller/platform/helper contracts essential for before-only detection are omitted.",
+      "dependence_reason": "Preserve fix-family:3ec65661f59f03359161 and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "regex = ConfigParser({\"login\": user, \"path\": collection_url})"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "user_escaped = re.escape(user)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\"owner_only\":"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "re_collection = re_collection.format(*user_match.groups())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/auth/htpasswd.py",
+          "ref": "4bfe7c9f7991d534c8b9fbe153af9d341f925f98^",
+          "needle": "if login == user:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "4bfe7c9f7991d534c8b9fbe153af9d341f925f98^",
+          "needle": "is_authenticated = auth.is_authenticated(user, password)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "4bfe7c9f7991d534c8b9fbe153af9d341f925f98^",
+          "needle": "if rights.authorized(user, item, \"w\"):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_ADVISORIES.json",
+          "path": "cves/2015/8xxx/CVE-2015-8748.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Radicale before 1.1 allows remote authenticated users to bypass owner_write and owner_only limitations via regex metacharacters in the user name, as demonstrated by \\\".*\\\".\"\n                }\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:277049986640473:143369280271074",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Multifilesystem node predicate controls from_path enumeration versus leaf/component handling; its raw Windows join is a local confinement defect, not itself a file-content reader.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Multifilesystem node predicate controls from_path enumeration versus leaf/component handling; its raw Windows join is a local confinement defect, not itself a file-content reader. Matched old from_path/exists and XML resourcetype/href output now resolve the earlier missing caller question. Revise ambiguous discovery to supported for this direct conversion effect, while preserving metadata/name-only scope and the common family.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For the witnessed Windows drive/head-bearing logical component, checked translation raises ValueError before this direct probe/walk. Preserve only component-level lexical confinement and the described request classification/name effect. It is not a realpath/symlink/race jail, comprehensive item-name validation, arbitrary content disclosure repair or universal graceful HTTP error handling. Invalid-path exception presentation is not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The direct selected repair is contextually supported, but old policy/caller/platform/helper contracts essential for before-only detection are omitted.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    def is_node(cls, path):\n        path = os.path.join(filesystem.FOLDER, path.replace(\"/\", os.sep))\n        return os.path.isdir(path) and not os.path.exists(path + \".props\")\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    def is_node(cls, path):\n        filesystem_path = pathutils.path_to_filesystem(path,\n                                                       filesystem.FOLDER)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/pathutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "if not is_safe_filesystem_path_component(part):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/pathutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "drive, _ = os.path.splitdrive(path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if cls.is_node(path):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if (cls.is_leaf(\"/\".join(attributes[:-1])) or not"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return self.is_node(self.path) or self.is_leaf(self.path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "href.text = _href(uri.replace(\"//\", \"/\"))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if item.is_leaf(item.path) or ("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.collect_allowed_items(items, user)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_POLICY.json",
+          "path": "radicale/rights/regex.py",
+          "ref": "6b7e79a368be86d266c51cf50915324490a1b728",
+          "needle": "rights_type == \"none\" or"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "Lib/ntpath.py",
+          "ref": "v3.4.3",
+          "needle": "# Different drives => ignore the first path entirely"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:277049986640473:185969555792679",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Multifilesystem item deletion consumes an inherited collection filepath and a separate name.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. The selected old remove correctly joins its supplied filesystem collection path and name, checks existence and removes the result. The unsafe collection conversion is in inherited filesystem._path. New _filesystem_path changes that producer contract, not an old accepted safe option or root this selected method dropped. Withdraw supported discovery to ambiguous for selected attribution under the exact old filepath interface; preserve contextual project vulnerability, source bytes and current leaf.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Matched old/new methods must use their own _path/_filesystem_path producers; new safe-path contracts or consumers cannot retroactively make the old consumer API invalid. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The project outside-root mutation boundary is established in collection deletion/creation, but public item DELETE/MOVE first looks up collection.items, which invokes the nonempty multifilesystem text serialization failure. A direct storage call can remove a file; no realistic selected public item-delete delivery bypassing that failure is established. Separate item name admission must also be traced.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative pair. In the coherent after chain, _filesystem_path rejects drive/head components before the witnessed operation, and .props uses that checked root. The selected edit itself is migration to that producer. Symlinks/races, separate filenames, permissions, codecs/JSON/calendar behavior, final HTTP errors and other consumer failures remain outside any bounded confinement claim. The nonempty dict-key serialization failure remains after and obstructs the asserted public item/content route.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the contextual project vulnerability while withholding an isolated selected old defect: the changed function consumes an inherited filepath API and the actual unsafe conversion is in its producer.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if os.path.exists(os.path.join(self._path, name)):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    def remove(self, name):\n        filesystem_path = os.path.join(self._filesystem_path, name)\n        if os.path.exists(filesystem_path):\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return os.path.join(FOLDER, self.path.replace(\"/\", os.sep))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "return pathutils.path_to_filesystem(self.path, FOLDER)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.path = pathutils.sanitize_path(path).strip(\"/\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "\"Last-Modified\": collection.last_modified"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "answer_text = collection.text"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.delete()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.save(ical_request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "with open(self._props_path) as prop_file:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "json.dump(properties, prop_file)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.text, (Event, Todo, Journal, Card, Timezone)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "item = collection.items.get(name)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/multifilesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "items.update(self._parse(fd.read(), components))"
+        }
+      ],
+      "additional_after_concerns": [
+        "Selected after still directly joins name after checking only the collection root; arbitrary-name control is not established. Public item lookup is separately obstructed by the inherited nonempty text serialization failure. Neither is a demonstrated new item-name exploit or an introduced rename regression."
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:277049986640473:239969573832536",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Multifilesystem mtime aggregation consumes an inherited directory filepath.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Old getter correctly lists/stats the supplied collection directory and formats its maximum timestamp. Actual GET Last-Modified exposure is now traced for a directory whose content scan yields no recognized items; nonempty recognized calendars are obstructed upstream by text serialization. This is conditional metadata rather than arbitrary file content; the unsafe root still originates in inherited _path, not an isolated timestamp algorithm error. Preserve ambiguous discovery: new caller evidence resolves metadata exposure, not attribution of the upstream conversion defect to a correct old getter.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Matched old/new methods must use their own _path/_filesystem_path producers; new safe-path contracts or consumers cannot retroactively make the old consumer API invalid. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established. Selected multifilesystem GET/DELETE also invokes text serialization before metadata/mutation: nonempty recognized calendars fail; an empty directory or content yielding no recognized components supplies the narrower conditional route. DELETE evaluates item.etag eagerly even for default If-Match *, so it does not bypass the scan.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative pair. In the coherent after chain, _filesystem_path rejects drive/head components before the witnessed operation, and .props uses that checked root. The selected edit itself is migration to that producer. Symlinks/races, separate filenames, permissions, codecs/JSON/calendar behavior, final HTTP errors and other consumer failures remain outside any bounded confinement claim.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the contextual project vulnerability while withholding an isolated selected old defect: the changed function consumes an inherited filepath API and the actual unsafe conversion is in its producer.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "os.path.getmtime(os.path.join(self._path, filename))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "os.path.getmtime(os.path.join(self._filesystem_path, filename))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return os.path.join(FOLDER, self.path.replace(\"/\", os.sep))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "return pathutils.path_to_filesystem(self.path, FOLDER)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.path = pathutils.sanitize_path(path).strip(\"/\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "\"Last-Modified\": collection.last_modified"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "answer_text = collection.text"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.delete()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.save(ical_request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "with open(self._props_path) as prop_file:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "json.dump(properties, prop_file)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if if_match in (\"*\", item.etag):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "        \"\"\"\n        md5 = hashlib.md5()\n        md5.update(self.text.encode(\"utf-8\"))\n        return '\"%s\"' % md5.hexdigest()\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "items = {}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/multifilesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "sorted(items, key=lambda x: x.name)"
+        }
+      ],
+      "additional_after_concerns": [
+        "Inherited text still accumulates dictionary string keys then sorts them as Items. This residual failure obstructs the nonempty recognized-calendar route; do not infer universal metadata/deletion delivery or attribute that sibling parser failure to the selected consumer."
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:277049986640473:253680698316502",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Multifilesystem leaf predicate controls parent/item path classification, exists and DAV resource type; its direct raw Windows join is security-relevant before any claim of arbitrary file reads.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Multifilesystem leaf predicate controls parent/item path classification, exists and DAV resource type; its direct raw Windows join is security-relevant before any claim of arbitrary file reads. Matched old from_path/exists and XML resourcetype/href output now resolve the earlier missing caller question. Revise ambiguous discovery to supported for this direct conversion effect, while preserving metadata/name-only scope and the common family.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "For an existing ordinary leaf directory below FOLDER with its adjacent .props sidecar, old is_leaf tests FOLDER-relative metadata. After validates/isdir(filesystem_path) but still tests os.path.exists(path+\".props\") on the original logical relative string, relative to process CWD. When CWD differs from FOLDER and has no coincident sidecar, a previously true leaf becomes false; an unrelated CWD sidecar could conversely affect classification. This is an introduced ordinary supported-input correctness regression, not a new arbitrary file-read proof. New unsafe Windows components are rejected before the directory probe, but the whole after classifier is not clean.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "The selected old confinement repair is supported, but a newly introduced valid-input classification failure prevents treating the after function as a clean negative.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    def is_leaf(cls, path):\n        path = os.path.join(filesystem.FOLDER, path.replace(\"/\", os.sep))\n        return os.path.isdir(path) and os.path.exists(path + \".props\")\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    def is_leaf(cls, path):\n        filesystem_path = pathutils.path_to_filesystem(path,\n                                                       filesystem.FOLDER)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/pathutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "if not is_safe_filesystem_path_component(part):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/pathutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "drive, _ = os.path.splitdrive(path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if cls.is_node(path):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if (cls.is_leaf(\"/\".join(attributes[:-1])) or not"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return self.is_node(self.path) or self.is_leaf(self.path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "href.text = _href(uri.replace(\"//\", \"/\"))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if item.is_leaf(item.path) or ("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.collect_allowed_items(items, user)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_POLICY.json",
+          "path": "radicale/rights/regex.py",
+          "ref": "6b7e79a368be86d266c51cf50915324490a1b728",
+          "needle": "rights_type == \"none\" or"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "Lib/ntpath.py",
+          "ref": "v3.4.3",
+          "needle": "# Different drives => ignore the first path entirely"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "os.path.exists(path + \".props\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        return os.path.isdir(path) and os.path.exists(path + \".props\")\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "tests/test_base.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "filesystem.FOLDER = self.colpath"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "tests/test_base.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "class TestMultiFileSystem"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "The after .props existence operand uses the original relative logical path, unlike the validated directory operand. A valid existing FOLDER-relative leaf with sidecar but CWD!=FOLDER changes true→false. Old same predicate used the fully joined path for both tests. This is introduced valid-input misclassification, not an executed path probe."
+    },
+    {
+      "pair_id": "CVEfixes:277049986640473:29633273842125",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Multifilesystem text reader migrates inherited root and retains a dictionary-versus-item serialization failure.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Old selected reader consumes inherited _path for listing/opening. That producer supplies the unsafe Windows root. More importantly, matched inherited _parse returns a dict of item-name→Item; items is a set and items.update(dict) accumulates names, then sorted key x.name dereferences strings. The earlier asserted parseable-content serialization/disclosure route is not established on nonempty ordinary calendars; successful OS reads alone do not prove returned content. Withdraw supported discovery to ambiguous for selected attribution under the exact old filepath interface; preserve contextual project vulnerability, source bytes and current leaf.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Matched old/new methods must use their own _path/_filesystem_path producers; new safe-path contracts or consumers cannot retroactively make the old consumer API invalid. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Outside-root host reads are contextually real, but the claimed selected outward calendar-content route fails on nonempty recognized items because dict keys are sorted as Items. Do not infer disclosure from the advisory or OS read alone. Root-conversion vulnerability in other consumers remains supported; selected output/exception/error exposure needs separate proof.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative pair. In the coherent after chain, _filesystem_path rejects drive/head components before the witnessed operation, and .props uses that checked root. The selected edit itself is migration to that producer. Symlinks/races, separate filenames, permissions, codecs/JSON/calendar behavior, final HTTP errors and other consumer failures remain outside any bounded confinement claim. The nonempty dict-key serialization failure remains after and obstructs the asserted public item/content route.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the contextual project vulnerability while withholding an isolated selected old defect: the changed function consumes an inherited filepath API and the actual unsafe conversion is in its producer.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "filenames = os.listdir(self._path)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "filenames = os.listdir(self._filesystem_path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return os.path.join(FOLDER, self.path.replace(\"/\", os.sep))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "return pathutils.path_to_filesystem(self.path, FOLDER)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.path = pathutils.sanitize_path(path).strip(\"/\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "\"Last-Modified\": collection.last_modified"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "answer_text = collection.text"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.delete()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.save(ical_request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "with open(self._props_path) as prop_file:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "json.dump(properties, prop_file)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "items = {}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return items"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "items = {}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "return items"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "items.update(self._parse(fd.read(), components))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/multifilesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "sorted(items, key=lambda x: x.name)"
+        }
+      ],
+      "additional_after_concerns": [
+        "Matched old and after inherited _parse return dicts. Multifilesystem text adds their string keys to a set, then sorts with key=lambda x:x.name. Nonempty recognized items still fail before serialization. This is a residual type/serialization failure, not introduced by the filepath rename and not a clean selected after negative."
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:277049986640473:3946446992261",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Multifilesystem directory creation migrates the inherited filepath producer.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Old existence/makedirs calls use the supplied absolute collection filepath. Actual GET creation calls Collection.write then this override, establishing conditional filesystem mutation, but the bad Windows interpretation is upstream in inherited _path. No separate local mkdir contract violation is isolated. Withdraw supported discovery to ambiguous for selected attribution under the exact old filepath interface; preserve contextual project vulnerability, source bytes and current leaf.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Matched old/new methods must use their own _path/_filesystem_path producers; new safe-path contracts or consumers cannot retroactively make the old consumer API invalid. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative pair. In the coherent after chain, _filesystem_path rejects drive/head components before the witnessed operation, and .props uses that checked root. The selected edit itself is migration to that producer. Symlinks/races, separate filenames, permissions, codecs/JSON/calendar behavior, final HTTP errors and other consumer failures remain outside any bounded confinement claim.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the contextual project vulnerability while withholding an isolated selected old defect: the changed function consumes an inherited filepath API and the actual unsafe conversion is in its producer.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "os.makedirs(self._path)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "os.makedirs(self._filesystem_path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return os.path.join(FOLDER, self.path.replace(\"/\", os.sep))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "return pathutils.path_to_filesystem(self.path, FOLDER)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.path = pathutils.sanitize_path(path).strip(\"/\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "\"Last-Modified\": collection.last_modified"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "answer_text = collection.text"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.delete()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.save(ical_request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "with open(self._props_path) as prop_file:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "json.dump(properties, prop_file)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:277049986640473:59667545789100",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Multifilesystem recursive deletion migrates the inherited filepath producer.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Old rmtree uses the supplied absolute collection root; adjacent properties removal is unchanged and depends on another corrected producer. DELETE with matching collection path still eagerly evaluates item.etag in the membership tuple even when If-Match is absent/default *. That invokes collection.text: nonempty recognized calendars are obstructed by string-key sorting, while an empty directory or files yielding no recognized items can serialize and reach deletion under rights/OS/props prerequisites. Preserve that narrower directory-deletion boundary, not universal calendar deletion or another selected local conversion defect. Withdraw supported discovery to ambiguous for selected attribution under the exact old filepath interface; preserve contextual project vulnerability, source bytes and current leaf.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Matched old/new methods must use their own _path/_filesystem_path producers; new safe-path contracts or consumers cannot retroactively make the old consumer API invalid. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established. Selected multifilesystem GET/DELETE also invokes text serialization before metadata/mutation: nonempty recognized calendars fail; an empty directory or content yielding no recognized components supplies the narrower conditional route. DELETE evaluates item.etag eagerly even for default If-Match *, so it does not bypass the scan.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative pair. In the coherent after chain, _filesystem_path rejects drive/head components before the witnessed operation, and .props uses that checked root. The selected edit itself is migration to that producer. Symlinks/races, separate filenames, permissions, codecs/JSON/calendar behavior, final HTTP errors and other consumer failures remain outside any bounded confinement claim.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the contextual project vulnerability while withholding an isolated selected old defect: the changed function consumes an inherited filepath API and the actual unsafe conversion is in its producer.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "shutil.rmtree(self._path)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "shutil.rmtree(self._filesystem_path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return os.path.join(FOLDER, self.path.replace(\"/\", os.sep))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "return pathutils.path_to_filesystem(self.path, FOLDER)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.path = pathutils.sanitize_path(path).strip(\"/\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "\"Last-Modified\": collection.last_modified"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "answer_text = collection.text"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.delete()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.save(ical_request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "with open(self._props_path) as prop_file:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "json.dump(properties, prop_file)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if if_match in (\"*\", item.etag):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "        \"\"\"\n        md5 = hashlib.md5()\n        md5.update(self.text.encode(\"utf-8\"))\n        return '\"%s\"' % md5.hexdigest()\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "items = {}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/multifilesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "sorted(items, key=lambda x: x.name)"
+        }
+      ],
+      "additional_after_concerns": [
+        "Inherited text still accumulates dictionary string keys then sorts them as Items. This residual failure obstructs the nonempty recognized-calendar route; do not infer universal metadata/deletion delivery or attribute that sibling parser failure to the selected consumer."
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:7561542198959:110264222352929",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Filesystem node predicate controls from_path enumeration versus leaf/component handling; its own raw join is local and request-relevant, not itself a content reader.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Filesystem node predicate controls from_path enumeration versus leaf/component handling; its own raw join is local and request-relevant, not itself a content reader. Matched old from_path/exists and XML resourcetype/href output now resolve the earlier missing caller question. Revise ambiguous discovery to supported for this direct conversion effect, while preserving metadata/name-only scope and the common family.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For the witnessed Windows drive/head-bearing logical component, checked translation raises ValueError before this direct probe/walk. Preserve only component-level lexical confinement and the described request classification/name effect. It is not a realpath/symlink/race jail, comprehensive item-name validation, arbitrary content disclosure repair or universal graceful HTTP error handling. Invalid-path exception presentation is not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The direct selected repair is contextually supported, but old policy/caller/platform/helper contracts essential for before-only detection are omitted.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    def is_node(cls, path):\n        abs_path = os.path.join(FOLDER, path.replace(\"/\", os.sep))\n        return os.path.isdir(abs_path)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    def is_node(cls, path):\n        filesystem_path = pathutils.path_to_filesystem(path, FOLDER)\n        return os.path.isdir(filesystem_path)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/pathutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "if not is_safe_filesystem_path_component(part):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/pathutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "drive, _ = os.path.splitdrive(path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if cls.is_node(path):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if (cls.is_leaf(\"/\".join(attributes[:-1])) or not"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return self.is_node(self.path) or self.is_leaf(self.path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "href.text = _href(uri.replace(\"//\", \"/\"))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if item.is_leaf(item.path) or ("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.collect_allowed_items(items, user)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_POLICY.json",
+          "path": "radicale/rights/regex.py",
+          "ref": "6b7e79a368be86d266c51cf50915324490a1b728",
+          "needle": "rights_type == \"none\" or"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "Lib/ntpath.py",
+          "ref": "v3.4.3",
+          "needle": "# Different drives => ignore the first path entirely"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:7561542198959:128939465940675",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Filesystem save migrates the inherited filepath producer used by the write sink.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Old save correctly creates parent directories and opens the supplied _path for writing. Matched whole-collection PUT routes raw body to collection.save after request/rights/metadata checks; bad Windows root interpretation is in _path. Renaming the filepath consumed by a correct old file API does not establish an isolated local save defect. Withdraw supported discovery to ambiguous for selected attribution under the exact old filepath interface; preserve contextual project vulnerability, source bytes and current leaf.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Matched old/new methods must use their own _path/_filesystem_path producers; new safe-path contracts or consumers cannot retroactively make the old consumer API invalid. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative pair. In the coherent after chain, _filesystem_path rejects drive/head components before the witnessed operation, and .props uses that checked root. The selected edit itself is migration to that producer. Symlinks/races, separate filenames, permissions, codecs/JSON/calendar behavior, final HTTP errors and other consumer failures remain outside any bounded confinement claim.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the contextual project vulnerability while withholding an isolated selected old defect: the changed function consumes an inherited filepath API and the actual unsafe conversion is in its producer.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "with open(self._path, \"w\") as fd:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "with open(self._filesystem_path, \"w\") as fd:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return os.path.join(FOLDER, self.path.replace(\"/\", os.sep))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "return pathutils.path_to_filesystem(self.path, FOLDER)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.path = pathutils.sanitize_path(path).strip(\"/\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "\"Last-Modified\": collection.last_modified"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "answer_text = collection.text"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.delete()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.save(ical_request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "with open(self._props_path) as prop_file:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "json.dump(properties, prop_file)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:7561542198959:133452370604760",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Filesystem parent-directory creation migrates the inherited filepath producer.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Old dirname/exists/makedirs operate on the supplied absolute collection filepath. The actual parent mutation is relevant within the public save/props chain, but root confinement is violated by _path producer rather than the selected directory-creation algorithm. Withdraw supported discovery to ambiguous for selected attribution under the exact old filepath interface; preserve contextual project vulnerability, source bytes and current leaf.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Matched old/new methods must use their own _path/_filesystem_path producers; new safe-path contracts or consumers cannot retroactively make the old consumer API invalid. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative pair. In the coherent after chain, _filesystem_path rejects drive/head components before the witnessed operation, and .props uses that checked root. The selected edit itself is migration to that producer. Symlinks/races, separate filenames, permissions, codecs/JSON/calendar behavior, final HTTP errors and other consumer failures remain outside any bounded confinement claim.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the contextual project vulnerability while withholding an isolated selected old defect: the changed function consumes an inherited filepath API and the actual unsafe conversion is in its producer.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "os.makedirs(os.path.dirname(self._path))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "os.makedirs(os.path.dirname(self._filesystem_path))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return os.path.join(FOLDER, self.path.replace(\"/\", os.sep))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "return pathutils.path_to_filesystem(self.path, FOLDER)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.path = pathutils.sanitize_path(path).strip(\"/\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "\"Last-Modified\": collection.last_modified"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "answer_text = collection.text"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.delete()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.save(ical_request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "with open(self._props_path) as prop_file:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "json.dump(properties, prop_file)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:7561542198959:180440601368344",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Filesystem Last-Modified getter migrates the inherited filepath producer.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Matched GET assigns collection.last_modified directly to Last-Modified, establishing observable timestamp metadata. Old getmtime/UTC formatting obey their supplied filepath API; unsafe Windows root conversion is upstream, so do not turn caller evidence into another local stat/formatting bug or arbitrary content read. Preserve ambiguous discovery: new caller evidence resolves metadata exposure, not attribution of the upstream conversion defect to a correct old getter.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Matched old/new methods must use their own _path/_filesystem_path producers; new safe-path contracts or consumers cannot retroactively make the old consumer API invalid. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative pair. In the coherent after chain, _filesystem_path rejects drive/head components before the witnessed operation, and .props uses that checked root. The selected edit itself is migration to that producer. Symlinks/races, separate filenames, permissions, codecs/JSON/calendar behavior, final HTTP errors and other consumer failures remain outside any bounded confinement claim.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the contextual project vulnerability while withholding an isolated selected old defect: the changed function consumes an inherited filepath API and the actual unsafe conversion is in its producer.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "time.gmtime(os.path.getmtime(self._path))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "time.gmtime(os.path.getmtime(self._filesystem_path))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return os.path.join(FOLDER, self.path.replace(\"/\", os.sep))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "return pathutils.path_to_filesystem(self.path, FOLDER)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.path = pathutils.sanitize_path(path).strip(\"/\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "\"Last-Modified\": collection.last_modified"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "answer_text = collection.text"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.delete()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.save(ical_request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "with open(self._props_path) as prop_file:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "json.dump(properties, prop_file)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:7561542198959:193930065357334",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Filesystem leaf predicate controls from_path item/collection selection, exists and PROPFIND resource type; returned classification has an actual request consumer rather than merely a hypothetical existence oracle.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Filesystem leaf predicate controls from_path item/collection selection, exists and PROPFIND resource type; returned classification has an actual request consumer rather than merely a hypothetical existence oracle. Matched old from_path/exists and XML resourcetype/href output now resolve the earlier missing caller question. Revise ambiguous discovery to supported for this direct conversion effect, while preserving metadata/name-only scope and the common family.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For the witnessed Windows drive/head-bearing logical component, checked translation raises ValueError before this direct probe/walk. Preserve only component-level lexical confinement and the described request classification/name effect. It is not a realpath/symlink/race jail, comprehensive item-name validation, arbitrary content disclosure repair or universal graceful HTTP error handling. Invalid-path exception presentation is not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The direct selected repair is contextually supported, but old policy/caller/platform/helper contracts essential for before-only detection are omitted.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    def is_leaf(cls, path):\n        abs_path = os.path.join(FOLDER, path.replace(\"/\", os.sep))\n        return os.path.isfile(abs_path) and not abs_path.endswith(\".props\")\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    def is_leaf(cls, path):\n        filesystem_path = pathutils.path_to_filesystem(path, FOLDER)\n        return (os.path.isfile(filesystem_path) and not\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/pathutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "if not is_safe_filesystem_path_component(part):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/pathutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "drive, _ = os.path.splitdrive(path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if cls.is_node(path):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if (cls.is_leaf(\"/\".join(attributes[:-1])) or not"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return self.is_node(self.path) or self.is_leaf(self.path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "href.text = _href(uri.replace(\"//\", \"/\"))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if item.is_leaf(item.path) or ("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.collect_allowed_items(items, user)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_POLICY.json",
+          "path": "radicale/rights/regex.py",
+          "ref": "6b7e79a368be86d266c51cf50915324490a1b728",
+          "needle": "rights_type == \"none\" or"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "Lib/ntpath.py",
+          "ref": "v3.4.3",
+          "needle": "# Different drives => ignore the first path entirely"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:7561542198959:23186523446072",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Properties suffix producer migrates its inherited filepath input.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Old _props_path appends the documented .props suffix to the supplied absolute _path. Exact props context manager consumes it for JSON reads/writes, and DAV methods/properties reach that context manager. The old suffix construction itself is correct; the collection root producer is unsafe. Preserve suffix/JSON/rights limits rather than claim another isolated local conversion defect. Withdraw supported discovery to ambiguous for selected attribution under the exact old filepath interface; preserve contextual project vulnerability, source bytes and current leaf.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Matched old/new methods must use their own _path/_filesystem_path producers; new safe-path contracts or consumers cannot retroactively make the old consumer API invalid. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative pair. In the coherent after chain, _filesystem_path rejects drive/head components before the witnessed operation, and .props uses that checked root. The selected edit itself is migration to that producer. Symlinks/races, separate filenames, permissions, codecs/JSON/calendar behavior, final HTTP errors and other consumer failures remain outside any bounded confinement claim.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the contextual project vulnerability while withholding an isolated selected old defect: the changed function consumes an inherited filepath API and the actual unsafe conversion is in its producer.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return self._path + \".props\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return self._filesystem_path + \".props\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return os.path.join(FOLDER, self.path.replace(\"/\", os.sep))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "return pathutils.path_to_filesystem(self.path, FOLDER)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.path = pathutils.sanitize_path(path).strip(\"/\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "\"Last-Modified\": collection.last_modified"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "answer_text = collection.text"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.delete()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.save(ical_request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "with open(self._props_path) as prop_file:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "json.dump(properties, prop_file)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:7561542198959:31785798168647",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Filesystem collection deletion migrates the inherited filepath producer.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Old os.remove obeys the supplied absolute _path; properties deletion consumes another coordinated producer. Exact DELETE route establishes conditional deletion without arbitrary-content disclosure, but the path interpretation defect remains in upstream _path. Withdraw supported discovery to ambiguous for selected attribution under the exact old filepath interface; preserve contextual project vulnerability, source bytes and current leaf.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Matched old/new methods must use their own _path/_filesystem_path producers; new safe-path contracts or consumers cannot retroactively make the old consumer API invalid. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative pair. In the coherent after chain, _filesystem_path rejects drive/head components before the witnessed operation, and .props uses that checked root. The selected edit itself is migration to that producer. Symlinks/races, separate filenames, permissions, codecs/JSON/calendar behavior, final HTTP errors and other consumer failures remain outside any bounded confinement claim.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the contextual project vulnerability while withholding an isolated selected old defect: the changed function consumes an inherited filepath API and the actual unsafe conversion is in its producer.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "os.remove(self._path)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "os.remove(self._filesystem_path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return os.path.join(FOLDER, self.path.replace(\"/\", os.sep))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "return pathutils.path_to_filesystem(self.path, FOLDER)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.path = pathutils.sanitize_path(path).strip(\"/\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "\"Last-Modified\": collection.last_modified"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "answer_text = collection.text"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.delete()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.save(ical_request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "with open(self._props_path) as prop_file:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "json.dump(properties, prop_file)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:7561542198959:48810007044769",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Filesystem children walks the selected directory and yields logical child collections. from_path depth1 includes them, rights filters them and PROPFIND emits each admitted item.url as href, giving a concrete name-enumeration boundary rather than arbitrary content disclosure.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Filesystem children walks the selected directory and yields logical child collections. from_path depth1 includes them, rights filters them and PROPFIND emits each admitted item.url as href, giving a concrete name-enumeration boundary rather than arbitrary content disclosure. Matched old from_path/exists and XML resourcetype/href output now resolve the earlier missing caller question. Revise ambiguous discovery to supported for this direct conversion effect, while preserving metadata/name-only scope and the common family.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For the witnessed Windows drive/head-bearing logical component, checked translation raises ValueError before this direct probe/walk. Preserve only component-level lexical confinement and the described request classification/name effect. It is not a realpath/symlink/race jail, comprehensive item-name validation, arbitrary content disclosure repair or universal graceful HTTP error handling. Invalid-path exception presentation is not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The direct selected repair is contextually supported, but old policy/caller/platform/helper contracts essential for before-only detection are omitted.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "_, directories, files = next(os.walk(abs_path))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    def children(cls, path):\n        filesystem_path = pathutils.path_to_filesystem(path, FOLDER)\n        _, directories, files = next(os.walk(filesystem_path))\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/pathutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "if not is_safe_filesystem_path_component(part):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/pathutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "drive, _ = os.path.splitdrive(path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if cls.is_node(path):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if (cls.is_leaf(\"/\".join(attributes[:-1])) or not"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return self.is_node(self.path) or self.is_leaf(self.path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "href.text = _href(uri.replace(\"//\", \"/\"))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "if item.is_leaf(item.path) or ("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.collect_allowed_items(items, user)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_POLICY.json",
+          "path": "radicale/rights/regex.py",
+          "ref": "6b7e79a368be86d266c51cf50915324490a1b728",
+          "needle": "rights_type == \"none\" or"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "Lib/ntpath.py",
+          "ref": "v3.4.3",
+          "needle": "# Different drives => ignore the first path entirely"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:7561542198959:93955877189567",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Filesystem text getter migrates the inherited filepath producer.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve current narrow regex-policy or Windows-path discovery leaf. Separate realistic project security delivery from local selected attribution, old filepath API guarantees from correct consumers, observable metadata from file contents, missing function-only context and after-side failures. Sixteen storage rows share one vulnerability family; a read/write advisory does not label each consumer as an independent defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing storage represents normalized relative slash-delimited DAV collection paths below configured FOLDER. Old sanitize_path normalizes POSIX components but does not interpret Windows drives/backslashes. Old filesystem._path joins that logical spelling through platform os.path; a Windows drive-root component can discard FOLDER. Matched application unquotes/sanitizes PATH_INFO, Collection.from_path removes an item suffix when applicable, and the old raw join can target another host path. New path_to_filesystem rejects drive/head-bearing components before joining. This is a historical Windows security contract, not an unconditional failure on POSIX or mere policy expansion. Unlike multifilesystem serialization, old flat text directly returns fd.read(). Matched GET can return that whole text under rights/metadata/encoding prerequisites; non-calendar data can yield no parsed items and still be returned as a whole collection. The outside-root target is supplied by _path; selected open/read follows a correct old filepath API, not another local conversion error. Withdraw supported discovery to ambiguous for selected attribution under the exact old filepath interface; preserve contextual project vulnerability, source bytes and current leaf.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched logical-path producer, Windows platform join/split semantics, configured storage root, inheritance, helper implementation, DAV caller/rights/response and exact effect of the selected operation. Historical CPython2.7.10/3.4.3 path implementations are comparisons, not installed/deployed-version proof. Matched old/new methods must use their own _path/_filesystem_path producers; new safe-path contracts or consumers cannot retroactively make the old consumer API invalid. Common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers, globals, configuration, runtime comparisons, fixtures, after code, advisories and answers remain adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An accessible DAV endpoint with the affected backend on Windows and OS access outside FOLDER is required. Exact old config defaults auth/rights to None; matched rights.authorized allows configured none, so a permissive deployment supplies a realistic route without inventing authentication bypass. Restrictive backends/policies still require successful admission/rights for the logical collection. Source shows normalization and from_path before rights filtering, but outward content/metadata/mutations are separately gated. Config/default/source text is not proof of actual deployment; filesystem symlink control, arbitrary separate item-name admission and all response paths are not established.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative pair. In the coherent after chain, _filesystem_path rejects drive/head components before the witnessed operation, and .props uses that checked root. The selected edit itself is migration to that producer. Symlinks/races, separate filenames, permissions, codecs/JSON/calendar behavior, final HTTP errors and other consumer failures remain outside any bounded confinement claim.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the contextual project vulnerability while withholding an isolated selected old defect: the changed function consumes an inherited filepath API and the actual unsafe conversion is in its producer.",
+      "dependence_reason": "Preserve fix-family:60cad649b336e770141b and all exact/AST/span/function-history links. All16 filesystem/multifilesystem representations are same commit/CVE/root conversion family, including inherited methods and the .props regression; the login regex policy case is another mechanical family. Neither17 rows, two backends, method names nor five direct converters is an independently adjudicated issue count.",
+      "open_questions": [
+        "Researcher confirm supported old runtime/platform/backend/policy and exact selected attribution, source-to-request/response boundary, before-only context and bounded negative. Independent issue identities, eligibility and final approval remain pending.",
+        "All observations are inert-source deductions, not reproduced results. No Radicale, authentication/regex/ConfigParser, HTTP/DAV/XML/calendar parser or request, Windows/path/filesystem/storage, dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "with open(self._path) as fd:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "with open(self._filesystem_path) as fd:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "return os.path.join(FOLDER, self.path.replace(\"/\", os.sep))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6",
+          "needle": "return pathutils.path_to_filesystem(self.path, FOLDER)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/ical.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "self.path = pathutils.sanitize_path(path).strip(\"/\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "\"Last-Modified\": collection.last_modified"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022.json",
+          "path": "radicale/__init__.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "answer_text = collection.text"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.delete()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_DELIVERY.json",
+          "path": "radicale/xmlutils.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "collection.save(ical_request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "with open(self._props_path) as prop_file:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_022_STORAGE.json",
+          "path": "radicale/storage/filesystem.py",
+          "ref": "b4b3d51f33c7623d312f289252dd7bbb8f58bbe6^",
+          "needle": "json.dump(properties, prop_file)"
+        }
+      ]
+    }
+  ]
+}

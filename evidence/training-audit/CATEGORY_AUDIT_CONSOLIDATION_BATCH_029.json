@@ -1,0 +1,668 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-029",
+  "review_date": "2026-10-26",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All seven Zulip training candidates across every current discovery status/category in four mechanical families, including two invitation entries and all three overlapping S3/header-policy components.",
+  "selection_rule": {
+    "repository": "github.com/zulip/zulip",
+    "discovery_categories": [
+      "SEC-RESOURCE-AUTHORIZATION",
+      "SEC-UPLOAD-DISPOSITION-POLICY"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 831,
+    "sha256": "9ca57ede950e4495ca81ef3c279a6ff7d312196473e270b47ad37fb68886c5c3"
+  },
+  "interpretation": "Four missing-context deferrals and three security-boundary deferrals. Fresh preregistration is request-realm-bound even where invite/form realm is overridden; final signup rechecks target email-domain policy, so preserve invitation/role mismatch without asserting universal domain bypass. Valid key type/expiry is not tenant authorization; invalid-key open-realm fallback is separately preserved. Ordinary bot ownership satisfies delegated management but not role-grant authority. Private autosubscribe uses a low-level mutator after only realm existence validation. Upload disposition conflicts with stored content type under the S3 proxy, but the exact before already carries CSP; active script/session consequences need actual nonenforcing browser/configuration delivery. After S3 metadata, forced signed attachment and cache discrimination must be considered together, not local-disk or development behavior. No supported after-contract failure is established in this batch; all negative scopes are mechanism-local and provisional. Preserve all831 discovery events, statuses/categories, canonical hashes/IDs/families/splits, earlier authored batches and45 protected inputs. Seven functions/four families are not independent issue counts. All retained programs, payloads, requests and upstream tests stay inert; only own retrieval/viewing/hash/bookkeeping/audit-validator tooling executes.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:117598388949513:82029386428256",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "External-auth registration validates an invite realm but creates a fresh preregistration using the request realm.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve invitation-to-request tenant binding, delegated bot-management versus global role authority, private-stream admission and upload disposition versus authoritative stored content type as distinct mechanisms. Do not call realm-scoped lookup full resource authorization, infer universal domain bypass, or erase a predating CSP mitigation. Final leaf mapping, security/correctness placement and runtime/API familiarity policy remain pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old key helper checks key length/type/expiry but does not bind the object to a request realm. HomepageForm checks the supplied realm and skips invite_required when from_multiuse_invite=True. However create_preregistration_user derives its realm from get_subdomain(request), and final accounts_register uses that preregistration realm and invited_as to create the account. Thus using realmA invite validation while creating a fresh preregistration in request realmB transfers an invitation capability across tenants. Final registration still calls email_allowed_for_realm forB: the supported witness uses an email allowed by both relevant domain policies and bypasses B invitation admission, not a proven universal final domain-policy bypass. Existing preregistration reuse, authenticated request realm resolution, LDAP/disabled organizations and license/email gates require their own trace. This entry starts after successful email authentication; register_remote_user forwards its validated result and sets password_required=False. Old maybe_send_to_registration adopts multiuse_obj.realm for validation and lookup but does not compare the invite to request realm. After independently resolves request subdomain realm and rejects a mismatched invite before applying its role/streams.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need external-auth caller/email proof, key type/expiry, HomepageForm invite gating, request-derived preregistration and final account/role creation. The source parameter names alone do not establish the helper writes another realm. Use a fresh preregistration branch rather than assuming every reused record belongs toB. The common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/configuration, after-code, metadata, CVEs, labels, tests and answers stay adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An actor with a valid unexpired multiuse invite from organizationA and an email they control can target organizationB on the same multi-organization deployment. In the fresh-preregistration branch the request binds the new record toB while the A invite supplies admission and invited_as. With an email allowed byB, active organization and completed permitted signup/auth/email flow, this can cross B invitation restrictions and carry the invite role into creation. It does not require possession of an arbitrary guessed confirmation secret, does not show compromise of a separate server, and does not establish every advertised role/stream/domain outcome. The final B email-domain recheck is retained.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After rejects differing request-subdomain and invite realms before HomepageForm, preregistration creation or invite role/streams assignment. Same-realm keys continue through prior admission and authentication gates. This is a bounded new-entry tenant-binding repair, not invalidation of every previously issued preregistration/confirmation token, global OAuth/OTP correctness or proof of every signup outcome. Session OTP writes before rejection are not themselves an established old-contract failure.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched source establishes an old permission/tenant violation, but critical helper, producer, authentication and mutation semantics are absent from the selected before-only function. Defer missing context without selectively adding answer-bearing project code.",
+      "dependence_reason": "Preserve fix-family:5c89e2bb2421f12458ad and existing exact/AST/span/history links. Two invite-entry rows share one fix family; three overlapping upload serving rows share another file/family and a coordinated metadata/nginx/cache repair. The bot-role and stream-subscription rows are separate families. Seven rows/four mechanical families do not establish seven independent issues, approved family merges or independent exploit outcomes. Final representation/issue adjudication remains pending.",
+      "open_questions": [
+        "Researcher confirm multi-organization routing/session and account-admission conditions, invitation privileges and email validity, bot ownership/role policy, private-stream admission and production S3/browser/CSP/cache/legacy-object state; freeze before-only context and bounded negative rules before final eligibility. No deployed version or exploit is asserted.",
+        "Findings are conditional source deductions, not reproduced results. No Zulip/Django/auth/session/registration/confirmation/OTP/role/stream/ORM/DB, upload/S3/boto/signing/nginx/cache/browser/HTML/JavaScript/regex/parser/filesystem/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "realm = multiuse_obj.realm"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if realm != multiuse_obj.realm:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    else:\n        try:\n            realm = get_realm(get_subdomain(request))\n        except Realm.DoesNotExist:\n            pass\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    form = HomepageForm({\"email\": email}, realm=realm, from_multiuse_invite=from_multiuse_invite)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "kwargs[\"password_required\"] = False"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "prereg_user.invited_as = invited_as"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029.json",
+          "path": "zerver/forms.py",
+          "ref": "d5db254ca8167995a1654d1c45ffc74b2fade39a",
+          "needle": "if not from_multiuse_invite and realm.invite_required:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "confirmation/models.py",
+          "ref": "d5db254ca8167995a1654d1c45ffc74b2fade39a",
+          "needle": "confirmation_key=confirmation_key, type__in=confirmation_types"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_PEERS.json",
+          "path": "zerver/views/registration.py",
+          "ref": "d5db254ca8167995a1654d1c45ffc74b2fade39a",
+          "needle": "role = prereg_user.invited_as"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_PEERS.json",
+          "path": "zerver/views/registration.py",
+          "ref": "d5db254ca8167995a1654d1c45ffc74b2fade39a",
+          "needle": "email_allowed_for_realm(email, realm)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_PEERS.json",
+          "path": "zerver/views/registration.py",
+          "ref": "d5db254ca8167995a1654d1c45ffc74b2fade39a",
+          "needle": "role=role,"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:138361432817692:139264948810741",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "S3 application response overrides safe stored disposition using filename-derived allowance.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve invitation-to-request tenant binding, delegated bot-management versus global role authority, private-stream admission and upload disposition versus authoritative stored content type as distinct mechanisms. Do not call realm-scoped lookup full resource authorization, infer universal domain bypass, or erase a predating CSP mitigation. Final leaf mapping, security/correctness placement and runtime/API familiarity policy remain pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old upload pipeline preserves nonempty UploadedFile.content_type; the S3 writer stores that type and chooses attachment for values outside INLINE_MIME_TYPES, whose old comment explicitly excludes text/html for XSS safety. The selected old serving path instead applies an inline/attachment decision derived from filename, while nginx hides S3 Content-Disposition but retains S3 Content-Type. A filename ending in .png with stored text/html therefore gets an inline application-origin representation despite the existing stored attachment policy. This is a repair of existing MIME/disposition consistency, not a newly forbidden content type or a local-disk vulnerability. The exact before nginx file already adds restrictive Content-Security-Policy; the matching vulnerable interval was main-only, not every numbered release.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need upload source/type handling, allowlist, S3 object headers, caller Boolean semantics, presigning, nginx internal redirect/header precedence and cache key. An internal redirect response alone does not establish the final browser response or a CSP defeat. The common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/configuration, after-code, metadata, CVEs, labels, tests and answers stay adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The uploader controls the original filename, nonempty multipart content type and content; an authorized reader or holder of an issued short-lived access token can reach the file-serving path. Production S3 nginx serves the application-origin URL with upstream Content-Type and old application-chosen disposition. The header-policy conflict is supported, but the retained before already includes default-src none CSP. Actual script execution/session effects need a victim browser/configuration not enforcing that mitigation plus real S3/proxy/cache/metadata delivery; no supported-browser bypass, JavaScript execution, session theft or public access to every upload is reproduced or universally established. Development redirects, local-disk serving and arbitrary inaccessible attachments are not this witness.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Under matched upload-time metadata, signed-URL and nginx/cache configuration, after leaves safe inline versus attachment to the same stored content type/disposition pair. A forced download can only request attachment through ResponseContentDisposition; nginx stops hiding S3 disposition and adds that query override to its cache key. The default no-override key stays unchanged. This is mechanism-local to the coordinated S3 header path, not a guarantee for legacy objects missing/unsafe metadata, stale custom configurations, all browser behavior or every cache/backend implementation. Local serving recomputes the previous filename rule inside serve_local; no isolated local-disk security repair or supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "The selected header-policy mismatch is supported, but actual same-origin active-content delivery needs S3/proxy/metadata/cache state and a browser/configuration not enforcing the already present CSP. Defer the unresolved security delivery instead of treating an advisory title as universal XSS.",
+      "dependence_reason": "Preserve fix-family:ff1d750eab60ae5658f3 and existing exact/AST/span/history links. Two invite-entry rows share one fix family; three overlapping upload serving rows share another file/family and a coordinated metadata/nginx/cache repair. The bot-role and stream-subscription rows are separate families. Seven rows/four mechanical families do not establish seven independent issues, approved family merges or independent exploit outcomes. Final representation/issue adjudication remains pending.",
+      "open_questions": [
+        "Researcher confirm multi-organization routing/session and account-admission conditions, invitation privileges and email validity, bot ownership/role policy, private-stream admission and production S3/browser/CSP/cache/legacy-object state; freeze before-only context and bounded negative rules before final eligibility. No deployed version or exploit is asserted.",
+        "Findings are conditional source deductions, not reproduced results. No Zulip/Django/auth/session/registration/confirmation/OTP/role/stream/ORM/DB, upload/S3/boto/signing/nginx/cache/browser/HTML/JavaScript/regex/parser/filesystem/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "patch_disposition_header(response, path_id, download)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "get_signed_upload_url(path_id, force_download=force_download)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "disposition = \"attachment\" if is_attachment else \"inline\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_ROUTES.json",
+          "path": "zerver/lib/upload/__init__.py",
+          "ref": "36e97f8121a19a7955e666d24a80ea2cf3d0b75a",
+          "needle": "content_type = user_file.content_type"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "zerver/lib/upload/s3.py",
+          "ref": "36e97f8121a19a7955e666d24a80ea2cf3d0b75a",
+          "needle": "ContentType=content_type,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "zerver/lib/upload/s3.py",
+          "ref": "36e97f8121a19a7955e666d24a80ea2cf3d0b75a",
+          "needle": "ContentDisposition=content_disposition,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "zerver/lib/upload/base.py",
+          "ref": "36e97f8121a19a7955e666d24a80ea2cf3d0b75a",
+          "needle": "as application/xhtml+xml, application/x-shockwave-flash,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "puppet/zulip/files/nginx/zulip-include-frontend/uploads-internal.conf",
+          "ref": "36e97f8121a19a7955e666d24a80ea2cf3d0b75a",
+          "needle": "proxy_hide_header Content-Disposition;"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "puppet/zulip/files/nginx/zulip-include-frontend/uploads-internal.conf",
+          "ref": "36e97f8121a19a7955e666d24a80ea2cf3d0b75a",
+          "needle": "    include /etc/nginx/zulip-include/headers;\n    add_header Content-Security-Policy \"default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; object-src 'self'; plugin-types application/pdf;\";\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "zerver/lib/upload/s3.py",
+          "ref": "2f6c5a883e106aa82a570d3d1f243993284b70f3",
+          "needle": "params[\"ResponseContentDisposition\"] = \"attachment\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "puppet/zulip/files/nginx/zulip-include-frontend/uploads-internal.conf",
+          "ref": "2f6c5a883e106aa82a570d3d1f243993284b70f3",
+          "needle": "proxy_cache_key $download_url$s3_disposition_cache_key;"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "puppet/zulip/templates/nginx/s3-cache.template.erb",
+          "ref": "2f6c5a883e106aa82a570d3d1f243993284b70f3",
+          "needle": "response-content-disposition=[^&]+"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:138361432817692:207048763987775",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Signed-token serving recomputes S3 safety from extension instead of authoritative upload metadata.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve invitation-to-request tenant binding, delegated bot-management versus global role authority, private-stream admission and upload disposition versus authoritative stored content type as distinct mechanisms. Do not call realm-scoped lookup full resource authorization, infer universal domain bypass, or erase a predating CSP mitigation. Final leaf mapping, security/correctness placement and runtime/API familiarity policy remain pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old upload pipeline preserves nonempty UploadedFile.content_type; the S3 writer stores that type and chooses attachment for values outside INLINE_MIME_TYPES, whose old comment explicitly excludes text/html for XSS safety. The selected old serving path instead applies an inline/attachment decision derived from filename, while nginx hides S3 Content-Disposition but retains S3 Content-Type. A filename ending in .png with stored text/html therefore gets an inline application-origin representation despite the existing stored attachment policy. This is a repair of existing MIME/disposition consistency, not a newly forbidden content type or a local-disk vulnerability. The exact before nginx file already adds restrictive Content-Security-Policy; the matching vulnerable interval was main-only, not every numbered release. This entry verifies a time-limited signed path and exact final filename; that authorization is separate from selecting a safe disposition. Its old extension-derived download flag can incorrectly authorize inline for the S3 case. After removes that decision and delegates the appropriate per-backend policy.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need token issuer/60-second verifier and filename binding, upload metadata, storage branch and shared serving/nginx/CSP contract. Unauthed in the name means capability-token access here, not arbitrary unauthenticated reads. The common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/configuration, after-code, metadata, CVEs, labels, tests and answers stay adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The uploader controls the original filename, nonempty multipart content type and content; an authorized reader or holder of an issued short-lived access token can reach the file-serving path. Production S3 nginx serves the application-origin URL with upstream Content-Type and old application-chosen disposition. The header-policy conflict is supported, but the retained before already includes default-src none CSP. Actual script execution/session effects need a victim browser/configuration not enforcing that mitigation plus real S3/proxy/cache/metadata delivery; no supported-browser bypass, JavaScript execution, session theft or public access to every upload is reproduced or universally established. Development redirects, local-disk serving and arbitrary inaccessible attachments are not this witness.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Under matched upload-time metadata, signed-URL and nginx/cache configuration, after leaves safe inline versus attachment to the same stored content type/disposition pair. A forced download can only request attachment through ResponseContentDisposition; nginx stops hiding S3 disposition and adds that query override to its cache key. The default no-override key stays unchanged. This is mechanism-local to the coordinated S3 header path, not a guarantee for legacy objects missing/unsafe metadata, stale custom configurations, all browser behavior or every cache/backend implementation. Local serving recomputes the previous filename rule inside serve_local; no isolated local-disk security repair or supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "The selected header-policy mismatch is supported, but actual same-origin active-content delivery needs S3/proxy/metadata/cache state and a browser/configuration not enforcing the already present CSP. Defer the unresolved security delivery instead of treating an advisory title as universal XSS.",
+      "dependence_reason": "Preserve fix-family:ff1d750eab60ae5658f3 and existing exact/AST/span/history links. Two invite-entry rows share one fix family; three overlapping upload serving rows share another file/family and a coordinated metadata/nginx/cache repair. The bot-role and stream-subscription rows are separate families. Seven rows/four mechanical families do not establish seven independent issues, approved family merges or independent exploit outcomes. Final representation/issue adjudication remains pending.",
+      "open_questions": [
+        "Researcher confirm multi-organization routing/session and account-admission conditions, invitation privileges and email validity, bot ownership/role policy, private-stream admission and production S3/browser/CSP/cache/legacy-object state; freeze before-only context and bounded negative rules before final eligibility. No deployed version or exploit is asserted.",
+        "Findings are conditional source deductions, not reproduced results. No Zulip/Django/auth/session/registration/confirmation/OTP/role/stream/ORM/DB, upload/S3/boto/signing/nginx/cache/browser/HTML/JavaScript/regex/parser/filesystem/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "download = mimetype not in INLINE_MIME_TYPES"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return serve_s3(request, path_id)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "path_id = signer.unsign(signed_data, max_age=timedelta(seconds=60))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if path_id.split(\"/\")[-1] != filename:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    if settings.LOCAL_UPLOADS_DIR is not None:\n        return serve_local(request, path_id, download=download)\n    else:\n        return serve_s3(request, path_id, download=download)\n\n\ndef serve_local_avatar_unauthed(request: HttpRequest, path: str) -> HttpResponseBase:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "download = force_download or mimetype not in INLINE_MIME_TYPES"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_ROUTES.json",
+          "path": "zerver/lib/upload/__init__.py",
+          "ref": "36e97f8121a19a7955e666d24a80ea2cf3d0b75a",
+          "needle": "content_type = user_file.content_type"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "zerver/lib/upload/s3.py",
+          "ref": "36e97f8121a19a7955e666d24a80ea2cf3d0b75a",
+          "needle": "content_disposition = \"attachment\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "puppet/zulip/files/nginx/zulip-include-frontend/uploads-internal.conf",
+          "ref": "36e97f8121a19a7955e666d24a80ea2cf3d0b75a",
+          "needle": "proxy_hide_header Content-Disposition;"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "puppet/zulip/files/nginx/zulip-include-frontend/uploads-internal.conf",
+          "ref": "36e97f8121a19a7955e666d24a80ea2cf3d0b75a",
+          "needle": "    include /etc/nginx/zulip-include/headers;\n    add_header Content-Security-Policy \"default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; object-src 'self'; plugin-types application/pdf;\";\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "puppet/zulip/files/nginx/zulip-include-frontend/uploads-internal.conf",
+          "ref": "2f6c5a883e106aa82a570d3d1f243993284b70f3",
+          "needle": "proxy_cache_key $download_url$s3_disposition_cache_key;"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:138361432817692:221273238684405",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Authorized shared serving conflates explicit download with an extension-derived S3 inline policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve invitation-to-request tenant binding, delegated bot-management versus global role authority, private-stream admission and upload disposition versus authoritative stored content type as distinct mechanisms. Do not call realm-scoped lookup full resource authorization, infer universal domain bypass, or erase a predating CSP mitigation. Final leaf mapping, security/correctness placement and runtime/API familiarity policy remain pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old upload pipeline preserves nonempty UploadedFile.content_type; the S3 writer stores that type and chooses attachment for values outside INLINE_MIME_TYPES, whose old comment explicitly excludes text/html for XSS safety. The selected old serving path instead applies an inline/attachment decision derived from filename, while nginx hides S3 Content-Disposition but retains S3 Content-Type. A filename ending in .png with stored text/html therefore gets an inline application-origin representation despite the existing stored attachment policy. This is a repair of existing MIME/disposition consistency, not a newly forbidden content type or a local-disk vulnerability. The exact before nginx file already adds restrictive Content-Security-Policy; the matching vulnerable interval was main-only, not every numbered release. The old shared function first checks attachment authorization, distinguishes missing/forbidden, and optionally issues a token URL. On ordinary serving it then combines explicit download with extension guessing for both backends. That inference is sound only for the local filename-based contract, not S3 stored content type. After passes only force_download and lets each backend choose its own safety policy.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need attachment authorization/capability issuance, explicit download caller, upload metadata and actual shared S3/nginx/CSP path. The url_only branch exits before disposition selection, so do not attribute an independent token-authentication flaw to the header change. The common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/configuration, after-code, metadata, CVEs, labels, tests and answers stay adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The uploader controls the original filename, nonempty multipart content type and content; an authorized reader or holder of an issued short-lived access token can reach the file-serving path. Production S3 nginx serves the application-origin URL with upstream Content-Type and old application-chosen disposition. The header-policy conflict is supported, but the retained before already includes default-src none CSP. Actual script execution/session effects need a victim browser/configuration not enforcing that mitigation plus real S3/proxy/cache/metadata delivery; no supported-browser bypass, JavaScript execution, session theft or public access to every upload is reproduced or universally established. Development redirects, local-disk serving and arbitrary inaccessible attachments are not this witness.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Under matched upload-time metadata, signed-URL and nginx/cache configuration, after leaves safe inline versus attachment to the same stored content type/disposition pair. A forced download can only request attachment through ResponseContentDisposition; nginx stops hiding S3 disposition and adds that query override to its cache key. The default no-override key stays unchanged. This is mechanism-local to the coordinated S3 header path, not a guarantee for legacy objects missing/unsafe metadata, stale custom configurations, all browser behavior or every cache/backend implementation. Local serving recomputes the previous filename rule inside serve_local; no isolated local-disk security repair or supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "The selected header-policy mismatch is supported, but actual same-origin active-content delivery needs S3/proxy/metadata/cache state and a browser/configuration not enforcing the already present CSP. Defer the unresolved security delivery instead of treating an advisory title as universal XSS.",
+      "dependence_reason": "Preserve fix-family:ff1d750eab60ae5658f3 and existing exact/AST/span/history links. Two invite-entry rows share one fix family; three overlapping upload serving rows share another file/family and a coordinated metadata/nginx/cache repair. The bot-role and stream-subscription rows are separate families. Seven rows/four mechanical families do not establish seven independent issues, approved family merges or independent exploit outcomes. Final representation/issue adjudication remains pending.",
+      "open_questions": [
+        "Researcher confirm multi-organization routing/session and account-admission conditions, invitation privileges and email validity, bot ownership/role policy, private-stream admission and production S3/browser/CSP/cache/legacy-object state; freeze before-only context and bounded negative rules before final eligibility. No deployed version or exploit is asserted.",
+        "Findings are conditional source deductions, not reproduced results. No Zulip/Django/auth/session/registration/confirmation/OTP/role/stream/ORM/DB, upload/S3/boto/signing/nginx/cache/browser/HTML/JavaScript/regex/parser/filesystem/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "download = download or mimetype not in INLINE_MIME_TYPES"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return serve_s3(request, path_id, force_download=force_download)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "is_authorized = validate_attachment_request(maybe_user_profile, path_id, realm)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "url = generate_unauthed_file_access_url(path_id)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "url_only=False, force_download=True"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "download = force_download or mimetype not in INLINE_MIME_TYPES"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_ROUTES.json",
+          "path": "zerver/lib/upload/__init__.py",
+          "ref": "36e97f8121a19a7955e666d24a80ea2cf3d0b75a",
+          "needle": "content_type = user_file.content_type"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "zerver/lib/upload/s3.py",
+          "ref": "36e97f8121a19a7955e666d24a80ea2cf3d0b75a",
+          "needle": "ContentType=content_type,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "puppet/zulip/files/nginx/zulip-include-frontend/uploads-internal.conf",
+          "ref": "36e97f8121a19a7955e666d24a80ea2cf3d0b75a",
+          "needle": "    include /etc/nginx/zulip-include/headers;\n    add_header Content-Security-Policy \"default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; object-src 'self'; plugin-types application/pdf;\";\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "zerver/lib/upload/s3.py",
+          "ref": "2f6c5a883e106aa82a570d3d1f243993284b70f3",
+          "needle": "params[\"ResponseContentDisposition\"] = \"attachment\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "puppet/zulip/templates/nginx/s3-cache.template.erb",
+          "ref": "2f6c5a883e106aa82a570d3d1f243993284b70f3",
+          "needle": "response-content-disposition=[^&]+"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:202063989628173:122898292437373",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Multiuse invite entry forwards an unbound tenant capability into request-derived preregistration.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve invitation-to-request tenant binding, delegated bot-management versus global role authority, private-stream admission and upload disposition versus authoritative stored content type as distinct mechanisms. Do not call realm-scoped lookup full resource authorization, infer universal domain bypass, or erase a predating CSP mitigation. Final leaf mapping, security/correctness placement and runtime/API familiarity policy remain pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old key helper checks key length/type/expiry but does not bind the object to a request realm. HomepageForm checks the supplied realm and skips invite_required when from_multiuse_invite=True. However create_preregistration_user derives its realm from get_subdomain(request), and final accounts_register uses that preregistration realm and invited_as to create the account. Thus using realmA invite validation while creating a fresh preregistration in request realmB transfers an invitation capability across tenants. Final registration still calls email_allowed_for_realm forB: the supported witness uses an email allowed by both relevant domain policies and bypasses B invitation admission, not a proven universal final domain-policy bypass. Existing preregistration reuse, authenticated request realm resolution, LDAP/disabled organizations and license/email gates require their own trace. Old accounts_home adopts the invite realm for form validation but prepare_activation_url calls create_preregistration_user(email, request), so the record uses the request subdomain instead. After the entry compares the resolved request realm and invite realm, and accounts_home replaces the realm override with an equality assertion. Invalid/expired key fallback for an open organization is intentionally preserved, not a newly accepted invite-required path.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need key validity helper, anonymous request realm resolver, accounts_home POST/form branch, prepare_activation_url and request-bound record/account creation. get_realm_from_request prefers an authenticated user realm and otherwise resolves subdomain; the ordinary anonymous signup witness uses the latter. Do not assume it is always equivalent to host parsing in every authenticated/session/middleware state. The common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/configuration, after-code, metadata, CVEs, labels, tests and answers stay adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An actor with a valid unexpired multiuse invite from organizationA and an email they control can target organizationB on the same multi-organization deployment. In the fresh-preregistration branch the request binds the new record toB while the A invite supplies admission and invited_as. With an email allowed byB, active organization and completed permitted signup/auth/email flow, this can cross B invitation restrictions and carry the invite role into creation. It does not require possession of an arbitrary guessed confirmation secret, does not show compromise of a separate server, and does not establish every advertised role/stream/domain outcome. The final B email-domain recheck is retained.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After rejects mismatched resolved request/invite realms with404 and the matched accounts_home asserts equality instead of silently adopting the invite realm. The anonymous signup trace binds validation and fresh record creation to the same organization. The old invalid/expired-key open-realm fallback remains a non-invite signup subject to that realm’s form policy; closed/nonexistent realms still return the confirmation error. No universal session-routing consistency or revocation of preexisting signup records is certified, and no supported introduced regression is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched source establishes an old permission/tenant violation, but critical helper, producer, authentication and mutation semantics are absent from the selected before-only function. Defer missing context without selectively adding answer-bearing project code.",
+      "dependence_reason": "Preserve fix-family:5c89e2bb2421f12458ad and existing exact/AST/span/history links. Two invite-entry rows share one fix family; three overlapping upload serving rows share another file/family and a coordinated metadata/nginx/cache repair. The bot-role and stream-subscription rows are separate families. Seven rows/four mechanical families do not establish seven independent issues, approved family merges or independent exploit outcomes. Final representation/issue adjudication remains pending.",
+      "open_questions": [
+        "Researcher confirm multi-organization routing/session and account-admission conditions, invitation privileges and email validity, bot ownership/role policy, private-stream admission and production S3/browser/CSP/cache/legacy-object state; freeze before-only context and bounded negative rules before final eligibility. No deployed version or exploit is asserted.",
+        "Findings are conditional source deductions, not reproduced results. No Zulip/Django/auth/session/registration/confirmation/OTP/role/stream/ORM/DB, upload/S3/boto/signing/nginx/cache/browser/HTML/JavaScript/regex/parser/filesystem/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "request, multiuse_object_key=confirmation_key, multiuse_object=multiuse_object"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if realm != multiuse_object.realm:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "realm = multiuse_object.realm"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "email, request, streams=streams_to_subscribe, invited_as=invited_as"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "assert realm == multiuse_object.realm"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if realm is None or realm.invite_required:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_PEERS.json",
+          "path": "zerver/views/auth.py",
+          "ref": "d5db254ca8167995a1654d1c45ffc74b2fade39a",
+          "needle": "    if not realm_creation:\n        try:\n            realm = get_realm(get_subdomain(request))\n        except Realm.DoesNotExist:\n            pass\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_PEERS.json",
+          "path": "zerver/views/auth.py",
+          "ref": "d5db254ca8167995a1654d1c45ffc74b2fade39a",
+          "needle": "        realm=realm,\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029.json",
+          "path": "zerver/forms.py",
+          "ref": "d5db254ca8167995a1654d1c45ffc74b2fade39a",
+          "needle": "if not from_multiuse_invite and realm.invite_required:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "confirmation/models.py",
+          "ref": "d5db254ca8167995a1654d1c45ffc74b2fade39a",
+          "needle": "confirmation_key=confirmation_key, type__in=confirmation_types"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_DELIVERY.json",
+          "path": "zerver/context_processors.py",
+          "ref": "d5db254ca8167995a1654d1c45ffc74b2fade39a",
+          "needle": "return request.user.realm"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "email_allowed_for_realm(email, realm)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:30205952460757:202112773017329",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Delegated bot management is mistaken for organization-wide authority to grant roles.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve invitation-to-request tenant binding, delegated bot-management versus global role authority, private-stream admission and upload disposition versus authoritative stored content type as distinct mechanisms. Do not call realm-scoped lookup full resource authorization, infer universal domain bypass, or erase a predating CSP mitigation. Final leaf mapping, security/correctness placement and runtime/API familiarity policy remain pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old selected comment says the caller has already been verified as an administrator. In fact access_user_by_id binds the target to the caller realm but for_admin delegates to can_admin_user, which also permits an ordinary bot owner. The old role branch excludes nonowners only for transitions involving realm owner, so an ordinary member owning a bot can request the administrator enum for that bot. do_change_user_role directly persists the role and updates associated system groups; it does not reauthorize the acting user. After explicitly requires is_realm_admin for other role changes while preserving owner-only handling. This enforces the preexisting global role-authority distinction, not a new ban on legitimate bot metadata management.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need REST authentication/PATCH route, exact access_user_by_id/access_user_common/can_admin_user and role enum/admin properties, plus the role mutation sink. for_admin=True is not proof of a global admin check, and a user-controlled arbitrary target ID alone does not prove cross-realm access. The common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/configuration, after-code, metadata, CVEs, labels, tests and answers stay adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An authenticated ordinary member who owns a same-realm bot can pass the delegated target-management check and promote that bot to administrator under the old branch. Bot possession/creation permission and a usable authorized API call are prerequisites. This is not unauthenticated promotion, arbitrary human-user promotion or another-organization access; owner transitions remain separately guarded. No API request or bot privilege use is executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For actual role changes, after keeps the owner-transition guard and explicitly rejects non-administrators before mutation; is_realm_admin includes realm owner. Same-role requests and full-name/profile edits remain outside the changed-role branch subject to their existing checks. The sibling patch_bot_backend also gains the guard. This is a bounded own-bot privilege-escalation repair, not full role-policy, audit-event, transaction or metadata validation certification; no supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched source establishes an old permission/tenant violation, but critical helper, producer, authentication and mutation semantics are absent from the selected before-only function. Defer missing context without selectively adding answer-bearing project code.",
+      "dependence_reason": "Preserve fix-family:ec2aefd28fac8ea199ad and existing exact/AST/span/history links. Two invite-entry rows share one fix family; three overlapping upload serving rows share another file/family and a coordinated metadata/nginx/cache repair. The bot-role and stream-subscription rows are separate families. Seven rows/four mechanical families do not establish seven independent issues, approved family merges or independent exploit outcomes. Final representation/issue adjudication remains pending.",
+      "open_questions": [
+        "Researcher confirm multi-organization routing/session and account-admission conditions, invitation privileges and email validity, bot ownership/role policy, private-stream admission and production S3/browser/CSP/cache/legacy-object state; freeze before-only context and bounded negative rules before final eligibility. No deployed version or exploit is asserted.",
+        "Findings are conditional source deductions, not reproduced results. No Zulip/Django/auth/session/registration/confirmation/OTP/role/stream/ORM/DB, upload/S3/boto/signing/nginx/cache/browser/HTML/JavaScript/regex/parser/filesystem/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "do_change_user_role(target, role, acting_user=user_profile)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        if UserProfile.ROLE_REALM_OWNER in [role, target.role] and not user_profile.is_realm_owner:\n            raise OrganizationOwnerRequired()\n        elif not user_profile.is_realm_admin:\n            raise OrganizationAdministratorRequired()\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    ),\n) -> HttpResponse:\n    target = access_user_by_id(\n        user_profile, user_id, allow_deactivated=True, allow_bots=True, for_admin=True\n    )\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if UserProfile.ROLE_REALM_OWNER in [role, target.role] and not user_profile.is_realm_owner:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029.json",
+          "path": "zerver/lib/users.py",
+          "ref": "ad2ca0e6685f9aa46a1df1495fc08e73b98e1091",
+          "needle": "        raise JsonableError(_(\"No such bot\"))\n    if not user_profile.can_admin_user(target):\n        raise JsonableError(_(\"Insufficient permission\"))\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029.json",
+          "path": "zerver/models.py",
+          "ref": "ad2ca0e6685f9aa46a1df1495fc08e73b98e1091",
+          "needle": "if target_user.bot_owner == self:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029.json",
+          "path": "zerver/models.py",
+          "ref": "ad2ca0e6685f9aa46a1df1495fc08e73b98e1091",
+          "needle": "or self.role == UserProfile.ROLE_REALM_OWNER"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029.json",
+          "path": "zerver/actions/users.py",
+          "ref": "ad2ca0e6685f9aa46a1df1495fc08e73b98e1091",
+          "needle": "user_profile.save(update_fields=[\"role\"])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029.json",
+          "path": "zproject/urls.py",
+          "ref": "ad2ca0e6685f9aa46a1df1495fc08e73b98e1091",
+          "needle": "PATCH=update_user_backend,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_ROUTES.json",
+          "path": "zerver/lib/rest.py",
+          "ref": "ad2ca0e6685f9aa46a1df1495fc08e73b98e1091",
+          "needle": "target_function = process_as_post(target_function)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029_ROUTES.json",
+          "path": "zerver/lib/rest.py",
+          "ref": "ad2ca0e6685f9aa46a1df1495fc08e73b98e1091",
+          "needle": "            target_function = authenticated_rest_api_view(skip_rate_limiting=True)(target_function)\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:43725765216221:96770440732449",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Stream existence autosubscribe mutates private membership after only a realm-scoped lookup.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve invitation-to-request tenant binding, delegated bot-management versus global role authority, private-stream admission and upload disposition versus authoritative stored content type as distinct mechanisms. Do not call realm-scoped lookup full resource authorization, infer universal domain bypass, or erase a predating CSP mitigation. Final leaf mapping, security/correctness placement and runtime/API familiarity policy remain pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old json_stream_exists is an authenticated POST route accepting autosubscribe, looks up a same-realm stream by name and calls this helper. get_and_validate_stream_by_id checks ID/realm existence, not membership or invitation. bulk_add_subscriptions is a lower-level mutation helper: it creates active subscriptions or reactivates old ones without caller invite authorization. Other old stream-access code explicitly checks private-stream membership. Thus the selected unconditional autosubscribe grants a private subscription without the existing invitation duty; after permits autosubscribe only when invite_only=False.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need authenticated endpoint and request parsing, same-realm lookup, stream privacy semantics and actual bulk mutation. A helper named validate or an existence-only route name is not sufficient authorization, and a guessed cross-realm ID is rejected by retained lookup. The common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/configuration, after-code, metadata, CVEs, labels, tests and answers stay adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An authenticated same-realm user who knows the private stream name/ID can request autosubscribe and obtain a new or reactivated active subscription without an invitation through the old route. Existing membership is not required by the retained mutation helper. The scope is same-realm private membership; no arbitrary stream enumeration, other-tenant membership, complete history disclosure or bypass of unrelated message controls is asserted.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After the private-stream branch skips membership mutation and only reports subscription status; public autosubscribe continues and already authorized private subscriptions are not removed. False autosubscribe remains read-only in both versions. The repair is local to this endpoint’s unauthorized join, not a promise to conceal private existence, revoke prior memberships or fix every invitation/message access path. No supported introduced after failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched source establishes an old permission/tenant violation, but critical helper, producer, authentication and mutation semantics are absent from the selected before-only function. Defer missing context without selectively adding answer-bearing project code.",
+      "dependence_reason": "Preserve fix-family:c50814b97ee1733a605d and existing exact/AST/span/history links. Two invite-entry rows share one fix family; three overlapping upload serving rows share another file/family and a coordinated metadata/nginx/cache repair. The bot-role and stream-subscription rows are separate families. Seven rows/four mechanical families do not establish seven independent issues, approved family merges or independent exploit outcomes. Final representation/issue adjudication remains pending.",
+      "open_questions": [
+        "Researcher confirm multi-organization routing/session and account-admission conditions, invitation privileges and email validity, bot ownership/role policy, private-stream admission and production S3/browser/CSP/cache/legacy-object state; freeze before-only context and bounded negative rules before final eligibility. No deployed version or exploit is asserted.",
+        "Findings are conditional source deductions, not reproduced results. No Zulip/Django/auth/session/registration/confirmation/OTP/role/stream/ORM/DB, upload/S3/boto/signing/nginx/cache/browser/HTML/JavaScript/regex/parser/filesystem/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if autosubscribe:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not stream.invite_only and autosubscribe:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\n@authenticated_json_post_view\ndef json_remove_subscriptions(request, user_profile):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return stream_exists_backend(request, user_profile, stream_id, autosubscribe)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "stream = Stream.objects.get(pk=stream_id, realm_id=realm.id)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not stream.is_public():"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029.json",
+          "path": "zerver/lib/actions.py",
+          "ref": "7e0ce22808f70793ba1aeab6da46c539296cdec7",
+          "needle": "Subscription.objects.bulk_create([sub for (sub, stream) in subs_to_add])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029.json",
+          "path": "zerver/lib/actions.py",
+          "ref": "7e0ce22808f70793ba1aeab6da46c539296cdec7",
+          "needle": "Subscription.objects.filter(id__in=[sub.id for (sub, stream) in subs_to_activate]).update(active=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_029.json",
+          "path": "zerver/lib/actions.py",
+          "ref": "7ecda1ac8e26d8fb3725e954b2dc4723dda2255f",
+          "needle": "Users newly added to invite-only streams need a `create`"
+        }
+      ]
+    }
+  ]
+}

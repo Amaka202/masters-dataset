@@ -1,0 +1,824 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-024",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All11 Vyper training candidates, including every discovery status and all six null categories (five exclusions and the ambiguous tuple converter).",
+  "selection_rule": {
+    "repository": "github.com/vyperlang/vyper",
+    "discovery_categories": [
+      null,
+      "SEC-ABI-RETURN-VALIDATION",
+      "SEC-BUFFER-COPY-CAPACITY",
+      "SEC-BYTESTRING-COMPARISON"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 825,
+    "sha256": "82a7ed0370f99633102502587bb7f84cfd867aee911c754570fb24bfffa40229"
+  },
+  "interpretation": "Three missing-context, five nonrepair exclusions, one selected-attribution, one security-boundary and one explicit paired-negative deferral. Matched old copy/logical-length/ABI/JSON/type/allocation contracts separate actual repairs from equivalent refactors and new consumers. After _unpack_returndata still uses an undersized legacy JSON raw buffer despite inferred larger ABI call output and strict native copy; preserve a supported after-contract failure without claiming a demonstrated introduced regression. Eleven rows/three mechanical families are not adjudicated issue counts. All825 discovery events, canonical bytes/splits, prior authored batches and45 protected inputs remain unchanged. All compiler/EVM/contract/crypto/parser/dependency/application programs and upstream tests stay inert; these are source deductions, not reproduced failures.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:56029322906472:256529640774935",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Concat allocates only its logical maximum while unaligned word-sized copies can reach live memory beyond that allocation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing buffer-copy-capacity, logical-bytestring-comparison and ABI-return-validation leaves and all five null-category exclusions plus the null-category tuple converter. Physical allocation is distinct from logical type capacity, equality from backing-word identity, outgoing returndata from incoming calldata, and caller/interface adaptation from a selected old defect. Do not infer security positivity or independent issue counts from a shared CVE/patch.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old copy_bytes explicitly may copy a whole word for a one-byte request. Concat advances its destination in actual bytes, not rounded words, and its fixed-bytes branch also STOREs a full word. Thus even two short operands can place the last full-word store beyond ceil32(logical total). Old allocation/allocator and internal function/return conventions permit adjacent live EVM frame data; preventing its corruption is an existing compiler memory-layout duty, not new concat support. This is EVM memory, not Python process memory corruption.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact copy_bytes API, _BytestringT size rounding, Context allocation/allocator, internal-function frame and return convention. Retained new fixtures illustrate internal-call/constructor/storage cases, but are specifications rather than executed old failures or standalone proof of an old duty. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old helpers/callers, types/encoding/layout/allocator contracts, globals, after, tests, advisories and answers are adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A caller reaching a compiled contract using bounded dynamic operands can control actual byte lengths and copied data. Where the generated store crosses into live caller/return/immutable data, the effect exceeds the intended concatenated value and can change contract-owned decisions or state. This is conditional on that contract use/layout, not all concat calls, host-memory compromise, an identified deployed victim or proven loss. The advisory reports no vulnerable production contract found in its search.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After physically allocates BytesT(dst_maxlen +32) while keeping ret_typ at the original logical bound. The extra word covers the helper full-word tail at any valid byte offset without widening the language-level result. This is a bounded tail-capacity negative under valid operand bounds and the matched copy/store API; it is not a proof of all compiler, frame, alias, storage or crypto safety.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The selected old contract violation and conditional lower-trust path are supported, but essential matched helper/type/layout/caller contracts are missing from a uniform before-only function.",
+      "dependence_reason": "Preserve fix-family:4b3eaed655de7a83aa24 and exact/AST/span/source-history relationships. Eleven rows are three mechanical families: concat, comparison plus hash helper, and eight ABI-validation/conversion/refactor rows. These are review units, not eleven or three independently adjudicated issues. The two disclosed return-validation mechanisms do not automatically split their shared family; neither distinct functions nor CVEs settle semantic independence.",
+      "open_questions": [
+        "Researcher confirm supported old compiler/runtime/interface/type contracts, actual lower-trust contract use and exact selected attribution. Actual deployments, final eligibility, bounded context and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced failures. No Vyper/compiler, ABI/AST/IR/type/memory/crypto/EVM/contract, parser, dependency/application program, payload or upstream test executes. Only independently authored evidence/bookkeeping/validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "context.new_internal_variable(ret_typ)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "bufsize = dst_maxlen + 32"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "context.new_internal_variable(BytesT(bufsize))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        dst = IRnode.from_list(buf, typ=ret_typ, location=MEMORY, annotation=\"concat destination\")\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "55e18f6d128b2da8986adbbcccf1cd59a4b9ad6f^",
+          "needle": "# NOTE: may pad to ceil32 of `length`!"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "55e18f6d128b2da8986adbbcccf1cd59a4b9ad6f^",
+          "needle": "copy_op = STORE(dst, LOAD(src))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/codegen/context.py",
+          "ref": "55e18f6d128b2da8986adbbcccf1cd59a4b9ad6f^",
+          "needle": "def new_internal_variable("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/codegen/memory_allocator.py",
+          "ref": "55e18f6d128b2da8986adbbcccf1cd59a4b9ad6f^",
+          "needle": "def allocate_memory("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/semantics/types/bytestrings.py",
+          "ref": "55e18f6d128b2da8986adbbcccf1cd59a4b9ad6f^",
+          "needle": "def size_in_bytes("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_DELIVERY.json",
+          "path": "vyper/codegen/function_definitions/internal_function.py",
+          "ref": "55e18f6d128b2da8986adbbcccf1cd59a4b9ad6f^",
+          "needle": "def generate_ir_for_internal_function("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_DELIVERY.json",
+          "path": "vyper/codegen/return_.py",
+          "ref": "55e18f6d128b2da8986adbbcccf1cd59a4b9ad6f^",
+          "needle": "def make_return_stmt("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_DELIVERY.json",
+          "path": "cves/2024/22xxx/CVE-2024-22419.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "no vulnerable contracts were found in production"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24787:0:vyper/codegen/expr.py:Expr.parse_Compare",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Equal-capacity short Bytes/String comparisons use a backing word instead of logical byte contents and length.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing buffer-copy-capacity, logical-bytestring-comparison and ABI-return-validation leaves and all five null-category exclusions plus the null-category tuple converter. Physical allocation is distinct from logical type capacity, equality from backing-word identity, outgoing returndata from incoming calldata, and caller/interface adaptation from a selected old defect. Do not infer security positivity or independent issue counts from a shared CVE/patch.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old parse_Compare hashes unequal-capacity or long bytestrings but compares LOAD(bytes_data_ptr(...)) for equal capacities at most32. A backing word ignores the logical length and includes dirty padding. Distinct logical values differing only by trailing zero bytes can compare equal, and equal contents with different padding can compare unequal. Existing variable-length byte equality concerns logical data; allocation/padding identity is not its language contract.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need ByteArrayLike producer/layout, length storage and padding behavior, comparator type admission and exact old/new keccak helper logical-span contract. The selected function alone does not define LOAD, bytes_data_ptr, memory cleanliness or hash boundaries. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old helpers/callers, types/encoding/layout/allocator contracts, globals, after, tests, advisories and answers are adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An ordinary lower-trust contract argument or external-call result used as a short Bytes/String equality operand can influence an on-chain equality guard by logical length/padding rather than the intended byte sequence. Security requires a victim contract that relies on that equality for a trusted decision; no concrete deployment, arbitrary storage write or general cryptographic break is inferred. Nonsecurity comparisons remain possible.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After routes every Bytes/String equality/inequality through hashing of data pointer plus actual length. Under the ordinary hash collision-resistance assumption, the witnessed dirty-padding/ignored-length shortcut is removed. This mechanism-local negative does not certify unrelated comparisons, ordering support, all evaluation effects, constant-time behavior or the entire compiler.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The selected old contract violation and conditional lower-trust path are supported, but essential matched helper/type/layout/caller contracts are missing from a uniform before-only function.",
+      "dependence_reason": "Preserve fix-family:d61cd4e9f9fd1ad05eb9 and exact/AST/span/source-history relationships. Eleven rows are three mechanical families: concat, comparison plus hash helper, and eight ABI-validation/conversion/refactor rows. These are review units, not eleven or three independently adjudicated issues. The two disclosed return-validation mechanisms do not automatically split their shared family; neither distinct functions nor CVEs settle semantic independence.",
+      "open_questions": [
+        "Researcher confirm supported old compiler/runtime/interface/type contracts, actual lower-trust contract use and exact selected attribution. Actual deployments, final eligibility, bounded context and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced failures. No Vyper/compiler, ABI/AST/IR/type/memory/crypto/EVM/contract, parser, dependency/application program, payload or upstream test executes. Only independently authored evidence/bookkeeping/validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "length_mismatch = left.typ.maxlen != right.typ.maxlen"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "use hash even for Bytes[N<=32]"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return LOAD(bytes_data_ptr(side))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/keccak256_helper.py",
+          "ref": "2c73f8352635c0a433423a5b94740de1a118e508^",
+          "needle": "[\"sha3\", [\"add\", \"_buf\", 32], [\"mload\", \"_buf\"]]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/keccak256_helper.py",
+          "ref": "2c73f8352635c0a433423a5b94740de1a118e508",
+          "needle": "[\"sha3\", data, len_]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "2c73f8352635c0a433423a5b94740de1a118e508^",
+          "needle": "def bytes_data_ptr("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "2c73f8352635c0a433423a5b94740de1a118e508^",
+          "needle": "def get_bytearray_length("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "tests/parser/types/test_bytes_zero_padding.py",
+          "ref": "2c73f8352635c0a433423a5b94740de1a118e508^",
+          "needle": "def little_endian_contract(get_contract_module):\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_DELIVERY.json",
+          "path": "cves/2022/24xxx/CVE-2022-24787.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Vyper is a Pythonic Smart Contract Language for the Ethereum Virtual Machine. In version 0.3.1 and prior, bytestrings can have dirty bytes in them, resulting in the word-for-word comparisons giving incorrect results. Even without dirty nonzero bytes, two bytestrings can compare to equal if one ends with `\\\"\\\\x00\\\"` because there is no comparison of the length. A patch is available and expected to be part of the 0.3.2 release. There are currently no known workarounds.\"\n                }\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24787:0:vyper/codegen/keccak256_helper.py:keccak256_helper",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Logical-span keccak helper refactor; the bypassing short comparator is a separate selected function.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing buffer-copy-capacity, logical-bytestring-comparison and ABI-return-validation leaves and all five null-category exclusions plus the null-category tuple converter. Physical allocation is distinct from logical type capacity, equality from backing-word identity, outgoing returndata from incoming calldata, and caller/interface adaptation from a selected old defect. Do not infer security positivity or independent issue counts from a shared CVE/patch.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Old helper already binds the materialized buffer once and hashes buf+32 for mload(buf) bytes. After named data/length helpers and cache_when_complex express the same logical span for admitted bytestrings; bytes32 and literal branches remain. The security comparator defect is its old caller choosing word comparison instead of invoking this helper, not this helper hashing padding.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched ensure_in_memory, bytes_data_ptr/get_bytearray_length and cache_when_complex contracts to assess equivalence; do not borrow the caller failure as an old helper defect. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old helpers/callers, types/encoding/layout/allocator contracts, globals, after, tests, advisories and answers are adjudication-only, never selectively injected into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No selected old helper security violation is isolated. A lower-trust comparator input supplies a witness for parse_Compare, not for this already logical-length hash implementation.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No selected old-positive/new-negative runtime pair is established. After refactoring supports the caller repair; that does not make the old helper vulnerable or certify every hash/crypto behavior.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected change is an equivalent helper/encoding/predicate refactor for supported surviving inputs, not a demonstrated old runtime repair.",
+      "dependence_reason": "Preserve fix-family:d61cd4e9f9fd1ad05eb9 and exact/AST/span/source-history relationships. Eleven rows are three mechanical families: concat, comparison plus hash helper, and eight ABI-validation/conversion/refactor rows. These are review units, not eleven or three independently adjudicated issues. The two disclosed return-validation mechanisms do not automatically split their shared family; neither distinct functions nor CVEs settle semantic independence.",
+      "open_questions": [
+        "Researcher confirm supported old compiler/runtime/interface/type contracts, actual lower-trust contract use and exact selected attribution. Actual deployments, final eligibility, bounded context and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced failures. No Vyper/compiler, ABI/AST/IR/type/memory/crypto/EVM/contract, parser, dependency/application program, payload or upstream test executes. Only independently authored evidence/bookkeeping/validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "[\"sha3\", [\"add\", \"_buf\", 32], [\"mload\", \"_buf\"]]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "[\"sha3\", data, len_]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/expr.py",
+          "ref": "2c73f8352635c0a433423a5b94740de1a118e508^",
+          "needle": "length_mismatch = left.typ.maxlen != right.typ.maxlen"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/expr.py",
+          "ref": "2c73f8352635c0a433423a5b94740de1a118e508",
+          "needle": "use hash even for Bytes[N<=32]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "2c73f8352635c0a433423a5b94740de1a118e508^",
+          "needle": "def get_bytearray_length("
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24845:0:vyper/codegen/core.py:_dynarray_make_setter",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Dynamic-array setter removes a retired encoding name; dynamic subtypes already force iteration.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing buffer-copy-capacity, logical-bytestring-comparison and ABI-return-validation leaves and all five null-category exclusions plus the null-category tuple converter. Physical allocation is distinct from logical type capacity, equality from backing-word identity, outgoing returndata from incoming calldata, and caller/interface adaptation from a selected old defect. Do not infer security positivity or independent issue counts from a shared CVE/patch.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "The selected diff replaces ABI/JSON_ABI membership with ABI equality after JSON_ABI retirement. Supported surviving ABI and VYPER inputs keep their layout/bounds behavior. The old dynamic-subtype setter already loops; neither pointer function adds an omitted length/type clamp. The missing clamp predicate and early-return validation are elsewhere in this coordinated patch.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old/new encoding producers, _returndata_encoding, needs_clamp and setter/pointer consumers; do not mix an old JSON_ABI producer with the new encoding domain. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old helpers/callers, types/encoding/layout/allocator contracts, globals, after, tests, advisories and answers are adjudication-only, never selectively injected into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No distinct selected old lower-trust validation bypass is isolated by this encoding-name edit. The shared returndata advisory and vulnerable siblings are not attribution proof.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No selected old-positive/new-negative pair is established; preserve the five null-category exclusions rather than labeling every changed encoding reference vulnerable. This is not universal pointer/setter safety.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected change is an equivalent helper/encoding/predicate refactor for supported surviving inputs, not a demonstrated old runtime repair.",
+      "dependence_reason": "Preserve fix-family:97105a9c6ffd4c1607fe and exact/AST/span/source-history relationships. Eleven rows are three mechanical families: concat, comparison plus hash helper, and eight ABI-validation/conversion/refactor rows. These are review units, not eleven or three independently adjudicated issues. The two disclosed return-validation mechanisms do not automatically split their shared family; neither distinct functions nor CVEs settle semantic independence.",
+      "open_questions": [
+        "Researcher confirm supported old compiler/runtime/interface/type contracts, actual lower-trust contract use and exact selected attribution. Actual deployments, final eligibility, bounded context and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced failures. No Vyper/compiler, ABI/AST/IR/type/memory/crypto/EVM/contract, parser, dependency/application program, payload or upstream test executes. Only independently authored evidence/bookkeeping/validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "src.encoding in (Encoding.ABI, Encoding.JSON_ABI)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "src.encoding == Encoding.ABI"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/external_call.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b^",
+          "needle": "def _returndata_encoding("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b^",
+          "needle": "def needs_clamp("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b",
+          "needle": "def needs_clamp("
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24845:0:vyper/codegen/core.py:_get_element_ptr_array",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Array element pointer encoding dispatch cleanup; offset and bounds arithmetic is unchanged.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing buffer-copy-capacity, logical-bytestring-comparison and ABI-return-validation leaves and all five null-category exclusions plus the null-category tuple converter. Physical allocation is distinct from logical type capacity, equality from backing-word identity, outgoing returndata from incoming calldata, and caller/interface adaptation from a selected old defect. Do not infer security positivity or independent issue counts from a shared CVE/patch.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "The selected diff replaces ABI/JSON_ABI membership with ABI equality after JSON_ABI retirement. Supported surviving ABI and VYPER inputs keep their layout/bounds behavior. The old dynamic-subtype setter already loops; neither pointer function adds an omitted length/type clamp. The missing clamp predicate and early-return validation are elsewhere in this coordinated patch.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old/new encoding producers, _returndata_encoding, needs_clamp and setter/pointer consumers; do not mix an old JSON_ABI producer with the new encoding domain. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old helpers/callers, types/encoding/layout/allocator contracts, globals, after, tests, advisories and answers are adjudication-only, never selectively injected into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No distinct selected old lower-trust validation bypass is isolated by this encoding-name edit. The shared returndata advisory and vulnerable siblings are not attribution proof.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No selected old-positive/new-negative pair is established; preserve the five null-category exclusions rather than labeling every changed encoding reference vulnerable. This is not universal pointer/setter safety.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected change is an equivalent helper/encoding/predicate refactor for supported surviving inputs, not a demonstrated old runtime repair.",
+      "dependence_reason": "Preserve fix-family:97105a9c6ffd4c1607fe and exact/AST/span/source-history relationships. Eleven rows are three mechanical families: concat, comparison plus hash helper, and eight ABI-validation/conversion/refactor rows. These are review units, not eleven or three independently adjudicated issues. The two disclosed return-validation mechanisms do not automatically split their shared family; neither distinct functions nor CVEs settle semantic independence.",
+      "open_questions": [
+        "Researcher confirm supported old compiler/runtime/interface/type contracts, actual lower-trust contract use and exact selected attribution. Actual deployments, final eligibility, bounded context and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced failures. No Vyper/compiler, ABI/AST/IR/type/memory/crypto/EVM/contract, parser, dependency/application program, payload or upstream test executes. Only independently authored evidence/bookkeeping/validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        ix = IRnode.from_list([clamp_op, ix, bound], typ=ix.typ)\n\n    if parent.encoding in (Encoding.ABI, Encoding.JSON_ABI):\n        if parent.location == STORAGE:\n            raise CompilerPanic(\"storage variables should not be abi encoded\")  # pragma: notest\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        ix = IRnode.from_list([clamp_op, ix, bound], typ=ix.typ)\n\n    if parent.encoding == Encoding.ABI:\n        if parent.location == STORAGE:\n            raise CompilerPanic(\"storage variables should not be abi encoded\")  # pragma: notest\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/external_call.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b^",
+          "needle": "def _returndata_encoding("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b^",
+          "needle": "def needs_clamp("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b",
+          "needle": "def needs_clamp("
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24845:0:vyper/codegen/core.py:_get_element_ptr_tuplelike",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Tuple element pointer encoding dispatch cleanup; offset/dynamic-pointer arithmetic is unchanged.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing buffer-copy-capacity, logical-bytestring-comparison and ABI-return-validation leaves and all five null-category exclusions plus the null-category tuple converter. Physical allocation is distinct from logical type capacity, equality from backing-word identity, outgoing returndata from incoming calldata, and caller/interface adaptation from a selected old defect. Do not infer security positivity or independent issue counts from a shared CVE/patch.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "The selected diff replaces ABI/JSON_ABI membership with ABI equality after JSON_ABI retirement. Supported surviving ABI and VYPER inputs keep their layout/bounds behavior. The old dynamic-subtype setter already loops; neither pointer function adds an omitted length/type clamp. The missing clamp predicate and early-return validation are elsewhere in this coordinated patch.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old/new encoding producers, _returndata_encoding, needs_clamp and setter/pointer consumers; do not mix an old JSON_ABI producer with the new encoding domain. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old helpers/callers, types/encoding/layout/allocator contracts, globals, after, tests, advisories and answers are adjudication-only, never selectively injected into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No distinct selected old lower-trust validation bypass is isolated by this encoding-name edit. The shared returndata advisory and vulnerable siblings are not attribution proof.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No selected old-positive/new-negative pair is established; preserve the five null-category exclusions rather than labeling every changed encoding reference vulnerable. This is not universal pointer/setter safety.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected change is an equivalent helper/encoding/predicate refactor for supported surviving inputs, not a demonstrated old runtime repair.",
+      "dependence_reason": "Preserve fix-family:97105a9c6ffd4c1607fe and exact/AST/span/source-history relationships. Eleven rows are three mechanical families: concat, comparison plus hash helper, and eight ABI-validation/conversion/refactor rows. These are review units, not eleven or three independently adjudicated issues. The two disclosed return-validation mechanisms do not automatically split their shared family; neither distinct functions nor CVEs settle semantic independence.",
+      "open_questions": [
+        "Researcher confirm supported old compiler/runtime/interface/type contracts, actual lower-trust contract use and exact selected attribution. Actual deployments, final eligibility, bounded context and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced failures. No Vyper/compiler, ABI/AST/IR/type/memory/crypto/EVM/contract, parser, dependency/application program, payload or upstream test executes. Only independently authored evidence/bookkeeping/validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    ofst = 0  # offset from parent start\n\n    if parent.encoding in (Encoding.ABI, Encoding.JSON_ABI):\n        if parent.location == STORAGE:\n            raise CompilerPanic(\"storage variables should not be abi encoded\")  # pragma: notest\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    ofst = 0  # offset from parent start\n\n    if parent.encoding == Encoding.ABI:\n        if parent.location == STORAGE:\n            raise CompilerPanic(\"storage variables should not be abi encoded\")  # pragma: notest\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/external_call.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b^",
+          "needle": "def _returndata_encoding("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b^",
+          "needle": "def needs_clamp("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b",
+          "needle": "def needs_clamp("
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24845:0:vyper/codegen/core.py:needs_clamp",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "JSON_ABI dynamic values explicitly skip the length clamp used by setters.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing buffer-copy-capacity, logical-bytestring-comparison and ABI-return-validation leaves and all five null-category exclusions plus the null-category tuple converter. Physical allocation is distinct from logical type capacity, equality from backing-word identity, outgoing returndata from incoming calldata, and caller/interface adaptation from a selected old defect. Do not infer security positivity or independent issue counts from a shared CVE/patch.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "External returndata is lower-trust bytes even when an interface declares a narrow scalar or bounded dynamic type. The old JSON signature builder uses output bound1 as an implicit-widening placeholder, not an authentic bound on returned content. Old needs_clamp suppresses JSON_ABI ByteArrayLike/DArrayType length validation; make_setter then copies without that check. Old late scalar validation can also be bypassed when a complex expression consumes the raw typed return instead of assigning it. Correct source-level type/length enforcement at that established boundary is an existing duty, not newly supported JSON interoperation. This selected predicate directly returnsFalse for dynamic JSON_ABI values, unlike already-clamped narrow scalar cases; distinguish that local predicate from the separate early-consumption scalar problem.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old JSON signature producer, _returndata_encoding, make_setter dynamic paths, declared destination capacities and actual copy primitive. Predicate text alone does not establish admitted return provenance, write width or what clamp_bytestring checks. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old helpers/callers, types/encoding/layout/allocator contracts, globals, after, tests, advisories and answers are adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A called external contract can return a bytes/string length exceeding the receiving Vyper destination bound. The old JSON_ABI skip admits that lower-trust length into the native setter/copy path and can exceed the caller allocation; source-level interface declaration is not permission to corrupt other caller data. Requires a compiled contract using this JSON route and relevant copy/layout. No deployed victim, token theft or executed callee is claimed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After all dynamic ABI values require clamping; native VYPER values do not. make_setter emits clamp_bytestring/clamp_dyn_array before copying. This is only a predicate/validation-gate negative under correctly typed and sufficiently allocated source buffers, not a clean whole external-call pipeline: the distinct after raw-buffer mismatch is explicitly deferred on _unpack_returndata.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The selected old contract violation and conditional lower-trust path are supported, but essential matched helper/type/layout/caller contracts are missing from a uniform before-only function.",
+      "dependence_reason": "Preserve fix-family:97105a9c6ffd4c1607fe and exact/AST/span/source-history relationships. Eleven rows are three mechanical families: concat, comparison plus hash helper, and eight ABI-validation/conversion/refactor rows. These are review units, not eleven or three independently adjudicated issues. The two disclosed return-validation mechanisms do not automatically split their shared family; neither distinct functions nor CVEs settle semantic independence.",
+      "open_questions": [
+        "Researcher confirm supported old compiler/runtime/interface/type contracts, actual lower-trust contract use and exact selected attribution. Actual deployments, final eligibility, bounded context and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced failures. No Vyper/compiler, ABI/AST/IR/type/memory/crypto/EVM/contract, parser, dependency/application program, payload or upstream test executes. Only independently authored evidence/bookkeeping/validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "# don't have bytestring size bound from json, don't clamp"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return t.typ not in (\"int256\", \"uint256\", \"bytes32\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if encoding == Encoding.JSON_ABI:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if isinstance(t, (ByteArrayLike, DArrayType)):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "[\"seq\", clamp_bytestring(right), copier]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "[\"seq\", clamp_bytestring(right), copier]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_DELIVERY.json",
+          "path": "vyper/ast/signatures/interface.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b^",
+          "needle": "returns = abi_type_to_ast(func[\"outputs\"][0][\"type\"], 1)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/external_call.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b^",
+          "needle": "return Encoding.JSON_ABI"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24845:0:vyper/codegen/external_call.py:_external_call_helper",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "External-call wrapper adapts to the unpacker new expression argument and native-return convention.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing buffer-copy-capacity, logical-bytestring-comparison and ABI-return-validation leaves and all five null-category exclusions plus the null-category tuple converter. Physical allocation is distinct from logical type capacity, equality from backing-word identity, outgoing returndata from incoming calldata, and caller/interface adaptation from a selected old defect. Do not infer security positivity or independent issue counts from a shared CVE/patch.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "External returndata is lower-trust bytes even when an interface declares a narrow scalar or bounded dynamic type. The old JSON signature builder uses output bound1 as an implicit-widening placeholder, not an authentic bound on returned content. Old needs_clamp suppresses JSON_ABI ByteArrayLike/DArrayType length validation; make_setter then copies without that check. Old late scalar validation can also be bypassed when a complex expression consumes the raw typed return instead of assigning it. Correct source-level type/length enforcement at that established boundary is an existing duty, not newly supported JSON interoperation. Old wrapper already calls _unpack_returndata; its selected edits pass expression metadata to the now-strict callee and stop tagging the result ABI/JSON_ABI because it is now native. A distinct old selected-wrapper omission is not isolated from callee repair.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched _pack_arguments, unpacker contract and native/ABI return-layout producer/consumer. A coherent caller/callee migration is not independently positive at both functions. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old helpers/callers, types/encoding/layout/allocator contracts, globals, after, tests, advisories and answers are adjudication-only, never selectively injected into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The external-callee boundary is real, but the selected wrapper does not independently establish an extra old defect beyond the unpacker/predicate mechanisms. Preserve ambiguous attribution, not a new security-positive count.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No selected old-positive/new-negative pair is isolated. Native tagging follows the callee contract. The after raw-capacity mismatch in this same full file prevents whole-pipeline certification, but is tracked as an explicit paired-negative concern on the local decoding/allocation review rather than inventing a second old wrapper defect.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The selected wrapper adapts to a repaired callee and new native-return convention; no distinct prior selected defect is isolated.",
+      "dependence_reason": "Preserve fix-family:97105a9c6ffd4c1607fe and exact/AST/span/source-history relationships. Eleven rows are three mechanical families: concat, comparison plus hash helper, and eight ABI-validation/conversion/refactor rows. These are review units, not eleven or three independently adjudicated issues. The two disclosed return-validation mechanisms do not automatically split their shared family; neither distinct functions nor CVEs settle semantic independence.",
+      "open_questions": [
+        "Researcher confirm supported old compiler/runtime/interface/type contracts, actual lower-trust contract use and exact selected attribution. Actual deployments, final eligibility, bounded context and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced failures. No Vyper/compiler, ABI/AST/IR/type/memory/crypto/EVM/contract, parser, dependency/application program, payload or upstream test executes. Only independently authored evidence/bookkeeping/validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        encoding=_returndata_encoding(contract_sig),\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return IRnode.from_list(sub, typ=contract_sig.return_type, location=MEMORY)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "buf, arg_packer, args_ofst, args_len = _pack_arguments("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "ast_return_t = expr.func._metadata[\"type\"].return_type"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "buflen = max(args_abi_t.size_bound(), return_abi_t.size_bound())"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24845:0:vyper/codegen/external_call.py:_unpack_returndata",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Returndata unpacker exposes unvalidated typed ABI pointers before complex-expression consumption; after retains raw-buffer/type-bound disagreement.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing buffer-copy-capacity, logical-bytestring-comparison and ABI-return-validation leaves and all five null-category exclusions plus the null-category tuple converter. Physical allocation is distinct from logical type capacity, equality from backing-word identity, outgoing returndata from incoming calldata, and caller/interface adaptation from a selected old defect. Do not infer security positivity or independent issue counts from a shared CVE/patch.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "External returndata is lower-trust bytes even when an interface declares a narrow scalar or bounded dynamic type. The old JSON signature builder uses output bound1 as an implicit-widening placeholder, not an authentic bound on returned content. Old needs_clamp suppresses JSON_ABI ByteArrayLike/DArrayType length validation; make_setter then copies without that check. Old late scalar validation can also be bypassed when a complex expression consumes the raw typed return instead of assigning it. Correct source-level type/length enforcement at that established boundary is an existing duty, not newly supported JSON interoperation. The selected old unpacker checks only minimum returndata size and returns an ABI/JSON_ABI pointer or tuple element, without strict decoding into bounded native values. Matching convert/concat expression consumers can bypass assignment-time scalar/dynamic validation. New immediate make_setter is a local validation repair, not evidence of a safe raw output buffer.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old/new JSON signature and expression type producers, ABI tuple/dynamic size formulas, _pack_arguments/call output limit, type conversion/check_assign, native allocator and setter store/copy ordering. A min-returndatasize check is not a per-value clamp or allocation proof. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old helpers/callers, types/encoding/layout/allocator contracts, globals, after, tests, advisories and answers are adjudication-only, never selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A lower-trust called contract supplies arbitrary returned words/lengths to a compiler-generated external call. Narrow scalar operations and bounded bytes consumers must not trust those words merely because the interface declares their types. Ordinary contract code using that result in an expression supplies the delivery route; actual policy/state consequence depends on that contract. No deployment or executed exploit is assumed.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After immediate strict ABI-to-native decoding addresses the old unchecked-pointer mechanism, including inferred JSON bounds, but cannot be certified as a paired negative. After still allocates the raw argument/return buffer from contract_sig.return_type in _pack_arguments, but _unpack_returndata now sets the call output ret_len from the larger expression-inferred return type. Exact JSON producer still uses bound1; no signature update occurs in ir_for_external_call. For a no-argument JSON bytes output inferred as Bytes[96], the legacy single-output ABI bound is96 (offset32+length32+ceil32(1)), so allocation including method-id padding is128 bytes. New ABI ret_len is160 (offset32+length32+96). Context internal allocations expand consecutively: the native Tuple(Bytes[96]) buffer starts at rawbuf+128 and occupies128 bytes. Thus a complete valid160-byte return overlaps its first word. make_byte_array_copier stores the native length at rawbuf+128 before reading/copying the source data at rawbuf+64 through rawbuf+159, replacing the third source word with the length value. This is an inert-source layout deduction for an admitted widened JSON bytes return, not a compiled/executed result. The legacy capacity disagreement/incorrect JSON dynamic-return handling is not resolved by adding clamps; the old code already truncated/unchecked such returns, so no established previously-correct supported witness or introduced-regression claim follows.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Old skipped validation is supported, but after still sizes the raw buffer from the legacy JSON placeholder while writing a larger inferred ABI return into it; preserve an explicit after-contract failure deferral.",
+      "dependence_reason": "Preserve fix-family:97105a9c6ffd4c1607fe and exact/AST/span/source-history relationships. Eleven rows are three mechanical families: concat, comparison plus hash helper, and eight ABI-validation/conversion/refactor rows. These are review units, not eleven or three independently adjudicated issues. The two disclosed return-validation mechanisms do not automatically split their shared family; neither distinct functions nor CVEs settle semantic independence.",
+      "open_questions": [
+        "Researcher confirm supported old compiler/runtime/interface/type contracts, actual lower-trust contract use and exact selected attribution. Actual deployments, final eligibility, bounded context and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced failures. No Vyper/compiler, ABI/AST/IR/type/memory/crypto/EVM/contract, parser, dependency/application program, payload or upstream test executes. Only independently authored evidence/bookkeeping/validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "buf = IRnode(buf, typ=return_t, encoding=_returndata_encoding(contract_sig), location=MEMORY)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "ret.append(make_setter(buf2, buf))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if should_unwrap_abi_tuple:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "ast_return_t = expr.func._metadata[\"type\"].return_type"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return_abi_t = calculate_type_for_external_return(contract_sig.return_type).abi_type"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "buflen = max(args_abi_t.size_bound(), return_abi_t.size_bound())"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "buflen += 32"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "ret_len = max_return_size"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "context.new_internal_variable(return_t)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "contract_sig = context.sigs[contract_name][method_name]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_DELIVERY.json",
+          "path": "vyper/ast/signatures/interface.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b",
+          "needle": "returns = abi_type_to_ast(func[\"outputs\"][0][\"type\"], 1)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_DELIVERY.json",
+          "path": "vyper/abi_types.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b",
+          "needle": "return 32 + ceil32(self.bytes_bound)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_DELIVERY.json",
+          "path": "vyper/abi_types.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b",
+          "needle": "return sum([t.embedded_dynamic_size_bound() for t in self.subtyps])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/codegen/context.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b",
+          "needle": "var_pos = self.memory_allocator.expand_memory(var_size)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_DELIVERY.json",
+          "path": "vyper/codegen/memory_allocator.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b",
+          "needle": "before_value = self.next_mem"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/codegen/types/types.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b",
+          "needle": "return ceil32(self.maxlen) + 32 * DYNAMIC_ARRAY_OVERHEAD"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b",
+          "needle": "ret.append(STORE(dst, len_))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b",
+          "needle": "ret.append(copy_bytes(dst, src, len_, max_bytes))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_DELIVERY.json",
+          "path": "vyper/semantics/types/value/array_value.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b",
+          "needle": "other.set_length(max(self._length, other._min_length))"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "After still allocates the raw argument/return buffer from contract_sig.return_type in _pack_arguments, but _unpack_returndata now sets the call output ret_len from the larger expression-inferred return type. Exact JSON producer still uses bound1; no signature update occurs in ir_for_external_call. For a no-argument JSON bytes output inferred as Bytes[96], the legacy single-output ABI bound is96 (offset32+length32+ceil32(1)), so allocation including method-id padding is128 bytes. New ABI ret_len is160 (offset32+length32+96). Context internal allocations expand consecutively: the native Tuple(Bytes[96]) buffer starts at rawbuf+128 and occupies128 bytes. Thus a complete valid160-byte return overlaps its first word. make_byte_array_copier stores the native length at rawbuf+128 before reading/copying the source data at rawbuf+64 through rawbuf+159, replacing the third source word with the length value. This is an inert-source layout deduction for an admitted widened JSON bytes return, not a compiled/executed result. The legacy capacity disagreement/incorrect JSON dynamic-return handling is not resolved by adding clamps; the old code already truncated/unchecked such returns, so no established previously-correct supported witness or introduced-regression claim follows."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24845:0:vyper/codegen/function_definitions/external_function.py:_register_function_args",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Incoming-argument decoder predicate is centralized without a demonstrated prior calldata validation bypass.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing buffer-copy-capacity, logical-bytestring-comparison and ABI-return-validation leaves and all five null-category exclusions plus the null-category tuple converter. Physical allocation is distinct from logical type capacity, equality from backing-word identity, outgoing returndata from incoming calldata, and caller/interface adaptation from a selected old defect. Do not infer security positivity or independent issue counts from a shared CVE/patch.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "For supported old scalar, bytes/dynamic, static-array and tuple types, old _should_decode and new needs_clamp(type,ABI) select the same validation/copy branches. Old incoming narrow/dynamic calldata already gets make_setter validation; unbounded full-word scalar/layout-compatible branches remain in place. The added layout assertion and shared predicate do not establish a missing old incoming-argument clamp. Return-data disclosure is not this function input.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old _should_decode and new needs_clamp type recursion plus abi_encoding_matches_vyper; do not transfer an external-return witness to already-validated incoming calldata. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old helpers/callers, types/encoding/layout/allocator contracts, globals, after, tests, advisories and answers are adjudication-only, never selectively injected into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No selected old incoming-calldata security defect is shown. External callers are lower-trust, but their existence plus a shared returndata CVE is not proof of an old bypass in this branch-equivalent predicate migration.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No selected old-positive/new-negative repair pair is established. Preserve null-category exclusion for this refactor; no claim of all calldata, layout or compiler correctness follows.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected change is an equivalent helper/encoding/predicate refactor for supported surviving inputs, not a demonstrated old runtime repair.",
+      "dependence_reason": "Preserve fix-family:97105a9c6ffd4c1607fe and exact/AST/span/source-history relationships. Eleven rows are three mechanical families: concat, comparison plus hash helper, and eight ABI-validation/conversion/refactor rows. These are review units, not eleven or three independently adjudicated issues. The two disclosed return-validation mechanisms do not automatically split their shared family; neither distinct functions nor CVEs settle semantic independence.",
+      "open_questions": [
+        "Researcher confirm supported old compiler/runtime/interface/type contracts, actual lower-trust contract use and exact selected attribution. Actual deployments, final eligibility, bounded context and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced failures. No Vyper/compiler, ABI/AST/IR/type/memory/crypto/EVM/contract, parser, dependency/application program, payload or upstream test executes. Only independently authored evidence/bookkeeping/validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if _should_decode(arg.typ):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if needs_clamp(arg.typ, Encoding.ABI):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def _should_decode("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "assert abi_encoding_matches_vyper(arg.typ)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_PEERS.json",
+          "path": "vyper/codegen/core.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b",
+          "needle": "def needs_clamp("
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24845:0:vyper/codegen/types/convert.py:new_type_to_old_type",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Tuple type conversion now recursively converts members; old helper could retain incompatible semantic type objects.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing buffer-copy-capacity, logical-bytestring-comparison and ABI-return-validation leaves and all five null-category exclusions plus the null-category tuple converter. Physical allocation is distinct from logical type capacity, equality from backing-word identity, outgoing returndata from incoming calldata, and caller/interface adaptation from a selected old defect. Do not infer security positivity or independent issue counts from a shared CVE/patch.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old converter explicitly supports TupleDefinition and promises old.NodeType, but constructs old.TupleType directly from new semantic members while arrays/structs recurse. Old TupleType only shallow-copies members and its native memory size consumes member.memory_bytes_required; semantic definitions instead use size_in_bytes. Recursive conversion corrects that representation contract. Exact old parse_List calls the converter, while parse_Tuple constructs old member types directly; an accepted old caller that actually sends a TupleDefinition through the broken branch is still needed for a concrete compiler/program security witness.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old converter callers, accepted tuple/composite type admission and old TupleType consumers. The newly added _unpack_returndata converter call cannot retroactively establish prior caller reachability; plain tuple expressions use a different old conversion path. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old helpers/callers, types/encoding/layout/allocator contracts, globals, after, tests, advisories and answers are adjudication-only, never selectively injected into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "A plausible compiler-correctness representation repair is supported at the helper API, not a demonstrated old scalar/dynamic returndata security consequence. The retained patch mentions a tuple compiler panic, but an old accepted caller and lower-trust availability/state boundary remain unestablished. Preserve null category and ambiguous discovery rather than silently relabeling it as security-positive or inventing a correctness leaf.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After recursively converts tuple members as the existing array/struct branches already do. That is a bounded representation correction for supported member conversions, not an approved old security-positive/new-negative pair or proof that every tuple/caller/compiler path succeeds.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "The tuple representation correction is real at the helper boundary, but an accepted preexisting caller and resulting lower-trust security consequence are not established by the new return-decoder caller or shared advisory.",
+      "dependence_reason": "Preserve fix-family:97105a9c6ffd4c1607fe and exact/AST/span/source-history relationships. Eleven rows are three mechanical families: concat, comparison plus hash helper, and eight ABI-validation/conversion/refactor rows. These are review units, not eleven or three independently adjudicated issues. The two disclosed return-validation mechanisms do not automatically split their shared family; neither distinct functions nor CVEs settle semantic independence.",
+      "open_questions": [
+        "Researcher confirm supported old compiler/runtime/interface/type contracts, actual lower-trust contract use and exact selected attribution. Actual deployments, final eligibility, bounded context and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced failures. No Vyper/compiler, ABI/AST/IR/type/memory/crypto/EVM/contract, parser, dependency/application program, payload or upstream test executes. Only independently authored evidence/bookkeeping/validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return old.TupleType(typ.value_type)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return old.TupleType([new_type_to_old_type(t) for t in typ.value_type])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/codegen/types/types.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b^",
+          "needle": "return sum([t.memory_bytes_required for t in self.tuple_members()])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/codegen/types/types.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b^",
+          "needle": "class TupleType("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/codegen/expr.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b^",
+          "needle": "            # TODO: typ = new_type_to_old_type(self.expr._metadata[\"type\"])\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024.json",
+          "path": "vyper/codegen/expr.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b^",
+          "needle": "def parse_Tuple("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_024_DELIVERY.json",
+          "path": "vyper/semantics/types/bases.py",
+          "ref": "049dbdc647b2ce838fae7c188e6bb09cf16e470b^",
+          "needle": "size_in_bytes = 32"
+        }
+      ]
+    }
+  ]
+}

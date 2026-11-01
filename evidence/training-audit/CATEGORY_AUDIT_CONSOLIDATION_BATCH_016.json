@@ -1,0 +1,1195 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-016",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All21 remaining Thefuck training candidates outside the completed broad incomplete-case/state/context batch, every status including null category.",
+  "selection_rule": {
+    "repository": "github.com/nvbn/thefuck",
+    "discovery_categories": [
+      "CORR-COMMAND-ARGUMENT-REWRITE",
+      "CORR-CONFIGURATION-PRECEDENCE",
+      "CORR-DELIMITER-PARSING",
+      "CORR-EMPTY-SEQUENCE-INDEX",
+      "CORR-RULE-APPLICABILITY",
+      "CORR-SHORT-SEQUENCE-ACCESS",
+      null
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 808,
+    "sha256": "590e37fbe1828b68634fccc089589b9abba27a909946a53f7a789a0a72410642"
+  },
+  "interpretation": "Exact selected before/after, retained full fixes and matching old helpers/contracts/CI/tests inspected only as inert text. One append-only selected-attribution correction distinguishes intentionally overwriting Settings.update from its defaults-only caller. Preserve existing force-push/alias policies, nonrepair equality migration, new Vagrant/editor features, bounded negatives and introduced versus retained after failures. No shell, Git, parser/tokenizer, archive operation, dependency/application program or upstream test executes. Researcher approval and independent issue adjudication remain pending.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-11:0:thefuck/rules/git_push.py:get_new_command",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Upstream suggestion composition duplicates an existing -u/--set-upstream operand; its repair introduces unquoted reconstruction.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old git_push already promises an upstream correction and preserves extra options in retained tests. For the admitted Git error, replacing push without removing an existing -u origin leaves a duplicate option/operand. The selected edit removes the pair, not a new upstream feature.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matching old git_support admits Git/hub and expands aliases; replace_argument splices text, while Command.script_parts caches shell-split tokens. Exact old generic splitter is retained, not executed. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "The retained unquoted -u origin fixture gets one upstream option after. However the new join strips original shell protection: a quoted --receive-pack=\"custom receive\" operand is retained as one protected argument by old text splicing, but split tokens joined without quoting no longer preserve that operand. Cached script_parts is mutated. Terminal -u also reaches the new second-pop error, whose later selected repair is exactly the next history case. Do not certify a clean after negative.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve the repaired old mechanism while explicitly withholding a clean after-function negative under the recorded argument-preservation failure.",
+      "dependence_reason": "Keep mechanical family fix-family:009e12ce6279ee4125d2 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return replace_argument(command.script, 'push', push_upstream)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    if upstream_option_index is not -1:\n        command.script_parts.pop(upstream_option_index)\n        command.script_parts.pop(upstream_option_index)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/utils.py",
+          "ref": "db7dffdb44ae5c7be8de088765463fbda96197d1^",
+          "needle": "u' {} '.format(from_), u' {} '.format(to), 1)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/types.py",
+          "ref": "db7dffdb44ae5c7be8de088765463fbda96197d1^",
+          "needle": "self._script_parts = shell.split_command(self.script)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/specific/git.py",
+          "ref": "db7dffdb44ae5c7be8de088765463fbda96197d1^",
+          "needle": "if not is_app(command, 'git', 'hub'):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016_TOKENIZERS.json",
+          "path": "thefuck/shells/generic.py",
+          "ref": "db7dffdb44ae5c7be8de088765463fbda96197d1^",
+          "needle": "return shlex.split(command)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    assert get_new_command(Command('git push -u origin', stderr=stderr))\\"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Old textual replacement preserves quoted non-upstream option spelling; newly joining unquoted shell tokens loses it. Separately, the new terminal-option pop exception is evidenced by exact after-to-before history and retained later fix; old terminal-option output was already incorrect, so that witness alone is not a previously-correct-to-incorrect claim."
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-12:0:thefuck/rules/no_command.py:match",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Typo rule accepts an existing executable on incidental not-found output.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old no_command is a typo-correction rule with executable candidates. With an installed vim, stderr containing not found and vim in the retained candidate list, the old predicate returns true; the generator can emit the unchanged vim command, not necessarily a different executable. New which guard suppresses that existing-executable branch.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matching executable lookup/PATH and alias policy, candidate enumeration, sudo wrapper and command token producer. The producer can cache None on a split exception; a falsey parse was explicitly guarded before. Empty CLI scripts are rejected earlier and Rule.is_match catches rule exceptions. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "For a nonempty installed-vim witness, a truthy matching which result short-circuits the rule. No general missing-command, alias or malformed-token negative follows. New access to script_parts[0] removes the falsey guard and can raise for []/None; surrounding Rule.is_match catches failures, so this is not evidence of a whole-CLI crash.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual selected repair is supported, but essential old producer/decorator/consumer/runtime behavior is omitted from the strict selected before body.",
+      "dependence_reason": "Keep mechanical family fix-family:2b3c7a505372c3d7ae2f and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return (command.script_parts"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return (not which(command.script_parts[0])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/types.py",
+          "ref": "ca787a1cba3cc9b26b43919c5e60acb40ebcd919^",
+          "needle": "self._script_parts = None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/types.py",
+          "ref": "ca787a1cba3cc9b26b43919c5e60acb40ebcd919^",
+          "needle": "raise EmptyCommand"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/types.py",
+          "ref": "ca787a1cba3cc9b26b43919c5e60acb40ebcd919^",
+          "needle": "logs.rule_failed(self, sys.exc_info())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/utils.py",
+          "ref": "ca787a1cba3cc9b26b43919c5e60acb40ebcd919^",
+          "needle": "\"\"\"Returns `program` path or `None`.\"\"\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/specific/sudo.py",
+          "ref": "ca787a1cba3cc9b26b43919c5e60acb40ebcd919^",
+          "needle": "if not command.script.startswith('sudo '):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return [' '.join([new_command] + command.script_parts[1:])"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    ('vim file.py', 'vim: not found', 'vim')])"
+        }
+      ],
+      "additional_after_concerns": [
+        "New falsey-token dereference is a conditional direct-rule robustness concern; [] is rejected on the normal empty-CLI construction path, None can result from tokenization, and outer Rule.is_match catches exceptions. Supported malformed-input and diagnostic obligations remain to be adjudicated; do not invent an uncaught application failure."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-14:0:thefuck/shells/fish.py:Fish._get_overridden_aliases",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Fish custom override names change from replacing defaults to unioning with defaults.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old explicit TF_OVERRIDDEN_ALIASES replaces the default list, and old tests expect that exact replacement. New tests establish additive union. The consumer filters listed names from captured Fish functions, but a prior additive-policy duty is not retained; keep the discovery ambiguous.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need historical environment precedence, Fish function capture and alias-expansion policy. A configured environment value is not intrinsically a defect or a lower-trust input. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After adds default names for any custom string and includes an empty-string member for an absent/empty setting. Neither this policy nor list-to-set representation proves an old defect or a general negative.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "The conditional change is visible, but a supported old obligation or runtime/configuration path is not established.",
+      "dependence_reason": "Keep mechanical family fix-family:74e33e7806396281bf1d and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "overridden_aliases = os.environ.get('TF_OVERRIDDEN_ALIASES', '').strip()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "default = {'cd', 'grep', 'ls', 'man', 'open'}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "tests/shells/test_fish.py",
+          "ref": "db6053b301e2b3f4363401e457b5dc4ad2e8429b^",
+          "needle": "assert shell._get_overridden_aliases() == ['cd', 'ls', 'man', 'open']"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return {func: func for func in functions if func not in overridden}"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-19:0:thefuck/rules/git_push_force.py:get_new_command",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Optional force-push correction intentionally changes to a lease-checked safety policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "Old README explicitly advertises --force and places git_push_force among rules not enabled by default; old tests expect unconditional --force. A safer --force-with-lease alternative changes intentional behavior. Commit risk discussion does not retroactively establish an old correctness/security obligation.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need explicit user-enabled rule, command confirmation/execution policy and Git remote-tracking state. Merely generating a dangerous optional suggestion is not a demonstrated attacker-to-victim boundary. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "A lease can reduce stale-remote overwrites under Git semantics, but no old positive/new negative pair or universal remote-race safety follows.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "New choice/configuration/safety policy does not establish repair of an old selected correctness duty.",
+      "dependence_reason": "Keep mechanical family fix-family:41aaf35e3286061130c5 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return replace_argument(command.script, 'push', 'push --force')"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return replace_argument(command.script, 'push', 'push --force-with-lease')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "README.md",
+          "ref": "dc23d67a42dad54308a753639edd1ea0d15cb2e7^",
+          "needle": "* `git_push_force` &ndash; adds `--force` to a `git push`"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "enabled_by_default = False"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-20:0:thefuck/rules/dirty_unzip.py:_zip_file",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Archive operand extraction splits quoted/escaped spaces as delimiters.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old unzip operand grammar in the selected comment and consumer expects the archive operand. For unzip quoted foo bar.zip or escaped spaces, raw whitespace splitting selects only a fragment. The existing Command.split_script producer already performs shell-aware splitting; the selected change uses it, rather than adding that capability.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matching Command.split_script and shell producer plus _is_bad_zip/archive lookup consumers. Destination quoting is a separate companion edit. Archive opening, name enumeration, cleanup and extraction remain inert. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For retained quoted/escaped foo bar.zip spellings, the matching shell-split list preserves the archive operand. No universal unzip option grammar, shell quoting, archive traversal or cleanup-safety negative is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual selected repair is supported, but essential old producer/decorator/consumer/runtime behavior is omitted from the strict selected before body.",
+      "dependence_reason": "Keep mechanical family fix-family:c383b10268c577f3f252 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for c in command.script.split()[1:]:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for c in command.split_script[1:]:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/types.py",
+          "ref": "280751b36e715b006c631ba6c08de99ccc74f6d2^",
+          "needle": "self._split_script = shells.split_command(script)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016_CONTRACTS.json",
+          "path": "thefuck/shells.py",
+          "ref": "280751b36e715b006c631ba6c08de99ccc74f6d2^",
+          "needle": "return shlex.split(command)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "and _is_bad_zip(_zip_file(command))"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    (R\"unzip 'foo bar.zip'\", R\"unzip 'foo bar.zip' -d 'foo bar'\"),"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-21:0:thefuck/rules/git_fix_stash.py:match",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Stash applicability guard indexes a missing subcommand on plain git.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Matching old git_support admits plain git/hub without requiring a subcommand. The old selected expression indexes token1 before checking stash/error content. A one-token git command must be nonmatching, not a failed rule. Length guard repairs that existing applicability boundary.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Selected body omits git_support/is_app admission and rule failure handling; script nonemptiness is not a two-token guarantee. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For a one-token Git command after returns False before token1 access. This is a bounded rule-applicability negative, not proof all Git diagnostics/aliases are handled.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual selected repair is supported, but essential old producer/decorator/consumer/runtime behavior is omitted from the strict selected before body.",
+      "dependence_reason": "Keep mechanical family fix-family:18d47443da2c6155518e and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return (command.script.split()[1] == 'stash'"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if len(splited_script) > 1:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/specific/git.py",
+          "ref": "213791d3c2af379ffa37a140735998736b41912e^",
+          "needle": "if not is_app(command, 'git', 'hub'):"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    assert not match(Command(\"git\", stderr=git_stash_err))"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-22:0:thefuck/types.py:SortedCorrectedCommandsSequence._realise",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Realization indexes cached[0] after legitimate empty initialization.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Matching _realise_first catches StopIteration and caches []; __len__/__iter__ invoke _realise for that legitimate state. Old _realise and its duplicate helper access cached[0], raising instead of returning the empty sequence. New guard still marks it realized.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Essential constructor, _realise_first, list/length consumers and _remove_duplicates are outside this selected method. Do not infer arbitrary caller state or run the generator. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For the legitimate cached=[] state after skips duplicate removal and indexing and yields the retained empty cache via consumers. The old nonempty duplicate predicate remains wrong; the after function is negative only for the empty-cache mechanism, not globally bug-free.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual selected repair is supported, but essential old producer/decorator/consumer/runtime behavior is omitted from the strict selected before body.",
+      "dependence_reason": "Keep mechanical family fix-family:069233840fb045cffa87 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "commands = self._remove_duplicates(self._commands)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if self._cached:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._cached = self._realise_first()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "except StopIteration:\n            return []"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return iter(self._cached)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+        assert list(seq) == []"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-24:0:thefuck/types.py:SortedCorrectedCommandsSequence._get_first_two_unique",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "First-two selection delegates an already-equivalent script/side-effect comparison to new equality.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "For intended old CorrectedCommand inputs, old explicit script/side_effect inequality ignores priority already. Matching new __eq__ uses exactly those two fields. Moving class-wide equality off a priority-bearing namedtuple does not establish a selected uniqueness defect.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need both exact old/new CorrectedCommand definitions and matched iterator/cache consumers; mixing the old namedtuple equality with the new selected comparison would manufacture a failure. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Matched producer/consumer comparison preserves this selected equivalence relation. This is not a repaired old positive; companion duplicate filtering has a separate introduced after failure.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected old routine already meets the stated two-field uniqueness duty; class-wide equality migration does not make it an old positive.",
+      "dependence_reason": "Keep mechanical family fix-family:739b5c5b3a1df8747601 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if command.script != first.script or"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if command != first:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "CorrectedCommand = namedtuple('CorrectedCommand', ('script', 'side_effect', 'priority'))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return (other.script, other.side_effect) ==\\\n                   (self.script, self.side_effect)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "tests/test_types.py",
+          "ref": "5d74344994da89ed01afd448f1c9d86b85e85351^",
+          "needle": "def test_remove_duplicates(self, settings):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-24:0:thefuck/types.py:SortedCorrectedCommandsSequence._remove_duplicates",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Already-correct two-field duplicate filtering migrates to a set and introduces a string/object comparison failure.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Old mapping keys script and side_effect, excludes cached first by the same pair and retains the smaller numeric priority via descending-sort insertion/overwrite. It already meets the selected uniqueness/priority duty. The new class equality migration does not repair an old defect in this selected method.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched old/new class equality/hash plus _get_first_two_unique/_realise. Compare coherent source versions, not the new set against the old priority-bearing namedtuple. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No paired negative: after compares command.script string with cached CorrectedCommand object, so matching intended objects cannot exclude the cached first. For [ls@100, git@100, ls@200], the second unique command enters the cache; the remaining ls survives the bad filter and realization prepends the original ls again. Old matched filter excludes it. Descending sorted set insertion can also keep the less preferred priority rather than old mapping overwrite behavior.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected old routine already meets the stated two-field uniqueness duty; class-wide equality migration does not make it an old positive.",
+      "dependence_reason": "Keep mechanical family fix-family:739b5c5b3a1df8747601 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if command.script != self._cached[0].script"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if command.script != self._cached[0]}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if isinstance(other, CorrectedCommand):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "commands = self._cached[1:] + list(self._commands)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._cached = [self._cached[0]] + sorted("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "tests/test_types.py",
+          "ref": "5d74344994da89ed01afd448f1c9d86b85e85351^",
+          "needle": "iter([CorrectedCommand('ls', priority=100),"
+        }
+      ],
+      "additional_after_concerns": [
+        "Introduced cached-first duplicate reappearance follows from the matched new __eq__, selected string/object filter and retained realization; it is not an old positive or a mixed-version witness. Lower numerical priority retention also changes from mapping overwrite to set insertion; no dependency or set implementation is executed."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-25:0:thefuck/rules/mkdir_p.py:get_new_command",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Anchored mkdir rewrite does not cover newly targeted HDFS-prefixed commands.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old broad matcher admits text containing mkdir and No such file or directory, but old docs/tests establish ordinary mkdir. Commit explicitly adds hdfs dfs -mkdir support. Broad matching alone does not settle a historical HDFS correction duty versus an unsupported-feature overmatch; preserve ambiguity.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need supported historical command language and sudo wrapper admission; a prefixed HDFS example from new tests does not supply an old contract. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Word-boundary rewrite yields the retained HDFS -mkdir -p form, but that is not a validated old-duty negative and is not universal shell token rewriting.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "The conditional change is visible, but a supported old obligation or runtime/configuration path is not established.",
+      "dependence_reason": "Keep mechanical family fix-family:2b98589f7b542bb22c7d and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return re.sub('^mkdir (.*)'"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return re.sub('\\\\bmkdir (.*)'"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return ('mkdir' in command.script"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "README.md",
+          "ref": "298c04f89c081dc16c8653aa017ca85dd14bfad6^",
+          "needle": "* `mkdir_p` &ndash; adds `-p` when you trying to create directory without parent;"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    (Command('hdfs dfs -mkdir foo/bar/baz'), 'hdfs dfs -mkdir -p foo/bar/baz'),"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-26:0:thefuck/rules/vagrant_up.py:get_new_command",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Vagrant correction adds a start-all alternative beside the existing targeted start.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "Old target-specific vagrant up machine then retry command is preserved as the first alternative. Untargeted vagrant up loses one shell-irrelevant extra space. New list choice adds start-all behavior; no existing VM-start failure is established.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need shell-specific conjunction consumer and supported list-return rule API. Do not execute Vagrant or interpret a generated suggestion as an actual VM operation. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Both retained shell conjunction implementations accept the original extra space. The added alternative is a feature, not an old positive/new negative repair.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "New choice/configuration/safety policy does not establish repair of an old selected correctness duty.",
+      "dependence_reason": "Keep mechanical family fix-family:ab1e62ba227f26afc8a8 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "machine = \"\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "startAllInstances = shells.and_(\"vagrant up\", command.script)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/shells.py",
+          "ref": "feb3eee2a08f0cba4552373d728509bc90b561ab^",
+          "needle": "return u' && '.join(commands)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/shells.py",
+          "ref": "feb3eee2a08f0cba4552373d728509bc90b561ab^",
+          "needle": "return u'; and '.join(commands)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    (Command(script='vagrant ssh devbox'"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-28:0:thefuck/rules/fix_file.py:get_new_command",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Editor suggestion adds configurable line/column command templates.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "Old selected function explicitly ignores columns and generates an editor line jump. New optional fixcolcmd/fixlinecmd exposes configurable column support, while default line-only output stays equivalent. Parser-pattern reordering elsewhere does not show an old selected editor-generation defect.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched _search groups, EDITOR admission, shell conjunction and wrap_settings. The decorator adds a new setting interface; regex/pattern text and editor command strings remain inert. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Line-only default remains the old behavior. New column fixtures/configuration are feature expectations, not evidence of a violated old column duty. No general parser, template formatting or shell-quoting negative follows.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "New choice/configuration/safety policy does not establish repair of an old selected correctness duty.",
+      "dependence_reason": "Keep mechanical family fix-family:ca0b5b2c742c4f24b45e and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "# ignored for now"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if settings.fixcolcmd and 'col' in m.groupdict():"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if 'EDITOR' not in os.environ:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/utils.py",
+          "ref": "9b30ae0424607a4e268bd26eaee8ccb91a5588f9^",
+          "needle": "return fn(command, settings.update(**params))"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    settings = Settings({'fixcolcmd': '{editor} {file} +{line}:{col}'})"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-29:0:thefuck/types.py:Settings.update",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "A defaults-only wrapper calls an intentionally overwriting Settings.update API.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old selected Settings.update docstring explicitly promises new kwargs values, and old direct tests require key=val to become new-val. The old wrapper docstring instead promises defaults only and calls settings.update(**params); its own old test also expects overwrite. Contextual caller/default-policy conflict is real, but old selected helper implements its advertised/direct-tested API. Reversing every update changes that old contract rather than isolating a defective merge routine. Revise the supported discovery to ambiguous selected attribution.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched wrap_settings and conflicting old direct/wrapper tests, plus actual update consumers. A correct helper invoked under an incompatible caller promise must not inherit caller blame simply because the fix globally changes it. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After preserves user settings and fills absent defaults for the wrapper. It simultaneously changes intentional direct update behavior. Do not call the selected old helper a positive or its global semantic change a clean negative without resolving historical API policy.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The contextual issue does not isolate an old defect in this selected component; preserve its matched old API/consumer behavior.",
+      "dependence_reason": "Keep mechanical family fix-family:b15f63e5f7ff11f8ca17 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\"\"\"Returns new settings with new values from `kwargs`.\"\"\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "conf = dict(kwargs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/utils.py",
+          "ref": "88831c424f569e6a55fc98883d3eeecc7d425b18^",
+          "needle": "\"\"\"Adds default values to settings if it not presented."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/utils.py",
+          "ref": "88831c424f569e6a55fc98883d3eeecc7d425b18^",
+          "needle": "return fn(command, settings.update(**params))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "tests/test_utils.py",
+          "ref": "88831c424f569e6a55fc98883d3eeecc7d425b18^",
+          "needle": "({'key': 'new-val'}, {'key': 'val'}, {'key': 'new-val'})])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "tests/test_types.py",
+          "ref": "88831c424f569e6a55fc98883d3eeecc7d425b18^",
+          "needle": "assert new_settings.key == 'new-val'"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-2:0:thefuck/utils.py:get_all_executables",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Executable enumeration hardcodes colon instead of supported platform PATH grammar.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old repository has Windows AppVeyor configuration invoking python.exe and py.test.exe, not merely a newly added platform mock. On semicolon-separated drive-qualified Windows PATH, colon splitting breaks drive prefixes and leaves multiple directories joined. os.pathsep preserves supported platform component grammar.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old platform support/CI, os.pathsep/PATH semantics, safe directory enumeration and shell aliases. Directory discovery is never run; CI text is support evidence, not proof CI passed or an installed deployment. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For the retained colon and semicolon PATH fixtures, the split uses the matching platform separator. Executable permissions, extensions, quoted PATH members, empty elements and alias behavior are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual selected repair is supported, but essential old producer/decorator/consumer/runtime behavior is omitted from the strict selected before body.",
+      "dependence_reason": "Keep mechanical family fix-family:0748b37fd7a1a66bc51d and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for path in os.environ.get('PATH', '').split(':')"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for path in os.environ.get('PATH', '').split(os.pathsep)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016_CONTRACTS.json",
+          "path": "appveyor.yml",
+          "ref": "78ef9eec88f43d5727986be2237f6e0e250cbbbc^",
+          "needle": "- \"%PYTHON%/Scripts/py.test.exe -sv\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "README.md",
+          "ref": "78ef9eec88f43d5727986be2237f6e0e250cbbbc^",
+          "needle": "[Windows Build Status][appveyor-badge]"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    (r'C:\\\\foo;C:\\\\bar;C:\\\\baz;C:\\\\foo\\\\bar', ';')])"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-31:0:thefuck/rules/git_diff_staged.py:get_new_command",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Staged diff flag is appended after a filename instead of before path operands.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old matcher already admits git diff foo. Retained commit records fatal bad flag --staged used after filename for the old generated correction. Inserting the option immediately after diff repairs that existing path-bearing command; it is not a new filename feature.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old Git argument ordering, git_support decorator and applicability consumer. The source body alone does not define Git path/option grammar or shell selection. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For retained bare git diff and git diff foo, after places --staged before the filename. Global string replace does not establish arbitrary option, quoting, command-chain or repeated diff-token correctness.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual selected repair is supported, but essential old producer/decorator/consumer/runtime behavior is omitted from the strict selected before body.",
+      "dependence_reason": "Keep mechanical family fix-family:1352a8197a67e7a16158 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return '{} --staged'.format(command.script)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return command.script.replace(' diff', ' diff --staged')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'--staged' not in command.script"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    (Command('git diff foo'), 'git diff --staged foo')])"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-3:0:thefuck/shells/fish.py:Fish.info",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Fish version inspection stops starting a command-evaluating child shell.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Selected Popen uses fish -c, a noninteractive command invocation, not the -i flag claimed informally by the commit title. Exact old CLI --version branch does call shell.info, so this is not automatically excluded as presentation. A startup hook calling the app version could recurse if that Fish mode/version loads it, but actual installed hook and supported Fish startup behavior remain unestablished. Keep discovery ambiguous.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matching main/shell dispatch now pins the app-version-to-info path, but the plugin/startup callback into that path and affected Fish runtime/configuration are not retained. Commit text and a mocked stdout version are insufficient. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After uses fish --version and parses the final token, avoiding -c command evaluation for the stated runtime. It still indexes an empty token list if stdout is empty. No demonstrated supported startup witness or broad version/error-output negative is claimed.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "The conditional change is visible, but a supported old obligation or runtime/configuration path is not established.",
+      "dependence_reason": "Keep mechanical family fix-family:66575facd82b9faafd37 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "proc = Popen(['fish', '-c', 'echo $FISH_VERSION']"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "proc = Popen(['fish', '--version']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/entrypoints/main.py",
+          "ref": "ce5feaebf7fd5c1190b5e14fbc1e962cc8db5f39^",
+          "needle": "sys.version.split()[0], shell.info())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/shells/__init__.py",
+          "ref": "ce5feaebf7fd5c1190b5e14fbc1e962cc8db5f39^",
+          "needle": "'fish': Fish"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "content=u\"thefuck --alias | source\""
+        },
+        {
+          "kind": "fix",
+          "needle": "+        assert Popen.call_args[0][0] == ['fish', '--version']"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-4:0:thefuck/shells/fish.py:_get_aliases",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Fish alias parser unpacks empty/nonpair output as a mandatory two-field record.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old _get_aliases unconditionally unpacks every stripped output line, including the empty-string result of no aliases. Empty alias output is a legitimate absence state; it should yield no aliases, not abort enumeration. The selected guard repairs that mechanism. Equal-sign spelling is an additional branch whose affected Fish-version grammar is not inferred just from new mocks.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need Fish alias command/output contract, cache, function aggregation and override filtering. Popen and alias capture remain text, not a subprocess. Bare equals and space-delimited aliases are distinct from equals records whose value itself contains spaces. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Empty output now returns {} and nonpair lines are skipped; a bare name=value fixture is split. The space-first loop is not a universal equal-sign parser or shell-escaping proof. Bounded empty-output negative only.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual selected repair is supported, but essential old producer/decorator/consumer/runtime behavior is omitted from the strict selected before body.",
+      "dependence_reason": "Keep mechanical family fix-family:ec77ea556216342ecc6c and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "name, value = alias.replace('alias ', '', 1).split(' ', 1)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not alias_out:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "raw_aliases = _get_aliases(overridden)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for separator in (' ', '='):"
+        },
+        {
+          "kind": "fix",
+          "needle": "+        assert shell.get_aliases() == {'func1': 'func1', 'func2': 'func2'}"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-5:0:thefuck/rules/git_push.py:match",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Incidental set-upstream branch/URL text falsely selects an upstream correction generator.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old matcher accepts successful push output mentioning set-upstream in branch/URL text. Matching old generator expects a git push instruction and indexes the first regex result; the retained successful output lacks it. New predicate requires the specific suggestion marker and suppresses that known false route.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old decorated admission, output fixture and downstream regex consumer. A remote-output string is not automatically a demonstrated lower-trust command execution boundary. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Retained successful Bitbucket output no longer matches. This is not universal trusted-output parsing or Git command safety: marker-bearing output, quoting and generator assumptions remain separate.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual selected repair is supported, but essential old producer/decorator/consumer/runtime behavior is omitted from the strict selected before body.",
+      "dependence_reason": "Keep mechanical family fix-family:c89d2a76b81391f5e516 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "and 'set-upstream' in command.output)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "and 'git push --set-upstream' in command.output)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "arguments = re.findall(r'git push (.*)', command.output)[0]"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    assert not match(Command('git push origin', output_bitbucket))"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-6:0:thefuck/rules/git_branch_exists.py:get_new_command",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Branch diagnostic capture stops at an interior apostrophe and yields no match.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old matching guard already accepts the retained apostrophe-containing branch error. Old capture excludes all apostrophes inside the branch, so findall yields no result and indexing fails. New capture reaches the closing diagnostic suffix and escapes the apostrophe for generated command spelling.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched guard/decorator/eager list construction, Git diagnostic/ref grammar and active shell conjunction/quoting. The selected parser/generator is not a command-execution sink by itself. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For the retained simple apostrophe name the capture no longer indexes an empty result and produces the expected backslash-apostrophe spelling. Apostrophe replacement alone is not full shell quoting for every legal ref, metacharacter or shell; no injection repair or universal negative is claimed.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual selected repair is supported, but essential old producer/decorator/consumer/runtime behavior is omitted from the strict selected before body.",
+      "dependence_reason": "Keep mechanical family fix-family:788b81ed8512f873acc5 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "r\"fatal: A branch named '([^']*)' already exists.\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "branch_name = branch_name.replace(\"'\", r\"\\'\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "and \" already exists.\" in command.output)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/specific/git.py",
+          "ref": "7c858fadb3458be829d3d43666ccb46c3ed5b8a0^",
+          "needle": "if not is_app(command, 'git', 'hub'):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/shells/generic.py",
+          "ref": "7c858fadb3458be829d3d43666ccb46c3ed5b8a0^",
+          "needle": "return u' && '.join(commands)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    branch_name = branch_name.replace(\"'\", r\"\\'\")"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-6:0:thefuck/rules/git_branch_exists.py:match",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Closing-quote guard narrowing accompanies a generator apostrophe repair without an isolated old matcher failure.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Both old and new matcher predicates accept the retained apostrophe branch diagnostic; the witnessed old IndexError is in get_new_command capture, not this predicate. The added closing quote narrows malformed-text matching, but no supported old false match and bad correction is isolated. Keep ambiguous selected attribution.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old/new generator, realistic diagnostic language and precise malformed-message witness. Do not transfer a sibling parser defect to a guard that already admits the intended error correctly. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "New guard is narrower, but that alone is not evidence this selected function was an old positive or is a repaired negative. Shared fix/family with generator must remain explicit.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The contextual issue does not isolate an old defect in this selected component; preserve its matched old API/consumer behavior.",
+      "dependence_reason": "Keep mechanical family fix-family:788b81ed8512f873acc5 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "and \" already exists.\" in command.output)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "and \"' already exists.\" in command.output)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "r\"fatal: A branch named '([^']*)' already exists.\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "r\"fatal: A branch named '(.+)' already exists.\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-9:0:thefuck/rules/git_push.py:get_new_command",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Terminal upstream option consumes a nonexistent operand; its narrow repair retains earlier quoting/cached-token failures.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old matching upstream generator removes a terminal -u then unconditionally pops its missing operand. Retained admitted git push -u/error fixture requires a suggestion, not IndexError. Catch repairs that existing short-token mechanism; exact old selected bytes equal the earlier explicit-upstream patch after.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched stderr producer, cached shell token list, replace_argument and Git alias/decorator. Pin the exact old generic shell splitter, not a current parser. Earlier introduction and later repair are dependent observations. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "For terminal -u after catches the missing second operand and supplies the retained upstream command. However quoted option spellings still lose protection through join and cached tokens are still mutated. Those failures already exist in this before; do not call them newly introduced by the catch or certify the whole after function clean.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve the repaired old mechanism while explicitly withholding a clean after-function negative under the recorded argument-preservation failure.",
+      "dependence_reason": "Keep mechanical family fix-family:c649c334d76079f5844e and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    if upstream_option_index is not -1:\n        command.script_parts.pop(upstream_option_index)\n        command.script_parts.pop(upstream_option_index)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except IndexError:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/types.py",
+          "ref": "feb36ede5c518fdc3b6eddf945b2d8b1e2294d15^",
+          "needle": "self._script_parts = shell.split_command(self.script)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/utils.py",
+          "ref": "feb36ede5c518fdc3b6eddf945b2d8b1e2294d15^",
+          "needle": "u' {} '.format(from_), u' {} '.format(to), 1)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016_TOKENIZERS.json",
+          "path": "thefuck/shells/generic.py",
+          "ref": "feb36ede5c518fdc3b6eddf945b2d8b1e2294d15^",
+          "needle": "return shlex.split(command)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    assert get_new_command(Command('git push -u', stderr=stderr))\\"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Quoted-argument reconstruction still fails with the same matched old splitter and unquoted join in before and after. Cached list mutation is likewise inherited. Chronology is not attributed to this terminal-operand catch; its narrow IndexError repair remains supported."
+    }
+  ]
+}

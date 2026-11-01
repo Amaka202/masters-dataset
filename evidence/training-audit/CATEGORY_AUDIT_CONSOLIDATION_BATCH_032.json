@@ -1,0 +1,517 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-032",
+  "review_date": "2026-10-26",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All six remaining Cookiecutter training candidates, including all four null categories and every discovery status. Preserve the three batch004 records unchanged.",
+  "selection_rule": {
+    "repository": "github.com/cookiecutter/cookiecutter",
+    "discovery_categories": [
+      "CORR-TEXT-ENCODING",
+      "SEC-SUBPROCESS-OPTION-INJECTION",
+      null
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 832,
+    "sha256": "77d3003fbedadf6b27134179e2da0b0164693a1eb7ee572a1850a8d9ba10771c"
+  },
+  "interpretation": "Two missing-context, three selected-attribution and one paired-negative deferral. Portable Unicode JSON/default value duties support explicit context decoding; old successful hook status producers are coordinated exception migration, not three isolated old defects or borrowed cleanup failures. Prompt display suppression adds a Click7-only keyword while both old/after admit Click5+, introducing a supported valid-choice API failure for retained Click5.0/6.7 signatures; after invalidity does not establish a non-style old duplicate-display positive. Append one ambiguous null-category revision withdrawing the blanket exclusion; preserve all831 prefix events, source/category/family/canonical bytes/splits, prior batches and45 protected inputs. Hg checkout revision data can become option/config/debugger control under actual lower-trust API admission; after -- bounds that Hg route, not Git/clone URL/all template safety. Dependency comparisons are not deployment evidence. Six new rows/four families and nine total Cookiecutter rows/five families are not independently adjudicated issues. All retained programs, payloads, vulnerability requests and upstream tests remain inert; only own audit/retrieval/view/hash tooling executes.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_cookiecutter-1:0:cookiecutter/generate.py:generate_context",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Locale-default text decoding corrupts admitted UTF-8 context defaults before JSON parsing.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep context-file text decoding, prompt display versus supported dependency/API compatibility, hook status-to-exception coordination and Mercurial operand-to-option authority separate. A changed keyword can introduce a supported non-style after failure even when its intended old display-only repair is ineligible. Preserve null categories for prompt/hook components; do not force them into a new before-positive leaf or borrow a sibling cleanup defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old generate_context promises JSON key/value loading, and the old README promises template variable defaults as prompt responses, supporting ordinary JSON Unicode value preservation rather than a new template feature. The old setup/README supports Python3.6+ including3.8, and Windows is explicitly supported in the installation docs. The full old module binds builtin open, not a special UTF-8 reader. With a valid UTF-8 context containing literal non-ASCII characters and a non-UTF-8 default such as cp1252, the text stream can deliver different valid characters or fail decoding before json.load. The historical JSON implementation receives an already decoded str and does not re-detect its original bytes. The new fixture illustrates this accepted value duty, but is not its sole old-contract proof.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual context-file UTF-8 bytes, effective text codec/runtime/open binding and documented default-value consumer. A locale already using UTF-8 has no such difference; do not infer every host fails. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals/runtime/dependency contracts, after, labels, IDs, metadata, patches, tests, advisories and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Supported consequence is incorrect default context values or decode failure. Templates and generated project hooks are intentionally executable in other paths, but no lower-trust-to-privilege delivery or isolation promise is established for this encoding change. No parser/file/template runs.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After builtin open explicitly decodes UTF-8 before JSON. Bound the negative to valid non-BOM UTF-8 context-file values under the matched API; arbitrary legacy encodings, BOM policy, malformed JSON, templating safety and user overrides remain separate. No supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched historical data/API/runtime consumers support the narrow old mechanism, but essential external format/platform/dependency/trust semantics are absent from the selected before-only function; defer without selectively injecting project evidence.",
+      "dependence_reason": "Preserve fix-family:e8517b02245470719bc3 and all exact/AST/span/history links. The three hook rows share the batch004 generate_files family and the same hooks.py files; inspect matching old/new interfaces without creating three independent defects. Encoding, prompt/dependency compatibility and VCS option grammar are separate mechanical families. The two multiple-hook feature proposals and cleanup-contract proposal from batch004 remain authored unchanged. Six new rows/four mechanical families and all nine Cookiecutter rows/five families are not independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm portable JSON/text contract, supported Click/Mercurial/runtime versions, old hook exception/post-hook duties, actual lower-trust API caller delivery, selected attribution, negative scope and issue identity. Historical dependency tags/source distributions are comparisons, not deployment proof or whole-range certification.",
+        "Conditional source deductions, not reproduced results. No Cookiecutter/Click/Mercurial/Git/CPython/template/Jinja/hooks/Windows/shell/subprocess/CLI/prompt/JSON/codec/parser/regex/filesystem/dependency/application program, payload, vulnerability-target request or upstream test executes. Archives read in memory without filesystem extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "with open(context_file) as file_handle:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "with open(context_file, encoding='utf-8') as file_handle:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTEXT.json",
+          "path": "setup.py",
+          "ref": "c15633745df6abdb24e02746b82aadb20b8cdf8c",
+          "needle": "python_requires='>=3.6'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "README.md",
+          "ref": "c15633745df6abdb24e02746b82aadb20b8cdf8c",
+          "needle": "Default responses are the values in ``cookiecutter.json``."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTEXT.json",
+          "path": "cookiecutter/main.py",
+          "ref": "c15633745df6abdb24e02746b82aadb20b8cdf8c",
+          "needle": "context = generate_context("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "Lib/_pyio.py",
+          "ref": "v3.8.3",
+          "needle": "It defaults to locale.getpreferredencoding(False)."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "Lib/json/__init__.py",
+          "ref": "v3.8.3",
+          "needle": "return loads(fp.read(),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "Lib/json/__init__.py",
+          "ref": "v3.8.3",
+          "needle": "if isinstance(s, str):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_cookiecutter-3:0:cookiecutter/prompt.py:read_user_choice",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Display suppression introduces a Click7-only keyword despite unchanged Click5+ admission.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep context-file text decoding, prompt display versus supported dependency/API compatibility, hook status-to-exception coordination and Mercurial operand-to-option authority separate. A changed keyword can introduce a supported non-style after failure even when its intended old display-only repair is ineligible. Preserve null categories for prompt/hook components; do not force them into a new before-positive leaf or borrow a sibling cleanup defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected docs promise exactly one of a nonempty options list and the first option on default input; choice-variable docs and the existing prompt_for_config consumer establish ordinary interactive use. Both old/after setup admit Click>=5.0. Under Click7 the old prompt redundantly appends choice display, but validation/default/return are separate; no non-style exact-output consumer obligation is established for that display change. Nevertheless preserving previously working selection under admitted Click5.0/6.7 is an old non-style duty, which after violates. Keep the absence of an old runtime-positive display repair separate from the supported new compatibility failure.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched old/after dependency declarations, Click5/6 versus7 signatures and actual interactive list-variable entry. The before-only call has no new keyword and cannot establish the introduced after failure or a non-style duplicate-display defect. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals/runtime/dependency contracts, after, labels, IDs, metadata, patches, tests, advisories and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is ordinary interactive configuration/availability, not an evidenced attack across user/privilege boundaries. No downstream generated-code execution, credential exposure or terminal injection follows from choice-list presentation alone.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Exact old and after setup.py both retain click>=5.0, admitting historical Click5.0 and6.7. Both retained prompt definitions have neither a show_choices parameter nor **kwargs; Click7.0 explicitly says that parameter was added in7.0. The new selected call therefore raises an unexpected-keyword TypeError before presenting/reading a valid ordinary nonempty choice under those allowed dependencies. Old uses only accepted prompt arguments, maps the returned choice to an option and returns the first item on default input. Old prompt_choice_for_config supplies list variables on interactive paths; no_input bypasses this call. This is an introduced existing API/dependency-compatibility failure, not a reproduced prompt result or a claim every installed version fails.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Supported Click5+ dependency admission and the selected documented choice-return duty are violated by the new Click7-only keyword under retained Click5.0/6.7 signatures. Explicitly defer paired-negative use while keeping the unresolved old non-style/display-only positive separate.",
+      "dependence_reason": "Preserve fix-family:b29028670baccdf14b01 and all exact/AST/span/history links. The three hook rows share the batch004 generate_files family and the same hooks.py files; inspect matching old/new interfaces without creating three independent defects. Encoding, prompt/dependency compatibility and VCS option grammar are separate mechanical families. The two multiple-hook feature proposals and cleanup-contract proposal from batch004 remain authored unchanged. Six new rows/four mechanical families and all nine Cookiecutter rows/five families are not independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm portable JSON/text contract, supported Click/Mercurial/runtime versions, old hook exception/post-hook duties, actual lower-trust API caller delivery, selected attribution, negative scope and issue identity. Historical dependency tags/source distributions are comparisons, not deployment proof or whole-range certification.",
+        "Conditional source deductions, not reproduced results. No Cookiecutter/Click/Mercurial/Git/CPython/template/Jinja/hooks/Windows/shell/subprocess/CLI/prompt/JSON/codec/parser/regex/filesystem/dependency/application program, payload, vulnerability-target request or upstream test executes. Archives read in memory without filesystem extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "prompt, type=click.Choice(choices), default=default\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "default=default, show_choices=False"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": ":return: Exactly one item of ``options``"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTEXT.json",
+          "path": "setup.py",
+          "ref": "5c282f020a8db7e5e7c4e7b51b010556ca31fb7f",
+          "needle": "'click>=5.0'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "setup.py",
+          "ref": "7129d474206761a6156925db78eee4b62a0e3944",
+          "needle": "'click>=5.0'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "click/termui.py",
+          "ref": "5.0",
+          "needle": "           value_proc=None, prompt_suffix=': ',\n           show_default=True, err=False):\n    \"\"\"Prompts a user for input.  This is a convenience function that can\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "click/termui.py",
+          "ref": "6.7",
+          "needle": "           value_proc=None, prompt_suffix=': ',\n           show_default=True, err=False):\n    \"\"\"Prompts a user for input.  This is a convenience function that can\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "click/termui.py",
+          "ref": "7.0",
+          "needle": "Added the show_choices parameter."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "click/termui.py",
+          "ref": "7.0",
+          "needle": "if type is not None and show_choices and isinstance(type, Choice):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return read_user_choice(key, rendered_options)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTEXT.json",
+          "path": "docs/advanced/choice_variables.rst",
+          "ref": "5c282f020a8db7e5e7c4e7b51b010556ca31fb7f",
+          "needle": "Choice variables are regular key / value pairs, but with the value being a list of strings."
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Exact old and after setup.py both retain click>=5.0, admitting historical Click5.0 and6.7. Both retained prompt definitions have neither a show_choices parameter nor **kwargs; Click7.0 explicitly says that parameter was added in7.0. The new selected call therefore raises an unexpected-keyword TypeError before presenting/reading a valid ordinary nonempty choice under those allowed dependencies. Old uses only accepted prompt arguments, maps the returned choice to an option and returns the first item on default input. Old prompt_choice_for_config supplies list variables on interactive paths; no_input bypasses this call. This is an introduced existing API/dependency-compatibility failure, not a reproduced prompt result or a claim every installed version fails.",
+      "additional_after_concerns": [
+        "Withdraw the earlier blanket display-only/nonrepair discovery exclusion to ambiguous with null category preserved. This does not turn an after-only compatibility regression into a known old functional positive, nor prove the originally targeted duplicated display was non-style. Freeze repair-subset eligibility and direction only after researcher review."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_cookiecutter-4:0:cookiecutter/hooks.py:run_hook",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "run_hook removes correct status propagation to consume the new exception-oriented runner API.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep context-file text decoding, prompt display versus supported dependency/API compatibility, hook status-to-exception coordination and Mercurial operand-to-option authority separate. A changed keyword can introduce a supported non-style after failure even when its intended old display-only repair is ineligible. Preserve null categories for prompt/hook components; do not force them into a new before-positive leaf or borrow a sibling cleanup defect.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The exact old chain is run_script returning proc.wait(), run_script_with_context returning that result, then run_hook returning it or EXIT_SUCCESS when no hook exists. Matched generate_files tests pre-hook status against EXIT_SUCCESS and stops before traversal on failure; it ignores the post-hook return. The exact after migrates all three producers to exceptions, and generate_files catches FailedHookException for pre-hook cleanup then returns. Old hooks docs promise intentional pre/post script execution but do not establish a prior exception-based producer API, transactional rollback or post-hook failure policy. The existing cleanup-contract uncertainty recorded in batch004 is not three additional local status defects. Both wrappers already propagate actual exceptions; a status value from the old producer is not a swallowed exception.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matching old/new find_hooks, both script producers and pre/post generate_files consumers. A return removal alone cannot prove the old producer misreported failure. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals/runtime/dependency contracts, after, labels, IDs, metadata, patches, tests, advisories and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Configured template hooks intentionally execute scripts. No lower-trust isolation boundary or unauthorized execution is established by changing return status to exceptions. Failed hook cleanup, preexisting destination deletion, temporary-file/encoding policy and shell quoting need their own contracts; no hook, subprocess, template, directory deletion or upstream test executes.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No old selected local failure is isolated. After permits FailedHookException propagation and returns None on no hook/success; matched consumers use the new interface. Do not mix the new exception producer with the old status consumer or certify cleanup/post-hook handling globally.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The old runner/wrapper reports and propagates its matching status correctly. Exception-oriented orchestration is a coordinated interface migration; changed consumers and new assertions do not isolate an old local producer defect.",
+      "dependence_reason": "Preserve fix-family:6f0dae5a40367a97e3fe and all exact/AST/span/history links. The three hook rows share the batch004 generate_files family and the same hooks.py files; inspect matching old/new interfaces without creating three independent defects. Encoding, prompt/dependency compatibility and VCS option grammar are separate mechanical families. The two multiple-hook feature proposals and cleanup-contract proposal from batch004 remain authored unchanged. Six new rows/four mechanical families and all nine Cookiecutter rows/five families are not independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm portable JSON/text contract, supported Click/Mercurial/runtime versions, old hook exception/post-hook duties, actual lower-trust API caller delivery, selected attribution, negative scope and issue identity. Historical dependency tags/source distributions are comparisons, not deployment proof or whole-range certification.",
+        "Conditional source deductions, not reproduced results. No Cookiecutter/Click/Mercurial/Git/CPython/template/Jinja/hooks/Windows/shell/subprocess/CLI/prompt/JSON/codec/parser/regex/filesystem/dependency/application program, payload, vulnerability-target request or upstream test executes. Archives read in memory without filesystem extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return run_script_with_context(script, project_dir, context)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    run_script_with_context(script, project_dir, context)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return EXIT_SUCCESS"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return proc.wait()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTEXT.json",
+          "path": "cookiecutter/generate.py",
+          "ref": "9568ab6ecd2d6836646006c59473c4a4ac0dee04",
+          "needle": "if run_hook('pre_gen_project', project_dir, context) != EXIT_SUCCESS:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "cookiecutter/generate.py",
+          "ref": "457a1a4e862aab4102b644ff1d2b2e2b5a766b3c",
+          "needle": "except FailedHookException:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "docs/advanced_usage.rst",
+          "ref": "9568ab6ecd2d6836646006c59473c4a4ac0dee04",
+          "needle": "You can have Python or Shell scripts that run before and/or after your project"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_cookiecutter-4:0:cookiecutter/hooks.py:run_script",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "run_script changes nonzero subprocess status return into a new failure exception.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep context-file text decoding, prompt display versus supported dependency/API compatibility, hook status-to-exception coordination and Mercurial operand-to-option authority separate. A changed keyword can introduce a supported non-style after failure even when its intended old display-only repair is ineligible. Preserve null categories for prompt/hook components; do not force them into a new before-positive leaf or borrow a sibling cleanup defect.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The exact old chain is run_script returning proc.wait(), run_script_with_context returning that result, then run_hook returning it or EXIT_SUCCESS when no hook exists. Matched generate_files tests pre-hook status against EXIT_SUCCESS and stops before traversal on failure; it ignores the post-hook return. The exact after migrates all three producers to exceptions, and generate_files catches FailedHookException for pre-hook cleanup then returns. Old hooks docs promise intentional pre/post script execution but do not establish a prior exception-based producer API, transactional rollback or post-hook failure policy. The existing cleanup-contract uncertainty recorded in batch004 is not three additional local status defects. Both wrappers already propagate actual exceptions; a status value from the old producer is not a swallowed exception.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old return-status propagation and caller decisions, new FailedHookException and matched cleanup consumer. No old exception-on-nonzero guarantee is established by the selected execution docstring. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals/runtime/dependency contracts, after, labels, IDs, metadata, patches, tests, advisories and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Configured template hooks intentionally execute scripts. No lower-trust isolation boundary or unauthorized execution is established by changing return status to exceptions. Failed hook cleanup, preexisting destination deletion, temporary-file/encoding policy and shell quoting need their own contracts; no hook, subprocess, template, directory deletion or upstream test executes.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "The new raise supports the coordinated exception chain; old proc.wait return correctly reported its subprocess status. There is no isolated old producer-positive/new-negative pair established. Exceptions from creating a subprocess already propagated; no comprehensive execution safety or clean negative follows.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The old runner/wrapper reports and propagates its matching status correctly. Exception-oriented orchestration is a coordinated interface migration; changed consumers and new assertions do not isolate an old local producer defect.",
+      "dependence_reason": "Preserve fix-family:6f0dae5a40367a97e3fe and all exact/AST/span/history links. The three hook rows share the batch004 generate_files family and the same hooks.py files; inspect matching old/new interfaces without creating three independent defects. Encoding, prompt/dependency compatibility and VCS option grammar are separate mechanical families. The two multiple-hook feature proposals and cleanup-contract proposal from batch004 remain authored unchanged. Six new rows/four mechanical families and all nine Cookiecutter rows/five families are not independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm portable JSON/text contract, supported Click/Mercurial/runtime versions, old hook exception/post-hook duties, actual lower-trust API caller delivery, selected attribution, negative scope and issue identity. Historical dependency tags/source distributions are comparisons, not deployment proof or whole-range certification.",
+        "Conditional source deductions, not reproduced results. No Cookiecutter/Click/Mercurial/Git/CPython/template/Jinja/hooks/Windows/shell/subprocess/CLI/prompt/JSON/codec/parser/regex/filesystem/dependency/application program, payload, vulnerability-target request or upstream test executes. Archives read in memory without filesystem extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return proc.wait()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if exit_status != EXIT_SUCCESS:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return run_script(temp.name, cwd)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "raise FailedHookException("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTEXT.json",
+          "path": "cookiecutter/generate.py",
+          "ref": "9568ab6ecd2d6836646006c59473c4a4ac0dee04",
+          "needle": "if run_hook('pre_gen_project', project_dir, context) != EXIT_SUCCESS:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "cookiecutter/generate.py",
+          "ref": "457a1a4e862aab4102b644ff1d2b2e2b5a766b3c",
+          "needle": "shutil.rmtree(project_dir, ignore_errors=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "cookiecutter/generate.py",
+          "ref": "457a1a4e862aab4102b644ff1d2b2e2b5a766b3c",
+          "needle": "run_hook('post_gen_project', project_dir, context)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_cookiecutter-4:0:cookiecutter/hooks.py:run_script_with_context",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Rendered-script wrapper drops a status return while both old/after already propagate exceptions.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep context-file text decoding, prompt display versus supported dependency/API compatibility, hook status-to-exception coordination and Mercurial operand-to-option authority separate. A changed keyword can introduce a supported non-style after failure even when its intended old display-only repair is ineligible. Preserve null categories for prompt/hook components; do not force them into a new before-positive leaf or borrow a sibling cleanup defect.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The exact old chain is run_script returning proc.wait(), run_script_with_context returning that result, then run_hook returning it or EXIT_SUCCESS when no hook exists. Matched generate_files tests pre-hook status against EXIT_SUCCESS and stops before traversal on failure; it ignores the post-hook return. The exact after migrates all three producers to exceptions, and generate_files catches FailedHookException for pre-hook cleanup then returns. Old hooks docs promise intentional pre/post script execution but do not establish a prior exception-based producer API, transactional rollback or post-hook failure policy. The existing cleanup-contract uncertainty recorded in batch004 is not three additional local status defects. Both wrappers already propagate actual exceptions; a status value from the old producer is not a swallowed exception.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old/new runner result, top-level pre/post consumer and separate temporary-file/text environment. Removing return does not add an exception handler or repair old exception propagation. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals/runtime/dependency contracts, after, labels, IDs, metadata, patches, tests, advisories and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Configured template hooks intentionally execute scripts. No lower-trust isolation boundary or unauthorized execution is established by changing return status to exceptions. Failed hook cleanup, preexisting destination deletion, temporary-file/encoding policy and shell quoting need their own contracts; no hook, subprocess, template, directory deletion or upstream test executes.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After delegates to the exception-oriented runner without returning its result. Rendering, UTF-8 source read and text-mode temporary output are unchanged, so their residual encoding/tempfile concerns cannot justify this changed span. No independent old wrapper defect or complete after-negative is established.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The old runner/wrapper reports and propagates its matching status correctly. Exception-oriented orchestration is a coordinated interface migration; changed consumers and new assertions do not isolate an old local producer defect.",
+      "dependence_reason": "Preserve fix-family:6f0dae5a40367a97e3fe and all exact/AST/span/history links. The three hook rows share the batch004 generate_files family and the same hooks.py files; inspect matching old/new interfaces without creating three independent defects. Encoding, prompt/dependency compatibility and VCS option grammar are separate mechanical families. The two multiple-hook feature proposals and cleanup-contract proposal from batch004 remain authored unchanged. Six new rows/four mechanical families and all nine Cookiecutter rows/five families are not independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm portable JSON/text contract, supported Click/Mercurial/runtime versions, old hook exception/post-hook duties, actual lower-trust API caller delivery, selected attribution, negative scope and issue identity. Historical dependency tags/source distributions are comparisons, not deployment proof or whole-range certification.",
+        "Conditional source deductions, not reproduced results. No Cookiecutter/Click/Mercurial/Git/CPython/template/Jinja/hooks/Windows/shell/subprocess/CLI/prompt/JSON/codec/parser/regex/filesystem/dependency/application program, payload, vulnerability-target request or upstream test executes. Archives read in memory without filesystem extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return run_script(temp.name, cwd)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    run_script(temp.name, cwd)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "contents = io.open(script_path, 'r', encoding='utf-8').read()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "temp.write(Template(contents).render(**context))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return proc.wait()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTEXT.json",
+          "path": "cookiecutter/generate.py",
+          "ref": "9568ab6ecd2d6836646006c59473c4a4ac0dee04",
+          "needle": "if run_hook('pre_gen_project', project_dir, context) != EXIT_SUCCESS:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "cookiecutter/generate.py",
+          "ref": "457a1a4e862aab4102b644ff1d2b2e2b5a766b3c",
+          "needle": "except FailedHookException:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24065:0:cookiecutter/vcs.py:clone",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Mercurial revision operand is interpreted as a global option before clone checkout.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep context-file text decoding, prompt display versus supported dependency/API compatibility, hook status-to-exception coordination and Mercurial operand-to-option authority separate. A changed keyword can introduce a supported non-style after failure even when its intended old display-only repair is ineligible. Preserve null categories for prompt/hook components; do not force them into a new before-positive leaf or borrow a sibling cleanup defect.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old clone/main/repository docs define checkout as a branch, tag or commit ID. main.cookiecutter forwards that value through determine_repo_dir into clone, and the Hg argv contains it directly after checkout without an option separator. identify_repo admits explicit hg+ URLs and a located hg executable. Mercurial6.1, a pre-fix historical comparison, aliases checkout to update, early-parses options intermixed with commands, applies --config to trusted process configuration before dispatch and accepts --debugger. Its command dispatch runs pre-command hooks; a configuration option can set hook command data. This supports an old data-operand-versus-control-option duty despite the Python subprocess using an argv list without shell=True. A fresh/accepted clone and successful initial clone command are required.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual lower-trust API checkout actor, Mercurial backend/installed version, option/config/parser semantics, clone/admission state and native hook/debugger effects. The selected argv alone does not prove a deployed web endpoint or every VCS/version vulnerable. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals/runtime/dependency contracts, after, labels, IDs, metadata, patches, tests, advisories and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "When a trusted application accepts a lower-trust checkout string while permitting a trusted Hg template repository, that ostensibly revision-only data can gain Mercurial configuration/debugger authority and, with normal hook policy, process execution authority. It occurs before later Cookiecutter template/hooks admission; accept_hooks=False is passed only to generate_files after repository determination and does not protect the VCS checkout. A user typing their own command is not by itself a remote attacker witness; real deployment/caller delivery remains conditional. No command/payload/repository clone or vulnerability request executes.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After inserts -- only for repo_type hg, before the single revision string. The retained early option parser stops at -- and standard later getopt semantics preserve it as an operand. Bound the negative to this Hg checkout option-injection route; unknown revision failure is acceptable, not evidence the option ran. Git checkout, repository URL clone options, cached-directory deletion/configuration, arbitrary templates and all VCS versions are outside this repair. No supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched historical data/API/runtime consumers support the narrow old mechanism, but essential external format/platform/dependency/trust semantics are absent from the selected before-only function; defer without selectively injecting project evidence.",
+      "dependence_reason": "Preserve fix-family:612f00d093dc991b0f24 and all exact/AST/span/history links. The three hook rows share the batch004 generate_files family and the same hooks.py files; inspect matching old/new interfaces without creating three independent defects. Encoding, prompt/dependency compatibility and VCS option grammar are separate mechanical families. The two multiple-hook feature proposals and cleanup-contract proposal from batch004 remain authored unchanged. Six new rows/four mechanical families and all nine Cookiecutter rows/five families are not independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm portable JSON/text contract, supported Click/Mercurial/runtime versions, old hook exception/post-hook duties, actual lower-trust API caller delivery, selected attribution, negative scope and issue identity. Historical dependency tags/source distributions are comparisons, not deployment proof or whole-range certification.",
+        "Conditional source deductions, not reproduced results. No Cookiecutter/Click/Mercurial/Git/CPython/template/Jinja/hooks/Windows/shell/subprocess/CLI/prompt/JSON/codec/parser/regex/filesystem/dependency/application program, payload, vulnerability-target request or upstream test executes. Archives read in memory without filesystem extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "[repo_type, 'checkout', checkout]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "checkout_params.insert(0, \"--\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": ":param checkout: The branch, tag or commit ID"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if repo_type in [\"git\", \"hg\"]:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTEXT.json",
+          "path": "cookiecutter/main.py",
+          "ref": "94036d0324d09cd6a4eb5e2a5707062c1e409cd1",
+          "needle": "checkout=checkout,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTEXT.json",
+          "path": "cookiecutter/repository.py",
+          "ref": "94036d0324d09cd6a4eb5e2a5707062c1e409cd1",
+          "needle": "checkout=checkout,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTEXT.json",
+          "path": "cookiecutter/main.py",
+          "ref": "94036d0324d09cd6a4eb5e2a5707062c1e409cd1",
+          "needle": "accept_hooks=accept_hooks,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "mercurial/commands.py",
+          "ref": "6.1",
+          "needle": "b'update|up|checkout|co'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "mercurial/dispatch.py",
+          "ref": "6.1",
+          "needle": "gnu=not ui.plain(b'strictflags')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "mercurial/dispatch.py",
+          "ref": "6.1",
+          "needle": "ui.setconfig(section, name, value, b'--config')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "mercurial/dispatch.py",
+          "ref": "6.1",
+          "needle": "b\"pre-%s\" % cmd"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "mercurial/fancyopts.py",
+          "ref": "6.1",
+          "needle": "if arg == b'--':"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_DELIVERY.json",
+          "path": "mercurial/hook.py",
+          "ref": "6.1",
+          "needle": "r = ui.system(cmd, environ=env, cwd=cwd,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_032_CONTRACTS.json",
+          "path": "mercurial/helptext/config.txt",
+          "ref": "6.1",
+          "needle": "Commands or Python functions that get automatically executed by"
+        }
+      ]
+    }
+  ]
+}

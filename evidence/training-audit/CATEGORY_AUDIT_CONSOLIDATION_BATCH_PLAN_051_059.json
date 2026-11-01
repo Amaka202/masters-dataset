@@ -1,0 +1,224 @@
+{
+  "schema_version": "1",
+  "scope": "training_only",
+  "created": "2026-10-30",
+  "status": "operational_schedule_not_adjudication",
+  "researcher_status": "pending",
+  "ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "candidate_count": 81,
+  "batch_sizes": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    1
+  ],
+  "interpretation": "User-requested operational grouping only; keep whole repository queues and existing family/connected-block/source-overlap descriptors. Planned rows are not reviewed/approved or independent issues; each immutable proposal batch and evidence must be authored and verified separately.",
+  "batches": [
+    {
+      "batch_id": "consolidation-051",
+      "pair_ids": [
+        "CVEfixes:150634550859605:5044383212015",
+        "CVEfixes:177610503639025:25048083255114",
+        "CVEfixes:177610503639025:69341272094741",
+        "CVEfixes:234315831912053:127782130225341",
+        "CVEfixes:260563088955056:150058504831751",
+        "CVEfixes:263921828310577:134398136383837",
+        "CVEfixes:36472038322479:162236672662356",
+        "CVEfixes:36472038322479:239590225477148",
+        "CVEfixes:36472038322479:60485491536528",
+        "HaPy-Bug:cve_CVE-2012-3540:0:horizon/views/auth_forms.py:Login.handle"
+      ],
+      "repositories": [
+        "github.com/encode/starlette",
+        "github.com/openstack/horizon",
+        "github.com/open-mss/mss"
+      ]
+    },
+    {
+      "batch_id": "consolidation-052",
+      "pair_ids": [
+        "CVEfixes:134313634415275:249299252899106",
+        "CVEfixes:203256363645183:11151637562554",
+        "CVEfixes:203256363645183:238314481290205",
+        "CVEfixes:260854861546769:158475476729976",
+        "CVEfixes:260854861546769:2015196646636",
+        "CVEfixes:260854861546769:270276051786338",
+        "CVEfixes:260854861546769:90609108934075",
+        "CVEfixes:26695807228249:162601659861075",
+        "CVEfixes:26695807228249:56254439499420",
+        "CVEfixes:48376280294679:267673220929327"
+      ],
+      "repositories": [
+        "github.com/getsentry/sentry",
+        "github.com/netease-youdao/qanything",
+        "github.com/scipy/scipy"
+      ]
+    },
+    {
+      "batch_id": "consolidation-053",
+      "pair_ids": [
+        "CVEfixes:135138148360192:121262139825682",
+        "CVEfixes:135138148360192:88893528466386",
+        "CVEfixes:158385455163425:203264623519386",
+        "CVEfixes:158385455163425:254738641063566",
+        "CVEfixes:48963824798023:131468085631728",
+        "CVEfixes:55043073450094:92208459400040",
+        "CVEfixes:56455623515815:4280509275020",
+        "CVEfixes:56455623515815:77996930519844",
+        "CVEfixes:81679705043896:14857560379839",
+        "CVEfixes:81679705043896:158678979153150"
+      ],
+      "repositories": [
+        "github.com/canonical/operator",
+        "github.com/codingjoe/django-s3file",
+        "github.com/encode/django-rest-framework",
+        "github.com/felixschwarz/mjml-python",
+        "github.com/gerapy/gerapy"
+      ]
+    },
+    {
+      "batch_id": "consolidation-054",
+      "pair_ids": [
+        "CVEfixes:143522177495804:164787330867542",
+        "CVEfixes:205529764677586:205754730947334",
+        "CVEfixes:209347387734097:139126355474868",
+        "CVEfixes:267181908008455:238947164217209",
+        "CVEfixes:76443919450240:279220393089113",
+        "CVEfixes:76443919450240:53072873880806",
+        "HaPy-Bug:cve_CVE-2017-15111:0:keycloak_httpd_client/keycloak_cli.py:main",
+        "HaPy-Bug:cve_CVE-2017-15112:0:keycloak_httpd_client/keycloak_cli.py:main",
+        "HaPy-Bug:cve_CVE-2021-32674:0:src/Products/PageTemplates/Expressions.py:boboAwareZopeTraverse",
+        "HaPy-Bug:cve_CVE-2021-32674:0:src/Products/PageTemplates/expression.py:BoboAwareZopeTraverse.traverse"
+      ],
+      "repositories": [
+        "github.com/jdennis/keycloak-httpd-client-install",
+        "github.com/pinterest/querybook",
+        "github.com/spiral-project/ihatemoney",
+        "github.com/zenml-io/zenml",
+        "github.com/zopefoundation/zope"
+      ]
+    },
+    {
+      "batch_id": "consolidation-055",
+      "pair_ids": [
+        "CVEfixes:14419046919723:91406307512176",
+        "CVEfixes:206832491924478:71510447555703",
+        "CVEfixes:214642258960694:182439747940655",
+        "CVEfixes:264881774460682:62477479055333",
+        "CVEfixes:69649546428286:109184701196132",
+        "CVEfixes:69649546428286:126156061289799",
+        "CVEfixes:69649546428286:179403053397830",
+        "CVEfixes:84630641322775:155622833555023",
+        "HaPy-Bug:cve_CVE-2017-16763:0:confire/config.py:Configuration.load",
+        "HaPy-Bug:cve_CVE-2021-33880:0:src/websockets/legacy/auth.py:basic_auth_protocol_factory"
+      ],
+      "repositories": [
+        "github.com/nyuccl/psiturk",
+        "gitlab.com/mayan-edms/mayan-edms",
+        "github.com/aaugustin/websockets",
+        "github.com/askbot/askbot-devel",
+        "github.com/bbengfort/confire",
+        "github.com/bit-team/backintime",
+        "github.com/bmaltais/kohya_ss"
+      ]
+    },
+    {
+      "batch_id": "consolidation-056",
+      "pair_ids": [
+        "CVEfixes:1325909346881:221623144355917",
+        "CVEfixes:170496016594366:244080015169881",
+        "CVEfixes:204732124743658:245565217318918",
+        "CVEfixes:206191146003721:121612148210443",
+        "CVEfixes:225698263966421:82839240277753",
+        "CVEfixes:251197864888373:115646649218019",
+        "CVEfixes:33288845783759:137675966452887",
+        "CVEfixes:39995686545380:170254916908809",
+        "CVEfixes:80102778310933:127141659204830",
+        "HaPy-Bug:cve_CVE-2021-21236:0:cairosvg/colors.py:color"
+      ],
+      "repositories": [
+        "github.com/cvandeplas/pystemon",
+        "github.com/django-wiki/django-wiki",
+        "github.com/goauthentik/authentik",
+        "github.com/horazont/xmpp-http-upload",
+        "github.com/inveniosoftware/invenio-drafts-resources",
+        "github.com/john5223/bottle-auth",
+        "github.com/jupyter/jupyter_core",
+        "github.com/jupyter/notebook",
+        "github.com/jupyterhub/oauthenticator",
+        "github.com/kozea/cairosvg"
+      ]
+    },
+    {
+      "batch_id": "consolidation-057",
+      "pair_ids": [
+        "CVEfixes:100270733587701:2276167366811",
+        "CVEfixes:120631548427910:278843542455116",
+        "CVEfixes:163251012542330:157935365534160",
+        "CVEfixes:203919246286501:208032134566857",
+        "CVEfixes:270676284544259:16805301901977",
+        "CVEfixes:272686085211766:5753808187305",
+        "CVEfixes:48590208344136:28955515216088",
+        "CVEfixes:70110356486212:172131364294403",
+        "HaPy-Bug:cve_CVE-2013-2132:0:bson/__init__.py:_get_object",
+        "HaPy-Bug:cve_CVE-2021-43818:0:src/lxml/html/clean.py:_is_javascript_scheme"
+      ],
+      "repositories": [
+        "github.com/lxml/lxml",
+        "github.com/mansuf/mangadex-downloader",
+        "github.com/mindsdb/mindsdb",
+        "github.com/miurahr/py7zr",
+        "github.com/mnbikeways/database",
+        "github.com/mongodb/mongo-python-driver",
+        "github.com/mozilla/pollbot",
+        "github.com/naparuba/shinken",
+        "github.com/oppia/oppia",
+        "github.com/peering-manager/peering-manager"
+      ]
+    },
+    {
+      "batch_id": "consolidation-058",
+      "pair_ids": [
+        "CVEfixes:117926336683275:241445532745346",
+        "CVEfixes:140968644419817:126092002365771",
+        "CVEfixes:169359888393033:257191987727214",
+        "CVEfixes:172449381401451:241591290952780",
+        "CVEfixes:232537558142137:83731805240219",
+        "CVEfixes:244808149279171:209006482891260",
+        "CVEfixes:4324925934672:125790497829720",
+        "CVEfixes:76527847222406:227743625808788",
+        "HaPy-Bug:cve_CVE-2019-16056:0:Lib/email/_parseaddr.py:AddrlistClass.getaddrspec",
+        "HaPy-Bug:cve_CVE-2021-41250:0:bot/exts/filters/filtering.py:Filtering._has_watch_regex_match"
+      ],
+      "repositories": [
+        "github.com/pyca/cryptography",
+        "github.com/pyeve/eve",
+        "github.com/python-discord/bot",
+        "github.com/python-social-auth/social-app-django",
+        "github.com/python/cpython",
+        "github.com/ractf/core",
+        "github.com/rasahq/rasa",
+        "github.com/sehmaschine/django-grappelli",
+        "github.com/wichert/pyrad",
+        "github.com/widgetti/solara"
+      ]
+    },
+    {
+      "batch_id": "consolidation-059",
+      "pair_ids": [
+        "CVEfixes:145370989713188:22504420177268"
+      ],
+      "repositories": [
+        "github.com/yogeshojha/rengine"
+      ]
+    }
+  ]
+}

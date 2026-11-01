@@ -1,0 +1,965 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-055",
+  "review_date": "2026-10-31",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "Every candidate/status/category in complete repository queues of immutable operational plan 055.",
+  "selection_rule": {
+    "repositories": [
+      "github.com/nyuccl/psiturk",
+      "gitlab.com/mayan-edms/mayan-edms",
+      "github.com/aaugustin/websockets",
+      "github.com/askbot/askbot-devel",
+      "github.com/bbengfort/confire",
+      "github.com/bit-team/backintime",
+      "github.com/bmaltais/kohya_ss"
+    ],
+    "candidate_count": 10,
+    "discovery_categories": [
+      "SEC-AUTHORIZATION-SUBJECT-RACE",
+      "SEC-DESERIALIZATION-ALLOWLIST",
+      "SEC-HTML-ESCAPING",
+      "SEC-SECRET-COMPARISON-TIMING",
+      "SEC-SHELL-QUOTING",
+      "SEC-TEMPLATE-SOURCE-INJECTION"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Whole planned batch055: backintime1/askbot1/Mayan2/kohya1/psiturk3/confire1/websockets1; eight mechanical families, not independent issues. Three mandatory paired-negative deferrals distinguish introduced POSIX grouping/Unicode password failures from residual JavaScript label failure. Standard option-template old duty remains unresolved; config threat delivery unresolved. Preserve original discovery labels/statuses and unapproved researcher decisions. Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:14419046919723:91406307512176",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Authorization subject identity changes from sender-derived recyclable PID with zero start time to unique system-bus sender name.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Authorization subject identity changes from sender-derived recyclable PID with zero start time to unique system-bus sender name. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing helper promises to authorize the actual D-Bus requester. Actual enforced system-bus save checks privilege before writing udev rules; is_auth rejection already exists. SenderInfo obtains PID in a separate call, leaving an identity-continuity window before policy evaluation. Named polkit0.113 constructor fills zero start-time/unknown owner from the PID at construction, so zero does not simply disable all checks: lookup can bind a reused PID instead of original sender. This runtime comparison is conditional, not proof of every historical polkit implementation.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual compatible polkit/D-Bus subject decoding, authenticated unique sender binding, caller process exit/reuse timing and host policy. Actual helper defaults enforce_polkit True and starts on SystemBus; intentional local/testing bypasses remain distinct. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-trust local requester reaches privileged rule-save operation and PID exit/reuse changes the policy subject. After carries sender name to polkit instead of separately resolving recyclable PID; subject lookup should bind that connection. No missing final authorization-check or blanket race-freedom claim.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Mechanism-local removal of selected PID lookup/zero-start-time subject handoff. Retains intentional bypasses, timeout recursion and other filesystem/operation concerns; no execution of D-Bus, polkit or race.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch055 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need actual compatible polkit/D-Bus subject decoding, authenticated unique sender binding, caller process exit/reuse timing and host policy. Actual helper defaults enforce_polkit True and starts on SystemBus; intentional local/testing bypasses remain distinct.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "('unix-process', {'pid': dbus.UInt32(pid, variant_level=1)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "('system-bus-name', {'name': dbus.String(sender, variant_level=1)})"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "qt/serviceHelper.py",
+          "ref": "c689a4d815ce3ba2c212a42f777a1ca4727f473b",
+          "needle": "self.enforce_polkit = True"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "qt/serviceHelper.py",
+          "ref": "c689a4d815ce3ba2c212a42f777a1ca4727f473b",
+          "needle": "self._checkPolkitPrivilege(sender, conn, 'net.launchpad.backintime.UdevRuleSave')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "qt/serviceHelper.py",
+          "ref": "c689a4d815ce3ba2c212a42f777a1ca4727f473b",
+          "needle": "f.writelines(self.tmpDict[owner])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "qt/serviceHelper.py",
+          "ref": "c689a4d815ce3ba2c212a42f777a1ca4727f473b",
+          "needle": "return self.dbus_info.GetConnectionUnixProcessID(self.sender)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "qt/serviceHelper.py",
+          "ref": "c689a4d815ce3ba2c212a42f777a1ca4727f473b",
+          "needle": "bus = dbus.SystemBus()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "src/polkit/polkitunixprocess.c",
+          "ref": "0.113",
+          "needle": "if (process->start_time == 0)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "src/polkit/polkitunixprocess.c",
+          "ref": "0.113",
+          "needle": "process->uid = _polkit_unix_process_get_owner"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "src/polkit/polkitsystembusname.c",
+          "ref": "0.113",
+          "needle": "An object that represents a process owning a unique name"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "src/polkit/polkitsystembusname.c",
+          "ref": "0.113",
+          "needle": "\"GetConnectionUnixUser\""
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:206832491924478:71510447555703",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Paginator returns unescaped request-derived base_url later interpolated into quoted HTML href; after applies Django escape.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Paginator returns unescaped request-derived base_url later interpolated into quoted HTML href; after applies Django escape. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Historical tags/list caller puts raw GET sort into base_url even while independently selecting a safe database ordering. Actual old tags template calls paginator macro; macro emits p.base_url in quoted href. Users caller also supplies request query/sort. Helper is a context transport, not itself an HTML renderer. Old unsafe interpretation still depends on configured Jinja/coffin autoescape; no explicit escape in macro alone proves autoescape disabled.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need affected template autoescape/environment and browser/CSP, actual list-mode/multipage path and ordinary request values. Retained exact caller/macro chain plus named Django1.11.15 escape behavior is an API comparison, not installed-version certification for this older project. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Conditional lower-trust query reaches victim HTML attribute without effective autoescape. Safe DB sort selection is not HTML attribute encoding. If renderer already escapes, extra helper escaping is not proof of an old vulnerability. Preserve conditional delivery and defer common external context.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After HTML delimiter escaping addresses raw attribute syntax under compatible escape/renderer semantics; excludes URL-scheme policy, existing amp-entity/double-escaping presentation, separate subscription/user template changes and all-XSS safety.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch055 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need affected template autoescape/environment and browser/CSP, actual list-mode/multipage path and ordinary request values. Retained exact caller/macro chain plus named Django1.11.15 escape behavior is an API comparison, not installed-version certification for this older project.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\"base_url\": context[\"base_url\"]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "\"base_url\": escape(context[\"base_url\"])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "askbot/views/readers.py",
+          "ref": "8ac806f3fd19e2cc08643560432b8bc2f99f6497",
+          "needle": "sortby = post_data.get('sort', 'used')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "askbot/views/readers.py",
+          "ref": "8ac806f3fd19e2cc08643560432b8bc2f99f6497",
+          "needle": "'base_url' : reverse('tags') + '?sort=%s&amp;' % sortby"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "askbot/views/readers.py",
+          "ref": "8ac806f3fd19e2cc08643560432b8bc2f99f6497",
+          "needle": "        paginator_context = functions.setup_paginator(paginator_data)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "askbot/templates/tags/content.html",
+          "ref": "8ac806f3fd19e2cc08643560432b8bc2f99f6497",
+          "needle": "{{macros.paginator(paginator_context)}}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "askbot/templates/macros.html",
+          "ref": "8ac806f3fd19e2cc08643560432b8bc2f99f6497",
+          "needle": "href=\"{{p.base_url}}page={{ p.previous }}{{ anchor }}\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "askbot/views/users.py",
+          "ref": "8ac806f3fd19e2cc08643560432b8bc2f99f6497",
+          "needle": "base_url = request.path + '?name=%s&amp;sort=%s&amp;'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "django/utils/html.py",
+          "ref": "1.11.15",
+          "needle": ".replace('>', '&gt;').replace('\"', '&quot;')"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:214642258960694:182439747940655",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Option widget adds conditional label escaping before SelectMultiple construction; ordinary retained option renderer already escapes plain model labels.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Option widget adds conditional label escaping before SelectMultiple construction; ordinary retained option renderer already escapes plain model labels. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Actual Tag.__str__ returns ordinary label; TagMultipleSelectionForm uses ModelMultipleChoiceField and select2-tags widget. Named compatible Django1.11.15 superclass only builds an option dictionary, and exact custom option template includes standard select_option where widget.label is normally autoescaped. No retained frontend second HTML interpretation, safe-marked producer or disabled-template-escaping contract establishes why the old selected pass-through violates a duty. Advisory and added escape alone are insufficient.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual frontend enhancement consumer, safe-label/option representation and installed Django rendering. Preserve unknown instead of inferring select2 behavior from its CSS class or blaming unrelated widget_single_tag. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Lower-trust tag-label authority is conditional on permissions, but old plain-label option output is not shown unsafe under retained standard template. color attribute and independent tag-display widgets are separate sinks.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "No justified buggy/fixed negative for selected option label yet. After preserves conditional SafeData protocol and adds string conversion; neither universal sanitization nor demonstrated necessary second-layer HTML encoding. Do not erase original ambiguity.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch055 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need actual frontend enhancement consumer, safe-label/option representation and installed Django rendering. Preserve unknown instead of inferring select2 behavior from its CSS class or blaming unrelated widget_single_tag.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "name=name, value=value, label=label, selected=selected"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "label='{}'.format(conditional_escape(label))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "mayan/apps/tags/widgets.py",
+          "ref": "fcb209caaebcd690e6634625860cd08f3276c133",
+          "needle": "option_template_name = 'tags/forms/widgets/tag_select_option.html'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "mayan/apps/tags/templates/tags/forms/widgets/tag_select_option.html",
+          "ref": "fcb209caaebcd690e6634625860cd08f3276c133",
+          "needle": "{% include 'django/forms/widgets/select_option.html' %}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "django/forms/templates/django/forms/widgets/select_option.html",
+          "ref": "1.11.15",
+          "needle": "{{ widget.label }}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "django/forms/widgets.py",
+          "ref": "1.11.15",
+          "needle": "'label': label"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_DELIVERY.json",
+          "path": "mayan/apps/tags/forms.py",
+          "ref": "fcb209caaebcd690e6634625860cd08f3276c133",
+          "needle": "attrs={'class': 'select2-tags'}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_DELIVERY.json",
+          "path": "mayan/apps/tags/models.py",
+          "ref": "fcb209caaebcd690e6634625860cd08f3276c133",
+          "needle": "return self.label"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "django/utils/html.py",
+          "ref": "1.11.15",
+          "needle": "if hasattr(text, '__html__'):"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:264881774460682:62477479055333",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "GUI values enter shell command string; after removes shell=True but keeps one quoted command string, breaking ordinary POSIX execution.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "GUI values enter shell command string; after removes shell=True but keeps one quoted command string, breaking ordinary POSIX execution. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing grouping callback promises to run Python tools/group_images.py with user folders/options, and UI button binds custom folder values/caption textbox. README explicitly supports Linux. Old shell command parses interpreter/script/argument boundaries; new shell=False command string on compatible POSIX subprocess is a single executable name, not shell-tokenized argv.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need OS/Python subprocess semantics, GUI server/authentication and lower-trust access. Named CPython3.10.14 supports the documented3.10 family; PYTHON is sys.executable. Ordinary trusted valid folders/options suffice for regression, without any attack string. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "If GUI is reachable by a principal less trusted than server execution identity, folder quoting/unchecked caption extension can influence shell syntax. Local operator-only use does not automatically cross a security boundary. Linux startup failure is independent of that threat assumption.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After disables this shell interpretation but asks POSIX to execute entire command text (including quotes, script and args) as executable pathname. It generally raises before grouping instead of running legitimate operation. Windows string CreateProcess semantics differ and are not certified. Introduced operational regression means after cannot be accepted by narrowing label to shell-only absence.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch055 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need OS/Python subprocess semantics, GUI server/authentication and lower-trust access. Named CPython3.10.14 supports the documented3.10 family; PYTHON is sys.executable. Ordinary trusted valid folders/options suffice for regression, without any attack string.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "subprocess.run(run_cmd, shell=True, env=env)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "subprocess.run(run_cmd, env=env)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "kohya_gui/group_images_gui.py",
+          "ref": "8633484a5a5aebe17c805bb3b46760873ed1f09b",
+          "needle": "PYTHON = sys.executable"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "kohya_gui/group_images_gui.py",
+          "ref": "8633484a5a5aebe17c805bb3b46760873ed1f09b",
+          "needle": "group_images_button.click("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "kohya_gui/group_images_gui.py",
+          "ref": "8633484a5a5aebe17c805bb3b46760873ed1f09b",
+          "needle": "                choices=[\"\"] + list_input_dirs(current_input_folder),\n                value=\"\",\n                allow_custom_value=True,\n            )\n            create_refresh_button(\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "kohya_gui/group_images_gui.py",
+          "ref": "8633484a5a5aebe17c805bb3b46760873ed1f09b",
+          "needle": "caption_ext = gr.Textbox("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "README.md",
+          "ref": "8633484a5a5aebe17c805bb3b46760873ed1f09b",
+          "needle": "support for Linux OS is also offered"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v3.10.14",
+          "needle": "if isinstance(args, (str, bytes)):\n                args = [args]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v3.10.14",
+          "needle": "executable = args[0]"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Matched POSIX subprocess treats unchanged whole command string as one executable path when shell is False; ordinary documented Linux GUI grouping fails before intended script. Old shell parsed it. Conditional source deduction, no shell/subprocess or retained program executes."
+    },
+    {
+      "pair_id": "CVEfixes:69649546428286:109184701196132",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "consent selected component participates in request mode promoted to template source before render; after fixed placeholder and explicit mode context separate syntax from data.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "consent selected component participates in request mode promoted to template source before render; after fixed placeholder and explicit mode context separate syntax from data. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing GET routes should render trusted experiment template using request mode as value, not template program. Old insert_mode concatenates raw mode after matched workerId placeholder; actual consent/ad callers then render_template_string. Flask~=1.1.1 is retained and exact named1.1.1 implementation compiles source with jinja_env.from_string before rendering context. Historical ad template contains marker inside popup URL. Consent requires deployed consent template marker; no missing marker or arbitrary unknown template assumed. API change is coordinated with both existing callers.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need helper/consumer chain, custom experiment templates and marker, route exposure and render engine. Consent requires hit/assignment/worker IDs plus mode; ad first passes browser exclusion and participant-state gates, sink only allocated/missing-status/debug branch, not completed render_template branch. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-trust query mode becomes template source evaluated by server engine. Arbitrary host execution requires engine globals/capabilities and is not independently certified; diagnostic template injection suffices for data/syntax trust breach. Authenticated database state and legitimate template author authority remain distinct.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After helper emits fixed mode placeholder and callers bind mode=mode. One template rendering does not recursively compile supplied value as source. Narrow template-source-injection negative under coordinated after revision, not arbitrary template sandboxing or correct URL/JavaScript serialization. Missing marker still intentionally errors; no new-policy regression inferred from changed helper signature.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Three psiturk representations share one exact fix/helper/consumer issue family and source overlap, not three independent vulnerabilities; template/caller API changes coordinated. Preserve IDs, discovery histories and researcher independence decision.",
+      "open_questions": [
+        "Need helper/consumer chain, custom experiment templates and marker, route exposure and render engine. Consent requires hit/assignment/worker IDs plus mode; ad first passes browser exclusion and participant-state gates, sink only allocated/missing-status/debug branch, not completed render_template branch.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "consent_string = insert_mode(consent_string, mode)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "consent_string = insert_mode(consent_string)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "new_html = page_html[:match.end()] + \"&mode=\" + mode"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "consent_string = insert_mode(consent_string, mode)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "ad_string = insert_mode(ad_string, mode)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/example/templates/ad.html",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "workerId={{ workerid }}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "setup.cfg",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "Flask~=1.1.1"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "src/flask/templating.py",
+          "ref": "1.1.1",
+          "needle": "ctx.app.jinja_env.from_string(source)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "src/flask/templating.py",
+          "ref": "1.1.1",
+          "needle": "rv = template.render(context)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "needle": "'&mode={{ mode }}'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "needle": "            mode=mode,\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:69649546428286:126156061289799",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "helper selected component participates in request mode promoted to template source before render; after fixed placeholder and explicit mode context separate syntax from data.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "helper selected component participates in request mode promoted to template source before render; after fixed placeholder and explicit mode context separate syntax from data. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing GET routes should render trusted experiment template using request mode as value, not template program. Old insert_mode concatenates raw mode after matched workerId placeholder; actual consent/ad callers then render_template_string. Flask~=1.1.1 is retained and exact named1.1.1 implementation compiles source with jinja_env.from_string before rendering context. Historical ad template contains marker inside popup URL. Consent requires deployed consent template marker; no missing marker or arbitrary unknown template assumed. API change is coordinated with both existing callers.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need helper/consumer chain, custom experiment templates and marker, route exposure and render engine. Consent requires hit/assignment/worker IDs plus mode; ad first passes browser exclusion and participant-state gates, sink only allocated/missing-status/debug branch, not completed render_template branch. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-trust query mode becomes template source evaluated by server engine. Arbitrary host execution requires engine globals/capabilities and is not independently certified; diagnostic template injection suffices for data/syntax trust breach. Authenticated database state and legitimate template author authority remain distinct.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After helper emits fixed mode placeholder and callers bind mode=mode. One template rendering does not recursively compile supplied value as source. Narrow template-source-injection negative under coordinated after revision, not arbitrary template sandboxing or correct URL/JavaScript serialization. Missing marker still intentionally errors; no new-policy regression inferred from changed helper signature.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Three psiturk representations share one exact fix/helper/consumer issue family and source overlap, not three independent vulnerabilities; template/caller API changes coordinated. Preserve IDs, discovery histories and researcher independence decision.",
+      "open_questions": [
+        "Need helper/consumer chain, custom experiment templates and marker, route exposure and render engine. Consent requires hit/assignment/worker IDs plus mode; ad first passes browser exclusion and participant-state gates, sink only allocated/missing-status/debug branch, not completed render_template branch.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\"&mode=\" + mode"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "'&mode={{ mode }}'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "new_html = page_html[:match.end()] + \"&mode=\" + mode"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "consent_string = insert_mode(consent_string, mode)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "ad_string = insert_mode(ad_string, mode)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/example/templates/ad.html",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "workerId={{ workerid }}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "setup.cfg",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "Flask~=1.1.1"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "src/flask/templating.py",
+          "ref": "1.1.1",
+          "needle": "ctx.app.jinja_env.from_string(source)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "src/flask/templating.py",
+          "ref": "1.1.1",
+          "needle": "rv = template.render(context)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "needle": "'&mode={{ mode }}'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "needle": "            mode=mode,\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:69649546428286:179403053397830",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "advertisement selected component participates in request mode promoted to template source before render; after fixed placeholder and explicit mode context separate syntax from data.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "advertisement selected component participates in request mode promoted to template source before render; after fixed placeholder and explicit mode context separate syntax from data. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing GET routes should render trusted experiment template using request mode as value, not template program. Old insert_mode concatenates raw mode after matched workerId placeholder; actual consent/ad callers then render_template_string. Flask~=1.1.1 is retained and exact named1.1.1 implementation compiles source with jinja_env.from_string before rendering context. Historical ad template contains marker inside popup URL. Consent requires deployed consent template marker; no missing marker or arbitrary unknown template assumed. API change is coordinated with both existing callers.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need helper/consumer chain, custom experiment templates and marker, route exposure and render engine. Consent requires hit/assignment/worker IDs plus mode; ad first passes browser exclusion and participant-state gates, sink only allocated/missing-status/debug branch, not completed render_template branch. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-trust query mode becomes template source evaluated by server engine. Arbitrary host execution requires engine globals/capabilities and is not independently certified; diagnostic template injection suffices for data/syntax trust breach. Authenticated database state and legitimate template author authority remain distinct.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After helper emits fixed mode placeholder and callers bind mode=mode. One template rendering does not recursively compile supplied value as source. Narrow template-source-injection negative under coordinated after revision, not arbitrary template sandboxing or correct URL/JavaScript serialization. Missing marker still intentionally errors; no new-policy regression inferred from changed helper signature.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Three psiturk representations share one exact fix/helper/consumer issue family and source overlap, not three independent vulnerabilities; template/caller API changes coordinated. Preserve IDs, discovery histories and researcher independence decision.",
+      "open_questions": [
+        "Need helper/consumer chain, custom experiment templates and marker, route exposure and render engine. Consent requires hit/assignment/worker IDs plus mode; ad first passes browser exclusion and participant-state gates, sink only allocated/missing-status/debug branch, not completed render_template branch.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "ad_string = insert_mode(ad_string, mode)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "ad_string = insert_mode(ad_string)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "new_html = page_html[:match.end()] + \"&mode=\" + mode"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "consent_string = insert_mode(consent_string, mode)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "ad_string = insert_mode(ad_string, mode)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/example/templates/ad.html",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "workerId={{ workerid }}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "setup.cfg",
+          "ref": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "needle": "Flask~=1.1.1"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "src/flask/templating.py",
+          "ref": "1.1.1",
+          "needle": "ctx.app.jinja_env.from_string(source)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "src/flask/templating.py",
+          "ref": "1.1.1",
+          "needle": "rv = template.render(context)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "needle": "'&mode={{ mode }}'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "psiturk/experiment.py",
+          "ref": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "needle": "            mode=mode,\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:84630641322775:155622833555023",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Cabinet label is hand-formatted into inline JavaScript tree data then jsTree innerHTML; format_html addresses HTML delimiters but leaves supported backslash label serialization broken.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Cabinet label is hand-formatted into inline JavaScript tree data then jsTree innerHTML; format_html addresses HTML delimiters but leaves supported backslash label serialization broken. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Cabinet.label is ordinary max128 CharField with no backslash restriction. Actual create/edit views expose label under cabinet permissions; detail view joins helper output and old template marks jstree_data safe inside inline script. Exact plugin default force_text=False and redraw appends obj.text to innerHTML. Thus both inline script representation and HTML label interpretation are real contexts, not inferred from helper name.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need permissions allowing lower-trust cabinet creator/editor and higher-trust viewer, actual plugin/browser/CSP, template and compatible Django format_html. This template uses jstree.min.js, while retained exact same archive unminified distribution is named implementation evidence, not byte-equality proof of minified artifact. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-trust label enters inline source/HTML DOM in viewer origin; format_html encodes HTML metacharacters under plain labels. HTML escaping is not JavaScript string encoding. No blanket sandbox or every browser claim.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After still surrounds label with raw double quotes in JavaScript data string. format_html leaves backslash unchanged; an ordinary permitted label ending in backslash can escape closing string delimiter and invalidate tree script. This predates fix and persists, a residual ordinary label-serialization failure. Do not establish negative by considering HTML metacharacters only. No JavaScript, markup, regex, template or browser executed.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch055 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need permissions allowing lower-trust cabinet creator/editor and higher-trust viewer, actual plugin/browser/CSP, template and compatible Django format_html. This template uses jstree.min.js, while retained exact same archive unminified distribution is named implementation evidence, not byte-equality proof of minified artifact.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'\"text\": \"{}\",'.format(node.label)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "format_html('\"text\": \"{}\",', node.label)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "mayan/apps/cabinets/templates/cabinets/cabinet_details.html",
+          "ref": "9ebe80595afe4fdd1e2c74358d6a9421f4ce130e",
+          "needle": "{{ jstree_data|safe }}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "mayan/apps/cabinets/views.py",
+          "ref": "9ebe80595afe4fdd1e2c74358d6a9421f4ce130e",
+          "needle": "jstree_data(node=cabinet.get_root(), selected_node=cabinet)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "mayan/apps/cabinets/views.py",
+          "ref": "9ebe80595afe4fdd1e2c74358d6a9421f4ce130e",
+          "needle": "class CabinetCreateView(SingleObjectCreateView):\n    fields = ('label',)\n    model = Cabinet\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_DELIVERY.json",
+          "path": "mayan/apps/cabinets/models.py",
+          "ref": "9ebe80595afe4fdd1e2c74358d6a9421f4ce130e",
+          "needle": "label = models.CharField(max_length=128"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "mayan/apps/cabinets/static/cabinets/packages/jstree/dist/jstree.js",
+          "ref": "9ebe80595afe4fdd1e2c74358d6a9421f4ce130e",
+          "needle": "force_text : false"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "mayan/apps/cabinets/static/cabinets/packages/jstree/dist/jstree.js",
+          "ref": "9ebe80595afe4fdd1e2c74358d6a9421f4ce130e",
+          "needle": "node.childNodes[1].innerHTML += obj.text"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "django/utils/html.py",
+          "ref": "1.11.15",
+          "needle": "return mark_safe(format_string.format(*args_safe, **kwargs_safe))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "django/utils/html.py",
+          "ref": "1.11.15",
+          "needle": ".replace('>', '&gt;').replace('\"', '&quot;')"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Ordinary model-admitted label ending in backslash remains raw in quoted JavaScript data because format_html only encodes HTML metacharacters; closing quote is escaped and inline script fails. Existing ordinary tree-label duty supported; failure is residual from before, not a newly introduced regression. Minified distribution/deployment remains pending."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2017-16763:0:confire/config.py:Configuration.load",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Legacy configuration yaml.load constructs Python objects before configure; after safe_load limits constructors but actual lower-trust config delivery remains unresolved.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Legacy configuration yaml.load constructs Python objects before configure; after safe_load limits constructors but actual lower-trust config delivery remains unresolved. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Historical Configuration.load searches /etc, home and cwd-relative configuration and maps values into configuration fields. Exact requirements pin PyYAML3.12: load defaults to Loader with Constructor whereas safe_load chooses SafeLoader/SafeConstructor. Retained named constructor resolves callable/class and invokes it for Python tags before configure. This is object construction, not simply arbitrary keys in an ordinary dictionary.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need config writer/reader identities, directory/ownership and execution privilege of consumer. Existing example loads system/home/cwd files as invocation user; no concrete admitted elevated service reading attacker-controlled config is retained. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Constructor primitive is source-supported, but authorized operator editing own executable/config environment does not alone cross a trust boundary. A lower-trust file writer plus higher-trust loader would be required. New safe_load test proves choice, not attacker reachability.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "SafeLoader excludes named Python object/apply constructor family under exact3.12 comparison. Not arbitrary resource/alias safety, file discovery/ownership, config authorization or later use of values. Intentional basic-YAML policy narrowing does not by itself prove accidental backwards-compatibility regression.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch055 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need config writer/reader identities, directory/ownership and execution privilege of consumer. Existing example loads system/home/cwd files as invocation user; no concrete admitted elevated service reading attacker-controlled config is retained.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "config.configure(yaml.load(conf))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "config.configure(yaml.safe_load(conf))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "confire/config.py",
+          "ref": "aac6d50d996ada6fb3199a081313e96f385c0418",
+          "needle": "os.path.abspath('conf/confire.yaml')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "requirements.txt",
+          "ref": "aac6d50d996ada6fb3199a081313e96f385c0418",
+          "needle": "PyYAML==3.12"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "confire/example.py",
+          "ref": "aac6d50d996ada6fb3199a081313e96f385c0418",
+          "needle": "settings = ExampleConfiguration.load()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "lib/yaml/__init__.py",
+          "ref": "3.12",
+          "needle": "def load(stream, Loader=Loader):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "lib/yaml/__init__.py",
+          "ref": "3.12",
+          "needle": "return load(stream, SafeLoader)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "lib/yaml/loader.py",
+          "ref": "3.12",
+          "needle": "class SafeLoader(Reader, Scanner, Parser, Composer, SafeConstructor, Resolver)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "lib/yaml/constructor.py",
+          "ref": "3.12",
+          "needle": "return cls(*args, **kwds)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "lib/yaml/constructor.py",
+          "ref": "3.12",
+          "needle": "u'tag:yaml.org,2002:python/object/apply:'"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-33880:0:src/websockets/legacy/auth.py:basic_auth_protocol_factory",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Built-in password equality replaced by compare_digest, but accepted non-ASCII password strings now raise instead of authenticating.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Built-in password equality replaced by compare_digest, but accepted non-ASCII password strings now raise instead of authenticating. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing factory accepts tuple/list credentials via is_credentials requiring only str username/password. HTTP Basic decoder base64-decodes then UTF-8 decodes without ASCII restriction; configured Unicode passwords can previously match equal decoded values. Only realm is documented ASCII-only. Supported CPython3.9 named hmac.compare_digest native and fallback both reject non-ASCII str; credentials are not encoded before new call.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need builtin callback/protocol binding, header decode and compare_digest/runtime behavior. Process_request catches InvalidHeader around parsing but directly awaits credential callback; it does not catch TypeError from compare_digest. Actual whole-request error handling/500 policy remains separate. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Old password equality can have content-dependent timing for known user under observable repeated authentication, not proof of remote recoverability. After constant-content comparison narrows that leak but unknown-user lookup remains early, custom callbacks unchanged and whole request not constant-time.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Introduced authentication regression for otherwise valid non-ASCII password: new compare_digest receives str and raises TypeError. Old is_credentials and UTF-8 parser admit this input; ASCII restriction in doc applies only realm. Therefore after not a valid paired negative by considering ASCII examples alone. No server, header decode, credential callback, compare_digest or timing code executes.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch055 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need builtin callback/protocol binding, header decode and compare_digest/runtime behavior. Process_request catches InvalidHeader around parsing but directly awaits credential callback; it does not catch TypeError from compare_digest. Actual whole-request error handling/500 policy remains separate.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return (username, password) == credentials"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return hmac.compare_digest(expected_password, password)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "src/websockets/legacy/auth.py",
+          "ref": "a14226afb77b524c2ced7d649ac7420a14992716",
+          "needle": "return isinstance(username, str) and isinstance(password, str)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "src/websockets/legacy/auth.py",
+          "ref": "a14226afb77b524c2ced7d649ac7420a14992716",
+          "needle": "if not await self.check_credentials(username, password):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "src/websockets/headers.py",
+          "ref": "a14226afb77b524c2ced7d649ac7420a14992716",
+          "needle": "user_pass = base64.b64decode(basic_credentials.encode()).decode()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "Modules/_hashopenssl.c",
+          "ref": "v3.9.5",
+          "needle": "if (!PyUnicode_IS_ASCII(a) || !PyUnicode_IS_ASCII(b))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTRACTS.json",
+          "path": "Modules/_operator.c",
+          "ref": "v3.9.5",
+          "needle": "if (!PyUnicode_IS_ASCII(a) || !PyUnicode_IS_ASCII(b))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_055_CONTEXT.json",
+          "path": "setup.py",
+          "ref": "a14226afb77b524c2ced7d649ac7420a14992716",
+          "needle": "python_requires='>=3.6.1'"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Existing str credential validator and UTF-8 HTTP Basic decoder allow matching non-ASCII passwords; new compare_digest called with str rejects them in both named compatible CPython3.9 implementations. Ordinary configured user can no longer authenticate. Only realm documented ASCII. No retained authentication/runtime executes."
+    }
+  ]
+}

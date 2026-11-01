@@ -1,0 +1,775 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-026",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All eight openapi-python-client training candidates across every discovery status, explicitly including all six null-category candidates.",
+  "selection_rule": {
+    "repository": "github.com/triaxtec/openapi-python-client",
+    "discovery_categories": [
+      "SEC-GENERATED-SOURCE-INJECTION",
+      "SEC-PATH-CONFINEMENT",
+      null
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 827,
+    "sha256": "8b0f0e74c6a9a96b62ac9ca15164b9eeaceb87d10e5b070fc1d8c52fa3a6f359"
+  },
+  "interpretation": "One missing-context, one selected-attribution, one explicit paired-negative and five nonrepair-exclusion proposals. Matched title admission and actual create/write/update-delete consumers support conditional path escape; bound the after negative to default title-derived lexical paths. Enum member strings reach a concrete Python identifier/literal template and writer; code execution needs later generated-client import/use. The after enum mapper can silently overwrite two previously valid Unicode identifiers and lose a wire value because duplicate checking precedes sanitization; it also retains space/hyphen identifiers, empty-member indexing and incomplete backslash/newline/quote encoding. Default initializer delegation is coordinated, not an isolated old repair. Datetime imports align with their own version type/template, Optional opt-outs preserve old annotation behavior and support the changed union runtime consumer, and acronym-range correction is not the source whitelist. No discovery revisions: preserve all827 ledger events, six null categories, source bytes/splits/families, prior batches and45 protected inputs. Eight rows/two mechanical families are not independent issues. All application/dependency/generated/regex/template/schema/filesystem/compiler/import/formatter programs and upstream tests remain inert; deductions are not reproduced results.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-15141:0:openapi_python_client/__init__.py:Project.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Untrusted API title becomes project/package paths before generator writes and update deletion.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep path confinement distinct from generated-Python source boundaries, generated syntax/wire-value preservation and casing/typing/import compatibility. Six null-category rows retain null; shared security commit/advisory membership, new consumer requirements and helper necessity do not assign them a vulnerability leaf. Do not count multiple source slots, templates or functions as independently adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old Info.title is an unconstrained string copied into GeneratorData.title. With normal unset operator overrides, Project.__init__ replaces spaces and lowercases but preserves absolute paths, separators and parent segments; Path.cwd()/name does not confine those paths. Old build mkdir/write_text and update is_dir/rmtree consume the resulting paths. The documented output is a named client project; accepting a remote API document is not authority to create/write/delete unrelated operator files. After kebab_case uses the matched new _sanitize before stringcase casing, removing separators, dots and drive punctuation from the title-derived basename.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old Info/GeneratorData, URL/file admission, default-versus-operator override source, actual mkdir/write_text/rmtree consumers, new sanitizer/stringcase contract and filesystem conditions. A bad Path value alone is not a completed filesystem effect. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old schema/producer/helper/template/runtime/writer/consumer contracts, after-code, advisories, tests, metadata, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A less-trusted API/spec author can provide a title that a different developer processes using the documented generate/update URL or file flow. Absolute title-derived components can replace the CWD prefix, and relative parents can leave it. Creation/write needs corresponding existing parents, absent target project and operator permissions; update deletion additionally needs the derived package directory already to exist. No anonymous server route, arbitrary unconditional deletion, permission bypass, symlink escape or code execution is inferred.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After sanitizer plus casing prevents title-only lexical path components from introducing separators, parent-dot segments or drive punctuation; the fixed suffix produces a basename. This is a mechanism-local default-title path negative, not all filesystem confinement. Explicit operator project/package overrides still bypass it, other schema-derived paths are separate, and symlink/race/permission behavior is not certified. No generated source or filesystem operation is executed.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The selected old path-confinement violation has matched producer, writer/deletion and conditional lower-trust delivery support, but essential helper/schema/writer/configuration/filesystem contracts are absent from a uniform before-only function.",
+      "dependence_reason": "Preserve fix-family:e187bf24275c58d3d266 and all exact/AST/span/history evidence. One title-path row is one mechanical family; seven functions in the coordinated source-injection commit share a second family and include producers, initializer, import/type interfaces and a casing helper. The path-fix after utils text is exactly the subsequent source-fix before utils text, establishing shared helper-version context, not exact equality of the different selected functions or an approved issue merge. Eight rows/two mechanical families are review units, not independent issues; keep alias/history/semantic independence pending.",
+      "open_questions": [
+        "Researcher confirm supported old schema/default/Unicode/runtime/template and path/configuration contracts, input ownership and actual generation/import/deletion audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No generator/CLI/schema/YAML/JSON/Pydantic/Jinja/stringcase/regex/pathlib/filesystem/enum/typing/compiler/import/formatter/Black/isort/subprocess/dependency/application/generated program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "f\"{openapi.title.replace(' ', '-').lower()}-client\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "f\"{utils.kebab_case(openapi.title).lower()}-client\""
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.project_dir: Path = Path.cwd() / self.project_name"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.package_dir: Path = self.project_dir / self.package_name"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.project_dir.mkdir()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "shutil.rmtree(self.package_dir)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "package_init.write_text(package_init_template.render(description=self.package_description))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/schema/info.py",
+          "ref": "3e7dfae5d0b3685abf1ede1bc6c086a116ac4746^",
+          "needle": "title: str"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/parser/openapi.py",
+          "ref": "3e7dfae5d0b3685abf1ede1bc6c086a116ac4746^",
+          "needle": "title=openapi.info.title"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/cli.py",
+          "ref": "3e7dfae5d0b3685abf1ede1bc6c086a116ac4746^",
+          "needle": "errors = update_existing_client(url=url, path=path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "README.md",
+          "ref": "3e7dfae5d0b3685abf1ede1bc6c086a116ac4746^",
+          "needle": "This will generate a new client library named based on the title in your OpenAPI spec."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/utils.py",
+          "ref": "3e7dfae5d0b3685abf1ede1bc6c086a116ac4746",
+          "needle": "return re.sub(r\"[^\\w _-]+\", \"\", value)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/utils.py",
+          "ref": "3e7dfae5d0b3685abf1ede1bc6c086a116ac4746",
+          "needle": "return stringcase.spinalcase(group_title(_sanitize(value)))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_RUNTIME.json",
+          "path": "stringcase-1.2.0/stringcase.py",
+          "ref": "1.2.0",
+          "needle": "return re.sub(r\"_\", \"-\", snakecase(string))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_DELIVERY.json",
+          "path": "openapi_python_client/config.py",
+          "ref": "3e7dfae5d0b3685abf1ede1bc6c086a116ac4746^",
+          "needle": "Project.project_name_override = self.project_name_override"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-15142:0:openapi_python_client/parser/properties.py:DateTimeProperty.get_imports",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Datetime class-to-module import change matches coordinated annotations, repr defaults and construction template.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep path confinement distinct from generated-Python source boundaries, generated syntax/wire-value preservation and casing/typing/import compatibility. Six null-category rows retain null; shared security commit/advisory membership, new consumer requirements and helper necessity do not assign them a vulnerability leaf. Do not count multiple source slots, templates or functions as independently adjudicated issues.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "The old _type_string datetime, from datetime import datetime and datetime.fromisoformat template agree for ordinary required/optional datetime properties. The selected method returns fixed imports and no default/name text is interpolated into them. The new annotation/default repr and template use datetime.datetime, requiring import datetime. Old raw/default validation problems belong to their actual producers, not the old constant import API.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old/after DateTimeProperty type string/default validation, get_imports consumer and datetime template. Do not mix after datetime.datetime references with old class imports to manufacture a preexisting NameError. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old schema/producer/helper/template/runtime/writer/consumer contracts, after-code, advisories, tests, metadata, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Schema authors control datetime data/defaults, but this selected import set is constant. No old import-method text-to-code boundary is isolated; the coordinated default parser/sanitizer and property declaration sinks require their own attribution.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Within matched versions, class imports/class references and module imports/qualified references align. This is bounded compatibility, not a selected old security-positive/after-negative pair, datetime format completeness, generic defaults or a clean generated client.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected import/typing/casing change supports a coordinated interface or consumer migration without repairing an established old selected-component source-injection duty. Preserve provisional nonrepair exclusion and null category, rather than treating commit membership as a positive.",
+      "dependence_reason": "Preserve fix-family:4950967241c298e6811f and all exact/AST/span/history evidence. One title-path row is one mechanical family; seven functions in the coordinated source-injection commit share a second family and include producers, initializer, import/type interfaces and a casing helper. The path-fix after utils text is exactly the subsequent source-fix before utils text, establishing shared helper-version context, not exact equality of the different selected functions or an approved issue merge. Eight rows/two mechanical families are review units, not independent issues; keep alias/history/semantic independence pending.",
+      "open_questions": [
+        "Researcher confirm supported old schema/default/Unicode/runtime/template and path/configuration contracts, input ownership and actual generation/import/deletion audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No generator/CLI/schema/YAML/JSON/Pydantic/Jinja/stringcase/regex/pathlib/filesystem/enum/typing/compiler/import/formatter/Black/isort/subprocess/dependency/application/generated program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "imports.update({\"from datetime import datetime\", \"from typing import cast\"})"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        Args:\n            prefix: A prefix to put before any relative (local) module names.\n        \"\"\"\n        imports = super().get_imports(prefix=prefix)\n        imports.update({\"import datetime\", \"from typing import cast\"})\n        return imports\n\n    def _validate_default(self, default: Any) -> str:\n        for format_string in (\"%Y-%m-%dT%H:%M:%S\", \"%Y-%m-%dT%H:%M:%S%z\"):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "_type_string: ClassVar[str] = \"datetime\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "_type_string: ClassVar[str] = \"datetime.datetime\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return repr(datetime.strptime(default, format_string))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/templates/property_templates/datetime_property.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "datetime.fromisoformat({{ source }})"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/templates/property_templates/datetime_property.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a",
+          "needle": "datetime.datetime.fromisoformat({{ source }})"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/templates/model.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "{{ relative }}"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-15142:0:openapi_python_client/parser/properties.py:EnumProperty.__post_init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Enum initializer delegates the same inverse-default mapping to new superclass validation after assigning its reference.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep path confinement distinct from generated-Python source boundaries, generated syntax/wire-value preservation and casing/typing/import compatibility. Six null-category rows retain null; shared security commit/advisory membership, new consumer requirements and helper necessity do not assign them a vulnerability leaf. Do not count multiple source slots, templates or functions as independently adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old initialization computes Reference.from_ref, deduplicates against existing values, then uses inverse_values[default] to form ReferenceClass.KEY. After performs reference/dedup first, calls the changed base __post_init__ which invokes EnumProperty._validate_default, and registers the enum. That validator performs the same inverse-value lookup and expression composition, translating KeyError to ValidationError. Reference-before-super ordering is necessary for the newly delegated validator; it does not itself sanitize reference/key/value strings. Old and new enum key production and reference sanitization must be matched separately.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old and after superclass dispatch, EnumProperty._validate_default, values_from_list and Reference.from_ref, templates and error consumers. New exception-interface/default requirements cannot be projected onto the unchanged old superclass contract. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old schema/producer/helper/template/runtime/writer/consumer contracts, after-code, advisories, tests, metadata, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "An untrusted enum reaches unsafe old generated code through old value/key production and the concrete enum template. But merely moving this initializer lookup into a new virtual validator does not isolate an independent old unsafe initializer or close raw key/reference injection if old producers remain. The old title-reference path was already sanitized by its matched helpers. Invalid/default edge behavior is separate from an established cross-principal source-injection repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No independent initializer old-positive/new-negative pair is certified. After must establish self.reference before virtual default validation; exact version ordering does so. New mapper escaping can alter the inverse-lookup value domain, and shared enum mapping failures remain assessed on their actual producer, without turning them into another independently counted initializer defect.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Default-validation delegation and reference-before-super ordering enable the new validation interface; the same old inverse lookup/reference text has not isolated a separately repaired old initializer defect. Preserve ambiguity without sibling blame.",
+      "dependence_reason": "Preserve fix-family:4950967241c298e6811f and all exact/AST/span/history evidence. One title-path row is one mechanical family; seven functions in the coordinated source-injection commit share a second family and include producers, initializer, import/type interfaces and a casing helper. The path-fix after utils text is exactly the subsequent source-fix before utils text, establishing shared helper-version context, not exact equality of the different selected functions or an approved issue merge. Eight rows/two mechanical families are review units, not independent issues; keep alias/history/semantic independence pending.",
+      "open_questions": [
+        "Researcher confirm supported old schema/default/Unicode/runtime/template and path/configuration contracts, input ownership and actual generation/import/deletion audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No generator/CLI/schema/YAML/JSON/Pydantic/Jinja/stringcase/regex/pathlib/filesystem/enum/typing/compiler/import/formatter/Black/isort/subprocess/dependency/application/generated program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.default = f\"{self.reference.class_name}.{inverse_values[self.default]}\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.reference = reference\n        super().__post_init__()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    def __post_init__(self, title: str) -> None:  # type: ignore\n        super().__post_init__()\n        reference = Reference.from_ref(title)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.default = self._validate_default(default=self.default)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return f\"{self.reference.class_name}.{inverse_values[default]}\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/parser/reference.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "class_name = utils.pascal_case(ref_value.replace(\" \", \"\"))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_PEERS.json",
+          "path": "openapi_python_client/utils.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "return stringcase.pascalcase(_sanitize(value))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/templates/enum.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "{{ key }} = \"{{ value }}\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/parser/errors.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a",
+          "needle": "class ValidationError(Exception):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-15142:0:openapi_python_client/parser/properties.py:EnumProperty.get_type_string",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "EnumProperty adds an optional opt-out of Optional rendering; ordinary annotation results remain unchanged.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep path confinement distinct from generated-Python source boundaries, generated syntax/wire-value preservation and casing/typing/import compatibility. Six null-category rows retain null; shared security commit/advisory membership, new consumer requirements and helper necessity do not assign them a vulnerability leaf. Do not count multiple source slots, templates or functions as independently adjudicated issues.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "The old annotation API explicitly describes the string used to declare a property and includes Optional when required=False. New no_optional=False preserves that default branch and each inner/reference type expression; passingTrue is a new interface. The exact union transform template changes its isinstance operand from get_type_string() to get_type_string(no_optional=True), so this is also a coordinated runtime-consumer migration, not solely default processing. A runtime consumer using an annotation as an isinstance operand does not retrospectively make the old annotation getter violate its own declaration contract. No value/key/reference validation is added here.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need required flag, inner/reference producers, annotation/to_string caller and matched union transform template. Keep old consumer behavior distinct from the new opt-out interface; do not substitute newly qualified/default-validated producers for old ones. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old schema/producer/helper/template/runtime/writer/consumer contracts, after-code, advisories, tests, metadata, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Untrusted schema type/reference content ultimately reaches generated source, but the selected getter change does not sanitize that content. A new conditional Optional wrapper branch is not evidence that the old default annotation was a source-injection violation. No separate unauthorized code boundary is established for this edit.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Default-call type rendering is preserved; opt-out rendering is new capability for the changed consumer. No selected old-positive/new-negative security pair is established, and this does not certify parameterized isinstance operands, arbitrary inner/reference strings, nested typing/default behavior or the complete generated client.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected import/typing/casing change supports a coordinated interface or consumer migration without repairing an established old selected-component source-injection duty. Preserve provisional nonrepair exclusion and null category, rather than treating commit membership as a positive.",
+      "dependence_reason": "Preserve fix-family:4950967241c298e6811f and all exact/AST/span/history evidence. One title-path row is one mechanical family; seven functions in the coordinated source-injection commit share a second family and include producers, initializer, import/type interfaces and a casing helper. The path-fix after utils text is exactly the subsequent source-fix before utils text, establishing shared helper-version context, not exact equality of the different selected functions or an approved issue merge. Eight rows/two mechanical families are review units, not independent issues; keep alias/history/semantic independence pending.",
+      "open_questions": [
+        "Researcher confirm supported old schema/default/Unicode/runtime/template and path/configuration contracts, input ownership and actual generation/import/deletion audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No generator/CLI/schema/YAML/JSON/Pydantic/Jinja/stringcase/regex/pathlib/filesystem/enum/typing/compiler/import/formatter/Black/isort/subprocess/dependency/application/generated program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        \"\"\" Get a string representation of type that should be used when declaring this property \"\"\"\n\n        if self.required:\n            return self.reference.class_name\n        return f\"Optional[{self.reference.class_name}]\"\n\n    def get_imports(self, *, prefix: str) -> Set[str]:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        \"\"\" Get a string representation of type that should be used when declaring this property \"\"\"\n\n        if self.required or no_optional:\n            return self.reference.class_name\n        return f\"Optional[{self.reference.class_name}]\"\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    def get_type_string(self) -> str:\n        \"\"\" Get a string representation of type that should be used when declaring this property \"\"\"\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        \"\"\" Get a string representation of type that should be used when declaring this property \"\"\"\n\n        if self.required or no_optional:\n            return self.reference.class_name\n        return f\"Optional[{self.reference.class_name}]\"\n\n    def get_imports(self, *, prefix: str) -> Set[str]:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/templates/property_templates/union_property.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "    {% if loop.first and property.required %}{# No if None statement before this #}\nif isinstance({{ source }}, {{ inner_property.get_type_string() }}):\n    {% elif not loop.last %}\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/templates/property_templates/union_property.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a",
+          "needle": "    {% if loop.first and property.required %}{# No if None statement before this #}\nif isinstance({{ source }}, {{ inner_property.get_type_string(no_optional=True) }}):\n    {% elif not loop.last %}\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_PEERS.json",
+          "path": "openapi_python_client/parser/properties.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "return f\"{self.python_name}: {self.get_type_string()}\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-15142:0:openapi_python_client/parser/properties.py:EnumProperty.values_from_list",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Raw enum mapping reaches Python assignment identifiers and double-quoted literals; after escaping/sanitization is incomplete and can collapse valid values.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep path confinement distinct from generated-Python source boundaries, generated syntax/wire-value preservation and casing/typing/import compatibility. Six null-category rows retain null; shared security commit/advisory membership, new consumer requirements and helper necessity do not assign them a vulnerability leaf. Do not count multiple source slots, templates or functions as independently adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old Schema enum is a nonempty List[Any] with no member-string punctuation/nonempty constraint; README explicitly supports string enums. Restrict the witness to supported string members rather than extending the duty to numeric/null enums. property_from_data and Schemas.build feed those members to this mapper, register the EnumProperty, and Project._build_models renders enum.values into unchanged {{ key }} = \"{{ value }}\" without code-literal encoding or HTML autoescape. First nonalphabetic members use stable VALUE_i keys but still expose raw literals. Old accepted strings should remain data and enum wire values, not generated identifiers/statements. After removes some key punctuation and prefixes quotes, but does not establish the full old domain.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need schema admission, both root and property enum producers, initializer/registry, exact enum template, Jinja environment defaults, concrete writer, generated models imports and enum wire construct/transform consumers. Python identifier-versus-regex-word and literal-escape semantics are essential to bound after behavior. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old schema/producer/helper/template/runtime/writer/consumer contracts, after-code, advisories, tests, metadata, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A lower-trust API/spec author can cause another developer to generate Python containing schema-controlled statement/identifier/literal syntax. Generation writes source and runs formatting commands but does not by itself import/execute that generated client. A subsequent developer/application import/use of the client, including the generated models import aggregator, is the additional code-execution delivery prerequisite. No automatic generator-time code execution, actual victim import, sandbox escape or universal success for malformed injected source is claimed.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "The after duplicate guard tests the raw uppercase key but stores under sanitized_key. For the admitted string enum ordered [\"A\", \"A\\u0301\"] (second value is A followed by COMBINING ACUTE ACCENT, not six literal escape characters), old uppercase keys A and A-plus-combining-mark are both valid Python identifiers; NFKC gives distinct A and accented capital A. Old quoted values remain the two distinct original wire strings. After regex word sanitization removes the non-alphanumeric combining mark: the second raw key is not in output, its sanitized key is A, and assignment silently overwrites the first entry. The unchanged enum template therefore loses the legitimate value \"A\"; the generated Enum constructor used by the wire-construction macro can no longer accept it and its .value transform cannot preserve that member. This introduces a supported existing string-enum contract regression, not merely a collision among old syntactically invalid punctuation keys. No Unicode normalization, regex, generator, compiler, enum constructor, import or upstream test is executed. Separately, after sanitize retains ASCII spaces/hyphens, so admitted nonempty alphabetic-first values containing those characters still produce invalid assignment names; the unchanged value[0] access still fails for an admitted empty string. remove_string_escapes only prefixes double quotes and does not escape preceding backslashes or physical newlines. A preexisting backslash immediately before a quote becomes two backslashes before that quote, which Python consumes as a literal backslash followed by a terminating quote; suitably chosen remaining data can again occupy source syntax. A trailing backslash or physical newline can also break the short literal. These are bounded unresolved source-boundary/accepted-string failures, not a proof that every after input is unsafe, a compiled payload, or a blanket code-execution claim. Quote-only neutralization on its narrower domain does not certify the general enum negative.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Old enum identifier/literal injection has a concrete matched template/writer/import path, but the after mapper introduces a supported Unicode enum-value loss and leaves accepted-input/source-boundary failures unresolved. It is not an unqualified paired negative.",
+      "dependence_reason": "Preserve fix-family:4950967241c298e6811f and all exact/AST/span/history evidence. One title-path row is one mechanical family; seven functions in the coordinated source-injection commit share a second family and include producers, initializer, import/type interfaces and a casing helper. The path-fix after utils text is exactly the subsequent source-fix before utils text, establishing shared helper-version context, not exact equality of the different selected functions or an approved issue merge. Eight rows/two mechanical families are review units, not independent issues; keep alias/history/semantic independence pending.",
+      "open_questions": [
+        "Researcher confirm supported old schema/default/Unicode/runtime/template and path/configuration contracts, input ownership and actual generation/import/deletion audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No generator/CLI/schema/YAML/JSON/Pydantic/Jinja/stringcase/regex/pathlib/filesystem/enum/typing/compiler/import/formatter/Black/isort/subprocess/dependency/application/generated program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "output[key] = value"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "output[sanitized_key] = utils.remove_string_escapes(value)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "values=EnumProperty.values_from_list(data.enum)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if key in output:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "sanitized_key = utils.fix_keywords(utils.sanitize(key))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/schema/schema.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "enum: Optional[List[Any]] = Field(default=None, min_items=1)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/schema/schema.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "\"minLength\", if absent, may be considered as being present with"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "README.md",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "date, datetime, string enums"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/parser/openapi.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "values=EnumProperty.values_from_list(data.enum)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/parser/openapi.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a",
+          "needle": "values=EnumProperty.values_from_list(data.enum)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/templates/enum.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "{{ key }} = \"{{ value }}\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/templates/enum.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a",
+          "needle": "{{ key }} = \"{{ value }}\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/__init__.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "module_path.write_text(enum_template.render(enum=enum))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/__init__.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a",
+          "needle": "module_path.write_text(enum_template.render(enum=enum))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_PEERS.json",
+          "path": "openapi_python_client/utils.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a",
+          "needle": "return value.replace('\"', r\"\\\"\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_PEERS.json",
+          "path": "openapi_python_client/utils.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a",
+          "needle": "return re.sub(r\"[^\\w _\\-]+\", \"\", value)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_RUNTIME.json",
+          "path": "Doc/reference/lexical_analysis.rst",
+          "ref": "v3.8.5",
+          "needle": "   identifier: `xid_start` `xid_continue`*\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_RUNTIME.json",
+          "path": "Doc/reference/lexical_analysis.rst",
+          "ref": "v3.8.5",
+          "needle": "All identifiers are converted into the normal form NFKC while parsing"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_RUNTIME.json",
+          "path": "Doc/library/re.rst",
+          "ref": "v3.8.5",
+          "needle": "patterns are Unicode alphanumerics or the underscore"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_RUNTIME.json",
+          "path": "Doc/reference/lexical_analysis.rst",
+          "ref": "v3.8.5",
+          "needle": "shortstringchar:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_RUNTIME.json",
+          "path": "Doc/reference/lexical_analysis.rst",
+          "ref": "v3.8.5",
+          "needle": "| ``\\\\``"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_RUNTIME.json",
+          "path": "Lib/enum.py",
+          "ref": "v3.8.5",
+          "needle": "return cls._value2member_map_[value]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_DELIVERY.json",
+          "path": "openapi_python_client/templates/property_templates/enum_property.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "{% if property.required %}\n{{ property.python_name }} = {{ property.reference.class_name }}({{ source }})\n{% else %}\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_DELIVERY.json",
+          "path": "openapi_python_client/templates/property_templates/enum_property.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "{{ destination }} = {{ source }}.value\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_DELIVERY.json",
+          "path": "openapi_python_client/templates/models_init.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "{{ import }}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_RUNTIME.json",
+          "path": "src/jinja2/environment.py",
+          "ref": "2.11.2",
+          "needle": "        finalize=None,\n        autoescape=False,\n        loader=None,\n"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "The after duplicate guard tests the raw uppercase key but stores under sanitized_key. For the admitted string enum ordered [\"A\", \"A\\u0301\"] (second value is A followed by COMBINING ACUTE ACCENT, not six literal escape characters), old uppercase keys A and A-plus-combining-mark are both valid Python identifiers; NFKC gives distinct A and accented capital A. Old quoted values remain the two distinct original wire strings. After regex word sanitization removes the non-alphanumeric combining mark: the second raw key is not in output, its sanitized key is A, and assignment silently overwrites the first entry. The unchanged enum template therefore loses the legitimate value \"A\"; the generated Enum constructor used by the wire-construction macro can no longer accept it and its .value transform cannot preserve that member. This introduces a supported existing string-enum contract regression, not merely a collision among old syntactically invalid punctuation keys. No Unicode normalization, regex, generator, compiler, enum constructor, import or upstream test is executed.",
+      "additional_after_concerns": [
+        "Separately, after sanitize retains ASCII spaces/hyphens, so admitted nonempty alphabetic-first values containing those characters still produce invalid assignment names; the unchanged value[0] access still fails for an admitted empty string. remove_string_escapes only prefixes double quotes and does not escape preceding backslashes or physical newlines. A preexisting backslash immediately before a quote becomes two backslashes before that quote, which Python consumes as a literal backslash followed by a terminating quote; suitably chosen remaining data can again occupy source syntax. A trailing backslash or physical newline can also break the short literal. These are bounded unresolved source-boundary/accepted-string failures, not a proof that every after input is unsafe, a compiled payload, or a blanket code-execution claim. Quote-only neutralization on its narrower domain does not certify the general enum negative."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-15142:0:openapi_python_client/parser/properties.py:ListProperty.get_type_string",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "ListProperty adds an optional opt-out of Optional rendering; ordinary annotation results remain unchanged.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep path confinement distinct from generated-Python source boundaries, generated syntax/wire-value preservation and casing/typing/import compatibility. Six null-category rows retain null; shared security commit/advisory membership, new consumer requirements and helper necessity do not assign them a vulnerability leaf. Do not count multiple source slots, templates or functions as independently adjudicated issues.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "The old annotation API explicitly describes the string used to declare a property and includes Optional when required=False. New no_optional=False preserves that default branch and each inner/reference type expression; passingTrue is a new interface. The exact union transform template changes its isinstance operand from get_type_string() to get_type_string(no_optional=True), so this is also a coordinated runtime-consumer migration, not solely default processing. A runtime consumer using an annotation as an isinstance operand does not retrospectively make the old annotation getter violate its own declaration contract. No value/key/reference validation is added here.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need required flag, inner/reference producers, annotation/to_string caller and matched union transform template. Keep old consumer behavior distinct from the new opt-out interface; do not substitute newly qualified/default-validated producers for old ones. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old schema/producer/helper/template/runtime/writer/consumer contracts, after-code, advisories, tests, metadata, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Untrusted schema type/reference content ultimately reaches generated source, but the selected getter change does not sanitize that content. A new conditional Optional wrapper branch is not evidence that the old default annotation was a source-injection violation. No separate unauthorized code boundary is established for this edit.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Default-call type rendering is preserved; opt-out rendering is new capability for the changed consumer. No selected old-positive/new-negative security pair is established, and this does not certify parameterized isinstance operands, arbitrary inner/reference strings, nested typing/default behavior or the complete generated client.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected import/typing/casing change supports a coordinated interface or consumer migration without repairing an established old selected-component source-injection duty. Preserve provisional nonrepair exclusion and null category, rather than treating commit membership as a positive.",
+      "dependence_reason": "Preserve fix-family:4950967241c298e6811f and all exact/AST/span/history evidence. One title-path row is one mechanical family; seven functions in the coordinated source-injection commit share a second family and include producers, initializer, import/type interfaces and a casing helper. The path-fix after utils text is exactly the subsequent source-fix before utils text, establishing shared helper-version context, not exact equality of the different selected functions or an approved issue merge. Eight rows/two mechanical families are review units, not independent issues; keep alias/history/semantic independence pending.",
+      "open_questions": [
+        "Researcher confirm supported old schema/default/Unicode/runtime/template and path/configuration contracts, input ownership and actual generation/import/deletion audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No generator/CLI/schema/YAML/JSON/Pydantic/Jinja/stringcase/regex/pathlib/filesystem/enum/typing/compiler/import/formatter/Black/isort/subprocess/dependency/application/generated program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return f\"List[{self.inner_property.get_type_string()}]\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        \"\"\" Get a string representation of type that should be used when declaring this property \"\"\"\n        if self.required or no_optional:\n            return f\"List[{self.inner_property.get_type_string()}]\"\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\n    def get_type_string(self) -> str:\n        \"\"\" Get a string representation of type that should be used when declaring this property \"\"\"\n        if self.required:\n            return f\"List[{self.inner_property.get_type_string()}]\"\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return f\"List[{self.inner_property.get_type_string()}]\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/templates/property_templates/union_property.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "    {% if loop.first and property.required %}{# No if None statement before this #}\nif isinstance({{ source }}, {{ inner_property.get_type_string() }}):\n    {% elif not loop.last %}\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/templates/property_templates/union_property.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a",
+          "needle": "    {% if loop.first and property.required %}{# No if None statement before this #}\nif isinstance({{ source }}, {{ inner_property.get_type_string(no_optional=True) }}):\n    {% elif not loop.last %}\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_PEERS.json",
+          "path": "openapi_python_client/parser/properties.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "return f\"{self.python_name}: {self.get_type_string()}\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-15142:0:openapi_python_client/parser/properties.py:UnionProperty.get_type_string",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "UnionProperty adds an optional opt-out of Optional rendering; ordinary annotation results remain unchanged.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep path confinement distinct from generated-Python source boundaries, generated syntax/wire-value preservation and casing/typing/import compatibility. Six null-category rows retain null; shared security commit/advisory membership, new consumer requirements and helper necessity do not assign them a vulnerability leaf. Do not count multiple source slots, templates or functions as independently adjudicated issues.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "The old annotation API explicitly describes the string used to declare a property and includes Optional when required=False. New no_optional=False preserves that default branch and each inner/reference type expression; passingTrue is a new interface. The exact union transform template changes its isinstance operand from get_type_string() to get_type_string(no_optional=True), so this is also a coordinated runtime-consumer migration, not solely default processing. A runtime consumer using an annotation as an isinstance operand does not retrospectively make the old annotation getter violate its own declaration contract. No value/key/reference validation is added here.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need required flag, inner/reference producers, annotation/to_string caller and matched union transform template. Keep old consumer behavior distinct from the new opt-out interface; do not substitute newly qualified/default-validated producers for old ones. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old schema/producer/helper/template/runtime/writer/consumer contracts, after-code, advisories, tests, metadata, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Untrusted schema type/reference content ultimately reaches generated source, but the selected getter change does not sanitize that content. A new conditional Optional wrapper branch is not evidence that the old default annotation was a source-injection violation. No separate unauthorized code boundary is established for this edit.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Default-call type rendering is preserved; opt-out rendering is new capability for the changed consumer. No selected old-positive/new-negative security pair is established, and this does not certify parameterized isinstance operands, arbitrary inner/reference strings, nested typing/default behavior or the complete generated client.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected import/typing/casing change supports a coordinated interface or consumer migration without repairing an established old selected-component source-injection duty. Preserve provisional nonrepair exclusion and null category, rather than treating commit membership as a positive.",
+      "dependence_reason": "Preserve fix-family:4950967241c298e6811f and all exact/AST/span/history evidence. One title-path row is one mechanical family; seven functions in the coordinated source-injection commit share a second family and include producers, initializer, import/type interfaces and a casing helper. The path-fix after utils text is exactly the subsequent source-fix before utils text, establishing shared helper-version context, not exact equality of the different selected functions or an approved issue merge. Eight rows/two mechanical families are review units, not independent issues; keep alias/history/semantic independence pending.",
+      "open_questions": [
+        "Researcher confirm supported old schema/default/Unicode/runtime/template and path/configuration contracts, input ownership and actual generation/import/deletion audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No generator/CLI/schema/YAML/JSON/Pydantic/Jinja/stringcase/regex/pathlib/filesystem/enum/typing/compiler/import/formatter/Black/isort/subprocess/dependency/application/generated program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return f\"Union[{inner_prop_string}]\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        inner_prop_string = \", \".join(inner_types)\n        if self.required or no_optional:\n            return f\"Union[{inner_prop_string}]\"\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    def get_type_string(self) -> str:\n        \"\"\" Get a string representation of type that should be used when declaring this property \"\"\"\n        inner_types = [p.get_type_string() for p in self.inner_properties]\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return f\"Union[{inner_prop_string}]\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/templates/property_templates/union_property.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "    {% if loop.first and property.required %}{# No if None statement before this #}\nif isinstance({{ source }}, {{ inner_property.get_type_string() }}):\n    {% elif not loop.last %}\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "openapi_python_client/templates/property_templates/union_property.pyi",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a",
+          "needle": "    {% if loop.first and property.required %}{# No if None statement before this #}\nif isinstance({{ source }}, {{ inner_property.get_type_string(no_optional=True) }}):\n    {% elif not loop.last %}\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_PEERS.json",
+          "path": "openapi_python_client/parser/properties.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "return f\"{self.python_name}: {self.get_type_string()}\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-15142:0:openapi_python_client/utils.py:group_title",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Acronym casing helper corrects an unintended character range; it does not perform source sanitization.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep path confinement distinct from generated-Python source boundaries, generated syntax/wire-value preservation and casing/typing/import compatibility. Six null-category rows retain null; shared security commit/advisory membership, new consumer requirements and helper necessity do not assign them a vulnerability leaf. Do not count multiple source slots, templates or functions as independently adjudicated issues.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Old group_title groups acronym runs before casing, and old snake_case/kebab_case callers already apply _sanitize before this helper. The selected edit makes space/hyphen/underscore literal alternatives instead of the broad space-to-underscore character range. That can change acronym/digit/punctuation casing, but the actual source-character whitelist lives in a different helper and existed before this selected edit. Existing fixtures cover ordinary acronym casing; no security sink or historical stable naming rule establishes an independently repaired old selected source-injection defect.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old _sanitize, group_title callers, retained stringcase conversion and naming/override contracts. A regex typo/casing change is not automatically a supported security or correctness-positive label; new fixtures do not invent the old expected naming domain. Common before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Exact old schema/producer/helper/template/runtime/writer/consumer contracts, after-code, advisories, tests, metadata, labels and answers are adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Untrusted names pass through casing on their way to generated names, but this selected regex edit neither introduces a source/literal whitelist nor neutralizes the demonstrated enum-value sink, which does not call group_title. Do not borrow the security commit title, sibling sanitize change or another template default failure.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "This is bounded casing/nonrepair attribution, not universal name compatibility, a source-injection paired negative, old naming-regression proof or complete sanitization. Changes in acronym/digit rendering remain subject to an actual supported naming contract; no regex or dependency is run.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected import/typing/casing change supports a coordinated interface or consumer migration without repairing an established old selected-component source-injection duty. Preserve provisional nonrepair exclusion and null category, rather than treating commit membership as a positive.",
+      "dependence_reason": "Preserve fix-family:4950967241c298e6811f and all exact/AST/span/history evidence. One title-path row is one mechanical family; seven functions in the coordinated source-injection commit share a second family and include producers, initializer, import/type interfaces and a casing helper. The path-fix after utils text is exactly the subsequent source-fix before utils text, establishing shared helper-version context, not exact equality of the different selected functions or an approved issue merge. Eight rows/two mechanical families are review units, not independent issues; keep alias/history/semantic independence pending.",
+      "open_questions": [
+        "Researcher confirm supported old schema/default/Unicode/runtime/template and path/configuration contracts, input ownership and actual generation/import/deletion audience, selected attribution and bounded after-negative. Actual deployment, final eligibility and independent issue identity remain pending.",
+        "All findings are source deductions, not reproduced results. No generator/CLI/schema/YAML/JSON/Pydantic/Jinja/stringcase/regex/pathlib/filesystem/enum/typing/compiler/import/formatter/Black/isort/subprocess/dependency/application/generated program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "([A-Z][a-z]|[ -_]|$)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "([A-Z][a-z]|[ \\-_]|$)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return stringcase.snakecase(group_title(_sanitize(value)))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return fix_keywords(stringcase.snakecase(group_title(sanitize(value))))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return re.sub(r\"[^\\w _-]+\", \"\", value)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "tests/test_utils.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a^",
+          "needle": "def test_snake_case_uppercase_str():\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026.json",
+          "path": "tests/test_utils.py",
+          "ref": "f7a56aae32cba823a77a84a1f10400799b19c19a",
+          "needle": "def test_snake_case_uppercase_str():\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_RUNTIME.json",
+          "path": "stringcase-1.2.0/stringcase.py",
+          "ref": "1.2.0",
+          "needle": "def snakecase(string):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_026_RUNTIME.json",
+          "path": "Doc/library/re.rst",
+          "ref": "v3.8.5",
+          "needle": "Ranges of characters can be indicated"
+        }
+      ]
+    }
+  ]
+}

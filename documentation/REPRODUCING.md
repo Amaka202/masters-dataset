@@ -22,6 +22,20 @@ The source modules in the evidence ZIPs are decoded, sliced and parsed as data;
 they are never imported or executed. The verifier confirms source identity and
 the defined split checks, not independent issue-label validity.
 
+### Later training-audit checkpoint — 1 November 2026
+
+The package also includes the complete registered training consolidation evidence,
+student selection decisions, proposed experiment protocol and mechanical size/status
+preflight. See [the audit guide](training-audit/README.md).
+
+```sh
+python3 scripts/verify_package.py --audit
+```
+
+This additionally checks discovery/consolidation/preflight reproducibility in the
+temporary staged workspace. It does not run retained application code, model
+inference, payloads or upstream tests. Final experimental eligibility remains pending.
+
 ## 3. Recreate a working preparation directory
 
 The original scripts expect input filenames together in one directory. This

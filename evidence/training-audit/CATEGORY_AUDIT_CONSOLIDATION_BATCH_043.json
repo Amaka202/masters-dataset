@@ -1,0 +1,331 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-043",
+  "review_date": "2026-10-27",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All four pyoidc training candidates/all statuses including null message-helper exclusion; one mechanical family.",
+  "selection_rule": {
+    "repository": "github.com/openidc/pyoidc",
+    "discovery_categories": [
+      null,
+      "SEC-TOKEN-ALGORITHM-POLICY"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "One security-boundary, one selected-attribution, one residual paired-negative and one nonrepair exclusion. Claim verifier adds contextual none guard, but old installed lower-trust caller is not established by the new Consumer invocation. Wrapper enables new rejecting-default/code exception rather than dropping an old callee argument. Consumer adds final verifier and algorithm defaults, yet _parse_authz discards kwargs and a stored [code] request permits unsigned callback claims without Token Endpoint provenance; bare ID-token/no-companion acceptance is residual, not an invented introduced regression. Applications requiring a valid later code exchange can stop; returned-token acceptance is not universal login takeover. Message helper relaxes none hashes and delegates policy, preserving null nonrepair; separate IdToken time-order repair is not its selected defect. Three pins retain54 inert texts/six exact archive peers/one resolved first parent/two archive inventories with explicit missing paths. Historical OIDC1.0 errata1-2014 and pyjwkest1.4.2 are semantic comparisons, not installed/all-version proof. OpenID specification retrieved with ordinary TLS-verified curl after Python certificate key-usage validation rejected the chain; no verification disablement. Four functions/one family are not independently adjudicated issues; repository redirects/merge metadata are provenance only. Preserve all833 ledger events/statuses/categories/hashes/families, prior authored evidence, canonical bytes/splits and45 protected inputs. No retained program, payload, vulnerability-target request or upstream test executes.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-26244:0:src/oic/oic/__init__.py:Client._verify_id_token",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Client claim verifier lacks flow-specific none-algorithm rejection; pre-fix lower-trust caller remains unestablished.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate front-channel unsigned-token acceptance, flow-context propagation, message-level hash compatibility, nonce/claim checks and true Token Endpoint/TLS exception. A saved code request is not authenticated response-channel provenance or explicit none registration. Private claim verification is not cryptographic signature verification; shared file/CVE does not make four security positives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "OIDC1.0 errata1 predates the fix: none requires no ID Token from Authorization Endpoint plus explicit registration, and only direct Token Endpoint/TLS communication permits the stated signature-validation exception. Old Message.from_jwt explicitly skips cryptographic checking for alg=none unless an expected algorithm was supplied, and old private verifier checks issuer/audience/expiry/nonce claims without algorithm/flow policy. Its public wrapper supplies claims context, but literal production retrieval shows no old Consumer call into this verifier; examples using the separate RP callback have their own none gate. Supported conditional API policy gap is not proof this private helper was an installed old network sink.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need upstream parsing/header provenance, expected algorithm, true response channel, explicit registration, saved request/nonce and actual pre-fix caller. The selected function checks claims rather than verifying a JWS signature and cannot establish how an IdToken arrived. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Parser/hash/crypto dependencies, protocol channel/registration policy, saved request/state/nonce/backend/consumer facts, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "A lower-trust none token meeting the claims can pass this old API if the upstream policy permits it. Actual pre-fix application invocation of the wrapper/private verifier on that data is not established by tests or the newly added Consumer call. Do not borrow Consumer before parsing, which never invokes it, or the separate RP callback that already has an algorithm gate.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After rejects header alg=none unless response_type is exactly [code]; default missing context rejects none conservatively. This is a flow-specific rejection only, not cryptographic signature verification, all algorithm policy, registration consent or trusted-channel enforcement. Caller must establish that the code exception is actually appropriate; Consumer after fails that binding separately. No independently supported old-contract after regression is assigned to this helper.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Public claim-verifier behavior and protocol duty are evidenced, but retained literal old production retrieval finds only its wrapper and tests, not a pre-fix Consumer invocation. Keep actual lower-trust delivery unresolved rather than inherit the new Consumer call.",
+      "dependence_reason": "Four functions/one mechanical family fix-family:c211639983d6734839a1 share one fix/first parent and three full files, not four independent issues. Client wrapper/context forwarding and message hash relaxation are coordinated with the flow guard; neither inherits a new standalone old security defect from the CVE. Consumer before does not call the Client verifier, while Consumer after adds it; do not backfill that consumer into the old helper. Separate RP callback has its own allow_sign_alg_none gate and is not the same Consumer path. Repository redirects/merge parents are provenance, not independent aliases/issue counts; no approved eligibility or root-cause count.",
+      "open_questions": [
+        "Researcher confirm actual old public helper consumers, callback lower-trust delivery, saved request provenance/type/state/nonce, registration algorithm, issuer/keyjar policy, token response channel/TLS, mutation/error containment and applications that consume returned ID claims. A caller requiring a valid code exchange can stop before login; no universal account-takeover/deployment claim. Choose uniform before-only context and adjudicate issue identity.",
+        "Conditional source deductions, not reproduced outcomes. No retained OIDC/OAuth/JWT/JWS/crypto/hash/nonce/state/HTTP/browser/session/pickle/parser/regex/dependency/application program, payload, vulnerability-target request or upstream test executes. Read members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if self.provider_info[\"issuer\"] != id_token[\"iss\"]:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if response_type != [\"code\"] and id_token.jws_header[\"alg\"] == \"none\":"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTEXT.json",
+          "path": "src/oic/oauth2/message.py",
+          "ref": "6ac4384c0ce3d65e3a4215b20426151799573a74",
+          "needle": "if _header[\"alg\"] == \"none\":"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTEXT.json",
+          "path": "src/oic/oauth2/message.py",
+          "ref": "6ac4384c0ce3d65e3a4215b20426151799573a74",
+          "needle": "if kwargs[\"algs\"][\"sign\"] != _alg:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTEXT.json",
+          "path": "src/oic/utils/rp/__init__.py",
+          "ref": "6ac4384c0ce3d65e3a4215b20426151799573a74",
+          "needle": "if not self.allow_sign_alg_none:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTRACTS.json",
+          "path": "openid-connect-core-1_0-errata1.html",
+          "ref": "OpenID-Connect-Core-1.0-errata1-2014",
+          "needle": "and the Client explicitly requested the use of"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTRACTS.json",
+          "path": "openid-connect-core-1_0-errata1.html",
+          "ref": "OpenID-Connect-Core-1.0-errata1-2014",
+          "needle": "If the ID Token is received via direct"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-26244:0:src/oic/oic/__init__.py:Client.verify_id_token",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Client wrapper forwards new response_type context to a newly introduced callee guard.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate front-channel unsigned-token acceptance, flow-context propagation, message-level hash compatibility, nonce/claim checks and true Token Endpoint/TLS exception. A saved code request is not authenticated response-channel provenance or explicit none registration. Private claim verification is not cryptographic signature verification; shared file/CVE does not make four security positives.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old wrapper forwards nonce/acr/max_age to the matching old claim verifier, which has no response_type argument or none-flow guard. Thus it does not drop an existing required argument. After context forwarding allows the new guard to distinguish its code-flow exception; omitting that new argument would conservatively reject none, not reproduce the old acceptance. Public API/saved request context remains part of coordinated policy, not an isolated old selected failure.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old/new callee signature/default/decision and trusted saved AuthorizationRequest. Wrapper text alone neither defines nor enforces the cryptographic/channel policy. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Parser/hash/crypto dependencies, protocol channel/registration policy, saved request/state/nonce/backend/consumer facts, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No independent old selected fail-open decision is established. The old callee policy and absent old installed wrapper consumers remain separate; new interface support cannot inherit Consumer before acceptance.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After forwards response_type only if present; missing value retains the rejecting default. This is coordinated context propagation, not a standalone approved old-positive/after-negative security pair. It cannot by itself prove registration or Token Endpoint provenance. None authn_req raises TypeError rather than KeyError, but an old supported request-missing wrapper contract is not established; do not invent a separate regression from that newly wired path.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Old callee has no response_type parameter or guard. New forwarding enables a code-flow exception in a coordinated interface, not an isolated old dropped-context defect.",
+      "dependence_reason": "Four functions/one mechanical family fix-family:c211639983d6734839a1 share one fix/first parent and three full files, not four independent issues. Client wrapper/context forwarding and message hash relaxation are coordinated with the flow guard; neither inherits a new standalone old security defect from the CVE. Consumer before does not call the Client verifier, while Consumer after adds it; do not backfill that consumer into the old helper. Separate RP callback has its own allow_sign_alg_none gate and is not the same Consumer path. Repository redirects/merge parents are provenance, not independent aliases/issue counts; no approved eligibility or root-cause count.",
+      "open_questions": [
+        "Researcher confirm actual old public helper consumers, callback lower-trust delivery, saved request provenance/type/state/nonce, registration algorithm, issuer/keyjar policy, token response channel/TLS, mutation/error containment and applications that consume returned ID claims. A caller requiring a valid code exchange can stop before login; no universal account-takeover/deployment claim. Choose uniform before-only context and adjudicate issue identity.",
+        "Conditional source deductions, not reproduced outcomes. No retained OIDC/OAuth/JWT/JWS/crypto/hash/nonce/state/HTTP/browser/session/pickle/parser/regex/dependency/application program, payload, vulnerability-target request or upstream test executes. Read members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for param in [\"acr_values\", \"max_age\"]:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for param in [\"acr_values\", \"max_age\", \"response_type\"]:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._verify_id_token(id_token, **kwa)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "response_type=\"\","
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if response_type != [\"code\"] and id_token.jws_header[\"alg\"] == \"none\":"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTEXT.json",
+          "path": "src/oic/oauth2/__init__.py",
+          "ref": "6ac4384c0ce3d65e3a4215b20426151799573a74",
+          "needle": "self.authz_req[request_args[\"state\"]] = csi"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-26244:0:src/oic/oic/consumer.py:Consumer.parse_authz",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Consumer returns unsigned callback identity claims without proper flow/channel binding; after code exception remains reachable.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate front-channel unsigned-token acceptance, flow-context propagation, message-level hash compatibility, nonce/claim checks and true Token Endpoint/TLS exception. A saved code request is not authenticated response-channel provenance or explicit none registration. Private claim verification is not cryptographic signature verification; shared file/CVE does not make four security positives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Consumer parse_authz is an authorization-callback parser with documented code/implicit/hybrid/id_token forms. Matching OAuth parser invokes response verification, message helper decodes/validates claims, and Message.from_jwt explicitly skips none signature checking unless supplied expected signing algorithm. Old Consumer returns without Client request/nonce/flow verification; implicit AccessTokenResponse uses check_hash=False and old AuthorizationResponse may admit a bare ID token without code/access-token hash-bearing fields. OIDC1.0 errata1 requires signed front-channel tokens and confines none to explicit registration/no Authorization Endpoint token, establishing the old authentication contract independently of new tests.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need parse_response/Message JWT acceptance, response hash modes, request persistence and identity-consumer semantics, saved state/nonce, registration and actual channel. Function text alone cannot establish which prior cryptographic/claim checks ran or that unsigned data reaches it. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Parser/hash/crypto dependencies, protocol channel/registration policy, saved request/state/nonce/backend/consumer facts, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "For lower-trust callback bytes matching configured issuer/audience/time and an actor-known valid request state/nonce, a chosen subject can be returned as parsed/verified ID claims without an issuer signature. Public callback input is not a trusted direct Token Endpoint response merely because the saved request asks for code. Actual application use of those returned claims is needed for impersonation impact; applications that require a valid subsequent code exchange may stop. No stolen victim nonce, unsigned arbitrary upstream signature capability or universal account takeover is assumed.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After implicit path gets expected algs and all present tokens receive the new Client check before return, but _parse_authz ignores kwargs, so code/id-token helper paths lose that expected-alg policy. With a saved [code] request and otherwise admissible callback containing unsigned id_token, known state and matching/absent requested nonce, no code/access-token fields are needed: message hash checks have no hash-bearing companion and final Client exception permits none. Bare-ID-token callback acceptance already existed before, so classify residual failure rather than claiming introduction. New none hash exemption also widens some companion-field shapes, not a reason to certify the after. Grant/session writes occur before final guard; atomic rollback is not certified. No deployed reproduction or automatic application login is claimed.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "An unsigned front-channel ID token can still return under a saved code-only request because helper drops algs and final flow exception lacks channel binding; preserve a residual after-contract deferral, not a generally clean negative or invented introduction.",
+      "dependence_reason": "Four functions/one mechanical family fix-family:c211639983d6734839a1 share one fix/first parent and three full files, not four independent issues. Client wrapper/context forwarding and message hash relaxation are coordinated with the flow guard; neither inherits a new standalone old security defect from the CVE. Consumer before does not call the Client verifier, while Consumer after adds it; do not backfill that consumer into the old helper. Separate RP callback has its own allow_sign_alg_none gate and is not the same Consumer path. Repository redirects/merge parents are provenance, not independent aliases/issue counts; no approved eligibility or root-cause count.",
+      "open_questions": [
+        "Researcher confirm actual old public helper consumers, callback lower-trust delivery, saved request provenance/type/state/nonce, registration algorithm, issuer/keyjar policy, token response channel/TLS, mutation/error containment and applications that consume returned ID claims. A caller requiring a valid code exchange can stop before login; no universal account-takeover/deployment claim. Choose uniform before-only context and adjudicate issue identity.",
+        "Conditional source deductions, not reproduced outcomes. No retained OIDC/OAuth/JWT/JWS/crypto/hash/nonce/state/HTTP/browser/session/pickle/parser/regex/dependency/application program, payload, vulnerability-target request or upstream test executes. Read members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return None, None, idt"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.verify_id_token(idt, self.authz_req.get(_state or atr[\"state\"]))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "idt = None\n            return None, atr, idt"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "kwargs[\"algs\"] = self.sign_enc_algs(\"id_token\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "AuthorizationResponse, info=query, sformat=\"urlencoded\", keyjar=self.keyjar"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTEXT.json",
+          "path": "src/oic/oauth2/__init__.py",
+          "ref": "62f8d753fa17c8b1f29f8be639cf0b33afb02498",
+          "needle": "verf = resp.verify(**kwargs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTEXT.json",
+          "path": "src/oic/oauth2/message.py",
+          "ref": "62f8d753fa17c8b1f29f8be639cf0b33afb02498",
+          "needle": "if _header[\"alg\"] == \"none\":"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTEXT.json",
+          "path": "src/oic/oic/message.py",
+          "ref": "62f8d753fa17c8b1f29f8be639cf0b33afb02498",
+          "needle": "\"code\": SINGLE_OPTIONAL_STRING,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTEXT.json",
+          "path": "src/oic/oic/message.py",
+          "ref": "62f8d753fa17c8b1f29f8be639cf0b33afb02498",
+          "needle": "hfunc = None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTEXT.json",
+          "path": "src/oic/oic/__init__.py",
+          "ref": "62f8d753fa17c8b1f29f8be639cf0b33afb02498",
+          "needle": "if response_type != [\"code\"] and id_token.jws_header[\"alg\"] == \"none\":"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTRACTS.json",
+          "path": "openid-connect-core-1_0-errata1.html",
+          "ref": "OpenID-Connect-Core-1.0-errata1-2014",
+          "needle": "The Client MUST validate the signature of all other ID Tokens according to"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTEXT.json",
+          "path": "src/oic/oic/consumer.py",
+          "ref": "62f8d753fa17c8b1f29f8be639cf0b33afb02498",
+          "needle": "self.authz_req[areq[\"state\"]] = areq"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "After callback helper discards newly supplied algs; a saved code-only request exempts none at final guard despite the actual front-channel source. For bare ID token plus known state, no code/access hash is required, and otherwise matching claims/nonce can return. This predates the fix for that shape and violates the retained pre-fix OIDC channel/signature contract. Defer selected paired-negative use without a universal exploitation claim or invented introduction chronology."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-26244:0:src/oic/oic/message.py:verify_id_token",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Message helper relaxes none at_hash/c_hash handling and delegates flow prohibition; no selected old rejection repair.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate front-channel unsigned-token acceptance, flow-context propagation, message-level hash compatibility, nonce/claim checks and true Token Endpoint/TLS exception. A saved code request is not authenticated response-channel provenance or explicit none registration. Private claim verification is not cryptographic signature verification; shared file/CVE does not make four security positives.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Old helper already decodes JWTs and checks issuer/audience/time plus optional code/access hashes; selected change skips the hash calculations for none and says Client must enforce code-only allowance. In admitted pyjwkest1.4.2, left_hash only handles HS256/384/512 and falls through for derived HSone; this is not proof of an executed crash or meaningful none hash. Backchannel AccessTokenResponse already uses check_hash=False, whereas AuthorizationResponse uses True. No admitted old caller requiring successful front-channel none+hash acceptance is established. New IdToken.verify time-order checks are a separate changed method, not this selected edit.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need Message.from_jwt algorithm semantics, exact caller check_hash mode, pyjwkest hash implementation and separate Client flow/channel decision. Same file includes other claim repairs that cannot be attributed to this selected helper. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Parser/hash/crypto dependencies, protocol channel/registration policy, saved request/state/nonce/backend/consumer facts, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "This edit removes checks for none; it does not add signature/algorithm rejection. Standard Consumer after adds policy but has the separately recorded channel gap; separate RP callback has its own gate. Do not label all message APIs secure or inherit another old selected security-positive from this coordinated fix.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No standalone selected security repair negative is established. None hash exemption intentionally relies on caller flow policy, whose code/channel binding is incomplete in Consumer. Preserve null-category nonrepair exclusion, not a generally safe helper label or an invented old correctness positive. All signed-token hash behavior and separate claim-time changes must retain their own scope.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "Selected edit relaxes none hash handling and depends on a separate Client policy. No selected old security-rejection repair or independently admitted ordinary correctness witness is established; preserve null-category nonrepair exclusion.",
+      "dependence_reason": "Four functions/one mechanical family fix-family:c211639983d6734839a1 share one fix/first parent and three full files, not four independent issues. Client wrapper/context forwarding and message hash relaxation are coordinated with the flow guard; neither inherits a new standalone old security defect from the CVE. Consumer before does not call the Client verifier, while Consumer after adds it; do not backfill that consumer into the old helper. Separate RP callback has its own allow_sign_alg_none gate and is not the same Consumer path. Repository redirects/merge parents are provenance, not independent aliases/issue counts; no approved eligibility or root-cause count.",
+      "open_questions": [
+        "Researcher confirm actual old public helper consumers, callback lower-trust delivery, saved request provenance/type/state/nonce, registration algorithm, issuer/keyjar policy, token response channel/TLS, mutation/error containment and applications that consume returned ID claims. A caller requiring a valid code exchange can stop before login; no universal account-takeover/deployment claim. Choose uniform before-only context and adjudicate issue identity.",
+        "Conditional source deductions, not reproduced outcomes. No retained OIDC/OAuth/JWT/JWS/crypto/hash/nonce/state/HTTP/browser/session/pickle/parser/regex/dependency/application program, payload, vulnerability-target request or upstream test executes. Read members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "hfunc = \"HS\" + _alg[-3:]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if \"access_token\" in instance and hfunc is not None:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if check_hash:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "# This is allowed only for `code` and it needs to be checked by a Client"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\n        if \"id_token\" in self:\n            self[\"id_token\"] = verify_id_token(self, check_hash=True, **kwargs)\n\n        if \"access_token\" in self:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self[\"id_token\"] = verify_id_token(self, **kwargs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTRACTS.json",
+          "path": "src/jwkest/jws.py",
+          "ref": "1.4.2",
+          "needle": "def left_hash(msg, func=\"HS256\"):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTEXT.json",
+          "path": "setup.py",
+          "ref": "6ac4384c0ce3d65e3a4215b20426151799573a74",
+          "needle": "\"pyjwkest>=1.3.6\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_043_CONTEXT.json",
+          "path": "src/oic/oic/message.py",
+          "ref": "62f8d753fa17c8b1f29f8be639cf0b33afb02498",
+          "needle": "if _exp < _iat:"
+        }
+      ]
+    }
+  ]
+}

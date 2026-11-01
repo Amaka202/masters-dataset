@@ -1,0 +1,1681 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-011",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All 42 remaining Keras training candidates outside its completed broad-leaf batch, every status and unclassified case.",
+  "selection_rule": {
+    "repository": "github.com/keras-team/keras",
+    "discovery_categories": [
+      null,
+      "CORR-CONFIGURATION-PRECEDENCE",
+      "CORR-CSV-RECORD-SEPARATION",
+      "CORR-ERROR-CLASSIFICATION",
+      "CORR-INCLUSIVE-RANGE-BOUNDARY",
+      "CORR-NULL-BOUNDARY",
+      "CORR-TENSOR-SHAPE",
+      "CORR-TEXT-ENCODING",
+      "CORR-ZERO-DENOMINATOR"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 796,
+    "sha256": "8b01d57c1114ecc51f49d8c2b5ef38de9a02c50e4aff46ffe41150b0f8860388"
+  },
+  "interpretation": "Both archived selected spans and unique anchors verified. Fixes and separately pinned exact old docs/source/tests are inert adjudication evidence, never detection input. No Keras, TensorFlow, CNTK, Theano, NumPy, model, callback, generator, download, dataset/dependency program or upstream test executes. Source deductions are not reproduced failures. Researcher approval pending.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-12:0:keras/metrics.py:sparse_categorical_accuracy",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Sparse categorical accuracy destroys admitted temporal target axes by flattening every dimension.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old training pipeline selects sparse accuracy for sparse crossentropy and constructs targets from output_shape[:-1]+(1,), including temporal outputs. Flattening (batch,time,1) loses those axes while argmax retains (batch,time). The after squeezes only the class singleton for equal ranks. The new rank-four test is not itself evidence that equal-rank squeezing is exercised.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched training target preparation and backend ndim/squeeze/argmax/equality semantics establish admission and shape failure; they are absent from the selected short body.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Admitted channels-last temporal targets with singleton class axis, valid integer labels and ordinary float representation only. Channels-first segmentation, large-label float precision and arbitrary broadcasting are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "Successive sparse accuracy history: keras-17 flattening repairs vector labels but creates/preserves this later temporal-rank loss; retain source overlap/history rather than count versions as independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    # flatten y_true in case it's in shape (num_samples, 1) instead of (num_samples,)\n    return K.cast(K.equal(K.flatten(y_true),\n                          K.cast(K.argmax(y_pred, axis=-1), K.floatx())),\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if K.ndim(y_true) == K.ndim(y_pred):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_011.json",
+          "path": "keras/engine/training.py",
+          "ref": "6dff721a3a8755356b2e89d02ef63ad8ab38ec95^",
+          "needle": "feed_output_shapes.append(output_shape[:-1] + (1,))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_011.json",
+          "path": "keras/engine/training.py",
+          "ref": "6dff721a3a8755356b2e89d02ef63ad8ab38ec95^",
+          "needle": "metric_fn = metrics_module.sparse_categorical_accuracy"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-14:0:keras/metrics.py:sparse_top_k_categorical_accuracy",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Sparse top-k accuracy reduces a vector of per-sample labels to a global maximum.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old sparse-label convention includes a vector, already exercised for sibling sparse metrics in exact old tests. For rank-one targets, max(axis=-1) produces one scalar instead of the per-sample vector required by in_top_k. Flatten preserves the vector and the existing column-vector case. Top-k-specific historical rank admission remains researcher-confirmable rather than inferred solely from the new test.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Backend in_top_k target-vector contract and project sparse metric convention are necessary; no runtime or new temporal top-k admission is assumed.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Rank-one and (samples,1) integer targets with 2D predictions and a supported top-k backend only. Temporal predictions and CNTK top-k are outside the negative.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:af3c8e19c60671980a5c, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "K.max(y_true, axis=-1)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    # If the shape of y_true is (num_samples, 1), flatten to (num_samples,)\n    return K.mean(K.in_top_k(y_pred, K.cast(K.flatten(y_true), 'int32'), k),\n                  axis=-1)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_011.json",
+          "path": "tests/keras/metrics_test.py",
+          "ref": "02bc5010a04bb11c8e91835cc9775c8149dec754^",
+          "needle": "def test_sparse_metrics():"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-15:0:keras/callbacks.py:CSVLogger.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "CSV logger constructor supplies new stream-opening policy for a coordinated callback repair.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old construction merely stores platform file flags; the Python3 Windows newline translation happens when on_train_begin opens the stream and on_epoch_end writes csv.excel records. Adding _open_args and making Python2 binary everywhere does not isolate a constructor-only failing old operation.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "CSVLogger lifecycle, Python major version, platform newline handling and actual csv writer determine the functional failure. Keep constructor/open/write versions matched.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old constructor positive/after negative. Python2 stream encoding and header coercion are separate from the supported Python3 Windows record-separation witness.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The selected coordinated change does not isolate an old violation under its matched historical interface.",
+      "dependence_reason": "Preserve fix-family:b540c193e29789df6957, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.file_flags = 'b' if six.PY2 and os.name == 'nt' else ''"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._open_args = {'newline': '\\n'}"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-15:0:keras/callbacks.py:CSVLogger.on_epoch_end",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "CSV header coercion is bundled with stream/newline compatibility changes.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The substantive Windows blank-record repair changes stream opening. The epoch writer keeps the same csv.excel dialect and row conversion; only Python2 header fieldnames become unicode. No exact historical header encoding/input witness is isolated by the numeric CSV regression.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Python2 csv/io stream compatibility, key encodings and callback producer determine whether the added coercion repairs an old selected failure. Do not transfer the Windows newline mechanism to every changed callback.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old encoding positive/after negative. Numeric Python3 records do not certify arbitrary Unicode keys or Python2 binary streams.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The selected coordinated change does not isolate an old violation under its matched historical interface.",
+      "dependence_reason": "Preserve fix-family:b540c193e29789df6957, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "fieldnames=['epoch'] + self.keys"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "fieldnames = [unicode(x) for x in fieldnames]"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-15:0:keras/callbacks.py:CSVLogger.on_train_begin",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "CSV stream opening translates csv.excel record terminators again on Python3 Windows.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old class promises streaming epoch results to CSV. With Python3 Windows default text newline translation, csv.excel CRLF receives another CR, producing extra physical records. New io.open newline=\"\\n\" suppresses that extra translation. The supported duty is record separation, not universal Unicode support.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Constructor flags/_open_args, csv.excel terminators and Python3 Windows text-I/O semantics are missing from the selected opening method.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Numeric/string-compatible epoch records on Python3 Windows with matched constructor/writer only. Python2 codecs, non-ASCII keys, append corruption and logger reuse key reset are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:b540c193e29789df6957, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.csv_file = open(self.filename, 'w' + self.file_flags)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "**self._open_args)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-17:0:keras/metrics.py:sparse_categorical_accuracy",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Sparse accuracy reduces the sample axis for rank-one class labels.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Sparse class targets identify one label per sample. For vector y_true, old max(axis=-1) chooses one maximum label for every prediction; equal predictions to that maximum can be spuriously counted. Flatten preserves sample labels for the vector/column-vector convention.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Project sparse-label admission and backend max/argmax/equality/flatten semantics must be available uniformly. This short body alone does not state the target shape contract.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "2D predictions and vector/column-vector valid labels only. The flattening after still loses temporal axes as later keras-12 demonstrates; it is not a universal shape-negative.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "Earlier sparse accuracy version than keras-12; retain the documented residual temporal defect and exact function-history links.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def sparse_categorical_accuracy(y_true, y_pred):\n    return K.cast(K.equal(K.max(y_true, axis=-1),\n                          K.cast(K.argmax(y_pred, axis=-1), K.floatx())),\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "K.flatten(y_true)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-19:0:keras/backend/cntk_backend.py:rnn._recurrence",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "CNTK recurrence changes which reordered state is reused as the output.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old RNN documentation requires first state size to match output size, and old stacked cells deliberately flatten states in reverse cell order. The same patch changes the cell API/state order; selecting n_s[-1] instead of n_s[0] is coordinated. No independent old recurrence failure is isolated under the old producer.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched cell state order, step_function output/state identity, CNTK placeholder substitution and mask handling are essential. Do not combine the new state producer with the old recurrence to manufacture an old defect.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No old selected positive/negative approved. The after final-state selection is not a general proof of output identity for multi-state cells; arbitrary output_size and h/c ordering need separate backend adjudication.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The selected coordinated change does not isolate an old violation under its matched historical interface.",
+      "dependence_reason": "Preserve fix-family:7a29f06ce9f21f0f4334, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "new_output = n_s[0]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "new_output = n_s[-1]"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-19:0:keras/layers/recurrent.py:RNN.compute_output_shape",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "RNN shape inference adds an optional output_size distinct from first state size.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "Exact old RNN docs require the first state size to equal output size; old stacked state_size explicitly reverses cells to satisfy that requirement. The patch introduces output_size and reverse_state_order compatibility, revising the API/order rather than demonstrating a failure of the old documented interface.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "RNN cell docs, state_size/call/build correspondence, constructor defaults and optional output_size are external contracts. Preserve old and new producers/consumers together.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No historical old-defect/after-negative proposed for newly independent output sizes or natural state ordering. New custom-cell tests do not retroactively impose that API.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-19 explicit-output-size/state-order API family, including CNTK coordination. Four functions and several state shapes are not four adjudicated defects.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "output_dim = state_size[0]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "output_dim = self.cell.output_size"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "(`state_size[0]`) should be the same as"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-19:0:keras/layers/recurrent.py:StackedRNNCells.build",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Stacked cell build propagates the newly explicit output_size to the next cell.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "Exact old RNN docs require the first state size to equal output size; old stacked state_size explicitly reverses cells to satisfy that requirement. The patch introduces output_size and reverse_state_order compatibility, revising the API/order rather than demonstrating a failure of the old documented interface.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "RNN cell docs, state_size/call/build correspondence, constructor defaults and optional output_size are external contracts. Preserve old and new producers/consumers together.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No historical old-defect/after-negative proposed for newly independent output sizes or natural state ordering. New custom-cell tests do not retroactively impose that API.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-19 explicit-output-size/state-order API family, including CNTK coordination. Four functions and several state shapes are not four adjudicated defects.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "output_dim = cell.state_size[0]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "output_dim = cell.output_size"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "(`state_size[0]`) should be the same as"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-19:0:keras/layers/recurrent.py:StackedRNNCells.call",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Stacked cell call changes its default state order with a compatibility switch.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "Exact old RNN docs require the first state size to equal output size; old stacked state_size explicitly reverses cells to satisfy that requirement. The patch introduces output_size and reverse_state_order compatibility, revising the API/order rather than demonstrating a failure of the old documented interface.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "RNN cell docs, state_size/call/build correspondence, constructor defaults and optional output_size are external contracts. Preserve old and new producers/consumers together.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No historical old-defect/after-negative proposed for newly independent output sizes or natural state ordering. New custom-cell tests do not retroactively impose that API.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-19 explicit-output-size/state-order API family, including CNTK coordination. Four functions and several state shapes are not four adjudicated defects.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "nested_states = nested_states[::-1]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        nested_states = []\n        for cell in self.cells[::-1] if self.reverse_state_order else self.cells:\n            if hasattr(cell.state_size, '__len__'):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "(`state_size[0]`) should be the same as"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-19:0:keras/layers/recurrent.py:StackedRNNCells.state_size",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Stacked state-size declaration changes explicit reverse order to natural order.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "Exact old RNN docs require the first state size to equal output size; old stacked state_size explicitly reverses cells to satisfy that requirement. The patch introduces output_size and reverse_state_order compatibility, revising the API/order rather than demonstrating a failure of the old documented interface.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "RNN cell docs, state_size/call/build correspondence, constructor defaults and optional output_size are external contracts. Preserve old and new producers/consumers together.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No historical old-defect/after-negative proposed for newly independent output sizes or natural state ordering. New custom-cell tests do not retroactively impose that API.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-19 explicit-output-size/state-order API family, including CNTK coordination. Four functions and several state shapes are not four adjudicated defects.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "`[h2, c2, h1, c1]`"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "`[h1, c1, h2, c2]`"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "(`state_size[0]`) should be the same as"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-20:0:keras/backend/cntk_backend.py:conv2d_transpose",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "CNTK transposed convolution gains a dilation argument.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "The matched old transpose APIs omit dilation_rate and the old layer removes that inherited config entry. The fix explicitly adds transposed-convolution dilation, including layer admission, backend dispatch, length computation and serialization. No old nonunit-dilation promise or default-unit supported-input failure is established.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Layer constructor/call/get_config, convolution length helper and backend capability/version must be matched. GPU-skipped new tests and release wording are evidence of new support, not old local duty.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No old-defect/after-negative for the new dilation feature. Unit dilation compatibility, unequal dilation, stride/dilation restrictions and every backend are not certified.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-20 transpose-dilation feature family with three backends, config and length helpers; retain dependence rather than count implementations independently.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            padding],\n        output_shape=output_shape)\n    return _postprocess_conv2d_output(x, data_format)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        output_shape=output_shape,\n        dilation=dilation_rate)\n    return _postprocess_conv2d_output(x, data_format)\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-20:0:keras/backend/tensorflow_backend.py:_preprocess_conv2d_input",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "TensorFlow input preprocessor gains a force-NHWC option for new atrous transpose calls.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old helper chooses supported NHWC/NCHW routes using _has_nchw_support and has no forcing request to lose. New atrous transpose requires NHWC and supplies the new force_transpose flag. No old normal conv-input mismatch is isolated.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Caller operation capability versus generic NCHW support is required. Combining a new atrous caller with an old flag-less helper would be a mixed-version failure.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old helper positive/negative; float64 compatibility and every backend route remain outside the new forcing option.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The selected coordinated change does not isolate an old violation under its matched historical interface.",
+      "dependence_reason": "Preserve fix-family:d173911971dbb5a7894a, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    if data_format == 'channels_first':\n        if not _has_nchw_support():\n            x = tf.transpose(x, (0, 2, 3, 1))  # NCHW -> NHWC\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not _has_nchw_support() or force_transpose:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-20:0:keras/backend/tensorflow_backend.py:conv2d_transpose",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "TensorFlow transposed convolution adds atrous convolution and NHWC conversion.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "The matched old transpose APIs omit dilation_rate and the old layer removes that inherited config entry. The fix explicitly adds transposed-convolution dilation, including layer admission, backend dispatch, length computation and serialization. No old nonunit-dilation promise or default-unit supported-input failure is established.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Layer constructor/call/get_config, convolution length helper and backend capability/version must be matched. GPU-skipped new tests and release wording are evidence of new support, not old local duty.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No old-defect/after-negative for the new dilation feature. Unit dilation compatibility, unequal dilation, stride/dilation restrictions and every backend are not certified.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-20 transpose-dilation feature family with three backends, config and length helpers; retain dependence rather than count implementations independently.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def conv2d_transpose(x, kernel, output_shape, strides=(1, 1),\n                     padding='valid', data_format=None):\n    \"\"\"2D deconvolution (i.e. transposed convolution).\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def conv2d_transpose(x, kernel, output_shape, strides=(1, 1),\n                     padding='valid', data_format=None, dilation_rate=(1, 1)):\n    \"\"\"2D deconvolution (i.e. transposed convolution).\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-20:0:keras/backend/theano_backend.py:conv2d_transpose",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Theano transposed convolution forwards the newly supported filter dilation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "The matched old transpose APIs omit dilation_rate and the old layer removes that inherited config entry. The fix explicitly adds transposed-convolution dilation, including layer admission, backend dispatch, length computation and serialization. No old nonunit-dilation promise or default-unit supported-input failure is established.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Layer constructor/call/get_config, convolution length helper and backend capability/version must be matched. GPU-skipped new tests and release wording are evidence of new support, not old local duty.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No old-defect/after-negative for the new dilation feature. Unit dilation compatibility, unequal dilation, stride/dilation restrictions and every backend are not certified.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-20 transpose-dilation feature family with three backends, config and length helpers; retain dependence rather than count implementations independently.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                                                        subsample=strides,\n                                                        border_mode=th_padding,\n                                                        filter_flip=not flip_filters)\n    conv_out = op(kernel, x, output_shape[2:])\n    conv_out = _postprocess_conv2d_output(conv_out, x, padding,\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                                                        filter_flip=not flip_filters,\n                                                        filter_dilation=dilation_rate)\n    conv_out = op(kernel, x, output_shape[2:])\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-20:0:keras/layers/convolutional.py:Conv2DTranspose.get_config",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Transpose layer serialization retains newly admitted dilation_rate.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "The matched old transpose APIs omit dilation_rate and the old layer removes that inherited config entry. The fix explicitly adds transposed-convolution dilation, including layer admission, backend dispatch, length computation and serialization. No old nonunit-dilation promise or default-unit supported-input failure is established.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Layer constructor/call/get_config, convolution length helper and backend capability/version must be matched. GPU-skipped new tests and release wording are evidence of new support, not old local duty.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No old-defect/after-negative for the new dilation feature. Unit dilation compatibility, unequal dilation, stride/dilation restrictions and every backend are not certified.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-20 transpose-dilation feature family with three backends, config and length helpers; retain dependence rather than count implementations independently.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        config = super(Conv2DTranspose, self).get_config()\n        config.pop('dilation_rate')\n        config['output_padding'] = self.output_padding\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        config = super(Conv2DTranspose, self).get_config()\n        config['output_padding'] = self.output_padding\n        return config\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-20:0:keras/utils/conv_utils.py:deconv_length",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Deconvolution length inference accounts for newly admitted dilated kernels.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "The matched old transpose APIs omit dilation_rate and the old layer removes that inherited config entry. The fix explicitly adds transposed-convolution dilation, including layer admission, backend dispatch, length computation and serialization. No old nonunit-dilation promise or default-unit supported-input failure is established.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Layer constructor/call/get_config, convolution length helper and backend capability/version must be matched. GPU-skipped new tests and release wording are evidence of new support, not old local duty.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No old-defect/after-negative for the new dilation feature. Unit dilation compatibility, unequal dilation, stride/dilation restrictions and every backend are not certified.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-20 transpose-dilation feature family with three backends, config and length helpers; retain dependence rather than count implementations independently.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def deconv_length(dim_size, stride_size, kernel_size, padding, output_padding):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "kernel_size = kernel_size + (kernel_size - 1) * (dilation - 1)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-21:0:keras/callbacks.py:EarlyStopping.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "EarlyStopping constructor exposes optional best-weight restoration.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "The patch adds restore_best_weights=False and storage for best_weights; new docs explicitly retain last-step weights when False. Old early-stopping did not promise restoring best weights, and no old patience/monitor failure is isolated by adding this opt-in behavior.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Epoch callback lifecycle, monitor improvements, model get/set_weights and new option control determine behavior. Constructor alone neither stops training nor restores weights.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No historical old-defect/after-negative for the opt-in feature; optimizer state restoration and reuse/reset are not certified.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-21 optional restoration family, with epoch callback already reviewed in broad batch006; preserve that historical contract question separately.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "baseline=None):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "restore_best_weights=False):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-26:0:keras/backend/tensorflow_backend.py:rnn",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Masked symbolic RNN loop reuses output-width masks for differently sized recurrent states.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old step contract requires each returned state to match its own predecessor, not every state to have output width. The unrolled branch already tiles each state separately. Symbolic masking reuses output-width tiled_mask_t for all states and violates that existing admitted shape relation.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Backend tf.where equal-shape semantics, step output/first-state identity and old state admission are required. The selected 242-line body also needs a frozen numerical context budget.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Nonempty time sequence with 2D states, differing second-state width and matching boolean batch mask only. Higher-rank states, empty time, output/first-state identity and all backends are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:7009e42af2e21d277edc, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "new_states = [tf.where(tiled_mask_t, new_states[i], states[i]) for i in range(len(states))]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "tf.where(tf.tile(mask_t, tf.stack([1, tf.shape(new_states[i])[1]]))"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-28:0:keras/preprocessing/sequence.py:TimeseriesGenerator.__getitem__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Timeseries item selection excludes the inclusive final target.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old constructor defaults end_index to len(data)-1, a valid final target, while local docs exclude only points later than end_index. Old half-open sampling/count arithmetic drops that endpoint; when start+length=end_index it yields no valid final batch. Old tests expecting five batches conflict with that inclusive duty and are changed, not erased.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Constructor-adjusted start_index, inclusive endpoint docs, _empty_batch, positive stride/batch size and NumPy half-open range/random semantics are necessary.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Valid in-range endpoints, positive stride/batch size and nonempty windows only. Shuffle coverage is probabilistic, not a guarantee of every target appearing; invalid start/length policy is a separate constructor change.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "One keras-28 inclusive endpoint mechanism shared by count and selection. The constructor adds empty-window validation; do not count branches/tests as independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.start_index, self.end_index, size=self.batch_size"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.start_index, self.end_index + 1, size=self.batch_size"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "end_index = len(data) - 1"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "or later than `end_index` will not be used in the output sequences."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-28:0:keras/preprocessing/sequence.py:TimeseriesGenerator.__len__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Timeseries batch count omits the final admitted target position.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old constructor defaults end_index to len(data)-1, a valid final target, while local docs exclude only points later than end_index. Old half-open sampling/count arithmetic drops that endpoint; when start+length=end_index it yields no valid final batch. Old tests expecting five batches conflict with that inclusive duty and are changed, not erased.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Constructor-adjusted start_index, inclusive endpoint docs, _empty_batch, positive stride/batch size and NumPy half-open range/random semantics are necessary.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Valid in-range endpoints, positive stride/batch size and nonempty windows only. Shuffle coverage is probabilistic, not a guarantee of every target appearing; invalid start/length policy is a separate constructor change.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "One keras-28 inclusive endpoint mechanism shared by count and selection. The constructor adds empty-window validation; do not count branches/tests as independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "(self.end_index - self.start_index) /"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "(self.end_index - self.start_index + 1) /"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "end_index = len(data) - 1"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "or later than `end_index` will not be used in the output sequences."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-31:0:keras/backend/tensorflow_backend.py:ctc_batch_cost",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "CTC loss squeezes away the batch axis when there is exactly one sample.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old selected doc accepts (samples,1) lengths with no minimum batch restriction. Unqualified squeeze maps (1,1) to a scalar, violating both sparse-label helper and TensorFlow CTC sequence-length vector requirements. Restricting squeeze to axis=-1 preserves the sample vector.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "ctc_label_dense_to_sparse and backend CTC vector semantics are external; old local input docs supply singleton batch admission.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Single-sample finite valid CTC labels/predictions and positive valid lengths only. Empty batches, invalid paths, backend-specific CTC numerical behavior and all sequence length dtypes are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:9fcef9e72ede217b1651, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "tf.squeeze(label_length))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "tf.squeeze(label_length, axis=-1))"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-35:0:keras/preprocessing/image.py:ImageDataGenerator.standardize",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Image standardization removes callback invocation as preprocessing moves into iterators.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old standardize invokes the configured callback before its own normalization; the earlier resize/augmentation ordering is determined by callers. The selected removal alone does not demonstrate an old local failure. Matched after directory preprocessing passes a PIL image despite the old NumPy-array callback contract, already recorded as an explicit paired-negative failure for the iterator in batch006.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Iterator load/resize/transform order, direct standardize users and old callback argument/return contracts are essential. Never combine new iterators with old standardize to manufacture a double-call old failure.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old standardize positive/after-negative. Direct callers lose callback invocation; the batch006 iterator PIL-versus-NumPy unresolved after regression remains explicit and is not resolved by this coordinated removal.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The selected coordinated change does not isolate an old violation under its matched historical interface.",
+      "dependence_reason": "Same keras-35 image-callback family as batch006 iterator cases; callback ordering duty and after type failure do not transfer old local blame to every changed method.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "x = self.preprocessing_function(x)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if self.rescale:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-36:0:keras/backend/tensorflow_backend.py:separable_conv1d",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "One-dimensional separable convolution creates incompatible unequal spatial strides for its 2D backend.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old SeparableConv1D docs admit nonunit strides and the layer passes its normalized single-element stride tuple. Expanding the dummy spatial axis uses stride1 while the real axis uses s; affected TensorFlow separable_conv2d requires matching spatial strides. Replicating s across both spatial dimensions repairs the admitted nonunit route.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Old layer tuple normalization, dummy-axis geometry and matched TensorFlow stride restrictions are essential; none can be selectively supplied as detection helpers.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Normalized one-element positive stride tuple, dilation1 and supported padding/backend route only. Direct integer default handling, arbitrary temporal dilation, backend versions without that restriction and GPU capability are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:409854da435ca07a13c5, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "strides = (1, 1) + strides + (1,)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "strides = (1,) + strides * 2 + (1,)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_011.json",
+          "path": "keras/layers/convolutional.py",
+          "ref": "fb1887d132a8ce8548ff53d868a6ba531cd63b34^",
+          "needle": "class SeparableConv1D(_SeparableConv):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-37:0:keras/layers/recurrent.py:RNN.__call__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "RNN call switches to shared Keras-tensor classification during a wrapper repair.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The selected old call already adds Keras symbolic states/constants to full inputs using _keras_history. The actual graph-state reuse repair adds a new Bidirectional.__call__ and input_spec handling elsewhere. No supported object classified wrongly by the old attribute test but correctly by the matched helper is isolated.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Exact is_keras_tensor backend semantics, allowed state objects and base Layer graph bookkeeping determine any difference. A wrapper regression test alone does not establish an old selected RNN-call defect.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected positive/negative; unexpected non-tensor rejection or altered exception wording requires its own old admission duty.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The selected coordinated change does not isolate an old violation under its matched historical interface.",
+      "dependence_reason": "Preserve fix-family:5f87d194fa9c7700e686, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "is_keras_tensor = hasattr(additional_inputs[0], '_keras_history')"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "is_keras_tensor = K.is_keras_tensor(additional_inputs[0])"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-37:0:keras/layers/wrappers.py:Bidirectional.call",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Bidirectional runtime call drops a list check after new symbolic call preprocessing normalizes states.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old runtime call splits an already-list state and forwards halves correctly. The failure involves graph input registration in the previously inherited __call__; the patch adds a specialized __call__ and moves validation/normalization there. Removing the old runtime list check is coordination, not an isolated old list-state computation defect.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Base graph construction, wrapper input_spec, new __call__ and old allowed list state shape are needed. Newly accepted tuples/scalars are not automatically old promised inputs.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old runtime-call positive/after-negative; preserve the graph-registration repair separately.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The selected coordinated change does not isolate an old violation under its matched historical interface.",
+      "dependence_reason": "Preserve fix-family:5f87d194fa9c7700e686, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not isinstance(initial_state, list):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "forward_state = initial_state[:len(initial_state) // 2]"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-38:0:keras/layers/recurrent.py:StackedRNNCells.build",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Stacked cell build adds an unwanted time axis to each later cell input.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "RNN cells process one timestep: their build input is (batch,features), not the full sequence shape. The first cell gets the correct shape, but old propagation makes later shapes rank3. Using only batch and previous output width restores the existing cell contract.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "RNN.build removes the time axis, cell.build consumes a per-step shape and state_size defines output width under the old API. Those producer/consumer contracts are external.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Ordinary stacked vector-state cells under the old first-state-output convention only. New independent output_size and constants-aware builds are separate later evolution.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "Earlier StackedRNNCells.build repair than keras-19 optional-output-size API. Preserve the source history; the later feature does not erase this old rank defect.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "input_shape = (input_shape[0], input_shape[1], output_dim)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "input_shape = (input_shape[0], output_dim)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-39:0:keras/utils/generic_utils.py:Progbar.update",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unknown-target progress updates compare an integer step with None on Python3.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old Progbar docs explicitly admit target=None. For verbose1, force=False and an update within interval, the throttle evaluates current<None and raises on Python3 before the already-supported Unknown display route. Guarding target first repairs a functional crash, not only presentation style.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Constructor target admission, timing/interval, verbose flags and Python major-version comparison semantics are necessary. The selected update lacks the constructor contract.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Python3 unknown target in the reachable throttle branch only. Numeric zero target, stateful metric averaging and output rendering are not generally certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:bacd3aa4408aecb087a8, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "current < self.target):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "(self.target is not None and current < self.target)):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "target: Total number of steps expected, None if unknown."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-40:0:keras/layers/recurrent.py:RNN.compute_output_shape",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "RNN state-shape inference repeats output width for every heterogeneous state.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old cell API permits different recurrent state sizes after the first output-sized state. Old return_state builds each shape using output_dim, misreporting later widths for stacked heterogeneous cells. New enumeration uses the actual state_size entries without changing the admission contract.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Cell state_size ordering, return_state and actual runtime state tuple define the correspondence. Shape inference alone does not declare the full cell contract.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Heterogeneous vector-state sizes under the old reverse stack convention only. Later natural state ordering/output_size evolution and higher-rank cell states are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "Earlier RNN.compute_output_shape fix than keras-19 output_size feature. Keep the old per-state repair distinct from later API expansion while preserving recorded overlap/history.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "state_shape = [(input_shape[0], output_dim) for _ in self.states]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "state_shape = [(input_shape[0], dim) for dim in state_size]"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-41:0:keras/utils/data_utils.py:GeneratorEnqueuer.get",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Generator consumer gains original-worker exception propagation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old workers rethrow failures in their own context while consumers terminate; however exact old threaded/process FaultSequence tests explicitly expect StopIteration, and the fix replaces those expectations with IndexError/RuntimeError. Original-error propagation is a changed abstraction policy unless a prior public preservation duty is independently established. A new test or the patch title alone does not resolve that conflict.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Worker/consumer thread-process boundaries, queue visibility, stop event, consumer exhaustion and historical exception identity policy are essential. Enclosing start and its selected nested worker overlap.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved historical old-defect/after-negative while error policy is unresolved. New manager transport race behavior, traceback/pickle fidelity, queued successful values at shutdown and all generator failures are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve the historical behavioral or configuration obligation before treating a newly required policy as an old defect.",
+      "dependence_reason": "One keras-41 queue/worker-error family, including enclosing start and nested worker source-span overlap. Error instances, transports and methods are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "inputs = self.queue.get()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "# Rethrow any exceptions found in the queue"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_011.json",
+          "path": "tests/keras/utils/data_utils_test.py",
+          "ref": "4a58b178073f0ba3b166220f7ebd7d56149bfb20^",
+          "needle": "def test_generator_enqueuer_fail_threads():"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_011.json",
+          "path": "tests/keras/utils/data_utils_test.py",
+          "ref": "4a58b178073f0ba3b166220f7ebd7d56149bfb20^",
+          "needle": "def test_generator_enqueuer_fail_processes():"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-41:0:keras/utils/data_utils.py:GeneratorEnqueuer.start",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Generator startup changes queue transport and packages worker errors.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old workers rethrow failures in their own context while consumers terminate; however exact old threaded/process FaultSequence tests explicitly expect StopIteration, and the fix replaces those expectations with IndexError/RuntimeError. Original-error propagation is a changed abstraction policy unless a prior public preservation duty is independently established. A new test or the patch title alone does not resolve that conflict.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Worker/consumer thread-process boundaries, queue visibility, stop event, consumer exhaustion and historical exception identity policy are essential. Enclosing start and its selected nested worker overlap.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved historical old-defect/after-negative while error policy is unresolved. New manager transport race behavior, traceback/pickle fidelity, queued successful values at shutdown and all generator failures are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve the historical behavioral or configuration obligation before treating a newly required policy as an old defect.",
+      "dependence_reason": "One keras-41 queue/worker-error family, including enclosing start and nested worker source-span overlap. Error instances, transports and methods are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.queue = multiprocessing.Queue(maxsize=max_queue_size)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._manager = multiprocessing.Manager()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_011.json",
+          "path": "tests/keras/utils/data_utils_test.py",
+          "ref": "4a58b178073f0ba3b166220f7ebd7d56149bfb20^",
+          "needle": "def test_generator_enqueuer_fail_threads():"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_011.json",
+          "path": "tests/keras/utils/data_utils_test.py",
+          "ref": "4a58b178073f0ba3b166220f7ebd7d56149bfb20^",
+          "needle": "def test_generator_enqueuer_fail_processes():"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-41:0:keras/utils/data_utils.py:GeneratorEnqueuer.start.data_generator_task",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Generator worker packages failures before setting the stop event.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old workers rethrow failures in their own context while consumers terminate; however exact old threaded/process FaultSequence tests explicitly expect StopIteration, and the fix replaces those expectations with IndexError/RuntimeError. Original-error propagation is a changed abstraction policy unless a prior public preservation duty is independently established. A new test or the patch title alone does not resolve that conflict.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Worker/consumer thread-process boundaries, queue visibility, stop event, consumer exhaustion and historical exception identity policy are essential. Enclosing start and its selected nested worker overlap.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved historical old-defect/after-negative while error policy is unresolved. New manager transport race behavior, traceback/pickle fidelity, queued successful values at shutdown and all generator failures are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve the historical behavioral or configuration obligation before treating a newly required policy as an old defect.",
+      "dependence_reason": "One keras-41 queue/worker-error family, including enclosing start and nested worker source-span overlap. Error instances, transports and methods are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "except Exception:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.queue.put((False, e))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_011.json",
+          "path": "tests/keras/utils/data_utils_test.py",
+          "ref": "4a58b178073f0ba3b166220f7ebd7d56149bfb20^",
+          "needle": "def test_generator_enqueuer_fail_threads():"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_011.json",
+          "path": "tests/keras/utils/data_utils_test.py",
+          "ref": "4a58b178073f0ba3b166220f7ebd7d56149bfb20^",
+          "needle": "def test_generator_enqueuer_fail_processes():"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-41:0:keras/utils/data_utils.py:GeneratorEnqueuer.stop",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Generator stop changes cleanup to match a newly manager-backed queue.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old startup uses multiprocessing.Queue and old stop closes that queue. The patch switches startup to Manager().Queue and stop to manager.shutdown. Old cleanup is consistent with its matched old resource producer; no old stop-local leak/deadlock witness is isolated.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Queue/manager ownership and start/stop lifecycle must remain version-matched. New manager-backed queue with old close cleanup would be an invented mixed-version failure.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old stop positive/negative; manager reuse, shutdown timing and failure races are not certified.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The selected coordinated change does not isolate an old violation under its matched historical interface.",
+      "dependence_reason": "Preserve fix-family:1c6937d5a9133f90f4b6, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.queue.close()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._manager.shutdown()"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-41:0:keras/utils/data_utils.py:OrderedEnqueuer.get",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Ordered enqueuer adds explicit chaining while retaining StopIteration conversion.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Both selected versions convert an error to StopIteration(e); after uses six.raise_from to preserve chaining explicitly. Exact old tests deliberately accept StopIteration for OrderedEnqueuer faults. The original-error class change in the GeneratorEnqueuer sibling is not implemented here and does not establish an old selected violation.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Python2/3 implicit/explicit chaining and historical diagnostic policy are needed; no old value or required exception-class witness is isolated.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old functional positive/negative; do not certify universal error propagation from this chaining change.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The selected coordinated change does not isolate an old violation under its matched historical interface.",
+      "dependence_reason": "Preserve fix-family:1c6937d5a9133f90f4b6, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "raise StopIteration(e)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "six.raise_from(StopIteration(e), e)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-42:0:keras/engine/training.py:Model.evaluate_generator",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Model.evaluate_generator adds optional Sequence step inference and the revised override policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "Old signatures require an explicit step count; old base docs explicitly say it is not used for Sequence and use len(generator). New default None admits omitted arguments and honors explicit Sequence overrides. Wrapper forwarding was already correct for the old required interface. This is new admission/changed documented policy, not a demonstrated old accepted-input defect.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Model versus Sequential delegation, Sequence length, legacy decorators and validation_data step handling are required. Keep wrappers/base APIs matched; do not test the old wrapper against the new default promise.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No historical old-defect/after-negative for new omission/override policy. Empty Sequence, epoch termination, validation and multiprocessing behavior are not certified.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-42 optional-step/Sequence-policy feature family. Base fit_generator is in completed broad batch006; five methods and validation defaults are not five independent defects.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def evaluate_generator(self, generator, steps,"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def evaluate_generator(self, generator, steps=None,"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                to yield from `generator` before stopping.\n                Not used if using Sequence.\n            max_queue_size: maximum size for the generator queue\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-42:0:keras/engine/training.py:Model.predict_generator",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Model.predict_generator adds optional Sequence step inference and the revised override policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "Old signatures require an explicit step count; old base docs explicitly say it is not used for Sequence and use len(generator). New default None admits omitted arguments and honors explicit Sequence overrides. Wrapper forwarding was already correct for the old required interface. This is new admission/changed documented policy, not a demonstrated old accepted-input defect.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Model versus Sequential delegation, Sequence length, legacy decorators and validation_data step handling are required. Keep wrappers/base APIs matched; do not test the old wrapper against the new default promise.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No historical old-defect/after-negative for new omission/override policy. Empty Sequence, epoch termination, validation and multiprocessing behavior are not certified.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-42 optional-step/Sequence-policy feature family. Base fit_generator is in completed broad batch006; five methods and validation defaults are not five independent defects.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def predict_generator(self, generator, steps,"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def predict_generator(self, generator, steps=None,"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                to yield from `generator` before stopping.\n                Not used if using Sequence.\n            max_queue_size: maximum size for the generator queue\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-42:0:keras/models.py:Sequential.evaluate_generator",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Sequential.evaluate_generator adds optional Sequence step inference and the revised override policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "Old signatures require an explicit step count; old base docs explicitly say it is not used for Sequence and use len(generator). New default None admits omitted arguments and honors explicit Sequence overrides. Wrapper forwarding was already correct for the old required interface. This is new admission/changed documented policy, not a demonstrated old accepted-input defect.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Model versus Sequential delegation, Sequence length, legacy decorators and validation_data step handling are required. Keep wrappers/base APIs matched; do not test the old wrapper against the new default promise.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No historical old-defect/after-negative for new omission/override policy. Empty Sequence, epoch termination, validation and multiprocessing behavior are not certified.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-42 optional-step/Sequence-policy feature family. Base fit_generator is in completed broad batch006; five methods and validation defaults are not five independent defects.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def evaluate_generator(self, generator, steps,"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def evaluate_generator(self, generator, steps=None,"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-42:0:keras/models.py:Sequential.fit_generator",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Sequential.fit_generator adds optional Sequence step inference and the revised override policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "Old signatures require an explicit step count; old base docs explicitly say it is not used for Sequence and use len(generator). New default None admits omitted arguments and honors explicit Sequence overrides. Wrapper forwarding was already correct for the old required interface. This is new admission/changed documented policy, not a demonstrated old accepted-input defect.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Model versus Sequential delegation, Sequence length, legacy decorators and validation_data step handling are required. Keep wrappers/base APIs matched; do not test the old wrapper against the new default promise.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No historical old-defect/after-negative for new omission/override policy. Empty Sequence, epoch termination, validation and multiprocessing behavior are not certified.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-42 optional-step/Sequence-policy feature family. Base fit_generator is in completed broad batch006; five methods and validation defaults are not five independent defects.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def fit_generator(self, generator,\n                      steps_per_epoch,"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def fit_generator(self, generator,\n                      steps_per_epoch=None,"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-42:0:keras/models.py:Sequential.predict_generator",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Sequential.predict_generator adds optional Sequence step inference and the revised override policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "Old signatures require an explicit step count; old base docs explicitly say it is not used for Sequence and use len(generator). New default None admits omitted arguments and honors explicit Sequence overrides. Wrapper forwarding was already correct for the old required interface. This is new admission/changed documented policy, not a demonstrated old accepted-input defect.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Model versus Sequential delegation, Sequence length, legacy decorators and validation_data step handling are required. Keep wrappers/base APIs matched; do not test the old wrapper against the new default promise.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No historical old-defect/after-negative for new omission/override policy. Empty Sequence, epoch termination, validation and multiprocessing behavior are not certified.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "Propose the evidenced new API/feature outside the old-defect subset; retain canonical sources and allow reversal on a demonstrated prior guarantee.",
+      "dependence_reason": "One keras-42 optional-step/Sequence-policy feature family. Base fit_generator is in completed broad batch006; five methods and validation defaults are not five independent defects.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def predict_generator(self, generator, steps,"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def predict_generator(self, generator, steps=None,"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-5:0:keras/utils/data_utils.py:get_file",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Downloader begins honoring the backend KERAS_HOME override for its default cache.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Exact old backend initialization honors KERAS_HOME for its config directory, while old downloader/FAQ explicitly describe ~/.keras/datasets defaults and do not mention a cache environment override. The local link to Keras Directory suggests a shared policy but does not settle whether the backend override was already guaranteed for downloads. Consistency intent alone is insufficient; revise the old supported judgment to ambiguous pending that cross-subsystem duty.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Old FAQ, backend initialization and downloader explicit cache_dir/cache_subdir precedence determine the historical scope of KERAS_HOME. No backend code or download executes.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved old cache-override positive/after-negative until historical duty is confirmed. Explicit paths, fallback /tmp, archive confinement, downloaded code and hash authenticity are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve the historical behavioral or configuration obligation before treating a newly required policy as an old defect.",
+      "dependence_reason": "Preserve fix-family:a8e0ca8a14cfdbdd3819, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "cache_dir = os.path.join(os.path.expanduser('~'), '.keras')"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if 'KERAS_HOME' in os.environ:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_011.json",
+          "path": "keras/backend/__init__.py",
+          "ref": "e11c48d9ce3ee47bb8a966549b14cbd5b10ee70d^",
+          "needle": "# Set Keras base dir path given KERAS_HOME env variable, if applicable."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_011.json",
+          "path": "docs/templates/getting-started/faq.md",
+          "ref": "e11c48d9ce3ee47bb8a966549b14cbd5b10ee70d^",
+          "needle": "Likewise, cached dataset files, such as those downloaded with [`get_file()`](/utils/#get_file), are stored by default in `$HOME/.keras/datasets/`."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-6:0:keras/engine/training_utils.py:weighted_masked_objective.weighted",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "All-masked finite losses divide zero by the zero mask mean.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old weighted/masked objective suppresses masked contributions and scales by unmasked fraction. An admitted finite all-zero mask gives zero numerator and denominator; the after positive backend epsilon makes that masked contribution zero. The supported loss-masking duty is distinct from promising every sample-weight normalization is safe.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Closure fn loss values, mask admission/shape and positive finite backend epsilon are necessary. The selected nested wrapper does not define those external contracts.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Finite scores, all-zero matched mask and no weights (or nonzero sample-weight normalization) with positive epsilon only. The separate all-zero weights denominator remains unchanged; nonfinite losses and epsilon=0 are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:e62d917a06acf932d20d, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "score_array /= K.mean(mask)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "score_array /= K.mean(mask) + K.epsilon()"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_keras-7:0:keras/wrappers/scikit_learn.py:KerasRegressor.predict",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Regressor prediction squeezes away the sample dimension for one example.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves/nulls. Historical duty, feature expansion, selected relevance and context sufficiency remain separate; backend, shape, method and test variants are not independent adjudicated issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old selected doc explicitly promises (n_samples,) predictions. A scalar-output model returns (1,1) for one sample, but unqualified squeeze returns rank0. Squeezing only the final output axis preserves the sample vector and matches the old duty.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Sequential.predict scalar-output shape and NumPy squeeze axis semantics are necessary; the selected wrapper lacks the model producer definition.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Functional tensor, state, callback, queue or configuration behavior is evidenced. No attacker-to-authority or confidentiality/integrity boundary is established; get_file archive extraction, hashes and intentional absolute paths are not certified security negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Scalar-output regression with (samples,1) model prediction, including one sample, only. Multioutput regression and incompatible rank-one producer outputs are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the uniform before-only runtime/API policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:007d8ca906c9ae0d6352, existing source-version links and connected review blocks. Function/patch/backend counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical contract, selected attribution and the common before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert text, not executed or reproduced failures. Independently adjudicate issue identity and the bounded after negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return np.squeeze(self.model.predict(x, **kwargs))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return np.squeeze(self.model.predict(x, **kwargs), axis=-1)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,720 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-031",
+  "review_date": "2026-10-26",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All seven yt-dlp training candidates across both discovery statuses and all three categories/families, including outer/nested q-format spans and successive native/downloader cookie repairs.",
+  "selection_rule": {
+    "repository": "github.com/yt-dlp/yt-dlp",
+    "discovery_categories": [
+      "SEC-INTERNAL-REQUEST-OPTION-INJECTION",
+      "SEC-REDIRECT-CREDENTIAL-STRIPPING",
+      "SEC-SHELL-QUOTING"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 831,
+    "sha256": "9ca57ede950e4495ca81ef3c279a6ff7d312196473e270b47ad37fb68886c5c3"
+  },
+  "interpretation": "Six missing-context deferrals and one selected-attribution deferral. Windows q-format argument safety needs matched shell=True quoting and Popen cmd/environment configuration; earlier double-quote repair survives into the later vulnerable helper, supporting the explicitly reported CVE-2023-40581/2024-22423 bypass lineage without independent-issue inflation. The old selected shell_quote wrapper is used for production diagnostics while q-format calls compat_shlex_quote directly; newly wired consumers do not establish its old local defect. smuggle_url preserves prior metadata over internal referrer additions, enabling Vimeo/Generic embedded header data to control privileged per-request proxy routing. Bound Vimeo destinations and actual TLS/Secure-cookie consequences separately. Native Cookie copy-on-redirect and later fragment/external raw-header transport are sequential coordinated repairs, not two fresh unpatched-redirect witnesses. Later after stores scoped cookies separately and adapters use jars/files/attributes or disabled redirects. Keep an explicit unresolved all-headers-removed None/fragment compatibility admission question; no supported after-contract failure or universal negative is established. Preserve all831 discovery events, six supported/one ambiguous repository statuses, canonical IDs/hashes/families/splits, earlier authored batches and45 protected inputs. Seven rows/three mechanical families and separate CVE IDs are not independent issues. All retained programs/payloads/requests/upstream tests stay inert; only own retrieval/view/hash/bookkeeping/audit-validator tooling executes.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:1244687962110:150148805336597",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Windows q-format metadata quoting fails to neutralize percent expansion before ExecPP cmd execution. Nested extraction lacks its outer metadata closure.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep Windows cmd argument quoting versus output/debug formatting, lower-trust smuggled metadata becoming privileged proxy routing, native redirect header propagation and downloader boundary credential transport separate. Do not infer command execution from a formatter alone, universal cookie theft from proxy control, or a global downloader negative from one Cookie filter. Final leaf/parent, security/correctness placement and ordinary API-knowledge policy remain researcher-pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The pre-fix README promises q conversion for shell quoting and supports Python3.8+. ExecPP.parse_cmd prepares the configured template using info metadata; run passes the resulting string to Popen.run(shell=True). On Windows the old compat_shlex_quote balances literal double quotes but leaves percent expansion; the old Popen runs cmd with delayed expansion off, not percent expansion disabled. A metadata author can therefore cross into a user-authorized exec command when a q-formatted field is used. The earlier de015e930 CVE-2023-40581 helper already uses double-double-quotes and is exactly the same helper text retained at the current parent; the later advisory expressly identifies its percent-expansion bypass. This is old promised argument quoting, not a new exec API or a POSIX claim.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need outer metadata/format closure, platform compatibility quote, ExecPP interpolation/use, Windows Popen and cmd expansion semantics; the outer function still omits the helper and process sink. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals/configuration, after, labels, IDs, CVEs, patches, advisories, tests and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Requires Windows, a user opting into an exec template with q-formatted lower-trust metadata and execution reaching ExecPP. Trusted command configuration is not itself attacker control; the attacker controls a remote metadata value interpreted inside that trusted command. The ordinary cmd setup leaves percent environment-variable substitution effective even with delayed expansion off. The advisory describes command-boundary consequences, but no command, shell, metadata payload, download or exploit executes here. PowerShell as the launching terminal does not change the cmd subprocess used by the retained Windows wrapper.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After q conversion explicitly calls shell_quote(value, shell=True). Its percent/newline/backslash translation must be paired with the new Windows Popen environment sentinel and /V:OFF /E:ON flags; this is not equivalent to the helper default shell=False mode. The bounded negative is the reported percent-expansion q-field/cmd path under the matched wrapper and ordinary trusted command. It does not certify arbitrary template formatting, missing/default field bypasses, filename fallback, custom executable/shell configurations or universal shell safety. The outer/nested rows are the same changed span; no supported after-contract failure is established for this bounded q path.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched training-era producers/consumers support the old trust-boundary violation, but critical helper/runtime/configuration and actual-use semantics are absent from the selected before-only function. Defer missing context without injecting answer-bearing project code.",
+      "dependence_reason": "Preserve fix-family:3702e3a521ae39151385 and existing exact/AST/span/history links. Two nested/outer q-format rows and the quoting-helper row share one family; Vimeo/Generic share a second; native redirect and later downloader filtering share a third. CVE-2024-22423 is an explicitly reported bypass of the CVE-2023-40581 repair; exact earlier/later compat helper text supports the lineage, not a new independent issue or automatic canonical merge. Cookie downloader commit312151 has parentf8b4bcc, but its selected wrapper differs from the selected redirect handler. Seven rows/three families do not establish independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm Windows cmd/exec configuration, actual proxy/TLS/cookie policy, source-controlled embed delivery and concrete native/external downloader admission; freeze context and mechanism-local negatives. Historical CPython3.11.4 source is a semantic comparison, not deployment proof or certification of all supported versions. Complete attributed advisory API responses are mutable snapshots, not independent proofs.",
+        "Conditional source deductions, not reproduced results. No yt-dlp/CPython/Windows/cmd/shell/process/HTTP/TLS/network/proxy/cookie/download/fragment/extractor/HTML/parser/regex/filesystem/dependency/application program, vulnerability-target request, payload or upstream test executes. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes; archive members are read as text without filesystem extraction/import/install."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "' '.join(map(compat_shlex_quote, value))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "shell_quote(value, shell=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/compat/__init__.py",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "s.replace('\"', '\"\"').join('\"\"')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/postprocessor/exec.py",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "tmpl, tmpl_dict = self._downloader.prepare_outtmpl(cmd, info)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/postprocessor/exec.py",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "Popen.run(cmd, shell=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_PEERS.json",
+          "path": "yt_dlp/utils/_utils.py",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "/Q /S /D /V:OFF /C"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_PEERS.json",
+          "path": "yt_dlp/utils/_utils.py",
+          "ref": "ff07792676f404ffff6ee61b5638c9dc1a33a37a",
+          "needle": "'%': '%%cd:~,%'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_PEERS.json",
+          "path": "yt_dlp/utils/_utils.py",
+          "ref": "ff07792676f404ffff6ee61b5638c9dc1a33a37a",
+          "needle": "env['='] ="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_PEERS.json",
+          "path": "yt_dlp/utils/_utils.py",
+          "ref": "ff07792676f404ffff6ee61b5638c9dc1a33a37a",
+          "needle": "/Q /S /D /V:OFF /E:ON /C"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "README.md",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "Python versions 3.8+ (CPython and PyPy) are supported."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTRACTS.json",
+          "path": "github/advisories/GHSA-hjq6-52gw-2g7p.json",
+          "ref": "GHSA-hjq6-52gw-2g7p",
+          "needle": "However, this escaping is not sufficient, and still allows expansion of environment variables."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_LINEAGE.json",
+          "path": "yt_dlp/compat/__init__.py",
+          "ref": "de015e930747165dbb8fcd360f8775fd973b7d6e",
+          "needle": "s.replace('\"', '\"\"').join('\"\"')"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:1244687962110:245376085224988",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Windows q-format metadata quoting fails to neutralize percent expansion before ExecPP cmd execution. Outer extraction includes the same nested changed span.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep Windows cmd argument quoting versus output/debug formatting, lower-trust smuggled metadata becoming privileged proxy routing, native redirect header propagation and downloader boundary credential transport separate. Do not infer command execution from a formatter alone, universal cookie theft from proxy control, or a global downloader negative from one Cookie filter. Final leaf/parent, security/correctness placement and ordinary API-knowledge policy remain researcher-pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The pre-fix README promises q conversion for shell quoting and supports Python3.8+. ExecPP.parse_cmd prepares the configured template using info metadata; run passes the resulting string to Popen.run(shell=True). On Windows the old compat_shlex_quote balances literal double quotes but leaves percent expansion; the old Popen runs cmd with delayed expansion off, not percent expansion disabled. A metadata author can therefore cross into a user-authorized exec command when a q-formatted field is used. The earlier de015e930 CVE-2023-40581 helper already uses double-double-quotes and is exactly the same helper text retained at the current parent; the later advisory expressly identifies its percent-expansion bypass. This is old promised argument quoting, not a new exec API or a POSIX claim.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need outer metadata/format closure, platform compatibility quote, ExecPP interpolation/use, Windows Popen and cmd expansion semantics; the outer function still omits the helper and process sink. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals/configuration, after, labels, IDs, CVEs, patches, advisories, tests and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Requires Windows, a user opting into an exec template with q-formatted lower-trust metadata and execution reaching ExecPP. Trusted command configuration is not itself attacker control; the attacker controls a remote metadata value interpreted inside that trusted command. The ordinary cmd setup leaves percent environment-variable substitution effective even with delayed expansion off. The advisory describes command-boundary consequences, but no command, shell, metadata payload, download or exploit executes here. PowerShell as the launching terminal does not change the cmd subprocess used by the retained Windows wrapper.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After q conversion explicitly calls shell_quote(value, shell=True). Its percent/newline/backslash translation must be paired with the new Windows Popen environment sentinel and /V:OFF /E:ON flags; this is not equivalent to the helper default shell=False mode. The bounded negative is the reported percent-expansion q-field/cmd path under the matched wrapper and ordinary trusted command. It does not certify arbitrary template formatting, missing/default field bypasses, filename fallback, custom executable/shell configurations or universal shell safety. The outer/nested rows are the same changed span; no supported after-contract failure is established for this bounded q path.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched training-era producers/consumers support the old trust-boundary violation, but critical helper/runtime/configuration and actual-use semantics are absent from the selected before-only function. Defer missing context without injecting answer-bearing project code.",
+      "dependence_reason": "Preserve fix-family:3702e3a521ae39151385 and existing exact/AST/span/history links. Two nested/outer q-format rows and the quoting-helper row share one family; Vimeo/Generic share a second; native redirect and later downloader filtering share a third. CVE-2024-22423 is an explicitly reported bypass of the CVE-2023-40581 repair; exact earlier/later compat helper text supports the lineage, not a new independent issue or automatic canonical merge. Cookie downloader commit312151 has parentf8b4bcc, but its selected wrapper differs from the selected redirect handler. Seven rows/three families do not establish independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm Windows cmd/exec configuration, actual proxy/TLS/cookie policy, source-controlled embed delivery and concrete native/external downloader admission; freeze context and mechanism-local negatives. Historical CPython3.11.4 source is a semantic comparison, not deployment proof or certification of all supported versions. Complete attributed advisory API responses are mutable snapshots, not independent proofs.",
+        "Conditional source deductions, not reproduced results. No yt-dlp/CPython/Windows/cmd/shell/process/HTTP/TLS/network/proxy/cookie/download/fragment/extractor/HTML/parser/regex/filesystem/dependency/application program, vulnerability-target request, payload or upstream test executes. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes; archive members are read as text without filesystem extraction/import/install."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "' '.join(map(compat_shlex_quote, value))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "shell_quote(value, shell=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/compat/__init__.py",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "s.replace('\"', '\"\"').join('\"\"')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/postprocessor/exec.py",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "tmpl, tmpl_dict = self._downloader.prepare_outtmpl(cmd, info)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/postprocessor/exec.py",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "Popen.run(cmd, shell=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_PEERS.json",
+          "path": "yt_dlp/utils/_utils.py",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "/Q /S /D /V:OFF /C"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_PEERS.json",
+          "path": "yt_dlp/utils/_utils.py",
+          "ref": "ff07792676f404ffff6ee61b5638c9dc1a33a37a",
+          "needle": "'%': '%%cd:~,%'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_PEERS.json",
+          "path": "yt_dlp/utils/_utils.py",
+          "ref": "ff07792676f404ffff6ee61b5638c9dc1a33a37a",
+          "needle": "env['='] ="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_PEERS.json",
+          "path": "yt_dlp/utils/_utils.py",
+          "ref": "ff07792676f404ffff6ee61b5638c9dc1a33a37a",
+          "needle": "/Q /S /D /V:OFF /E:ON /C"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "README.md",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "Python versions 3.8+ (CPython and PyPy) are supported."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTRACTS.json",
+          "path": "github/advisories/GHSA-hjq6-52gw-2g7p.json",
+          "ref": "GHSA-hjq6-52gw-2g7p",
+          "needle": "However, this escaping is not sufficient, and still allows expansion of environment variables."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_LINEAGE.json",
+          "path": "yt_dlp/compat/__init__.py",
+          "ref": "de015e930747165dbb8fcd360f8775fd973b7d6e",
+          "needle": "s.replace('\"', '\"\"').join('\"\"')"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:226228589238903:128061019578770",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Quoting helper is migrated for new shell-aware consumers; its old production calls are diagnostic formatting.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep Windows cmd argument quoting versus output/debug formatting, lower-trust smuggled metadata becoming privileged proxy routing, native redirect header propagation and downloader boundary credential transport separate. Do not infer command execution from a formatter alone, universal cookie theft from proxy control, or a global downloader negative from one Cookie filter. Final leaf/parent, security/correctness placement and ordinary API-knowledge policy remain researcher-pending.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old shell_quote decodes byte arguments and delegates each argument to compat_shlex_quote. The retained complete historical .py literal call search finds old production uses in debug messages for downloader/PhantomJS/AtomicParsley/ffmpeg/sponskrub/update; adjacent Popen calls receive the original argument list, not the debug string. A developer Fish-completion generator also emits completion text. The vulnerable old q-format branch and ExecPP fallback instead call compat_shlex_quote directly. New q/Popen shell=True call sites make the rewritten helper necessary to the project repair, but do not isolate an old selected helper-to-process violation. Python3.8+ was already supported, so shlex.join is not a demonstrated old-runtime incompatibility.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact historical consumers, diagnostic versus execution use, platform helper, explicit shell mode and Popen flags. A function name containing shell_quote or an adjacent subprocess call is not evidence the returned string reaches that call. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals/configuration, after, labels, IDs, CVEs, patches, advisories, tests and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No old selected-wrapper lower-trust-to-shell sink is established. The sibling q-format Windows vulnerability remains supported but takes another old helper path. New defaults and newly wired shell=True calls do not retroactively create that old consumer.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After has separate Windows process-argument and cmd-shell translation tables; only shell=True applies percent protection. POSIX uses shlex.join, and byte inputs get an explicit deprecation warning. The ordinary default is not a universal cmd sanitizer. Coordinated q/Popen repair cannot be approved as a standalone old-helper negative. Compat fallback still delegates with the default mode; its different filename/admission contract is outside the q-field negative.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Old production shell_quote consumers retained by the literal search use it for diagnostics; the vulnerable q-format path calls compat_shlex_quote directly. New shell=True consumers and a matching Popen migration do not establish an old selected wrapper defect. Defer attribution without excluding the real sibling issue.",
+      "dependence_reason": "Preserve fix-family:3702e3a521ae39151385 and existing exact/AST/span/history links. Two nested/outer q-format rows and the quoting-helper row share one family; Vimeo/Generic share a second; native redirect and later downloader filtering share a third. CVE-2024-22423 is an explicitly reported bypass of the CVE-2023-40581 repair; exact earlier/later compat helper text supports the lineage, not a new independent issue or automatic canonical merge. Cookie downloader commit312151 has parentf8b4bcc, but its selected wrapper differs from the selected redirect handler. Seven rows/three families do not establish independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm Windows cmd/exec configuration, actual proxy/TLS/cookie policy, source-controlled embed delivery and concrete native/external downloader admission; freeze context and mechanism-local negatives. Historical CPython3.11.4 source is a semantic comparison, not deployment proof or certification of all supported versions. Complete attributed advisory API responses are mutable snapshots, not independent proofs.",
+        "Conditional source deductions, not reproduced results. No yt-dlp/CPython/Windows/cmd/shell/process/HTTP/TLS/network/proxy/cookie/download/fragment/extractor/HTML/parser/regex/filesystem/dependency/application program, vulnerability-target request, payload or upstream test executes. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes; archive members are read as text without filesystem extraction/import/install."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def shell_quote(args):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def shell_quote(args, *, shell=False):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "trans = _CMD_QUOTE_TRANS if shell else _WINDOWS_QUOTE_TRANS"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_SEARCH.json",
+          "path": "yt_dlp/downloader/common.py",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "self.write_debug(f'{exe} command line: {shell_quote(str_args)}')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_SEARCH.json",
+          "path": "yt_dlp/postprocessor/ffmpeg.py",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "self.write_debug(f'{self.basename} command line: {shell_quote(cmd)}')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_SEARCH.json",
+          "path": "yt_dlp/postprocessor/ffmpeg.py",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "stdout, stderr, returncode = Popen.run("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_SEARCH.json",
+          "path": "yt_dlp/postprocessor/exec.py",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "cmd = cmd.replace('{}', compat_shlex_quote(filepath))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_PEERS.json",
+          "path": "yt_dlp/YoutubeDL.py",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "' '.join(map(compat_shlex_quote, value))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/compat/__init__.py",
+          "ref": "ff07792676f404ffff6ee61b5638c9dc1a33a37a",
+          "needle": "return shell_quote(s)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "README.md",
+          "ref": "216f6a3cb57824e6a3c859649ce058c199b1b247",
+          "needle": "Python versions 3.8+ (CPython and PyPy) are supported."
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:269613202485738:37557201162683",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Vimeo URL fragment http_headers cross from embedding metadata into internal proxy selection.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep Windows cmd argument quoting versus output/debug formatting, lower-trust smuggled metadata becoming privileged proxy routing, native redirect header propagation and downloader boundary credential transport separate. Do not infer command execution from a formatter alone, universal cookie theft from proxy control, or a global downloader negative from one Cookie filter. Final leaf/parent, security/correctness placement and ordinary API-knowledge policy remain researcher-pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "smuggle_url first unsmuggles the supplied URL and then data.update(idata), so preexisting fragment metadata wins over new internally added data. Vimeo embedding preserves an attacker-supplied fragment while adding a referrer; Generic Cinerama/manifest-style delegation can send a captured lower-trust URL back to Generic while preserving its old metadata. _request_webpage forwards merged headers to YoutubeDL.urlopen, which normalizes case and invokes clean_proxies. That consumer removes Ytdl-Request-Proxy from headers, clears configured proxies and sets its value as proxies[all], including precedence over NO_PROXY. Thus apparently ordinary smuggled headers can become privileged client routing options. The old duty is internal-option provenance isolation, not a new ban on legitimate configured proxies. This selected Vimeo path retains Vimeo/player URL restrictions and the ordinary no-unlisted-hash webpage branch; it does not inherit Generic arbitrary destination support.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need lower-trust Vimeo embed extraction, smuggle merge precedence, Vimeo URL/admission branches, _real_extract request forwarding, normalized headers and clean_proxies routing consumption. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals/configuration, after, labels, IDs, CVEs, patches, advisories, tests and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A user processing a lower-trust webpage can admit attacker-controlled embedded URL fragment data into the extractor request flow. The actor can select a proxy for that request, crossing client routing policy. This is already a routing-control boundary; unconditional plaintext credential theft does not follow. For HTTP a selected proxy sees traffic, while HTTPS certificate validation and Secure-cookie rules restrict interception; disabling certificate verification or applicable non-Secure cookie/HTTP conditions require separate evidence. No network, request, proxy, TLS or cookie operation executes. The destination here is constrained by the selected Vimeo extractor rather than an arbitrary target URL.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After consumes only flat referer metadata, not arbitrary http_headers, in the changed initial/media paths. Matched producer migration changes internally supplied referrer to that flat key; old arbitrary header metadata may persist in the fragment but is no longer applied by these selected consumers. This is local removal of one metadata-to-routing route, not all SSRF/proxy policy, every extractor, Referer value safety or cookie confidentiality. It does not erase legitimate trusted global http_headers/proxy configuration. No supported after-contract failure is established under the matched producer/consumer versions.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched training-era producers/consumers support the old trust-boundary violation, but critical helper/runtime/configuration and actual-use semantics are absent from the selected before-only function. Defer missing context without injecting answer-bearing project code.",
+      "dependence_reason": "Preserve fix-family:d2ec2117f614dbde3d42 and existing exact/AST/span/history links. Two nested/outer q-format rows and the quoting-helper row share one family; Vimeo/Generic share a second; native redirect and later downloader filtering share a third. CVE-2024-22423 is an explicitly reported bypass of the CVE-2023-40581 repair; exact earlier/later compat helper text supports the lineage, not a new independent issue or automatic canonical merge. Cookie downloader commit312151 has parentf8b4bcc, but its selected wrapper differs from the selected redirect handler. Seven rows/three families do not establish independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm Windows cmd/exec configuration, actual proxy/TLS/cookie policy, source-controlled embed delivery and concrete native/external downloader admission; freeze context and mechanism-local negatives. Historical CPython3.11.4 source is a semantic comparison, not deployment proof or certification of all supported versions. Complete attributed advisory API responses are mutable snapshots, not independent proofs.",
+        "Conditional source deductions, not reproduced results. No yt-dlp/CPython/Windows/cmd/shell/process/HTTP/TLS/network/proxy/cookie/download/fragment/extractor/HTML/parser/regex/filesystem/dependency/application program, vulnerability-target request, payload or upstream test executes. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes; archive members are read as text without filesystem extraction/import/install."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "headers.update(data['http_headers'])"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "headers['Referer'] = data['referer']"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return smuggle_url(url, {'http_headers': {'Referer': referrer_url}})"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return smuggle_url(url, {'referer': referrer_url})"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    def _extract_embed_urls(cls, url, webpage):\n        for embed_url in super()._extract_embed_urls(url, webpage):\n            yield cls._smuggle_referrer(embed_url, url)\n\n    @classmethod\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "url, data, headers = self._unsmuggle_headers(url)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                url, video_id, headers=headers)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/utils/_utils.py",
+          "ref": "d4f14a72dc1dd79396e0e80980268aee902b61e4",
+          "needle": "data.update(idata)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/extractor/common.py",
+          "ref": "d4f14a72dc1dd79396e0e80980268aee902b61e4",
+          "needle": "embed_url = urllib.parse.urljoin(url, unescapeHTML(mobj.group('url')))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/YoutubeDL.py",
+          "ref": "d4f14a72dc1dd79396e0e80980268aee902b61e4",
+          "needle": "clean_proxies(proxies=req.proxies, headers=req.headers)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTRACTS.json",
+          "path": "yt_dlp/utils/networking.py",
+          "ref": "d4f14a72dc1dd79396e0e80980268aee902b61e4",
+          "needle": "proxies.clear()  # XXX: compat: Ytdl-Request-Proxy takes preference over everything, including NO_PROXY"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTRACTS.json",
+          "path": "yt_dlp/utils/networking.py",
+          "ref": "d4f14a72dc1dd79396e0e80980268aee902b61e4",
+          "needle": "proxies['all'] = req_proxy"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:30582237635257:201470128154183",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Generic embedded-URL delegation preserves arbitrary smuggled headers that become privileged proxy routing.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep Windows cmd argument quoting versus output/debug formatting, lower-trust smuggled metadata becoming privileged proxy routing, native redirect header propagation and downloader boundary credential transport separate. Do not infer command execution from a formatter alone, universal cookie theft from proxy control, or a global downloader negative from one Cookie filter. Final leaf/parent, security/correctness placement and ordinary API-knowledge policy remain researcher-pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "smuggle_url first unsmuggles the supplied URL and then data.update(idata), so preexisting fragment metadata wins over new internally added data. Vimeo embedding preserves an attacker-supplied fragment while adding a referrer; Generic Cinerama/manifest-style delegation can send a captured lower-trust URL back to Generic while preserving its old metadata. _request_webpage forwards merged headers to YoutubeDL.urlopen, which normalizes case and invokes clean_proxies. That consumer removes Ytdl-Request-Proxy from headers, clears configured proxies and sets its value as proxies[all], including precedence over NO_PROXY. Thus apparently ordinary smuggled headers can become privileged client routing options. The old duty is internal-option provenance isolation, not a new ban on legitimate configured proxies. Unlike Vimeo, Generic can receive a captured arbitrary target. Its Cinerama result is not passed through filter_video, and the .ism/.smil manifest recognition searches the whole URL, including a retained fragment marker, before smuggling to_generic and returning a Generic URL result. This establishes the described website-to-Generic route rather than assuming the user must supply the smuggled URL directly.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need HTML embed capture/delegation, unsmuggle/merge precedence, Generic initial and direct-media header use, request header normalization, clean_proxies and actual network backend/TLS state. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals/configuration, after, labels, IDs, CVEs, patches, advisories, tests and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A user processing a lower-trust webpage can admit attacker-controlled embedded URL fragment data into the extractor request flow. The actor can select a proxy for that request, crossing client routing policy. This is already a routing-control boundary; unconditional plaintext credential theft does not follow. For HTTP a selected proxy sees traffic, while HTTPS certificate validation and Secure-cookie rules restrict interception; disabling certificate verification or applicable non-Secure cookie/HTTP conditions require separate evidence. No network, request, proxy, TLS or cookie operation executes.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After consumes only flat referer metadata, not arbitrary http_headers, in the changed initial/media paths. Matched producer migration changes internally supplied referrer to that flat key; old arbitrary header metadata may persist in the fragment but is no longer applied by these selected consumers. This is local removal of one metadata-to-routing route, not all SSRF/proxy policy, every extractor, Referer value safety or cookie confidentiality. It does not erase legitimate trusted global http_headers/proxy configuration. No supported after-contract failure is established under the matched producer/consumer versions.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched training-era producers/consumers support the old trust-boundary violation, but critical helper/runtime/configuration and actual-use semantics are absent from the selected before-only function. Defer missing context without injecting answer-bearing project code.",
+      "dependence_reason": "Preserve fix-family:d2ec2117f614dbde3d42 and existing exact/AST/span/history links. Two nested/outer q-format rows and the quoting-helper row share one family; Vimeo/Generic share a second; native redirect and later downloader filtering share a third. CVE-2024-22423 is an explicitly reported bypass of the CVE-2023-40581 repair; exact earlier/later compat helper text supports the lineage, not a new independent issue or automatic canonical merge. Cookie downloader commit312151 has parentf8b4bcc, but its selected wrapper differs from the selected redirect handler. Seven rows/three families do not establish independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm Windows cmd/exec configuration, actual proxy/TLS/cookie policy, source-controlled embed delivery and concrete native/external downloader admission; freeze context and mechanism-local negatives. Historical CPython3.11.4 source is a semantic comparison, not deployment proof or certification of all supported versions. Complete attributed advisory API responses are mutable snapshots, not independent proofs.",
+        "Conditional source deductions, not reproduced results. No yt-dlp/CPython/Windows/cmd/shell/process/HTTP/TLS/network/proxy/cookie/download/fragment/extractor/HTML/parser/regex/filesystem/dependency/application program, vulnerability-target request, payload or upstream test executes. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes; archive members are read as text without filesystem extraction/import/install."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "**smuggled_data.get('http_headers', {})"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "'Referer': smuggled_data.get('referer'),"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        original_url = url\n        url, smuggled_data = unsmuggle_url(url, {})\n        force_videoid = None\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "headers = smuggled_data.get('http_headers', {})"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "headers = filter_dict({'Referer': smuggled_data.get('referer')})"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        },\n        # Cinerama player\n        {\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "smuggle_url(video_url, {'to_generic': True})"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/utils/_utils.py",
+          "ref": "d4f14a72dc1dd79396e0e80980268aee902b61e4",
+          "needle": "data.update(idata)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/extractor/common.py",
+          "ref": "d4f14a72dc1dd79396e0e80980268aee902b61e4",
+          "needle": "return self._downloader.urlopen(self._create_request(url_or_request, data, headers, query))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/YoutubeDL.py",
+          "ref": "d4f14a72dc1dd79396e0e80980268aee902b61e4",
+          "needle": "clean_proxies(proxies=req.proxies, headers=req.headers)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTRACTS.json",
+          "path": "yt_dlp/utils/networking.py",
+          "ref": "d4f14a72dc1dd79396e0e80980268aee902b61e4",
+          "needle": "req_proxy = headers.pop('Ytdl-Request-Proxy', None)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTRACTS.json",
+          "path": "yt_dlp/utils/networking.py",
+          "ref": "d4f14a72dc1dd79396e0e80980268aee902b61e4",
+          "needle": "proxies['all'] = req_proxy"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTRACTS.json",
+          "path": "github/advisories/GHSA-3ch3-jhc6-5r8x.json",
+          "ref": "GHSA-3ch3-jhc6-5r8x",
+          "needle": "This functionality is intended to be internal only."
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:65969548864427:34066104510263",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Native redirects copy an initial URL Cookie header to a new destination without jar scope recomputation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep Windows cmd argument quoting versus output/debug formatting, lower-trust smuggled metadata becoming privileged proxy routing, native redirect header propagation and downloader boundary credential transport separate. Do not infer command execution from a formatter alone, universal cookie theft from proxy control, or a global downloader negative from one Cookie filter. Final leaf/parent, security/correctness placement and ordinary API-knowledge policy remain researcher-pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old YoutubeDL._calc_headers reads cookies for the initial URL from the cookiejar and copies their value into ordinary http_headers.Cookie, losing domain/path/Secure/expiry metadata at the transport boundary. urllib Request stores ordinary headers separately from unredirected_hdrs; the retained CookieJar comparison does not replace an already present Cookie header. The installed yt-dlp redirect handler copies req.headers into a new destination request. Fragment download helpers also reuse parent headers for frag_url, and old external command builders pass them as raw headers. Thus an initially correctly scoped credential can be reused for a destination outside its scope. Loaded credentials and an actual cross-scope redirect or fragment are prerequisites, not every cookie/extractor/download. This exact selected redirect repair precedes the later downloader/producer migration: its after commit is the parent of the selected downloader wrapper repair. The before entity-header filter also compares lowercased names with title-cased removal strings, so method-changing redirects retain unwanted payload headers; after title comparison fixes that independently of the Cookie addition.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need initial cookiejar-to-header producer, Request/header normalization, installed opener/redirect handler, redirect destination trust and CookieJar reapplication. The selected method alone does not establish who produced the Cookie or the intended cookie scope. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals/configuration, after, labels, IDs, CVEs, patches, advisories, tests and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A user with loaded cookies can download an apparently trusted initial URL that redirects to an attacker-controlled different host/path. Old copied ordinary Cookie bypasses the new destination jar policy and is disclosed to that destination even if both connections use valid HTTPS. Requires a redirect of an authenticated download, not arbitrary unauthenticated requests or every loaded cookie. Scope includes path/Secure changes as applicable, not just hostname.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After removes Cookie on every handled redirect, including same-host, then the opener/cookie processor can add only cookies appropriate to the redirected request from the jar. Method-changing redirects also drop Content-Length/Type with the corrected title comparison. This is a local ordinary-Cookie forwarding negative, not Authorization stripping, arbitrary manually supplied credentials, external/fragment downloader repair or the entire advisory. Cookiejar-backed admission under the matched opener is required; no supported selected after-contract failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched training-era producers/consumers support the old trust-boundary violation, but critical helper/runtime/configuration and actual-use semantics are absent from the selected before-only function. Defer missing context without injecting answer-bearing project code.",
+      "dependence_reason": "Preserve fix-family:16e329be05e519bb5b6c and existing exact/AST/span/history links. Two nested/outer q-format rows and the quoting-helper row share one family; Vimeo/Generic share a second; native redirect and later downloader filtering share a third. CVE-2024-22423 is an explicitly reported bypass of the CVE-2023-40581 repair; exact earlier/later compat helper text supports the lineage, not a new independent issue or automatic canonical merge. Cookie downloader commit312151 has parentf8b4bcc, but its selected wrapper differs from the selected redirect handler. Seven rows/three families do not establish independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm Windows cmd/exec configuration, actual proxy/TLS/cookie policy, source-controlled embed delivery and concrete native/external downloader admission; freeze context and mechanism-local negatives. Historical CPython3.11.4 source is a semantic comparison, not deployment proof or certification of all supported versions. Complete attributed advisory API responses are mutable snapshots, not independent proofs.",
+        "Conditional source deductions, not reproduced results. No yt-dlp/CPython/Windows/cmd/shell/process/HTTP/TLS/network/proxy/cookie/download/fragment/extractor/HTML/parser/regex/filesystem/dependency/application program, vulnerability-target request, payload or upstream test executes. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes; archive members are read as text without filesystem extraction/import/install."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "remove_headers = []"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "remove_headers = ['Cookie']"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if k.lower() not in remove_headers"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if k.title() not in remove_headers"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "http_error_301 = http_error_303 = http_error_307 = http_error_308 = urllib.request.HTTPRedirectHandler.http_error_302"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/YoutubeDL.py",
+          "ref": "1ceb657bdd254ad961489e5060f2ccc7d556b729",
+          "needle": "res['Cookie'] = cookies"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/YoutubeDL.py",
+          "ref": "1ceb657bdd254ad961489e5060f2ccc7d556b729",
+          "needle": "redirect_handler = YoutubeDLRedirectHandler()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTRACTS.json",
+          "path": "Lib/urllib/request.py",
+          "ref": "v3.11.4",
+          "needle": "self.headers[key.capitalize()] = val"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTRACTS.json",
+          "path": "Lib/urllib/request.py",
+          "ref": "v3.11.4",
+          "needle": "return self.parent.open(new, timeout=req.timeout)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTRACTS.json",
+          "path": "Lib/http/cookiejar.py",
+          "ref": "v3.11.4",
+          "needle": "if not request.has_header(\"Cookie\"):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTRACTS.json",
+          "path": "Lib/http/cookiejar.py",
+          "ref": "v3.11.4",
+          "needle": "                    request.add_unredirected_header(\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:71516930378917:28977003986818",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Downloader boundary removes scope-lost Cookie before native/external delegation after an earlier native-redirect-only repair.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep Windows cmd argument quoting versus output/debug formatting, lower-trust smuggled metadata becoming privileged proxy routing, native redirect header propagation and downloader boundary credential transport separate. Do not infer command execution from a formatter alone, universal cookie theft from proxy control, or a global downloader negative from one Cookie filter. Final leaf/parent, security/correctness placement and ordinary API-knowledge policy remain researcher-pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old YoutubeDL._calc_headers reads cookies for the initial URL from the cookiejar and copies their value into ordinary http_headers.Cookie, losing domain/path/Secure/expiry metadata at the transport boundary. urllib Request stores ordinary headers separately from unredirected_hdrs; the retained CookieJar comparison does not replace an already present Cookie header. The installed yt-dlp redirect handler copies req.headers into a new destination request. Fragment download helpers also reuse parent headers for frag_url, and old external command builders pass them as raw headers. Thus an initially correctly scoped credential can be reused for a destination outside its scope. Loaded credentials and an actual cross-scope redirect or fragment are prerequisites, not every cookie/extractor/download. The exact before already includes the native redirect repair, so do not use an unpatched-redirect witness to justify this later wrapper. Old fragment_info_dict copies parent headers to a different frag_url before calling ctx[dl].download; that first request has no redirect on which to strip Cookie. Later after _calc_headers stores scope metadata under cookies, native requests use the shared jar, and matched external adapters use cookie files/attributes or limit redirects. The selected wrapper enforces the local no-raw-Cookie boundary as part of that coordinated repair.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need concrete fragment/native/external real_download consumers, old initial cookie producer, already-installed native redirect fix and new scoped-cookie transport. The already-downloaded early return performs no download and is outside this filter. Do not infer all backend behavior from the shared wrapper. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals/configuration, after, labels, IDs, CVEs, patches, advisories, tests and answers remain adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A loaded cookie scoped to a trusted manifest/download can otherwise be sent on the first request for a different-host/path fragment or through an external downloader given an unscoped raw header. The retained fragment helper supplies this path even after native redirect handling is repaired. Actual attacker control of a manifest/download URL and applicable cookie is required. External tools have version-specific behavior; the advisory explicitly excepts curl and modern httpie.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After case-insensitively removes top-level Cookie before real_download while preserving other headers, or writes None if no headers remain. Native jar processing and matched external scoped-cookie support are needed for authenticated compatibility; the wrapper alone is not the full repair. Scope is raw Cookie transported through this wrapper, not nested requested_formats, arbitrary external options or every cookie/redirect credential. A separate all-headers-removed/fragment None compatibility question remains open below, so a complete standalone paired negative is not established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched training-era producers/consumers support the old trust-boundary violation, but critical helper/runtime/configuration and actual-use semantics are absent from the selected before-only function. Defer missing context without injecting answer-bearing project code.",
+      "dependence_reason": "Preserve fix-family:16e329be05e519bb5b6c and existing exact/AST/span/history links. Two nested/outer q-format rows and the quoting-helper row share one family; Vimeo/Generic share a second; native redirect and later downloader filtering share a third. CVE-2024-22423 is an explicitly reported bypass of the CVE-2023-40581 repair; exact earlier/later compat helper text supports the lineage, not a new independent issue or automatic canonical merge. Cookie downloader commit312151 has parentf8b4bcc, but its selected wrapper differs from the selected redirect handler. Seven rows/three families do not establish independently adjudicated issue counts.",
+      "open_questions": [
+        "Researcher confirm Windows cmd/exec configuration, actual proxy/TLS/cookie policy, source-controlled embed delivery and concrete native/external downloader admission; freeze context and mechanism-local negatives. Historical CPython3.11.4 source is a semantic comparison, not deployment proof or certification of all supported versions. Complete attributed advisory API responses are mutable snapshots, not independent proofs.",
+        "Conditional source deductions, not reproduced results. No yt-dlp/CPython/Windows/cmd/shell/process/HTTP/TLS/network/proxy/cookie/download/fragment/extractor/HTML/parser/regex/filesystem/dependency/application program, vulnerability-target request, payload or upstream test executes. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes; archive members are read as text without filesystem extraction/import/install."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "ret = self.real_download(filename, info_dict)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "pair[0].lower() != 'cookie'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/YoutubeDL.py",
+          "ref": "f8b4bcc0a791274223723488bfbfc23ea3276641",
+          "needle": "res['Cookie'] = cookies"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/downloader/fragment.py",
+          "ref": "f8b4bcc0a791274223723488bfbfc23ea3276641",
+          "needle": "'url': frag_url,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/downloader/fragment.py",
+          "ref": "f8b4bcc0a791274223723488bfbfc23ea3276641",
+          "needle": "'http_headers': headers or info_dict.get('http_headers'),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/downloader/fragment.py",
+          "ref": "f8b4bcc0a791274223723488bfbfc23ea3276641",
+          "needle": "ctx['dl'].download(fragment_filename, fragment_info_dict)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_PEERS.json",
+          "path": "yt_dlp/utils/_utils.py",
+          "ref": "f8b4bcc0a791274223723488bfbfc23ea3276641",
+          "needle": "remove_headers = ['Cookie']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/YoutubeDL.py",
+          "ref": "3121512228487c9c690d3d39bfd2579addf96e07",
+          "needle": "info_dict['cookies'] = '; '.join(values)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/downloader/external.py",
+          "ref": "3121512228487c9c690d3d39bfd2579addf96e07",
+          "needle": "cmd += ['--load-cookies', self._write_cookies()]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/downloader/external.py",
+          "ref": "3121512228487c9c690d3d39bfd2579addf96e07",
+          "needle": "cmd += [f'Cookie: {cookie_header}', '--max-redirect=0']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_031_CONTEXT.json",
+          "path": "yt_dlp/downloader/fragment.py",
+          "ref": "3121512228487c9c690d3d39bfd2579addf96e07",
+          "needle": "headers = info_dict.get('http_headers', {}).copy()"
+        }
+      ],
+      "additional_after_concerns": [
+        "The selected after writes http_headers=None when the header mapping is absent/empty or contains only Cookie. The unchanged fragment helper later uses info_dict.get(http_headers, {}).copy(), whose default does not apply to an explicit None. This is a concrete incompatible shape if such a header-only/omitted direct fragment download is admitted; normal YoutubeDL header enrichment ordinarily retains other default headers. A supported old standalone-fragment/API admission contract and full route are not established, so do not assert a reproduced failure, universal regression or supported after-contract violation from the shape alone. Keep this compatibility question explicit and withhold a complete standalone after-negative pending researcher contract review."
+      ]
+    }
+  ]
+}

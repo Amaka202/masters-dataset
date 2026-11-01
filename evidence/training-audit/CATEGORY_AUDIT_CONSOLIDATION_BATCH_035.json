@@ -1,0 +1,589 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-035",
+  "review_date": "2026-10-26",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All six Sydent training candidates/all discovery statuses across five mechanical families, including the previously ambiguous2019 address case; no null categories exist.",
+  "selection_rule": {
+    "repository": "github.com/matrix-org/sydent",
+    "discovery_categories": [
+      "SEC-CONTEXT-ID-MISMATCH",
+      "SEC-INPUT-SIZE-BOUND",
+      "SEC-RESOURCE-AUTHORIZATION",
+      "SEC-TLS-PEER-VERIFICATION"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Four missing-context and two paired-negative deferrals. Distinguish configured SMTP peer verification, post-parse client-secret admission, finite-cap GET response accumulation and ignored POST body handling, authenticated invitation sender binding and2019 validation/delivery identity normalization. The invitation repair introduces a default-template substitution-key failure;2019 raw recipient forwarding retains smtplib normalization under CPython2.7.16, a residual failure. Later CPython2.7.17 parser and2021 Sydent equality hardenings are semantic comparisons, not backfilled old behavior or independent selected-issue counts. Append one supported revision2 resolving prior2019 ambiguity with exact runtime/session/consumer evidence while explicitly deferring its after negative; preserve category/hash/family and all832 prefix-event bytes. Four evidence files retain145 inert texts/ten exact archive peers, five resolved parents and explicit missing-member/HTTP404 inventories; runtime/dependency/Synapse comparisons are not deployment or whole-range proof. Preserve canonical bytes/splits, prior batches and45 protected inputs. Six functions/five families and the two response representations are not independently adjudicated issue counts. All retained programs/payloads/vulnerability requests/upstream tests stay inert; findings are conditional source deductions.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:134004227435086:248871026127822",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "SMTP encryption uses a non-verifying default context before login and validation-email delivery.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep TLS peer authentication, accepted field-size admission, remote response accumulation, authenticated sender authority and validated-versus-delivered identity as distinct mechanisms. Preserve original leaves and five mechanical families; no new leaf, final category/eligibility or issue-count decision is approved.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old configured SSL/TLS and STARTTLS branches intentionally connect to the selected SMTP server and then may authenticate and send validation/invitation mail. Retained CPython3.8.17/3.11.4 smtplib constructs _create_stdlib_context when no context is supplied; ssl aliases it to an unverified context whose defaults disable certificate/hostname checking. Thus encryption alone does not bind the peer to mailServer. Exact old/after pyproject admits these Python3 comparisons, not proof of installed versions. After passes a create_default_context(SERVER_AUTH) context to both TLS branches.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need imported smtplib/ssl semantics, configured TLS mode/server, credentials/mail data and a network-position actor/trust-store policy. This is not a missing encryption claim for every default deployment. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Imported dependency/runtime semantics, helper/caller/configuration/template/policy facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A response-controlling/on-path SMTP peer can impersonate the configured mailServer without a trusted certificate/hostname under retained old defaults, exposing configured login or validation mail. Requires configured TLS plus actual interception/endpoint control; arbitrary public web input alone supplies no such network position.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After SERVER_AUTH uses CERT_REQUIRED and check_hostname with default trust roots in the comparisons, and smtplib wraps with server_hostname=self._host. Negative covers peer authentication in configured SSL/TLS or STARTTLS paths. Plaintext fallback remains, STARTTLS is not forced for every mode, and trust-store compromise or a legitimate trusted malicious relay is separate. No supported independent after-contract failure is established; intentional rejection of unverifiable peers is not itself a regression.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The old local mechanism and actual caller/runtime consumers are retained, but strict before-only admission still requires omitted project/dependency/policy facts. Defer without selective context injection and keep the after negative explicitly branch/consumer-local.",
+      "dependence_reason": "Six rows/five families; get_json and post_json_get_nothing share fix-family:e9074a2752abae5484e0 and bounded-reader integration, not two automatically independent CVE issues. Keep SMTP2019 identity and SMTP2023 TLS mechanisms/version contracts separate despite a shared path/function name. 2021 invitation MIME-boundary changes are sibling repairs, not proof of selected sender-binding effectiveness. Historical CPython parser hardening and Synapse policy are comparisons, not equality of selected functions, automatic family merges or newly counted issue independence.",
+      "open_questions": [
+        "Researcher confirm actual runtime, configured transport/trust roots, route/auth/response/body limits, branded/custom templates, client-secret input types, persisted validation identity and deployment of compared consumer versions. Do not infer all-version behavior or complete after safety from selected anchors.",
+        "Conditional source deductions, not reproduced results. No Sydent/Synapse/SMTP/email/address/SSL/TLS/certificate/HTTP/Twisted/JSON/regex/template/auth/token/DB/crypto/network/process/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "smtp.starttls()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "smtp.starttls(context=ctx)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "smtp = smtplib.SMTP_SSL(mailServer, mailPort, myHostname)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "ctx = ssl.create_default_context(purpose=ssl.Purpose.SERVER_AUTH)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            smtp = smtplib.SMTP_SSL(mailServer, mailPort, myHostname, context=ctx)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTRACTS.json",
+          "path": "Lib/smtplib.py",
+          "ref": "v3.8.17",
+          "needle": "                              \"custom context instead\", DeprecationWarning, 2)\n            if context is None:\n                context = ssl._create_stdlib_context(certfile=certfile,\n                                                     keyfile=keyfile)\n            self.sock = context.wrap_socket(self.sock,\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTRACTS.json",
+          "path": "Lib/ssl.py",
+          "ref": "v3.8.17",
+          "needle": "_create_stdlib_context = _create_unverified_context"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTRACTS.json",
+          "path": "Lib/ssl.py",
+          "ref": "v3.8.17",
+          "needle": "context.verify_mode = CERT_REQUIRED"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTRACTS.json",
+          "path": "Lib/ssl.py",
+          "ref": "v3.8.17",
+          "needle": "        context.verify_mode = CERT_REQUIRED\n        context.check_hostname = True\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTRACTS.json",
+          "path": "pyproject.toml",
+          "ref": "b59186d01c1f6155b127c4aa53e22f7e962f87df",
+          "needle": "[tool.poetry.dependencies]"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:30114110222170:31102574426848",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Client-secret validator limits character alphabet but admits arbitrarily long matching input into token processing.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep TLS peer authentication, accepted field-size admission, remote response accumulation, authenticated sender authority and validated-versus-delivered identity as distinct mechanisms. Preserve original leaves and five mechanical families; no new leaf, final category/eligibility or issue-count decision is approved.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old is_valid_client_secret is the existing gate used by email/msisdn request and validation/binding handlers. Its simple anchored character-class regex has no length bound. Old EmailRequestCodeServlet forwards accepted input into EmailValidator.requestToken, session lookup/insertion and percent-encoded validation-link construction. Long matching ASCII fields therefore cause field-size-proportional work/storage downstream. This is a conditional availability/admission boundary, not catastrophic backtracking or authentication bypass. The new255-character cap is a resource policy; do not invent an old exact255-byte promise from an unpinned specification.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need client_secret_regex binding, actual HTTP route/auth/body/type admission, validator/persistence/link consumers and server request limits. Parsing the request may already allocate its full body before this helper runs. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Imported dependency/runtime semantics, helper/caller/configuration/template/policy facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Lower-trust callers can submit long matching client secrets through admitted token routes; require_auth and upstream body/rate limits qualify actual cost/delivery. Default EmailRequestCodeServlet require_auth=False is conditional route evidence, not proof all installations expose unauthenticated endpoints. Old query/insertion/link work makes oversized field acceptance operational rather than a purely cosmetic regex change.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After short-circuits length before regex and permits only nonempty client secrets of at most255 characters; admitted alphabet is essentially ASCII. Bound the negative to post-parse accepted field length, not request buffering/count, all token storage limits, terminal-newline regex semantics or global resource safety. No independent supported new after failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The old local mechanism and actual caller/runtime consumers are retained, but strict before-only admission still requires omitted project/dependency/policy facts. Defer without selective context injection and keep the after negative explicitly branch/consumer-local.",
+      "dependence_reason": "Six rows/five families; get_json and post_json_get_nothing share fix-family:e9074a2752abae5484e0 and bounded-reader integration, not two automatically independent CVE issues. Keep SMTP2019 identity and SMTP2023 TLS mechanisms/version contracts separate despite a shared path/function name. 2021 invitation MIME-boundary changes are sibling repairs, not proof of selected sender-binding effectiveness. Historical CPython parser hardening and Synapse policy are comparisons, not equality of selected functions, automatic family merges or newly counted issue independence.",
+      "open_questions": [
+        "Researcher confirm actual runtime, configured transport/trust roots, route/auth/response/body limits, branded/custom templates, client-secret input types, persisted validation identity and deployment of compared consumer versions. Do not infer all-version behavior or complete after safety from selected anchors.",
+        "Conditional source deductions, not reproduced results. No Sydent/Synapse/SMTP/email/address/SSL/TLS/certificate/HTTP/Twisted/JSON/regex/template/auth/token/DB/crypto/network/process/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return client_secret_regex.match(client_secret) is not None"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "0 < len(client_secret) <= 255"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "client_secret_regex = re.compile("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/http/servlets/emailservlet.py",
+          "ref": "23ced7cf01fee201569d24bc33285e297afd6ca3",
+          "needle": "        sendAttempt = args['send_attempt']\n        clientSecret = args['client_secret']\n\n        if not is_valid_client_secret(clientSecret):\n            request.setResponseCode(400)\n            return {\n                'errcode': 'M_INVALID_PARAM',\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/http/servlets/emailservlet.py",
+          "ref": "23ced7cf01fee201569d24bc33285e297afd6ca3",
+          "needle": "email, clientSecret, sendAttempt, nextLink, ipaddress=ipaddress, brand=brand,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/db/valsession.py",
+          "ref": "23ced7cf01fee201569d24bc33285e297afd6ca3",
+          "needle": "(medium, address, clientSecret)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/validators/emailvalidator.py",
+          "ref": "23ced7cf01fee201569d24bc33285e297afd6ca3",
+          "needle": "clientSecret=clientSecret"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/validators/emailvalidator.py",
+          "ref": "23ced7cf01fee201569d24bc33285e297afd6ca3",
+          "needle": "urllib.parse.quote(clientSecret)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:41522327206014:101538317677352",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "GET JSON helper accumulates remote body before decoding; finite caps require matched registration/key-fetch callers.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep TLS peer authentication, accepted field-size admission, remote response accumulation, authenticated sender authority and validated-versus-delivered identity as distinct mechanisms. Preserve original leaves and five mechanical families; no new leaf, final category/eligibility or issue-count decision is approved.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old readBody buffers the whole remote response before UTF-8/JSON parsing. Twisted20.3.0 _ReadBodyProtocol appends received chunks and joins them without a size bound. Old RegisterServlet uses request matrix_server_name/access_token to contact a homeserver before checking its returned sub; key fetch similarly precedes signature verification. A peer controlling a contacted endpoint can consume process resources irrespective of later valid-JSON/key/identity rejection. After new helper and finite5KiB/50KiB caller arguments are coordinated; max_size=None deliberately retains unbounded public behavior.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need Twisted Agent/readBody/protocol/chunk semantics and exact old/after caller caps, external response control and connection/time policies. Default public get_json(uri) is not covered by a finite-cap negative. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Imported dependency/runtime semantics, helper/caller/configuration/template/policy facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Admitted registration can choose a remote homeserver that returns excessive response bytes before a token is issued; signature verification cannot guard an earlier key fetch. Actual URI/network/resolve restrictions, incoming request/auth/rate limits and endpoint response delivery remain conditional.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "With matched finite caps, known reported length greater than cap chooses a discard protocol and streamed bodies fail/abort at accumulated length>=cap; post-check chunks are ignored. Data is written before comparison and Agent may buffer a chunk first, so no exact peak-memory limit is asserted. At exact cap streamed data also fails; helper documents reached-limit failure, not universally inclusive acceptance. DefaultNone and unrelated inbound-body limits remain outside this negative. Known oversized length only triggers discard failure/abort on first data or connectionLost; this is not an immediate timeout/lifecycle guarantee. No supported independent after-contract failure is established for the retained finite-cap registration/key paths.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The old local mechanism and actual caller/runtime consumers are retained, but strict before-only admission still requires omitted project/dependency/policy facts. Defer without selective context injection and keep the after negative explicitly branch/consumer-local.",
+      "dependence_reason": "Six rows/five families; get_json and post_json_get_nothing share fix-family:e9074a2752abae5484e0 and bounded-reader integration, not two automatically independent CVE issues. Keep SMTP2019 identity and SMTP2023 TLS mechanisms/version contracts separate despite a shared path/function name. 2021 invitation MIME-boundary changes are sibling repairs, not proof of selected sender-binding effectiveness. Historical CPython parser hardening and Synapse policy are comparisons, not equality of selected functions, automatic family merges or newly counted issue independence.",
+      "open_questions": [
+        "Researcher confirm actual runtime, configured transport/trust roots, route/auth/response/body limits, branded/custom templates, client-secret input types, persisted validation identity and deployment of compared consumer versions. Do not infer all-version behavior or complete after safety from selected anchors.",
+        "Conditional source deductions, not reproduced results. No Sydent/Synapse/SMTP/email/address/SSL/TLS/certificate/HTTP/Twisted/JSON/regex/template/auth/token/DB/crypto/network/process/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "body = yield readBody(response)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "body = yield read_body_with_max_size(response, max_size)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def get_json(self, uri, max_size = None):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTRACTS.json",
+          "path": "src/twisted/web/client.py",
+          "ref": "twisted-20.3.0",
+          "needle": "self.dataBuffer.append(data)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/http/servlets/registerservlet.py",
+          "ref": "0523511d2fb40f2738f8a8549868f44b96e5dab7",
+          "needle": "args = get_args(request, ('matrix_server_name', 'access_token'))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/http/servlets/registerservlet.py",
+          "ref": "f56eee315b6c44fdd9f6aa785cc2ec744a594428",
+          "needle": "1024 * 5,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/hs_federation/verifier.py",
+          "ref": "f56eee315b6c44fdd9f6aa785cc2ec744a594428",
+          "needle": "1024 * 50)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/http/httpcommon.py",
+          "ref": "f56eee315b6c44fdd9f6aa785cc2ec744a594428",
+          "needle": "self.stream.write(data)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/http/httpcommon.py",
+          "ref": "f56eee315b6c44fdd9f6aa785cc2ec744a594428",
+          "needle": "self.length >= self.max_size"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/http/httpcommon.py",
+          "ref": "f56eee315b6c44fdd9f6aa785cc2ec744a594428",
+          "needle": "response.deliverBody(_DiscardBodyWithMaxSizeProtocol(d))"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:41522327206014:232425937087833",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Ignored POST response is nevertheless fully buffered; zero-size reader aborts instead of accumulating it.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep TLS peer authentication, accepted field-size admission, remote response accumulation, authenticated sender authority and validated-versus-delivered identity as distinct mechanisms. Preserve original leaves and five mechanical families; no new leaf, final category/eligibility or issue-count decision is approved.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old helper intentionally returns remote response metadata after reading the entire otherwise unused body to avoid leaking HTTP connections. ThreepidBinder._notify constructs a Matrix homeserver callback from the bound mxid and checks response.code; it does not need JSON body contents. Finishing ownership validation/binding and invoking the actual callback are prerequisites, not unauthenticated arbitrary POST targeting. SMS gateway usage is separately configured/trusted. Old Twisted full-body accumulation allows a malicious contacted homeserver to spend process memory.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual bound-mxid/onbind producer, deferred response lifecycle, helper abort/discard semantics and connection/chunk/timeout policy. No POST, HTTP body or event-loop operation executes. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Imported dependency/runtime semantics, helper/caller/configuration/template/policy facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A homeserver controlling the onbind response after an admitted validated3pid association can send arbitrarily large unused data. Actual binding route/ownership/token and contacted endpoint reachability qualify delivery. The current caller uses only response.code before retry/token deletion; response-body JSON is not a duty despite stale helper docstring wording.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After read_body_with_max_size(response,0) suppresses BodyExceededMaxSize and returns response metadata. Positive known length uses discard protocol; unknown-length data is written once then fails>=0 and aborts; later chunks are ignored. Empty bodies can finish normally. Do not claim zero transient bytes, zero transport buffering, immediate close before first data, no timeout/leak possibilities or full-connection reuse. Returning metadata with an intentionally discarded body is consistent with the old onbind consumer. No supported independent after failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The old local mechanism and actual caller/runtime consumers are retained, but strict before-only admission still requires omitted project/dependency/policy facts. Defer without selective context injection and keep the after negative explicitly branch/consumer-local.",
+      "dependence_reason": "Six rows/five families; get_json and post_json_get_nothing share fix-family:e9074a2752abae5484e0 and bounded-reader integration, not two automatically independent CVE issues. Keep SMTP2019 identity and SMTP2023 TLS mechanisms/version contracts separate despite a shared path/function name. 2021 invitation MIME-boundary changes are sibling repairs, not proof of selected sender-binding effectiveness. Historical CPython parser hardening and Synapse policy are comparisons, not equality of selected functions, automatic family merges or newly counted issue independence.",
+      "open_questions": [
+        "Researcher confirm actual runtime, configured transport/trust roots, route/auth/response/body limits, branded/custom templates, client-secret input types, persisted validation identity and deployment of compared consumer versions. Do not infer all-version behavior or complete after safety from selected anchors.",
+        "Conditional source deductions, not reproduced results. No Sydent/Synapse/SMTP/email/address/SSL/TLS/certificate/HTTP/Twisted/JSON/regex/template/auth/token/DB/crypto/network/process/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        yield readBody(response)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "yield read_body_with_max_size(response, 0)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except BodyExceededMaxSize:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/threepid/bind.py",
+          "ref": "0523511d2fb40f2738f8a8549868f44b96e5dab7",
+          "needle": "http_client.post_json_get_nothing(post_url, assoc, {})"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/threepid/bind.py",
+          "ref": "0523511d2fb40f2738f8a8549868f44b96e5dab7",
+          "needle": "if response.code != 200:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTRACTS.json",
+          "path": "src/twisted/web/client.py",
+          "ref": "twisted-20.3.0",
+          "needle": "self.dataBuffer.append(data)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/http/httpcommon.py",
+          "ref": "f56eee315b6c44fdd9f6aa785cc2ec744a594428",
+          "needle": "            # Close the connection (forcefully) since all the data will get\n            # discarded anyway.\n            self.transport.abortConnection()\n\n    def dataReceived(self, data) -> None:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/http/httpcommon.py",
+          "ref": "f56eee315b6c44fdd9f6aa785cc2ec744a594428",
+          "needle": "        # If the deferred was called, bail early.\n        if self.deferred.called:\n            return\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:96113036161391:143311471758682",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Authenticated invitation sender is not bound to account; new template integration also breaks ordinary delivery.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep TLS peer authentication, accepted field-size admission, remote response accumulation, authenticated sender authority and validated-versus-delivered identity as distinct mechanisms. Preserve original leaves and five mechanical families; no new leaf, final category/eligibility or issue-count decision is approved.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old authV2 validates token/account/terms and returns an Account with userId, but selected render_POST discards that identity and accepts request sender for stored invitation data. A caller authenticated as one account can submit another sender identity. After compares account.userId before token creation/store/mail and supplies a separate verified-sender marker. Existing sendEmail/template/caller duty is to deliver normal invitations under default branding; new verified-marker consumer must integrate with that old duty. Other request-controlled display fields and unauthenticated require_auth=False mode are separate policies.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need authV2 Account identity/token contract, require_auth route construction, branded default/custom templates and sendEmail substitution-key rules. A credential check alone is not sender authorization; a correctly bound sender alone is not a complete delivered-email negative. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Imported dependency/runtime semantics, helper/caller/configuration/template/policy facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "In authenticated mode a valid token need not belong to request sender; that crosses account/sender authority before token persistence and email presentation. After equality narrows it, but arbitrary sender_display_name/room fields remain client-controlled, and v1/unauthenticated mode deliberately lacks this binding. MIME-boundary randomization is a sibling repair, not the selected authorization witness.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "The after default matrix-org and vector-im HTML templates interpolate bracketed_verified_sender_for_html, whereas sendEmail derives bracketed_verified_sender_forhtml from the selected handler bracketed_verified_sender field. With an ordinary valid invitation that supplies no extra misspelled key, the dict lacks the requested template key and percent interpolation raises KeyError before address validation/SMTP. Default templates.path=res and brand.default=matrix-org plus get_branded_template select the affected template; old matching templates use already supplied forhtml keys and permit normal mail delivery. This introduces an after integration failure of the existing invitation-delivery duty, even when sender==authenticated account.userId. A custom corrected template or deliberately supplied extra substitution can differ, so not every request/deployment fails. No template is rendered or mail sent.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Supported after-contract introduced integration failure prevents a clean paired negative. Preserve old selected security support separately; do not relabel an after-only problem as a new old-code positive.",
+      "dependence_reason": "Six rows/five families; get_json and post_json_get_nothing share fix-family:e9074a2752abae5484e0 and bounded-reader integration, not two automatically independent CVE issues. Keep SMTP2019 identity and SMTP2023 TLS mechanisms/version contracts separate despite a shared path/function name. 2021 invitation MIME-boundary changes are sibling repairs, not proof of selected sender-binding effectiveness. Historical CPython parser hardening and Synapse policy are comparisons, not equality of selected functions, automatic family merges or newly counted issue independence.",
+      "open_questions": [
+        "Researcher confirm actual runtime, configured transport/trust roots, route/auth/response/body limits, branded/custom templates, client-secret input types, persisted validation identity and deployment of compared consumer versions. Do not infer all-version behavior or complete after safety from selected anchors.",
+        "Conditional source deductions, not reproduced results. No Sydent/Synapse/SMTP/email/address/SSL/TLS/certificate/HTTP/Twisted/JSON/regex/template/auth/token/DB/crypto/network/process/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "authV2(self.sydent, request)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if account.userId != sender:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "tokenStore.storeToken(medium, address, roomId, sender, token)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "substitutions[\"bracketed_verified_sender\"] = \"\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/http/auth.py",
+          "ref": "abf71145e8c23e09fa236d02518b67cd817aec35",
+          "needle": "account = accountStore.getAccountByToken(token)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/http/auth.py",
+          "ref": "abf71145e8c23e09fa236d02518b67cd817aec35",
+          "needle": "return account"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/sydent.py",
+          "ref": "abf71145e8c23e09fa236d02518b67cd817aec35",
+          "needle": "StoreInviteServlet(self, require_auth=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/sydent.py",
+          "ref": "abf71145e8c23e09fa236d02518b67cd817aec35",
+          "needle": "'brand.default': 'matrix-org'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "res/matrix-org/invite_template.eml",
+          "ref": "4469d1d42b2b1612b70638224c07e19623039c42",
+          "needle": "%(bracketed_verified_sender_for_html)s"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "res/vector-im/invite_template.eml",
+          "ref": "4469d1d42b2b1612b70638224c07e19623039c42",
+          "needle": "%(bracketed_verified_sender_for_html)s"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/util/emailutils.py",
+          "ref": "4469d1d42b2b1612b70638224c07e19623039c42",
+          "needle": "allSubstitutions[k+\"_forhtml\"] = escape(v)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/util/emailutils.py",
+          "ref": "4469d1d42b2b1612b70638224c07e19623039c42",
+          "needle": "mailString = open(templateFile).read() % allSubstitutions"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "res/matrix-org/invite_template.eml",
+          "ref": "abf71145e8c23e09fa236d02518b67cd817aec35",
+          "needle": "%(sender_display_name_forhtml)s has invited"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "The after default matrix-org and vector-im HTML templates interpolate bracketed_verified_sender_for_html, whereas sendEmail derives bracketed_verified_sender_forhtml from the selected handler bracketed_verified_sender field. With an ordinary valid invitation that supplies no extra misspelled key, the dict lacks the requested template key and percent interpolation raises KeyError before address validation/SMTP. Default templates.path=res and brand.default=matrix-org plus get_branded_template select the affected template; old matching templates use already supplied forhtml keys and permit normal mail delivery. This introduces an after integration failure of the existing invitation-delivery duty, even when sender==authenticated account.userId. A custom corrected template or deliberately supplied extra substitution can differ, so not every request/deployment fails. No template is rendered or mail sent."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2019-11340:0:sydent/util/emailutils.py:sendEmail",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "2019 raw/parsed validation identity mismatch survives raw recipient forwarding through smtplib normalization.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep TLS peer authentication, accepted field-size admission, remote response accumulation, authenticated sender authority and validated-versus-delivered identity as distinct mechanisms. Preserve original leaves and five mechanical families; no new leaf, final category/eligibility or issue-count decision is approved.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old EmailValidator stores the raw requested address/clientSecret in a validation session, sends its token through selected sendEmail and returns the raw s.address after successful validation. The selected before instead sends parseaddr(mailTo)[1], which may discard a second-domain suffix. Synapsev0.99.3 comparison checks allowed_local_3pids regex against the raw address before proxying token request, and checks returned identity again at registration. A raw value matching an allowed-domain pattern can therefore be validated by access to a different delivered mailbox under CPython2.7.16 semantics. The old duty is that validation certifies the mailbox actually challenged, not the commit-message claim or a newly invented Sydent configuration option. Domain policy is a homeserver comparison, not proof of deployed Synapse version.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need raw validation-session and HTTP return consumers, exact pre/post-hardening email.utils/AddressList/smtplib semantics, actual allowed_local_3pids expression, identity-server trust and SMTP delivery to an attacker-controlled normalized mailbox. Ordinary byte/Unicode/template admission must succeed. Do not mix the later2021 parsed/raw equality guard or2023 TLS version into this old function. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Imported dependency/runtime semantics, helper/caller/configuration/template/policy facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "The actor must receive the token at the normalized mailbox while requesting/claiming a raw identity admitted by the configured homeserver restriction, then complete the validation/registration flow. This is conditional identity-proof/domain-policy authority crossing, not arbitrary victim-mailbox ownership or an unconditional registration bypass. Later runtimes reject the specific malformed address and alter admission.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "The selected after only checks parsedTo/nonempty, then forwards raw mailTo. CPython2.7.16 SMTP.sendmail converts a string recipient to a one-item list and calls rcpt; rcpt calls quoteaddr, which calls email.utils.parseaddr again. That parser returns the first AddressList entry and its getdomain stops at a second@ instead of rejecting the full input. Thus forwarding raw text can still deliver to the same normalized mailbox as before while Sydent stores/returns the distinct raw validation identity. No parsed/raw equality check exists in this selected fix despite its message. Under the retained pre-hardening runtime/route this is a supported residual identity-validation failure, not an introduced regression. CPython2.7.17 explicitly rejects a second@ with bpo-34155 and a later2021 Sydent version compares parsedTo!=mailTo; those independent later hardenings must not be backfilled into this2019 after. UTF-8 template decoding is a separate change. No parser, SMTP envelope, registration or token path is executed.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Supported after-contract residual failure prevents a clean paired negative. Preserve old selected security support separately; do not relabel an after-only problem as a new old-code positive.",
+      "dependence_reason": "Six rows/five families; get_json and post_json_get_nothing share fix-family:e9074a2752abae5484e0 and bounded-reader integration, not two automatically independent CVE issues. Keep SMTP2019 identity and SMTP2023 TLS mechanisms/version contracts separate despite a shared path/function name. 2021 invitation MIME-boundary changes are sibling repairs, not proof of selected sender-binding effectiveness. Historical CPython parser hardening and Synapse policy are comparisons, not equality of selected functions, automatic family merges or newly counted issue independence.",
+      "open_questions": [
+        "Researcher confirm actual runtime, configured transport/trust roots, route/auth/response/body limits, branded/custom templates, client-secret input types, persisted validation identity and deployment of compared consumer versions. Do not infer all-version behavior or complete after safety from selected anchors.",
+        "Conditional source deductions, not reproduced results. No Sydent/Synapse/SMTP/email/address/SSL/TLS/certificate/HTTP/Twisted/JSON/regex/template/auth/token/DB/crypto/network/process/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "smtp.sendmail(rawFrom, rawTo, mailString.encode('utf-8'))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "smtp.sendmail(mailFrom, mailTo, mailString.encode('utf-8'))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "rawTo = email.utils.parseaddr(mailTo)[1]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if parsedFrom == '' or parsedTo == '':"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/validators/emailvalidator.py",
+          "ref": "617ff31a52139f28e4780cb2793ddf552a1997e9",
+          "needle": "address=emailAddress,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/db/valsession.py",
+          "ref": "617ff31a52139f28e4780cb2793ddf552a1997e9",
+          "needle": "(medium, address, clientSecret, mtime)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_DELIVERY.json",
+          "path": "sydent/http/servlets/getvalidated3pidservlet.py",
+          "ref": "617ff31a52139f28e4780cb2793ddf552a1997e9",
+          "needle": "'address': s.address"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_DELIVERY.json",
+          "path": "synapse/rest/client/v2_alpha/register.py",
+          "ref": "v0.99.3",
+          "needle": "check_3pid_allowed(self.hs, \"email\", body['email'])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_DELIVERY.json",
+          "path": "synapse/util/threepids.py",
+          "ref": "v0.99.3",
+          "needle": "re.match(constraint['pattern'], address)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTRACTS.json",
+          "path": "Lib/smtplib.py",
+          "ref": "v2.7.16",
+          "needle": "m = email.utils.parseaddr(addr)[1]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTRACTS.json",
+          "path": "Lib/smtplib.py",
+          "ref": "v2.7.16",
+          "needle": "(quoteaddr(recip), optionlist)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTRACTS.json",
+          "path": "Lib/email/utils.py",
+          "ref": "v2.7.16",
+          "needle": "return addrs[0]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTRACTS.json",
+          "path": "Lib/email/_parseaddr.py",
+          "ref": "v2.7.16",
+          "needle": "return EMPTYSTRING.join(aslist) + self.getdomain()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTRACTS.json",
+          "path": "Lib/email/_parseaddr.py",
+          "ref": "v2.7.17",
+          "needle": "# bpo-34155: Don't parse domains with two `@` like"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_035_CONTEXT.json",
+          "path": "sydent/util/emailutils.py",
+          "ref": "4469d1d42b2b1612b70638224c07e19623039c42",
+          "needle": "if parsedTo != mailTo:"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "The selected after only checks parsedTo/nonempty, then forwards raw mailTo. CPython2.7.16 SMTP.sendmail converts a string recipient to a one-item list and calls rcpt; rcpt calls quoteaddr, which calls email.utils.parseaddr again. That parser returns the first AddressList entry and its getdomain stops at a second@ instead of rejecting the full input. Thus forwarding raw text can still deliver to the same normalized mailbox as before while Sydent stores/returns the distinct raw validation identity. No parsed/raw equality check exists in this selected fix despite its message. Under the retained pre-hardening runtime/route this is a supported residual identity-validation failure, not an introduced regression. CPython2.7.17 explicitly rejects a second@ with bpo-34155 and a later2021 Sydent version compares parsedTo!=mailTo; those independent later hardenings must not be backfilled into this2019 after. UTF-8 template decoding is a separate change. No parser, SMTP envelope, registration or token path is executed."
+    }
+  ]
+}

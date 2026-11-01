@@ -1,0 +1,593 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-036",
+  "review_date": "2026-10-26",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All six pyload training candidates/all discovery statuses across five mechanical families; no null categories.",
+  "selection_rule": {
+    "repository": "github.com/pyload/pyload",
+    "discovery_categories": [
+      "SEC-CSRF-REQUEST-BINDING",
+      "SEC-FRAME-EMBEDDING-POLICY",
+      "SEC-LOG-RECORD-INJECTION",
+      "SEC-OPEN-REDIRECT",
+      "SEC-TLS-PEER-VERIFICATION"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Four missing-context, one selected-attribution and one paired-negative deferral. Separate old error-handler registrar from new global anti-framing policy, API/UI CR-LF log-record delivery, configurable origin TLS verification versus unchanged HTTPS-proxy policy, raw-versus-validated redirect authority and cross-site ambient administrator cookies on a state-changing GET. Coordinated redirect fallback endpoint is valid, but losing required route arguments introduces protected-file return regression after authentication. Preserve original discovery statuses/categories/hashes/families and all833 ledger events unchanged. Seven evidence files retain199 inert texts/twelve exact archive peers, five resolved parents/ten archive inventories and explicit absent paths/three404 requests. Flask/Werkzeug/CPython/libcurl/Flask-Session/RFC/SameSite/current WHATWG texts are conditional semantic comparisons, not installed browser/runtime or whole-range proof. Preserve canonical bytes/splits, prior batches and45 protected inputs. Six functions/five families are not independent issue counts. All retained programs/payloads/vulnerability requests/upstream tests remain inert; source deductions only.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:139002217364155:237393673783038",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "New global DENY response policy is attached to an old error-handler registrar; selected old anti-framing duty is unestablished.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep anti-framing UI policy, CR/LF log-record boundaries, TLS peer-chain authentication, validated-versus-redirected authority and cross-site ambient-session request binding separate. Preserve discovery leaves and five families; no new leaf or approved category/eligibility/independent-issue count.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old _configure_handlers documents Register error handlers and only installs FLASK_ERROR_HANDLERS. App.__new__ invokes it after blueprints/extensions/themes, so the new after_request hook is live under the retained factory. This locates an application-level policy insertion, but neither the old method nor a new hook/advisory establishes that this selected registrar previously owned anti-framing or that every old response lacked equivalent policy. Literal .py/.html frame-header retrieval and default extension list are retained; JavaScript, proxy and effective-browser policy completeness is not claimed.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need whole effective response/header configuration, Flask hook ordering, browser framing policy and a concrete sensitive frameable UI action with victim/session prerequisites. The selected old registrar alone cannot establish an omitted global policy. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Dependency/runtime/browser semantics and helper/caller/configuration/policy facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "RFC7034 DENY forbids display within a frame when enforced. An attacker-controlled framing origin plus an actionable framed UI and victim state would be required for a clickjacking boundary. No specific consequential framed action/session delivery is established here; do not infer authentication/CSRF bypass from missing header text.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After hook assigns X-Frame-Options DENY on responses reaching Flask process_response; retained Flask2.2.5 runs registered after_request handlers in reverse registration order. This is a conditional application hook effect, not a selected old-function defect proof or universal browser/proxy/UI-safety negative. No independent supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Old error-handler registration does not establish selected ownership of an absent application-wide anti-framing policy. Defer selected attribution; effective UI delivery remains unresolved.",
+      "dependence_reason": "Six selected functions/five mechanical families are not independently adjudicated issues. API and UI login share fix-family:29148876f92b9fe8b4e1 and one CR/LF repair; preserve separate route witnesses without double-counting. Shared app factory/config paths across framing and SameSite fixes do not imply shared selected-function defect or automatic family merger. Later redirect parent already contains sanitized login logs; do not backfill that helper/browser context into the earlier logging snapshot. Historical comparisons and shared full-file bytes are not selected-function equality, deployment proof or issue independence.",
+      "open_questions": [
+        "Researcher confirm deployed versions, enabled log handlers, trust store and TLS overrides, effective reverse-proxy/frame/cookie headers, browser policy, victim/session/API authority and intended return-destination contract. Retained comparisons do not certify whole version ranges or unconditional exploitability.",
+        "Conditional source deductions, not reproduced outcomes. No pyload/Flask/Werkzeug/session/cookie/browser/redirect/URL/parser/logging/auth/DB/TLS/curl/pycurl/crypto/network/process/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "app.register_error_handler(exc, fn)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "response.headers[\"X-Frame-Options\"] = \"DENY\""
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Register error handlers."
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "cls._configure_handlers(app)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/webui/app/extensions.py",
+          "ref": "8b6aec3aa90f347066262f83f21e32f96ab81e8e",
+          "needle": "EXTENSIONS = [babel, cache, compress, session]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "src/flask/app.py",
+          "ref": "2.2.5",
+          "needle": "for func in reversed(self.after_request_funcs[name]):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "rfc7034.txt",
+          "ref": "RFC7034",
+          "needle": "   DENY\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:215110358699111:206722156245723",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "API login interpolates untrusted username into line-oriented log records before escaping CR/LF.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep anti-framing UI policy, CR/LF log-record boundaries, TLS peer-chain authentication, validated-versus-redirected authority and cross-site ambient-session request binding separate. Preserve discovery leaves and five families; no new leaf or approved category/eligibility/independent-issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old API.check_auth forwards unchanged username/password to a parameterized database lookup; a nonexistent name returns {}, without rejecting CR/LF in the username. With ordinary admitted form strings, a failed credential check therefore reaches the selected error log without valid attacker credentials. LogFactory configures console/file/rotating-file handlers using a line-oriented {message} formatter and INFO-or-DEBUG level; logging.getLogger(APPID) in each route reaches the configured logger. CPython3.11.7 LogRecord.getMessage and StreamHandler.emit preserve embedded delimiters and append a final newline. The old duty is trustworthy log record boundaries, not improved diagnostic wording or format-string execution. API POST /api/login reads form values directly.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual enabled line-oriented sink/formatter, route exposure, request-form admission and database-return contract. Form username-to-log interpolation is visible, but the sink and project authentication semantics are omitted from the selected function. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Dependency/runtime/browser semantics and helper/caller/configuration/policy facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An unauthenticated caller can supply a failed-login username containing record separators, causing additional apparent lines within a line-oriented configured log. This crosses untrusted HTTP data into operator/security audit-record structure; a failed request is sufficient. Forging an exact recognized record, downstream interpretation and terminal controls depend on consumers and are not universal claims.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After creates a separate sanitized_user replacing LF and CR with visible backslash-letter sequences for both failed and successful login messages, while authentication still receives the original username. This bounds the negative to CR/LF record splitting in these two username messages. Logout and other logs, Unicode separators/terminal controls, log confidentiality, rate limits and all authentication security remain outside it. No supported independent after-contract failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Old local mechanism and matched external consumers are retained, but bounded before-only admission requires omitted configuration/dependency/runtime facts. Defer without selective context injection; keep after negative consumer/mechanism-local.",
+      "dependence_reason": "Six selected functions/five mechanical families are not independently adjudicated issues. API and UI login share fix-family:29148876f92b9fe8b4e1 and one CR/LF repair; preserve separate route witnesses without double-counting. Shared app factory/config paths across framing and SameSite fixes do not imply shared selected-function defect or automatic family merger. Later redirect parent already contains sanitized login logs; do not backfill that helper/browser context into the earlier logging snapshot. Historical comparisons and shared full-file bytes are not selected-function equality, deployment proof or issue independence.",
+      "open_questions": [
+        "Researcher confirm deployed versions, enabled log handlers, trust store and TLS overrides, effective reverse-proxy/frame/cookie headers, browser policy, victim/session/API authority and intended return-destination contract. Retained comparisons do not certify whole version ranges or unconditional exploitability.",
+        "Conditional source deductions, not reproduced outcomes. No pyload/Flask/Werkzeug/session/cookie/browser/redirect/URL/parser/logging/auth/DB/TLS/curl/pycurl/crypto/network/process/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "log.error(f\"Login failed for user '{user}'\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "sanitized_user = user.replace(\"\\n\", \"\\\\n\").replace(\"\\r\", \"\\\\r\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "log.error(f\"Login failed for user '{sanitized_user}'\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/api/__init__.py",
+          "ref": "bb22063a875ffeca357aaf6e2edcd09705688c40",
+          "needle": "return self.pyload.db.check_auth(username, password)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/database/user_database.py",
+          "ref": "bb22063a875ffeca357aaf6e2edcd09705688c40",
+          "needle": "if not r:\n            return {}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/log_factory.py",
+          "ref": "bb22063a875ffeca357aaf6e2edcd09705688c40",
+          "needle": "LINEFORMAT = \"[{asctime}]  {levelname:8}  {name:>16}  {message}\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/log_factory.py",
+          "ref": "bb22063a875ffeca357aaf6e2edcd09705688c40",
+          "needle": "filehdlr = logging.FileHandler(filelog_path, encoding=encoding)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.11.7",
+          "needle": "record.message = record.getMessage()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.11.7",
+          "needle": "stream.write(msg + self.terminator)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:259572818014646:101837519675573",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Common curl initializer disables peer-chain verification for HTTPS consumers, with later configurable override after repair.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep anti-framing UI policy, CR/LF log-record boundaries, TLS peer-chain authentication, validated-versus-redirected authority and cross-site ambient-session request binding separate. Preserve discovery leaves and five families; no new leaf or approved category/eligibility/independent-issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old HTTPRequest.__init__ creates a curl handle then calls init_handle and set_interface. RequestFactory.get_url and Browser.load use the resulting HTTPRequest.load; URL is installed on that same handle before perform. Thus an admitted HTTPS request uses SSL_VERIFYPEER=0 unless later explicitly overridden. libcurl7.87.0 documentation states0 disables peer authenticity checks; hostname checking is independent, so a matching-name untrusted certificate can still impersonate the peer. After initializer sets1, coordinated factory supplies general.ssl_verify and set_interface applies it; new default config sets True. User-agent update is separate.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need pycurl/libcurl TLS-backend option semantics, actual HTTPS consumers, network-position actor, trust roots, existing options and later plugin/config overrides. Origin certificate chain validation differs from hostname validation and HTTPS-proxy verification. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Dependency/runtime/browser semantics and helper/caller/configuration/policy facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An active network/response-position adversary can impersonate a contacted HTTPS peer using a matching-name but untrusted certificate under disabled chain verification. Actual HTTPS use and network position are prerequisites; arbitrary web input alone does not establish interception or credential theft. Hostname verification by itself does not restore chain trust.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After peer verification is enabled only while effective ssl_verify is true and later code does not override it; configured False deliberately restores old behavior. Default new config is True. Unchanged PROXY_SSL_VERIFYPEER=0 on HTTPS proxy branch is a distinct peer boundary outside this origin-chain negative, not proof selected origin repair fails. No all-protocol/hostname/CA/redirect/credential safety or supported independent after-contract regression is claimed; rejection of untrusted certificates alone is intentional.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Old local mechanism and matched external consumers are retained, but bounded before-only admission requires omitted configuration/dependency/runtime facts. Defer without selective context injection; keep after negative consumer/mechanism-local.",
+      "dependence_reason": "Six selected functions/five mechanical families are not independently adjudicated issues. API and UI login share fix-family:29148876f92b9fe8b4e1 and one CR/LF repair; preserve separate route witnesses without double-counting. Shared app factory/config paths across framing and SameSite fixes do not imply shared selected-function defect or automatic family merger. Later redirect parent already contains sanitized login logs; do not backfill that helper/browser context into the earlier logging snapshot. Historical comparisons and shared full-file bytes are not selected-function equality, deployment proof or issue independence.",
+      "open_questions": [
+        "Researcher confirm deployed versions, enabled log handlers, trust store and TLS overrides, effective reverse-proxy/frame/cookie headers, browser policy, victim/session/API authority and intended return-destination contract. Retained comparisons do not certify whole version ranges or unconditional exploitability.",
+        "Conditional source deductions, not reproduced outcomes. No pyload/Flask/Werkzeug/session/cookie/browser/redirect/URL/parser/logging/auth/DB/TLS/curl/pycurl/crypto/network/process/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.c.setopt(pycurl.SSL_VERIFYPEER, 0)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.c.setopt(pycurl.SSL_VERIFYPEER, 1)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.init_handle()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.c.setopt(pycurl.SSL_VERIFYPEER, 1 if options[\"ssl_verify\"] else 0)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.c.setopt(pycurl.PROXY_SSL_VERIFYPEER, 0)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/network/request_factory.py",
+          "ref": "efdaffb9ad086440aa5a3ffa2f296c96766b2303",
+          "needle": "with HTTPRequest(None, self.get_options()) as h:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/network/browser.py",
+          "ref": "efdaffb9ad086440aa5a3ffa2f296c96766b2303",
+          "needle": "return self.http.load(*args, **kwargs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/network/request_factory.py",
+          "ref": "a9098bdf7406e6faf9df3da6ff2d584e90c13bbb",
+          "needle": "\"ssl_verify\": self.pyload.config.get(\"general\", \"ssl_verify\"),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONFIG.json",
+          "path": "src/pyload/core/config/default.cfg",
+          "ref": "a9098bdf7406e6faf9df3da6ff2d584e90c13bbb",
+          "needle": "bool ssl_verify : \"Peer's SSL certificate verification\" = True"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "docs/libcurl/opts/CURLOPT_SSL_VERIFYPEER.3",
+          "ref": "curl-7_87_0",
+          "needle": "certificate. A value of 1 means curl verifies; 0 (zero) means it does not."
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:260218132698846:143838059594560",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "UI login interpolates untrusted username into line-oriented log records before escaping CR/LF.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep anti-framing UI policy, CR/LF log-record boundaries, TLS peer-chain authentication, validated-versus-redirected authority and cross-site ambient-session request binding separate. Preserve discovery leaves and five families; no new leaf or approved category/eligibility/independent-issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old API.check_auth forwards unchanged username/password to a parameterized database lookup; a nonexistent name returns {}, without rejecting CR/LF in the username. With ordinary admitted form strings, a failed credential check therefore reaches the selected error log without valid attacker credentials. LogFactory configures console/file/rotating-file handlers using a line-oriented {message} formatter and INFO-or-DEBUG level; logging.getLogger(APPID) in each route reaches the configured logger. CPython3.11.7 LogRecord.getMessage and StreamHandler.emit preserve embedded delimiters and append a final newline. The old duty is trustworthy log record boundaries, not improved diagnostic wording or format-string execution. UI /login POST reads form values directly; get_redirect_url and its fallback must be judged at this exact earlier snapshot, not the later endpoint-name repair.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual enabled line-oriented sink/formatter, route exposure, request-form admission and database-return contract. Form username-to-log interpolation is visible, but the sink and project authentication semantics are omitted from the selected function. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Dependency/runtime/browser semantics and helper/caller/configuration/policy facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An unauthenticated caller can supply a failed-login username containing record separators, causing additional apparent lines within a line-oriented configured log. This crosses untrusted HTTP data into operator/security audit-record structure; a failed request is sufficient. Forging an exact recognized record, downstream interpretation and terminal controls depend on consumers and are not universal claims.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After creates a separate sanitized_user replacing LF and CR with visible backslash-letter sequences for both failed and successful login messages, while authentication still receives the original username. This bounds the negative to CR/LF record splitting in these two username messages. Logout and other logs, Unicode separators/terminal controls, log confidentiality, rate limits and all authentication security remain outside it. No supported independent after-contract failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Old local mechanism and matched external consumers are retained, but bounded before-only admission requires omitted configuration/dependency/runtime facts. Defer without selective context injection; keep after negative consumer/mechanism-local.",
+      "dependence_reason": "Six selected functions/five mechanical families are not independently adjudicated issues. API and UI login share fix-family:29148876f92b9fe8b4e1 and one CR/LF repair; preserve separate route witnesses without double-counting. Shared app factory/config paths across framing and SameSite fixes do not imply shared selected-function defect or automatic family merger. Later redirect parent already contains sanitized login logs; do not backfill that helper/browser context into the earlier logging snapshot. Historical comparisons and shared full-file bytes are not selected-function equality, deployment proof or issue independence.",
+      "open_questions": [
+        "Researcher confirm deployed versions, enabled log handlers, trust store and TLS overrides, effective reverse-proxy/frame/cookie headers, browser policy, victim/session/API authority and intended return-destination contract. Retained comparisons do not certify whole version ranges or unconditional exploitability.",
+        "Conditional source deductions, not reproduced outcomes. No pyload/Flask/Werkzeug/session/cookie/browser/redirect/URL/parser/logging/auth/DB/TLS/curl/pycurl/crypto/network/process/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "log.error(f\"Login failed for user '{user}'\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "sanitized_user = user.replace(\"\\n\", \"\\\\n\").replace(\"\\r\", \"\\\\r\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "log.error(f\"Login failed for user '{sanitized_user}'\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/api/__init__.py",
+          "ref": "bb22063a875ffeca357aaf6e2edcd09705688c40",
+          "needle": "return self.pyload.db.check_auth(username, password)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/database/user_database.py",
+          "ref": "bb22063a875ffeca357aaf6e2edcd09705688c40",
+          "needle": "if not r:\n            return {}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/log_factory.py",
+          "ref": "bb22063a875ffeca357aaf6e2edcd09705688c40",
+          "needle": "LINEFORMAT = \"[{asctime}]  {levelname:8}  {name:>16}  {message}\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/log_factory.py",
+          "ref": "bb22063a875ffeca357aaf6e2edcd09705688c40",
+          "needle": "filehdlr = logging.FileHandler(filelog_path, encoding=encoding)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.11.7",
+          "needle": "record.message = record.getMessage()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.11.7",
+          "needle": "stream.write(msg + self.terminator)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:47245012315630:71204838126847",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Validation uses a normalized URL but returns raw next/referrer; endpoint-name repair also loses protected-route arguments.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep anti-framing UI policy, CR/LF log-record boundaries, TLS peer-chain authentication, validated-versus-redirected authority and cross-site ambient-session request binding separate. Preserve discovery leaves and five families; no new leaf or approved category/eligibility/independent-issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old get_redirect_url checks is_safe_url(urljoin/urlparse) then returns original location to login, not the checked normalized representation. CPython3.11.7 urljoin fills base netloc when a same-scheme absolute form has empty authority, whereas retained Werkzeug2.2.3 safe_conversion returns an ASCII nonwhitespace target unchanged; Response defaults autocorrect_location_header=False. Under a browser following retained WHATWG special-authority slash rules, a malformed same-scheme empty-authority form can be interpreted as external authority. Login redirects after existing/successful authentication or configured autologin, not a universal unconditional redirect. Independently old login_required/get_file/login/form path supports preserving an ordinary admitted protected destination through authentication.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need CPython URL parsing, Flask/Werkzeug Location serialization, browser normalization, session/login gates and coordinated next/fallback producer/consumer contract. Mutable current WHATWG snapshot is a comparison, not proof every2024 browser/version behaves identically. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Dependency/runtime/browser semantics and helper/caller/configuration/policy facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Attacker controls next delivered to a victim session/login flow, and a parser/consumer disagreement can send the authenticated-browser redirect to attacker authority. It is an open-redirect trust boundary, not arbitrary victim session theft, credential forwarding or unrestricted unauthenticated redirect. Reverse-proxy Host trust and other browser normalization remain separate conditions.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "The coordinated after login caller correctly changes fallback from a prebuilt URL to endpoint name app.dashboard, so ordinary fallback is not a BuildError regression. However old login_required preserves request.url, including required path arguments, in next. Old selector accepts a normal same-origin protected file URL and login redirects back after successful authentication. After producer keeps only endpoint suffix get_file; helper calls url_for(app.get_file) without required path. Retained /files/get/<path:path> route has no path default, Werkzeug Rule.suitable_for rejects missing arguments and MapAdapter.build raises BuildError. The selected helper catches it and silently retains dashboard fallback, so ordinary unauthenticated protected-file navigation no longer returns to the requested file after login. Existing login forms action=\"\" preserve the next query through POST. This is a supported introduced protected-destination integration regression, not a universal login crash or a new old-code security positive. Parameter-free routes can work; no URL builder/login/browser/request executes.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "A supported introduced failure of the old protected-destination return contract prevents a clean paired negative. Preserve old redirect-security support separately from this after-only correctness problem.",
+      "dependence_reason": "Six selected functions/five mechanical families are not independently adjudicated issues. API and UI login share fix-family:29148876f92b9fe8b4e1 and one CR/LF repair; preserve separate route witnesses without double-counting. Shared app factory/config paths across framing and SameSite fixes do not imply shared selected-function defect or automatic family merger. Later redirect parent already contains sanitized login logs; do not backfill that helper/browser context into the earlier logging snapshot. Historical comparisons and shared full-file bytes are not selected-function equality, deployment proof or issue independence.",
+      "open_questions": [
+        "Researcher confirm deployed versions, enabled log handlers, trust store and TLS overrides, effective reverse-proxy/frame/cookie headers, browser policy, victim/session/API authority and intended return-destination contract. Retained comparisons do not certify whole version ranges or unconditional exploitability.",
+        "Conditional source deductions, not reproduced outcomes. No pyload/Flask/Werkzeug/session/cookie/browser/redirect/URL/parser/logging/auth/DB/TLS/curl/pycurl/crypto/network/process/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if is_safe_url(location):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "redirect_url = flask.url_for(f\"app.{next_arg}\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return location"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "next=flask.request.url"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "next=flask.request.endpoint.split(\".\")[-1]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/webui/app/blueprints/app_blueprint.py",
+          "ref": "bcafcbfdcc003e473ae6a51d523728919607441f",
+          "needle": "get_redirect_url(fallback=flask.url_for(\"app.dashboard\"))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/webui/app/blueprints/app_blueprint.py",
+          "ref": "fe94451dcc2be90b3889e2fd9d07b483c8a6dccd",
+          "needle": "get_redirect_url(fallback=\"app.dashboard\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/webui/app/blueprints/app_blueprint.py",
+          "ref": "fe94451dcc2be90b3889e2fd9d07b483c8a6dccd",
+          "needle": "@bp.route(\"/files/get/<path:path>\", endpoint=\"get_file\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/webui/app/templates/login.html",
+          "ref": "fe94451dcc2be90b3889e2fd9d07b483c8a6dccd",
+          "needle": "<form action=\"\" method=\"post\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "Lib/urllib/parse.py",
+          "ref": "v3.11.7",
+          "needle": "netloc = bnetloc"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "src/werkzeug/utils.py",
+          "ref": "2.2.3",
+          "needle": "location = iri_to_uri(location, safe_conversion=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "src/werkzeug/wrappers/response.py",
+          "ref": "2.2.3",
+          "needle": "autocorrect_location_header = False"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_ROUTING.json",
+          "path": "src/werkzeug/urls.py",
+          "ref": "2.2.3",
+          "needle": "return native_iri"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_ROUTING.json",
+          "path": "src/werkzeug/routing/rules.py",
+          "ref": "2.2.3",
+          "needle": "if key not in defaults and key not in values:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "src/werkzeug/routing/map.py",
+          "ref": "2.2.3",
+          "needle": "raise BuildError(endpoint, values, method, self)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_DELIVERY.json",
+          "path": "url.bs",
+          "ref": "main",
+          "needle": "id=special-authority-ignore-slashes-state"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "The coordinated after login caller correctly changes fallback from a prebuilt URL to endpoint name app.dashboard, so ordinary fallback is not a BuildError regression. However old login_required preserves request.url, including required path arguments, in next. Old selector accepts a normal same-origin protected file URL and login redirects back after successful authentication. After producer keeps only endpoint suffix get_file; helper calls url_for(app.get_file) without required path. Retained /files/get/<path:path> route has no path default, Werkzeug Rule.suitable_for rejects missing arguments and MapAdapter.build raises BuildError. The selected helper catches it and silently retains dashboard fallback, so ordinary unauthenticated protected-file navigation no longer returns to the requested file after login. Existing login forms action=\"\" preserve the next query through POST. This is a supported introduced protected-destination integration regression, not a universal login crash or a new old-code security positive. Parameter-free routes can work; no URL builder/login/browser/request executes."
+    },
+    {
+      "pair_id": "CVEfixes:8947387835809:237120649377888",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "SameSite=None permits cross-site ambient administrator session delivery to a state-changing GET API.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep anti-framing UI policy, CR/LF log-record boundaries, TLS peer-chain authentication, validated-versus-redirected authority and cross-site ambient-session request binding separate. Preserve discovery leaves and five families; no new leaf or approved category/eligibility/independent-issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old session configuration deliberately sets SameSite string None and Secure from webui.use_ssl; factory installs filesystem Flask-Session. In retained Flask-Session0.5.0 comparison filesystem save_session forwards Flask get_cookie_samesite into response.set_cookie; get_cookie_samesite reads this config. API rpc accepts GET and POST and uses flask.session without explicit username; role/perms authorize requested method. Api.is_authorized grants admin role0; add_user defaults role0 and inserts a new user through DB. Thus a victim administrator session admitted on a cross-site API GET can confer user-creation authority. Existing method authorization is not cross-site intent binding.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need installed Flask/Flask-Session cookie emission, browser acceptance/SameSite enforcement, TLS/Secure flags, actual admin session/route reachability and API argument parsing. Unversioned Python>=3.7 dependency admits retained comparison but does not pin deployed extension/browser. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Dependency/runtime/browser semantics and helper/caller/configuration/policy facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A cross-site navigation can invoke the state-changing GET using ambient admin cookies under accepted SameSite=None/Secure policy; no attacker credentials are required, but a logged-in administrator victim and admitted method arguments are. Modern policy rejects SameSite=None cookies without Secure, so plaintext/default deployments cannot simply be assumed vulnerable by this path. This is request-intent/session authority crossing, not unauthenticated API authorization bypass.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After Strict is emitted by retained extension and conforming browser cookie retrieval excludes it on cross-site requests, including top-level safe-method navigation. Negative covers this cross-site ambient-cookie delivery, not same-site malicious origins/XSS, all CSRF, token/origin defenses or removal of unsafe GET. Older/ignoring clients and overridden headers differ. Intentional cross-site-cookie restrictions alone are not an established compatibility regression; no independent supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Old local mechanism and matched external consumers are retained, but bounded before-only admission requires omitted configuration/dependency/runtime facts. Defer without selective context injection; keep after negative consumer/mechanism-local.",
+      "dependence_reason": "Six selected functions/five mechanical families are not independently adjudicated issues. API and UI login share fix-family:29148876f92b9fe8b4e1 and one CR/LF repair; preserve separate route witnesses without double-counting. Shared app factory/config paths across framing and SameSite fixes do not imply shared selected-function defect or automatic family merger. Later redirect parent already contains sanitized login logs; do not backfill that helper/browser context into the earlier logging snapshot. Historical comparisons and shared full-file bytes are not selected-function equality, deployment proof or issue independence.",
+      "open_questions": [
+        "Researcher confirm deployed versions, enabled log handlers, trust store and TLS overrides, effective reverse-proxy/frame/cookie headers, browser policy, victim/session/API authority and intended return-destination contract. Retained comparisons do not certify whole version ranges or unconditional exploitability.",
+        "Conditional source deductions, not reproduced outcomes. No pyload/Flask/Werkzeug/session/cookie/browser/redirect/URL/parser/logging/auth/DB/TLS/curl/pycurl/crypto/network/process/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "app.config[\"SESSION_COOKIE_SAMESITE\"] = \"None\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "app.config[\"SESSION_COOKIE_SAMESITE\"] = \"Strict\""
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "app.config[\"SESSION_COOKIE_SECURE\"]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/webui/app/blueprints/api_blueprint.py",
+          "ref": "c7cdc18ad9134a75222974b39e8b427c4af845fc",
+          "needle": "@bp.route(\"/api/<func>\", methods=[\"GET\", \"POST\"], endpoint=\"rpc\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/webui/app/blueprints/api_blueprint.py",
+          "ref": "c7cdc18ad9134a75222974b39e8b427c4af845fc",
+          "needle": "        s = flask.session\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/api/__init__.py",
+          "ref": "c7cdc18ad9134a75222974b39e8b427c4af845fc",
+          "needle": "if userdata[\"role\"] == Role.ADMIN:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/api/__init__.py",
+          "ref": "c7cdc18ad9134a75222974b39e8b427c4af845fc",
+          "needle": "def add_user(self, user, newpw, role=0, perms=0):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/core/database/user_database.py",
+          "ref": "c7cdc18ad9134a75222974b39e8b427c4af845fc",
+          "needle": "\"INSERT INTO users (name, password, role, permission) VALUES (?, ?, ?, ?)\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTEXT.json",
+          "path": "src/pyload/webui/app/extensions.py",
+          "ref": "c7cdc18ad9134a75222974b39e8b427c4af845fc",
+          "needle": "session = Session()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_SESSION.json",
+          "path": "src/flask_session/__init__.py",
+          "ref": "0.5.0",
+          "needle": "elif config['SESSION_TYPE'] == 'filesystem':"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_SESSION.json",
+          "path": "src/flask_session/sessions.py",
+          "ref": "0.5.0",
+          "needle": "        httponly = self.get_cookie_httponly(app)\n        secure = self.get_cookie_secure(app)\n        if self.has_same_site_capability:\n            conditional_cookie_kwargs[\"samesite\"] = self.get_cookie_samesite(app)\n        expires = self.get_expiration_time(app, session)\n        val = self.serializer.dumps(dict(session))\n        self.redis.setex(name=self.key_prefix + session.sid, value=val,\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "src/flask/sessions.py",
+          "ref": "2.2.5",
+          "needle": "return app.config[\"SESSION_COOKIE_SAMESITE\"]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "draft-ietf-httpbis-rfc6265bis-13.txt",
+          "ref": "draft-ietf-httpbis-rfc6265bis-13",
+          "needle": "If the cookie's \"same-site-flag\" is \"None\", abort these steps"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_036_CONTRACTS.json",
+          "path": "draft-ietf-httpbis-rfc6265bis-13.txt",
+          "ref": "draft-ietf-httpbis-rfc6265bis-13",
+          "needle": "retrieval's same-site status is \"cross-site\", then exclude the"
+        }
+      ]
+    }
+  ]
+}

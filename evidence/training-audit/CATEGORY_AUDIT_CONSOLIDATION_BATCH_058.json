@@ -1,0 +1,890 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-058",
+  "review_date": "2026-10-31",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "Every candidate/status/category in complete repository queues of immutable operational plan 058.",
+  "selection_rule": {
+    "repositories": [
+      "github.com/pyca/cryptography",
+      "github.com/pyeve/eve",
+      "github.com/python-discord/bot",
+      "github.com/python-social-auth/social-app-django",
+      "github.com/python/cpython",
+      "github.com/ractf/core",
+      "github.com/rasahq/rasa",
+      "github.com/sehmaschine/django-grappelli",
+      "github.com/wichert/pyrad",
+      "github.com/widgetti/solara"
+    ],
+    "candidate_count": 10,
+    "discovery_categories": [
+      "SEC-AUTHENTICATION-FAIL-OPEN",
+      "SEC-AUTHENTICATION-ID-COLLATION",
+      "SEC-CONTENT-FILTER-EARLY-BYPASS",
+      "SEC-CONTEXT-ID-MISMATCH",
+      "SEC-DYNAMIC-CODE-EVALUATION",
+      "SEC-KDF-OUTPUT-LENGTH",
+      "SEC-OPEN-REDIRECT",
+      "SEC-PATH-CONFINEMENT",
+      "SEC-PREDICTABLE-RANDOMNESS"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Exhaustive immutable ten queues: seven context deferrals, one residual paired-negative confinement failure under exactly locked TarSafe0.0.3, one cryptographic-consumer security deferral, one coordinated email-parser attribution deferral. Preserve merge/backport/repository aliases and all statuses/categories; no independent issue or approved labels inferred. Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:117926336683275:241445532745346",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Second-factor mismatch falls through to credential issuance; after failure path returns401 while successful factor branches still issue tokens.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Second-factor mismatch falls through to credential issuance; after failure path returns401 while successful factor branches still issue tokens. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing ordinary login explicitly refuses users with enabled2FA. Selected class binds LoginTwoFactorSerializer and provider-token helper; matched serializer passes username/password/tfa to login provider, returns user, accepts blank factor strings. URL mounts login_2fa. Old final return issues token even when supplied nonmatching six/eight-character string fails all checks. This violates existing factor gate, not a requirement invented by the fix.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual login/token provider bindings, supported backup-code relation/runtime and enabled2FA user. Primary credentials/provider prerequisites still apply; None factor len error is pre-existing and not an after regression. Class/helper/serializer context is external to selected post. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Lower-trust requester who meets primary login prerequisites but lacks second factor receives credential before. This is not a claim of passwordless arbitrary-account login or reproduced authentication.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After selected fallthrough is401; successful TOTP/backup branches unchanged. Negative only failed-factor fallthrough, not all TOTP, concurrency, replay, provider or serializer behavior. Keep cebb67 merge and advisory alternative fix lineage in one pending root.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch058 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need actual login/token provider bindings, supported backup-code relation/runtime and enabled2FA user. Primary credentials/provider prerequisites still apply; None factor len error is pre-existing and not an after regression. Class/helper/serializer context is external to selected post.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                    return self.issue_token(user)\n\n        return self.issue_token(user)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    return self.issue_token(user)\n\n        return FormattedResponse(status=HTTP_401_UNAUTHORIZED, d={'reason': 'login_failed'}, m='login_failed')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "src/authentication/views.py",
+          "ref": "dc06fb425cda8e3bec271cfe98620fab493c4992",
+          "needle": "    permission_classes = (~permissions.IsAuthenticated,)\n    serializer_class = serializers.LoginTwoFactorSerializer\n    throttle_scope = \"login\"\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "src/authentication/views.py",
+          "ref": "dc06fb425cda8e3bec271cfe98620fab493c4992",
+          "needle": "            return FormattedResponse(status=HTTP_401_UNAUTHORIZED, d={'reason': '2fa_required'}, m='2fa_required')\n\n        token = providers.get_provider('token').issue_token(user)\n        return FormattedResponse({'token': token})\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "src/authentication/views.py",
+          "ref": "dc06fb425cda8e3bec271cfe98620fab493c4992",
+          "needle": "d={'reason': '2fa_required'}, m='2fa_required')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "src/authentication/serializers.py",
+          "ref": "dc06fb425cda8e3bec271cfe98620fab493c4992",
+          "needle": "class LoginTwoFactorSerializer"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "src/authentication/serializers.py",
+          "ref": "dc06fb425cda8e3bec271cfe98620fab493c4992",
+          "needle": "    password = serializers.CharField(trim_whitespace=False)\n\n    def validate(self, data):\n        user = providers.get_provider('login').login_user(**data, context=self.context)\n        data['user'] = user\n        return data\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "src/authentication/serializers.py",
+          "ref": "dc06fb425cda8e3bec271cfe98620fab493c4992",
+          "needle": "tfa = serializers.CharField(max_length=255, allow_null=True, allow_blank=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "src/authentication/urls.py",
+          "ref": "dc06fb425cda8e3bec271cfe98620fab493c4992",
+          "needle": "path('login_2fa/'"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:140968644419817:126092002365771",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unconfined model tar extraction replaced by locked TarSafe0.0.3, whose CWD/prefix checks still do not confine members to working_directory.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Unconfined model tar extraction replaced by locked TarSafe0.0.3, whose CWD/prefix checks still do not confine members to working_directory. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old unpacker promises extraction to selected working_directory, defaults to newly created temporary directory, and actual get_model forwards chosen local archive. Compatible CPython3.8.12 extractall joins path with member name without containment. After lock names exact wheel0.0.3 SHA f8181c5559aea70af2579a0dc0811d2e9e3eabd706dd594555b4dfa52c0be51a, independently matched against PyPI metadata; package init imports tarsafe/tarsafe.py, distinct from bundled src/tarsafe.py. Actual class sets directory=os.getcwd and checks abspath(join(directory,name)).startswith(directory), irrespective of extractall(path).",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual model ingestion writer/transport authorization, process CWD/output-root relationship, writable paths and supported runtime. In-memory wheel text only, no archive extraction. Original wrong-repository TarSafe404 remains preserved; exact release metadata supplies actual beatsbears project identity. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-trust model members target filesystem writes outside intended extraction directory under model-loading identity. Temporary directory creation does not constrain absolute names or parent traversal. Resource/deserialization consequences remain distinct.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Residual contract failure: absolute member under process CWD but outside chosen extraction root passes locked TarSafe member check; tarfile extraction os.path.join discards destination for absolute name, writing outside working_directory. CWD textual-prefix sibling weakness is separate additional limitation. Thus replacement is not a negative for extraction-root confinement, even without link/race analysis. No archive constructed or extracted.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch058 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need actual model ingestion writer/transport authorization, process CWD/output-root relationship, writable paths and supported runtime. In-memory wheel text only, no archive extraction. Original wrong-repository TarSafe404 remains preserved; exact release metadata supplies actual beatsbears project identity.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "with tarfile.open(model_file, mode=\"r:gz\") as tar:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "with TarSafe.open(model_file, mode=\"r:gz\") as tar:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "rasa/model.py",
+          "ref": "09787ecc843e70c1840581904688830e4bde0918",
+          "needle": "return unpack_model(model_path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "rasa/model.py",
+          "ref": "09787ecc843e70c1840581904688830e4bde0918",
+          "needle": "working_directory = tempfile.mkdtemp()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "pyproject.toml",
+          "ref": "1b6b502f52d73b4f8cd1959ce724b8ad0eb33989",
+          "needle": "tarsafe = \"^0.0.3\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "poetry.lock",
+          "ref": "1b6b502f52d73b4f8cd1959ce724b8ad0eb33989",
+          "needle": "{file = \"tarsafe-0.0.3-py3-none-any.whl\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_TARSAFE.json",
+          "path": "tarsafe/__init__.py",
+          "ref": "0.0.3",
+          "needle": "from .tarsafe import *"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_TARSAFE.json",
+          "path": "tarsafe/tarsafe.py",
+          "ref": "0.0.3",
+          "needle": "self.directory = os.getcwd()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_TARSAFE.json",
+          "path": "tarsafe/tarsafe.py",
+          "ref": "0.0.3",
+          "needle": "super().extractall(path, members, numeric_owner=numeric_owner)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_TARSAFE.json",
+          "path": "tarsafe/tarsafe.py",
+          "ref": "0.0.3",
+          "needle": "os.path.abspath(os.path.join(self.directory, tarinfo.name)).startswith(self.directory)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "Lib/tarfile.py",
+          "ref": "v3.8.12",
+          "needle": "self._extract_member(tarinfo, os.path.join(path, tarinfo.name),"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Locked TarSafe0.0.3 validates against CWD using string prefix, not caller working_directory. Absolute member whose destination is under CWD but outside requested output root is admitted, then compatible tarfile join ignores requested root. Existing confinement failure persists; not an introduced regression or extraction-based reproduction."
+    },
+    {
+      "pair_id": "CVEfixes:169359888393033:257191987727214",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Mongo query AST string decoded as data is reassembled inside quoted Python source then eval; after uses constructors directly.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Mongo query AST string decoded as data is reassembled inside quoted Python source then eval; after uses constructors directly. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old parser documents only conditional queries plus ObjectId/datetime. Matched parse_request reads query-string where when allowed_filters enabled, Mongo layer tries JSON then selected Python-like parse on failure; visit_Compare visits user AST before validate_filters. ObjectId argument.s concatenated without Python quoting can change reconstructed source. Restricting outer ast.Name does not constrain syntax inside newly generated string. After constructor calls keep decoded values as data.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual route/resource allowed_filters/auth policy, historical Python AST shapes and BSON constructor contract. Query AST parsing alone is not execution; selected eval is. No query/expression/AST visitor/constructor executed. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional request query data crosses into Python execution under application identity before subsequent field-policy checks. SQL or Mongo $where server execution is not this mechanism; actual sink is Python eval.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Direct constructor calls remove selected reconstructed-source eval path. Bare except can leave stale current_value for malformed constructors; not certified correct query semantics for all invalid inputs, error policy or other visitors. No established new ordinary valid-input failure inferred just from exception swallowing.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch058 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need actual route/resource allowed_filters/auth policy, historical Python AST shapes and BSON constructor contract. Query AST parsing alone is not execution; selected eval is. No query/expression/AST visitor/constructor executed.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.current_value = eval(node.func.id + expr)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.current_value = ObjectId(node.args[0].s)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "eve/io/mongo/parser.py",
+          "ref": "6d1526bf8ad93a3d259b1fd357f0c40e4ed9dbf5",
+          "needle": "v.visit(ast.parse(expression))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "eve/io/mongo/parser.py",
+          "ref": "6d1526bf8ad93a3d259b1fd357f0c40e4ed9dbf5",
+          "needle": "self.visit(comparator)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "eve/utils.py",
+          "ref": "6d1526bf8ad93a3d259b1fd357f0c40e4ed9dbf5",
+          "needle": "if settings['allowed_filters']:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "eve/utils.py",
+          "ref": "6d1526bf8ad93a3d259b1fd357f0c40e4ed9dbf5",
+          "needle": "r.where = args.get(config.QUERY_WHERE)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "eve/io/mongo/mongo.py",
+          "ref": "6d1526bf8ad93a3d259b1fd357f0c40e4ed9dbf5",
+          "needle": "spec = parse(req.where)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "eve/io/mongo/mongo.py",
+          "ref": "6d1526bf8ad93a3d259b1fd357f0c40e4ed9dbf5",
+          "needle": "bad_filter = validate_filters(spec, resource)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "eve/io/mongo/parser.py",
+          "ref": "f8f7019ffdf9b4e05faf95e1f04e204aa4c91f98",
+          "needle": "self.current_value = datetime(*values)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:172449381401451:241591290952780",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "RADIUS authenticator draws sixteen bytes from module PRNG instead of OS SystemRandom bound after outside selected function.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "RADIUS authenticator draws sixteen bytes from module PRNG instead of OS SystemRandom bound after outside selected function. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Actual old AuthPacket.RequestPacket and PwCrypt create selected authenticator when absent; reply verification and password hiding consume it. RFC2865 requires unpredictable unique request authenticators for replay/preplay resistance. Old Python module generator is Mersenne Twister; named CPython3.3 SystemRandom uses os.urandom. After random_generator explicitly binds SystemRandom. Other packet-ID changes are coordinated but do not themselves repair this selected generator.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual supported Python/OS entropy source, attacker visibility/control of shared generator state and protocol request exposure. RADIUS field randomness duty is historical protocol requirement, not arbitrary random identifiers. wichert to pyradius repository alias remains pending independence reconciliation. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Predictable future authenticator can support response preplay in protocol conditions; no measured state recovery, password recovery or universal brute-force claim. Shared secret/protocol assumptions still apply.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Mechanism-local replacement of authenticator entropy source while retaining16-byte return shape. No MD5/protocol security, global uniqueness, all operating systems or separately supplied authenticator guarantee.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch058 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need actual supported Python/OS entropy source, attacker visibility/control of shared generator state and protocol request exposure. RADIUS field randomness duty is historical protocol requirement, not arbitrary random identifiers. wichert to pyradius repository alias remains pending independence reconciliation.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "data.append(random.randrange(0, 256))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "data.append(random_generator.randrange(0, 256))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "pyrad/packet.py",
+          "ref": "ddfedb2993b9dd66940da52d9bda281ab54aaaf4",
+          "needle": "\n        if self.authenticator is None:\n            self.authenticator = self.CreateAuthenticator()\n\n        if self.id is None:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "pyrad/packet.py",
+          "ref": "ddfedb2993b9dd66940da52d9bda281ab54aaaf4",
+          "needle": "hash = md5_constructor(self.secret + self.authenticator).digest()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "pyrad/packet.py",
+          "ref": "ddfedb2993b9dd66940da52d9bda281ab54aaaf4",
+          "needle": "hash = md5_constructor(rawreply[0:4] + self.authenticator +"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "pyrad/packet.py",
+          "ref": "38f74b36814ca5b1a27d9898141126af4953bee5",
+          "needle": "random_generator = random.SystemRandom()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "Lib/random.py",
+          "ref": "v3.3.0",
+          "needle": "x = int.from_bytes(_urandom(numbytes), 'big')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "rfc2865.txt",
+          "ref": "RFC2865",
+          "needle": "value SHOULD be unpredictable and unique over the lifetime of a"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:232537558142137:83731805240219",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Client dir segment shifts trusted send_from_directory root; after confines combined relative segments against fixed nbextensions directory.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Client dir segment shifts trusted send_from_directory root; after confines combined relative segments against fixed nbextensions directory. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Actual Flask route has two single segments and allowed() gate; fallback allowed returnsTrue without enterprise. Before file existence test is not containment and send_from_directory receives directory/dir as trusted root. A parent dir segment shifts one parent. Retained integration lock pins Flask/Werkzeug3.0.3; helper delegates to safe_join and warns directory must not be client supplied. After trusted root remains configured directory and relative dir/filename is checked.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need client/proxy/WSGI preservation of parent path segment, configured directories, existing readable sibling file, actual enterprise authorization and platform separator semantics. Do not assume route permits arbitrary-depth embedded slash or rely on an HTTP fragment reaching server. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional allowed requester reads file outside intended extension root via root-shift under application read authority. Authentication requirement is deployment-specific; not automatically unauthenticated enterprise access.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After lexical safe_join rejects parent relative component under compatible named helper. No symlink/TOCTOU or unlimited-depth safety; pre-check file.exists is still external filesystem dependent. Keep Flask and Starlette sibling paths in same source/fix family rather than independent issues.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch058 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need client/proxy/WSGI preservation of parent path segment, configured directories, existing readable sibling file, actual enterprise authorization and platform separator semantics. Do not assume route permits arbitrary-depth embedded slash or rely on an HTTP fragment reaching server.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "send_from_directory(directory / dir, filename)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "send_from_directory(directory, dir + os.path.sep + filename)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "solara/server/flask.py",
+          "ref": "681f69b7779da2bd3586d6e9fd0b21d36e6fb124",
+          "needle": "from flask import Blueprint, Flask, abort, request, send_from_directory, url_for"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "solara/server/flask.py",
+          "ref": "681f69b7779da2bd3586d6e9fd0b21d36e6fb124",
+          "needle": "def allowed():\n        return True"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": ".ci-package-locks/integration/osubuntu-python3.8-ipywidgets7.txt",
+          "ref": "681f69b7779da2bd3586d6e9fd0b21d36e6fb124",
+          "needle": "Flask==3.0.3"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": ".ci-package-locks/integration/osubuntu-python3.8-ipywidgets7.txt",
+          "ref": "681f69b7779da2bd3586d6e9fd0b21d36e6fb124",
+          "needle": "Werkzeug==3.0.3"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "src/werkzeug/utils.py",
+          "ref": "3.0.3",
+          "needle": "path_str = safe_join(os.fspath(directory), os.fspath(path))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "src/werkzeug/utils.py",
+          "ref": "3.0.3",
+          "needle": "be a value provided by the client, otherwise it becomes insecure."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "src/werkzeug/security.py",
+          "ref": "3.0.3",
+          "needle": "or filename.startswith(\"../\")"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:244808149279171:209006482891260",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "HKDF byte-digest count divides by8 and counts initial empty block; after counts actual emitted digest blocks.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "HKDF byte-digest count divides by8 and counts initial empty block; after counts actual emitted digest blocks. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old SHA256 digest_size=32; documented derive returns derived key of requested length. For positive length up to digest_size//8 old while condition is false before any HMAC, returning empty bytes. Larger lengths can compute excess blocks. After digest_size*(len(output)-1) counts actual bytes, so positive requested length generates sufficient digest blocks. Selected change alone does not change old constructor max_length or default-salt expressions.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need downstream security-sensitive consumer, actual requested length and handling of empty/short keys; mathematical output-length defect is supported without claiming installed cryptographic backends or executing HMAC. Documentation itself repeats old divided maximum and is not authority for digest units over exact SHA256 class. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No retained application boundary shows empty derived key accepted for confidentiality/authentication rather than rejected by consumer. CVE/cryptographic module location is not proof of every requested length losing entropy. Preserve supported correctness defect and unresolved security delivery.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Mechanism-local output block/length accounting repaired for supported lengths under digest/HMAC contract. No salt/default length/constructor ceiling or universal KDF safety certification; no hashes, derived keys or retained upstream tests executed.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch058 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need downstream security-sensitive consumer, actual requested length and handling of empty/short keys; mathematical output-length defect is supported without claiming installed cryptographic backends or executing HMAC. Documentation itself repeats old divided maximum and is not authority for digest units over exact SHA256 class.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "while (self._algorithm.digest_size // 8) * len(output) < self._length:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "while self._algorithm.digest_size * (len(output) - 1) < self._length:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "src/cryptography/hazmat/primitives/hashes.py",
+          "ref": "21ac453a1afe01e3f47b7daad9af379725392162",
+          "needle": "class SHA256(object):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "src/cryptography/hazmat/primitives/hashes.py",
+          "ref": "21ac453a1afe01e3f47b7daad9af379725392162",
+          "needle": "    digest_size = 32\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "docs/hazmat/primitives/key-derivation-functions.rst",
+          "ref": "21ac453a1afe01e3f47b7daad9af379725392162",
+          "needle": "        :class:`~cryptography.hazmat.primitives.hashes.HashAlgorithm`.\n    :param int length: The desired length of the derived key. Maximum is\n        (2\\ :sup:`32` - 1) * ``algorithm.digest_size``.\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "src/cryptography/hazmat/primitives/kdf/hkdf.py",
+          "ref": "21ac453a1afe01e3f47b7daad9af379725392162",
+          "needle": "return self._expand(key_material)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "src/cryptography/hazmat/primitives/kdf/hkdf.py",
+          "ref": "b924696b2e8731f39696584d12cceeb3aeb2d874",
+          "needle": "max_length = 255 * (algorithm.digest_size // 8)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:4324925934672:125790497829720",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Staff switch-user redirect slash-prefix check admits network-path authority; after same-host/scheme validation reused across every sink.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Staff switch-user redirect slash-prefix check admits network-path authority; after same-host/scheme validation reused across every sink. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing redirect parameter is intended return location; before startswith slash also accepts //external-authority. Selected branches redirect even denied/missing user before switch. Named Django3.2.9 redirect response stores Location without rejecting absent scheme; new helper checks netloc, scheme, triple slash and backslash equivalent with current host and secure requirement. Actual template caller supplies request.path; attacker endpoint parameter is independently request-controlled.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual staff-session reachability, host validation/proxy/HTTPS settings and browser Location behavior under installed Django. Switch-user permissions are separate; no successful account switch needed for denied-path redirect. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional attacker-supplied destination navigates staff browser to unrelated authority; not authorization bypass of original/target user policy or automatic credential disclosure.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After checks allowed host and HTTPS requirement then reuses validated redirect_url in branches. Intentional restriction of external destinations is not a regression. Not every open redirect elsewhere, Host poisoning, CSRF/session switching or browser/version behavior certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch058 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need actual staff-session reachability, host validation/proxy/HTTPS settings and browser Location behavior under installed Django. Switch-user permissions are separate; no successful account switch needed for denied-path redirect.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "not redirect_url.startswith(\"/\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "url_has_allowed_host_and_scheme("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "grappelli/urls.py",
+          "ref": "55f88d661c28598d059cf81dbfd38dacb945662f",
+          "needle": "from .views.switch import switch_user\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "grappelli/templates/admin/includes_grappelli/switch_user_dropdown.html",
+          "ref": "55f88d661c28598d059cf81dbfd38dacb945662f",
+          "needle": "    <li><a href=\"{% url 'grp_switch_user' request.session.original_user.id %}?redirect={{ request.path }}\" class=\"grp-switch-user-is-original\">{{ request.session.original_user.username }}</a></li>\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "grappelli/views/switch.py",
+          "ref": "4ca94bcda0fa2720594506853d85e00c8212968f",
+          "needle": "allowed_hosts={request.get_host()}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "grappelli/views/switch.py",
+          "ref": "4ca94bcda0fa2720594506853d85e00c8212968f",
+          "needle": "require_https=request.is_secure()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "django/utils/http.py",
+          "ref": "3.2.9",
+          "needle": "url.replace('\\\\', '/')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "django/utils/http.py",
+          "ref": "3.2.9",
+          "needle": "not url_info.netloc or url_info.netloc in allowed_hosts"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "django/http/response.py",
+          "ref": "3.2.9",
+          "needle": "self['Location'] = iri_to_uri(redirect_to)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:76527847222406:227743625808788",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "ORM collation can equate distinct external UIDs; after exact Python UID comparison filters database candidates before association return.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "ORM collation can equate distinct external UIDs; after exact Python UID comparison filters database candidates before association return. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact model has provider and uid CharFields and unique_together(provider,uid); backend storage returns this model. Named compatible social-core4.5.4 social_uid casts provider ID to str, social_user calls get_social_auth then adopts social.user. Named Django4.2.11 docs explain case-insensitive MySQL equality under utf8_general_ci despite distinct Python strings. Uniqueness under collation does not prevent lookup for another case-distinct external principal from returning existing victim row.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual supported external provider with distinct case-sensitive IDs, schema/column collation and installed social-core pipeline version. Provider/uid producer is not attacker raw text without authenticated provider response. Custom callers with non-string uid are outside named producer and need separate historical support proof. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional authenticated external identity resolves to different local user because database equality is broader than provider identity. No blanket every-MySQL/provider account takeover. Provider column exactness and normalization remain separate.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After returns only candidates with social.uid==uid under string producer, preventing evidenced UID case-collision. Not complete authentication lifecycle, provider field collation, duplicate schema or account-linking safety.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch058 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need actual supported external provider with distinct case-sensitive IDs, schema/column collation and installed social-core pipeline version. Provider/uid producer is not attacker raw text without authenticated provider response. Custom callers with non-string uid are outside named producer and need separate historical support proof.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": ".get(provider=provider, uid=uid)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if social.uid == uid:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "social_django/models.py",
+          "ref": "7033ff73993a4c3666d989930bbc15e87925abc9",
+          "needle": "uid = models.CharField(max_length=UID_LENGTH, db_index=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "social_django/models.py",
+          "ref": "7033ff73993a4c3666d989930bbc15e87925abc9",
+          "needle": "unique_together = (\"provider\", \"uid\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "social_django/models.py",
+          "ref": "7033ff73993a4c3666d989930bbc15e87925abc9",
+          "needle": "user = UserSocialAuth"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "requirements.txt",
+          "ref": "7033ff73993a4c3666d989930bbc15e87925abc9",
+          "needle": "social-auth-core>=4.4.1"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "social_core/pipeline/social_auth.py",
+          "ref": "4.5.4",
+          "needle": "return {\"uid\": str(backend.get_user_id(details, response))}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "social_core/pipeline/social_auth.py",
+          "ref": "4.5.4",
+          "needle": "social = backend.strategy.storage.user.get_social_auth(provider, uid)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "social_core/pipeline/social_auth.py",
+          "ref": "4.5.4",
+          "needle": "user = social.user"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "docs/ref/databases.txt",
+          "ref": "4.2.11",
+          "needle": "comparisons being done in a *case-insensitive* manner."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2019-16056:0:Lib/email/_parseaddr.py:AddrlistClass.getaddrspec",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "getaddrspec propagates domain failure; multi-@ rejection originates in coordinated getdomain and distinct header parser, not selected caller alone.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "getaddrspec propagates domain failure; multi-@ rejection originates in coordinated getdomain and distinct header parser, not selected caller alone. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old public parseaddr returns AddressList first parsed address and documents failure tuple. Old getdomain stops at second@ with nonempty truncated domain; selected old caller concatenates it. After companion getdomain explicitly returns empty at second@ and selected caller propagates empty rather than dangling local@. Holding old getdomain fixed, selected new guard does not reject multi-@ when truncated domain is nonempty. Necessary downstream propagation is not evidence that selected caller originally performed domain parsing validation.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need precise selected-only task definition versus coordinated parser unit and actual security-sensitive identity/domain policy consumer. Public parseaddr is tolerant parser, not general email validation. Preserve Sydent/CPython common-root/backport dependence even if mechanical families differ. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Potential identity-policy parser disagreement is conditional on consumer using partial returned address for authorization/delivery. No actual service consumer/security boundary demonstrated by commit text alone; metadata example after local@ is stale relative to retained code empty return.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Coordinated failure propagation after companion rejection; selected-only negative not established for original multi-@ route. Modern email._header_value_parser is another parser/site, not interchangeable selected function. No complete RFC/header/SMTP policy certification or parser execution.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch058 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need precise selected-only task definition versus coordinated parser unit and actual security-sensitive identity/domain policy consumer. Public parseaddr is tolerant parser, not general email validation. Preserve Sydent/CPython common-root/backport dependence even if mechanical families differ.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return EMPTYSTRING.join(aslist) + self.getdomain()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not domain:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "Lib/email/_parseaddr.py",
+          "ref": "719a062bcb7b08a56e6576dcd75f4244e6053209",
+          "needle": "                aslist.append('\"%s\"' % quote(self.getquote()))\n            elif self.field[self.pos] in self.atomends:\n                if aslist and not aslist[-1].strip():\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "Lib/email/_parseaddr.py",
+          "ref": "8cb65d1381b027f0b09ee36bfed7f35bb4dec9a9",
+          "needle": "# bpo-34155: Don't parse domains with two `@` like"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "Lib/email/_parseaddr.py",
+          "ref": "8cb65d1381b027f0b09ee36bfed7f35bb4dec9a9",
+          "needle": "return EMPTYSTRING.join(aslist) + domain"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "Lib/email/utils.py",
+          "ref": "719a062bcb7b08a56e6576dcd75f4244e6053209",
+          "needle": "addrs = _AddressList(addr).addresslist"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTRACTS.json",
+          "path": "Lib/email/utils.py",
+          "ref": "719a062bcb7b08a56e6576dcd75f4244e6053209",
+          "needle": "return addrs[0]"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41250:0:bot/exts/filters/filtering.py:Filtering._has_watch_regex_match",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Any URL suppresses whole-message watch-token regex evaluation; after removal checks mixed URL/prohibited-token content.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Any URL suppresses whole-message watch-token regex evaluation; after removal checks mixed URL/prohibited-token content. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Actual before on_message invokes _filter_message, whose content-only watch_regex binding points to selected helper; lower-trust message content becomes payload. Enabled matches are scheduled for later deletion/site log rather than immediate filter deletion because type=watchlist. clean_input removes zalgo/invisible characters, not URLs. Historical purpose is token watchlist detection; URL-presence whole-message bypass suppresses unrelated prohibited text too. Old doc URLs ignored creates unresolved URL-only policy, not new tests establishing old duty by themselves.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual enabled watch_regex, nonempty filter_token cache, channel/role/bot whitelist and scheduling/log consumer authority. Whether tokens occurring solely within permitted URL should stay exempt is a policy migration question; do not automatically call deliberate policy narrowing accidental regression. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional regular user adds unrelated allowed URL and prevents configured watchlist reporting/deletion scheduling of otherwise matched prohibited token. Not arbitrary code execution or proof every channel instantly deletes every message.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After removal no longer returns solely for URL presence and checks same configured regex list. Negative only URL-presence bypass for otherwise matched non-URL token. No all moderation, regex complexity, API/scheduler success or URL-only exemption guarantee; unchanged doc wording retained explicitly.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch058 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need actual enabled watch_regex, nonempty filter_token cache, channel/role/bot whitelist and scheduling/log consumer authority. Whether tokens occurring solely within permitted URL should stay exempt is a policy migration question; do not automatically call deliberate policy narrowing accidental regression.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if URL_RE.search(text):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        matches = []\n        watchlist_patterns = self._get_filterlist_items('filter_token', allowed=False)\n        for pattern in watchlist_patterns:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "bot/exts/filters/filtering.py",
+          "ref": "69fdd3649e2f9a646b97e445bc4d5440440e5890",
+          "needle": "\"function\": self._has_watch_regex_match"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "bot/exts/filters/filtering.py",
+          "ref": "69fdd3649e2f9a646b97e445bc4d5440440e5890",
+          "needle": "                \"function\": self._has_watch_regex_match,\n                \"type\": \"watchlist\",\n                \"content_only\": True,\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "bot/exts/filters/filtering.py",
+          "ref": "69fdd3649e2f9a646b97e445bc4d5440440e5890",
+          "needle": "payload = msg.content"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "bot/exts/filters/filtering.py",
+          "ref": "69fdd3649e2f9a646b97e445bc4d5440440e5890",
+          "needle": "result = await _filter[\"function\"](payload)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "bot/exts/filters/filtering.py",
+          "ref": "69fdd3649e2f9a646b97e445bc4d5440440e5890",
+          "needle": "await self.bot.api_client.post('bot/offensive-messages', json=data)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "bot/exts/filters/filtering.py",
+          "ref": "69fdd3649e2f9a646b97e445bc4d5440440e5890",
+          "needle": "return INVISIBLE_RE.sub(\"\", no_zalgo)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_058_CONTEXT.json",
+          "path": "bot/exts/filters/filtering.py",
+          "ref": "67390298852513d13e0213870e50fb3cff1424e0",
+          "needle": "matched as-is. Spoilers are expanded, if any, and URLs are ignored."
+        }
+      ]
+    }
+  ]
+}

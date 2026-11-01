@@ -1,0 +1,1945 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-009",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All 50 pandas training candidates in the nine alignment/recovery/options/metadata/error/shape/lookup/encoding discovery leaves, including ambiguous candidates.",
+  "selection_rule": {
+    "repository": "github.com/pandas-dev/pandas",
+    "discovery_categories": [
+      "CORR-LABEL-ALIGNMENT",
+      "CORR-EXPECTED-EXCEPTION-RECOVERY",
+      "CORR-OPTION-PROPAGATION",
+      "CORR-METADATA-INVALIDATION",
+      "CORR-ERROR-CLASSIFICATION",
+      "CORR-TENSOR-SHAPE",
+      "CORR-LOOKUP-VALIDATION",
+      "CORR-METADATA-PRESERVATION",
+      "CORR-TEXT-ENCODING"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 774,
+    "sha256": "ce2e46f82dd898d4a274ad2e5e928f7f0b74e32b58de6f51f2122da6afe7fab1"
+  },
+  "interpretation": "Both archived spans verified; full fixes and supplemental texts are inert adjudication evidence, never detection input. All source traces are deductions, not executed or reproduced failures. No dataset/dependency programs, tests, pandas, NumPy, native code, parsers or callbacks executed. All researcher decisions remain pending.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-100:0:pandas/core/generic.py:NDFrame.pct_change",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Positional percentage changes are deduplicated by label and then broadcast back.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "With freq=None the old shift/div computes per-position changes, but unconditional duplicate-index filtering discards distinct results before reindexing. Existing per-period change semantics and the retained alternating-label Series/frame witness establish value loss; bundled mask removal is not a separate issue.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The shared pct_change doc, shift mode, aligned division, duplicated and reindex_like define the reached values. These are outside the short selected function and need the common API/context policy.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Duplicate row labels in positional mode with the matched shift/division only. Frequency-shift restoration and missing/fill policy are not universally certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:a01c95d6b8d84b9d96ab and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "rs = rs.loc[~rs.index.duplicated()]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if freq is not None:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-102:0:pandas/core/internals/construction.py:init_ndarray",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "A two-dimensional ndarray is forwarded as one extension column.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old constructor accepts a two-dimensional ndarray and dtype request, but the extension branch supplies one whole matrix and a default single column to arrays_to_mgr. Exact old DataFrame docs describe two-dimensional data; the retained 5-by-2 aware-dtype witness contrasts construction with equivalent cast.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "arrays_to_mgr per-column representation, dtype dispatch, extension conversion and public constructor admission are necessary; the long selected function also needs a frozen numerical input budget.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Evidenced noncategorical 2D ndarray plus extension dtype only. The earlier categorical branch, rank>2 inputs, copy/view ownership and every empty shape are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:1988b9f7261ad4d0da80 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "columns = [0]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "values = [values[:, n] for n in range(values.shape[1])]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_009.json",
+          "path": "pandas/core/frame.py",
+          "ref": "765d8db7eef1befef33f4c99d3e206d26e8444c8^",
+          "needle": "Two-dimensional, size-mutable, potentially heterogeneous tabular data."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-104:0:pandas/core/groupby/groupby.py:GroupBy.quantile",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Integer level names collide with integer positions during group quantile reordering.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old doc accepts array-like quantiles; integer-named grouping columns are valid labels. reorder_levels resolves an integer against existing names, so the intended positional permutation can refer to the wrong level. Temporary positional names and row permutation repair the retained integer-column multiple-quantile witness.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "MultiIndex name-versus-position resolution, concat keys, aggregate result layout and ngroups determine the actual axes. New tests provide adjudication evidence, not function-only detection context.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Multiple quantiles and integer grouping names under the matched result layout. Duplicate quantiles, empty groups, all numeric interpolation and dtype inference are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:5e96180c60ac51350bff and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "result = result.reorder_levels(order)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "result.index.names = np.arange(len(index_names))"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-106:0:pandas/core/indexes/base.py:Index.get_indexer_non_unique",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Temporal non-unique lookup chooses raw temporal target storage for non-temporal labels.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "self.is_all_dates alone selects target.asi8 even when target is a string index; the invalid-drop path needs ordinary missing-label processing and KeyError. The guard now requires both temporal domains. This concerns machine-visible failure routing, not merely the new release note wording.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Target Index asi8 behavior, promotion, native engine target typing and the public non-unique drop consumer supply the error contract. The selected extraction alone does not define those semantics.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Non-temporal absent drop labels on the evidenced duplicate DatetimeIndex only. Cross-temporal dtype comparability and target-sized missing positions are separate later history.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "pandas-106 adds the both-dates guard that is present in pandas-44 and later removed there. Preserve this chronological relation; the exception route and later cross-domain false matches are not automatically independent or identical issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "elif self.is_all_dates:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "elif self.is_all_dates and target.is_all_dates:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-110:0:pandas/core/indexes/base.py:Index._convert_slice_indexer",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Categorical integer-label slices take a positional shortcut.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Integer bounds on a CategoricalIndex can satisfy is_positional and bypass label-based inclusive slicing. The existing loc label duty supports non-string categorical label selection; the patch also installs a categorical bound resolver. Old getitem and iloc paths intentionally have different semantics.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Categorical integer inference, mixed-index classification, slice_indexer and matched bound resolver are critical external contracts. Selected guard removal alone does not repair every numeric slice.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Evidenced present categorical bounds with matching categorical resolver only. Absent labels, category ordering, unsorted/nonunique bounds and getitem positional semantics are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:4fc988a321a7c7db028a and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "is_positional = is_index_slice and not self.is_integer()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.is_integer() or self.is_categorical()"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-118:0:pandas/core/reshape/melt.py:melt",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Validation coerces mixed numeric/string column labels into strings.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "np.ravel on a mixed numeric/string Python list chooses a common string representation before Index.difference. A requested actual numeric column can therefore be reported absent. Python flatten preserves original scalar identity for both id_vars and value_vars; the retained melt output demonstrates the existing reshape duty.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "NumPy coercion, Index construction/difference, flatten and the shared melt doc determine the validation. Whether these ordinary APIs fit detection input remains unfrozen.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Mixed numeric/string flat label lists only. Arbitrary nested/MultiIndex tuples, duplicate label policy and all reshape memory behavior are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:0209cb2dd41d42d11678 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "missing = Index(np.ravel(id_vars)).difference(cols)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "missing = Index(com.flatten(id_vars)).difference(cols)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-11:0:pandas/core/reshape/concat.py:_make_concat_multiindex",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Duplicate outer concat keys yield nonscalar locations where integer codes are required.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "In the unequal-inner-index branch, level.get_loc can return a slice or mask for duplicate keys. Repeating that object does not produce valid scalar MultiIndex codes. The retained mixed frame/Series concat witness expects all source values and repeated outer labels.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Index duplicate get_loc, code construction, concat admission and MultiIndex verification are external. The equal-inner-index route is separate and unchanged.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Nonmissing duplicate outer keys in the evidenced unequal-inner-index route. Equality with missing keys, level uniqueness and equal-index fast paths are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:f96a27f7324345b63f39 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "i = level.get_loc(key)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "i = np.nonzero(level == key)[0][0]"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-131:0:pandas/core/indexes/accessors.py:CombinedDatetimelikeProperties.__new__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Categorical datetime methods operate on categories; the repair still drops a custom source index.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old constructor substitutes unique categories for Series values, so method delegation returns one result per category rather than per original row. Existing elementwise Series accessor semantics and the matched tz_localize/tz_convert witness establish multiplicity loss. Property delegation previously expanded codes and is coordinately changed.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Constructor index inference, Properties parent/orig handling, method/property delegates and categorical conversion are needed. The constructor does not itself expose the full result-label contract.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved whole label-alignment negative: after construction uses orig.array without index=orig.index, and unchanged method delegation constructs results on self._parent.index. Nondefault original labels are replaced by a default index even when duplicate values are restored.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve the supported old duty but explicitly defer the intended paired negative because the matched after side retains the stated contract failure.",
+      "dependence_reason": "Preserve fix-family:86878adef6658f9d1cea and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately.",
+        "Resolve custom source-index transport in method delegates before approving this paired negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "data = Series(orig.values.categories, name=orig.name, copy=False)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "dtype=orig.values.categories.dtype,"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "result = Series(result, index=self._parent.index, name=self.name)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "result = take_1d(result, self.orig.cat.codes)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Matched after constructor omits orig.index; Properties.__init__ stores the new Series as _parent, and _delegate_method still returns Series(result,index=self._parent.index,name=self.name). A categorical Series with nondefault original labels therefore does not retain those labels through elementwise methods. The old category-based parent already lacked those labels, so this is carried-forward failure, not an asserted new regression. Source deduction only."
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-132:0:pandas/core/nanops.py:nanvar",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Duration variance receives a new disallowed-domain exception guard.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The patch makes timedelta variance raise TypeError, but exact old tests include var among empty duration reductions expected to return NaT. Supported standard deviation also needs coordinated normalization before calling the newly guarded variance. Statistical dimensional motivation does not settle the prior universal rejection duty.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Old disallow, bottleneck backend, nanstd normalization, wrapping and the accepted-empty contract must be reconciled. The old decorator rejects datetime only; new tests alone do not prove that omission was an existing contractual defect.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional new rejection policy only; no approved old-positive/after-negative pair or universal duration reduction policy.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve the historical accepted-input, coercion, copy or exception policy before treating the changed policy as a prior defect. New tests and consistency alone do not establish that obligation.",
+      "dependence_reason": "Preserve fix-family:417087fd3aff61fd85bd and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\n\n@disallow(\"M8\")\n@bottleneck_switch(ddof=1)\ndef nanvar(values, axis=None, skipna=True, ddof=1, mask=None):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "\n@disallow(\"M8\", \"m8\")\n@bottleneck_switch(ddof=1)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_009_HELPERS.json",
+          "path": "pandas/tests/reductions/test_reductions.py",
+          "ref": "bd8f07fb29d2ac819f4c8e8e1b8e6d40f8b0f40c^",
+          "needle": "@pytest.mark.parametrize(\"method\", [\"mean\", \"median\", \"std\", \"var\"])"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-135:0:pandas/core/groupby/ops.py:BaseGrouper.agg_series",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Expected fast aggregation storage incompatibility bypasses the Python fallback.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old fast-path handles selected ValueErrors but not the TypeError caused by non-ndarray extension storage. Exact native SeriesGrouper has an ndarray arr and assigns series.values; DecimalArray aggregation has an existing Python route. Selective TypeError recovery reaches that route for the retained decimal first-element/method witnesses.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Series.values, native typed storage, DecimalArray, fast and pure-Python aggregation and extension result inference are essential. The selected dispatcher contains no ndarray producer contract.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Matched expected non-ndarray incompatibility only. Matching the substring ndarray can also catch a callback TypeError; callback side effects, exact-once execution and perfect error discrimination are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:b09bfb54f09cdfcfde1a and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "except ValueError as err:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                raise\n        except TypeError as err:\n            if \"ndarray\" in str(err):\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_009.json",
+          "path": "pandas/_libs/reduction.pyx",
+          "ref": "f41219179de69fed5c2a4b7df821394af1aa6559^",
+          "needle": "cdef class SeriesGrouper:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-139:0:pandas/core/groupby/grouper.py:Grouping.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Categorical group-index reconstruction omits the known grouping name.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The selected constructor records self.name and rebuilds a categorical group index without it, losing column identity used by downstream grouping/reset_index. Updated categorical index expectations directly target this route. The added general reset_index test does not itself cast to category and is not treated as the sole witness.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Categorical recoding, name extraction and group result/index reconstruction are outside this constructor. Semantic axis identity is distinct from printed name formatting.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Named categorical group index with the matched recoding route only. All observed/sort combinations, category order and every multi-grouper result are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:6beb4d901fbfdc67696c and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "ordered=self.grouper.ordered"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "name=self.name,"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-140:0:pandas/core/groupby/generic.py:_recast_datetimelike_result",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Column positions are used as labels when selecting result dtypes.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The loop enumerates column positions but result.dtypes[idx] performs label-sensitive Series lookup, unlike subsequent result.iloc[:,n]. Nonstandard integer columns can raise or pair a dtype with the wrong column. iloc restores the existing column-wise recast correspondence.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "DataFrame.dtypes index, Series integer lookup policy, groupby apply producer and conversion helper determine the failure. These semantics are not defined inside the short helper.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Positional dtype correspondence under evidenced nonstandard integer column labels only. Conversion inference and all datetime/object shapes are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:904c9055cf1939fca0ac and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "is_object_dtype(result.dtypes[idx])"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "is_object_dtype(result.dtypes.iloc[idx])"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-141:0:pandas/core/indexes/range.py:RangeIndex.get_indexer",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Descending range reversal assumes the excluded stop is aligned.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "For RangeIndex(7,0,-3), stop-step chooses ascending start=3 instead of the actual last value 1. The congruence test marks genuine labels absent and different labels present. Reversing the actual range obtains correct bounds; the retained stop variants exercise the same arithmetic mechanism.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The constructor invariant tying _range to start/stop/step, Python range reversal, NumPy vector arithmetic and inherited get_indexer contract are required. Admission under ordinary-API policy remains pending.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Nonempty descending integer targets in the evidenced arithmetic route. Empty ranges, unsigned overflow, native dtype extremes, and delegated method/tolerance paths are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "pandas-143 after is exactly pandas-141 before. Preserve the prior optimization-to-bounds-repair lineage; do not count those versions as independent issues automatically.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "(self.stop - self.step, self.start + 1, -self.step)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "reverse = self._range[::-1]"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-146:0:pandas/core/dtypes/missing.py:array_equivalent",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Strict equivalence lets expected timezone-comparison incompatibility escape.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old local doc returns False for non-equivalent same-dtype arrays. Object arrays containing naive/aware temporal scalars meet that storage precondition, but scalar comparison can raise the historical tz-awareness TypeError. Selective recovery implements non-equivalence without swallowing unrelated failures.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Historical Timestamp comparison and string-dtype predicate behavior are external. The default strict_nan=False native helper is separately repaired, so local Python catch alone cannot supply that route.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Strict object-array timezone mismatch only. Exact comparison message/backend, other user-defined comparisons and default native route require separate assessment.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:ff65d2e8ccf491a6168a and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if np.any(left_value != right_value):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if \"Cannot compare tz-naive\" in str(err):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-15:0:pandas/core/indexes/datetimelike.py:DatetimeTimedeltaMixin._with_freq",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Frequency override is stored on an Index while serialized array state retains the old frequency.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old _with_freq shallow-copies then assigns index._freq; the old pickle reducer carries self._data and attributes. The retained round-trip after clearing frequency exposes inconsistent structural state. New array view helper and simple construction align storage/name without altering the original array frequency.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Index versus array frequency properties, shallow copy, exact reducer and matched array view helper are essential. Their relocation is not an independently established old defect in each function.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Matched frequency-clear/infer round-trip metadata only. No pickle execution or untrusted-deserialization claim; every frequency setter and aliasing behavior are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:081814e8893001b0e27a and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "index._freq = None"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "arr = self._data._with_freq(freq)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_009.json",
+          "path": "pandas/core/indexes/datetimes.py",
+          "ref": "71d610596ed128055614eb660f13c88168bfe22f^",
+          "needle": "d = dict(data=self._data)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-162:0:pandas/core/reshape/pivot.py:_normalize",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Normalized hierarchical margins use partial labels; the repair rejects hierarchical column margins.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old crosstab docs accept multiple row/column factors and explicitly normalize margins. Old _normalize selects/drops partial margin labels, losing hierarchical identity in the retained multirow-factor witness. Positional extraction addresses that existing structural duty.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Exact margin producers, padding keys, crosstab docs, partial MultiIndex selection and concat/append are necessary. All these same-file contracts are adjudication-only context.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved negative across the documented hierarchical axes: after validation compares the scalar string margins_name directly with the last column name, which is a tuple for multiple column factors, so it raises before normalizing a valid margin.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve the supported old duty but explicitly defer the intended paired negative because the matched after side retains the stated contract failure.",
+      "dependence_reason": "Preserve fix-family:78c80975cbe35bdd7d38 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately.",
+        "Resolve margin validation for multiple column factors, not only the new tests with one column factor."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "column_margin = table.loc[:, margins_name].drop(margins_name)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "margins_name != table.iloc[:, -1].name"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return (key, margins_name) + (\"\",) * (len(cols) - 1)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "- If margins is `True`, will also normalize margin values."
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Old crosstab docs allow lists of column factors and promise normalized margins. The actual values-bearing _generate_marginal_results route builds (dummy_value_key, margins_name, \"\", ...); pivot_table then discards the dummy value level, leaving a tuple margin key for multiple column factors. The after guard requires scalar margins_name==last-column .name. String-versus-tuple inequality rejects that produced valid margin. The earlier hierarchical path may already fail differently, so record an after-contract failure without claiming a universally introduced regression. Source deduction, not reproduction."
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-166:0:pandas/core/frame.py:DataFrame._join_compat",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unique-index list join drops the accepted sorting option before concat.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The direct frame branch forwards sort, but the list/unique-index branch omits it. The retained explicit sort=False outer join requires c,a,b order rather than sorted a,b,c, establishing a functional result beyond FutureWarning wording.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Concat default sort policy, public join semantics, index union and reindex are needed. Both direct and list paths live in the selected function, but downstream ordering is external.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Unique-index list outer join sorting only. The unchanged duplicate-index iterative merge still omits sort; do not approve all join branches or infer full repair from warning suppression.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:132b7d492dab419da0f6 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return concat(frames, axis=1, join=how, verify_integrity=True)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "frames, axis=1, join=how, verify_integrity=True, sort=sort"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-19:0:pandas/core/indexing.py:_LocIndexer._getitem_axis",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Flat MultiIndex key lists are rerouted around missing-key validation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Routing through nested get_locs is visible, but old tests intentionally accept partial/empty missing-label selections. Exact old docs both state strict inclusion and retain future-KeyError/deprecation language. The API-breaking patch replaces acceptance assertions; the applicable old MultiIndex duty needs adjudication.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Flat versus nested indexer admission, iterable validation, missing-key policy and historical docs/tests are critical omitted contracts. New uniform rejection alone is insufficient.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional new missing-key enforcement; no approved historical positive/after-negative. Empty requests and explicit nested selectors must remain separate.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve the historical accepted-input, coercion, copy or exception policy before treating the changed policy as a prior defect. New tests and consistency alone do not establish that obligation.",
+      "dependence_reason": "Preserve fix-family:436ef86eff9b3a637bdb and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                ):\n                    key = tuple([key])\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return self._getitem_iterable(key, axis=axis)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_009.json",
+          "path": "doc/source/user_guide/indexing.rst",
+          "ref": "c6a1638bcd99df677a8f76f036c0b30027eb243c^",
+          "needle": "Every label asked for must be in the index, or a ``KeyError`` will be raised."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-20:0:pandas/tseries/offsets.py:MonthOffset.apply_index",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Month calendar-offset transformation copies an invalidated input frequency.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Calendar shifts can change timestamp spacing while the old unchecked _simple_new copies the original frequency. The old TODO already notes normal construction fails frequency validation. This is stale structural metadata, not merely changed display; three offset implementations share the same fixing family.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Native calendar shift values, apply_index_wraps, accepted offsets and unchecked constructor/frequency semantics determine the witness. Short bodies do not make those project contracts function-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Invalidation of copied frequency in the evidenced calendar-offset route only. Correct transformed timestamps, timezone conversion and preserving every provably invariant frequency are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Month/Quarter/Year apply_index share pandas-20 mechanical family and one stale-frequency invariant; do not count offset classes or parametrizations as three independent issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "freq=i.freq"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return type(i)._simple_new(shifted, dtype=i.dtype)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-20:0:pandas/tseries/offsets.py:QuarterOffset.apply_index",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Quarter calendar-offset transformation copies an invalidated input frequency.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Calendar shifts can change timestamp spacing while the old unchecked _simple_new copies the original frequency. The old TODO already notes normal construction fails frequency validation. This is stale structural metadata, not merely changed display; three offset implementations share the same fixing family.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Native calendar shift values, apply_index_wraps, accepted offsets and unchecked constructor/frequency semantics determine the witness. Short bodies do not make those project contracts function-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Invalidation of copied frequency in the evidenced calendar-offset route only. Correct transformed timestamps, timezone conversion and preserving every provably invariant frequency are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Month/Quarter/Year apply_index share pandas-20 mechanical family and one stale-frequency invariant; do not count offset classes or parametrizations as three independent issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        # TODO: going through __new__ raises on call to _validate_frequency;\n        #  are we passing incorrect freq?\n        return type(dtindex)._simple_new(\n            shifted, freq=dtindex.freq, dtype=dtindex.dtype\n        )\n\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            dtindex.asi8, self.n, self.startingMonth, self._day_opt\n        )\n        return type(dtindex)._simple_new(shifted, dtype=dtindex.dtype)\n\n\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-20:0:pandas/tseries/offsets.py:YearOffset.apply_index",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Year calendar-offset transformation copies an invalidated input frequency.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Calendar shifts can change timestamp spacing while the old unchecked _simple_new copies the original frequency. The old TODO already notes normal construction fails frequency validation. This is stale structural metadata, not merely changed display; three offset implementations share the same fixing family.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Native calendar shift values, apply_index_wraps, accepted offsets and unchecked constructor/frequency semantics determine the witness. Short bodies do not make those project contracts function-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Invalidation of copied frequency in the evidenced calendar-offset route only. Correct transformed timestamps, timezone conversion and preserving every provably invariant frequency are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Month/Quarter/Year apply_index share pandas-20 mechanical family and one stale-frequency invariant; do not count offset classes or parametrizations as three independent issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        # TODO: going through __new__ raises on call to _validate_frequency;\n        #  are we passing incorrect freq?\n        return type(dtindex)._simple_new(\n            shifted, freq=dtindex.freq, dtype=dtindex.dtype\n        )\n\n    def is_on_offset(self, dt: datetime) -> bool:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            dtindex.asi8, self.n, self.month, self._day_opt, modby=12\n        )\n        return type(dtindex)._simple_new(shifted, dtype=dtindex.dtype)\n\n    def is_on_offset(self, dt: datetime) -> bool:\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-21:0:pandas/core/series.py:Series._get_with",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Series non-list indexing changes from reindex insertion to strict loc rejection.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Equivalent container behavior differs in the old source, but an old test explicitly expects missing Series keys to insert missing data. BUG/API removes that acceptance test. The old non-list rejection obligation is unresolved rather than supplied by new consistency assertions.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Series.__getitem__ routing, inferred key types, integer positional fallback, loc/reindex and deprecation policy are external. The deliberately retained integer branch is not a general label bug.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional newly unified missing-key policy only; no approved old positive/after negative.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve the historical accepted-input, coercion, copy or exception policy before treating the changed policy as a prior defect. New tests and consistency alone do not establish that obligation.",
+      "dependence_reason": "Preserve fix-family:015af04d29aff9af54fd and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return self.reindex(key)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "# handle the dup indexing case GH#4246"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_009_HELPERS.json",
+          "path": "doc/source/user_guide/indexing.rst",
+          "ref": "56d0934092b8296c90f940c56fce3b731e0de81b^",
+          "needle": "Indexing with list with missing labels is deprecated"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-24:0:pandas/core/arrays/datetimes.py:DatetimeArray.tz_localize",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Timezone localization preserves a frequency after DST changes invalidate spacing.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old doc admits nonexistent shift_forward localization. Across a DST gap, timestamps can duplicate or lose regular spacing while final construction always copies self.freq. The retained hourly witness has inferred_freq None, establishing invalid metadata rather than a cosmetic frequency choice.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Native local-to-UTC conversion, timezone transitions, missing-time policy and unchecked _simple_new are external. The runtime/timezone database policy cannot be inferred from the selected method alone.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conservative frequency invalidation in the evidenced DST route plus explicit UTC/singleton/no-op preservation only. Fixed offsets are a retained TODO; all timezone conversions are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:b1f30a0dae6b0115599c and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return self._simple_new(new_dates, dtype=dtype, freq=self.freq)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return self._simple_new(new_dates, dtype=dtype, freq=freq)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-28:0:pandas/core/strings.py:StringMethods._get_series_list",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "String concatenation changes Index operands from label-aligned to positional.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Both exact old public cat docs and helper comment list Index among indexed objects participating in join alignment. The new wrapper assigns idx instead of others, changing that stated policy. Disjoint-label NaNs and new equivalent-container tests alone do not prove an old violation.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Resolve Index-as-indexed doc wording, elementwise versus aligned semantics, join and same-revision cat consumer. Old code intentionally aligns the supplied labels; do not silently rewrite that old promise.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional new positional-Index behavior only. No approved historical positive/after-negative or universal join/length policy.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve the historical accepted-input, coercion, copy or exception policy before treating the changed policy as a prior defect. New tests and consistency alone do not establish that obligation.",
+      "dependence_reason": "Preserve fix-family:3c92a9ff717d5e9c0dca and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return [Series(others._values, index=others)]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return [Series(others._values, index=idx)]"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Series/Index/DataFrame in `others` (objects without an index need"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-30:0:pandas/io/json/_json.py:Parser._try_convert_to_date",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Opportunistic JSON date inference fails to recover an expected boolean conversion TypeError.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The helper tries date units but catches only ValueError/OverflowError. Valid boolean JSON values can fail to_datetime with TypeError; continuing inference should return original data/False instead of aborting the admitted read_json boolean-Series input.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "JSON parser/data producer, to_datetime boolean/unit behavior and _STAMP_UNITS are external. Existing numeric-range logic and dtype interface also need version matching.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Expected boolean date-inference rejection only. Other TypeErrors, malformed JSON, alternate units and all object dtype conversions are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:906045ec8cd4877fd4e4 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "except (ValueError, OverflowError):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except (ValueError, OverflowError, TypeError):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-32:0:pandas/io/sas/sas_xport.py:XportReader.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Binary SAS input is mistakenly text-encoded before header parsing.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "A supported Python3 binary buffer.read returns bytes, whose encode lookup raises AttributeError outside the UnicodeEncodeError handler. Xport is binary, and the retained binary file witness requires the same table as the path route. Removing text reencoding preserves its byte stream.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "get_filepath_or_buffer, binary stream read/seek, _read_header and historical Python bytes semantics are required. The repair reuses the source stream instead of copying it; ownership and seekability remain external.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Already-binary seekable xport streams under the evidenced Python3 contract only. Text buffers, nonseekable connectors, closing and source-position behavior are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:f57cf1ffdcfb37288864 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "contents = contents.encode(self._encoding)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.filepath_or_buffer = filepath_or_buffer"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-3:0:pandas/core/series.py:Series.to_period",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unsupported Series temporal-index conversion changes AssertionError to TypeError.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old selected normal-runtime source already asserts the required index type. New tests prescribe TypeError, but do not establish a prior machine-consumer contract violated by AssertionError. The API note says old AttributeError, conflicting with the actual selected assert. Optimized-runtime incorrect acceptance has not been demonstrated.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Historical exception API, normal versus optimized runtime and input admission require explicit adjudication. Do not invent a different snapshot or an accepted wrong result from a newly explicit guard.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional new exception classification only; no approved old-positive/after-negative.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve the historical accepted-input, coercion, copy or exception policy before treating the changed policy as a prior defect. New tests and consistency alone do not establish that obligation.",
+      "dependence_reason": "Both pandas-3 conversion methods share one exception-policy family; two index classes and new tests are not independent issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "assert isinstance(self.index, DatetimeIndex)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not isinstance(self.index, DatetimeIndex):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-3:0:pandas/core/series.py:Series.to_timestamp",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unsupported Series temporal-index conversion changes AssertionError to TypeError.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old selected normal-runtime source already asserts the required index type. New tests prescribe TypeError, but do not establish a prior machine-consumer contract violated by AssertionError. The API note says old AttributeError, conflicting with the actual selected assert. Optimized-runtime incorrect acceptance has not been demonstrated.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Historical exception API, normal versus optimized runtime and input admission require explicit adjudication. Do not invent a different snapshot or an accepted wrong result from a newly explicit guard.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional new exception classification only; no approved old-positive/after-negative.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve the historical accepted-input, coercion, copy or exception policy before treating the changed policy as a prior defect. New tests and consistency alone do not establish that obligation.",
+      "dependence_reason": "Both pandas-3 conversion methods share one exception-policy family; two index classes and new tests are not independent issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "assert isinstance(self.index, PeriodIndex)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not isinstance(self.index, PeriodIndex):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-40:0:pandas/core/reshape/merge.py:_get_join_indexers",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Right merge drops the existing orientation policy at both factorization stages.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old merge docs explicitly say right joins preserve key order; sort=False order depends on how. The old caller sends no how to left-first factorization, violating the retained multi-key right-order witness. New factorizer orientation plus both calls are a coordinated implementation of an old promise, despite the API-breaking release heading.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Old public merge docs, two-stage dense factorization, join-key flattening, native join order and matched right_outer_join define the result. Merely adding a previously unsupported helper keyword would not establish the old defect.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Evidenced unsorted multi-key right merge with the matched factorizer/native join only. Duplicates, missing keys, index joins, sort=True and changed categorical branches are not universally certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:e48eb6bb043a8731b8cf and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "_factorize_keys(left_keys[n], right_keys[n], sort=sort)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "_factorize_keys(left_keys[n], right_keys[n], sort=sort, how=how)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_009_HELPERS.json",
+          "path": "pandas/core/frame.py",
+          "ref": "8a5f2917e163e09e08af880819fdf44144b1a5fe^",
+          "needle": "* right: use only keys from right frame, similar to a SQL right outer join;"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-48:0:pandas/core/groupby/generic.py:DataFrameGroupBy._cython_agg_blocks",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Fractional integer-extension aggregate restoration misses its expected TypeError.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old result path casts back only if feasible, yet catches ValueError alone. Exact IntegerArray safe_cast raises TypeError for non-equivalent fractional values, aborting mean/median/variance instead of keeping the computed float. Existing fallback reshape already implements that result duty.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Native aggregation, downcast, exact IntegerArray _from_sequence/safe_cast and block creation define the failure and recovery. The selected function does not define the exception producer.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Expected infeasible nullable-integer cast-back of fractional results only. Other extension failures, unrelated block exceptions and every aggregation dtype are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:d56c4f0aeff6065a6281 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "except ValueError:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except (ValueError, TypeError):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_009.json",
+          "path": "pandas/core/arrays/integer.py",
+          "ref": "9e7cb7c102655d0ba92d2561c178da9254d5cef5^",
+          "needle": "f\"cannot safely cast non-equivalent {values.dtype} to {np.dtype(dtype)}\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-53:0:pandas/core/series.py:Series._get_value",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Strict Series label retrieval is coordinated with broadened scalar admission.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The selected consumer moves from Index.get_value fallback to strict get_loc. However, formerly rejected absent object-integer keys may not reach the old consumer under its matching converter. The retained actual present-label regression implicates the converter; no isolated old selected wrong-position witness is established.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched old scalar conversion, caller reachability, Index.get_value fallback and object/integer inference are essential. Do not combine the new converter with this old consumer to produce a synthetic failure.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved isolated old consumer positive/negative. Preserve the present mixed-label converter repair separately.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the coordinated repair, but defer an isolated old selected-component positive. A matched old caller/helper and a reachable old failure are required.",
+      "dependence_reason": "Shared pandas-53 family with both scalar converters reviewed in batches007/008; exact converter after==pandas-63 before. Public defect, admission change and consumer hardening are not independent selected-function issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return self.index.get_value(self, label)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        # Similar to Index.get_value, but we do not fall back to positional\n        loc = self.index.get_loc(label)\n        # We assume that _convert_scalar_indexer has already been called,\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-63:0:pandas/core/indexing.py:_AtIndexer._convert_key",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Scalar at conversion adopts loc exception classes in place of old ValueErrors.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The old tests deliberately expected ValueError for incompatible keys. API/BUG replaces them with TypeError or KeyError to match loc. Machine-visible classes matter, but consistency and the new release note do not independently establish a historical defect in the old exception contract.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Index conversion, key admission, historical at/loc exception policy and setter versus getter routing are external. The setter intentionally returns list(key) unchanged.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional new getter exception contract only. No approved old-positive/after-negative or setter policy.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve the historical accepted-input, coercion, copy or exception policy before treating the changed policy as a prior defect. New tests and consistency alone do not establish that obligation.",
+      "dependence_reason": "pandas-53 converter after equals this pandas-63 converter before. Preserve the API evolution rather than calling successive conversion policies independent defects.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if ax.is_integer():"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "lkey[n] = ax._convert_scalar_indexer(i, kind=\"loc\")"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-64:0:pandas/io/formats/excel.py:ExcelFormatter.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Excel output validates requested columns but stores the complete frame.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old constructor checks cols are present yet sets self.df=df, so formatter consumers still see omitted columns. Existing export selection duty and retained subset round-trip witness establish extra exported data, not a display-only issue.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Public to_excel columns transport, formatter cell/header consumers, reindex selection and writer engine are outside this constructor. Tests remain inert and no workbook backend is executed.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Valid distinct requested subset/order with matching formatter consumers only. Duplicate labels, styled-frame coordinate mapping and all writer engines are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:720f5b79ae3e7fcf79d4 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if cols is not None:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.df = df.reindex(columns=cols)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-65:0:pandas/io/common.py:get_handle",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unbuffered binary text input bypasses the requested decoding wrapper.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old get_handle doc accepts file handles and encoding, but need_text_wrapping excludes RawIOBase. An unbuffered encoded binary stream misses TextIOWrapper. Including it transports the already accepted encoding; the matched wrapper ownership list continues to distinguish caller handles.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Python I/O class hierarchy, wrapper encoding/ownership and the actual parser caller are external. Optional S3 typing, compression and mmap paths are not settled by the local tuple change.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Evidenced uncompressed raw binary text parsing under requested encoding only. Closing/lifetime, mmap, compression and arbitrary binary protocol support are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Both pandas-65 selected Python components and native TextReader participate in one encoding family; parser-engine parametrizations and wrappers are not independent issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "need_text_wrapping = (BufferedIOBase, S3File)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "need_text_wrapping = (BufferedIOBase, RawIOBase, S3File)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-65:0:pandas/io/parsers.py:CParserWrapper.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "C parser resets encoding to UTF-8 before decoding raw binary input.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "For encoding supplied without compression, old CParserWrapper wraps BufferedIOBase only yet always resets downstream encoding to UTF-8. A RawIOBase encoded with a different requested codec therefore reaches native parsing without that decoding. Including raw streams performs the expected decode before UTF-8 handoff.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Stream type, TextIOWrapper newline/encoding, caller options and native TextReader byte interface define the mismatch. This selected wrapper is one part of the coordinated parser repair.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Evidenced unbuffered raw stream under explicit encoding only. Native error handling, caller ownership and every parser/compression mode are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Same pandas-65 encoding family as get_handle and native TextReader, not three independent issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if isinstance(src, BufferedIOBase):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if isinstance(src, (BufferedIOBase, RawIOBase)):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-6:0:pandas/core/groupby/grouper.py:get_grouper.is_in_obj",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "A grouper membership probe fails to recover a non-date name parsing ValueError.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "is_in_obj probes whether a named grouper is literally obj[gpr.name]. A supported PeriodIndex level name such as A can be interpreted as a date key and raise ValueError; for a membership probe that means False, allowing valid level grouping to continue. The retained size result is the existing duty.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Captured obj, level-to-grouper producer, PeriodIndex parsing and subsequent grouping path are outside this nested predicate. A message TODO is not a complete exception contract.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Expected non-date level-name ValueError in the evidenced probe only. The widened catch can also cover other ValueErrors; perfect discrimination and arbitrary callback failures are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:0be18c45f84b0ed4f0e8 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "except (KeyError, IndexError):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except (KeyError, IndexError, ValueError):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-73:0:pandas/core/ops/missing.py:mask_zero_div_zero",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Zero-division helper masking is reshaped while a caller newly invokes it.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The public floor-division witness establishes missing zero normalization in the caller. The selected helper already ravels matching masks/result and restores shape; its new same-shape assignments do not alone prove an old helper defect. No concrete matched noncontiguous/broadcast wrong-result witness has been established.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Dispatcher invocation, x/y/result shapes, NumPy broadcasting/ravel order and mask semantics are required to isolate this component. New caller reachability is not a preexisting helper failure.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old helper positive/negative approved; preserve the caller repair without inferring an additional shape issue.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the coordinated repair, but defer an isolated old selected-component positive. A matched old caller/helper and a reachable old failure are required.",
+      "dependence_reason": "Preserve fix-family:fc47a7c894eb634209a8 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            # Fill negative/0 with -inf, positive/0 with +inf, 0/0 with NaN\n            result = result.astype(\"float64\", copy=False).ravel()\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "result[nan_mask] = np.nan"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-75:0:pandas/core/indexes/period.py:PeriodIndex.get_loc",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Period lookup replaces finer-string coercion with resolution-aware rejection.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old get_loc accepts strings parseable as Period and an old test expressly asserts finer-string containment. The patch replaces that acceptance to match get_value, which already rejects finer strings. That conflict leaves historical rejection versus a new consistency policy unresolved.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Exact _get_string_slice resolution, Period frequency coercion, get_value and removed containment assertion are critical. New consistency tests do not supply a retroactive old rejection promise.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional new finer-string containment policy only; no approved historical positive/after-negative. Explicit method/tolerance behavior remains separate.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve the historical accepted-input, coercion, copy or exception policy before treating the changed policy as a prior defect. New tests and consistency alone do not establish that obligation.",
+      "dependence_reason": "pandas-75 get_loc and get_value share a family, but the primary changed rejection policy does not establish the sibling OverflowError catch as a separate old defect.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "key = asdt"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "elif method is None:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-75:0:pandas/core/indexes/period.py:PeriodIndex.get_value",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Period value lookup widens partial-string recovery without an isolated overflow witness.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The actual finer-string test reaches existing ValueError recovery and existing finer-resolution KeyError. New OverflowError recovery is not needed for that witness. A coarser out-of-range parse may still fail the later grp>=freqn assertion; no complete supported old overflow recovery result is established.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Parser resolution, bounds overflow, fallback assertion and expected final result must be traced in matched versions. A catch widening alone is insufficient selected relevance.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative approved; the primary get_loc policy change cannot transfer its witness.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the coordinated repair, but defer an isolated old selected-component positive. A matched old caller/helper and a reachable old failure are required.",
+      "dependence_reason": "Shared pandas-75 family with get_loc; preserve the distinct policy and ancillary recovery roles without counting two issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "except (TypeError, ValueError):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except (TypeError, ValueError, OverflowError):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-76:0:pandas/io/json/_json.py:Parser._try_convert_data",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Speculative JSON integer inference misses expected object-string overflow.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The inference code preserves original data when speculative casts cannot represent it, but object strings beyond int64 can raise OverflowError outside TypeError/ValueError. The retained mixed huge-number-string/Text witness requires unchanged strings, so recovery implements an existing admitted-data duty.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "NumPy object astype exception behavior, prior float/date inference and parser dtype options determine the reached branch. The selected method does not define those runtime contracts.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Expected int64-inference overflow in the evidenced mixed string data only. Earlier forced dtype/date conversions and all precision inference are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:5c727388e8cb8b9b9751 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            try:\n                new_data = data.astype(\"int64\")\n                if (new_data == data).all():\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    result = True\n            except (TypeError, ValueError, OverflowError):\n                pass\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-77:0:pandas/core/ops/array_ops.py:na_logical_op",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Two-dimensional logical operands enter a one-dimensional native fallback.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old na_logical_op accepts ndarray operands and tries pointwise fallback after TypeError. Exact native vec_binop uses one-dimensional object[:] buffers, so 2D operands violate its interface. Flattening both then restoring x.shape implements the retained 4-by-2 missing-value logical witness.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Native buffer dimensionality, ensure_object, operator missing handling and the admitted 2D producer are external. The helper annotation alone does not define broadcasting compatibility.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Evidenced equal-shape 2D array-array fallback only. Scalar fallback still calls one-dimensional scalar_binop with x, and unequal/broadcast-compatible array sizes are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:b3dc88d8ccc9039d8109 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "result = libops.vec_binop(x, y, op)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "result = libops.vec_binop(x.ravel(), y.ravel(), op)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_009.json",
+          "path": "pandas/_libs/ops.pyx",
+          "ref": "daef69c1366e31c3c49aea6f2e55f577d0c832fd^",
+          "needle": "def vec_binop(object[:] left, object[:] right, object op):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-79:0:pandas/core/groupby/grouper.py:get_grouper.is_in_axis",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Grouper axis-membership probe is adapted to a new producer exception type.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The commit changes nonscalar DatetimeIndex lookup to InvalidIndexError instead of TypeError. The old selected consumer already catches TypeError. No old reachable uncaught InvalidIndexError path is established, so compatibility with the new producer is not automatically a prior selected defect.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched old/new producer and caller, tuple membership/indexer routing and exception hierarchy are required. Do not run an old consumer against a new producer to manufacture the failure.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old consumer positive/negative approved; keep coordinated compatibility history.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the coordinated repair, but defer an isolated old selected-component positive. A matched old caller/helper and a reachable old failure are required.",
+      "dependence_reason": "Both selected pandas-79 consumers share the DatetimeIndex exception migration family; new compatibility catches are not independent old defects.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "except (KeyError, TypeError):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except (KeyError, TypeError, InvalidIndexError):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-79:0:pandas/core/indexes/multi.py:MultiIndex.get_loc_level",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "MultiIndex tuple-as-single-level probe is adapted to a new producer exception type.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The commit changes nonscalar DatetimeIndex lookup to InvalidIndexError instead of TypeError. The old selected consumer already catches TypeError. No old reachable uncaught InvalidIndexError path is established, so compatibility with the new producer is not automatically a prior selected defect.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched old/new producer and caller, tuple membership/indexer routing and exception hierarchy are required. Do not run an old consumer against a new producer to manufacture the failure.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old consumer positive/negative approved; keep coordinated compatibility history.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the coordinated repair, but defer an isolated old selected-component positive. A matched old caller/helper and a reachable old failure are required.",
+      "dependence_reason": "Both selected pandas-79 consumers share the DatetimeIndex exception migration family; new compatibility catches are not independent old defects.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                    return indexer, new_index\n            except TypeError:\n                pass\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except (TypeError, InvalidIndexError):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-83:0:pandas/core/reshape/concat.py:_Concatenator._get_comb_axis",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Concat begins forwarding a newly introduced combined-axis copy option.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old public concat doc says copy=False avoids unnecessary data copies but does not explicitly promise fresh immutable axis identities for True. Old combined-axis helpers have no copy option and intentionally return the sole distinct Index unchanged. New identity tests and added helper interface leave the historical axis-copy obligation unresolved.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Separate data buffer ownership from axis identity/mutability and inspect the matching helper/manager. Missing propagation of an option the old helper cannot accept is not sufficient prior-defect evidence.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional new axis identity policy only; no approved old-positive/after-negative or deep-copy guarantee.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve the historical accepted-input, coercion, copy or exception policy before treating the changed policy as a prior defect. New tests and consistency alone do not establish that obligation.",
+      "dependence_reason": "Preserve fix-family:3362bd2dc1b6f1a46441 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.objs, axis=data_axis, intersect=self.intersect, sort=self.sort"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "copy=self.copy,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_009_HELPERS.json",
+          "path": "pandas/core/indexes/api.py",
+          "ref": "7ffcf9d6753e7de2c5318e8e0ecdc63586d502f3^",
+          "needle": "elif len(indexes) == 1:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-87:0:pandas/core/reshape/pivot.py:crosstab",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Crosstab temporary tuple-named columns leak an extra dummy axis level.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old crosstab uses Series names and returns their cross-tab labels; tuple names make temporary DataFrame columns hierarchical. Scalar dummy selection leaks a dummy MultiIndex level into output. Matched list selection plus removal of the inserted dummy level restores the expected diagonal table axes.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "DataFrame tuple-column inference, pivot_table list/scalar shape, actual inserted dummy key and post-normalization are required. The output contract is not solely a local list-versus-string choice.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Evidenced nonempty tuple-named Series cross-tab only. Empty tables skip stripping, and name collisions, multiple factors and every normalized-margin shape are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Preserve fix-family:26794511f7baf7fe15b0 and automatic exact/AST/revision links. Branches, tests and selected functions are not independently adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "df = DataFrame(data, index=common_idx)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "cols_diff = df.columns.difference(original_df_cols)[0]"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-89:0:pandas/core/reshape/reshape.py:_unstack_multiple",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Hierarchical-column multi-unstack drops the accepted missing fill value.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Other selected branches forward fill_value but the hierarchical-column loop calls unstack without it. The retained zero-fill witness compares with sequential explicit fills, establishing newly introduced missing cells where zero was requested.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "DataFrame.unstack fill semantics, level-number resolution and changing level coordinates determine final shape. Selected local omission is visible but downstream fill behavior is external.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Requested fill for the evidenced level order only. The old i-versus-val coordinate update remains and is fixed later in pandas-38; this negative does not certify arbitrary level permutations.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "Successive pandas-89 fill propagation and pandas-38 level-coordinate repair concern the same multi-unstack routine. Preserve revision/dependence history without claiming independent issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "result = result.unstack(val)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "result = result.unstack(val, fill_value=fill_value)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-94:0:pandas/core/indexes/datetimelike.py:DatetimeIndexOpsMixin.repeat",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Temporal repeat is migrated to typed array reconstruction while old code explicitly resets frequency.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old repeat already sets datetime/timedelta freq=None and retains Period frequency. The concrete family regression calls _shallow_copy directly on a reordered array, not repeat. Typed construction in this selected method is not an isolated old frequency failure.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Inherited shallow-copy attributes, typed constructors and repeat scalar/axis policy are required to establish an independent selected witness. Shared helper repair cannot automatically label every changed caller defective.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old repeat positive/negative approved; preserve explicit old reset behavior and coordinated typed representation.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the coordinated repair, but defer an isolated old selected-component positive. A matched old caller/helper and a reachable old failure are required.",
+      "dependence_reason": "pandas-94 repeat and take share the _shallow_copy frequency family; caller refactors and direct-helper regression are not independent issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return self._shallow_copy(self.asi8.repeat(repeats), freq=freq)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "result = type(self._data)(self.asi8.repeat(repeats), dtype=self.dtype)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-94:0:pandas/core/indexes/datetimelike.py:DatetimeIndexOpsMixin.take",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Temporal take removes redundant post-dispatch frequency reconstruction.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old take explicitly checks the returned frequency and reconstructs with None except Period. The family fix targets inherited _shallow_copy copying source frequency onto an array that lost it. The selected removal alone does not isolate an old take failure independent of that helper.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "ExtensionIndex.take, array take and shallow-copy dispatch, slice shortcut and frequency assertions require matched source. New helper plus old caller would be a mixed-version artifact.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected take positive/negative approved; array fill and slice paths remain separate.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the coordinated repair, but defer an isolated old selected-component positive. A matched old caller/helper and a reachable old failure are required.",
+      "dependence_reason": "One pandas-94 shallow-copy family with repeat and direct helper fix; preserve dependence rather than counting removed reconstruction as another issue.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "assert taken.freq == freq"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return ExtensionIndex.take("
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-97:0:pandas/core/indexes/timedeltas.py:TimedeltaIndex._fast_union",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Internal fast union gains a sorting-policy input omitted by its old caller.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Public union has an old sort=False promise, but this internal helper previously has no sort parameter and explicitly sorts its two ranges. The caller possesses and drops the policy; adding helper support is a coordinated extension. No isolated old helper violation of its own input contract is established.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Public union policy, old caller interface, _can_fast_union preconditions and chunk construction are required. New helper policy cannot retroactively supply an old argument.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old helper positive/negative approved; preserve the public caller omission and matching new branch.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve the coordinated repair, but defer an isolated old selected-component positive. A matched old caller/helper and a reachable old failure are required.",
+      "dependence_reason": "Both pandas-97 components implement one public union order repair; distinguish old policy-dropping caller from newly policy-aware helper.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def _fast_union(self, other):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "elif sort is False:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_009.json",
+          "path": "pandas/core/indexes/base.py",
+          "ref": "6f690b088190581552e04c53288819472fdb2dbe^",
+          "needle": "def union(self, other, sort=None):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_pandas-97:0:pandas/core/indexes/timedeltas.py:TimedeltaIndex._union",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Timedelta union drops the existing sort option on its optimized route.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep the existing discovery leaf and meaning. Label identity, shape, option propagation, metadata validity and exception recovery are different duties; domain names, tests, dtype variants and changed functions are not new leaves or independent issues.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The selected caller accepts sort and forwards it on the generic route but omits it for _fast_union. Exact old public union docs say False means do not sort. The retained disjoint range witness needs left-first 4d,5d,1d,2d,3d order rather than globally sorted values.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Public union admission, _can_fast_union range/frequency preconditions and the matched newly policy-aware helper are necessary. Caller keyword forwarding alone cannot repair the old helper interface.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The retained mechanism concerns dataframe/index values, labels, shape, metadata or supported I/O. No attacker-to-authority, confidentiality or integrity boundary is demonstrated; general-bug provenance is not itself a security classification.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Evidenced compatible range fast union with sort=False and matched helper only. Empty/equal special cases, descending/incompatible frequencies and all overlap geometries are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the supported contextual mechanism; defer strict function-only admission until its critical omitted contracts fit the common before-only API/runtime/context policy.",
+      "dependence_reason": "One pandas-97 family with _fast_union; caller omission and helper support are coordinated, not two independently adjudicated old issues.",
+      "open_questions": [
+        "Researcher confirm the historical duty, selected relevance and common before-only API/runtime/context budget.",
+        "Source deductions are not executed or reproduced behavior; adjudicate issue identity and the mechanism-local negative separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return this._fast_union(other)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return this._fast_union(other, sort=sort)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_009.json",
+          "path": "pandas/core/indexes/base.py",
+          "ref": "6f690b088190581552e04c53288819472fdb2dbe^",
+          "needle": "def union(self, other, sort=None):"
+        }
+      ]
+    }
+  ]
+}

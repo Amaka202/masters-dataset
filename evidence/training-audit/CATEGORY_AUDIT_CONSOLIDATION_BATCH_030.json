@@ -1,0 +1,658 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-030",
+  "review_date": "2026-10-26",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All seven Shuup training candidates across both current discovery statuses in the one shared CVE/fix family; no null categories exist here.",
+  "selection_rule": {
+    "repository": "github.com/shuup/shuup",
+    "discovery_categories": [
+      "SEC-HTML-ESCAPING"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 831,
+    "sha256": "9ca57ede950e4495ca81ef3c279a6ff7d312196473e270b47ad37fb68886c5c3"
+  },
+  "interpretation": "One missing-context /two existing-contract /four security-boundary deferrals. The exact django-jinja2.5.0 backend defaults autoescape=True, workbench uses it without override, and ordinary Problem templates interpolate normally. Xtheme POST, basket and editor reflection is not independently proved XSS; basket is csrf_exempt, editor admin/layout and Xtheme CSRF gates remain distinct. AJAX JsonResponse is JSON and the retained basket error consumer uses text insertion. Terminal Http404 requires phase exhaustion and ordinary Shuup handler discards its message; the404 referrer script is unrelated. Admin reasons are fixed/configured missing-permission strings; its raw JSON-shaped forbidden branch is unchanged. Generic extract_messages has a known product visibility consumer, whose built-in producers are fixed and whose normal Problem sink autoescapes; the signal extension is not proof of a lower-trust unsafe path. Extra-view dispatch is different: an enabled broad URL capture can feed a missing view name directly into an ordinary text/html404 body, bypassing template escaping; after encodes that value. That supported security mechanism still requires external route/theme/runtime context under the common before-only protocol. Pre-encoding may alter JSON/plain-text/autoescaped display, but no independent non-style duty or supported after-contract failure is established. All negative claims are mechanism-local and provisional. Preserve six ambiguous/one supported discovery statuses, category/ledger831 checkpoint, canonical hashes/IDs/families/splits, old authored history and45 protected inputs. Seven functions/one mechanical family are not independent issues. All retained programs/requests/payloads/upstream tests stay inert; only own retrieval/view/hash/bookkeeping/audit-validator tools execute.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:105128253049467:106084771301413",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Admin denial reason is pre-escaped only in the authenticated non-AJAX Problem branch.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate raw HTML response construction from exception-text preparation, HTML-autoescaped templates, JSON delivery and text-only DOM insertion. Do not promote a generic extraction utility or fixed/configuration-derived reason from a shared XSS advisory. SEC-HTML-ESCAPING remains a provisional discovery label; final leaf/parent placement, non-style eligibility and ordinary runtime/API familiarity policy await researcher confirmation.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The inspected wrapper gets its reason from _get_unauth_reason: translated fixed account/shop messages or a join of the route-configured required permissions missing for that user. get_missing_permissions returns missing input permission strings, not arbitrary user/group display names. Lower-trust HTML in reason is not established by this path. The exact setup pins django-jinja2.5.0 and Jinja2.8.1. The retained backend sets autoescape=True by default; workbench config selects that backend and XthemeEnvironment without overriding it. XthemeEnvironment changes loader/render/resource behavior, not that inherited setting. Both default Problem templates use ordinary message interpolation. This establishes a safe ordinary rendering comparison, not every deployed engine/theme/override or historical version. Django2.2.24 is a permitted historical API comparison, not installation/deployment proof or certification of the full Django>=1.11,<2.3 range. The earlier AJAX branch uses HttpResponseForbidden(json.dumps(...)) without explicit JSON content type; JSON encoding alone is not HTML escaping, but both versions leave that branch unchanged and no attacker-controlled reason producer is established. Do not attribute the direct extra-view sink to this selected branch.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need reason-producer/configuration trust, authentication/AJAX selection, Problem middleware, namespace-dependent template selection and actual backend policy. The parameter reason alone does not establish request reflection. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Caller/helper/configuration/template/JavaScript texts, after-code, metadata, labels, CVEs, tests and answers stay adjudication-only; never selectively inject them into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No supported lower-trust reason-to-unsafe-HTML trace is established. The authenticated HTML branch has ordinary autoescaped templates; the earlier raw JSON-shaped forbidden response is a separate unchanged path. A custom unsafe reason/template is a hypothesis requiring its own prior contract and provenance.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After neutralizes HTML metacharacters in reason only when building the authenticated Problem. AJAX JSON-shaped response, encoded login query, redirect selection and supplied link remain outside the changed interpolation. With no established old selected XSS boundary, this is not an approved paired security negative; display encoding and other contexts require separate duties.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "A preexisting selected HTML-safety violation is not established under matched producers/consumers. Defer the old contract rather than infer a defect from added escape calls or the sibling advisory.",
+      "dependence_reason": "All seven rows share fix-family:f86f87ab711123463f0c, fixing commit75714c37e32796eb7cbb0d977af5bcaa26573588 and CVE-2021-25963. Preserve all exact/AST/span/history links and distinguish direct response, Problem/Http404 preparation, generic extraction and editor/basket entry conditions. Seven functions/one mechanical family are not seven independent issues or seven reproduced exploits; final issue identity/representation decisions remain pending.",
+      "open_questions": [
+        "Researcher confirm actual deployment/template/backend/autoescape and browser/content-type/CSP state, lower-trust producers and permitted user interaction; freeze numerical context and API-knowledge rules before final eligibility. HTML pre-encoding can alter plain-text/JSON or autoescaped display; no independent non-style consumer duty or supported after-contract failure is established here, so do not invent a correctness obligation from wording alone.",
+        "Conditional source deductions, not reproduced results. No Shuup/Django/django-jinja/Jinja/ORM/DB/HTML/browser/JavaScript/template/regex/parser/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute. Archive members are read as inert text without filesystem extraction or installation/import."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\"reason\": reason"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "\"reason\": escape(reason)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if request.is_ajax():"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return HttpResponseForbidden(json.dumps({\"error\": force_text(reason)}))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return _(\"You do not have the required permissions: %s\") % \", \".join(missing_permissions)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "unauth_reason = self._get_unauth_reason(request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTEXT.json",
+          "path": "shuup/admin/utils/permissions.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "missing_permissions = set(permissions)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_DELIVERY.json",
+          "path": "shuup/admin/templates/shuup/admin/problem.jinja",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "{{ message }}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "django_jinja/backend.py",
+          "ref": "2.5.0",
+          "needle": "options.setdefault(\"autoescape\", True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_ROUTING.json",
+          "path": "shuup/core/middleware.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "\"message\": exception.message,"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:225114817513454:76918662907619",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unknown Xtheme POST command becomes Problem text rather than a direct HTML response.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate raw HTML response construction from exception-text preparation, HTML-autoescaped templates, JSON delivery and text-only DOM insertion. Do not promote a generic extraction utility or fixed/configuration-derived reason from a shared XSS advisory. SEC-HTML-ESCAPING remains a provisional discovery label; final leaf/parent placement, non-style eligibility and ordinary runtime/API familiarity policy await researcher confirmation.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "request.POST supplies command. handle_command handles only edit_on/edit_off, otherwise returns no response and the selected method raises Problem with repr(command). Repr is not HTML escaping. The old error-message path is established, but an unsafe HTML interpretation is not. The exact setup pins django-jinja2.5.0 and Jinja2.8.1. The retained backend sets autoescape=True by default; workbench config selects that backend and XthemeEnvironment without overriding it. XthemeEnvironment changes loader/render/resource behavior, not that inherited setting. Both default Problem templates use ordinary message interpolation. This establishes a safe ordinary rendering comparison, not every deployed engine/theme/override or historical version. Django2.2.24 is a permitted historical API comparison, not installation/deployment proof or certification of the full Django>=1.11,<2.3 range. ProblemMiddleware aliases ExceptionMiddleware; AJAX gets JsonResponse while ordinary requests render the namespace-selected/default Problem template. Workbench CsrfViewMiddleware is present and the Xtheme route is not marked csrf_exempt, so a cross-origin forged POST is not established.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need command helper, route inclusion, CSRF/user interaction, middleware response type, templates and configured engine. Do not transfer the editor admin-only dispatch gate to this separate command function. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Caller/helper/configuration/template/JavaScript texts, after-code, metadata, labels, CVEs, tests and answers stay adjudication-only; never selectively inject them into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "An admitted POST can reflect unknown command text, but the retained ordinary HTML template autoescapes it and AJAX is JSON. A real unsafe custom template/backend/DOM insertion and victim interaction are still missing; no universal reflected XSS or CSRF bypass is shown.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After escapes command before repr and exception formatting; successful edit_on/edit_off dispatch and redirect behavior are unchanged. HTML metacharacters in this one message are bounded, not every command, redirect or JSON/string display contract. No old unsafe normal sink or independent after-failure is established, so the standalone detection pair remains deferred.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Request-text reflection is real, but retained normal consumers escape, discard or text-insert it. An actual unsafe custom template/environment/DOM or different error handler remains unestablished. Explicitly defer security delivery instead of converting the commit/advisory into a function-level XSS gold label.",
+      "dependence_reason": "All seven rows share fix-family:f86f87ab711123463f0c, fixing commit75714c37e32796eb7cbb0d977af5bcaa26573588 and CVE-2021-25963. Preserve all exact/AST/span/history links and distinguish direct response, Problem/Http404 preparation, generic extraction and editor/basket entry conditions. Seven functions/one mechanical family are not seven independent issues or seven reproduced exploits; final issue identity/representation decisions remain pending.",
+      "open_questions": [
+        "Researcher confirm actual deployment/template/backend/autoescape and browser/content-type/CSP state, lower-trust producers and permitted user interaction; freeze numerical context and API-knowledge rules before final eligibility. HTML pre-encoding can alter plain-text/JSON or autoescaped display; no independent non-style consumer duty or supported after-contract failure is established here, so do not invent a correctness obligation from wording alone.",
+        "Conditional source deductions, not reproduced results. No Shuup/Django/django-jinja/Jinja/ORM/DB/HTML/browser/JavaScript/template/regex/parser/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute. Archive members are read as inert text without filesystem extraction or installation/import."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "raise Problem(\"Error! Unknown command: `%r`\" % command)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "raise Problem(\"Error! Unknown command: `%r`\" % escape(command))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "command = request.POST.get(\"command\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if command == \"edit_on\" or command == \"edit_off\":"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_ROUTING.json",
+          "path": "shuup/core/middleware.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "return JsonResponse("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_ROUTING.json",
+          "path": "shuup/front/templates/shuup/front/problem.jinja",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "{% block message %}{{ message }}{% endblock %}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "django_jinja/backend.py",
+          "ref": "2.5.0",
+          "needle": "options.setdefault(\"autoescape\", True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTEXT.json",
+          "path": "shuup_workbench/settings/base_settings.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "\"django.middleware.csrf.CsrfViewMiddleware\","
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "shuup/xtheme/urls.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "url(r\"^xtheme/$\", command_dispatch, name=\"xtheme\"),"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:263972136728882:249176284399831",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Exhausted checkout selection formats a route identifier into Http404, whose ordinary handler does not reflect it.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate raw HTML response construction from exception-text preparation, HTML-autoescaped templates, JSON delivery and text-only DOM insertion. Do not promote a generic extraction utility or fixed/configuration-derived reason from a shared XSS advisory. SEC-HTML-ESCAPING remains a provisional discovery label; final leaf/parent placement, non-style eligibility and ordinary runtime/API familiarity policy await researcher confirmation.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The checkout route captures phase with .+, and BaseCheckoutView passes it to prepare_current_phase. Selection can return an earlier invalid non-skipped phase or a requested/later non-skipped phase, so not every unknown identifier reaches Http404. At exhaustion it includes the identifier in an exception. Retained make_error_view passes only request/error_status to compatible handlers; FrontPageErrorHandler renders a404 template without exception context, and that template has a fixed missing-page message. Django2.2.24 fallback also has a fixed default body unless a custom template is supplied. Problem middleware does not catch Http404. This is an old request/error path, not established unsafe exception rendering.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need route capture, basket/phase validity and skip/process state, installed error-handler selection and any custom404 template. A sibling Problem handler is not the Http404 consumer. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Caller/helper/configuration/template/JavaScript texts, after-code, metadata, labels, CVEs, tests and answers stay adjudication-only; never selectively inject them into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The identifier is request-derived, but normal Shuup404 handling discards it. A reachable exhausted process plus a different handler that actually renders exception text unsafely would be needed for the proposed XSS boundary. The retained404 document.referrer script is a separate unchanged producer/sink, not repaired by escaping this exception identifier.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After escapes only the terminal Http404 message and leaves phase ordering/processing/skip/return behavior unchanged. It does not repair every404 template or unrelated referrer script. Without an old unsafe selected exception sink, no paired XSS-negative approval follows; no supported introduced or residual after-contract failure is established for the selected mechanism.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Request-text reflection is real, but retained normal consumers escape, discard or text-insert it. An actual unsafe custom template/environment/DOM or different error handler remains unestablished. Explicitly defer security delivery instead of converting the commit/advisory into a function-level XSS gold label.",
+      "dependence_reason": "All seven rows share fix-family:f86f87ab711123463f0c, fixing commit75714c37e32796eb7cbb0d977af5bcaa26573588 and CVE-2021-25963. Preserve all exact/AST/span/history links and distinguish direct response, Problem/Http404 preparation, generic extraction and editor/basket entry conditions. Seven functions/one mechanical family are not seven independent issues or seven reproduced exploits; final issue identity/representation decisions remain pending.",
+      "open_questions": [
+        "Researcher confirm actual deployment/template/backend/autoescape and browser/content-type/CSP state, lower-trust producers and permitted user interaction; freeze numerical context and API-knowledge rules before final eligibility. HTML pre-encoding can alter plain-text/JSON or autoescaped display; no independent non-style consumer duty or supported after-contract failure is established here, so do not invent a correctness obligation from wording alone.",
+        "Conditional source deductions, not reproduced results. No Shuup/Django/django-jinja/Jinja/ORM/DB/HTML/browser/JavaScript/template/regex/parser/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute. Archive members are read as inert text without filesystem extraction or installation/import."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "raise Http404(\"Error! Phase with identifier `%s` not found.\" % requested_phase_identifier)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "raise Http404(\"Error! Phase with identifier `%s` not found.\" % escape(requested_phase_identifier))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not phase.should_skip() and not phase.is_valid():"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_DELIVERY.json",
+          "path": "shuup/front/urls.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "url(r\"^checkout/(?P<phase>.+)/$\", checkout_view, name=\"checkout\"),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTEXT.json",
+          "path": "shuup/front/views/checkout.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "phase_identifier = kwargs.get(\"phase\", self.initial_phase)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTEXT.json",
+          "path": "shuup/front/views/checkout.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "current_phase = process.prepare_current_phase(phase_identifier)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "shuup/core/error_handling.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "return handler.handle_error(request, error_status)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_DELIVERY.json",
+          "path": "shuup/front/error_handlers.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "return render(request, \"shuup/front/errors/{}.jinja\".format(error_status), status=error_status)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_DELIVERY.json",
+          "path": "shuup/front/templates/shuup/front/errors/404.jinja",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "Unfortunately the page you were looking for does not exist."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "django/views/defaults.py",
+          "ref": "2.2.24",
+          "needle": "<p>The requested resource was not found on this server.</p>"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:280743407818352:15387873936815",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Generic exception-message extraction gains unconditional HTML escaping without an established unsafe producer/consumer duty.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate raw HTML response construction from exception-text preparation, HTML-autoescaped templates, JSON delivery and text-only DOM insertion. Do not promote a generic extraction utility or fixed/configuration-derived reason from a shared XSS advisory. SEC-HTML-ESCAPING remains a provisional discovery label; final leaf/parent placement, non-style eligibility and ordinary runtime/API familiarity policy await researcher confirmation.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The old documented utility flattens ValidationError.messages, takes Exception.args[0] where present, and otherwise force_text-converts objects. Its retained production consumer ProductDetailView joins extracted visibility errors into Problem. Built-in visibility checks produce translated fixed messages; the signal extension can supply additional errors, but an actual lower-trust signal producer is not established. The exact setup pins django-jinja2.5.0 and Jinja2.8.1. The retained backend sets autoescape=True by default; workbench config selects that backend and XthemeEnvironment without overriding it. XthemeEnvironment changes loader/render/resource behavior, not that inherited setting. Both default Problem templates use ordinary message interpolation. This establishes a safe ordinary rendering comparison, not every deployed engine/theme/override or historical version. Django2.2.24 is a permitted historical API comparison, not installation/deployment proof or certification of the full Django>=1.11,<2.3 range. The ordinary product Problem sink therefore does not establish old XSS. A generic text-extraction API is not intrinsically obligated to HTML-encode all outputs for every possible consumer.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual message/error producer including visibility signal extension, product view join, Problem rendering and backend. Generic exception input and the shared CVE are not enough to infer attacker input or unsafe HTML interpretation. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Caller/helper/configuration/template/JavaScript texts, after-code, metadata, labels, CVEs, tests and answers stay adjudication-only; never selectively inject them into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No matched lower-trust producer followed by an unsafe sink is established for this utility. The known product consumer reaches normal autoescaped Problem rendering; hypothetical plugins/custom consumers need retained contracts. Do not borrow the raw extra-view response or POST command provenance from sibling functions.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After escapes every yielded text branch, including already encoded text; Django escape explicitly warns about double-escaping. Product view still joins the outputs into a plain string before Problem rendering. This bounds HTML encoding at the helper output, not correctness for non-HTML consumers or universal safe representation. An independent non-style fidelity duty has not been established, so no invented functional regression or approved paired XSS negative is recorded.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "A preexisting selected HTML-safety violation is not established under matched producers/consumers. Defer the old contract rather than infer a defect from added escape calls or the sibling advisory.",
+      "dependence_reason": "All seven rows share fix-family:f86f87ab711123463f0c, fixing commit75714c37e32796eb7cbb0d977af5bcaa26573588 and CVE-2021-25963. Preserve all exact/AST/span/history links and distinguish direct response, Problem/Http404 preparation, generic extraction and editor/basket entry conditions. Seven functions/one mechanical family are not seven independent issues or seven reproduced exploits; final issue identity/representation decisions remain pending.",
+      "open_questions": [
+        "Researcher confirm actual deployment/template/backend/autoescape and browser/content-type/CSP state, lower-trust producers and permitted user interaction; freeze numerical context and API-knowledge rules before final eligibility. HTML pre-encoding can alter plain-text/JSON or autoescaped display; no independent non-style consumer duty or supported after-contract failure is established here, so do not invent a correctness obligation from wording alone.",
+        "Conditional source deductions, not reproduced results. No Shuup/Django/django-jinja/Jinja/ORM/DB/HTML/browser/JavaScript/template/regex/parser/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute. Archive members are read as inert text without filesystem extraction or installation/import."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "yield force_text(msg)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "yield escape(force_text(msg))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "yield force_text(obj.args[0])"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "yield escape(force_text(obj.args[0]))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "yield escape(force_text(obj))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_SEARCH.json",
+          "path": "shuup/front/views/product.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "raise Problem(\"\\n\".join(extract_messages(errors)))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTEXT.json",
+          "path": "shuup/core/models/_product_shops.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "yield ValidationError(_(\"This product is not visible.\"), code=\"product_not_visible\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTEXT.json",
+          "path": "shuup/core/models/_product_shops.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "for receiver, response in get_visibility_errors.send(ShopProduct, shop_product=self, customer=customer):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "django_jinja/backend.py",
+          "ref": "2.5.0",
+          "needle": "options.setdefault(\"autoescape\", True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "django/utils/html.py",
+          "ref": "2.2.24",
+          "needle": "This may result in double-escaping."
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:30027234712539:48657133368461",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unknown extra-view URL name is interpolated directly into an HTML404 response, bypassing template autoescape.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate raw HTML response construction from exception-text preparation, HTML-autoescaped templates, JSON delivery and text-only DOM insertion. Do not promote a generic extraction utility or fixed/configuration-derived reason from a shared XSS advisory. SEC-HTML-ESCAPING remains a provisional discovery label; final leaf/parent placement, non-style eligibility and ordinary runtime/API familiarity policy await researcher confirmation.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "XThemeAppConfig supplies its routes through front_urls_pre; front URLs incorporate that extension and workbench includes them. The route captures a broad view path. get_view_by_name returnsNone for no theme or a falsy missing view and caches theme lookups; base Theme.get_view documents falsy as not found. In that admitted missing-view case the selected code directly creates HttpResponseNotFound(msg), not a template. Django2.2.24 response comparison preserves supplied body content and defaults Content-Type via DEFAULT_CONTENT_TYPE, whose default is text/html. Thus under ordinary decoded WSGI path, enabled route and HTML/browser delivery, lower-trust view text reaches a raw HTML body. After escapes that parameter before composition; this is an existing output-safety repair, not new view support.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need enabled extension/root routing, decoded WSGI URL provenance, missing-view/theme semantics, ordinary HTTP content type and browser interpretation. Those caller/runtime contracts are outside the bounded selected function. Template autoescape does not sanitize directly constructed response content. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Caller/helper/configuration/template/JavaScript texts, after-code, metadata, labels, CVEs, tests and answers stay adjudication-only; never selectively inject them into detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A lower-trust link/path can supply a missing view name; when admitted as decoded path text and returned with ordinary text/html at the application origin, markup can become response structure. Active script consequences additionally depend on victim/browser/CSP delivery; no payload, request, rendering, script or session effect is executed. No authentication requirement is imposed by this retained route itself. Theme identifier remains a trusted configuration assumption, not an attacker-proven second field.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After escape(view) encodes the one request-derived value before the same direct HTML404 body is returned, while lookup/cache, callable dispatch and trusted theme identifier remain unchanged. This is a mechanism-local missing-view HTML-body negative under the stated response/theme/URL contract, not arbitrary theme-field safety, JS/attribute safety, all errors or proof of every browser/CSP state. No supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Direct HTML response construction supports a conditional security mechanism, but URL provenance, the lookup contract and ordinary HTTP/runtime semantics are outside the selected function; defer missing project context under the uniform before-only protocol.",
+      "dependence_reason": "All seven rows share fix-family:f86f87ab711123463f0c, fixing commit75714c37e32796eb7cbb0d977af5bcaa26573588 and CVE-2021-25963. Preserve all exact/AST/span/history links and distinguish direct response, Problem/Http404 preparation, generic extraction and editor/basket entry conditions. Seven functions/one mechanical family are not seven independent issues or seven reproduced exploits; final issue identity/representation decisions remain pending.",
+      "open_questions": [
+        "Researcher confirm actual deployment/template/backend/autoescape and browser/content-type/CSP state, lower-trust producers and permitted user interaction; freeze numerical context and API-knowledge rules before final eligibility. HTML pre-encoding can alter plain-text/JSON or autoescaped display; no independent non-style consumer duty or supported after-contract failure is established here, so do not invent a correctness obligation from wording alone.",
+        "Conditional source deductions, not reproduced results. No Shuup/Django/django-jinja/Jinja/ORM/DB/HTML/browser/JavaScript/template/regex/parser/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute. Archive members are read as inert text without filesystem extraction or installation/import."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "getattr(theme, \"identifier\", None), view)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "getattr(theme, \"identifier\", None), escape(view))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return HttpResponseNotFound(msg)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not theme:\n        return None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_ROUTING.json",
+          "path": "shuup/xtheme/__init__.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "\"front_urls_pre\": [__name__ + \".urls:urlpatterns\"],"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_DELIVERY.json",
+          "path": "shuup/front/urls.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "_get_extension_urlpatterns(\"front_urls_pre\"),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_DELIVERY.json",
+          "path": "shuup_workbench/urls.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "url(r\"^\", include(\"shuup.front.urls\", namespace=\"shuup\")),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "shuup/xtheme/urls.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "url(r\"^xtheme/(?P<view>.+)/*$\", extra_view_dispatch, name=\"xtheme_extra_view\"),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_ROUTING.json",
+          "path": "shuup/xtheme/_theme.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "Falsy values are considered \"not found\"."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "django/http/response.py",
+          "ref": "2.2.24",
+          "needle": "content_type = '%s; charset=%s' % (settings.DEFAULT_CONTENT_TYPE,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_ROUTING.json",
+          "path": "django/conf/global_settings.py",
+          "ref": "2.2.24",
+          "needle": "DEFAULT_CONTENT_TYPE = 'text/html'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "django/utils/html.py",
+          "ref": "2.2.24",
+          "needle": "return mark_safe(str(text).translate(_html_escapes))"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:44159778629753:49454518272727",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Invalid basket command is exception text for normal requests and JSON error data for AJAX.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate raw HTML response construction from exception-text preparation, HTML-autoescaped templates, JSON delivery and text-only DOM insertion. Do not promote a generic extraction utility or fixed/configuration-derived reason from a shared XSS advisory. SEC-HTML-ESCAPING remains a provisional discovery label; final leaf/parent placement, non-style eligibility and ordinary runtime/API familiarity policy await researcher confirmation.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "BasketView forwards a nonempty request.POST command to the configured dispatcher. Old get_command_handler checks the normalized command and extension signal handlers; an unmatched command raises Problem. Non-AJAX rethrows into the normal Problem template; AJAX converts the error to JsonResponse, whose compared content type is application/json. The retained add_to_cart consumer passes response.error to handleError and inserts it with jQuery.text, not html. The basket route is explicitly csrf_exempt, unlike the Xtheme POST routes; this affects admission, not whether JSON/autoescaped text is interpreted as HTML. The exact setup pins django-jinja2.5.0 and Jinja2.8.1. The retained backend sets autoescape=True by default; workbench config selects that backend and XthemeEnvironment without overriding it. XthemeEnvironment changes loader/render/resource behavior, not that inherited setting. Both default Problem templates use ordinary message interpolation. This establishes a safe ordinary rendering comparison, not every deployed engine/theme/override or historical version. Django2.2.24 is a permitted historical API comparison, not installation/deployment proof or certification of the full Django>=1.11,<2.3 range.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual configured dispatcher, unknown-command/extension result, AJAX flag, Problem middleware, JSON response consumer and browser interaction. Do not equate a JSON error member with a direct HTML execution sink. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Caller/helper/configuration/template/JavaScript texts, after-code, metadata, labels, CVEs, tests and answers stay adjudication-only; never selectively inject them into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The POST command is lower-trust and the route is CSRF-exempt, but the inspected normal HTML template autoescapes and the retained AJAX consumer uses text insertion. A different unsafe DOM/template/configuration path and victim interaction are still missing; the advisory does not establish that path. The navigation partial html insertion is a different successful HTML endpoint, not this response.error value.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After encodes only the invalid-command interpolation; other handler ValidationError/Problem messages, extension hooks, JSON serialization, response postprocessing and return URL logic remain unchanged. Plain-text DOM or JSON display can expose entity text after pre-encoding, but no independent non-style fidelity duty is established. No complete basket XSS-negative or redirect-safety claim is approved.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Request-text reflection is real, but retained normal consumers escape, discard or text-insert it. An actual unsafe custom template/environment/DOM or different error handler remains unestablished. Explicitly defer security delivery instead of converting the commit/advisory into a function-level XSS gold label.",
+      "dependence_reason": "All seven rows share fix-family:f86f87ab711123463f0c, fixing commit75714c37e32796eb7cbb0d977af5bcaa26573588 and CVE-2021-25963. Preserve all exact/AST/span/history links and distinguish direct response, Problem/Http404 preparation, generic extraction and editor/basket entry conditions. Seven functions/one mechanical family are not seven independent issues or seven reproduced exploits; final issue identity/representation decisions remain pending.",
+      "open_questions": [
+        "Researcher confirm actual deployment/template/backend/autoescape and browser/content-type/CSP state, lower-trust producers and permitted user interaction; freeze numerical context and API-knowledge rules before final eligibility. HTML pre-encoding can alter plain-text/JSON or autoescaped display; no independent non-style consumer duty or supported after-contract failure is established here, so do not invent a correctness obligation from wording alone.",
+        "Conditional source deductions, not reproduced results. No Shuup/Django/django-jinja/Jinja/ORM/DB/HTML/browser/JavaScript/template/regex/parser/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute. Archive members are read as inert text without filesystem extraction or installation/import."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "raise Problem(_(\"Error! Invalid command `%s`.\") % command)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "raise Problem(_(\"Error! Invalid command `%s`.\") % escape(command))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not self.ajax:\n                raise"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return JsonResponse(response)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "handler = getattr(self.commands_module, \"handle_%s\" % command.lower(), None)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "shuup/front/views/basket.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "return get_basket_command_dispatcher(request).handle(command)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_DELIVERY.json",
+          "path": "shuup/front/urls.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "url(r\"^basket/$\", csrf_exempt(BasketView.as_view()), name=\"basket\"),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTEXT.json",
+          "path": "shuup/front/templates/shuup/front/macros/add_to_cart.jinja",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "handleError(cover, response.error);"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTEXT.json",
+          "path": "shuup/front/templates/shuup/front/macros/add_to_cart.jinja",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "cover.find(\"#error-msg\").text(error ? error : msg);"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "django/http/response.py",
+          "ref": "2.2.24",
+          "needle": "kwargs.setdefault('content_type', 'application/json')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_ROUTING.json",
+          "path": "shuup/front/templates/shuup/front/problem.jinja",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "{% block message %}{{ message }}{% endblock %}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "django_jinja/backend.py",
+          "ref": "2.5.0",
+          "needle": "options.setdefault(\"autoescape\", True)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:69886218930026:253473383501486",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Editor unknown POST command becomes Problem only after admin editing and layout setup gates.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate raw HTML response construction from exception-text preparation, HTML-autoescaped templates, JSON delivery and text-only DOM insertion. Do not promote a generic extraction utility or fixed/configuration-derived reason from a shared XSS advisory. SEC-HTML-ESCAPING remains a provisional discovery label; final leaf/parent placement, non-style eligibility and ordinary runtime/API familiarity policy await researcher confirmation.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "EditorView.dispatch first checks could_edit and then populates theme/layout/form state before POST. could_edit delegates to is_admin_user, which requires superuser or staff membership in the current shop under its normal computed path. With valid editor query/layout state and a submitted command lacking a callable dispatch method, the selected method raises Problem. Workbench CSRF middleware and an unexempted editor route remain relevant. The exact setup pins django-jinja2.5.0 and Jinja2.8.1. The retained backend sets autoescape=True by default; workbench config selects that backend and XthemeEnvironment without overriding it. XthemeEnvironment changes loader/render/resource behavior, not that inherited setting. Both default Problem templates use ordinary message interpolation. This establishes a safe ordinary rendering comparison, not every deployed engine/theme/override or historical version. Django2.2.24 is a permitted historical API comparison, not installation/deployment proof or certification of the full Django>=1.11,<2.3 range. Raising this message is not a direct HTML sink or proof of an unauthenticated admin attack.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need outer dispatch/could_edit/user/shop policy, valid _populate_vars setup, CSRF/session interaction, exception middleware, template resolution and actual engine. The selected post method alone omits those admission and rendering contracts. The uniform bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Caller/helper/configuration/template/JavaScript texts, after-code, metadata, labels, CVEs, tests and answers stay adjudication-only; never selectively inject them into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Only an admitted editing context reaches this selected unknown-command branch through the retained normal route. Unknown command text is reflected into an exception, but default Problem rendering autoescapes and AJAX is JSON. A supported unsafe alternative consumer plus permitted victim/admin interaction is not established. Do not infer anonymous reachability or CSRF bypass from the selected POST string alone.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After escapes unknown command before the same Problem formatting. Successful callable dispatch, save/publish and editor access/layout gates remain unchanged. This bounds one error-message interpolation, not arbitrary editor commands, templates, JavaScript contexts or non-HTML display fidelity. No supported after-contract failure or standalone paired XSS-negative approval is established.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Request-text reflection is real, but retained normal consumers escape, discard or text-insert it. An actual unsafe custom template/environment/DOM or different error handler remains unestablished. Explicitly defer security delivery instead of converting the commit/advisory into a function-level XSS gold label.",
+      "dependence_reason": "All seven rows share fix-family:f86f87ab711123463f0c, fixing commit75714c37e32796eb7cbb0d977af5bcaa26573588 and CVE-2021-25963. Preserve all exact/AST/span/history links and distinguish direct response, Problem/Http404 preparation, generic extraction and editor/basket entry conditions. Seven functions/one mechanical family are not seven independent issues or seven reproduced exploits; final issue identity/representation decisions remain pending.",
+      "open_questions": [
+        "Researcher confirm actual deployment/template/backend/autoescape and browser/content-type/CSP state, lower-trust producers and permitted user interaction; freeze numerical context and API-knowledge rules before final eligibility. HTML pre-encoding can alter plain-text/JSON or autoescaped display; no independent non-style consumer duty or supported after-contract failure is established here, so do not invent a correctness obligation from wording alone.",
+        "Conditional source deductions, not reproduced results. No Shuup/Django/django-jinja/Jinja/ORM/DB/HTML/browser/JavaScript/template/regex/parser/dependency/application program, request, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute. Archive members are read as inert text without filesystem extraction or installation/import."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "raise Problem(_(\"Unknown command: `%s`.\") % command)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "raise Problem(_(\"Unknown command: `%s`.\") % escape(command))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not could_edit(request):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._populate_vars()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "dispatcher = getattr(self, \"dispatch_%s\" % command, None)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTEXT.json",
+          "path": "shuup/xtheme/editing.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "return is_admin_user(request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_DELIVERY.json",
+          "path": "shuup/front/utils/user.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "return bool(getattr(user, \"is_staff\", False) and shop.staff_members.filter(id=user.id).exists())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "shuup/xtheme/urls.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "url(r\"^xtheme/editor/$\", EditorView.as_view(), name=\"xtheme_editor\"),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTEXT.json",
+          "path": "shuup_workbench/settings/base_settings.py",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "\"django.middleware.csrf.CsrfViewMiddleware\","
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_ROUTING.json",
+          "path": "shuup/front/templates/shuup/front/problem.jinja",
+          "ref": "b4ac2fdd9e0475cf5b36e46d3df07c1e2edd42a8",
+          "needle": "{% block message %}{{ message }}{% endblock %}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_030_CONTRACTS.json",
+          "path": "django_jinja/backend.py",
+          "ref": "2.5.0",
+          "needle": "options.setdefault(\"autoescape\", True)"
+        }
+      ]
+    }
+  ]
+}

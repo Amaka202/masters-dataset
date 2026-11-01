@@ -1,0 +1,463 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-047",
+  "review_date": "2026-10-29",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All four qutebrowser training candidates/all discovery statuses; three mechanical families including one shared settings-CSRF family.",
+  "selection_rule": {
+    "repository": "github.com/qutebrowser/qutebrowser",
+    "discovery_categories": [
+      "SEC-CSRF-REQUEST-BINDING",
+      "SEC-HTML-ESCAPING",
+      "SEC-SECURITY-STATUS-LIFECYCLE"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "One missing-context and three paired-negative deferrals. Accepted certificate exception plus reset/no-new-callback can falsely report HTTPS success on reload; new host-only set fixes remembered top-level host but loses old warning for accepted different-host subresource errors. Privileged settings mutation lacks request binding; coordinated backend/token/template checks add it, but process-global token regeneration invalidates earlier ordinary still-open settings pages. WebKit caller signature/current-tab provenance matches its new guard; record only its canonical gate, attribute global-token failure to the owning settings producer/checker and do not certify overall multi-page flow. Stored title reaches innerHTML through JSON under matched history producer/frontend, while after HTML-escapes URL fed directly to href, changing valid query delimiters and ordinary navigation. All three after failures are introduced contract regressions, not new old security positives; require unresolved_contract_regression/defer_paired_negative. No missing-password/None bypass, unsupported None-title crash, silent first-visit TLS bypass or automatic editor execution is invented. Four pins retain228 inert texts/eight exact full-file peers/three resolved first parents/six archive inventories and requested-missing/redirect provenance. Named Qt/Python/HTML comparisons are not installed/all-version/deployed proof; W3C historical HTTPS text was retrieved with TLS-verified curl after Python CA key-usage validation failure, not disabled verification. Four functions/three families remain pending independent issue adjudication. Conditional inert-source deductions, not reproduced outcomes. No retained browser/Qt/PyQt/WebKit/WebEngine/JavaScript/HTML/TLS/certificate/history/settings/configuration/editor/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Backend signal/exception/cache/session state, UI/status/settings/history producers/consumers, Qt/PyQt/DOM/URL/HTML/runtime/configuration contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:174601873543324:246961049692720",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Per-load certificate-error flag loses remembered exceptions on reload; new host-only state misses a different-host failing subresource.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate certificate verification and exception acceptance from security-status lifecycle/top-level versus subresource host; privileged settings mutation request binding from command execution and response-read access; page-local CSRF transport from process-global token validity; HTML text/markup escaping from DOM URL assignment, HTML MIME and history navigation preservation. New tests or advice alone establish no old selected duty.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old backend certificate callbacks set _has_ssl_errors and AbstractTab resets it at every load start. On successful load the selected old predicate chooses warn if that flag was set, otherwise success_https for HTTPS. Status signal reaches the URL status widget and maps to distinct warning/success_https presentation. An accepted certificate error may be followed by a successful reload with no new callback; named Qt network docs explicitly allow connection reuse without another initial handshake/encrypted event, while the callback is for TLS setup errors. Thus a reset flag is not a fresh successful certificate verification. Existing duty is honest security indication after an accepted exception, not preventing every first-visit invalid-certificate load.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need same-ref callback/reset/finished/status/UI binding and actual backend exception/session reuse. A crafted bad certificate alone is not silent bypass: error acceptance or configured non-strict policy and a successful load/reload are prerequisites. Host-history memory and subresource versus main-frame identity are outside the selected function. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Backend signal/exception/cache/session state, UI/status/settings/history producers/consumers, Qt/PyQt/DOM/URL/HTML/runtime/configuration contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A lower-trust site/connection with a certificate error can be loaded only under the relevant accepted/overridable exception or non-strict policy. If a later successful HTTPS load has no renewed error signal, old reset state advertises success_https despite that unresolved exception. The security consequence is misleading user assurance, not a new trust-store write or automatic network interception. Actual backend/certificate/session choices remain conditional; commit/advisory text is corroboration rather than a reproduced reload.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After retains error hosts in a class-shared set across loads/tabs and consults only self.url().host() for successful HTTPS. This repairs the remembered top-level-host case but introduces a different ordinary status failure: valid top-level HTTPS host A includes an admitted HTTPS resource from distinct host B with an accepted overridable certificate error. Old any-error callback marks this tab and old status warns; after callbacks add B, not A, so A absent from the set yields success_https. WebKit NAM signal carries the actual reply and named Qt signal/ignore contracts permit that resource to proceed; WebEngine controller also distinguishes resource request URL/main-frame state. No malformed input or new feature is required. A previously warned A would mask the case, so choose A not already in the process set. Record an introduced indicator regression, not silent TLS bypass. Host-only over-warning after certificate repair, process-only memory, other TLS/resource policy and unreachable elif ok are separate limitations, not fresh verification.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Old conditional exception-status lifecycle defect and top-level remembered-host repair are supported, but exact after loses old different-host subresource warning behavior. Explicitly defer selected paired negative for an introduced status regression; keep actual runtime/acceptance context unresolved and do not invent first-visit certificate bypass.",
+      "dependence_reason": "Four selected functions/three mechanical families, not four independently adjudicated issues. qute_settings and WebKit handler share the exact CVE/fix/parent and one coordinated request-binding repair; attribute global-token ownership failure to settings producer/checker, not a second independent origin-guard defect. TLS lifecycle and history escaping have different fixes/parents/runtime contracts. Three introduced after-contract failures remain after-only assessments, not three new old security positives. Preserve canonical IDs/source bytes/splits, discovery statuses/categories and source/family/connected-block descriptors; independent identity/backport/lineage adjudication remains pending.",
+      "open_questions": [
+        "Researcher confirm installed Qt/PyQt/backend and actual signal/exception/session/certificate acceptance, successful load and resource admission, page navigation/initiator/canonicalization/credential rules, shared profile/module/multiple-page state, history storage/title/runtime/CSP and actual action triggering. Named Qt5.10.1/5.11.0/5.14.2, CPython3.6.5 and HTML5.2 REC2017 are comparisons, not installed/all-version/deployed proof. Resolve common before-only context/knowledge policy and independent issue/backport identities.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained browser/Qt/PyQt/WebKit/WebEngine/JavaScript/HTML/TLS/certificate/history/settings/configuration/editor/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if ok and not self._has_ssl_errors:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if self.url().host() in self._insecure_hosts:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._has_ssl_errors = False\n        self.data.viewing_source"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/webkit/webkittab.py",
+          "ref": "46b4d26a9ca1aba24a00ccd004606c8e3a6b17d4",
+          "needle": "self._has_ssl_errors = True"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/mainwindow/statusbar/url.py",
+          "ref": "46b4d26a9ca1aba24a00ccd004606c8e3a6b17d4",
+          "needle": "self._normal_url_type = UrlType[status.name]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/browsertab.py",
+          "ref": "021ab572a319ca3db5907a33a59774f502b3b975",
+          "needle": "_insecure_hosts = set()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/webkit/webkittab.py",
+          "ref": "021ab572a319ca3db5907a33a59774f502b3b975",
+          "needle": "self._insecure_hosts.add(reply.url().host())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/webengine/webenginetab.py",
+          "ref": "021ab572a319ca3db5907a33a59774f502b3b975",
+          "needle": "self._insecure_hosts.add(url.host())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_DELIVERY.json",
+          "path": "qutebrowser/browser/shared.py",
+          "ref": "46b4d26a9ca1aba24a00ccd004606c8e3a6b17d4",
+          "needle": "ssl_strict is False, only warning about errors"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/webkit/network/networkmanager.py",
+          "ref": "46b4d26a9ca1aba24a00ccd004606c8e3a6b17d4",
+          "needle": "        elif is_accepted:\n            reply.ignoreSslErrors()\n            return\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTRACTS.json",
+          "path": "src/network/access/qnetworkaccessmanager.cpp",
+          "ref": "v5.14.2",
+          "needle": "the QNetworkReply that is encountering these errors"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTRACTS.json",
+          "path": "src/network/access/qnetworkreply.cpp",
+          "ref": "v5.14.2",
+          "needle": "These connections may be reused"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTRACTS.json",
+          "path": "src/core/certificate_error_controller.cpp",
+          "ref": "v5.14.2",
+          "needle": "resourceType(main_frame ? CertificateErrorController::ResourceTypeMainFrame : CertificateErrorController::ResourceTypeOther)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Before any certificate-error callback sets the per-tab flag and successful load then warns. After callbacks add only the failing request host to a class-shared set while the selected status tests only the top-level URL host. For an unremembered valid HTTPS A containing an admitted HTTPS resource from distinct B with an accepted overridable certificate error, B is remembered but A is not, and after reports success_https where before warned. WebKit signal/reply and ignore paths plus named Qt TLS-error/proceed semantics support the ordinary shape. This is introduced security-indicator loss, not certificate-validation bypass; actual backend/resource admission and user/policy acceptance remain conditional."
+    },
+    {
+      "pair_id": "CVEfixes:178113201707295:223374160760278",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Privileged settings setter lacks request binding; new process-global CSRF token invalidates earlier still-open settings pages.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate certificate verification and exception acceptance from security-status lifecycle/top-level versus subresource host; privileged settings mutation request binding from command execution and response-read access; page-local CSRF transport from process-global token validity; HTML text/markup escaping from DOM URL assignment, HTML MIME and history navigation preservation. New tests or advice alone establish no old selected duty.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old qute_settings directly delegates /set to _qute_settings_set. That old helper decodes option/value and calls config.instance.set_str(...save_yaml=True); same-ref configuration implementation converts and applies the value and stores YAML. The old settings template supplies ordinary editable inputs whose onblur handler issues a GET through XMLHttpRequest, and browser tabopen admits independent pages. The old purpose is viewing/changing configuration from each still-open settings page, with no existing one-page invalidation policy. Old backends route qute requests without this binding, so a website-initiated admitted request can mutate privileged settings without needing to read its response. Editor command execution would require a later separate invocation and is not the selected mutation witness.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old mutation/type/persistence and GUI/template consumers, actual custom-scheme backend request admission, Qt URL password/canonicalization and initiator/first-party policies. The global token and per-render embedded URL have different lifetimes; isolate this from missing-cookie CSRF or a new public setter API. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Backend signal/exception/cache/session state, UI/status/settings/history producers/consumers, Qt/PyQt/DOM/URL/HTML/runtime/configuration contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Under affected backend admission, a lower-trust visited page can cause a GET to the privileged settings/set route; old handler requires neither origin binding nor unpredictable secret before valid option conversion/persistence. Same-origin response-read restrictions do not authorize that mutation. Coordinated WebEngine first-party/XHR/Qt5.11 initiator and WebKit current-tab checks add distinct gates; actual installed version and request admission remain conditional. Setting editor.command does not itself establish immediate execution or bypass arbitrary setting type validation.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After compares QUrl.password with csrf_token and renders a fresh random URL-safe token into each settings page. Named QUrl returns an empty password when absent, not Python None; do not claim an uninitialized None/no-password bypass. Both secrets and the older-Python os.urandom/base64 fallback generate fresh page tokens. However the sole module-global value is overwritten at every settings rendering while each existing page retains its older literal XHR URL. Render page A with token tA, then ordinary page B with distinct tB: A still has a valid settings origin/current URL but its normal input change is rejected against tB before set_str. There is no frontend token refresh or error handling in cset. The old multi-page edit path worked without such invalidation; new rejection is an introduced ordinary availability/integration failure, not a CSRF bypass. Single-latest-page missing/wrong-token denial remains local, not all custom-scheme or multi-tab correctness.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Old privileged request-forgery repair is supported with coordinated backend/template contracts, but a second normal settings render invalidates the first page and breaks its old edit duty. Record an introduced global-token lifetime regression and defer the paired negative without asserting a token-secret bypass or immediate command execution.",
+      "dependence_reason": "Four selected functions/three mechanical families, not four independently adjudicated issues. qute_settings and WebKit handler share the exact CVE/fix/parent and one coordinated request-binding repair; attribute global-token ownership failure to settings producer/checker, not a second independent origin-guard defect. TLS lifecycle and history escaping have different fixes/parents/runtime contracts. Three introduced after-contract failures remain after-only assessments, not three new old security positives. Preserve canonical IDs/source bytes/splits, discovery statuses/categories and source/family/connected-block descriptors; independent identity/backport/lineage adjudication remains pending.",
+      "open_questions": [
+        "Researcher confirm installed Qt/PyQt/backend and actual signal/exception/session/certificate acceptance, successful load and resource admission, page navigation/initiator/canonicalization/credential rules, shared profile/module/multiple-page state, history storage/title/runtime/CSP and actual action triggering. Named Qt5.10.1/5.11.0/5.14.2, CPython3.6.5 and HTML5.2 REC2017 are comparisons, not installed/all-version/deployed proof. Resolve common before-only context/knowledge policy and independent issue/backport identities.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained browser/Qt/PyQt/WebKit/WebEngine/JavaScript/HTML/TLS/certificate/history/settings/configuration/editor/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return _qute_settings_set(url)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if url.password() != csrf_token:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "config.instance.set_str(option, value, save_yaml=True)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "csrf_token = secrets.token_urlsafe()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "csrf_token = token.rstrip(b'=').decode('ascii')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/qutescheme.py",
+          "ref": "43e58ac865ff862c2008c510fc5f7627e10b4660",
+          "needle": "csrf_token = None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/html/settings.html",
+          "ref": "3b9b2bc30ec759c4b978d705a467ef32e32a2bbb",
+          "needle": "onblur=\"cset("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/html/settings.html",
+          "ref": "43e58ac865ff862c2008c510fc5f7627e10b4660",
+          "needle": "var url = \"qute://user:{{csrf_token}}@settings/set\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/html/settings.html",
+          "ref": "43e58ac865ff862c2008c510fc5f7627e10b4660",
+          "needle": "xhr.send();"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/mainwindow/tabbedbrowser.py",
+          "ref": "3b9b2bc30ec759c4b978d705a467ef32e32a2bbb",
+          "needle": "self.widget.insertTab(idx, tab, \"\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_DELIVERY.json",
+          "path": "qutebrowser/config/config.py",
+          "ref": "3b9b2bc30ec759c4b978d705a467ef32e32a2bbb",
+          "needle": "self._yaml.set_obj(name, converted, pattern=pattern)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTRACTS.json",
+          "path": "src/corelib/io/qurl.cpp",
+          "ref": "v5.10.1",
+          "needle": "Returns the password of the URL if it is defined; otherwise\n    an empty string is returned."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/webengine/interceptor.py",
+          "ref": "43e58ac865ff862c2008c510fc5f7627e10b4660",
+          "needle": "info.resourceType() !="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTRACTS.json",
+          "path": "src/core/api/qwebengineurlrequestjob.cpp",
+          "ref": "v5.11.0",
+          "needle": "Returns the origin URL of the content that initiated the request."
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Each after settings-page render generates a new token and overwrites one module-global csrf_token. Each rendered page embeds its own token in an immutable literal cset URL. Opening another normal settings page with a distinct token leaves the first page open at a valid settings origin, but its ordinary onblur XHR is rejected by the new equality guard before set_str/save_yaml. Old multi-page template/tab/consumer path had no token invalidation policy. This is introduced settings availability/lifetime integration failure, not CSRF acceptance, random-token collision proof or immediate editor execution."
+    },
+    {
+      "pair_id": "CVEfixes:217287020088616:257925922616364",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "WebKit scheme handler forwards settings mutation without current-tab/method gate; after adds a coordinated local request-origin guard.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate certificate verification and exception acceptance from security-status lifecycle/top-level versus subresource host; privileged settings mutation request binding from command execution and response-read access; page-local CSRF transport from process-global token validity; HTML text/markup escaping from DOM URL assignment, HTML MIME and history navigation preservation. New tests or advice alone establish no old selected duty.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old WebKit NetworkManager maps qute to this handler and invokes the selected scheme handler with request before calculating current_url or applying later request gates. Selected handler delegates to data_for_url, which dispatches host settings; old /set helper converts option/value and persists configuration. Thus this old forwarding boundary has an actual privileged mutation consumer, not merely a newly added helper. Old GET editing remains the intended template operation. New NetworkManager computes the tab URL or empty QUrl and passes req/op/current_url to the updated handler; signatures are coordinated rather than an invented missing-argument regression.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need same-ref createRequest mapping and real current-tab provenance, common scheme normalization/redirects, settings mutation/token consumer and actual QtWebKit cross-scheme request delivery. A tab URL is not intrinsically a cryptographically authenticated per-frame origin; subframe/navigation timing, URL spelling and profile policy need separate consideration. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Backend signal/exception/cache/session state, UI/status/settings/history producers/consumers, Qt/PyQt/DOM/URL/HTML/runtime/configuration contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Where an affected visited page can initiate a qute GET, old selected handler has no current-tab/method check before dispatching a privileged settings mutation, even without response-read permission. After rejects non-GET operations and canonical settings/set when current_url is not exactly qute://settings/. New NetworkManager supplies actual tab.url or empty on unavailable tab, rather than accepting a page-provided current_url argument from the web. The independently unpredictable token guard handles the mutation consumer as defense in depth. This is one shared CSRF family with the selected settings handler, not another independent code-execution issue.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After local guard bounds canonical settings mutations to the settings tab and GET, with matched caller argument propagation. data_for_url normalizes paths and can redirect other spellings; the token guard still applies after dispatch, so do not certify every alternate URL from the tuple test alone or assume redirects retain all request state. WebEngine initiator/first-party/XHR gates are separate code and depend on Qt version. The global-token multiple-page regression belongs to the settings token producer/checker record and also limits the overall downstream settings flow; this record certifies only the selected canonical method/current-tab gate under a matching current token, not whole-flow multi-page correctness or an independent new origin-guard regression. Empty/no-tab current URL is denied for canonical mutation.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Old selected forwarding boundary and conditional unauthorized settings-mutation delivery are supported; after method/current-tab and token checks are coordinated. Common-context eligibility still needs actual caller/backend/canonicalization/consumer facts absent from the bounded before function. Keep the negative local and the shared token-lifetime regression attributed to its owning settings producer/checker.",
+      "dependence_reason": "Four selected functions/three mechanical families, not four independently adjudicated issues. qute_settings and WebKit handler share the exact CVE/fix/parent and one coordinated request-binding repair; attribute global-token ownership failure to settings producer/checker, not a second independent origin-guard defect. TLS lifecycle and history escaping have different fixes/parents/runtime contracts. Three introduced after-contract failures remain after-only assessments, not three new old security positives. Preserve canonical IDs/source bytes/splits, discovery statuses/categories and source/family/connected-block descriptors; independent identity/backport/lineage adjudication remains pending.",
+      "open_questions": [
+        "Researcher confirm installed Qt/PyQt/backend and actual signal/exception/session/certificate acceptance, successful load and resource admission, page navigation/initiator/canonicalization/credential rules, shared profile/module/multiple-page state, history storage/title/runtime/CSP and actual action triggering. Named Qt5.10.1/5.11.0/5.14.2, CPython3.6.5 and HTML5.2 REC2017 are comparisons, not installed/all-version/deployed proof. Resolve common before-only context/knowledge policy and independent issue/backport identities.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained browser/Qt/PyQt/WebKit/WebEngine/JavaScript/HTML/TLS/certificate/history/settings/configuration/editor/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "mimetype, data = qutescheme.data_for_url(request.url())"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if operation != QNetworkAccessManager.GetOperation:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/webkit/network/networkmanager.py",
+          "ref": "3b9b2bc30ec759c4b978d705a467ef32e32a2bbb",
+          "needle": "'qute': webkitqutescheme.handler"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/webkit/network/networkmanager.py",
+          "ref": "3b9b2bc30ec759c4b978d705a467ef32e32a2bbb",
+          "needle": "result = self._scheme_handlers[scheme](req)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/webkit/network/networkmanager.py",
+          "ref": "43e58ac865ff862c2008c510fc5f7627e10b4660",
+          "needle": "current_url = tab.url()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/webkit/network/networkmanager.py",
+          "ref": "43e58ac865ff862c2008c510fc5f7627e10b4660",
+          "needle": "result = self._scheme_handlers[scheme](req, op, current_url)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if current_url != QUrl('qute://settings/'):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/qutescheme.py",
+          "ref": "43e58ac865ff862c2008c510fc5f7627e10b4660",
+          "needle": "QUrl.NormalizePathSegments |"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/qutescheme.py",
+          "ref": "43e58ac865ff862c2008c510fc5f7627e10b4660",
+          "needle": "if url.password() != csrf_token:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTRACTS.json",
+          "path": "src/corelib/io/qurl.cpp",
+          "ref": "v5.10.1",
+          "needle": "    Returns the password of the URL if it is defined; otherwise\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:273146909520550:207570596490192",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "History title reaches innerHTML through JSON; after HTML-escapes URL data that is assigned directly to href, corrupting ordinary navigation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate certificate verification and exception acceptance from security-status lifecycle/top-level versus subresource host; privileged settings mutation request binding from command execution and response-read access; page-local CSRF transport from process-global token validity; HTML text/markup escaping from DOM URL assignment, HTML MIME and history navigation preservation. New tests or advice alone establish no old selected duty.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old WebKit history trigger emits actual URL/requested URL/title; tabbedbrowser connects this to WebHistory.add_from_tab/add_url. Stored title is NOT NULL and URL is QUrl.RemovePassword|FullyEncoded text; arbitrary None title is not an admitted ordinary witness. qute_history serves json.dumps(history_data(...)) as text/html. Matched history page loads history.js, which requests the data as JSON, then assigns itemTitle to link.innerHTML and itemUrl directly to link.href. Lower-trust visited page title therefore reaches markup interpretation, independent of the separate wrong-MIME direct-data route. Existing history duty is displaying the title and retaining a navigable original URL, not merely serializing arbitrary records.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual backend title/history insertion, SQL field constraints/URL formatting, history page/JS data consumer and custom-scheme/MIME/CSP/script behavior. JSON serialization is not HTML escaping, but JSON returned to a responseType=json consumer is parsed as data first; name the real innerHTML sink rather than claim all JSON automatically executes. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Backend signal/exception/cache/session state, UI/status/settings/history producers/consumers, Qt/PyQt/DOM/URL/HTML/runtime/configuration contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A visited lower-trust site controls its document title, which can be stored and later inserted as privileged history markup when the user opens/loads the history page with scripts permitted. Old template/base/backend response has no additional retained CSP redaction; actual deployed browser policy remains conditional. User navigation to the crafted site and history view are prerequisites, not automatic remote history access. URL storage is already fully URL-encoded; do not use hypothetical unencoded URL angle brackets as the title witness or claim every scheme is thereby safe.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After html.escape makes title markup inert when assigned to innerHTML, but it also HTML-escapes stored URL. Same-ref JS is unchanged and assigns itemUrl directly to the DOM href property, not to parsed HTML. Named CPython3.6.5 replaces & with &amp;; HTML5.2 href setter sets the attribute to the supplied value, without an HTML entity-decoding stage. An ordinary stored HTTPS URL with two query parameters separated by & therefore becomes a different href containing &amp;, altering the second parameter name/meaning. The old QUrl FullyEncoded producer does not turn a legitimate query delimiter into an HTML entity. This is an introduced URL-preservation/navigation regression on valid old history records, not a new XSS positive. Title escaping itself is appropriate at the innerHTML sink; do not certify URL scheme/privileged-origin isolation or invent a None-title crash.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Old stored-title-to-innerHTML boundary and local markup escaping repair are supported, but exact after changes ordinary original URL navigation through its unchanged direct-DOM consumer. Explicitly defer the paired negative for introduced URL-encoding/context regression; preserve actual backend/history policy requirements and no universal XSS/browser-safety certification.",
+      "dependence_reason": "Four selected functions/three mechanical families, not four independently adjudicated issues. qute_settings and WebKit handler share the exact CVE/fix/parent and one coordinated request-binding repair; attribute global-token ownership failure to settings producer/checker, not a second independent origin-guard defect. TLS lifecycle and history escaping have different fixes/parents/runtime contracts. Three introduced after-contract failures remain after-only assessments, not three new old security positives. Preserve canonical IDs/source bytes/splits, discovery statuses/categories and source/family/connected-block descriptors; independent identity/backport/lineage adjudication remains pending.",
+      "open_questions": [
+        "Researcher confirm installed Qt/PyQt/backend and actual signal/exception/session/certificate acceptance, successful load and resource admission, page navigation/initiator/canonicalization/credential rules, shared profile/module/multiple-page state, history storage/title/runtime/CSP and actual action triggering. Named Qt5.10.1/5.11.0/5.14.2, CPython3.6.5 and HTML5.2 REC2017 are comparisons, not installed/all-version/deployed proof. Resolve common before-only context/knowledge policy and independent issue/backport identities.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained browser/Qt/PyQt/WebKit/WebEngine/JavaScript/HTML/TLS/certificate/history/settings/configuration/editor/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return [{\"url\": e.url, \"title\": e.title or e.url, \"time\": e.atime}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return [{\"url\": html.escape(e.url),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/webkit/webkittab.py",
+          "ref": "62d8b5b57497da86ddbfda359ef248e2fe706695",
+          "needle": "self.add_history_item.emit(url, requested_url, self.title())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/mainwindow/tabbedbrowser.py",
+          "ref": "62d8b5b57497da86ddbfda359ef248e2fe706695",
+          "needle": "tab.add_history_item.connect(web_history.add_from_tab)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/history.py",
+          "ref": "62d8b5b57497da86ddbfda359ef248e2fe706695",
+          "needle": "                         constraints={'url': 'PRIMARY KEY',\n                                      'title': 'NOT NULL',\n                                      'last_atime': 'NOT NULL'},\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/browser/history.py",
+          "ref": "62d8b5b57497da86ddbfda359ef248e2fe706695",
+          "needle": "return url.toString(QUrl.RemovePassword | QUrl.FullyEncoded)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return 'text/html', json.dumps(history_data(start_time, offset))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/javascript/history.js",
+          "ref": "62d8b5b57497da86ddbfda359ef248e2fe706695",
+          "needle": "xhr.responseType = \"json\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/javascript/history.js",
+          "ref": "62d8b5b57497da86ddbfda359ef248e2fe706695",
+          "needle": "link.innerHTML = itemTitle;"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/javascript/history.js",
+          "ref": "5a7869f2feaa346853d2a85413d6527c87ef0d9f",
+          "needle": "link.href = itemUrl;"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTEXT.json",
+          "path": "qutebrowser/html/history.html",
+          "ref": "5a7869f2feaa346853d2a85413d6527c87ef0d9f",
+          "needle": "src=\"qute://javascript/history.js\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_DELIVERY.json",
+          "path": "qutebrowser/html/base.html",
+          "ref": "62d8b5b57497da86ddbfda359ef248e2fe706695",
+          "needle": "{% block content %}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTRACTS.json",
+          "path": "Lib/html/__init__.py",
+          "ref": "v3.6.5",
+          "needle": "s = s.replace(\"&\", \"&amp;\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_047_CONTRACTS.json",
+          "path": "links.html",
+          "ref": "REC-html52-20171214",
+          "needle": "attribute’s setter must set this element’s <code>href</code> content attribute’s value to the given value."
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Both versions of the history JS set link.href = itemUrl directly. After changes the selected URL field to html.escape(e.url), which replaces a legitimate query & delimiter with literal &amp;. HTML5.2 DOM href setter stores the given attribute value rather than HTML-parsing character references, so a normal stored two-parameter URL navigates with changed query text. Old matched QUrl FullyEncoded history producer stores valid URL delimiters, and old projection passed them unchanged. This introduced selected producer/consumer navigation regression is distinct from correct title escaping at innerHTML and is not a new security-positive or a None-title exception."
+    }
+  ]
+}

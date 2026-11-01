@@ -1,0 +1,1277 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-020",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All18 Waitress training candidates, including eight null-category ambiguous/excluded components.",
+  "selection_rule": {
+    "repository": "github.com/pylons/waitress",
+    "discovery_categories": [
+      "SEC-HTTP-FRAMING-DISAGREEMENT",
+      "SEC-SOCKET-LIFECYCLE-RACE",
+      null
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 811,
+    "sha256": "a8458c2712f92ddee97ecf55a8c85c861a310552b024ceb487949d2f4e3cfb11"
+  },
+  "interpretation": "Training-only exact historical contracts reviewed as inert source. Distinguish RFC-permitted LF from differential-proxy security, body hardening from header/TE blame, early fragmented-chunk regression from its different-after follow-up, old configured header limit from new fragmented double count, ASCII-field repair from retained Python3 OBS_TEXT normalization, reachable chunk dollar-anchor residual from upstream-blocked header-LF speculation, and task-thread close ownership from new default-preserving plumbing/main-loop siblings. All18 rows/four mechanical families remain provisional, not independently adjudicated issues. Preserve all811 discovery events, taxonomy, splits, source bytes and45 protected release inputs. No application/dependency program, parser/regex, socket/server/network/proxy/thread, payload or upstream test executes.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2019-16785:0:waitress/parser.py:HTTPRequestParser.parse_header",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "LF start-line acceptance differs from a CRLF-only frontend.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old HTTP parser/channel accepts network bytes, returns a consumed offset and queues remaining bytes as another request. RFC7230 MAY recognize bare LF, so old LF acceptance alone is not an unconditional protocol bug. Retained advisory and matched old consumers support a security defect only in a differential frontend/reuse deployment. Selected old start-line find(LF) and rstrip accept an earlier line boundary; after chooses CRLF and checks retained embedded CR/LF.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched parse_header/received/header-line/end-marker chain, channel data slicing, frontend acceptance/forwarding and backend reuse. A helper return value alone is not an exploit; chunk-trailer use does not automatically inherit request-header impact. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "An attacker must be able to send ambiguous bytes through a front end that accepts/forwards them with a different framing decision, and a backend connection must remain usable for the extra request interpretation. Rejection/normalization, disabled reuse or matching parsers can remove this path. Public advisories describe a realistic conditional boundary but do not pin one actual frontend version/configuration or victim/cache/auth consequence. No generic bypass follows solely from a permissive backend parser.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Bounded change selects the first CRLF and rejects retained embedded separators. rstrip occurs before the explicit first-line check, so do not claim all suffix bare-CR/LF spellings are rejected; later TE/field grammar and sibling chunk-state failures are outside this bounded negative.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Preserve the bounded source mechanism while realistic selected frontend/delivery or independent hardening impact remains unsettled.",
+      "dependence_reason": "Preserve fix-family:213a673d664e955ece74 and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "index = header_plus.find(b\"\\n\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "index = header_plus.find(b\"\\r\\n\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "8eba394ad75deaf9e5cd15b78a3d16b12e6b0eba^",
+          "needle": "n = request.received(data)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "8eba394ad75deaf9e5cd15b78a3d16b12e6b0eba^",
+          "needle": "data = data[n:]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "8eba394ad75deaf9e5cd15b78a3d16b12e6b0eba^",
+          "needle": "requests.append(request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2019/16xxx/CVE-2019-16785.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress through version 1.3.1 implemented a \\\"MAY\\\" part of the RFC7230 which states: \\\"Although the line terminator for the start-line and header fields is the sequence CRLF, a recipient MAY recognize a single LF as a line terminator and ignore any preceding CR.\\\" Unfortunately if a front-end server does not parse header fields with an LF the same way as it does those with a CRLF it can lead to the front-end and the back-end server parsing the same HTTP message in two different ways. This can lead to a potential for HTTP request smuggling/splitting whereby Waitress may see two requests while the front-end server only sees a single HTTP message. This issue is fixed in Waitress 1.4.0.\"\n                }\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2019-16785:0:waitress/parser.py:get_header_lines",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "LF field splitting differs from a CRLF-only frontend.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old HTTP parser/channel accepts network bytes, returns a consumed offset and queues remaining bytes as another request. RFC7230 MAY recognize bare LF, so old LF acceptance alone is not an unconditional protocol bug. Retained advisory and matched old consumers support a security defect only in a differential frontend/reuse deployment. Selected old helper recognizes LF-separated fields and folded continuations; after uses CRLF and rejects embedded CR/LF in each line.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched parse_header/received/header-line/end-marker chain, channel data slicing, frontend acceptance/forwarding and backend reuse. A helper return value alone is not an exploit; chunk-trailer use does not automatically inherit request-header impact. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "An attacker must be able to send ambiguous bytes through a front end that accepts/forwards them with a different framing decision, and a backend connection must remain usable for the extra request interpretation. Rejection/normalization, disabled reuse or matching parsers can remove this path. Public advisories describe a realistic conditional boundary but do not pin one actual frontend version/configuration or victim/cache/auth consequence. No generic bypass follows solely from a permissive backend parser.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For header fields containing a non-CRLF line separator after the start line, after no longer splits it into a new field and raises. No claim of strict field-name/value grammar, TE policy, start-line normalization, resource bounds or complete anti-smuggling behavior.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Preserve the bounded source mechanism while realistic selected frontend/delivery or independent hardening impact remains unsettled.",
+      "dependence_reason": "Preserve fix-family:213a673d664e955ece74 and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "lines = header.split(b\"\\n\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "lines = header.split(b\"\\r\\n\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "8eba394ad75deaf9e5cd15b78a3d16b12e6b0eba^",
+          "needle": "n = request.received(data)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "8eba394ad75deaf9e5cd15b78a3d16b12e6b0eba^",
+          "needle": "data = data[n:]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "8eba394ad75deaf9e5cd15b78a3d16b12e6b0eba^",
+          "needle": "requests.append(request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2019/16xxx/CVE-2019-16785.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress through version 1.3.1 implemented a \\\"MAY\\\" part of the RFC7230 which states: \\\"Although the line terminator for the start-line and header fields is the sequence CRLF, a recipient MAY recognize a single LF as a line terminator and ignore any preceding CR.\\\" Unfortunately if a front-end server does not parse header fields with an LF the same way as it does those with a CRLF it can lead to the front-end and the back-end server parsing the same HTTP message in two different ways. This can lead to a potential for HTTP request smuggling/splitting whereby Waitress may see two requests while the front-end server only sees a single HTTP message. This issue is fixed in Waitress 1.4.0.\"\n                }\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2019-16785:0:waitress/receiver.py:ChunkedReceiver.received",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Chunk LF tolerance is tightened without an established selected exploit; new end validation breaks fragmented CRLF.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old receiver accepts valid chunked streams delivered over arbitrary socket-read boundaries. It also accepts LF control/trailer syntax and effectively skips chunk terminators as empty lines. Release notes explicitly say the maintainer does not believe the LF chunk tolerance could lead to a security issue. That hardening cannot inherit start-line/header or TE-selection exploitability. Old valid-stream acceptance duty is separate from proving a before-side security defect.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact body receiver state, parser br.error propagation, network-read segmentation, strict helper changes and one specific differential frontend. The two records have the same selected before hash but different after hashes: compare coherent versions, never the new validator with old or later state initialization. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "An attacker must be able to send ambiguous bytes through a front end that accepts/forwards them with a different framing decision, and a backend connection must remain usable for the extra request interpretation. Rejection/normalization, disabled reuse or matching parsers can remove this path. Public advisories describe a realistic conditional boundary but do not pin one actual frontend version/configuration or victim/cache/auth consequence. No generic bypass follows solely from a permissive backend parser.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Early after sets validate_chunk_end when chunk data ends, then immediately searches the next supplied bytes for a full CRLF. A valid delimiter split after CR supplies one byte, is treated as BadRequest and all_chunks_received=True rather than retained. Old control-line buffering could accept that ordinary fragmentation. Preserve this introduced functional regression separately from unresolved old security attribution; no clean after-negative is approved.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Preserve the bounded source mechanism while realistic selected frontend/delivery or independent hardening impact remains unsettled.",
+      "dependence_reason": "Preserve fix-family:213a673d664e955ece74 and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "pos = s.find(b\"\\n\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "elif self.validate_chunk_end:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "s = self.control_line + s"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.validate_chunk_end = False"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "CHANGES.txt",
+          "ref": "f11093a6b3240fc26830b6111e826128af7771c3",
+          "needle": "maintainer doesn't believe this could lead to a security"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "8eba394ad75deaf9e5cd15b78a3d16b12e6b0eba^",
+          "needle": "data = self.recv(self.adj.recv_bytes)"
+        }
+      ],
+      "additional_after_concerns": [
+        "Introduced valid fragmented-CRLF rejection in the early after state. No dependency/parser is executed."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2019-16785:0:waitress/utilities.py:find_double_newline",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "LF-based end-marker selection gives a different consumed boundary from a CRLF-only frontend.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old HTTP parser/channel accepts network bytes, returns a consumed offset and queues remaining bytes as another request. RFC7230 MAY recognize bare LF, so old LF acceptance alone is not an unconditional protocol bug. Retained advisory and matched old consumers support a security defect only in a differential frontend/reuse deployment. Old helper recognizes LF-LF and LF-CRLF, returning the earliest consumed offset. New helper recognizes only CRLF-CRLF; request and chunk-trailer callers are distinct.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched parse_header/received/header-line/end-marker chain, channel data slicing, frontend acceptance/forwarding and backend reuse. A helper return value alone is not an exploit; chunk-trailer use does not automatically inherit request-header impact. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "An attacker must be able to send ambiguous bytes through a front end that accepts/forwards them with a different framing decision, and a backend connection must remain usable for the extra request interpretation. Rejection/normalization, disabled reuse or matching parsers can remove this path. Public advisories describe a realistic conditional boundary but do not pin one actual frontend version/configuration or victim/cache/auth consequence. No generic bypass follows solely from a permissive backend parser.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For the witnessed LF-only end markers, after returns no boundary until CRLF-CRLF. No claim that a strict end-marker helper alone fixes field parsing, chunk streaming, all pipeline behavior or proxy disagreement.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Preserve the bounded source mechanism while realistic selected frontend/delivery or independent hardening impact remains unsettled.",
+      "dependence_reason": "Preserve fix-family:213a673d664e955ece74 and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "pos2 = s.find(b\"\\n\\n\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "pos = s.find(b\"\\r\\n\\r\\n\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "8eba394ad75deaf9e5cd15b78a3d16b12e6b0eba^",
+          "needle": "n = request.received(data)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "8eba394ad75deaf9e5cd15b78a3d16b12e6b0eba^",
+          "needle": "data = data[n:]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "8eba394ad75deaf9e5cd15b78a3d16b12e6b0eba^",
+          "needle": "requests.append(request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2019/16xxx/CVE-2019-16785.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress through version 1.3.1 implemented a \\\"MAY\\\" part of the RFC7230 which states: \\\"Although the line terminator for the start-line and header fields is the sequence CRLF, a recipient MAY recognize a single LF as a line terminator and ignore any preceding CR.\\\" Unfortunately if a front-end server does not parse header fields with an LF the same way as it does those with a CRLF it can lead to the front-end and the back-end server parsing the same HTTP message in two different ways. This can lead to a potential for HTTP request smuggling/splitting whereby Waitress may see two requests while the front-end server only sees a single HTTP message. This issue is fixed in Waitress 1.4.0.\"\n                }\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2019-16786:0:waitress/parser.py:HTTPRequestParser.parse_header",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Exact chunked string check silently falls back to Content-Length for a coding list.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected parser chooses chunked only for exact case-insensitive chunked. For a forwarded gzip, chunked list it instead sets a fixed-length receiver from Content-Length, while a relevant frontend uses TE framing. Existing server/pipeline consumption and the advisory establish the conditional old security duty, not an obligation to implement gzip. New list validation correctly rejects unsupported codings with501 instead of using CL.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old TE/CL grammar and receiver setup, frontend forwarding/reuse, parser exception translation, task close path and channel consumed-byte slicing. RFC optional LF policy is a separate sibling mechanism within this broad patch. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "An attacker must be able to send ambiguous bytes through a front end that accepts/forwards them with a different framing decision, and a backend connection must remain usable for the extra request interpretation. Rejection/normalization, disabled reuse or matching parsers can remove this path. Public advisories describe a realistic conditional boundary but do not pin one actual frontend version/configuration or victim/cache/auth consequence. No generic bypass follows solely from a permissive backend parser.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For the gzip, chunked witness, after refuses unsupported gzip rather than falling through to CL; case/folding normalizations are bounded. Empty/repeated coding tokens, Unicode whitespace, invalid lengths, full header grammar and all proxy combinations are not certified. The following16789 begins exactly at this after hash and retains further grammar/normalization concerns.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Preserve the bounded source mechanism while realistic selected frontend/delivery or independent hardening impact remains unsettled.",
+      "dependence_reason": "Preserve fix-family:213a673d664e955ece74 and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if te.lower() == \"chunked\":"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if encoding not in {\"chunked\"}:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    raise TransferEncodingNotImplemented(\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except TransferEncodingNotImplemented as e:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "f11093a6b3240fc26830b6111e826128af7771c3^",
+          "needle": "data = data[n:]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2019/16xxx/CVE-2019-16786.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress through version 1.3.1 would parse the Transfer-Encoding header and only look for a single string value, if that value was not chunked it would fall through and use the Content-Length header instead. According to the HTTP standard Transfer-Encoding should be a comma separated list, with the inner-most encoding first, followed by any further transfer codings, ending with chunked. Requests sent with: \\\"Transfer-Encoding: gzip, chunked\\\" would incorrectly get ignored, and the request would use a Content-Length header instead to determine the body size of the HTTP message. This could allow for Waitress to treat a single request as multiple requests in the case of HTTP pipelining. This issue is fixed in Waitress 1.4.0.\"\n                }\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "CHANGES.txt",
+          "ref": "f11093a6b3240fc26830b6111e826128af7771c3",
+          "needle": "it does not support"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2019-16786:0:waitress/parser.py:HTTPRequestParser.received",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Completed headers bypass the configured size check before; the repair double-counts fragmented prefixes.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact pre-fix arguments docs promise max_request_header_size as maximum combined header bytes. Old received only increments/checks in the no-terminator branch; a completed header can bypass a small configured limit, including a one-read header when recv_bytes exceeds that limit. Selected old functional enforcement duty is established, independently of the TE CVE. Default recv-size and resource impact prevent assuming arbitrary unbounded input or a separate demonstrated DoS.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old max-header promise, recv_bytes, existing prefix length, find_double_newline consumed offset, matched exception/header parser and close/error handling. Unsupported-TE exception handling is newly coordinated with parse_header, not an old exception this function swallowed. Latest discovery stays ambiguous/null for security/category scope; functional accounting support alone does not silently relabel it. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The documented configured limit is enforced incompletely, but actual default recv bounds, allocation/parse cost, concurrency and reachable server settings are required to call this a separate resource-exhaustion vulnerability. It is not the disclosed TE-framing sink. Preserve the functional bypass and introduced double-count witness without inferring standalone DoS.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "New complete-header branch adds index of the entire accumulated s to header_bytes_received, which already counted earlier prefix bytes. For a valid100-byte header delivered as60-byte unfinished prefix then40-byte completion, with limit150, old accepts while after counts60+100=160 and returns431. This introduced segmentation-dependent rejection violates the existing valid-under-limit streaming duty. Size-boundary equality policy and exact resource/security impact remain separate; no clean after negative.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Withhold a clean after-function negative for the recorded introduced or retained contract failure, even where one narrower repair is supported.",
+      "dependence_reason": "Preserve fix-family:213a673d664e955ece74 and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.header_bytes_received += datalen"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.header_bytes_received += index"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "docs/arguments.rst",
+          "ref": "f11093a6b3240fc26830b6111e826128af7771c3^",
+          "needle": "Maximum number of bytes of all request headers combined"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "f11093a6b3240fc26830b6111e826128af7771c3^",
+          "needle": "data = self.recv(self.adj.recv_bytes)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "s = self.header_plus + data"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "consumed = datalen - (len(s) - index)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Earlier unfinished prefix bytes are counted a second time when the full header terminator arrives; a valid100-byte/60+40 split below150 is newly rejected. This is a source-deduced introduced accounting/streaming regression, not a reproduced HTTP request."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2019-16786:0:waitress/receiver.py:ChunkedReceiver.received",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Chunk LF tolerance is tightened without an established selected exploit; later end validation buffers fragmented CRLF.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old receiver accepts valid chunked streams delivered over arbitrary socket-read boundaries. It also accepts LF control/trailer syntax and effectively skips chunk terminators as empty lines. Release notes explicitly say the maintainer does not believe the LF chunk tolerance could lead to a security issue. That hardening cannot inherit start-line/header or TE-selection exploitability. Old valid-stream acceptance duty is separate from proving a before-side security defect.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact body receiver state, parser br.error propagation, network-read segmentation, strict helper changes and one specific differential frontend. The two records have the same selected before hash but different after hashes: compare coherent versions, never the new validator with old or later state initialization. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "An attacker must be able to send ambiguous bytes through a front end that accepts/forwards them with a different framing decision, and a backend connection must remain usable for the extra request interpretation. Rejection/normalization, disabled reuse or matching parsers can remove this path. Public advisories describe a realistic conditional boundary but do not pin one actual frontend version/configuration or victim/cache/auth consequence. No generic bypass follows solely from a permissive backend parser.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Later after buffers a one-byte chunk_end and waits for its LF, avoiding the early after regression on the same valid split. That is not evidence of an old same-before defect newly repaired here: the early faulty after was not this before. Remaining numeric/extension permissiveness later repaired in2022 stays explicit; security/delivery negative is unapproved.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Preserve the bounded source mechanism while realistic selected frontend/delivery or independent hardening impact remains unsettled.",
+      "dependence_reason": "Preserve fix-family:213a673d664e955ece74 and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "pos = s.find(b\"\\n\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "elif self.validate_chunk_end:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "s = self.control_line + s"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.validate_chunk_end = False"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "CHANGES.txt",
+          "ref": "f11093a6b3240fc26830b6111e826128af7771c3",
+          "needle": "maintainer doesn't believe this could lead to a security"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "8eba394ad75deaf9e5cd15b78a3d16b12e6b0eba^",
+          "needle": "data = self.recv(self.adj.recv_bytes)"
+        }
+      ],
+      "additional_after_concerns": [
+        "Same-before later after fixes the early after fragmentation handling; permissive numeric sizes/extensions remain until the linked2022 follow-up. No universal strictness negative."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2019-16786:0:waitress/task.py:ErrorTask.execute",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Error response always announces an already enforced connection close.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Old ErrorTask already sets close_on_finish=True and channel service closes after flushing. New Connection: close announcement is a real output change but does not repair TE selection, pipelined boundary interpretation or old failure to close. Maintainer describes notification/friendliness, not this selected method as the security sink. No established strict old consumer failure from missing announcement is retained; do not invent one from the advisory title.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need complete task service/write header assembly and channel task-close lifecycle. Reconsider scope if researcher establishes a prior externally consumed header obligation; do not classify all protocol signaling as mere style. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Selected change is equivalent regex relocation, close announcement or main-loop-only interface forwarding; no isolated prior socket race or differential message-boundary repair is established here.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old-positive/after-negative security pair is established. Close remains enforced both sides; new header announcement does not certify universal HTTP/connection behavior or make its sibling parser repairs resident here.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "No established selected old runtime/semantic defect is isolated by this equivalent or ancillary edit; preserve canonical row and researcher decision.",
+      "dependence_reason": "Preserve fix-family:213a673d664e955ece74 and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if self.version == \"1.1\":"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.response_headers.append((\"Connection\", \"close\"))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            except socket.error:\n                self.close_on_finish = True\n                if self.channel.adj.log_socket_errors:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/channel.py",
+          "ref": "f11093a6b3240fc26830b6111e826128af7771c3^",
+          "needle": "self.close_when_flushed = True"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "CHANGES.txt",
+          "ref": "f11093a6b3240fc26830b6111e826128af7771c3",
+          "needle": "Waitress used to slam the door shut"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2019-16789:0:waitress/parser.py:HTTPRequestParser.parse_header",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "RFC field grammar rejects malformed ASCII control syntax but retains Unicode TE whitespace normalization.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old parser accepts/strips malformed ASCII value controls such as vertical tab in Transfer-Encoding; the stricter field grammar excludes those controls and prevents their later normalization to chunked under a relevant CL-using frontend. However grammar explicitly permits OBS_TEXT80-FF, and after still decodes field bytes to Unicode on Python3 then applies unrestricted encoding.strip(). Old support includes Python3.7. This is a partial repair of existing differential-framing duty, not proof every advisory whitespace case is fixed.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact new HEADER_FIELD grammar, matched tostr Latin1/Python3 branch, Unicode whitespace semantics, after TE normalization and frontend/reuse delivery. CPython3.7.5 is a retained historical comparison, not installed-version proof. Earlier16786 after equals this before; new grammar existed nowhere in that old parse path. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "An attacker must be able to send ambiguous bytes through a front end that accepts/forwards them with a different framing decision, and a backend connection must remain usable for the extra request interpretation. Rejection/normalization, disabled reuse or matching parsers can remove this path. Public advisories describe a realistic conditional boundary but do not pin one actual frontend version/configuration or victim/cache/auth consequence. No generic bypass follows solely from a permissive backend parser.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After grammar accepts an OBS_TEXT byte85 before chunked. Matched Python3 tostr decodes it to U+0085; unrestricted Unicode strip removes that whitespace and chooses ChunkedReceiver where a frontend treating invalid TE as absent may choose CL. Before already did this. Retain this after residual for the same framing contract as unresolved_contract_failure, without inventing introduction or a tested deployment. Newly rejected vertical-tab cases remain bounded successes.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Withhold a clean after-function negative for the recorded introduced or retained contract failure, even where one narrower repair is supported.",
+      "dependence_reason": "Preserve fix-family:a8d9a92c450ae9e0f04b and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "index = line.find(b\":\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "header = HEADER_FIELD.match(line)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "encoding.strip().lower()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/rfc7230.py",
+          "ref": "11d9e138125ad46e951027184b13242a3c1de017",
+          "needle": "OBS_TEXT = r\"\\x80-\\xff\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "waitress/rfc7230.py",
+          "ref": "11d9e138125ad46e951027184b13242a3c1de017",
+          "needle": "FIELD_VCHAR = \"[\" + VCHAR + OBS_TEXT + \"]\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_RUNTIME.json",
+          "path": "waitress/compat.py",
+          "ref": "11d9e138125ad46e951027184b13242a3c1de017",
+          "needle": "return str(s, \"latin-1\", \"strict\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_RUNTIME.json",
+          "path": "Objects/unicodetype_db.h",
+          "ref": "v3.7.5",
+          "needle": "int _PyUnicode_IsWhitespace("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_RUNTIME.json",
+          "path": "Objects/unicodetype_db.h",
+          "ref": "v3.7.5",
+          "needle": "    case 0x0020:\n    case 0x0085:\n    case 0x00A0:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "setup.py",
+          "ref": "8eba394ad75deaf9e5cd15b78a3d16b12e6b0eba^",
+          "needle": "Programming Language :: Python :: 3.7"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2019/16xxx/CVE-2019-16789.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"In Waitress through version 1.4.0, if a proxy server is used in front of waitress, an invalid request may be sent by an attacker that bypasses the front-end and is parsed differently by waitress leading to a potential for HTTP request smuggling. Specially crafted requests containing special whitespace characters in the Transfer-Encoding header would get parsed by Waitress as being a chunked request, but a front-end server would use the Content-Length instead as the Transfer-Encoding header is considered invalid due to containing invalid characters. If a front-end server does HTTP pipelining to a backend Waitress server this could lead to HTTP request splitting which may lead to potential cache poisoning or unexpected information disclosure. This issue is fixed in Waitress 1.4.1 through more strict HTTP field validation.\"\n                }\n"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Python3 OBS_TEXT85 passes the new general header grammar and is still normalized away by unrestricted Unicode TE strip. This was already accepted before. Preserve conditional frontend delivery and a residual after failure of the advertised whitespace/framing repair, not an introduced grammar defect or universal impact."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24761:0:src/waitress/parser.py:HTTPRequestParser.parse_header",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Permissive decimal int admission lets signed Content-Length choose a backend body boundary.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old parser directly converts header text with int; e.g. signed decimal text is accepted despite HTTP digit-only grammar. For a frontend that forwards it with another framing decision, the backend can consume another boundary. New ONLY_DIGIT_RE is checked before int. HTTP2 conversion, duplicate/TE policy and actual proxy forwarding are separate from this old narrow admission defect.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need new global numeric regex, exact header-line/field validation, fixed stream receiver and channel error/consumed-byte lifecycle, plus frontend delivery. The bare $ pattern is not a full-string anchor in Python, but actual header input has already passed get_header_lines rejecting any embedded CR/LF. Do not claim a reachable terminal-LF CL bypass just from regex isolation. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "An attacker must be able to send ambiguous bytes through a front end that accepts/forwards them with a different framing decision, and a backend connection must remain usable for the extra request interpretation. Rejection/normalization, disabled reuse or matching parsers can remove this path. Public advisories describe a realistic conditional boundary but do not pin one actual frontend version/configuration or victim/cache/auth consequence. No generic bypass follows solely from a permissive backend parser.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After rejects signed/nondecimal digit witnesses before setting a fixed-length receiver. Ordinary proposed terminal-LF regex witness is rejected upstream by get_header_lines in the coherent request path, so no residual CL failure is asserted on that basis. No universal smuggling, numeric-size/CPU/memory or proxy safety negative.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Preserve the bounded source mechanism while realistic selected frontend/delivery or independent hardening impact remains unsettled.",
+      "dependence_reason": "Preserve fix-family:d12e4a424ba76f642fdf and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "cl = int(headers.get(\"CONTENT_LENGTH\", 0))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ONLY_DIGIT_RE.match(cl.encode(\"latin-1\")):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "src/waitress/rfc7230.py",
+          "ref": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+          "needle": "ONLY_DIGIT_RE ="
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if b\"\\r\" in line or b\"\\n\" in line:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_RUNTIME.json",
+          "path": "Doc/library/re.rst",
+          "ref": "v3.7.5",
+          "needle": "Matches the end of the string or just before the newline"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2022/24xxx/CVE-2022-24761.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress is a Web Server Gateway Interface server for Python 2 and 3. When using Waitress versions 2.1.0 and prior behind a proxy that does not properly validate the incoming HTTP request matches the RFC7230 standard, Waitress and the frontend proxy may disagree on where one request starts and where it ends. This would allow requests to be smuggled via the front-end proxy to waitress and later behavior. There are two classes of vulnerability that may lead to request smuggling that are addressed by this advisory: The use of Python's `int()` to parse strings into integers, leading to `+10` to be parsed as `10`, or `0x01` to be parsed as `1`, where as the standard specifies that the string should contain only digits or hex digits; and Waitress does not support chunk extensions, however it was discarding them without validating that they did not contain illegal characters. This vulnerability has been patched in Waitress 2.1.1. A workaround is available. When deploying a proxy in front of waitress, turning on any and all functionality to make sure that the request matches the RFC7230 standard. Certain proxy servers may not have this functionality though and users are encouraged to upgrade to the latest version of waitress instead.\"\n                }\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24761:0:src/waitress/receiver.py:ChunkedReceiver.received",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Hex/extension validation repairs broad chunk admission but dollar anchors retain a terminal-LF route.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old receiver strips chunk-size lines, discards unchecked extension info and accepts Python int base16 prefixes/signs. Advisory identifies numeric and extension differential-framing classes, conditional on frontend acceptance/forwarding. New regex checks reject the witnessed signs/prefixes and invalid extensions before conversion. The actual chunk control line, unlike request header fields, has no preceding get_header_lines CR/LF rejection.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need complete chunk/control/end/trailer state, global hex/extension grammar, Python $ anchor semantics and int trailing-whitespace behavior, parser br.error propagation, frontend/reuse delivery and coherent prior versions. This before equals the later2019 after; one trajectory does not establish independent issue counts. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "An attacker must be able to send ambiguous bytes through a front end that accepts/forwards them with a different framing decision, and a backend connection must remain usable for the extra request interpretation. Rejection/normalization, disabled reuse or matching parsers can remove this path. Public advisories describe a realistic conditional boundary but do not pin one actual frontend version/configuration or victim/cache/auth consequence. No generic bypass follows solely from a permissive backend parser.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "New ONLY_HEXDIG_RE uses ^[0-9a-fA-F]+$ with match. A chunk control line consisting of hex digit1 then a bare LF immediately before its CRLF delimiter is matched before the final LF; int still accepts that trailing whitespace, so a non-HEXDIG size spelling is consumed as1. No header-line prefilter exists on this chunk path. CHUNK_EXT_RE has the same terminal-LF anchor limitation. Before already stripped/accepted these cases: retain residual, not newly introduced, failure of strict chunk admission. No regex, int or bytes are executed as a parser.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Withhold a clean after-function negative for the recorded introduced or retained contract failure, even where one narrower repair is supported.",
+      "dependence_reason": "Preserve fix-family:d12e4a424ba76f642fdf and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "sz = int(line.strip(), 16)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ONLY_HEXDIG_RE.match(line):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "src/waitress/rfc7230.py",
+          "ref": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+          "needle": "ONLY_HEXDIG_RE ="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "src/waitress/rfc7230.py",
+          "ref": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+          "needle": "CHUNK_EXT_RE ="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_RUNTIME.json",
+          "path": "Doc/library/re.rst",
+          "ref": "v3.7.5",
+          "needle": "Matches the end of the string or just before the newline"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "line = s[:pos]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "sz = int(line, 16)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2022/24xxx/CVE-2022-24761.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress is a Web Server Gateway Interface server for Python 2 and 3. When using Waitress versions 2.1.0 and prior behind a proxy that does not properly validate the incoming HTTP request matches the RFC7230 standard, Waitress and the frontend proxy may disagree on where one request starts and where it ends. This would allow requests to be smuggled via the front-end proxy to waitress and later behavior. There are two classes of vulnerability that may lead to request smuggling that are addressed by this advisory: The use of Python's `int()` to parse strings into integers, leading to `+10` to be parsed as `10`, or `0x01` to be parsed as `1`, where as the standard specifies that the string should contain only digits or hex digits; and Waitress does not support chunk extensions, however it was discarding them without validating that they did not contain illegal characters. This vulnerability has been patched in Waitress 2.1.1. A workaround is available. When deploying a proxy in front of waitress, turning on any and all functionality to make sure that the request matches the RFC7230 standard. Certain proxy servers may not have this functionality though and users are encouraged to upgrade to the latest version of waitress instead.\"\n                }\n"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Terminal bare-LF in a chunk control line survives the new dollar-anchored match and int whitespace tolerance on the actual body path; no header prefilter applies. Before already accepted it. Bounded sign/prefix/extension rejections do not certify an entirely strict after negative; real frontend delivery remains pending."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24761:0:src/waitress/utilities.py:undquote",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Quoted-string helper uses equivalent relocated regex globals.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Old qdtext/quoted-pair/string constructions in utilities are equivalent to the renamed definitions moved into rfc7230. Both selected versions validate quoted strings, explicitly require matches.end()==len(value), remove surrounding quotes and unescape quoted pairs; unquoted pass-through and ValueError behavior are unchanged. Numeric/chunk admission fixes are in sibling functions.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old and new regex definitions/imports to establish equivalence; a name substitution in the selected function alone would not prove it. Full-match end check is already present, unlike sibling numeric regex use. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Selected change is equivalent regex relocation, close announcement or main-loop-only interface forwarding; no isolated prior socket race or differential message-boundary repair is established here.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No selected runtime repair or paired old-positive/new-negative example is established. Do not inherit extension validation or numeric framing security from the shared commit, and do not infer universal safe quoting from equivalence.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "No established selected old runtime/semantic defect is isolated by this equivalent or ancillary edit; preserve canonical row and researcher decision.",
+      "dependence_reason": "Preserve fix-family:d12e4a424ba76f642fdf and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "matches = quoted_string.match(value)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "matches = QUOTED_STRING_RE.match(value)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "quoted_string_re ="
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "quoted_pair_re ="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "src/waitress/rfc7230.py",
+          "ref": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+          "needle": "QUOTED_STRING ="
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "src/waitress/rfc7230.py",
+          "ref": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+          "needle": "QUOTED_PAIR ="
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-31015:0:src/waitress/channel.py:HTTPChannel._flush_exception",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "New do_close option is forwarded by a coordinated exception wrapper.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old worker-to-main-loop ownership duty is established for the actual race path, but this selected old helper did not accept a close-policy option and discard it. New do_close=True preserves default behavior and allows newly updated worker callers to passFalse; the source sink guard is in dispatcher.send. It is enabling plumbing, not independently another local failure or a newly supported general public API contract.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matching write_soon/high-watermark worker callers, the full forwarding chain, send disconnect branch, main handle_write selection and select/server.run ownership. A mixed new caller with old helper is not a prior failure witness. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "An attacker must be able to send ambiguous bytes through a front end that accepts/forwards them with a different framing decision, and a backend connection must remain usable for the extra request interpretation. Rejection/normalization, disabled reuse or matching parsers can remove this path. Public advisories describe a realistic conditional boundary but do not pin one actual frontend version/configuration or victim/cache/auth consequence. No generic bypass follows solely from a permissive backend parser.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Only coherent after worker calls withFalse suppress synchronous close. DefaultTrue still permits intended main-loop closure; no isolated clean helper negative or general buffer/exception/race guarantee is established.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Selected hop enables a coordinated fix but did not previously accept/drop the new policy argument; do not inherit caller or sink blame.",
+      "dependence_reason": "Preserve fix-family:4b26eafb22bb7805cc2d and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return (flush(), False)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return (flush(do_close=do_close), False)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "flush = self._flush_some_if_lockable"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                        self._flush_some, do_close=False\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "\n    def send(self, data):\n        try:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "if do_close:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2022/31xxx/CVE-2022-31015.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress is a Web Server Gateway Interface server for Python 2 and 3. Waitress versions 2.1.0 and 2.1.1 may terminate early due to a thread closing a socket while the main thread is about to call select(). This will lead to the main thread raising an exception that is not handled and then causing the entire application to be killed. This issue has been fixed in Waitress 2.1.2 by no longer allowing the WSGI thread to close the socket. Instead, that is always delegated to the main thread. There is no work-around for this issue. However, users using waitress behind a reverse proxy server are less likely to have issues if the reverse proxy always reads the full response.\"\n                }\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-31015:0:src/waitress/channel.py:HTTPChannel._flush_outbufs_below_high_watermark",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Worker high-watermark flush may synchronously close a socket while main select retains its descriptor.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old channel documents task-thread writes and asynchronous main-loop methods. Worker flush reaches send; a disconnected send calls handle_close synchronously, then dispatcher.close removes the map entry and closes the socket. Main poll has already copied numeric descriptors and only recovers EINTR; EBADF/non-EINTR escapes loop/server.run, threatening process availability. Exact old docs default asyncore_use_poll=False and the public advisory establish this prior ownership duty and affected2.1.x context.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need WSGI worker caller and output thresholds, full _flush_exception/_flush_some/send chain, HTTPChannel.handle_close, numeric-descriptor snapshot, poll exception scope, server.run and eventual main-loop progress. Locks on output buffers do not serialize descriptor collection by select. CPython/OS error and timing are deployment prerequisites, not executed race outcomes. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An unauthenticated/disconnected remote client on an accessible response-producing route can exercise socket-send failure while a WSGI worker flushes buffered data. Under documented default select-based loop, synchronous worker close invalidates a previously collected descriptor and a non-EINTR select error escapes server.run. Advisory affected2.1.0/2.1.1; after delegates close to main loop. Reachable response, output threshold, OS disconnect error and precise scheduling are prerequisites. A full-response-reading reverse proxy reduces exposure; this is a conditional availability boundary, not all deployments or all thread interleavings.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After selected worker entry explicitly passesFalse through both helpers to guarded send; disconnect returns0 without worker close, leaving pending bytes/trigger for main handle_write using defaultTrue to close. Preserve the bounded disconnect-close race repair only; no universal concurrency, poll backend, all worker routes, output-buffer or eventual-delivery guarantee. Main-loop closure and trigger/wait behavior must be judged in the coherent after chain.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported but its essential worker/helper/send/poll ownership chain is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:4b26eafb22bb7805cc2d and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "(_, exception) = self._flush_exception(self._flush_some)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "(_, exception) = self._flush_exception(self._flush_some, do_close=False)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "r, w, e = select.select(r, w, e, timeout)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "            r, w, e = select.select(r, w, e, timeout)\n        except OSError as err:\n            if err.args[0] != EINTR:\n                raise\n            else:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "self.socket.close()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "def handle_close("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "                        self.server.pull_trigger()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "docs/arguments.rst",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "By default ``asyncore.loop()`` uses ``select()``"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "src/waitress/server.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "            )\n        except (SystemExit, KeyboardInterrupt):\n            self.close()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2022/31xxx/CVE-2022-31015.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress is a Web Server Gateway Interface server for Python 2 and 3. Waitress versions 2.1.0 and 2.1.1 may terminate early due to a thread closing a socket while the main thread is about to call select(). This will lead to the main thread raising an exception that is not handled and then causing the entire application to be killed. This issue has been fixed in Waitress 2.1.2 by no longer allowing the WSGI thread to close the socket. Instead, that is always delegated to the main thread. There is no work-around for this issue. However, users using waitress behind a reverse proxy server are less likely to have issues if the reverse proxy always reads the full response.\"\n                }\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-31015:0:src/waitress/channel.py:HTTPChannel._flush_some",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "New do_close option is forwarded by a coordinated buffer-flush loop.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old worker-to-main-loop ownership duty is established for the actual race path, but this selected old helper did not accept a close-policy option and discard it. New do_close=True preserves default behavior and allows newly updated worker callers to passFalse; the source sink guard is in dispatcher.send. It is enabling plumbing, not independently another local failure or a newly supported general public API contract.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matching write_soon/high-watermark worker callers, the full forwarding chain, send disconnect branch, main handle_write selection and select/server.run ownership. A mixed new caller with old helper is not a prior failure witness. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "An attacker must be able to send ambiguous bytes through a front end that accepts/forwards them with a different framing decision, and a backend connection must remain usable for the extra request interpretation. Rejection/normalization, disabled reuse or matching parsers can remove this path. Public advisories describe a realistic conditional boundary but do not pin one actual frontend version/configuration or victim/cache/auth consequence. No generic bypass follows solely from a permissive backend parser.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Only coherent after worker calls withFalse suppress synchronous close. DefaultTrue still permits intended main-loop closure; no isolated clean helper negative or general buffer/exception/race guarantee is established.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Selected hop enables a coordinated fix but did not previously accept/drop the new policy argument; do not inherit caller or sink blame.",
+      "dependence_reason": "Preserve fix-family:4b26eafb22bb7805cc2d and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "num_sent = self.send(chunk)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "num_sent = self.send(chunk, do_close=do_close)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "flush = self._flush_some_if_lockable"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                        self._flush_some, do_close=False\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "\n    def send(self, data):\n        try:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "if do_close:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2022/31xxx/CVE-2022-31015.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress is a Web Server Gateway Interface server for Python 2 and 3. Waitress versions 2.1.0 and 2.1.1 may terminate early due to a thread closing a socket while the main thread is about to call select(). This will lead to the main thread raising an exception that is not handled and then causing the entire application to be killed. This issue has been fixed in Waitress 2.1.2 by no longer allowing the WSGI thread to close the socket. Instead, that is always delegated to the main thread. There is no work-around for this issue. However, users using waitress behind a reverse proxy server are less likely to have issues if the reverse proxy always reads the full response.\"\n                }\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-31015:0:src/waitress/channel.py:HTTPChannel._flush_some_if_lockable",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Main-loop lock wrapper forwards a new close option without changing its existing caller behavior.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Exact channel handle_write chooses this nonblocking wrapper on the asynchronous main event-loop path when a task is running and sufficient data exists. Worker write_soon/high-watermark paths call _flush_some directly. DefaultTrue preserves the intended main-loop closing behavior; no old missing close-policy option or selected worker ownership violation is established for this wrapper.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need complete caller inventory and main-loop/task-thread distinction. Mentioning a task in the locking comment does not mean this helper executes on that task thread. New optional forwarding alone does not prove an old function defect. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Selected change is equivalent regex relocation, close announcement or main-loop-only interface forwarding; no isolated prior socket race or differential message-boundary repair is established here.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated repaired security-positive/after-negative pair. Existing caller still usesTrue/default and locking/notify/release remain unchanged; generic lock correctness, other future callers and race freedom are not certified.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "No established selected old runtime/semantic defect is isolated by this equivalent or ancillary edit; preserve canonical row and researcher decision.",
+      "dependence_reason": "Preserve fix-family:4b26eafb22bb7805cc2d and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            self.sent_continue = True\n            self._flush_some()\n        self.request.completed = False\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._flush_some(do_close=do_close)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "flush = self._flush_some_if_lockable"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._flush_exception(flush)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "def _flush_some_if_lockable(self, do_close=True):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-31015:0:src/waitress/channel.py:HTTPChannel.write_soon",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Worker eager flush may synchronously close a socket while main select retains its descriptor.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old channel documents task-thread writes and asynchronous main-loop methods. Worker flush reaches send; a disconnected send calls handle_close synchronously, then dispatcher.close removes the map entry and closes the socket. Main poll has already copied numeric descriptors and only recovers EINTR; EBADF/non-EINTR escapes loop/server.run, threatening process availability. Exact old docs default asyncore_use_poll=False and the public advisory establish this prior ownership duty and affected2.1.x context.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need WSGI worker caller and output thresholds, full _flush_exception/_flush_some/send chain, HTTPChannel.handle_close, numeric-descriptor snapshot, poll exception scope, server.run and eventual main-loop progress. Locks on output buffers do not serialize descriptor collection by select. CPython/OS error and timing are deployment prerequisites, not executed race outcomes. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An unauthenticated/disconnected remote client on an accessible response-producing route can exercise socket-send failure while a WSGI worker flushes buffered data. Under documented default select-based loop, synchronous worker close invalidates a previously collected descriptor and a non-EINTR select error escapes server.run. Advisory affected2.1.0/2.1.1; after delegates close to main loop. Reachable response, output threshold, OS disconnect error and precise scheduling are prerequisites. A full-response-reading reverse proxy reduces exposure; this is a conditional availability boundary, not all deployments or all thread interleavings.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After selected worker entry explicitly passesFalse through both helpers to guarded send; disconnect returns0 without worker close, leaving pending bytes/trigger for main handle_write using defaultTrue to close. Preserve the bounded disconnect-close race repair only; no universal concurrency, poll backend, all worker routes, output-buffer or eventual-delivery guarantee. Main-loop closure and trigger/wait behavior must be judged in the coherent after chain.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported but its essential worker/helper/send/poll ownership chain is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:4b26eafb22bb7805cc2d and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "(flushed, exception) = self._flush_exception(self._flush_some)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                        self._flush_some, do_close=False\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "r, w, e = select.select(r, w, e, timeout)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "            r, w, e = select.select(r, w, e, timeout)\n        except OSError as err:\n            if err.args[0] != EINTR:\n                raise\n            else:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "self.socket.close()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "def handle_close("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "                        self.server.pull_trigger()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "docs/arguments.rst",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "By default ``asyncore.loop()`` uses ``select()``"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "src/waitress/server.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "            )\n        except (SystemExit, KeyboardInterrupt):\n            self.close()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2022/31xxx/CVE-2022-31015.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress is a Web Server Gateway Interface server for Python 2 and 3. Waitress versions 2.1.0 and 2.1.1 may terminate early due to a thread closing a socket while the main thread is about to call select(). This will lead to the main thread raising an exception that is not handled and then causing the entire application to be killed. This issue has been fixed in Waitress 2.1.2 by no longer allowing the WSGI thread to close the socket. Instead, that is always delegated to the main thread. There is no work-around for this issue. However, users using waitress behind a reverse proxy server are less likely to have issues if the reverse proxy always reads the full response.\"\n                }\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-31015:0:src/waitress/wasyncore.py:dispatcher.send",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Disconnected send unconditionally closes the socket in its calling thread.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old channel documents task-thread writes and asynchronous main-loop methods. Worker flush reaches send; a disconnected send calls handle_close synchronously, then dispatcher.close removes the map entry and closes the socket. Main poll has already copied numeric descriptors and only recovers EINTR; EBADF/non-EINTR escapes loop/server.run, threatening process availability. Exact old docs default asyncore_use_poll=False and the public advisory establish this prior ownership duty and affected2.1.x context.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need WSGI worker caller and output thresholds, full _flush_exception/_flush_some/send chain, HTTPChannel.handle_close, numeric-descriptor snapshot, poll exception scope, server.run and eventual main-loop progress. Locks on output buffers do not serialize descriptor collection by select. CPython/OS error and timing are deployment prerequisites, not executed race outcomes. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An unauthenticated/disconnected remote client on an accessible response-producing route can exercise socket-send failure while a WSGI worker flushes buffered data. Under documented default select-based loop, synchronous worker close invalidates a previously collected descriptor and a non-EINTR select error escapes server.run. Advisory affected2.1.0/2.1.1; after delegates close to main loop. Reachable response, output threshold, OS disconnect error and precise scheduling are prerequisites. A full-response-reading reverse proxy reduces exposure; this is a conditional availability boundary, not all deployments or all thread interleavings.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After send suppresses handle_close only when repaired worker callers passFalse. DefaultTrue is deliberately unchanged for main-loop callers and is not independently safe on a worker. Preserve the bounded disconnect-close race repair only; no universal concurrency, poll backend, all worker routes, output-buffer or eventual-delivery guarantee. Main-loop closure and trigger/wait behavior must be judged in the coherent after chain.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported but its essential worker/helper/send/poll ownership chain is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:4b26eafb22bb7805cc2d and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes.",
+      "open_questions": [
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            elif why.args[0] in _DISCONNECTED:\n                self.handle_close()\n                return 0\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if do_close:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "r, w, e = select.select(r, w, e, timeout)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "            r, w, e = select.select(r, w, e, timeout)\n        except OSError as err:\n            if err.args[0] != EINTR:\n                raise\n            else:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "self.socket.close()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "def handle_close("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "                        self.server.pull_trigger()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "docs/arguments.rst",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "By default ``asyncore.loop()`` uses ``select()``"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "src/waitress/server.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "            )\n        except (SystemExit, KeyboardInterrupt):\n            self.close()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2022/31xxx/CVE-2022-31015.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress is a Web Server Gateway Interface server for Python 2 and 3. Waitress versions 2.1.0 and 2.1.1 may terminate early due to a thread closing a socket while the main thread is about to call select(). This will lead to the main thread raising an exception that is not handled and then causing the entire application to be killed. This issue has been fixed in Waitress 2.1.2 by no longer allowing the WSGI thread to close the socket. Instead, that is always delegated to the main thread. There is no work-around for this issue. However, users using waitress behind a reverse proxy server are less likely to have issues if the reverse proxy always reads the full response.\"\n                }\n"
+        }
+      ]
+    }
+  ]
+}

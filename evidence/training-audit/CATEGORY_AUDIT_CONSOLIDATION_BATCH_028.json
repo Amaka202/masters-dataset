@@ -1,0 +1,673 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-028",
+  "review_date": "2026-10-26",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All seven OpenStack Nova training candidates across every current discovery status, retaining five mechanical families and three protocol-case producer/consumer rows.",
+  "selection_rule": {
+    "repository": "github.com/openstack/nova",
+    "discovery_categories": [
+      "SEC-INPUT-WORK-AMPLIFICATION",
+      "SEC-PATH-CONFINEMENT",
+      "SEC-POLICY-CASE-NORMALIZATION"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 831,
+    "sha256": "9ca57ede950e4495ca81ef3c279a6ff7d312196473e270b47ad37fb68886c5c3"
+  },
+  "interpretation": "Three missing-context deferrals and four explicit paired-negative deferrals. The first injection patch closes ordinary dot-dot traversal but retains a permission-protected symlink failure; the later root readlink helper closes that gap under its utility/privilege contract. The history equality is helper-after to later selected-before, not equality of the two selected functions or an approved family merge. DifferentHostFilter removes hint-count-proportional individual API lookups, not all request/host/instance work or a constant SQL bound. S3 basename confinement applies to the manifest local destination, not the sibling tarball fix or all registration behavior. Protocol normalization repairs new producer/consumer case mismatch, but unmigrated mixed-case rows lose EC2 exact-match revocation and OpenStack exact-repeat rejection; unconditional firewall lower additionally fails on admitted protocol=None group-wide rules, while ICMPv6 type omission is residual. The original seven supported discovery statuses/categories,831-event ledger, canonical hashes/IDs/families/splits and45 protected inputs remain unchanged. Findings are conditional source deductions, not reproduced results; no retained application/dependency program or upstream test executes.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:132813494207412:155029054060270",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Guest personality file path reaches privileged injection; dot-dot repair retains a permission-dependent symlink escape.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep dot-dot path escape, permission-dependent symlink resolution, S3 local destination confinement, hint-count-proportional API lookups and protocol-case enforcement distinct. Five mechanical families/seven rows are not seven independent issues. Preserve existing narrow discovery categories without freezing final security/correctness placement or source/API familiarity policy.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old server API takes personality path and contents, decodes contents and passes (path, contents) through compute injection. Matched libvirt _inject_files calls disk.inject_files, which mounts the guest image and invokes this selected helper. The old raw join strips leading slash but retains dot-dot traversal before privileged mkdir/tee. The existing duty is to modify the mounted guest filesystem, not arbitrary host targets. After the selected injector delegates to a realpath-plus-component-boundary helper, fixing ordinary dot-dot escape while leaving the privilege mismatch described below.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need API personality provenance, libvirt injection enablement, guest mount root, old/new helper and execute privilege semantics. The selected fs/path parameter names alone do not establish remote tenant input or host-root authority. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Callers/helpers, configuration, dependencies, database state, after-code, tests, metadata, CVEs and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An admitted tenant creating/rebuilding an instance can supply personality paths/content processed by the compute host on a mounted image. A traversal with resolvable existing path components can select an outside host destination writable by the root command. Image admission, injection/backend enablement and successful mounting remain prerequisites; this is conditional host-filesystem confinement, not demonstrated code execution or every deployment compromise.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "The new helper uses unprivileged os.path.realpath but the later mkdir/tee run as root. For an attacker-controlled guest-image path with a symlink hidden below a directory not searchable by the Nova service user but searchable by root, historical CPython2.7.3 islink catches lstat failure and returnsFalse; realpath can leave the unresolved lexical path inside fs. The prefix test then passes although the privileged writer follows the symlink outside the guest mount. This is a residual confinement failure already present in the raw-join before path, not established introduction by the fix. The later selected helper explicitly moves canonicalization to root and its before text equals this helper after text. Bound the witness to mounted lower-trust image, non-root service check, appropriate permissions and root writer; no image, symlink, command or filesystem program executes.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Explicit after-contract failure prevents paired-negative use; retain supported old mechanism and separate introduced versus residual behavior.",
+      "dependence_reason": "Preserve fix-family:68104d97740a6e54e0d5 and exact/AST/span/history links. The three protocol-case rows are one producer/consumer fix family, not independent cases. The first file-injection helper after-text matches the later symlink-fix selected before-text, but the first selected function is a different injector; this is explicit helper-history evidence, not a selected-pair exact follow-up link or automatic family merge. S3 manifest handling is not its sibling tarball fix. Independent issue adjudication and experimental representation remain pending.",
+      "open_questions": [
+        "Researcher confirm supported runtime/tool versions, file-injection/backend and filter enablement, user admission, persisted legacy rule state, firewall/IP version and actual security effects, bounded negative/context policies and independent issue identities. No deployed version, exploit or timing/resource measurement is asserted.",
+        "All findings are source deductions, not reproduced results. No Nova/libvirt/VM/mount/filesystem/realpath/readlink/rootwrap/privileged command, scheduler/SQL/DB/policy, firewall/iptables/network, S3/boto/XML/archive/decryption, dependency/application program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "absolute_path = os.path.join(fs, path.lstrip('/'))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "absolute_path = _join_and_check_path_within_fs(fs, path.lstrip('/'))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for (path, contents) in files:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "utils.execute('tee', absolute_path, process_input=contents,"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "absolute_path = os.path.realpath(os.path.join(fs, *args))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "os.path.realpath(fs) + '/'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/api/openstack/compute/servers.py",
+          "ref": "d335457f48d09c3d780c92413fe777030c1335e2",
+          "needle": "path = item['path']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/api/openstack/compute/servers.py",
+          "ref": "d335457f48d09c3d780c92413fe777030c1335e2",
+          "needle": "injected_files.append((path, contents))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/api/openstack/compute/servers.py",
+          "ref": "d335457f48d09c3d780c92413fe777030c1335e2",
+          "needle": "injected_files=injected_files"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_DELIVERY.json",
+          "path": "nova/virt/libvirt/driver.py",
+          "ref": "d335457f48d09c3d780c92413fe777030c1335e2",
+          "needle": "disk.inject_files(disk_path, files, partition=partition,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_DELIVERY.json",
+          "path": "Lib/posixpath.py",
+          "ref": "v2.7.3",
+          "needle": "except (os.error, AttributeError):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_DELIVERY.json",
+          "path": "Lib/posixpath.py",
+          "ref": "v2.7.3",
+          "needle": "return abspath(filename)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_PEERS.json",
+          "path": "nova/virt/disk/api.py",
+          "ref": "ce4b2e27be45a85b310237615c47eb53f37bb5f3",
+          "needle": "utils.execute('readlink', '-nm',"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "The new helper uses unprivileged os.path.realpath but the later mkdir/tee run as root. For an attacker-controlled guest-image path with a symlink hidden below a directory not searchable by the Nova service user but searchable by root, historical CPython2.7.3 islink catches lstat failure and returnsFalse; realpath can leave the unresolved lexical path inside fs. The prefix test then passes although the privileged writer follows the symlink outside the guest mount. This is a residual confinement failure already present in the raw-join before path, not established introduction by the fix. The later selected helper explicitly moves canonicalization to root and its before text equals this helper after text. Bound the witness to mounted lower-trust image, non-root service check, appropriate permissions and root writer; no image, symlink, command or filesystem program executes."
+    },
+    {
+      "pair_id": "CVEfixes:138897089159194:112470919962405",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "DifferentHostFilter performs one API lookup per repeated hint; new bulk lookup changes the cost dimension, not total scheduler boundedness.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep dot-dot path escape, permission-dependent symlink resolution, S3 local destination confinement, hint-count-proportional API lookups and protocol-case enforcement distinct. Five mechanical families/seven rows are not seven independent issues. Preserve existing narrow discovery categories without freezing final security/correctness placement or source/API familiarity policy.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old AffinityFilter._affinity_host calls compute_api.get for each hint element; the selected eager list comprehension evaluates every repeated element even if one host match would suffice. Old compute get resolves a UUID through a DB lookup. SchedulerHintsController copies arbitrary request hint mappings into server scheduler_hints, and filter_scheduler carries the request context in filter_properties. After _all_hosts calls compute_api.get_all once per host_passes invocation and maps UUIDs to hosts, removing hint-count-proportional individual API calls. This is a workload repair of an existing filter, not a new API support duty.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual enabled DifferentHostFilter, old _affinity_host versus new _all_hosts, compute get/get_all authorization/DB contracts and request delivery. Before-only host_passes does not establish DB cost or tenant reachability from a helper name. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Callers/helpers, configuration, dependencies, database state, after-code, tests, metadata, CVEs and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Authenticated instance requests with repeated different_host UUIDs can amplify scheduler lookup work when the extension/filter is enabled. The old eager list causes N individual API/DB lookups per filter invocation, including repeated IDs. No hang duration, database load, rate limit, scheduler throughput or DoS experiment is measured.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For admitted existing UUIDs under a compatible lookup policy, the after hint loop uses dictionary lookups and removes the N individual API-call mechanism. It still scans N hints, materializes all visible instances on every invocation, and may run repeatedly across candidate hosts/instance selection; one bulk API call is not one SQL statement or one call per scheduling request. get_all has different policy/deleted-state selection and missing UUIDs now map toNone rather than raising from get; exact invalid/integer/deleted hint compatibility is unresolved, not asserted as an established new supported-contract failure. No universal resource or after-clean certification.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Old mechanism is supported under matched caller/helper/runtime contracts, but critical trust/input/consumer facts are absent from the common before-only selected function. Defer missing context rather than selectively adding answer-bearing code.",
+      "dependence_reason": "Preserve fix-family:a6f1d7fdd83bb3ca5ae8 and exact/AST/span/history links. The three protocol-case rows are one producer/consumer fix family, not independent cases. The first file-injection helper after-text matches the later symlink-fix selected before-text, but the first selected function is a different injector; this is explicit helper-history evidence, not a selected-pair exact follow-up link or automatic family merge. S3 manifest handling is not its sibling tarball fix. Independent issue adjudication and experimental representation remain pending.",
+      "open_questions": [
+        "Researcher confirm supported runtime/tool versions, file-injection/backend and filter enablement, user admission, persisted legacy rule state, firewall/IP version and actual security effects, bounded negative/context policies and independent issue identities. No deployed version, exploit or timing/resource measurement is asserted.",
+        "All findings are source deductions, not reproduced results. No Nova/libvirt/VM/mount/filesystem/realpath/readlink/rootwrap/privileged command, scheduler/SQL/DB/policy, firewall/iptables/network, S3/boto/XML/archive/decryption, dependency/application program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                              if self._affinity_host(context, i) == me])\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                              if all_hosts.get(i) == me])\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return self.compute_api.get(context, instance_id)['host']"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for instance in self.compute_api.get_all(context):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/api/openstack/compute/contrib/scheduler_hints.py",
+          "ref": "b91d2fc02d927066ed0fe21439ccb7548de4138f",
+          "needle": "hints.update(body['os:scheduler_hints'])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/api/openstack/compute/contrib/scheduler_hints.py",
+          "ref": "b91d2fc02d927066ed0fe21439ccb7548de4138f",
+          "needle": "body['server']['scheduler_hints'] = hints"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/scheduler/filter_scheduler.py",
+          "ref": "b91d2fc02d927066ed0fe21439ccb7548de4138f",
+          "needle": "filter_properties.update({'context': context,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/compute/api.py",
+          "ref": "b91d2fc02d927066ed0fe21439ccb7548de4138f",
+          "needle": "self.db.instance_get_by_uuid(context, instance_id)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/compute/api.py",
+          "ref": "034762e8060dcf0a11cb039b9d426b0d0bb1801d",
+          "needle": "check_policy(context, \"get_all\", target)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/db/sqlalchemy/api.py",
+          "ref": "034762e8060dcf0a11cb039b9d426b0d0bb1801d",
+          "needle": "if 'deleted' in filters:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/db/sqlalchemy/api.py",
+          "ref": "034762e8060dcf0a11cb039b9d426b0d0bb1801d",
+          "needle": "filters['project_id'] = context.project_id"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:217851213906490:116742559636325",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "EC2 rule validation accepts mixed case but persists raw protocol; normalization breaks revocation of legacy mixed-case rows.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep dot-dot path escape, permission-dependent symlink resolution, S3 local destination confinement, hint-count-proportional API lookups and protocol-case enforcement distinct. Five mechanical families/seven rows are not seven independent issues. Preserve existing narrow discovery categories without freezing final security/correctness placement or source/API familiarity policy.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old _rule_dict_last_step explicitly validates ip_protocol.upper() against TCP/UDP/ICMP and port constraints but stores the original string. Its callers use the same conversion in authorize and revoke. Same-version firewall later selects TCP/UDP port-building on exact lowercase strings; a mixed-case producer can skip intended port restrictions. After lowercases before persistence, preserving previously admitted protocol spellings rather than adding protocol support. The old exact-match revoke of an existing same-case rule is also an established caller duty.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need wrapper _rule_args_to_dict, both authorize/revoke consumers, persisted legacy protocol and firewall builder/kernel acceptance. Producer validation alone proves no actual firewall broadening; legacy matching is not visible in the selected function. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Callers/helpers, configuration, dependencies, database state, after-code, tests, metadata, CVEs and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A user authorized to manage a security group can submit a mixed-case rule for a bounded port range. The affected iptables path may emit a protocol ACCEPT lacking those ports; actual packet widening requires iptables to accept that spelling and the rule to be reached under other chains/policies. Creating one’s own group is not proof of bypassing another tenant’s authorization. The producer/consumer mismatch and conditional enforcement boundary are supported without executing iptables.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Existing pre-upgrade mixed-case rules are admitted by the old API and stored verbatim. The after EC2 helper normalizes every revoke request to lowercase, but unchanged revoke calls _security_group_rule_exists, which compares the protocol string exactly against persisted rule values before deleting by ID. With an existing uppercase TCP rule and its otherwise exact original ports/source/group, the old original-case revoke matched; after produces tcp and cannot match that unchanged uppercase row, so returns the no-rule error and leaves it installed. New lowercase duplicates may match another row without removing the legacy uppercase row. The selected fix changes only normalization/consumer code and the retained DB create/get contracts do not normalize existing state; bound the finding to persisted rows not separately migrated or manually repaired. This is an introduced legacy-state revocation regression, not proof of new unauthorized packet delivery.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Explicit after-contract failure prevents paired-negative use; retain supported old mechanism and separate introduced versus residual behavior.",
+      "dependence_reason": "Preserve fix-family:023f1d68e215d38b3990 and exact/AST/span/history links. The three protocol-case rows are one producer/consumer fix family, not independent cases. The first file-injection helper after-text matches the later symlink-fix selected before-text, but the first selected function is a different injector; this is explicit helper-history evidence, not a selected-pair exact follow-up link or automatic family merge. S3 manifest handling is not its sibling tarball fix. Independent issue adjudication and experimental representation remain pending.",
+      "open_questions": [
+        "Researcher confirm supported runtime/tool versions, file-injection/backend and filter enablement, user admission, persisted legacy rule state, firewall/IP version and actual security effects, bounded negative/context policies and independent issue identities. No deployed version, exploit or timing/resource measurement is asserted.",
+        "All findings are source deductions, not reproduced results. No Nova/libvirt/VM/mount/filesystem/realpath/readlink/rootwrap/privileged command, scheduler/SQL/DB/policy, firewall/iptables/network, S3/boto/XML/archive/decryption, dependency/application program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "values['protocol'] = ip_protocol"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "values['protocol'] = ip_protocol.lower()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "ip_protocol.upper() not in ['TCP', 'UDP', 'ICMP']"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "rule = self._rule_dict_last_step(context, **kwargs)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if rule.get(key) != values.get(key):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "db.security_group_rule_destroy(context, rule_id)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            return True\n        raise exception.EC2APIError(_(\"No rule for the specified parameters.\"))\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_PEERS.json",
+          "path": "nova/virt/firewall.py",
+          "ref": "1a007651c40b8f959fab9e3d5c431f65b4728950",
+          "needle": "protocol = rule.protocol"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_PEERS.json",
+          "path": "nova/virt/firewall.py",
+          "ref": "1a007651c40b8f959fab9e3d5c431f65b4728950",
+          "needle": "                if protocol in ['udp', 'tcp']:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_DELIVERY.json",
+          "path": "nova/db/sqlalchemy/api.py",
+          "ref": "1a007651c40b8f959fab9e3d5c431f65b4728950",
+          "needle": "security_group_rule_ref.update(values)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Existing pre-upgrade mixed-case rules are admitted by the old API and stored verbatim. The after EC2 helper normalizes every revoke request to lowercase, but unchanged revoke calls _security_group_rule_exists, which compares the protocol string exactly against persisted rule values before deleting by ID. With an existing uppercase TCP rule and its otherwise exact original ports/source/group, the old original-case revoke matched; after produces tcp and cannot match that unchanged uppercase row, so returns the no-rule error and leaves it installed. New lowercase duplicates may match another row without removing the legacy uppercase row. The selected fix changes only normalization/consumer code and the retained DB create/get contracts do not normalize existing state; bound the finding to persisted rows not separately migrated or manually repaired. This is an introduced legacy-state revocation regression, not proof of new unauthorized packet delivery."
+    },
+    {
+      "pair_id": "CVEfixes:233080174591713:234586962735256",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unprivileged canonicalization can miss a root-visible guest-image symlink before privileged host writes.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep dot-dot path escape, permission-dependent symlink resolution, S3 local destination confinement, hint-count-proportional API lookups and protocol-case enforcement distinct. Five mechanical families/seven rows are not seven independent issues. Preserve existing narrow discovery categories without freezing final security/correctness placement or source/API familiarity policy.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old helper docstring promises the final injected path remains inside the mounted guest fs. Its callers use that return value for root mkdir/tee/cp. Historical CPython2.7.3 realpath tests components using islink, whose failed lstat is caught and treated asFalse; a symlink below a root-only searchable directory can therefore remain unresolved during a non-root service check. The privileged writer can resolve and follow it. After requests root readlink -nm through utils.execute so canonicalization has the writer privilege; the same separator-delimited root-prefix check then rejects the resolved outside target.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need lower-trust image/mount delivery, service versus writer privilege, Python path exception semantics, rootwrap allowance, GNU-compatible readlink flags and execute stdout behavior. Prefix logic alone neither exposes nor repairs a permission-dependent resolution mismatch. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Callers/helpers, configuration, dependencies, database state, after-code, tests, metadata, CVEs and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An admitted tenant-controlled guest image can contain permission-protected links. If the compute service canonicalizes unprivileged then writes as root, a host target beyond the mounted image can be reached. After has a root readlink allowance in retained compute.filters; actual root-helper configuration, GNU tool availability, mount permissions and target access remain prerequisites. No active image, command or file write is reproduced.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Under the supported root-helper/GNU-compatible tool contract and stable path state, -m resolves even missing components, -n avoids a newline in the returned pathname, and execute returns raw stdout; canonicalization at writer privilege closes the witnessed permission gap. No symlink-race, mount-alias, guest absolute-link interpretation or whole-filesystem safety guarantee is asserted. The first injector patch’s helper after text equals this selected before text, but their selected functions differ and original families remain separate.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Old mechanism is supported under matched caller/helper/runtime contracts, but critical trust/input/consumer facts are absent from the common before-only selected function. Defer missing context rather than selectively adding answer-bearing code.",
+      "dependence_reason": "Preserve fix-family:d303bcd4c4c41f620d99 and exact/AST/span/history links. The three protocol-case rows are one producer/consumer fix family, not independent cases. The first file-injection helper after-text matches the later symlink-fix selected before-text, but the first selected function is a different injector; this is explicit helper-history evidence, not a selected-pair exact follow-up link or automatic family merge. S3 manifest handling is not its sibling tarball fix. Independent issue adjudication and experimental representation remain pending.",
+      "open_questions": [
+        "Researcher confirm supported runtime/tool versions, file-injection/backend and filter enablement, user admission, persisted legacy rule state, firewall/IP version and actual security effects, bounded negative/context policies and independent issue identities. No deployed version, exploit or timing/resource measurement is asserted.",
+        "All findings are source deductions, not reproduced results. No Nova/libvirt/VM/mount/filesystem/realpath/readlink/rootwrap/privileged command, scheduler/SQL/DB/policy, firewall/iptables/network, S3/boto/XML/archive/decryption, dependency/application program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "absolute_path = os.path.realpath(os.path.join(fs, *args))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "absolute_path, _err = utils.execute('readlink', '-nm',"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                                        run_as_root=True)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "utils.execute('tee', *args, **kwargs)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "os.path.realpath(fs) + '/'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/utils.py",
+          "ref": "9d753f18e1c5e4eaa4021f64ac9fe14ef1103b71",
+          "needle": "            return result\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "etc/nova/rootwrap.d/compute.filters",
+          "ref": "ce4b2e27be45a85b310237615c47eb53f37bb5f3",
+          "needle": "readlink: CommandFilter, /bin/readlink, root"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_DELIVERY.json",
+          "path": "Lib/posixpath.py",
+          "ref": "v2.7.3",
+          "needle": "except (os.error, AttributeError):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_DELIVERY.json",
+          "path": "Lib/posixpath.py",
+          "ref": "v2.7.3",
+          "needle": "return abspath(filename)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_DELIVERY.json",
+          "path": "src/readlink.c",
+          "ref": "v8.13",
+          "needle": "--no-newline"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_DELIVERY.json",
+          "path": "src/readlink.c",
+          "ref": "v8.13",
+          "needle": "canonicalize_filename_mode (fname, can_mode)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_DELIVERY.json",
+          "path": "nova/virt/libvirt/driver.py",
+          "ref": "9d753f18e1c5e4eaa4021f64ac9fe14ef1103b71",
+          "needle": "disk.inject_data(injection_path,"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:42665876670768:71068240338822",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "S3 manifest part filename controls a local download destination beyond the temporary image directory.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep dot-dot path escape, permission-dependent symlink resolution, S3 local destination confinement, hint-count-proportional API lookups and protocol-case enforcement distinct. Five mechanical families/seven rows are not seven independent issues. Preserve existing narrow discovery categories without freezing final security/correctness placement or source/API familiarity policy.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old register_image takes an image_location and creates metadata for image service registration. S3 _s3_create downloads the corresponding manifest, obtains filename text from image elements and calls this helper before any decryption/untar. The old helper uses that same untrusted string both as a bucket key and directly in the local destination join. Absolute or traversing filenames can leave local_dir, violating the existing temporary-download confinement duty. After preserves the remote key but applies basename only to the local destination; it does not alter which remote object is fetched.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the manifest producer and registration admission, private temporary-directory lifecycle, remote bucket namespace and destination-writer semantics. bucket/filename/local_dir names alone do not prove a remote author or host-process sink. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Callers/helpers, configuration, dependencies, database state, after-code, tests, metadata, CVEs and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A requester admitted to the enabled EC2/S3 registration workflow can choose an image manifest with controlled part filenames/objects. Downloads occur in the service process before cryptographic processing; an existing writable outside destination can be overwritten under that process’s filesystem authority. This is not automatically host-root privilege, code execution, arbitrary image signature bypass or the separate malicious tarball path.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For ordinary POSIX filenames, after basename removes slash-separated directory components before the local join while preserving bucket.get_key(filename), closing the named lexical-destination traversal. Empty/dot/dot-dot basenames can fail as directory opens, not prove an outside regular-file write. Distinct remote prefixes can collide after flattening, but the matched caller creates a fresh directory and old nested relative names did not create parent directories; do not call those newly admitted names proof of an old supported distinct-local-path regression. Duplicate parts or image.encrypted scratch-name collision are pipeline concerns not isolated new local helper failures. No claim about tar extraction, preexisting local symlinks, races or every registration outcome.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Old mechanism is supported under matched caller/helper/runtime contracts, but critical trust/input/consumer facts are absent from the common before-only selected function. Defer missing context rather than selectively adding answer-bearing code.",
+      "dependence_reason": "Preserve fix-family:0537a69cf56006d3d58f and exact/AST/span/history links. The three protocol-case rows are one producer/consumer fix family, not independent cases. The first file-injection helper after-text matches the later symlink-fix selected before-text, but the first selected function is a different injector; this is explicit helper-history evidence, not a selected-pair exact follow-up link or automatic family merge. S3 manifest handling is not its sibling tarball fix. Independent issue adjudication and experimental representation remain pending.",
+      "open_questions": [
+        "Researcher confirm supported runtime/tool versions, file-injection/backend and filter enablement, user admission, persisted legacy rule state, firewall/IP version and actual security effects, bounded negative/context policies and independent issue identities. No deployed version, exploit or timing/resource measurement is asserted.",
+        "All findings are source deductions, not reproduced results. No Nova/libvirt/VM/mount/filesystem/realpath/readlink/rootwrap/privileged command, scheduler/SQL/DB/policy, firewall/iptables/network, S3/boto/XML/archive/decryption, dependency/application program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "local_filename = os.path.join(local_dir, filename)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "local_filename = os.path.join(local_dir, os.path.basename(filename))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "key = bucket.get_key(filename)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "key.get_contents_to_filename(local_filename)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "image_path = tempfile.mkdtemp(dir=FLAGS.image_decryption_dir)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "elements = manifest.find('image').getiterator('filename')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "fn_element.text,"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "enc_filename = os.path.join(image_path, 'image.encrypted')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/api/ec2/cloud.py",
+          "ref": "1c0859283f4e497cc9abea06039f5595406208ef",
+          "needle": "def register_image(self, context, image_location=None, **kwargs):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/api/ec2/cloud.py",
+          "ref": "1c0859283f4e497cc9abea06039f5595406208ef",
+          "needle": "metadata = {'properties': {'image_location': image_location}}"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:44360862421368:260931428732349",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "OpenStack rule producer persists a mixed-case enforcement discriminator; normalization misses legacy exact-repeat duplicates.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep dot-dot path escape, permission-dependent symlink resolution, S3 local destination confinement, hint-count-proportional API lookups and protocol-case enforcement distinct. Five mechanical families/seven rows are not seven independent issues. Preserve existing narrow discovery categories without freezing final security/correctness placement or source/API familiarity policy.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old _rule_args_to_dict validates allowed protocols and port ranges case-insensitively but stores ip_protocol verbatim. create persists the returned mapping and triggers refresh; the same old firewall consumer branches on lowercase TCP/UDP/ICMP. After lowercase output repairs new-rule discrimination. The unchanged create duplicate check also establishes exact-repeat rejection before insertion; it is not a newly invented case-insensitive deduplication duty.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need authorized create, DB persistence/model and pre-upgrade state, duplicate comparator, and actual firewall driver. Matching producer and consumer matter; a new lowercasing line is not proof of isolated security delivery or migration of old rows. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Callers/helpers, configuration, dependencies, database state, after-code, tests, metadata, CVEs and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An authorized group manager supplies the protocol spelling and bounds via the OpenStack API; the iptables consumer may emit a protocol-wide ACCEPT without intended TCP/UDP ports on mixed case. Bound actual widening to enabled driver, accepted kernel spelling, attached group, source addresses and other policies. Do not infer another-tenant access simply from this API validation mismatch.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "The matched old OpenStack create path rejects a duplicate by exact equality across group/source/ports/protocol. Old validation accepts mixed-case TCP and stores it verbatim; for an existing uppercase row an exact repeat of its original-case request was rejected. After normalizes the request to tcp but leaves the old persisted TCP row untouched, so the unchanged duplicate check no longer matches and, if quota allows, creates a semantically duplicate rule. This introduces loss of the previously supported exact-repeat rejection on legacy state. It is not a newly demonstrated privilege escalation: the old API could already miss differently cased semantic duplicates. Bound to unmigrated existing rows; new lowercase-only databases do not supply this witness.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Explicit after-contract failure prevents paired-negative use; retain supported old mechanism and separate introduced versus residual behavior.",
+      "dependence_reason": "Preserve fix-family:023f1d68e215d38b3990 and exact/AST/span/history links. The three protocol-case rows are one producer/consumer fix family, not independent cases. The first file-injection helper after-text matches the later symlink-fix selected before-text, but the first selected function is a different injector; this is explicit helper-history evidence, not a selected-pair exact follow-up link or automatic family merge. S3 manifest handling is not its sibling tarball fix. Independent issue adjudication and experimental representation remain pending.",
+      "open_questions": [
+        "Researcher confirm supported runtime/tool versions, file-injection/backend and filter enablement, user admission, persisted legacy rule state, firewall/IP version and actual security effects, bounded negative/context policies and independent issue identities. No deployed version, exploit or timing/resource measurement is asserted.",
+        "All findings are source deductions, not reproduced results. No Nova/libvirt/VM/mount/filesystem/realpath/readlink/rootwrap/privileged command, scheduler/SQL/DB/policy, firewall/iptables/network, S3/boto/XML/archive/decryption, dependency/application program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "values['protocol'] = ip_protocol"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "values['protocol'] = ip_protocol.lower()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "ip_protocol.upper() not in ['TCP', 'UDP', 'ICMP']"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        \"\"\"Return data about the given security group.\"\"\"\n        context = req.environ['nova.context']\n        authorize(context)\n        security_group = self._get_security_group(context, id)\n        return {'security_group': self._format_security_group(context,\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if rule.get(key) != values.get(key):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if self._security_group_rule_exists(security_group, values):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "db.security_group_rule_create(context, values)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_PEERS.json",
+          "path": "nova/virt/firewall.py",
+          "ref": "1a007651c40b8f959fab9e3d5c431f65b4728950",
+          "needle": "                if protocol in ['udp', 'tcp']:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/db/sqlalchemy/models.py",
+          "ref": "1a007651c40b8f959fab9e3d5c431f65b4728950",
+          "needle": "        'SecurityGroupIngressRule.deleted == False)')\n\n    protocol = Column(String(5))  # \"tcp\", \"udp\", or \"icmp\"\n    from_port = Column(Integer)\n    to_port = Column(Integer)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_DELIVERY.json",
+          "path": "nova/db/sqlalchemy/api.py",
+          "ref": "1a007651c40b8f959fab9e3d5c431f65b4728950",
+          "needle": "security_group_rule_ref.update(values)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "The matched old OpenStack create path rejects a duplicate by exact equality across group/source/ports/protocol. Old validation accepts mixed-case TCP and stores it verbatim; for an existing uppercase row an exact repeat of its original-case request was rejected. After normalizes the request to tcp but leaves the old persisted TCP row untouched, so the unchanged duplicate check no longer matches and, if quota allows, creates a semantically duplicate rule. This introduces loss of the previously supported exact-repeat rejection on legacy state. It is not a newly demonstrated privilege escalation: the old API could already miss differently cased semantic duplicates. Bound to unmigrated existing rows; new lowercase-only databases do not supply this witness."
+    },
+    {
+      "pair_id": "CVEfixes:45542161915453:212045118297414",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Firewall exact-case protocol dispatch omits bounds; new lowercase call rejects previously valid all-protocol group rules.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Keep dot-dot path escape, permission-dependent symlink resolution, S3 local destination confinement, hint-count-proportional API lookups and protocol-case enforcement distinct. Five mechanical families/seven rows are not seven independent issues. Preserve existing narrow discovery categories without freezing final security/correctness placement or source/API familiarity policy.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old API deliberately accepts any TCP/UDP/ICMP case while the selected firewall checks lowercase literals before adding port/type restrictions. For mixed-case IPv4 TCP/UDP it builds a protocol ACCEPT without the requested ports; after normalizes the discriminator. Protocol-less source-group rules are also explicitly admitted by the old API and represented by nullable DB protocol; the old selected conditional supports them. The latter old duty must survive the security fix.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old producer acceptance, DB nullable state, grantee-group instances/network addresses and iptables builders/install path. Do not assume every DB rule carries a nonempty string because new-rule examples do. IPv6 translation and later branch ordering must be inspected together. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Callers/helpers, configuration, dependencies, database state, after-code, tests, metadata, CVEs and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "The string emitter reaches _add_filters and iptables chains for attached instance groups. A mixed-case TCP/UDP group rule can broaden allowed ports if the downstream parser accepts its spelling; actual packets, chain ordering and deployment are unmeasured. The newly unconditional lower call instead causes a supported group rule’s generation failure; no fail-open policy or remote exploit follows automatically from that exception.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "The old source-group API path permits group_id without protocol/ports and returns a mapping containing group_id but no protocol; create persists it through model.update, and the matched SecurityGroupIngressRule protocol column is nullable with no default. A stored group-wide allow rule can therefore have protocol=None. Old instance_rules intentionally guards if protocol and skips protocol-specific builders, allowing group-source IP expansion without a protocol selector. After unconditionally calls rule.protocol.lower(), so this previously supported rule fails before source expansion/fallback instead of generating the old all-protocol rule. This is an introduced null-state regression, not arbitrary malformed DB input. Separately IPv6 lowercase ICMP is renamed icmpv6 before the later branch tests protocol==icmp, so type/code building is skipped in both versions. That is a residual old ICMPv6 restriction failure, not introduction by normalization or proof that this patch fully repairs every protocol case.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Explicit after-contract failure prevents paired-negative use; retain supported old mechanism and separate introduced versus residual behavior.",
+      "dependence_reason": "Preserve fix-family:023f1d68e215d38b3990 and exact/AST/span/history links. The three protocol-case rows are one producer/consumer fix family, not independent cases. The first file-injection helper after-text matches the later symlink-fix selected before-text, but the first selected function is a different injector; this is explicit helper-history evidence, not a selected-pair exact follow-up link or automatic family merge. S3 manifest handling is not its sibling tarball fix. Independent issue adjudication and experimental representation remain pending.",
+      "open_questions": [
+        "Researcher confirm supported runtime/tool versions, file-injection/backend and filter enablement, user admission, persisted legacy rule state, firewall/IP version and actual security effects, bounded negative/context policies and independent issue identities. No deployed version, exploit or timing/resource measurement is asserted.",
+        "All findings are source deductions, not reproduced results. No Nova/libvirt/VM/mount/filesystem/realpath/readlink/rootwrap/privileged command, scheduler/SQL/DB/policy, firewall/iptables/network, S3/boto/XML/archive/decryption, dependency/application program, payload or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "protocol = rule.protocol"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "protocol = rule.protocol.lower()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if protocol:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                if protocol in ['udp', 'tcp']:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    protocol = 'icmpv6'\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                elif protocol == 'icmp':\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for instance in rule['grantee_group']['instances']:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._add_filters(chain_name, ipv4_rules, ipv6_rules)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_PEERS.json",
+          "path": "nova/api/openstack/compute/contrib/security_groups.py",
+          "ref": "1a007651c40b8f959fab9e3d5c431f65b4728950",
+          "needle": "if group_id is not None:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_PEERS.json",
+          "path": "nova/api/openstack/compute/contrib/security_groups.py",
+          "ref": "1a007651c40b8f959fab9e3d5c431f65b4728950",
+          "needle": "if 'cidr' in values:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028.json",
+          "path": "nova/db/sqlalchemy/models.py",
+          "ref": "1a007651c40b8f959fab9e3d5c431f65b4728950",
+          "needle": "        'SecurityGroupIngressRule.deleted == False)')\n\n    protocol = Column(String(5))  # \"tcp\", \"udp\", or \"icmp\"\n    from_port = Column(Integer)\n    to_port = Column(Integer)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_028_DELIVERY.json",
+          "path": "nova/db/sqlalchemy/api.py",
+          "ref": "1a007651c40b8f959fab9e3d5c431f65b4728950",
+          "needle": "security_group_rule_ref.update(values)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "The old source-group API path permits group_id without protocol/ports and returns a mapping containing group_id but no protocol; create persists it through model.update, and the matched SecurityGroupIngressRule protocol column is nullable with no default. A stored group-wide allow rule can therefore have protocol=None. Old instance_rules intentionally guards if protocol and skips protocol-specific builders, allowing group-source IP expansion without a protocol selector. After unconditionally calls rule.protocol.lower(), so this previously supported rule fails before source expansion/fallback instead of generating the old all-protocol rule. This is an introduced null-state regression, not arbitrary malformed DB input. Separately IPv6 lowercase ICMP is renamed icmpv6 before the later branch tests protocol==icmp, so type/code building is skipped in both versions. That is a residual old ICMPv6 restriction failure, not introduction by normalization or proof that this patch fully repairs every protocol case.",
+      "additional_after_concerns": [
+        "Residual IPv6 ICMP type/code omission remains because translation to icmpv6 precedes a later comparison with icmp. This is present in both before and after; do not label it introduced or use the normalization patch as a complete all-protocol firewall negative."
+      ]
+    }
+  ]
+}

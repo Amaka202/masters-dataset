@@ -1,6 +1,7 @@
 """Check packaged exports and run preserved offline verification on copied evidence."""
 
 from collections import Counter
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -14,7 +15,7 @@ from stage_workspace import check_manifest, stage
 PREFIX = "HAPY_CVEFIXES_ADMITTED"
 
 
-def verify(root):
+def verify(root, audit=False):
     manifest = check_manifest(root)
     records = json.loads((root / "data/dataset.json").read_text(encoding="utf-8"))
     jsonl = [json.loads(line) for line in (root / "data" / f"{PREFIX}_CANDIDATE_PAIRS.jsonl").read_text().splitlines()]
@@ -45,9 +46,17 @@ def verify(root):
                 name = f"{PREFIX}_{split}_{suffix}.jsonl"
                 expected = root / manifest["source_files"][name]
                 assert (workspace / name).read_bytes() == expected.read_bytes(), name
+        if audit:
+            assert manifest.get('training_audit'), 'No training audit in this package'
+            for script in ('CATEGORY_AUDIT.py', 'CATEGORY_AUDIT_CONSOLIDATE.py', 'EXPERIMENT_PREFLIGHT.py'):
+                subprocess.run([sys.executable, str(workspace/script), 'check'],
+                               cwd=workspace, check=True)
     print(f"Package verified: {len(records)} records, {manifest['security_cves']} security CVEs; "
           f"{len(manifest['files'])} file fingerprints match. JSON and JSONL are identical records.")
 
 
 if __name__ == "__main__":
-    verify(Path(__file__).resolve().parents[1])
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--audit', action='store_true', help='Also reproduce the packaged training audit/preflight')
+    args = parser.parse_args()
+    verify(Path(__file__).resolve().parents[1], audit=args.audit)

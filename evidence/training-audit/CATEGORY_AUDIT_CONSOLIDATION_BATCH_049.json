@@ -1,0 +1,549 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-049",
+  "review_date": "2026-10-29",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All four rdiffweb training candidates/all discovery statuses; four mechanical families.",
+  "selection_rule": {
+    "repository": "github.com/ikus060/rdiffweb",
+    "discovery_categories": [
+      "SEC-CREDENTIAL-GUESS-THROTTLE",
+      "SEC-HTTP-METHOD-RESTRICTION",
+      "SEC-SESSION-INVALIDATION",
+      "SEC-URL-AUTHORITY-BOUNDARY"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Three missing-context deferrals and one residual paired-negative deferral. Old username-bound sessions survive password changes; bulk revocation is committed by the matched after form, but another loaded session can reinsert old authentication data through unchanged save-on-missing behavior. Per-ID locking and named no-SELECT-BEGIN pysqlite/SQLAlchemy contracts support this conditional after residual without execution. Admin GET deletion reaches a real store sink despite username validation and Lax cookies; after submission guard preserves actual POST modal and bounds only this method path. Earlier current-password reauthentication already exists; after per-session five failures/logout uses matched helper/required-field/session contracts and coordinated admin API, not a new absent-auth claim or global time-based lockout. Later generic route limiter is not backfilled. Origin prefix accepts a different authority; actual profile action and same-site hostile delegated prefix host can preserve Lax credentials, while arbitrary cross-site POST may not. Exact supplied-Origin equality repairs that local witness, not missing-Origin/Referer/proxy/CORS/all CSRF. Five pins retain373 inert texts/eight exact peers/four resolved first parents/eight archive inventories and nine missing paths, with proper helper paths retained separately. Named runtime/framework/validator/database/browser contracts are not installed/all-version/deployed proof. IETF HTTPS text uses TLS-verified curl after Python CA validation failure; provenance note retained. Preserve all833 ledger events and prior authored evidence; four functions/families are not independently adjudicated issues; all retained programs/payloads/vulnerability requests/upstream tests remain inert.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:176115016783544:159434677704988",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Password change leaves other username-bound sessions valid; after bulk deletion repairs ordinary persisted sessions but an already-loaded concurrent session can be reinserted at save.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate committed password hash/session revocation and loaded-session resurrection from current-password reauthentication/guess counting; admin authorization and input validation from HTTP-method admission; supplied Origin authority equality from browser cookie site semantics, proxy trust and CORS response policy. Guards and companion API changes alone prove no universal security or independent issue unit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old set_password enforces configured password rules then changes only hash_password. Exact DbSession stores username/data by session ID; currentuser and auth_form accept that data plus an existing account/login time, without comparing the new hash. Root config actually selects DbSession. Existing session-list/delete UI and password-change credential lifecycle support revocation duty independently of new tests. Matched after form explicitly user.commit()s both hash and bulk deletion; shared scoped transaction helpers establish persistence rather than mistaking an uncommitted delete for a fix.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched loader, auth/currentuser, configured backend, hash writer/commit, session locks/save timing and actual concurrency/database isolation. Current request is intentionally preserved, and account removal, expiry, MFA, access tokens and LDAP/config-password paths have separate contracts. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers, model/form/helper/caller/authentication/database/session/locking/transaction/browser/SameSite/proxy/Origin contracts are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Someone retaining another previously authenticated bearer session can continue as the password-changing user without the new password under old unexpired/login/MFA state. This need not be anonymous access or control over the password-setting request. After requires a second admitted request already holding that different session before revocation; ordinary per-ID locking does not lock it when another ID changes the password.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After deletes other stored rows by username, preserving only the current session ID, and the matched caller commits. But unchanged DbSession._save queries by ID and creates a fresh SessionObject(id=self.id) when absent, copying its in-memory _data. Named CherryPy18.8.0 saves loaded sessions before finalization; locks are keyed separately by ID, so request B can load old authenticated data, request A can commit password/revocation, then B can reinsert and commit that old ID. Under admitted SQLite+pysqlite/SQLAlchemy1.4.41 with no DML before A commits, CPython3.10.8 explicitly does not BEGIN on SELECT; the retained SQLite setup enables WAL and autoflush=False. Thus no invented universal read-snapshot/lock failure blocks this conditional schedule. Subsequent B lookup can authenticate again. This is residual revocation failure, not introduced authentication or proof every database/isolation interleaving succeeds. Defer paired-negative use rather than certify all old sessions invalid.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Old session-survival boundary is supported, but matched after persistence/locking/runtime contracts establish a conditional loaded-session resurrection path. Keep explicit residual after-contract failure and unestablished selected negative; do not silently classify it as mere missing context or a new old security issue.",
+      "dependence_reason": "Four selected functions/four mechanical families do not establish four independently adjudicated issues. The2022 deletion-method, current-password guessing, later session revocation and Origin-authority repairs concern different duties and version-specific implementations. Earlier set_password(old_password=...) becomes a coordinated no-keyword API while its admin caller is updated too; later generic route rate limiting is not backfilled into the earlier five-attempt patch. Repeated helper names/shared security topics do not merge root causes, and CVE/commit titles do not establish selected attribution. Preserve original IDs/source bytes/splits, discovery statuses/categories, family/connected-block descriptors and pending lineage/alias/backport/issue adjudication.",
+      "open_questions": [
+        "Researcher confirm actual installed framework/runtime/validator/SQLAlchemy/driver/backend and transaction policy, concurrent-request phase, session/MFA/expiry state, admin/current-user admission, proxy sanitization/canonical base, browser SameSite/Origin behavior and lower-authority credential/host control. Named historical contracts are comparisons, not installed/all-version/deployed proof. Resolve uniform before-only knowledge/context and independent issue policy.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained rdiffweb/authentication/password/session/CSRF/browser/form/database/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members are read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.hash_password = hash_password(password)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "SessionObject.id != session_id,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/core/model/_session.py",
+          "ref": "0757fda8fe064e36c63c868e1a3e31f754806261",
+          "needle": "return (session.data, session.expiration_time)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/tools/auth_form.py",
+          "ref": "0757fda8fe064e36c63c868e1a3e31f754806261",
+          "needle": "return session.get(SESSION_KEY) is not None and session.get(LOGIN_TIME) is not None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/tools/currentuser.py",
+          "ref": "0757fda8fe064e36c63c868e1a3e31f754806261",
+          "needle": "login = cherrypy.session.get(session_key)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/rdw_app.py",
+          "ref": "0757fda8fe064e36c63c868e1a3e31f754806261",
+          "needle": "'tools.sessions.storage_class': DbSession"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/controller/page_pref_general.py",
+          "ref": "6efb995bc32c8a8e9ad755eb813dec991dffb2b8",
+          "needle": "        user.email = self.email.data\n        user.commit()\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/tools/db.py",
+          "ref": "6efb995bc32c8a8e9ad755eb813dec991dffb2b8",
+          "needle": "self.__class__.session.commit()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/core/model/_session.py",
+          "ref": "6efb995bc32c8a8e9ad755eb813dec991dffb2b8",
+          "needle": "session = SessionObject(id=self.id)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/core/model/_session.py",
+          "ref": "6efb995bc32c8a8e9ad755eb813dec991dffb2b8",
+          "needle": "session.data = self._data"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/core/model/_session.py",
+          "ref": "6efb995bc32c8a8e9ad755eb813dec991dffb2b8",
+          "needle": "session.add().commit()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/core/model/_session.py",
+          "ref": "6efb995bc32c8a8e9ad755eb813dec991dffb2b8",
+          "needle": "self.locks.setdefault(self.id, threading.RLock()).acquire()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/tools/db.py",
+          "ref": "6efb995bc32c8a8e9ad755eb813dec991dffb2b8",
+          "needle": "scoped_session(sessionmaker(autoflush=False, autocommit=False))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/tools/db.py",
+          "ref": "6efb995bc32c8a8e9ad755eb813dec991dffb2b8",
+          "needle": "cursor.execute('PRAGMA journal_mode=WAL;')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/core/config.py",
+          "ref": "6efb995bc32c8a8e9ad755eb813dec991dffb2b8",
+          "needle": "SQLite and PostgreSQL"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTRACTS.json",
+          "path": "cherrypy/lib/sessions.py",
+          "ref": "v18.8.0",
+          "needle": "self._save(expiration_time)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_DELIVERY.json",
+          "path": "cherrypy/_cptools.py",
+          "ref": "v18.8.0",
+          "needle": "hooks.attach('before_finalize', _sessions.save)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_DELIVERY.json",
+          "path": "Modules/_sqlite/cursor.c",
+          "ref": "v3.10.8",
+          "needle": "if (self->connection->begin_statement && self->statement->is_dml)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTRACTS.json",
+          "path": "lib/sqlalchemy/dialects/sqlite/pysqlite.py",
+          "ref": "rel_1_4_41",
+          "needle": "SQLAlchemy chooses to not alter this behavior by default"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTRACTS.json",
+          "path": "lib/sqlalchemy/orm/query.py",
+          "ref": "rel_1_4_41",
+          "needle": "Deletes rows matched by this query from the database."
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Residual conditional session resurrection: a distinct already-loaded session is not protected by the current ID lock and DbSession._save inserts its missing ID with old authentication data after revocation commits. Matched caller/save commits and named no-SELECT-BEGIN pysqlite shape support the interleaving without executing it. Not an introduced regression or an all-isolation/deployed claim."
+    },
+    {
+      "pair_id": "CVEfixes:195726106913384:219684865331048",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Admin deletion accepts GET query parameters without the existing form submission gate; after validates submission before calling deletion.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate committed password hash/session revocation and loaded-session resurrection from current-password reauthentication/guess counting; admin authorization and input validation from HTTP-method admission; supplied Origin authority equality from browser cookie site semantics, proxy trust and CORS response policy. Guards and companion API changes alone prove no universal security or independent issue unit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old admin user manager is authenticated/admin-gated and disallows deleting self/configured admin. DeleteUserForm requires a nonempty username, but its CherryForm proxies request.params on every method and _delete_user calls validate(), not validate_on_submit(). Hence an authorized GET with action=delete and an existing other username reaches real store DELETEs. Sibling add/edit already require submission and the old actual modal uses method=post, establishing old safe retrieval versus intentional explicit deletion duty; no new-test-only contract.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old form proxy, deletion helper/store persistence, authorization/root session route, actual modal and browser navigation/cookie policy. Username validity/admin restrictions remain prerequisites; this is a method guard rather than a newly unpredictable CSRF token. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers, model/form/helper/caller/authentication/database/session/locking/transaction/browser/SameSite/proxy/Origin contracts are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A lower-trust external page can induce an authenticated admin top-level GET navigation to the mutating endpoint, using ambient session credentials under admitted SameSite=Lax. Exact old secure_headers checks Origin only for POST/PUT/PATCH/DELETE; GET passes. Named2022 cookie draft permits Lax safe top-level navigation, so Lax does not automatically defeat this old GET witness. Attacker need not read the response or know the admin password; victim must have admin authority and an admitted target username distinct from protected/self users.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After validate_on_submit requires POST/PUT/PATCH/DELETE plus validation before _delete_user; GET cannot delete through this branch. Existing POST modal remains admitted, and repeated validate() is not a supported ordinary regression under the actual no-token form. This does not establish full CSRF defence for admitted methods, fix prefix Origin checks, remove admin restrictions or certify all deletion paths.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Actual method/form/store/admin/browser contracts support conditional unauthorized ambient-authority GET deletion and its local method repair. Those facts exceed bounded selected before text; defer common-context eligibility, keeping full CSRF, browser/version policy and other deletion flows separate.",
+      "dependence_reason": "Four selected functions/four mechanical families do not establish four independently adjudicated issues. The2022 deletion-method, current-password guessing, later session revocation and Origin-authority repairs concern different duties and version-specific implementations. Earlier set_password(old_password=...) becomes a coordinated no-keyword API while its admin caller is updated too; later generic route rate limiting is not backfilled into the earlier five-attempt patch. Repeated helper names/shared security topics do not merge root causes, and CVE/commit titles do not establish selected attribution. Preserve original IDs/source bytes/splits, discovery statuses/categories, family/connected-block descriptors and pending lineage/alias/backport/issue adjudication.",
+      "open_questions": [
+        "Researcher confirm actual installed framework/runtime/validator/SQLAlchemy/driver/backend and transaction policy, concurrent-request phase, session/MFA/expiry state, admin/current-user admission, proxy sanitization/canonical base, browser SameSite/Origin behavior and lower-authority credential/host control. Named historical contracts are comparisons, not installed/all-version/deployed proof. Resolve uniform before-only knowledge/context and independent issue policy.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained rdiffweb/authentication/password/session/CSRF/browser/form/database/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members are read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._delete_user(action, DeleteUserForm())"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            form = UserForm()\n            if form.validate_on_submit():\n                try:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "@cherrypy.tools.is_admin()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not form.validate():"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    userid = StringField(_('UserID'))\n    username = StringField(_('Username'), validators=[validators.data_required()])\n    email = EmailField(_('Email'), validators=[validators.optional()])\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/controller/cherrypy_wtf.py",
+          "ref": "28258e5dd85e7c417918ed3bf481e19ed5eff91f",
+          "needle": "params = cherrypy.request.params"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/controller/cherrypy_wtf.py",
+          "ref": "28258e5dd85e7c417918ed3bf481e19ed5eff91f",
+          "needle": "SUBMIT_METHODS = {'POST', 'PUT', 'PATCH', 'DELETE'}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/controller/cherrypy_wtf.py",
+          "ref": "28258e5dd85e7c417918ed3bf481e19ed5eff91f",
+          "needle": "return self.is_submitted() and self.validate()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/core/store.py",
+          "ref": "28258e5dd85e7c417918ed3bf481e19ed5eff91f",
+          "needle": "deleted = conn.execute(_USERS.delete(_USERS.c.userid == self._userid))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_DELIVERY.json",
+          "path": "rdiffweb/controller/filter_authorization.py",
+          "ref": "28258e5dd85e7c417918ed3bf481e19ed5eff91f",
+          "needle": "not cherrypy.serving.request.currentuser.is_admin"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/tools/secure_headers.py",
+          "ref": "28258e5dd85e7c417918ed3bf481e19ed5eff91f",
+          "needle": "cookie['samesite'] = 'Lax'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/tools/secure_headers.py",
+          "ref": "28258e5dd85e7c417918ed3bf481e19ed5eff91f",
+          "needle": "if cherrypy.request.method in ['POST', 'PUT', 'PATCH', 'DELETE']:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_UI.json",
+          "path": "rdiffweb/templates/include/modal_dialog.html",
+          "ref": "28258e5dd85e7c417918ed3bf481e19ed5eff91f",
+          "needle": "<form action=\"#\" method=\"post\" role=\"form\" autocomplete=\"off\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_UI.json",
+          "path": "rdiffweb/templates/include/modal_dialog.html",
+          "ref": "422791ea45713aaaa865bdca74addb9fffd93a71",
+          "needle": "<form action=\"#\" method=\"post\" role=\"form\" autocomplete=\"off\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTRACTS.json",
+          "path": "draft-ietf-httpbis-rfc6265bis-10.txt",
+          "ref": "draft-ietf-httpbis-rfc6265bis-10",
+          "needle": "level navigations which use a \"safe\""
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:32844630046494:57993624181022",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Authenticated change-password form exposes repeated current-password guesses; after counts failures per session and logs out at five.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate committed password hash/session revocation and loaded-session resurrection from current-password reauthentication/guess counting; admin authorization and input validation from HTTP-method admission; supplied Origin authority equality from browser cookie site semantics, proxy trust and CORS response policy. Guards and companion API changes alone prove no universal security or independent issue unit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old current field uses InputRequired, new/confirm must be supplied/equal and caller validates submitted form before populate_obj(currentuser). Old model set_password validates a truthy old_password with check_password and exposes wrong-password versus new-password validation/success results. This is an existing reauthentication oracle inside an already-authenticated session, not absent reauthentication or an anonymous password endpoint. Full matched old route has no later generic rate-limit decorator; new tests/CVE title are not the sole evidence of the finite-guess security duty.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need complete form/required validators, helper/hash semantics, authenticated current-user binding, route method admission, session persistence and any external throttle. A guessed current password, valid independent new/confirm fields and retained authenticated session are required. Empty old_password helper truthiness is not a standard-form bypass because InputRequired rejects empty raw input. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers, model/form/helper/caller/authentication/database/session/locking/transaction/browser/SameSite/proxy/Origin contracts are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An attacker holding an authenticated session but lacking the user password can repeatedly use the old reauthentication oracle; this can reveal a reused password or enable credential change if a guess succeeds. No claim of direct unauthenticated takeover, guaranteed cracking or no reverse-proxy limits. Form validity/new-password policy and login/MFA state constrain delivery.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After uses new validate_password -> same check_password boolean, increments failures in that session, clears/regenerates at five then redirects to login. Correct current password clears attempts and reaches coordinated no-old_password API. Matched admin caller is also updated, so do not invent an unexpected-keyword regression. Named CherryPy clear loads/empties data and regenerate deletes old ID/creates a new one; old authentication key is absent on next request. Negative is finite failed checks per admitted session, not time-delay/global/distributed lockout, concurrent multiple stolen sessions or revocation of every other session after success. No supported ordinary selected after regression is assigned.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Conditional old authenticated-session guess oracle and per-session five-failure repair are supported with the actual preexisting password check, form/currentuser and framework contracts. Defer function-only context and installed external-throttle questions; do not widen local negative to global account lockout or import the later generic route limiter.",
+      "dependence_reason": "Four selected functions/four mechanical families do not establish four independently adjudicated issues. The2022 deletion-method, current-password guessing, later session revocation and Origin-authority repairs concern different duties and version-specific implementations. Earlier set_password(old_password=...) becomes a coordinated no-keyword API while its admin caller is updated too; later generic route rate limiting is not backfilled into the earlier five-attempt patch. Repeated helper names/shared security topics do not merge root causes, and CVE/commit titles do not establish selected attribution. Preserve original IDs/source bytes/splits, discovery statuses/categories, family/connected-block descriptors and pending lineage/alias/backport/issue adjudication.",
+      "open_questions": [
+        "Researcher confirm actual installed framework/runtime/validator/SQLAlchemy/driver/backend and transaction policy, concurrent-request phase, session/MFA/expiry state, admin/current-user admission, proxy sanitization/canonical base, browser SameSite/Origin behavior and lower-authority credential/host control. Named historical contracts are comparisons, not installed/all-version/deployed proof. Resolve uniform before-only knowledge/context and independent issue policy.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained rdiffweb/authentication/password/session/CSRF/browser/form/database/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members are read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "user.set_password(self.new.data, old_password=self.current.data)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if attempts >= CHANGE_PASSWORD_MAX_ATTEMPT:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "validators=[InputRequired(_(\"Current password is missing.\"))]"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if password_form.validate():"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/core/model/_user.py",
+          "ref": "a92b4fa441d50aee48ad257a0cad1e2aac77cb26",
+          "needle": "if old_password and not check_password(old_password, self.hash_password):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/controller/page_pref_general.py",
+          "ref": "b5e3bb0a98268d18ceead36ab9b2b7eaacd659a8",
+          "needle": "CHANGE_PASSWORD_MAX_ATTEMPT = 5"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/core/model/_user.py",
+          "ref": "b5e3bb0a98268d18ceead36ab9b2b7eaacd659a8",
+          "needle": "return check_password(password, self.hash_password)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/controller/page_admin_users.py",
+          "ref": "b5e3bb0a98268d18ceead36ab9b2b7eaacd659a8",
+          "needle": "userobj.set_password(self.password.data)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/controller/form.py",
+          "ref": "a92b4fa441d50aee48ad257a0cad1e2aac77cb26",
+          "needle": "return self.is_submitted() and self.validate()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/tools/auth_form.py",
+          "ref": "a92b4fa441d50aee48ad257a0cad1e2aac77cb26",
+          "needle": "session.get(SESSION_KEY) is not None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTRACTS.json",
+          "path": "rdiffweb/core/passwd.py",
+          "ref": "a92b4fa441d50aee48ad257a0cad1e2aac77cb26",
+          "needle": "if not password or not challenge:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_DELIVERY.json",
+          "path": "wtforms/validators.py",
+          "ref": "2.3.3",
+          "needle": "if not field.raw_data or not field.raw_data[0]:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTRACTS.json",
+          "path": "cherrypy/lib/sessions.py",
+          "ref": "v18.8.0",
+          "needle": "self._data.clear()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTRACTS.json",
+          "path": "cherrypy/lib/sessions.py",
+          "ref": "v18.8.0",
+          "needle": "self.delete()"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:72458305182436:16522959819325",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Origin defence uses textual base prefix rather than full authority equality; after rejects mismatching supplied Origin on mutating methods.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate committed password hash/session revocation and loaded-session resurrection from current-password reauthentication/guess counting; admin authorization and input validation from HTTP-method admission; supplied Origin authority equality from browser cookie site semantics, proxy trust and CORS response policy. Guards and companion API changes alone prove no universal security or independent issue unit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old set_headers explicitly intends Origin/CSRF defence but uses startswith(request.base). Actual root enables the hook, and matched profile POST route admits a validated change of user fields using ambient currentuser without an unpredictable token. Named CherryPy request.base comes from scheme/Host and proxy tools can replace it; RFC6454 origin equality is scheme/host/port identity, not lexical prefix. Supplied different authority sharing that prefix is therefore not an authorized origin under the existing guard duty.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need canonical Host/proxy/base admission, hook order, actual state-changing form/authenticated session, browser Origin and cookie site behavior, and hostile distinct-origin hosting. Do not infer complete browser delivery from a freely fabricated Origin header or treat CORS response-read as necessary for a form submission. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers, model/form/helper/caller/authentication/database/session/locking/transaction/browser/SameSite/proxy/Origin contracts are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Under admitted HTTPS canonical no-port base https://app.example.org, a lower-trust delegated host https://app.example.org.untrusted.example.org is a different origin yet shares the same registrable site/scheme and lexical base prefix. An authenticated victim visiting that host can send a normal form POST to actual profile mutation; browser sends the target session cookie under same-site Lax and supplies the hostile Origin. Old guard accepts it. The hostile host need not read the target cookie or response and does not have legitimate app-origin authority. Hosting/delegation, browser cookie admission, normal schema-valid fields and trusted/sanitized reverse-proxy setup are necessary. An unrelated cross-site prefix host may instead lose Lax cookies, so do not claim every prefix example is exploitable.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After origin != request.base rejects that mismatched supplied Origin before the profile action while same canonical base remains accepted. Missing/empty Origin still passes; safe methods remain outside this guard, and Referer is not actually checked despite the docstring. SameSite policy, configured path/default-port/noncanonical bases and trusted proxy normalization remain separate; equality is not universal CSRF/proxy safety or automatically a supported compatibility regression. Negative is only supplied mismatching Origin on the four listed methods.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Actual hook/route/form/base and named browser contracts support a conditional same-site/different-origin credentialed mutation, rather than assuming Lax permits arbitrary cross-site POST. Defer common before-only context eligibility and deployment authority/canonicalization; keep negative to the supplied-Origin mismatch.",
+      "dependence_reason": "Four selected functions/four mechanical families do not establish four independently adjudicated issues. The2022 deletion-method, current-password guessing, later session revocation and Origin-authority repairs concern different duties and version-specific implementations. Earlier set_password(old_password=...) becomes a coordinated no-keyword API while its admin caller is updated too; later generic route rate limiting is not backfilled into the earlier five-attempt patch. Repeated helper names/shared security topics do not merge root causes, and CVE/commit titles do not establish selected attribution. Preserve original IDs/source bytes/splits, discovery statuses/categories, family/connected-block descriptors and pending lineage/alias/backport/issue adjudication.",
+      "open_questions": [
+        "Researcher confirm actual installed framework/runtime/validator/SQLAlchemy/driver/backend and transaction policy, concurrent-request phase, session/MFA/expiry state, admin/current-user admission, proxy sanitization/canonical base, browser SameSite/Origin behavior and lower-authority credential/host control. Named historical contracts are comparisons, not installed/all-version/deployed proof. Resolve uniform before-only knowledge/context and independent issue policy.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained rdiffweb/authentication/password/session/CSRF/browser/form/database/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members are read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if origin and not origin.startswith(request.base):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if origin and origin != request.base:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "cherrypy.Tool('before_request_body', set_headers, priority=71)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "cookie['samesite'] = 'Lax'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/rdw_app.py",
+          "ref": "8becdaf734b11dc277f7b41151c00f12851085f5",
+          "needle": "@cherrypy.tools.secure_headers()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/controller/page_pref_general.py",
+          "ref": "8becdaf734b11dc277f7b41151c00f12851085f5",
+          "needle": "profile_form.populate_obj(self.app.currentuser)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/controller/page_pref_general.py",
+          "ref": "8becdaf734b11dc277f7b41151c00f12851085f5",
+          "needle": "user.email = self.email.data"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTEXT.json",
+          "path": "rdiffweb/controller/form.py",
+          "ref": "8becdaf734b11dc277f7b41151c00f12851085f5",
+          "needle": "return cherrypy.request.method == 'POST'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTRACTS.json",
+          "path": "rdiffweb/templates/prefs_general.html",
+          "ref": "8becdaf734b11dc277f7b41151c00f12851085f5",
+          "needle": "    <div class=\"panel-body\">\n      <form action=\"#\" method=\"post\" role=\"form\">\n        {{ profile_form }}\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTRACTS.json",
+          "path": "cherrypy/_cprequest.py",
+          "ref": "v18.8.0",
+          "needle": "self.base = '%s://%s' % (self.scheme, host)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_DELIVERY.json",
+          "path": "rdiffweb/tools/proxy.py",
+          "ref": "8becdaf734b11dc277f7b41151c00f12851085f5",
+          "needle": "local='X-Forwarded-Host'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTRACTS.json",
+          "path": "cherrypy/lib/cptools.py",
+          "ref": "v18.8.0",
+          "needle": "request.base = base"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTRACTS.json",
+          "path": "rfc6454.txt",
+          "ref": "RFC6454",
+          "needle": "are the same if, and only if, they have identical schemes, hosts,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTRACTS.json",
+          "path": "draft-ietf-httpbis-rfc6265bis-10.txt",
+          "ref": "draft-ietf-httpbis-rfc6265bis-10",
+          "needle": "origin with a scheme and registered domain of \"https\" and"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_049_CONTRACTS.json",
+          "path": "draft-ietf-httpbis-rfc6265bis-10.txt",
+          "ref": "draft-ietf-httpbis-rfc6265bis-10",
+          "needle": "cookie will be sent with same-site requests, and with \"cross-site\""
+        }
+      ]
+    }
+  ]
+}

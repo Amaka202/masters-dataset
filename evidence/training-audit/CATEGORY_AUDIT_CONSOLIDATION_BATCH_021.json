@@ -1,0 +1,429 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-021",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "Complete three-case Waitress socket-lifecycle leaf metadata revalidation after inspecting deferred100-Continue worker flush.",
+  "selection_rule": {
+    "repository": "github.com/pylons/waitress",
+    "discovery_categories": [
+      "SEC-SOCKET-LIFECYCLE-RACE"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 811,
+    "sha256": "a8458c2712f92ddee97ecf55a8c85c861a310552b024ceb487949d2f4e3cfb11"
+  },
+  "interpretation": "Preserve authored batch020 and all811 discovery events. Record an existing service→send_continue→defaultTrue flush→send close path that remains in after. Explicitly defer send after-negative for residual failure; revalidate the two correctlyFalse-controlled selected worker entries without inheriting sibling blame. Three metadata revisions add no newly reviewed candidate, independent issue or approval. All source, dependency/application programs, HTTP/regex parsers, sockets/network/proxy/thread operations and upstream tests stay inert.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-31015:0:src/waitress/channel.py:HTTPChannel._flush_outbufs_below_high_watermark",
+      "review_revision": 2,
+      "source_discovery_revision": 1,
+      "mechanism": "Worker high-watermark flush may synchronously close a socket while main select retains its descriptor.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old channel documents task-thread writes and asynchronous main-loop methods. Worker flush reaches send; a disconnected send calls handle_close synchronously, then dispatcher.close removes the map entry and closes the socket. Main poll has already copied numeric descriptors and only recovers EINTR; EBADF/non-EINTR escapes loop/server.run, threatening process availability. Exact old docs default asyncore_use_poll=False and the public advisory establish this prior ownership duty and affected2.1.x context.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need WSGI worker caller and output thresholds, full _flush_exception/_flush_some/send chain, HTTPChannel.handle_close, numeric-descriptor snapshot, poll exception scope, server.run and eventual main-loop progress. Locks on output buffers do not serialize descriptor collection by select. CPython/OS error and timing are deployment prerequisites, not executed race outcomes. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An unauthenticated/disconnected remote client on an accessible response-producing route can exercise socket-send failure while a WSGI worker flushes buffered data. Under documented default select-based loop, synchronous worker close invalidates a previously collected descriptor and a non-EINTR select error escapes server.run. Advisory affected2.1.0/2.1.1; after delegates close to main loop. Reachable response, output threshold, OS disconnect error and precise scheduling are prerequisites. A full-response-reading reverse proxy reduces exposure; this is a conditional availability boundary, not all deployments or all thread interleavings.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After selected worker entry explicitly passesFalse through both helpers to guarded send; disconnect returns0 without worker close, leaving pending bytes/trigger for main handle_write using defaultTrue to close. Preserve the bounded disconnect-close race repair only; no universal concurrency, poll backend, all worker routes, output-buffer or eventual-delivery guarantee. Main-loop closure and trigger/wait behavior must be judged in the coherent after chain. Separate pipeline context: Matched old and after HTTPChannel.service can run deferred send_continue in its task thread when a previous request finishes and an already parsed following request has headers_finished/expect_continue but an incomplete body. Channel.received can consume both the completed request and the following partial headers within one socket read, so this does not require assuming a nondefault lookahead setting. send_continue directly calls _flush_some() without a close-policy argument; the new defaults propagate True into dispatcher.send. A disconnect during that send can still close on the worker while select retains the descriptor. Old code already had this route: source-deduced residual failure, not an introduced optional-argument regression or a reproduced race. Conditions include the pending100-Continue state, connected channel, an accessible response-producing first request, disconnected send error and the exact descriptor-collection interleaving. This does not assign the unmodified send_continue call-site failure to the correctly repaired selected high-watermark/eager entry; keep its narrow after assessment local.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported but its essential worker/helper/send/poll ownership chain is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:4b26eafb22bb7805cc2d and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes. Batch021 revalidates the complete three-case socket leaf: it changes no discovery event, source, mechanical family or candidate count. Preserve batch020 and its earlier bounded repair descriptions; the uncovered continuation route is part of the same worker-close race family.",
+      "open_questions": [
+        "Researcher confirm deferred100-Continue pending-request/worker scheduling and select error delivery from the coherent source path. No request, socket operation, parser or concurrency reproduction executes.",
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "(_, exception) = self._flush_exception(self._flush_some)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "(_, exception) = self._flush_exception(self._flush_some, do_close=False)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "r, w, e = select.select(r, w, e, timeout)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "            r, w, e = select.select(r, w, e, timeout)\n        except OSError as err:\n            if err.args[0] != EINTR:\n                raise\n            else:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "self.socket.close()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "def handle_close("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "                        self.server.pull_trigger()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "docs/arguments.rst",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "By default ``asyncore.loop()`` uses ``select()``"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "src/waitress/server.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "            )\n        except (SystemExit, KeyboardInterrupt):\n            self.close()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2022/31xxx/CVE-2022-31015.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress is a Web Server Gateway Interface server for Python 2 and 3. Waitress versions 2.1.0 and 2.1.1 may terminate early due to a thread closing a socket while the main thread is about to call select(). This will lead to the main thread raising an exception that is not handled and then causing the entire application to be killed. This issue has been fixed in Waitress 2.1.2 by no longer allowing the WSGI thread to close the socket. Instead, that is always delegated to the main thread. There is no work-around for this issue. However, users using waitress behind a reverse proxy server are less likely to have issues if the reverse proxy always reads the full response.\"\n                }\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "self.send_continue()\n\n        if self.connected:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "self.send_continue()\n\n        if self.connected:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "self._flush_some()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "and self.request.expect_continue"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "data = data[n:]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "self.requests.append(self.request)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-31015:0:src/waitress/channel.py:HTTPChannel.write_soon",
+      "review_revision": 2,
+      "source_discovery_revision": 1,
+      "mechanism": "Worker eager flush may synchronously close a socket while main select retains its descriptor.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old channel documents task-thread writes and asynchronous main-loop methods. Worker flush reaches send; a disconnected send calls handle_close synchronously, then dispatcher.close removes the map entry and closes the socket. Main poll has already copied numeric descriptors and only recovers EINTR; EBADF/non-EINTR escapes loop/server.run, threatening process availability. Exact old docs default asyncore_use_poll=False and the public advisory establish this prior ownership duty and affected2.1.x context.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need WSGI worker caller and output thresholds, full _flush_exception/_flush_some/send chain, HTTPChannel.handle_close, numeric-descriptor snapshot, poll exception scope, server.run and eventual main-loop progress. Locks on output buffers do not serialize descriptor collection by select. CPython/OS error and timing are deployment prerequisites, not executed race outcomes. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An unauthenticated/disconnected remote client on an accessible response-producing route can exercise socket-send failure while a WSGI worker flushes buffered data. Under documented default select-based loop, synchronous worker close invalidates a previously collected descriptor and a non-EINTR select error escapes server.run. Advisory affected2.1.0/2.1.1; after delegates close to main loop. Reachable response, output threshold, OS disconnect error and precise scheduling are prerequisites. A full-response-reading reverse proxy reduces exposure; this is a conditional availability boundary, not all deployments or all thread interleavings.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After selected worker entry explicitly passesFalse through both helpers to guarded send; disconnect returns0 without worker close, leaving pending bytes/trigger for main handle_write using defaultTrue to close. Preserve the bounded disconnect-close race repair only; no universal concurrency, poll backend, all worker routes, output-buffer or eventual-delivery guarantee. Main-loop closure and trigger/wait behavior must be judged in the coherent after chain. Separate pipeline context: Matched old and after HTTPChannel.service can run deferred send_continue in its task thread when a previous request finishes and an already parsed following request has headers_finished/expect_continue but an incomplete body. Channel.received can consume both the completed request and the following partial headers within one socket read, so this does not require assuming a nondefault lookahead setting. send_continue directly calls _flush_some() without a close-policy argument; the new defaults propagate True into dispatcher.send. A disconnect during that send can still close on the worker while select retains the descriptor. Old code already had this route: source-deduced residual failure, not an introduced optional-argument regression or a reproduced race. Conditions include the pending100-Continue state, connected channel, an accessible response-producing first request, disconnected send error and the exact descriptor-collection interleaving. This does not assign the unmodified send_continue call-site failure to the correctly repaired selected high-watermark/eager entry; keep its narrow after assessment local.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual old repair is supported but its essential worker/helper/send/poll ownership chain is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:4b26eafb22bb7805cc2d and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes. Batch021 revalidates the complete three-case socket leaf: it changes no discovery event, source, mechanical family or candidate count. Preserve batch020 and its earlier bounded repair descriptions; the uncovered continuation route is part of the same worker-close race family.",
+      "open_questions": [
+        "Researcher confirm deferred100-Continue pending-request/worker scheduling and select error delivery from the coherent source path. No request, socket operation, parser or concurrency reproduction executes.",
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "(flushed, exception) = self._flush_exception(self._flush_some)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                        self._flush_some, do_close=False\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "r, w, e = select.select(r, w, e, timeout)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "            r, w, e = select.select(r, w, e, timeout)\n        except OSError as err:\n            if err.args[0] != EINTR:\n                raise\n            else:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "self.socket.close()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "def handle_close("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "                        self.server.pull_trigger()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "docs/arguments.rst",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "By default ``asyncore.loop()`` uses ``select()``"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "src/waitress/server.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "            )\n        except (SystemExit, KeyboardInterrupt):\n            self.close()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2022/31xxx/CVE-2022-31015.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress is a Web Server Gateway Interface server for Python 2 and 3. Waitress versions 2.1.0 and 2.1.1 may terminate early due to a thread closing a socket while the main thread is about to call select(). This will lead to the main thread raising an exception that is not handled and then causing the entire application to be killed. This issue has been fixed in Waitress 2.1.2 by no longer allowing the WSGI thread to close the socket. Instead, that is always delegated to the main thread. There is no work-around for this issue. However, users using waitress behind a reverse proxy server are less likely to have issues if the reverse proxy always reads the full response.\"\n                }\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "self.send_continue()\n\n        if self.connected:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "self.send_continue()\n\n        if self.connected:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "self._flush_some()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "and self.request.expect_continue"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "data = data[n:]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "self.requests.append(self.request)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-31015:0:src/waitress/wasyncore.py:dispatcher.send",
+      "review_revision": 2,
+      "source_discovery_revision": 1,
+      "mechanism": "False-controlled send repairs two worker entries but deferred100-Continue still reaches the default synchronous-close sink.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain current narrow discovery leaf or null classification. Separate old contract and selected attribution, functional streaming/counting concerns, realistic differential-proxy or remote-disconnect delivery, omitted function-only context and after-side failures. Shared advisories, permissive syntax or a new option are not separate issues or proof of prior supported-input defects.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old channel documents task-thread writes and asynchronous main-loop methods. Worker flush reaches send; a disconnected send calls handle_close synchronously, then dispatcher.close removes the map entry and closes the socket. Main poll has already copied numeric descriptors and only recovers EINTR; EBADF/non-EINTR escapes loop/server.run, threatening process availability. Exact old docs default asyncore_use_poll=False and the public advisory establish this prior ownership duty and affected2.1.x context.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need WSGI worker caller and output thresholds, full _flush_exception/_flush_some/send chain, HTTPChannel.handle_close, numeric-descriptor snapshot, poll exception scope, server.run and eventual main-loop progress. Locks on output buffers do not serialize descriptor collection by select. CPython/OS error and timing are deployment prerequisites, not executed race outcomes. Uniform numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Helpers/callers/globals, advisories, fixtures, runtime comparisons, after code and answers are adjudication-only, never selectively injected into detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An unauthenticated/disconnected remote client on an accessible response-producing route can exercise socket-send failure while a WSGI worker flushes buffered data. Under documented default select-based loop, synchronous worker close invalidates a previously collected descriptor and a non-EINTR select error escapes server.run. Advisory affected2.1.0/2.1.1; after delegates close to main loop. Reachable response, output threshold, OS disconnect error and precise scheduling are prerequisites. A full-response-reading reverse proxy reduces exposure; this is a conditional availability boundary, not all deployments or all thread interleavings.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After send suppresses handle_close only when repaired worker callers passFalse. DefaultTrue is deliberately unchanged for main-loop callers and is not independently safe on a worker. Preserve the bounded disconnect-close race repair only; no universal concurrency, poll backend, all worker routes, output-buffer or eventual-delivery guarantee. Main-loop closure and trigger/wait behavior must be judged in the coherent after chain. Matched old and after HTTPChannel.service can run deferred send_continue in its task thread when a previous request finishes and an already parsed following request has headers_finished/expect_continue but an incomplete body. Channel.received can consume both the completed request and the following partial headers within one socket read, so this does not require assuming a nondefault lookahead setting. send_continue directly calls _flush_some() without a close-policy argument; the new defaults propagate True into dispatcher.send. A disconnect during that send can still close on the worker while select retains the descriptor. Old code already had this route: source-deduced residual failure, not an introduced optional-argument regression or a reproduced race. Conditions include the pending100-Continue state, connected channel, an accessible response-producing first request, disconnected send error and the exact descriptor-collection interleaving.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Withhold a clean after-function negative: the supported worker-close race remains reachable from the old deferred100-Continue route despite correctFalse propagation at the two modified entries.",
+      "dependence_reason": "Preserve fix-family:4b26eafb22bb7805cc2d and all exact/AST/function-history/span links. Eighteen rows occupy four mechanical families, not18 independent issues. The2019 header/TE cases share before source; 16789 begins at16786 after. The2022 chunk before equals the later2019 chunk after, linking framing history across families. Six socket-close components are one race family. No alias, follow-up or shared source establishes independent root causes. Batch021 revalidates the complete three-case socket leaf: it changes no discovery event, source, mechanical family or candidate count. Preserve batch020 and its earlier bounded repair descriptions; the uncovered continuation route is part of the same worker-close race family.",
+      "open_questions": [
+        "Researcher confirm deferred100-Continue pending-request/worker scheduling and select error delivery from the coherent source path. No request, socket operation, parser or concurrency reproduction executes.",
+        "Researcher confirm accepted old runtime/API/configuration and selected scope, realistic frontend or disconnect delivery, strict function-only observability and bounded after-negative eligibility; independent issue counts remain pending.",
+        "All observations are source deductions, not reproduced results. No Waitress, HTTP/chunk/field/regex/numeric parser, socket/server/proxy/network/thread, dataset/dependency/application program, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            elif why.args[0] in _DISCONNECTED:\n                self.handle_close()\n                return 0\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if do_close:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "r, w, e = select.select(r, w, e, timeout)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "            r, w, e = select.select(r, w, e, timeout)\n        except OSError as err:\n            if err.args[0] != EINTR:\n                raise\n            else:\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/wasyncore.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "self.socket.close()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "def handle_close("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "                        self.server.pull_trigger()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "docs/arguments.rst",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "By default ``asyncore.loop()`` uses ``select()``"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020.json",
+          "path": "src/waitress/server.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "            )\n        except (SystemExit, KeyboardInterrupt):\n            self.close()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_ADVISORIES.json",
+          "path": "cves/2022/31xxx/CVE-2022-31015.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"Waitress is a Web Server Gateway Interface server for Python 2 and 3. Waitress versions 2.1.0 and 2.1.1 may terminate early due to a thread closing a socket while the main thread is about to call select(). This will lead to the main thread raising an exception that is not handled and then causing the entire application to be killed. This issue has been fixed in Waitress 2.1.2 by no longer allowing the WSGI thread to close the socket. Instead, that is always delegated to the main thread. There is no work-around for this issue. However, users using waitress behind a reverse proxy server are less likely to have issues if the reverse proxy always reads the full response.\"\n                }\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48^",
+          "needle": "self.send_continue()\n\n        if self.connected:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "self.send_continue()\n\n        if self.connected:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "self._flush_some()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "and self.request.expect_continue"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "data = data[n:]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_020_LIFECYCLE.json",
+          "path": "src/waitress/channel.py",
+          "ref": "4f6789b035610e0552738cdc4b35ca809a592d48",
+          "needle": "self.requests.append(self.request)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Matched old and after HTTPChannel.service can run deferred send_continue in its task thread when a previous request finishes and an already parsed following request has headers_finished/expect_continue but an incomplete body. Channel.received can consume both the completed request and the following partial headers within one socket read, so this does not require assuming a nondefault lookahead setting. send_continue directly calls _flush_some() without a close-policy argument; the new defaults propagate True into dispatcher.send. A disconnect during that send can still close on the worker while select retains the descriptor. Old code already had this route: source-deduced residual failure, not an introduced optional-argument regression or a reproduced race. Conditions include the pending100-Continue state, connected channel, an accessible response-producing first request, disconnected send error and the exact descriptor-collection interleaving."
+    }
+  ]
+}

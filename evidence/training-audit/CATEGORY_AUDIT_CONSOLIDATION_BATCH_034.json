@@ -1,0 +1,614 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-034",
+  "review_date": "2026-10-26",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All six pysaml2 training candidates/all statuses in the single shared entity-expansion fix family; no null categories exist in this repository.",
+  "selection_rule": {
+    "repository": "github.com/rohe/pysaml2",
+    "discovery_categories": [
+      "SEC-XML-ENTITY-EXPANSION"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 832,
+    "sha256": "77d3003fbedadf6b27134179e2da0b0164693a1eb7ee572a1850a8d9ba10771c"
+  },
+  "interpretation": "Three missing-context and three selected security-delivery deferrals. Effective historical ElementTree comparisons admit internal entity expansion before tag/signature/structure checks but do not support advisory arbitrary-file reads. Concrete generic SAML, SOAP extraction and class-instance/ECP callers must not be borrowed by raw extension, pack parser or envelope opener. New defusedxml defaults reject declared entities; forbid_dtd=False is not all-DTD rejection or universal resource/signature/xmlsec safety. Historical CPython2.7.12/3.5.2 and defusedxml0.4.1/0.5.0 are semantic comparisons, not deployed or whole supported-range proof; old setup advertises2.7/3.4/3.5 and new dependency is unversioned. No supported independent entity-free after-contract failure is established; XML tree backend differences alone are not a regression witness. Four separately pinned files retain136 inert texts/six exact archive peers, with literal source/example and wrapper retrieval; no dynamic-call completeness or public endpoint deployment claim. Preserve all832 discovery events, six supported statuses/categories, IDs/hashes/family/splits, prior batches and45 protected inputs. Six functions/three files/one family are not independently adjudicated issues. Findings are conditional source deductions; retained programs/XML payloads/vulnerability requests/upstream tests stay inert.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2016-10149:0:src/saml2/__init__.py:create_class_from_xml_string",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Generic XML-to-target-class conversion performs entity processing before class/root validation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain SEC-XML-ENTITY-EXPANSION for internal declaration/expansion policy; do not substitute the advisory external-file-read label for the effective binding or broaden this into all XML/xmlsec/signature failures. No new leaf, approved taxonomy or independent-issue decision is made.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old SAML/SOAP XML-to-class/envelope APIs parse the complete XML before tag/schema/conversion/signature consumers. Protecting the process from lower-trust expansion work is separate from accepting a final valid SAML class or successful signature. Both retained advertised-runtime comparisons CPython2.7.12/3.5.2 document ElementTree internal entity exponential/quadratic expansion but no external entity expansion/DTD retrieval. These are conditional semantic comparisons, not deployed runtime/Expat/hardening proof. A later mismatched tag, parse exception, class check or signature rejection cannot undo successful earlier parsing work. The retained new tests contain internal entity declarations and expect rejection before ordinary target-class/SOAP validation; they are inert evidence of policy change, not executions or proof of a high-volume DoS. SOAP1.1 forbids a DTD, but the checks shown occur after full parse; that rule alone supplies no early resource guard. samlp.authn_request_from_string directly delegates to this selected helper; old correctly_signed_message resolves that wrapper and calls it before signature presence/check_signature. correctly_signed_response similarly parses a response before checking it. Thus admitted request/response XML reaches this selected parser without a successful signature being a prerequisite. Actual wire/API/transport policy remains external. Wrong-root inputs still incur parsing before create_class_from_element_tree returnsNone.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need full module import binding (stdlib cElementTree/ElementTree or fallback), affected interpreter/Expat/entity limits, actual API invocation and trust/size/decompression admission. A generic fromstring call alone does not identify the bound implementation or prove uncontrolled expansion on every runtime. The common numerical bounded before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Caller/helper/global/import/dependency/specification facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Retained old SAML/SOAP/ECP consumers place selected parsing before later signature/class/semantic rejection, supporting conditional peer/input-to-process resource authority crossing. samlp.authn_request_from_string directly delegates to this selected helper; old correctly_signed_message resolves that wrapper and calls it before signature presence/check_signature. correctly_signed_response similarly parses a response before checking it. Thus admitted request/response XML reaches this selected parser without a successful signature being a prerequisite. Actual wire/API/transport policy remains external. Wrong-root inputs still incur parsing before create_class_from_element_tree returnsNone. CPython runtime comparisons support internal expansion/resource risks, not selected external-file reads or measured/installed DoS. No XML is executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After calls defusedxml.ElementTree.fromstring with default policy. Retained defusedxml0.4.1/0.5.0 factories default forbid_entities=True and forbid_external=True and attach EntityDeclHandler before feed; declarations raise EntitiesForbidden. This rejects declared internal entities before expansion in these comparisons. forbid_dtd=False does not reject every DTD, predefined XML escapes remain ordinary syntax, and huge/deep/entity-free documents are not universally bounded. No claim of complete SOAP compliance, signature integrity, xmlsec/backend remediation, all-parser security or arbitrary-file-read removal is made. The unversioned new dependency does not establish all future/backported installations. Tree conversion retains tag/attribute/child/text access; CPython2.7.12 cElementTree.tostring aliases ordinary ET.tostring, so a pure-versus-accelerated tree difference alone is not a supported serialization regression. No independent admitted entity-free after-contract failure is established; rejecting hostile declared entities is not itself such a witness. Defused rejection is not translated by this selected function, though outer consumers may wrap it.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer strict before-only admission: installed parser/entity protections, imported binding and lower-trust caller facts are project/runtime context. Concrete old consumers improve adjudication evidence without becoming injected detection inputs.",
+      "dependence_reason": "All six selected functions/three full files share fix-family:ed04d36ee6a0591bdc00 and the same defused parser substitution. Common entity-policy root, separate API delivery and different exception/return adapters are not six independently adjudicated issues. Preserve source exact/AST/span/family/connected links, including whole-file peers reused by different selected spans. XMLsec is explicitly outside the commit repair and does not supply an additional selected issue without separate evidence.",
+      "open_questions": [
+        "Researcher confirm exact runtime/Expat/parser protections, lower-trust selected API invocation, framing/size/decompression/resource limits, intended extension compatibility and minimum defusedxml version. SOAP1.1 forbids DTDs; generic XML helpers are broader, but no legitimate operational declared-entity preservation witness is established. No whole supported-version-range, complete negative, eligibility or issue-count approval.",
+        "Conditional source deductions, not reproduced results. No pysaml2/SAML/SOAP/XML/DTD/entity/Expat/defusedxml/xmlsec/parser/regex/signature/crypto/browser/network/process/dependency/application programs, XML payloads, vulnerability-target requests or upstream tests execute. Archive members are read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    tree = ElementTree.fromstring(xml_string)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    tree = defusedxml.ElementTree.fromstring(xml_string)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "from xml.etree import cElementTree as ElementTree"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "import defusedxml.ElementTree"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "Doc/library/xml.rst",
+          "ref": "v2.7.12",
+          "needle": "external entity expansion  **Yes**   No"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "defusedxml/ElementTree.py",
+          "ref": "0.4.1",
+          "needle": "parser.EntityDeclHandler = self.defused_entity_decl"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "defusedxml/common.py",
+          "ref": "0.4.1",
+          "needle": "def fromstring(text, forbid_dtd=False, forbid_entities=True,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "setup.py",
+          "ref": "6e09a25d9b4b7aa7a506853210a9a14100b8bc9b",
+          "needle": "'defusedxml'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "src/saml2/samlp.py",
+          "ref": "78261b9ae13c3855b33009cb1c5abc2c45839828",
+          "needle": "return saml2.create_class_from_xml_string(AuthnRequest, xml_string)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "src/saml2/sigver.py",
+          "ref": "78261b9ae13c3855b33009cb1c5abc2c45839828",
+          "needle": "msg = _func(decoded_xml)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "src/saml2/sigver.py",
+          "ref": "78261b9ae13c3855b33009cb1c5abc2c45839828",
+          "needle": "if not msg.signature:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if tree.tag == '{%s}%s' % (namespace, tag):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2016-10149:0:src/saml2/__init__.py:extension_element_from_string",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Raw extension XML parsing expands internal entities before recursive ExtensionElement conversion.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain SEC-XML-ENTITY-EXPANSION for internal declaration/expansion policy; do not substitute the advisory external-file-read label for the effective binding or broaden this into all XML/xmlsec/signature failures. No new leaf, approved taxonomy or independent-issue decision is made.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old SAML/SOAP XML-to-class/envelope APIs parse the complete XML before tag/schema/conversion/signature consumers. Protecting the process from lower-trust expansion work is separate from accepting a final valid SAML class or successful signature. Both retained advertised-runtime comparisons CPython2.7.12/3.5.2 document ElementTree internal entity exponential/quadratic expansion but no external entity expansion/DTD retrieval. These are conditional semantic comparisons, not deployed runtime/Expat/hardening proof. A later mismatched tag, parse exception, class check or signature rejection cannot undo successful earlier parsing work. The retained new tests contain internal entity declarations and expect rejection before ordinary target-class/SOAP validation; they are inert evidence of policy change, not executions or proof of a high-volume DoS. SOAP1.1 forbids a DTD, but the checks shown occur after full parse; that rule alone supplies no early resource guard. Old _extension_element_from_element_tree recursively preserves tag/attributes/children/text and old tests admit direct string conversion. Exhaustive literal src/example retrieval finds only this raw-string API definition, not a production raw caller. Ordinary generic SAML parsing builds extensions from an already parsed tree through a different helper; do not assign that sibling network path to this raw-string entry. A lower-trust caller here remains unestablished.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need full module import binding (stdlib cElementTree/ElementTree or fallback), affected interpreter/Expat/entity limits, actual API invocation and trust/size/decompression admission. A generic fromstring call alone does not identify the bound implementation or prove uncontrolled expansion on every runtime. The common numerical bounded before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Caller/helper/global/import/dependency/specification facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Raw parser mechanism is supported, but a concrete lower-trust producer/consumer path for this selected API is not established. Public API tests, common CVE/family or a sibling network parser are insufficient. Old _extension_element_from_element_tree recursively preserves tag/attributes/children/text and old tests admit direct string conversion. Exhaustive literal src/example retrieval finds only this raw-string API definition, not a production raw caller. Ordinary generic SAML parsing builds extensions from an already parsed tree through a different helper; do not assign that sibling network path to this raw-string entry. A lower-trust caller here remains unestablished. CPython runtime comparisons support internal expansion/resource risks, not selected external-file reads or measured/installed DoS. No XML is executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After calls defusedxml.ElementTree.fromstring with default policy. Retained defusedxml0.4.1/0.5.0 factories default forbid_entities=True and forbid_external=True and attach EntityDeclHandler before feed; declarations raise EntitiesForbidden. This rejects declared internal entities before expansion in these comparisons. forbid_dtd=False does not reject every DTD, predefined XML escapes remain ordinary syntax, and huge/deep/entity-free documents are not universally bounded. No claim of complete SOAP compliance, signature integrity, xmlsec/backend remediation, all-parser security or arbitrary-file-read removal is made. The unversioned new dependency does not establish all future/backported installations. Tree conversion retains tag/attribute/child/text access; CPython2.7.12 cElementTree.tostring aliases ordinary ET.tostring, so a pure-versus-accelerated tree difference alone is not a supported serialization regression. No independent admitted entity-free after-contract failure is established; rejecting hostile declared entities is not itself such a witness. Defused rejection is not translated by this selected function, though outer consumers may wrap it.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Defer security delivery for this selected entry instead of borrowing a sibling SAML/ECP caller; parser/import/runtime facts also remain missing before-only context.",
+      "dependence_reason": "All six selected functions/three full files share fix-family:ed04d36ee6a0591bdc00 and the same defused parser substitution. Common entity-policy root, separate API delivery and different exception/return adapters are not six independently adjudicated issues. Preserve source exact/AST/span/family/connected links, including whole-file peers reused by different selected spans. XMLsec is explicitly outside the commit repair and does not supply an additional selected issue without separate evidence.",
+      "open_questions": [
+        "Researcher confirm exact runtime/Expat/parser protections, lower-trust selected API invocation, framing/size/decompression/resource limits, intended extension compatibility and minimum defusedxml version. SOAP1.1 forbids DTDs; generic XML helpers are broader, but no legitimate operational declared-entity preservation witness is established. No whole supported-version-range, complete negative, eligibility or issue-count approval.",
+        "Conditional source deductions, not reproduced results. No pysaml2/SAML/SOAP/XML/DTD/entity/Expat/defusedxml/xmlsec/parser/regex/signature/crypto/browser/network/process/dependency/application programs, XML payloads, vulnerability-target requests or upstream tests execute. Archive members are read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "element_tree = ElementTree.fromstring(xml_string)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "element_tree = defusedxml.ElementTree.fromstring(xml_string)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "from xml.etree import cElementTree as ElementTree"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "import defusedxml.ElementTree"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "Doc/library/xml.rst",
+          "ref": "v2.7.12",
+          "needle": "external entity expansion  **Yes**   No"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "defusedxml/ElementTree.py",
+          "ref": "0.4.1",
+          "needle": "parser.EntityDeclHandler = self.defused_entity_decl"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "defusedxml/common.py",
+          "ref": "0.4.1",
+          "needle": "def fromstring(text, forbid_dtd=False, forbid_entities=True,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "setup.py",
+          "ref": "6e09a25d9b4b7aa7a506853210a9a14100b8bc9b",
+          "needle": "'defusedxml'"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "extension.children.append(_extension_element_from_element_tree(child))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "tests/test_03_saml2.py",
+          "ref": "78261b9ae13c3855b33009cb1c5abc2c45839828",
+          "needle": "def test_ee_1():\n    ee = saml2.extension_element_from_string(\n        \"\"\"<?xml version='1.0' encoding='UTF-8'?><foo>bar</foo>\"\"\")\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "src/saml2/__init__.py",
+          "ref": "78261b9ae13c3855b33009cb1c5abc2c45839828",
+          "needle": "self.extension_elements.append(_extension_element_from_element_tree("
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2016-10149:0:src/saml2/pack.py:parse_soap_enveloped_saml",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Pack SOAP parser fully parses before Envelope assertions and caller-specified body/header class selection.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain SEC-XML-ENTITY-EXPANSION for internal declaration/expansion policy; do not substitute the advisory external-file-read label for the effective binding or broaden this into all XML/xmlsec/signature failures. No new leaf, approved taxonomy or independent-issue decision is made.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old SAML/SOAP XML-to-class/envelope APIs parse the complete XML before tag/schema/conversion/signature consumers. Protecting the process from lower-trust expansion work is separate from accepting a final valid SAML class or successful signature. Both retained advertised-runtime comparisons CPython2.7.12/3.5.2 document ElementTree internal entity exponential/quadratic expansion but no external entity expansion/DTD retrieval. These are conditional semantic comparisons, not deployed runtime/Expat/hardening proof. A later mismatched tag, parse exception, class check or signature rejection cannot undo successful earlier parsing work. The retained new tests contain internal entity declarations and expect rejection before ordinary target-class/SOAP validation; they are inert evidence of policy change, not executions or proof of a high-volume DoS. SOAP1.1 forbids a DTD, but the checks shown occur after full parse; that rule alone supplies no early resource guard. Old callable admits SOAP text/body_class/header_class and returns converted body/header. Full src/example literal retrieval finds only the definition, with no production direct caller; newly added client regression is not an old ECP caller. The similarly named soap module class-instance parser is distinct. Actual lower-trust invocation is unresolved rather than borrowed from that sibling.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need full module import binding (stdlib cElementTree/ElementTree or fallback), affected interpreter/Expat/entity limits, actual API invocation and trust/size/decompression admission. A generic fromstring call alone does not identify the bound implementation or prove uncontrolled expansion on every runtime. The common numerical bounded before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Caller/helper/global/import/dependency/specification facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Raw parser mechanism is supported, but a concrete lower-trust producer/consumer path for this selected API is not established. Public API tests, common CVE/family or a sibling network parser are insufficient. Old callable admits SOAP text/body_class/header_class and returns converted body/header. Full src/example literal retrieval finds only the definition, with no production direct caller; newly added client regression is not an old ECP caller. The similarly named soap module class-instance parser is distinct. Actual lower-trust invocation is unresolved rather than borrowed from that sibling. CPython runtime comparisons support internal expansion/resource risks, not selected external-file reads or measured/installed DoS. No XML is executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After calls defusedxml.ElementTree.fromstring with default policy. Retained defusedxml0.4.1/0.5.0 factories default forbid_entities=True and forbid_external=True and attach EntityDeclHandler before feed; declarations raise EntitiesForbidden. This rejects declared internal entities before expansion in these comparisons. forbid_dtd=False does not reject every DTD, predefined XML escapes remain ordinary syntax, and huge/deep/entity-free documents are not universally bounded. No claim of complete SOAP compliance, signature integrity, xmlsec/backend remediation, all-parser security or arbitrary-file-read removal is made. The unversioned new dependency does not establish all future/backported installations. Tree conversion retains tag/attribute/child/text access; CPython2.7.12 cElementTree.tostring aliases ordinary ET.tostring, so a pure-versus-accelerated tree difference alone is not a supported serialization regression. No independent admitted entity-free after-contract failure is established; rejecting hostile declared entities is not itself such a witness. Defused rejection is not translated by this selected function, though outer consumers may wrap it.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Defer security delivery for this selected entry instead of borrowing a sibling SAML/ECP caller; parser/import/runtime facts also remain missing before-only context.",
+      "dependence_reason": "All six selected functions/three full files share fix-family:ed04d36ee6a0591bdc00 and the same defused parser substitution. Common entity-policy root, separate API delivery and different exception/return adapters are not six independently adjudicated issues. Preserve source exact/AST/span/family/connected links, including whole-file peers reused by different selected spans. XMLsec is explicitly outside the commit repair and does not supply an additional selected issue without separate evidence.",
+      "open_questions": [
+        "Researcher confirm exact runtime/Expat/parser protections, lower-trust selected API invocation, framing/size/decompression/resource limits, intended extension compatibility and minimum defusedxml version. SOAP1.1 forbids DTDs; generic XML helpers are broader, but no legitimate operational declared-entity preservation witness is established. No whole supported-version-range, complete negative, eligibility or issue-count approval.",
+        "Conditional source deductions, not reproduced results. No pysaml2/SAML/SOAP/XML/DTD/entity/Expat/defusedxml/xmlsec/parser/regex/signature/crypto/browser/network/process/dependency/application programs, XML payloads, vulnerability-target requests or upstream tests execute. Archive members are read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "envelope = ElementTree.fromstring(text)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "envelope = defusedxml.ElementTree.fromstring(text)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "from xml.etree import cElementTree as ElementTree"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "import defusedxml.ElementTree"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "Doc/library/xml.rst",
+          "ref": "v2.7.12",
+          "needle": "external entity expansion  **Yes**   No"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "defusedxml/ElementTree.py",
+          "ref": "0.4.1",
+          "needle": "parser.EntityDeclHandler = self.defused_entity_decl"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "defusedxml/common.py",
+          "ref": "0.4.1",
+          "needle": "def fromstring(text, forbid_dtd=False, forbid_entities=True,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "setup.py",
+          "ref": "6e09a25d9b4b7aa7a506853210a9a14100b8bc9b",
+          "needle": "'defusedxml'"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "assert envelope.tag == '{%s}Envelope' % NAMESPACE"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "body = saml2.create_class_from_element_tree(body_class, sub)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "tests/test_51_client.py",
+          "ref": "6e09a25d9b4b7aa7a506853210a9a14100b8bc9b",
+          "needle": "parse_soap_enveloped_saml(xml, None)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2016-10149:0:src/saml2/soap.py:class_instances_from_soap_enveloped_saml_thingies",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "SOAP dictionary/class parser processes entities before assertions, schema dispatch and ECP verification.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain SEC-XML-ENTITY-EXPANSION for internal declaration/expansion policy; do not substitute the advisory external-file-read label for the effective binding or broaden this into all XML/xmlsec/signature failures. No new leaf, approved taxonomy or independent-issue decision is made.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old SAML/SOAP XML-to-class/envelope APIs parse the complete XML before tag/schema/conversion/signature consumers. Protecting the process from lower-trust expansion work is separate from accepting a final valid SAML class or successful signature. Both retained advertised-runtime comparisons CPython2.7.12/3.5.2 document ElementTree internal entity exponential/quadratic expansion but no external entity expansion/DTD retrieval. These are conditional semantic comparisons, not deployed runtime/Expat/hardening proof. A later mismatched tag, parse exception, class check or signature rejection cannot undo successful earlier parsing work. The retained new tests contain internal entity declarations and expect rejection before ordinary target-class/SOAP validation; they are inert evidence of policy change, not executions or proof of a high-volume DoS. SOAP1.1 forbids a DTD, but the checks shown occur after full parse; that rule alone supplies no early resource guard. Old Entity.parse_soap_message delegates to this selected helper. Old ecp_client passes HTTP200 IdP and SP response.text through that method before response body checks/ECP continuation. handle_ecp_authn_response also parses before response.loads and verify. A selected service peer or response-controlling actor can therefore supply resource-heavy XML, conditional on actual channel/peer/size policy. Authentication of an HTTP peer does not authorize unlimited parser resource use; no arbitrary unrelated website delivery is asserted.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need full module import binding (stdlib cElementTree/ElementTree or fallback), affected interpreter/Expat/entity limits, actual API invocation and trust/size/decompression admission. A generic fromstring call alone does not identify the bound implementation or prove uncontrolled expansion on every runtime. The common numerical bounded before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Caller/helper/global/import/dependency/specification facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Retained old SAML/SOAP/ECP consumers place selected parsing before later signature/class/semantic rejection, supporting conditional peer/input-to-process resource authority crossing. Old Entity.parse_soap_message delegates to this selected helper. Old ecp_client passes HTTP200 IdP and SP response.text through that method before response body checks/ECP continuation. handle_ecp_authn_response also parses before response.loads and verify. A selected service peer or response-controlling actor can therefore supply resource-heavy XML, conditional on actual channel/peer/size policy. Authentication of an HTTP peer does not authorize unlimited parser resource use; no arbitrary unrelated website delivery is asserted. CPython runtime comparisons support internal expansion/resource risks, not selected external-file reads or measured/installed DoS. No XML is executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After calls defusedxml.ElementTree.fromstring with default policy. Retained defusedxml0.4.1/0.5.0 factories default forbid_entities=True and forbid_external=True and attach EntityDeclHandler before feed; declarations raise EntitiesForbidden. This rejects declared internal entities before expansion in these comparisons. forbid_dtd=False does not reject every DTD, predefined XML escapes remain ordinary syntax, and huge/deep/entity-free documents are not universally bounded. No claim of complete SOAP compliance, signature integrity, xmlsec/backend remediation, all-parser security or arbitrary-file-read removal is made. The unversioned new dependency does not establish all future/backported installations. Tree conversion retains tag/attribute/child/text access; CPython2.7.12 cElementTree.tostring aliases ordinary ET.tostring, so a pure-versus-accelerated tree difference alone is not a supported serialization regression. No independent admitted entity-free after-contract failure is established; rejecting hostile declared entities is not itself such a witness. XmlParseError translates the defused exception in this selected function; it is not an earlier resource guard in before.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer strict before-only admission: installed parser/entity protections, imported binding and lower-trust caller facts are project/runtime context. Concrete old consumers improve adjudication evidence without becoming injected detection inputs.",
+      "dependence_reason": "All six selected functions/three full files share fix-family:ed04d36ee6a0591bdc00 and the same defused parser substitution. Common entity-policy root, separate API delivery and different exception/return adapters are not six independently adjudicated issues. Preserve source exact/AST/span/family/connected links, including whole-file peers reused by different selected spans. XMLsec is explicitly outside the commit repair and does not supply an additional selected issue without separate evidence.",
+      "open_questions": [
+        "Researcher confirm exact runtime/Expat/parser protections, lower-trust selected API invocation, framing/size/decompression/resource limits, intended extension compatibility and minimum defusedxml version. SOAP1.1 forbids DTDs; generic XML helpers are broader, but no legitimate operational declared-entity preservation witness is established. No whole supported-version-range, complete negative, eligibility or issue-count approval.",
+        "Conditional source deductions, not reproduced results. No pysaml2/SAML/SOAP/XML/DTD/entity/Expat/defusedxml/xmlsec/parser/regex/signature/crypto/browser/network/process/dependency/application programs, XML payloads, vulnerability-target requests or upstream tests execute. Archive members are read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    :return: The body and headers as class instances\n    \"\"\"\n    try:\n        envelope = ElementTree.fromstring(text)\n    except Exception as exc:\n        raise XmlParseError(\"%s\" % exc)\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    :return: The body and headers as class instances\n    \"\"\"\n    try:\n        envelope = defusedxml.ElementTree.fromstring(text)\n    except Exception as exc:\n        raise XmlParseError(\"%s\" % exc)\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "from xml.etree import cElementTree as ElementTree"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "import defusedxml.ElementTree"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "Doc/library/xml.rst",
+          "ref": "v2.7.12",
+          "needle": "external entity expansion  **Yes**   No"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "defusedxml/ElementTree.py",
+          "ref": "0.4.1",
+          "needle": "parser.EntityDeclHandler = self.defused_entity_decl"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "defusedxml/common.py",
+          "ref": "0.4.1",
+          "needle": "def fromstring(text, forbid_dtd=False, forbid_entities=True,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "setup.py",
+          "ref": "6e09a25d9b4b7aa7a506853210a9a14100b8bc9b",
+          "needle": "'defusedxml'"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    \"\"\"\n    try:\n        envelope = ElementTree.fromstring(text)\n    except Exception as exc:\n        raise XmlParseError(\"%s\" % exc)\n\n    assert envelope.tag == '{%s}Envelope' % soapenv.NAMESPACE\n    assert len(envelope) >= 1\n    env = {\"header\": [], \"body\": None}\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "env[\"body\"] = instanciate_class(part[0], modules)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "src/saml2/entity.py",
+          "ref": "78261b9ae13c3855b33009cb1c5abc2c45839828",
+          "needle": "return class_instances_from_soap_enveloped_saml_thingies(text, [paos,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_DELIVERY.json",
+          "path": "src/saml2/ecp_client.py",
+          "ref": "78261b9ae13c3855b33009cb1c5abc2c45839828",
+          "needle": "        # SAMLP response in a SOAP envelope body, ecp response in headers\n        respdict = self.parse_soap_message(response.text)\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "src/saml2/ecp.py",
+          "ref": "78261b9ae13c3855b33009cb1c5abc2c45839828",
+          "needle": "response.verify()"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2016-10149:0:src/saml2/soap.py:open_soap_envelope",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "SOAP envelope opener fully parses before structure checks and body/header serialization.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain SEC-XML-ENTITY-EXPANSION for internal declaration/expansion policy; do not substitute the advisory external-file-read label for the effective binding or broaden this into all XML/xmlsec/signature failures. No new leaf, approved taxonomy or independent-issue decision is made.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old SAML/SOAP XML-to-class/envelope APIs parse the complete XML before tag/schema/conversion/signature consumers. Protecting the process from lower-trust expansion work is separate from accepting a final valid SAML class or successful signature. Both retained advertised-runtime comparisons CPython2.7.12/3.5.2 document ElementTree internal entity exponential/quadratic expansion but no external entity expansion/DTD retrieval. These are conditional semantic comparisons, not deployed runtime/Expat/hardening proof. A later mismatched tag, parse exception, class check or signature rejection cannot undo successful earlier parsing work. The retained new tests contain internal entity declarations and expect rejection before ordinary target-class/SOAP validation; they are inert evidence of policy change, not executions or proof of a high-volume DoS. SOAP1.1 forbids a DTD, but the checks shown occur after full parse; that rule alone supplies no early resource guard. Old Entity.unpack_soap_message exposes this selected opener and its body/header return shape. Literal src/example wrapper retrieval finds only that wrapper definition, not a production external caller. ECP client uses parse_soap_message/class_instances, not unpack_soap_message/open_soap_envelope; do not borrow the former network path. An actual lower-trust invocation remains unestablished.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need full module import binding (stdlib cElementTree/ElementTree or fallback), affected interpreter/Expat/entity limits, actual API invocation and trust/size/decompression admission. A generic fromstring call alone does not identify the bound implementation or prove uncontrolled expansion on every runtime. The common numerical bounded before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Caller/helper/global/import/dependency/specification facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Raw parser mechanism is supported, but a concrete lower-trust producer/consumer path for this selected API is not established. Public API tests, common CVE/family or a sibling network parser are insufficient. Old Entity.unpack_soap_message exposes this selected opener and its body/header return shape. Literal src/example wrapper retrieval finds only that wrapper definition, not a production external caller. ECP client uses parse_soap_message/class_instances, not unpack_soap_message/open_soap_envelope; do not borrow the former network path. An actual lower-trust invocation remains unestablished. CPython runtime comparisons support internal expansion/resource risks, not selected external-file reads or measured/installed DoS. No XML is executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After calls defusedxml.ElementTree.fromstring with default policy. Retained defusedxml0.4.1/0.5.0 factories default forbid_entities=True and forbid_external=True and attach EntityDeclHandler before feed; declarations raise EntitiesForbidden. This rejects declared internal entities before expansion in these comparisons. forbid_dtd=False does not reject every DTD, predefined XML escapes remain ordinary syntax, and huge/deep/entity-free documents are not universally bounded. No claim of complete SOAP compliance, signature integrity, xmlsec/backend remediation, all-parser security or arbitrary-file-read removal is made. The unversioned new dependency does not establish all future/backported installations. Tree conversion retains tag/attribute/child/text access; CPython2.7.12 cElementTree.tostring aliases ordinary ET.tostring, so a pure-versus-accelerated tree difference alone is not a supported serialization regression. No independent admitted entity-free after-contract failure is established; rejecting hostile declared entities is not itself such a witness. XmlParseError translates the defused exception in this selected function; it is not an earlier resource guard in before.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Defer security delivery for this selected entry instead of borrowing a sibling SAML/ECP caller; parser/import/runtime facts also remain missing before-only context.",
+      "dependence_reason": "All six selected functions/three full files share fix-family:ed04d36ee6a0591bdc00 and the same defused parser substitution. Common entity-policy root, separate API delivery and different exception/return adapters are not six independently adjudicated issues. Preserve source exact/AST/span/family/connected links, including whole-file peers reused by different selected spans. XMLsec is explicitly outside the commit repair and does not supply an additional selected issue without separate evidence.",
+      "open_questions": [
+        "Researcher confirm exact runtime/Expat/parser protections, lower-trust selected API invocation, framing/size/decompression/resource limits, intended extension compatibility and minimum defusedxml version. SOAP1.1 forbids DTDs; generic XML helpers are broader, but no legitimate operational declared-entity preservation witness is established. No whole supported-version-range, complete negative, eligibility or issue-count approval.",
+        "Conditional source deductions, not reproduced results. No pysaml2/SAML/SOAP/XML/DTD/entity/Expat/defusedxml/xmlsec/parser/regex/signature/crypto/browser/network/process/dependency/application programs, XML payloads, vulnerability-target requests or upstream tests execute. Archive members are read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    :return: dictionary with two keys \"body\"/\"header\"\n    \"\"\"\n    try:\n        envelope = ElementTree.fromstring(text)\n    except Exception as exc:\n        raise XmlParseError(\"%s\" % exc)\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    :return: dictionary with two keys \"body\"/\"header\"\n    \"\"\"\n    try:\n        envelope = defusedxml.ElementTree.fromstring(text)\n    except Exception as exc:\n        raise XmlParseError(\"%s\" % exc)\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "from xml.etree import cElementTree as ElementTree"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "import defusedxml.ElementTree"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "Doc/library/xml.rst",
+          "ref": "v2.7.12",
+          "needle": "external entity expansion  **Yes**   No"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "defusedxml/ElementTree.py",
+          "ref": "0.4.1",
+          "needle": "parser.EntityDeclHandler = self.defused_entity_decl"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "defusedxml/common.py",
+          "ref": "0.4.1",
+          "needle": "def fromstring(text, forbid_dtd=False, forbid_entities=True,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "setup.py",
+          "ref": "6e09a25d9b4b7aa7a506853210a9a14100b8bc9b",
+          "needle": "'defusedxml'"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    \"\"\"\n    try:\n        envelope = ElementTree.fromstring(text)\n    except Exception as exc:\n        raise XmlParseError(\"%s\" % exc)\n\n    assert envelope.tag == '{%s}Envelope' % soapenv.NAMESPACE\n    assert len(envelope) >= 1\n    content = {\"header\": [], \"body\": None}\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "content[\"body\"] = ElementTree.tostring(part[0], encoding=\"UTF-8\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "src/saml2/entity.py",
+          "ref": "78261b9ae13c3855b33009cb1c5abc2c45839828",
+          "needle": "return open_soap_envelope(text)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "Modules/_elementtree.c",
+          "ref": "v2.7.12",
+          "needle": "\"cElementTree.tostring = ET.tostring\\n\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2016-10149:0:src/saml2/soap.py:parse_soap_enveloped_saml_thingy",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "SOAP typed-message extractor processes entity declarations before Envelope/Body/expected-tag checks.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Retain SEC-XML-ENTITY-EXPANSION for internal declaration/expansion policy; do not substitute the advisory external-file-read label for the effective binding or broaden this into all XML/xmlsec/signature failures. No new leaf, approved taxonomy or independent-issue decision is made.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old SAML/SOAP XML-to-class/envelope APIs parse the complete XML before tag/schema/conversion/signature consumers. Protecting the process from lower-trust expansion work is separate from accepting a final valid SAML class or successful signature. Both retained advertised-runtime comparisons CPython2.7.12/3.5.2 document ElementTree internal entity exponential/quadratic expansion but no external entity expansion/DTD retrieval. These are conditional semantic comparisons, not deployed runtime/Expat/hardening proof. A later mismatched tag, parse exception, class check or signature rejection cannot undo successful earlier parsing work. The retained new tests contain internal entity declarations and expect rejection before ordinary target-class/SOAP validation; they are inert evidence of policy change, not executions or proof of a high-volume DoS. SOAP1.1 forbids a DTD, but the checks shown occur after full parse; that rule alone supplies no early resource guard. Entity.unravel dynamically chooses existing soap.parse_soap_enveloped_saml_<msgtype> wrappers for SOAP; response/logout/artifact wrappers delegate here. Entity._parse_response calls unravel before response.loads, and artifact resolve invokes its wrapper before class parsing. Thus SOAP request/response admission can reach this selected parse before later authentication/semantic validation. Actual external service route, message-size policy and transport constraints remain conditional.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need full module import binding (stdlib cElementTree/ElementTree or fallback), affected interpreter/Expat/entity limits, actual API invocation and trust/size/decompression admission. A generic fromstring call alone does not identify the bound implementation or prove uncontrolled expansion on every runtime. The common numerical bounded before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Caller/helper/global/import/dependency/specification facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Retained old SAML/SOAP/ECP consumers place selected parsing before later signature/class/semantic rejection, supporting conditional peer/input-to-process resource authority crossing. Entity.unravel dynamically chooses existing soap.parse_soap_enveloped_saml_<msgtype> wrappers for SOAP; response/logout/artifact wrappers delegate here. Entity._parse_response calls unravel before response.loads, and artifact resolve invokes its wrapper before class parsing. Thus SOAP request/response admission can reach this selected parse before later authentication/semantic validation. Actual external service route, message-size policy and transport constraints remain conditional. CPython runtime comparisons support internal expansion/resource risks, not selected external-file reads or measured/installed DoS. No XML is executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After calls defusedxml.ElementTree.fromstring with default policy. Retained defusedxml0.4.1/0.5.0 factories default forbid_entities=True and forbid_external=True and attach EntityDeclHandler before feed; declarations raise EntitiesForbidden. This rejects declared internal entities before expansion in these comparisons. forbid_dtd=False does not reject every DTD, predefined XML escapes remain ordinary syntax, and huge/deep/entity-free documents are not universally bounded. No claim of complete SOAP compliance, signature integrity, xmlsec/backend remediation, all-parser security or arbitrary-file-read removal is made. The unversioned new dependency does not establish all future/backported installations. Tree conversion retains tag/attribute/child/text access; CPython2.7.12 cElementTree.tostring aliases ordinary ET.tostring, so a pure-versus-accelerated tree difference alone is not a supported serialization regression. No independent admitted entity-free after-contract failure is established; rejecting hostile declared entities is not itself such a witness. Defused rejection is not translated by this selected function, though outer consumers may wrap it.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer strict before-only admission: installed parser/entity protections, imported binding and lower-trust caller facts are project/runtime context. Concrete old consumers improve adjudication evidence without becoming injected detection inputs.",
+      "dependence_reason": "All six selected functions/three full files share fix-family:ed04d36ee6a0591bdc00 and the same defused parser substitution. Common entity-policy root, separate API delivery and different exception/return adapters are not six independently adjudicated issues. Preserve source exact/AST/span/family/connected links, including whole-file peers reused by different selected spans. XMLsec is explicitly outside the commit repair and does not supply an additional selected issue without separate evidence.",
+      "open_questions": [
+        "Researcher confirm exact runtime/Expat/parser protections, lower-trust selected API invocation, framing/size/decompression/resource limits, intended extension compatibility and minimum defusedxml version. SOAP1.1 forbids DTDs; generic XML helpers are broader, but no legitimate operational declared-entity preservation witness is established. No whole supported-version-range, complete negative, eligibility or issue-count approval.",
+        "Conditional source deductions, not reproduced results. No pysaml2/SAML/SOAP/XML/DTD/entity/Expat/defusedxml/xmlsec/parser/regex/signature/crypto/browser/network/process/dependency/application programs, XML payloads, vulnerability-target requests or upstream tests execute. Archive members are read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    \"\"\"\n    envelope = ElementTree.fromstring(text)\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    \"\"\"\n    envelope = defusedxml.ElementTree.fromstring(text)\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "from xml.etree import cElementTree as ElementTree"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "import defusedxml.ElementTree"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "Doc/library/xml.rst",
+          "ref": "v2.7.12",
+          "needle": "external entity expansion  **Yes**   No"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "defusedxml/ElementTree.py",
+          "ref": "0.4.1",
+          "needle": "parser.EntityDeclHandler = self.defused_entity_decl"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTRACTS.json",
+          "path": "defusedxml/common.py",
+          "ref": "0.4.1",
+          "needle": "def fromstring(text, forbid_dtd=False, forbid_entities=True,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "setup.py",
+          "ref": "6e09a25d9b4b7aa7a506853210a9a14100b8bc9b",
+          "needle": "'defusedxml'"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if saml_part.tag in expected_tags:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def parse_soap_enveloped_saml_response(text):\n    tags = ['{%s}Response' % SAMLP_NAMESPACE,\n            '{%s}LogoutResponse' % SAMLP_NAMESPACE]\n    return parse_soap_enveloped_saml_thingy(text, tags)\n\n\ndef parse_soap_enveloped_saml_logout_response(text):\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "src/saml2/entity.py",
+          "ref": "78261b9ae13c3855b33009cb1c5abc2c45839828",
+          "needle": "\"parse_soap_enveloped_saml_%s\" % msgtype"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "src/saml2/entity.py",
+          "ref": "78261b9ae13c3855b33009cb1c5abc2c45839828",
+          "needle": "xmlstr = self.unravel(xmlstr, binding, response_cls.msgtype)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_034_CONTEXT.json",
+          "path": "src/saml2/entity.py",
+          "ref": "78261b9ae13c3855b33009cb1c5abc2c45839828",
+          "needle": "_resp = parse_soap_enveloped_saml_artifact_resolve(txt)"
+        }
+      ]
+    }
+  ]
+}

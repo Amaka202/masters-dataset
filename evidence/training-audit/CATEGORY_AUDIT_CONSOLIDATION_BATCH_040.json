@@ -1,0 +1,350 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-040",
+  "review_date": "2026-10-27",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All five Twisted training candidates/all discovery statuses across two mechanical families; no null categories.",
+  "selection_rule": {
+    "repository": "github.com/twisted/twisted",
+    "discovery_categories": [
+      "SEC-HTTP-FRAMING-DISAGREEMENT",
+      "SEC-REDIRECT-CREDENTIAL-STRIPPING"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Two missing-context, two selected-attribution and one security-boundary deferrals. Redirect constructor adds coordinated policy; new custom ETag capitalization can mismatch Headers canonical output, a new-policy limitation rather than an established old selected custom-policy regression. Broad header strip hides non-OWS before framing; chunk int accepts non-RFC syntax/unchecked extension octets, narrowed after before buffer/state consumption with server400/disconnect. Actual multi-parser differential delivery remains unresolved, not proven by a strictly rejecting RFC frontend. Obs-fold normalization has normative duty but no isolated old selected security witness; standalone utility has no retained production caller. Four pins retain52 inert texts/four exact archive peers/two resolved parents/four archive inventories and explicit absent members. CONTRACTS source0 is retained HTTP301 text only, not normative grammar; RFC file follows ordinary TLS-verified retrieval redirects to actual RFC7230. CPython3.10.2 is an API comparison, not installed/all-version proof. Preserve all833 ledger events/statuses/categories/hashes/families, canonical bytes/splits, prior authored batches and45 protected inputs. Five functions/two families are not independently adjudicated issues; no retained programs/payloads/vulnerability-target requests/upstream tests execute.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-21712:0:src/twisted/web/client.py:RedirectAgent.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "RedirectAgent constructor adds default/custom header policy consumed by a separately changed origin filter.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve redirect credential-policy initialization versus actual redirect transmission and distinguish header edge-whitespace handling, obs-fold normalization, streamed chunk grammar and standalone utility reachability. Smuggling requires an actual parser-disagreement delivery; RFC nonconformance alone is not a demonstrated cross-request exploit. No new leaf/approved eligibility/independent-issue count.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old initializer only saves underlying agent/redirect count; request/_handleRedirect send caller headers. After adds sensitive policy state and a newly changed handler compares scheme/host/port and copies only allowed canonical raw names before request. Actual cross-origin transmission is outside selected constructor, so coordinated new-policy state does not establish an isolated old selected sink. Default sensitive names and matching Headers canonical outputs matter.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual redirect method/status/Location flow, source/destination origin parsing, sensitive values supplied and receiving actor, complete Headers canonicalization and custom policy. Constructor alone has neither old request nor origin check. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. HTTP parser/transport/frontend behavior, caller/header policy, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Separate handler can conditionally transmit original credentials to a redirected different origin; constructor state is causal context, not a separately demonstrated old disclosure. New customizable policy also has special-case canonicalization limits below.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After default policy is consumed by new cross-origin filtering, not a standalone constructor security negative. Same-origin behavior remains, and no complete redirect/DNS/custom-header credential safety is certified. The added custom API passes names directly to a helper documented to take lowercase: ETag input becomes Etag, but Headers normalizes stored etag to special ETag output, so that custom entry does not match. Lowercase etag works. This supported new-policy canonicalization limitation is not labeled an introduced regression in an established old selected custom-policy duty, since the option did not exist before.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "New/coordinated policy or normalization is real, but no isolated old selected security violation is established; defer selected attribution rather than inherit the entire CVE.",
+      "dependence_reason": "Five selected functions/two mechanical families are not independent issues. Constructor policy fix-family:ae20fa7fdb635c407443 and HTTP grammar fix-family:d2fa2f2769a674425211 have different fixes/parents; three HTTP source copies and utility share one family/file, not four demonstrated server exploit routes. Earlier client after/later client before history does not equate selected functions or merge issue identities. Waitress numeric-framing similarities, RFC normative comparison and standard Python API contracts do not establish shared cross-project root causes or installed frontends.",
+      "open_questions": [
+        "Researcher pin actual multiple-parser deployment, forwarded malformed syntax and competing consumed-byte interpretations, transport/error containment, redirect-origin credential policy and custom sensitive-header admission. Exact source retrieval does not establish dynamic/deployed integration completeness or all supported runtimes.",
+        "Conditional source deductions only, not reproduced HTTP/network outcomes. No retained Twisted/HTTP/header/URL/parser/decoder/bytes/int/regex/network/proxy/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._redirectLimit = redirectLimit"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "sensitive = {_canonicalHeaderName(each) for each in sensitiveHeaderNames}"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "deferred = self._agent.request(method, location, headers)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if rawName not in self._sensitiveHeaderNames"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_040_CONTEXT.json",
+          "path": "src/twisted/web/http_headers.py",
+          "ref": "af8fe78542a6f2bf2235ccee8158d9c88d31e8e2",
+          "needle": "b\"etag\": b\"ETag\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_040_CONTEXT.json",
+          "path": "src/twisted/web/http_headers.py",
+          "ref": "af8fe78542a6f2bf2235ccee8158d9c88d31e8e2",
+          "needle": "return self._caseMappings.get(name, _dashCapitalize(name))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_040_CONTEXT.json",
+          "path": "src/twisted/web/http_headers.py",
+          "ref": "af8fe78542a6f2bf2235ccee8158d9c88d31e8e2",
+          "needle": "yield self._canonicalNameCaps(k), v"
+        }
+      ],
+      "additional_after_concerns": [
+        "New custom sensitive-header option canonicalizes ETag differently from actual Headers output because the helper expects lowercase. This is a new-policy limitation, not proof of an old selected constructor security defect or an independently introduced old-contract regression."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24801:0:src/twisted/web/http.py:HTTPChannel.headerReceived",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Broad bytes.strip hides non-OWS header-value edge octets before body-framing interpretation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve redirect credential-policy initialization versus actual redirect transmission and distinguish header edge-whitespace handling, obs-fold normalization, streamed chunk grammar and standalone utility reachability. Smuggling requires an actual parser-disagreement delivery; RFC nonconformance alone is not a demonstrated cross-request exploit. No new leaf/approved eligibility/independent-issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old HTTPChannel parses network header lines, strips every default ASCII whitespace byte from values, then calls framing selector before Headers storage normalization. RFC7230 OWS is only SP/HTAB. A VT/FF edge on Transfer-Encoding can be removed into chunked acceptance; old Content-Length int also accepts broad whitespace. After SP/HTAB-only strip preserves those octets, and coordinated ASCII-digit CL/exact TE consumers reject them via400/disconnect. Need both the selected normalization and companion selector for the exact effect; this is not merely displayed whitespace.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need full network line accumulator/selector, bytes semantics, strict digit helper, disconnect flow and actual upstream parser forwarding/interpretation. RFC rejection at an upstream endpoint alone would not demonstrate smuggling delivery. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. HTTP parser/transport/frontend behavior, caller/header policy, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Untrusted request bytes reach the body decoder selector and old hidden invalid octets change framing admission. A consequential frontend/backend desynchronization requires an actual frontend that forwards/interprets the input differently; that deployment/control is not established by RFC grammar or new tests alone.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After selected strip preserves non-OWS edges; coordinated framing rejects witnessed non-OWS CL/TE forms. Negative is that normalization/admission mechanism, not all header grammar, transport behavior, proxy chains, HTTP2 or universally safe streams. No independently supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched API/grammar and exact consumers support the local before/after behavior. Omitted runtime/helper/transport/frontend/admission context prevents function-only/security certification; preserve the mechanism-local negative and distinct deferral.",
+      "dependence_reason": "Five selected functions/two mechanical families are not independent issues. Constructor policy fix-family:ae20fa7fdb635c407443 and HTTP grammar fix-family:d2fa2f2769a674425211 have different fixes/parents; three HTTP source copies and utility share one family/file, not four demonstrated server exploit routes. Earlier client after/later client before history does not equate selected functions or merge issue identities. Waitress numeric-framing similarities, RFC normative comparison and standard Python API contracts do not establish shared cross-project root causes or installed frontends.",
+      "open_questions": [
+        "Researcher pin actual multiple-parser deployment, forwarded malformed syntax and competing consumed-byte interpretations, transport/error containment, redirect-origin credential policy and custom sensitive-header admission. Exact source retrieval does not establish dynamic/deployed integration completeness or all supported runtimes.",
+        "Conditional source deductions only, not reproduced HTTP/network outcomes. No retained Twisted/HTTP/header/URL/parser/decoder/bytes/int/regex/network/proxy/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "data = data.strip()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "data = data.strip(b\" \\t\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not self._maybeChooseTransferDecoder(header, data):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not data.isdigit():"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except _MalformedChunkedDataError:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_040_CONTEXT.json",
+          "path": "src/twisted/web/http_headers.py",
+          "ref": "de8e5a6e9bb27db39de1b48d9c7f77806520929f",
+          "needle": "return b\" \".join(headerComponent.splitlines())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_040_RFC.json",
+          "path": "rfc7230.txt",
+          "ref": "RFC7230",
+          "needle": "OWS            = *( SP / HTAB )"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_040_CONTRACTS.json",
+          "path": "Doc/library/stdtypes.rst",
+          "ref": "v3.10.2",
+          "needle": "argument defaults to removing ASCII whitespace."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24801:0:src/twisted/web/http.py:HTTPChannel.lineReceived",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Header continuation normalizes obs-fold before interpretation, without an isolated old smuggling witness.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve redirect credential-policy initialization versus actual redirect transmission and distinguish header edge-whitespace handling, obs-fold normalization, streamed chunk grammar and standalone utility reachability. Smuggling requires an actual parser-disagreement delivery; RFC nonconformance alone is not a demonstrated cross-request exploit. No new leaf/approved eligibility/independent-issue count.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old accumulator appends LF plus the original continuation SP/HTAB run; framing interpretation occurs before Headers later sanitizes line whitespace. RFC7230 independently requires rejection or SP unfolding before interpretation. After replaces the complete obs-fold sequence with a single SP. This is real standards hardening, but ordinary folded CL/TE forms tested here either agree after outer strip or reject when folding splits digits/token. Headers sanitization also already removes line endings for later storage. No concrete matched old folded-header producer/frontend disagreement is isolated from companion whitespace/numeric fixes; do not infer it from the new fixture normalization alone.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need continuation state, full header/decoder/Headers sequence and a supported old meaning-changing frontend path. Both framing and later stored value semantics differ from merely comparing changed lines. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. HTTP parser/transport/frontend behavior, caller/header policy, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No isolated selected old cross-request/security delivery is established. The sibling broad-strip and numeric grammar findings do not automatically prove this changed obs-fold branch is another vulnerable function.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After SP unfolding accords with the cited RFC obligation, but a new normalization policy and fixture are not a selected exploitable-before/fixed-after pair. Header containers already perform later linear-whitespace normalization. Do not certify all obs-fold/proxy grammar or infer a supported after regression; selected negative remains unestablished.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "New/coordinated policy or normalization is real, but no isolated old selected security violation is established; defer selected attribution rather than inherit the entire CVE.",
+      "dependence_reason": "Five selected functions/two mechanical families are not independent issues. Constructor policy fix-family:ae20fa7fdb635c407443 and HTTP grammar fix-family:d2fa2f2769a674425211 have different fixes/parents; three HTTP source copies and utility share one family/file, not four demonstrated server exploit routes. Earlier client after/later client before history does not equate selected functions or merge issue identities. Waitress numeric-framing similarities, RFC normative comparison and standard Python API contracts do not establish shared cross-project root causes or installed frontends.",
+      "open_questions": [
+        "Researcher pin actual multiple-parser deployment, forwarded malformed syntax and competing consumed-byte interpretations, transport/error containment, redirect-origin credential policy and custom sensitive-header admission. Exact source retrieval does not establish dynamic/deployed integration completeness or all supported runtimes.",
+        "Conditional source deductions only, not reproduced HTTP/network outcomes. No retained Twisted/HTTP/header/URL/parser/decoder/bytes/int/regex/network/proxy/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.__header = self.__header + b\"\\n\" + line"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.__header += b\" \" + line.lstrip(b\" \\t\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "ok = self.headerReceived(self.__header)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_040_CONTEXT.json",
+          "path": "src/twisted/web/http_headers.py",
+          "ref": "de8e5a6e9bb27db39de1b48d9c7f77806520929f",
+          "needle": "return b\" \".join(headerComponent.splitlines())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_040_RFC.json",
+          "path": "rfc7230.txt",
+          "ref": "RFC7230",
+          "needle": "each received obs-fold with one or more SP octets prior to"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24801:0:src/twisted/web/http.py:_ChunkedTransferDecoder._dataReceived_CHUNK_LENGTH",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Streamed chunk-length parsing accepts Python-specific numeric syntax and discards unchecked extension characters.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve redirect credential-policy initialization versus actual redirect transmission and distinguish header edge-whitespace handling, obs-fold normalization, streamed chunk grammar and standalone utility reachability. Smuggling requires an actual parser-disagreement delivery; RFC nonconformance alone is not a demonstrated cross-request exploit. No new leaf/approved eligibility/independent-issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old chunk decoder explicitly implements RFC7230 request/response body chunking and consumes incoming buffered CRLF lines. Python int(raw,16) accepts prefixes/signs/edge whitespace beyond nonempty ASCII HEXDIG; old code rejects negative values but still admits prefixed/positive-signed forms. Bytes after semicolon are ignored without character checks. Server transfer selector and client response parser both use this decoder; server catches malformed-data errors and disconnects. After strict _hexint and permitted extension octet check occur before length/state update and buffer deletion. Existing size limit and split-CRLF restart already precede the change.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need helper/global allowlist definitions, exact buffered consumed-byte/state lifecycle, server/client consumer and error-close behavior plus real frontend differential delivery. Ordinary int grammar is not itself HTTP grammar. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. HTTP parser/transport/frontend behavior, caller/header policy, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Network-controlled body bytes reach this parser; it can accept non-RFC framing/extension syntax. Smuggling/security consequences remain conditional on actual competing parser semantics and forwarded-byte policy, not a claim every strict rejecting frontend permits it.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After rejects witnessed nonempty non-ASCII-hex prefixes/signs/whitespace and extension octets outside allowed range before state/buffer consumption; malformed server errors cause400/disconnect. It explicitly does not validate the complete extension grammar, and utility/response/error containment must remain separately bounded. No new line-size repair, all-stream safety or supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched API/grammar and exact consumers support the local before/after behavior. Omitted runtime/helper/transport/frontend/admission context prevents function-only/security certification; preserve the mechanism-local negative and distinct deferral.",
+      "dependence_reason": "Five selected functions/two mechanical families are not independent issues. Constructor policy fix-family:ae20fa7fdb635c407443 and HTTP grammar fix-family:d2fa2f2769a674425211 have different fixes/parents; three HTTP source copies and utility share one family/file, not four demonstrated server exploit routes. Earlier client after/later client before history does not equate selected functions or merge issue identities. Waitress numeric-framing similarities, RFC normative comparison and standard Python API contracts do not establish shared cross-project root causes or installed frontends.",
+      "open_questions": [
+        "Researcher pin actual multiple-parser deployment, forwarded malformed syntax and competing consumed-byte interpretations, transport/error containment, redirect-origin credential policy and custom sensitive-header admission. Exact source retrieval does not establish dynamic/deployed integration completeness or all supported runtimes.",
+        "Conditional source deductions only, not reproduced HTTP/network outcomes. No retained Twisted/HTTP/header/URL/parser/decoder/bytes/int/regex/network/proxy/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "length = int(self._buffer[0:endOfLengthIndex], 16)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "length = _hexint(rawLength)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if ext and ext.translate(None, _chunkExtChars) != b\"\":"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return b != b\"\""
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "newTransferDecoder = _ChunkedTransferDecoder("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_040_CONTEXT.json",
+          "path": "src/twisted/web/_newclient.py",
+          "ref": "de8e5a6e9bb27db39de1b48d9c7f77806520929f",
+          "needle": "b\"chunked\": _ChunkedTransferDecoder,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_040_RFC.json",
+          "path": "rfc7230.txt",
+          "ref": "RFC7230",
+          "needle": "chunk-size     = 1*HEXDIG"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_040_CONTRACTS.json",
+          "path": "Doc/library/functions.rst",
+          "ref": "v3.10.2",
+          "needle": "whitespace.  A base-n literal consists"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2022-24801:0:src/twisted/web/http.py:fromChunk",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Standalone fromChunk tightens its hex grammar, but retained production retrieval finds no caller.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve redirect credential-policy initialization versus actual redirect transmission and distinguish header edge-whitespace handling, obs-fold normalization, streamed chunk grammar and standalone utility reachability. Smuggling requires an actual parser-disagreement delivery; RFC nonconformance alone is not a demonstrated cross-request exploit. No new leaf/approved eligibility/independent-issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old public helper promises ValueError on incorrectly formatted chunked bytes, splits prefix/CRLF, calls int(prefix,16), checks trailing CRLF and returns data/remainder. Its non-RFC prefix acceptance is a real utility grammar issue; after _hexint rejects it. Literal full production-Python retrieval across old/after archives finds only its definition, while network bodies use _ChunkedTransferDecoder instead. Tests establish API behavior but do not establish this helper as the server-smuggling sink. Missing extensions were already unsupported and are documented after.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual lower-trust production caller and consuming/framing semantics. Standalone helper text does not include the strict helper body or actual server path. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. HTTP parser/transport/frontend behavior, caller/header policy, helpers/globals, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No identified retained production caller delivers attacker bytes through this selected utility; its server sibling network path must not be borrowed. A custom/external caller can differ, but extensibility alone is not a demonstrated exposure.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After utility rejects the witnessed prefixed/signed/nonhex length syntax via shared helper. Negative is standalone strict-hex parsing only; extension support/full incremental chunk semantics and server-smuggling negative are not established. No independent after-contract regression is demonstrated.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Matched API/grammar and exact consumers support the local before/after behavior. Omitted runtime/helper/transport/frontend/admission context prevents function-only/security certification; preserve the mechanism-local negative and distinct deferral.",
+      "dependence_reason": "Five selected functions/two mechanical families are not independent issues. Constructor policy fix-family:ae20fa7fdb635c407443 and HTTP grammar fix-family:d2fa2f2769a674425211 have different fixes/parents; three HTTP source copies and utility share one family/file, not four demonstrated server exploit routes. Earlier client after/later client before history does not equate selected functions or merge issue identities. Waitress numeric-framing similarities, RFC normative comparison and standard Python API contracts do not establish shared cross-project root causes or installed frontends.",
+      "open_questions": [
+        "Researcher pin actual multiple-parser deployment, forwarded malformed syntax and competing consumed-byte interpretations, transport/error containment, redirect-origin credential policy and custom sensitive-header admission. Exact source retrieval does not establish dynamic/deployed integration completeness or all supported runtimes.",
+        "Conditional source deductions only, not reproduced HTTP/network outcomes. No retained Twisted/HTTP/header/URL/parser/decoder/bytes/int/regex/network/proxy/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "length = int(prefix, 16)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "length = _hexint(prefix)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "If the given data is not a correctly formatted chunked"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "Note that this function is not specification compliant: it doesn't handle"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not _ishexdigits(b):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_040_RFC.json",
+          "path": "rfc7230.txt",
+          "ref": "RFC7230",
+          "needle": "chunk-size     = 1*HEXDIG"
+        }
+      ]
+    }
+  ]
+}

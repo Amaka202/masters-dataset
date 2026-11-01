@@ -1,0 +1,565 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-046",
+  "review_date": "2026-10-28",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All four OpenStack swauth training candidates/all statuses; one shared token-object naming family.",
+  "selection_rule": {
+    "repository": "github.com/openstack/swauth",
+    "discovery_categories": [
+      "SEC-TOKEN-URI-LOGGING"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Three missing-context and one paired-negative deferrals. Normal issuance, local group cache-miss lookup and external validation expose live raw bearer token-object names in old backing URIs; named Swift2.15.0 path/object logging confirms conditional log-reader replay independently of token-header truncation. Coordinated after uses prefix:token:suffix SHA512 hex object names and digest-derived shard under historical Python2.7; no invented Python3 regression. Admin user deletion has a distinct conditional live-cache witness even after successful DELETE, without a failed-delete race: both exact handlers omit token-cache invalidation, so unexpired groups survive and authorize after user deletion. Record that residual ordinary lifecycle failure as unresolved_contract_failure/defer_paired_negative, retaining ambiguous discovery history. Front-door/remote token-validation URIs and auth-service posthook path logs remain explicitly outside the repaired backend-name negative; no complete secret-log claim. Commit-announced no-memcached old-token logout is intentional transition context, not accidental regression or automatic migration proof. Four evidence pins retain47 inert texts/two exact full-file peers/one resolved first parent/two archive inventories with requested-missing provenance; named dependencies are not installed/all-version/deployed proof. Four selected functions remain one mechanical family, not four independent issues. Conditional inert-source deductions, not reproduced outcomes. No retained WSGI/HTTP/token/authentication/hash/crypto/cache/Swift/storage/logging/configuration/runtime/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched issuance/storage/helper/cache/authorization/configuration, Swift path/logging/readers, dependency/runtime comparisons, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:88203329489273:122152526863630",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Cache-miss external token validator embeds a bearer in backing-object URI; coordinated after uses salted digest naming.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate live bearer exposure through backend object-name URIs, intended credential exchange/metadata, caller validation URI and auth-service logging, limited header redaction, cache hit/miss and expiry, token revocation/cache coherence, intentional storage-name compatibility break and hashing runtime admission. Salted naming is not encryption of all secrets or general authentication certification.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old documented API validates GET v2/.token/<token> and returns remaining lifetime/groups, and old storage documentation explicitly names token objects by the bearer string. On cache miss the selected validator sends that full token through a preauthorized backend GET and deletes an expired record. Matched issuer creates/returns that same bearer; middleware accepts it from X-Auth-Token and binds groups to authorization. Named Swift2.15.0 retains object text in proxy-to-object paths and object request logs, independently of header redaction. Existing authenticated validation duty and concrete live-token storage path support the local confidentiality repair; the advisory title is not the sole witness.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need issuer/authorization binding, the shared concealment helper and constants, cache miss versus live cache, storage naming and real logging/access policy. A path-looking token in isolated before text does not establish a readable live credential leak. Local .admin group rewriting and expiry response remain distinct. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched issuance/storage/helper/cache/authorization/configuration, Swift path/logging/readers, dependency/runtime comparisons, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Given a nonexpired normal issued token and an actual backend GET, a reader of the enabled relevant proxy/object logs who lacks that user bearer can obtain the complete old token and present it through the same middleware to acquire its groups. Named object logger is enabled by default and logs full req.path; actual log-reader admission/availability is conditional. Proxy token-header prefix truncation does not redact object-name URI text. Cache-only validation and expired-token cleanup alone do not demonstrate live disclosure. No publicly readable logs or administrative credential bypass is assumed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After computes the same prefix:token:suffix SHA512 hexadecimal name and final-character shard as its matched issuer, and uses that name for the selected GET/expired DELETE. Python2.7 string hashing is an admitted historical shape; no unsupported Python3 TypeError is invented. The incoming /v2/.token/<token> API and matched auth posthook still retain raw request-path text; swob.path joins SCRIPT_NAME and PATH_INFO, so path_info_pop is not redaction. Those front-door/auth-log and other credential fields are outside this backend-object-name negative. Do not certify all token URI/log confidentiality. The commit explicitly warns that the naming change logs out users without memcached; that documented intentional compatibility break is not assigned as an accidental after regression.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Local storage-name confidentiality repair is supported under the coordinated old issuer/validator/logging contract, but its real delivery and mechanism-local after meaning require project/dependency/cache/configuration context outside the bounded before function.",
+      "dependence_reason": "Four selected functions/one full file/one mechanical family fix-family:d02bdd73edb193081cec share the same exact fix and resolved first parent. Issuance, local group lookup, external token validation and deletion are coordinated operations on the same token-object naming policy, not four independently adjudicated CVEs. The deletion/cache residual is one separate lifecycle failure within that integration, not a newly admitted security-positive or four copies of an issue. Preserve canonical IDs/source bytes/splits, discovery status/category, source/family/connected-block descriptors and pending independent issue adjudication.",
+      "open_questions": [
+        "Researcher confirm installed Python/Swift versions, middleware placement, logging/redaction/retention and which log readers lack user credentials, real token/cache/storage state, shared salt configuration and deployment transition. Named Swift2.15.0 and CPython2.7.14 comparisons are not installed/all-version proof. Do not infer anonymous log access, digest-as-bearer acceptance, complete log secrecy or immediate cross-cluster cache revocation. Resolve common before-only context/knowledge policy and independent issue identity.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained WSGI/HTTP/token/authentication/hash/crypto/cache/Swift/storage/logging/configuration/runtime/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            path = quote('/v1/%s/.token_%s/%s' %\n                         (self.auth_account, token[-1], token))\n            resp = self.make_pre_authed_request(\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            path = quote('/v1/%s/.token_%s/%s' %\n                         (self.auth_account, object_name[-1], object_name))\n            resp = self.make_pre_authed_request(\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "return sha512(enc_key).hexdigest()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "enc_key = \"%s:%s:%s\" % (HASH_PATH_PREFIX, token, HASH_PATH_SUFFIX)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/obj/server.py",
+          "ref": "2.15.0",
+          "needle": "log_line = get_log_line(req, res, trans_time,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/common/utils.py",
+          "ref": "2.15.0",
+          "needle": "req.method, req.path, res.status.split()[0]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/common/middleware/proxy_logging.py",
+          "ref": "2.15.0",
+          "needle": "self.obscure_sensitive(req.headers.get('x-auth-token'))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_DELIVERY.json",
+          "path": "swift/common/bufferedhttp.py",
+          "ref": "2.15.0",
+          "needle": "path = quote('/' + device + '/' + str(partition) + path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "setup.cfg",
+          "ref": "54ac16ad670d8586acb668ac31ac4e2655831747",
+          "needle": "Programming Language :: Python :: 2.7"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "Doc/library/hashlib.rst",
+          "ref": "v2.7.14",
+          "needle": "arbitrary strings"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "doc/source/details.rst",
+          "ref": "54ac16ad670d8586acb668ac31ac4e2655831747",
+          "needle": "The names of the objects are the"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "54ac16ad670d8586acb668ac31ac4e2655831747",
+          "needle": "groups = self.get_groups(env, token)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "the_request = quote(unquote(req.path))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/common/swob.py",
+          "ref": "2.15.0",
+          "needle": "self.script_name += path_info[:slash_loc]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "github/commits/70af7986265a3defea054c46efc82d0698917298.json",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "this patch logs out all users"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:88203329489273:153112364103707",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Local cache-miss group lookup exposes live token as backend object name; remote-validation and S3 branches have different provenance.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate live bearer exposure through backend object-name URIs, intended credential exchange/metadata, caller validation URI and auth-service logging, limited header redaction, cache hit/miss and expiry, token revocation/cache coherence, intentional storage-name compatibility break and hashing runtime admission. Salted naming is not encryption of all secrets or general authentication certification.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old get_groups promises groups for a valid token and None for an invalid token. __call__ reads the request bearer, calls this method, sets REMOTE_USER and authorization callbacks from returned groups. On a local non-S3 cache miss the old method GETs the object named by that bearer, validates its expiry and populates a groups cache with the remaining lifetime. The matched old issuer/documented storage format makes the raw URI a live bearer source. Named Swift logging/path propagation establishes a conditional disclosure sink beyond merely noticing interpolation.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need __call__ authorization, same-ref issuer/helper and storage policy, cache miss/expiry, remote versus local and S3 mode, Swift path/log contracts and reader permissions. A local-token-object witness must not be attributed to the remote HTTP validation or S3 signing branches, and a cache hit skips this repaired local lookup. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched issuance/storage/helper/cache/authorization/configuration, Swift path/logging/readers, dependency/runtime comparisons, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A lower-privilege reader of enabled backend logs can learn a live local token while an ordinary client request causes a cache-miss GET; that value is accepted by the same __call__/get_groups authentication path with its user groups. Conditional log-reader access, unexpired object and backend request are required. The caller is not thereby allowed to choose arbitrary groups or read .auth objects. Header redaction is a distinct field and leaves raw object URI text intact.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After local lookup and expired cleanup use the shared salted SHA512 object name, consistently with issuance. Existing cache keys remain raw tokens and remote mode still sends /v2/.token/<raw token>; the remote auth service posthook logs the full request path under the retained comparison. S3 signing, incoming request headers, remote/front-door logs and cache secrecy are not certified by this local storage-name negative. Do not call those different logging surfaces repaired or treat the documented no-cache old-token logout as an accidental regression. The deletion invalidation obligation is separately localized to the deleting handler, which has the token and opportunity to invalidate it; this cache reader does not itself observe a deletion event.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Conditional old local-token disclosure and coordinated naming repair are supported, but actual selected delivery/after scope needs absent project logging/cache/mode/issuer facts. Keep the negative local to the changed backing-object lookup and one shared family.",
+      "dependence_reason": "Four selected functions/one full file/one mechanical family fix-family:d02bdd73edb193081cec share the same exact fix and resolved first parent. Issuance, local group lookup, external token validation and deletion are coordinated operations on the same token-object naming policy, not four independently adjudicated CVEs. The deletion/cache residual is one separate lifecycle failure within that integration, not a newly admitted security-positive or four copies of an issue. Preserve canonical IDs/source bytes/splits, discovery status/category, source/family/connected-block descriptors and pending independent issue adjudication.",
+      "open_questions": [
+        "Researcher confirm installed Python/Swift versions, middleware placement, logging/redaction/retention and which log readers lack user credentials, real token/cache/storage state, shared salt configuration and deployment transition. Named Swift2.15.0 and CPython2.7.14 comparisons are not installed/all-version proof. Do not infer anonymous log access, digest-as-bearer acceptance, complete log secrecy or immediate cross-cluster cache revocation. Resolve common before-only context/knowledge policy and independent issue identity.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained WSGI/HTTP/token/authentication/hash/crypto/cache/Swift/storage/logging/configuration/runtime/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                             (self.auth_account, token[-1], token))\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                             (self.auth_account, object_name[-1], object_name))\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "return sha512(enc_key).hexdigest()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "enc_key = \"%s:%s:%s\" % (HASH_PATH_PREFIX, token, HASH_PATH_SUFFIX)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/obj/server.py",
+          "ref": "2.15.0",
+          "needle": "log_line = get_log_line(req, res, trans_time,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/common/utils.py",
+          "ref": "2.15.0",
+          "needle": "req.method, req.path, res.status.split()[0]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/common/middleware/proxy_logging.py",
+          "ref": "2.15.0",
+          "needle": "self.obscure_sensitive(req.headers.get('x-auth-token'))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_DELIVERY.json",
+          "path": "swift/common/bufferedhttp.py",
+          "ref": "2.15.0",
+          "needle": "path = quote('/' + device + '/' + str(partition) + path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "setup.cfg",
+          "ref": "54ac16ad670d8586acb668ac31ac4e2655831747",
+          "needle": "Programming Language :: Python :: 2.7"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "Doc/library/hashlib.rst",
+          "ref": "v2.7.14",
+          "needle": "arbitrary strings"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "env['REMOTE_USER'] = groups"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "time=float(detail['expires'] - time())"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "quote(token)),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/common/middleware/proxy_logging.py",
+          "ref": "2.15.0",
+          "needle": "conf.get('reveal_sensitive_prefix', 16)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "github/commits/70af7986265a3defea054c46efc82d0698917298.json",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "this patch logs out all users"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:88203329489273:6394449417396",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "User deletion leaks the raw token through DELETE URI; live authentication cache survives deletion on both sides.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate live bearer exposure through backend object-name URIs, intended credential exchange/metadata, caller validation URI and auth-service logging, limited header redaction, cache hit/miss and expiry, token revocation/cache coherence, intentional storage-name compatibility break and hashing runtime admission. Salted naming is not encryption of all secrets or general authentication certification.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old handler is an account-admin operation to delete a user and explicitly deletes that user's existing token before deleting the user object. It obtains the actual candidate bearer from the user object metadata, not arbitrary request text. Matched old get_groups caches unexpired groups under reseller_prefix/auth/token and accepts that cached tuple before any backing-object check; __call__ authorizes from those groups. Thus after a successful token-object/user deletion, an existing unexpired cache entry still permits token use. This establishes a conditional old live-bearer DELETE-log case without assuming failed deletion or a log-read-before-delete race. The same old token lifecycle includes explicit cache invalidation in the forced-new-token issuer branch, supporting the cache coherence duty independently of new tests.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual admin gates, metadata producer, a previously populated ordinary live groups cache, shared cache binding, __call__ authorization and backend DELETE logging. Without such cache state, successful revocation may make the logged token unusable; do not inherit the issuer/GET live-token witness or erase administrative deletion prerequisites. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched issuance/storage/helper/cache/authorization/configuration, Swift path/logging/readers, dependency/runtime comparisons, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "For a normal user token already cached by prior accepted use, an authorized admin can delete its backing object and user. A distinct reader of that DELETE backend log can recover the old full token and present it while the groups cache remains unexpired: no old user lookup or backing-token recheck occurs on that cache hit. Log access, successful prior caching, live expiry and an allowed resource are explicit conditions; no failed-delete race, anonymous logs, admin-secret theft or new log access is assumed. Discovery remains ambiguous in the immutable ledger; this additional conditional cache witness refines the proposal evidence without rewriting discovery history.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After hashes the deletion object path consistently, removing the full bearer from that specific backend URI. However it still never deletes the candidate token's auth cache entry before returning success. Both matched get_groups and handle_validate_token accept an unexpired cached tuple without checking the now-deleted object/user. A holder of the token can therefore continue to authenticate through that cache after ordinary successful deletion until expiry/eviction, with unchanged groups. This old deletion/revocation integration failure is residual, not introduced by SHA512 naming and not proof of anonymous compromise. It defeats a selected paired negative even though backend-name confidentiality is locally repaired. A no-cache client instead misses the deleted backing record; do not claim universal persistence or cross-cluster invalidation.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Conditional selected old DELETE disclosure now has a concrete live-cache witness, preserving the earlier ambiguous discovery event. Matched after leaves the ordinary user-deletion/token-revocation cache contract broken; explicitly defer the paired negative for residual failure rather than certify an entirely clean selected after or invent a new introduction.",
+      "dependence_reason": "Four selected functions/one full file/one mechanical family fix-family:d02bdd73edb193081cec share the same exact fix and resolved first parent. Issuance, local group lookup, external token validation and deletion are coordinated operations on the same token-object naming policy, not four independently adjudicated CVEs. The deletion/cache residual is one separate lifecycle failure within that integration, not a newly admitted security-positive or four copies of an issue. Preserve canonical IDs/source bytes/splits, discovery status/category, source/family/connected-block descriptors and pending independent issue adjudication.",
+      "open_questions": [
+        "Researcher confirm installed Python/Swift versions, middleware placement, logging/redaction/retention and which log readers lack user credentials, real token/cache/storage state, shared salt configuration and deployment transition. Named Swift2.15.0 and CPython2.7.14 comparisons are not installed/all-version proof. Do not infer anonymous log access, digest-as-bearer acceptance, complete log secrecy or immediate cross-cluster cache revocation. Resolve common before-only context/knowledge policy and independent issue identity.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained WSGI/HTTP/token/authentication/hash/crypto/cache/Swift/storage/logging/configuration/runtime/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            path = quote('/v1/%s/.token_%s/%s' %\n                (self.auth_account, candidate_token[-1], candidate_token))\n            resp = self.make_pre_authed_request(\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            path = quote('/v1/%s/.token_%s/%s' %\n                (self.auth_account, object_name[-1], object_name))\n            resp = self.make_pre_authed_request(\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "return sha512(enc_key).hexdigest()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "enc_key = \"%s:%s:%s\" % (HASH_PATH_PREFIX, token, HASH_PATH_SUFFIX)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/obj/server.py",
+          "ref": "2.15.0",
+          "needle": "log_line = get_log_line(req, res, trans_time,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/common/utils.py",
+          "ref": "2.15.0",
+          "needle": "req.method, req.path, res.status.split()[0]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/common/middleware/proxy_logging.py",
+          "ref": "2.15.0",
+          "needle": "self.obscure_sensitive(req.headers.get('x-auth-token'))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_DELIVERY.json",
+          "path": "swift/common/bufferedhttp.py",
+          "ref": "2.15.0",
+          "needle": "path = quote('/' + device + '/' + str(partition) + path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "setup.cfg",
+          "ref": "54ac16ad670d8586acb668ac31ac4e2655831747",
+          "needle": "Programming Language :: Python :: 2.7"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "Doc/library/hashlib.rst",
+          "ref": "v2.7.14",
+          "needle": "arbitrary strings"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "# Delete the user's existing token, if any."
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            raise Exception('Could not delete the user object: %s %s' %\n                            (path, resp.status))\n        return HTTPNoContent(request=req)\n\n    def is_user_reseller_admin(self, req, account, user):\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "54ac16ad670d8586acb668ac31ac4e2655831747",
+          "needle": "        memcache_client = cache_from_env(env)\n        if memcache_client:\n            memcache_key = '%s/auth/%s' % (self.reseller_prefix, token)\n            cached_auth_data = memcache_client.get(memcache_key)\n            if cached_auth_data:\n                expires, groups = cached_auth_data\n                if expires < time():\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "54ac16ad670d8586acb668ac31ac4e2655831747",
+          "needle": "env['REMOTE_USER'] = groups"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "        memcache_client = cache_from_env(env)\n        if memcache_client:\n            memcache_key = '%s/auth/%s' % (self.reseller_prefix, token)\n            cached_auth_data = memcache_client.get(memcache_key)\n            if cached_auth_data:\n                expires, groups = cached_auth_data\n                if expires < time():\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "time=float(detail['expires'] - time())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "memcache_client.delete(memcache_key)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "def handle_validate_token(self, req):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/common/memcached.py",
+          "ref": "2.15.0",
+          "needle": "                          pickle instead of JSON (to avoid cache poisoning)\n        :param time: the time to live\n        :param min_compress_len: minimum compress length, this parameter was\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_DELIVERY.json",
+          "path": "README.md",
+          "ref": "54ac16ad670d8586acb668ac31ac4e2655831747",
+          "needle": "pipeline = catch_errors cache swauth proxy-server"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Both exact deletion handlers remove the token backing object and user without invalidating the corresponding cached auth tuple. Old and new get_groups accept a previously populated unexpired groups cache and __call__ authorizes it without a user/object recheck; handle_validate_token also accepts that cache. Thus a normal existing token remains usable after successful user deletion until cache expiry/eviction. Old forced-new-token issuance explicitly deletes the same cache key, independently supporting the lifecycle duty. This is residual and conditionally reachable with the documented cache pipeline; it is neither a new SHA512 regression nor a claim that every deployment/log reader can exploit it."
+    },
+    {
+      "pair_id": "CVEfixes:88203329489273:71194288610155",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Issuer exposes existing/fresh live bearer in token-object GET/PUT/DELETE URIs; coordinated after conceals names while still returning intended bearer.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate live bearer exposure through backend object-name URIs, intended credential exchange/metadata, caller validation URI and auth-service logging, limited header redaction, cache hit/miss and expiry, token revocation/cache coherence, intentional storage-name compatibility break and hashing runtime admission. Salted naming is not encryption of all secrets or general authentication certification.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old successful authentication requires nonempty account/user/key, loads user credentials and calls credentials_match. It checks a candidate token via raw-name GET, or generates reseller_prefix plus tk plus uuid4.hex and PUTs the token record under that raw name, stores the bearer in user metadata and returns it in X-Auth-Token/X-Storage-Token. Documented ordinary duty is issuance/reuse of a token for subsequent Swift authorization; __call__/get_groups supplies that consumer. Proxy-to-object request paths and enabled object logger expose fresh/live token names to a log reader independently of intended credential delivery. The super-admin internal-token cache-only branch is distinct and is not this storage-URI witness.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need credential producer/verification, normal versus super-admin branch, candidate expiry and new-token state, storage/cache/consumer/helper contracts, actual backend path logging/readers and supported Python runtime. A new test or advisory cannot establish the old live bearer by itself. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched issuance/storage/helper/cache/authorization/configuration, Swift path/logging/readers, dependency/runtime comparisons, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An ordinary successfully authenticated issuance or live candidate reuse writes/reads a bearer-named object. Given access to that relevant backend log but no user credentials, another actor learns the full live bearer and can use the same middleware authorization path. Issuance is performed by the legitimate user, not an assumed credential-bypass attacker. Selected DELETE of expired tokens alone is not the live-token witness. Header truncation does not conceal raw URI text, and intentional response bearer headers are not automatically secret exposure to an unauthorized party.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After conceals both candidate-object operations and fresh token PUT with the same helper as group lookup, validation and deletion, uses digest last character for shard, and still returns/stores the original bearer for intended authentication. Named Python2.7 hashing accepts the string shape; this repository advertises Python2/2.7 and SWIFT_MIN_VERSION2.2.0, so do not manufacture a Python3 byte-API regression. The commit explicitly warns of old-token logout without memcached; preserve that deliberate naming transition rather than pretend automatic old-object migration exists or classify the announced compatibility break as accidental. No general confidentiality of user metadata, response/header/auth-service logs, salt management, every revocation path or all authentication behavior is certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Existing issuance duty, live raw-object URI disclosure and matched digest naming are supported conditionally. Eligibility still requires project/dependency/log-reader/cache facts absent from bounded before text; preserve mechanism-local negative, intended token exchange and intentional transition warning.",
+      "dependence_reason": "Four selected functions/one full file/one mechanical family fix-family:d02bdd73edb193081cec share the same exact fix and resolved first parent. Issuance, local group lookup, external token validation and deletion are coordinated operations on the same token-object naming policy, not four independently adjudicated CVEs. The deletion/cache residual is one separate lifecycle failure within that integration, not a newly admitted security-positive or four copies of an issue. Preserve canonical IDs/source bytes/splits, discovery status/category, source/family/connected-block descriptors and pending independent issue adjudication.",
+      "open_questions": [
+        "Researcher confirm installed Python/Swift versions, middleware placement, logging/redaction/retention and which log readers lack user credentials, real token/cache/storage state, shared salt configuration and deployment transition. Named Swift2.15.0 and CPython2.7.14 comparisons are not installed/all-version proof. Do not infer anonymous log access, digest-as-bearer acceptance, complete log secrecy or immediate cross-cluster cache revocation. Resolve common before-only context/knowledge policy and independent issue identity.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained WSGI/HTTP/token/authentication/hash/crypto/cache/Swift/storage/logging/configuration/runtime/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "token = '%stk%s' % (self.reseller_prefix, uuid4().hex)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            # Save token info\n            object_name = self._get_concealed_token(token)\n            path = quote('/v1/%s/.token_%s/%s' %\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "return sha512(enc_key).hexdigest()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "enc_key = \"%s:%s:%s\" % (HASH_PATH_PREFIX, token, HASH_PATH_SUFFIX)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/obj/server.py",
+          "ref": "2.15.0",
+          "needle": "log_line = get_log_line(req, res, trans_time,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/common/utils.py",
+          "ref": "2.15.0",
+          "needle": "req.method, req.path, res.status.split()[0]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "swift/common/middleware/proxy_logging.py",
+          "ref": "2.15.0",
+          "needle": "self.obscure_sensitive(req.headers.get('x-auth-token'))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_DELIVERY.json",
+          "path": "swift/common/bufferedhttp.py",
+          "ref": "2.15.0",
+          "needle": "path = quote('/' + device + '/' + str(partition) + path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "setup.cfg",
+          "ref": "54ac16ad670d8586acb668ac31ac4e2655831747",
+          "needle": "Programming Language :: Python :: 2.7"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTRACTS.json",
+          "path": "Doc/library/hashlib.rst",
+          "ref": "v2.7.14",
+          "needle": "arbitrary strings"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not self.credentials_match(user_detail, key):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "headers={'X-Object-Meta-Auth-Token': token}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                headers={'x-auth-token': token,\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "doc/source/details.rst",
+          "ref": "54ac16ad670d8586acb668ac31ac4e2655831747",
+          "needle": "token strings themselves"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "github/commits/70af7986265a3defea054c46efc82d0698917298.json",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "this patch logs out all users"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_CONTEXT.json",
+          "path": "swauth/middleware.py",
+          "ref": "70af7986265a3defea054c46efc82d0698917298",
+          "needle": "SWIFT_MIN_VERSION = \"2.2.0\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_046_DELIVERY.json",
+          "path": "swift/proxy/controllers/base.py",
+          "ref": "2.15.0",
+          "needle": "node['device'], part, method, path,"
+        }
+      ]
+    }
+  ]
+}

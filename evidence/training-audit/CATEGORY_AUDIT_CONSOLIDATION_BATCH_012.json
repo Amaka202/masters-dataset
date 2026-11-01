@@ -1,0 +1,1932 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-012",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All 40 remaining Scrapy training candidates outside its completed broad-leaf batch, every discovery status and null category.",
+  "selection_rule": {
+    "repository": "github.com/scrapy/scrapy",
+    "discovery_categories": [
+      null,
+      "CORR-BUFFER-RECOVERY-REPLAY",
+      "CORR-BYTES-TEXT-CONTRACT",
+      "CORR-CONFIGURATION-PRECEDENCE",
+      "CORR-ERROR-REPORTING-PROTOCOL",
+      "CORR-EXPECTED-EXCEPTION-RECOVERY",
+      "CORR-INPUT-GRAMMAR-VALIDATION",
+      "CORR-METADATA-NORMALIZATION",
+      "CORR-METADATA-PRESERVATION",
+      "CORR-OPTION-PROPAGATION",
+      "CORR-SCALAR-REPRESENTATION-CONTRACT",
+      "CORR-SERIALIZER-SCALAR-CONTRACT",
+      "CORR-TEXT-ENCODING",
+      "CORR-URL-NORMALIZATION",
+      "SEC-CREDENTIAL-DESTINATION-SCOPE"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 805,
+    "sha256": "01d082abd0bde3518a4bc6ce51e94593afae71533c1fc02592869171d946c2f6"
+  },
+  "interpretation": "Both archived selected spans and unique evidence anchors verified. Retained source, fixes, docs, tests and dependency comparison texts remain inert adjudication-only evidence, never detection input. No crawler, request, parser, URL helper, compressor/decompressor, callback, network payload, dataset/dependency program or upstream test executes. Source deductions are not reproduced failures. Researcher approval remains pending.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-10:0:scrapy/downloadermiddlewares/redirect.py:RedirectMiddleware.process_response",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Redirect normalization changes an explicit Latin1-to-UTF8 policy into raw-octet preservation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The old comment and exact old Latin1/UTF8 Location tests intentionally expect transcoding through Latin1; the fix replaces those expected URLs with raw percent-encoded octets. Raw preservation can avoid destination corruption, but the old tested encoding policy conflicts with a prior-defect assertion. Resolve historical RFC/server-compatibility duty rather than let new expectations alone decide it.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Headers byte storage, safe_url_string version, Request normalization and the intended remote resource encoding are external. A project consistency goal does not itself settle the old policy.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved historical old-positive/after-negative while Location byte interpretation is unresolved. No destination authorization, credential stripping, SSRF or all URL-encoding guarantee.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve historical runtime support, accepted inputs or behavioral policy before treating new behavior as an established old defect.",
+      "dependence_reason": "Successive RedirectMiddleware versions include scrapy-27, scrapy-10 and scrapy-3. Preserve their distinct option/encoding/tolerance mechanisms without assuming independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "response.headers['location'].decode('latin1')"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "safe_url_string(response.headers['location'])"
+        },
+        {
+          "kind": "fix",
+          "needle": "-        perc_encoded_utf8_url = 'http://scrapytest.org/a%C3%A7%C3%A3o'"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-11:0:scrapy/utils/gz.py:gunzip",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Gzip recovery appends already-consumed buffer bytes; the after slice retains a zero-size replay boundary.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old local doc promises as much decompressed data as possible despite CRC errors. Retained CPython2.7.12 read semantics keep consumed bytes in extrabuf while extrasize tracks unread bytes, so copying the full buffer can duplicate output. The repair narrows the suffix only when extrasize is positive.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched read1 dispatch and version-tagged GzipFile read/_read/_read_eof buffer transitions are essential; comparison text is not deployed-version proof. No compression, decompression or corrupted stream runs.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved paired negative: after uses extrabuf[-extrasize:], and -0 is 0. A footer-truncated stream whose decompressed payload is an exact multiple of 8196 can have all buffered output consumed before the next CRC/length read fails; extrasize=0 with a retained nonempty extrabuf then replays its consumed bytes. This is a source-deduced residual old failure, not a demonstrated newly introduced regression.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Keep the supported old recovery duty while explicitly deferring the after negative because the matched recovery still replays consumed output at a zero-buffer boundary.",
+      "dependence_reason": "Preserve fix-family:1fcc14cab92c2b4aea11 and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "output += f.extrabuf"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "output += f.extrabuf[-f.extrasize:]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/gzip.py",
+          "ref": "v2.7.12",
+          "needle": "chunk = self.extrabuf[offset: offset + size]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/gzip.py",
+          "ref": "v2.7.12",
+          "needle": "self.extrasize = self.extrasize - size"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/gzip.py",
+          "ref": "v2.7.12",
+          "needle": "self._read_eof()\n            self._add_read_data( uncompress )"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Under retained CPython2.7.12 semantics, a fully consumed nonempty extrabuf may survive with extrasize=0 when the next _read_eof raises a caught CRC/length error before _add_read_data can trim it. Exact-multiple 8196-byte returned chunks provide this boundary for a footer-truncated stream. Python slicing [-0:] returns the full buffer, so matched after still duplicates consumed output rather than append zero unread bytes. Old code also fails this boundary; do not invent introduction chronology. Conditional source deduction only, with no dependency or compressed input executed."
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-15:0:scrapy/utils/url.py:_safe_ParseResult",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "URL component normalization newly recovers invalid DNS-label IDNA failures.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The new cases deliberately use an empty DNS label or an overlong label. Old canonicalization normalization duties do not independently establish that invalid netlocs had to be tolerated rather than raise UnicodeError. The helper was introduced in the earlier scrapy-16 change; distinguish follow-up admission/recovery policy from an established old supported-input failure.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Canonicalize_url callers, IDNA validity rules and old malformed-URL tolerance are required. A new permissiveness test or a narrow except clause does not establish the historical duty.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved old-positive/after-negative until malformed-netloc admission is resolved. Retained invalid hostnames are not validated destinations or an SSRF negative.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve historical runtime support, accepted inputs or behavioral policy before treating new behavior as an established old defect.",
+      "dependence_reason": "Follow-up to the _safe_ParseResult helper introduced by scrapy-16. Preserve function-history evidence without merging or independently counting roots automatically.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "to_native_str(parts.netloc.encode('idna'))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except UnicodeError:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-16:0:scrapy/utils/url.py:_unquotepath",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Path unquoting replaces Python3 lossy text decoding with raw bytes.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "unresolved_runtime_support",
+      "contract_reason": "The conditional Python3 type/encoding failure is real in the source trace, but the exact old installation guide advertises Python2.7. For proxy auth, old setup classifiers are Python2/2.7 and proxy tests/module were explicitly ignored on Python3; URL tests also remove prior PY2-only skips. These changes can be porting/support expansion. No matching old Python3 commitment is established merely by the new tests or use of six. Preserve ambiguity rather than invent a supported runtime.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Exact historical advertised runtime and any narrower partial-module Python3 promise must be adjudicated. The Python2 behavior and corresponding byte/text producer/consumer APIs differ. In the proxy setter, the matched old Python3 credential producer already fails before producing ordinary authenticated entries; do not manufacture its reachability with a repaired producer.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional Python3 route only; no approved historical paired negative. Non-ASCII codec policies, arbitrary header/proxy values, tunnel framing/IPv6, sitemap response subclasses and every URL mode are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve historical runtime support, accepted inputs or behavioral policy before treating new behavior as an established old defect.",
+      "dependence_reason": "Preserve the original same-fix family and related selected producer/consumer components. Python2/3 paths and module porting tests are not independent adjudicated defects.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return unquote(path)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return unquote_to_bytes(path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "docs/intro/install.rst",
+          "ref": "68dedf54cb27847f6d035099b61aa06226549fad^",
+          "needle": "* `Python`_ 2.7"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-16:0:scrapy/utils/url.py:canonicalize_url",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "URL canonicalization adds Python3 octet-preserving paths/queries and new encoding handling.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "unresolved_runtime_support",
+      "contract_reason": "The conditional Python3 type/encoding failure is real in the source trace, but the exact old installation guide advertises Python2.7. For proxy auth, old setup classifiers are Python2/2.7 and proxy tests/module were explicitly ignored on Python3; URL tests also remove prior PY2-only skips. These changes can be porting/support expansion. No matching old Python3 commitment is established merely by the new tests or use of six. Preserve ambiguity rather than invent a supported runtime.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Exact historical advertised runtime and any narrower partial-module Python3 promise must be adjudicated. The Python2 behavior and corresponding byte/text producer/consumer APIs differ. In the proxy setter, the matched old Python3 credential producer already fails before producing ordinary authenticated entries; do not manufacture its reachability with a repaired producer.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional Python3 route only; no approved historical paired negative. Non-ASCII codec policies, arbitrary header/proxy values, tunnel framing/IPv6, sitemap response subclasses and every URL mode are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve historical runtime support, accepted inputs or behavioral policy before treating new behavior as an established old defect.",
+      "dependence_reason": "Preserve the original same-fix family and related selected producer/consumer components. Python2/3 paths and module porting tests are not independent adjudicated defects.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "keyvals = parse_qsl(query, keep_blank_values)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "keyvals = parse_qsl_to_bytes(query, keep_blank_values)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "docs/intro/install.rst",
+          "ref": "68dedf54cb27847f6d035099b61aa06226549fad^",
+          "needle": "* `Python`_ 2.7"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-16:0:scrapy/utils/url.py:parse_url",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "URL parser returns Unicode as new canonicalization components expect Unicode.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "On Python3, old to_native_str and new to_unicode already return text. On Python2 the change alters parsed component representation for newly added quoting/IDNA processing. No independent old parse_url failure is isolated by new canonicalize_url tests; its old parsed-input identity branch is unchanged.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched old/new to_native_str/to_unicode and canonicalization component expectations are required. Never pair the new component helper with the old native-byte producer as an old witness.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old parser positive/after-negative; old byte-return policy and the unresolved Python3 support question stay separate.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "Preserve fix-family:a9df84a324dda3214ca8 and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return urlparse(to_native_str(url, encoding))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return urlparse(to_unicode(url, encoding))"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-18:0:scrapy/responsetypes.py:ResponseTypes.from_content_disposition",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Response-type inference decodes non-UTF8 Content-Disposition bytes permissively.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "unresolved_runtime_support",
+      "contract_reason": "The conditional Python3 type/encoding failure is real in the source trace, but the exact old installation guide advertises Python2.7. For proxy auth, old setup classifiers are Python2/2.7 and proxy tests/module were explicitly ignored on Python3; URL tests also remove prior PY2-only skips. These changes can be porting/support expansion. No matching old Python3 commitment is established merely by the new tests or use of six. Preserve ambiguity rather than invent a supported runtime.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Exact historical advertised runtime and any narrower partial-module Python3 promise must be adjudicated. The Python2 behavior and corresponding byte/text producer/consumer APIs differ. In the proxy setter, the matched old Python3 credential producer already fails before producing ordinary authenticated entries; do not manufacture its reachability with a repaired producer.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional Python3 route only; no approved historical paired negative. Non-ASCII codec policies, arbitrary header/proxy values, tunnel framing/IPv6, sitemap response subclasses and every URL mode are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve historical runtime support, accepted inputs or behavioral policy before treating new behavior as an established old defect.",
+      "dependence_reason": "Preserve the original same-fix family and related selected producer/consumer components. Python2/3 paths and module porting tests are not independent adjudicated defects.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "to_native_str(content_disposition)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "encoding='latin-1', errors='replace'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "docs/intro/install.rst",
+          "ref": "cabed6f183cfb2ab778c57be8c75802fec5e54d4^",
+          "needle": "* `Python`_ 2.7"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-20:0:scrapy/spiders/sitemap.py:SitemapSpider._parse_sitemap",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Robots sitemap extraction passes decoded text instead of response bytes.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "unresolved_runtime_support",
+      "contract_reason": "The conditional Python3 type/encoding failure is real in the source trace, but the exact old installation guide advertises Python2.7. For proxy auth, old setup classifiers are Python2/2.7 and proxy tests/module were explicitly ignored on Python3; URL tests also remove prior PY2-only skips. These changes can be porting/support expansion. No matching old Python3 commitment is established merely by the new tests or use of six. Preserve ambiguity rather than invent a supported runtime.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Exact historical advertised runtime and any narrower partial-module Python3 promise must be adjudicated. The Python2 behavior and corresponding byte/text producer/consumer APIs differ. In the proxy setter, the matched old Python3 credential producer already fails before producing ordinary authenticated entries; do not manufacture its reachability with a repaired producer.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional Python3 route only; no approved historical paired negative. Non-ASCII codec policies, arbitrary header/proxy values, tunnel framing/IPv6, sitemap response subclasses and every URL mode are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve historical runtime support, accepted inputs or behavioral policy before treating new behavior as an established old defect.",
+      "dependence_reason": "Preserve the original same-fix family and related selected producer/consumer components. Python2/3 paths and module porting tests are not independent adjudicated defects.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "sitemap_urls_from_robots(response.body)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "sitemap_urls_from_robots(response.text)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "docs/intro/install.rst",
+          "ref": "25c56159b86288311630cc0cf6db9d755aeeff1e^",
+          "needle": "* `Python`_ 2.7"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/sitemap.py",
+          "ref": "25c56159b86288311630cc0cf6db9d755aeeff1e^",
+          "needle": "if line.lstrip().startswith('Sitemap:'):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-22:0:scrapy/exporters.py:XmlItemExporter._export_xml_field",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "XML exporter forwards admitted non-text scalar values into text-only SAX character handling.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Items and serializer results may contain numeric, boolean or datetime values. Old recursive export forwards such scalars directly to _xg_characters/SAX, whose character writer requires text. The after converts non-text scalars with str while preserving text and recursive mapping/list handling.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Field serializer admission, is_listlike and _xg_characters/SAX contracts are external; scalar conversion policy differs from PythonItemExporter native-value preservation.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Finite ordinary numeric/boolean/datetime scalar text only. Bytes representation, arbitrary __str__, XML names, recursive cycles, native value preservation and security escaping generally are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the common before-only runtime/API knowledge policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:1fba94f12db86f21eed2 and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._xg_characters(serialized_value)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._xg_characters(str(serialized_value))"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-23:0:scrapy/downloadermiddlewares/httpproxy.py:HttpProxyMiddleware._get_proxy",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Proxy credential encoding supplies bytes to Python3 base64.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "unresolved_runtime_support",
+      "contract_reason": "The conditional Python3 type/encoding failure is real in the source trace, but the exact old installation guide advertises Python2.7. For proxy auth, old setup classifiers are Python2/2.7 and proxy tests/module were explicitly ignored on Python3; URL tests also remove prior PY2-only skips. These changes can be porting/support expansion. No matching old Python3 commitment is established merely by the new tests or use of six. Preserve ambiguity rather than invent a supported runtime.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Exact historical advertised runtime and any narrower partial-module Python3 promise must be adjudicated. The Python2 behavior and corresponding byte/text producer/consumer APIs differ. In the proxy setter, the matched old Python3 credential producer already fails before producing ordinary authenticated entries; do not manufacture its reachability with a repaired producer.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional Python3 route only; no approved historical paired negative. Non-ASCII codec policies, arbitrary header/proxy values, tunnel framing/IPv6, sitemap response subclasses and every URL mode are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve historical runtime support, accepted inputs or behavioral policy before treating new behavior as an established old defect.",
+      "dependence_reason": "Preserve the original same-fix family and related selected producer/consumer components. Python2/3 paths and module porting tests are not independent adjudicated defects.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "base64.b64encode(user_pass)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "user_pass = to_bytes('%s:%s' % (unquote(user), unquote(password)))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "docs/intro/install.rst",
+          "ref": "f042ad0f39594d59a1a2032e6294ff1890638138^",
+          "needle": "* `Python`_ 2.7"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "setup.py",
+          "ref": "f042ad0f39594d59a1a2032e6294ff1890638138^",
+          "needle": "'Programming Language :: Python :: 2.7'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "tests/py3-ignores.txt",
+          "ref": "f042ad0f39594d59a1a2032e6294ff1890638138^",
+          "needle": "scrapy/downloadermiddlewares/httpproxy.py"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-23:0:scrapy/downloadermiddlewares/httpproxy.py:HttpProxyMiddleware._set_proxy",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Proxy Authorization prefix becomes bytes to match encoded credentials.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "unresolved_runtime_support",
+      "contract_reason": "The conditional Python3 type/encoding failure is real in the source trace, but the exact old installation guide advertises Python2.7. For proxy auth, old setup classifiers are Python2/2.7 and proxy tests/module were explicitly ignored on Python3; URL tests also remove prior PY2-only skips. These changes can be porting/support expansion. No matching old Python3 commitment is established merely by the new tests or use of six. Preserve ambiguity rather than invent a supported runtime.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Exact historical advertised runtime and any narrower partial-module Python3 promise must be adjudicated. The Python2 behavior and corresponding byte/text producer/consumer APIs differ. In the proxy setter, the matched old Python3 credential producer already fails before producing ordinary authenticated entries; do not manufacture its reachability with a repaired producer.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional Python3 route only; no approved historical paired negative. Non-ASCII codec policies, arbitrary header/proxy values, tunnel framing/IPv6, sitemap response subclasses and every URL mode are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve historical runtime support, accepted inputs or behavioral policy before treating new behavior as an established old defect.",
+      "dependence_reason": "Preserve the original same-fix family and related selected producer/consumer components. Python2/3 paths and module porting tests are not independent adjudicated defects.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'Basic ' + creds"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "b'Basic ' + creds"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "docs/intro/install.rst",
+          "ref": "f042ad0f39594d59a1a2032e6294ff1890638138^",
+          "needle": "* `Python`_ 2.7"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "setup.py",
+          "ref": "f042ad0f39594d59a1a2032e6294ff1890638138^",
+          "needle": "'Programming Language :: Python :: 2.7'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "tests/py3-ignores.txt",
+          "ref": "f042ad0f39594d59a1a2032e6294ff1890638138^",
+          "needle": "scrapy/downloadermiddlewares/httpproxy.py"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-24:0:scrapy/core/downloader/handlers/http11.py:TunnelingTCP4ClientEndpoint.requestTunnel",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "HTTPS tunnel request construction supplies bytes to the transport.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "unresolved_runtime_support",
+      "contract_reason": "The conditional Python3 type/encoding failure is real in the source trace, but the exact old installation guide advertises Python2.7. For proxy auth, old setup classifiers are Python2/2.7 and proxy tests/module were explicitly ignored on Python3; URL tests also remove prior PY2-only skips. These changes can be porting/support expansion. No matching old Python3 commitment is established merely by the new tests or use of six. Preserve ambiguity rather than invent a supported runtime.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Exact historical advertised runtime and any narrower partial-module Python3 promise must be adjudicated. The Python2 behavior and corresponding byte/text producer/consumer APIs differ. In the proxy setter, the matched old Python3 credential producer already fails before producing ordinary authenticated entries; do not manufacture its reachability with a repaired producer.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Conditional Python3 route only; no approved historical paired negative. Non-ASCII codec policies, arbitrary header/proxy values, tunnel framing/IPv6, sitemap response subclasses and every URL mode are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve historical runtime support, accepted inputs or behavioral policy before treating new behavior as an established old defect.",
+      "dependence_reason": "Preserve the original same-fix family and related selected producer/consumer components. Python2/3 paths and module porting tests are not independent adjudicated defects.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "protocol.transport.write(tunnelReq)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "b'CONNECT ' +"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "docs/intro/install.rst",
+          "ref": "0f527849f2e8eddaf5d756b061699f2eca522a18^",
+          "needle": "* `Python`_ 2.7"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-25:0:scrapy/http/request/form.py:_get_form_url",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Form URL helper redundantly joins an action already resolved by its matched dependency.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Pinned lxml3.4.4 FormElement.action already joins present actions to base_url. The old helper returns that resolved URL, while the actual document-base defect is the form-tree producer passing response.url rather than get_base_url(response). Rejoining the resolved action is not an isolated helper repair under that inspected dependency contract.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Actual lxml dependency version, action property, valid base URL and _get_form producer matter. The tag is comparison context, not installed-version proof.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old helper positive/negative. Missing/different bases or a supported alternative form implementation require separate evidence; keep the public base-tag repair.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "Preserve fix-family:b885a796302f23cd5a5e and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return form.action or form.base_url"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return urljoin(form.base_url, form.action)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_EVIDENCE_022_CONTEXT.json",
+          "path": "src/lxml/html/__init__.py",
+          "ref": "lxml-3.4.4",
+          "needle": "return urljoin(base_url, action)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-26:0:scrapy/settings/__init__.py:BaseSettings._getcomposite",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Legacy _BASE override is merged with framework default entries it was meant to replace.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old method explicitly remains a transition adapter for deprecated _BASE settings. Old Settings promotes framework defaults into per-key-priority BaseSettings. Unconditional update(self[name]) reintroduces those default entries, overriding an explicit replacement base; the after admits only higher-priority user/project entries.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Deprecated replacement-base policy, Settings default promotion, BaseSettings.set/update priority values and higher-priority user settings determine the duty. The changed regression also changes nested settings priorities; it is not by itself evidence of a prior conflict.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Explicit legacy base with ordinary default/project per-key priorities only. None disabling conventions, missing composite settings and every custom mapping or equal-priority rule are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the common before-only runtime/API knowledge policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:2e05954cd553ac4367c4 and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "compsett.update(self[name])"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if prio > get_settings_priority('default'):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-27:0:scrapy/downloadermiddlewares/redirect.py:RedirectMiddleware.process_response",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Redirect middleware ignores existing per-request HTTP-status handling choices.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old HttpErrorMiddleware already interprets request meta handle_httpstatus_list/all, while redirect middleware handles only the spider-wide list and dont_redirect. Thus an admitted per-request 301/302 handling request is redirected before the spider can receive it. New guards preserve the existing per-request response-handling duty; the new redirect-specific doc does not alone establish it.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Order of downloader/spider middleware, old meta contract and Request/Response association are needed; the selected caller lacks those public option semantics.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "True handle_httpstatus_all or explicitly listed redirect status only. Old HttpErrorMiddleware treats presence of the all key as sufficient while this repair tests truthiness; false-valued key consistency and all response codes are outside the negative.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the common before-only runtime/API knowledge policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:05e1d2baff4d5eb4c3c3 and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "response.status in getattr(spider, 'handle_httpstatus_list', [])"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "response.status in request.meta.get('handle_httpstatus_list', [])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/spidermiddlewares/httperror.py",
+          "ref": "d164398a27736f75286cc435eca69b06ff7c1c06^",
+          "needle": "if 'handle_httpstatus_all' in meta:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/spidermiddlewares/httperror.py",
+          "ref": "d164398a27736f75286cc435eca69b06ff7c1c06^",
+          "needle": "allowed_statuses = meta['handle_httpstatus_list']"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-29:0:scrapy/utils/request.py:request_httprepr",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Reference request representation passes a missing hostname into a string-only encoder.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old utility promises bytes representing the given Request and explicitly says this is reference output rather than the actual Twisted wire stream. A supported hostless file request yields parsed.hostname=None, which to_bytes rejects. Substituting empty host bytes prevents that crash without claiming it creates a valid HTTP request for a file URL.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Non-HTTP Request admission, urlparse_cached and to_bytes accepted types are required. This is a crashing reference utility, not automatically a wire framing vulnerability or a style-only change.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Hostless admitted file request representation only. Network authority validity, IPv6/bracket/port Host fidelity and arbitrary body/header inputs are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the common before-only runtime/API knowledge policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:0fb7925122016caf3f13 and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "to_bytes(parsed.hostname)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "to_bytes(parsed.hostname or b'')"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-31:0:scrapy/http/cookies.py:WrappedRequest.header_items",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Request cookie adapter replaces decoding failures without an isolated consumer route.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The retained non-UTF8 regression supplies response Set-Cookie headers. Its actual extraction route uses WrappedResponse.get_all, repaired in the same fix; the selected WrappedRequest.header_items is not shown to be invoked by that consumer. New replacement decoding does not transfer the response adapter defect here.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The actual supported cookiejar consumer must call header_items, or a prior direct adapter contract must establish admission. Pinned CPython3.4.3 is comparison context and does not resolve deployed runtime/support.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected cookie-parsing positive/negative. Replacement decoding is not byte fidelity or a broad cookie-security negative.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "Preserve fix-family:bf40d75151ba6cc720a3 and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "(to_native_str(k), [to_native_str(x) for x in v])"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "to_native_str(k, errors='replace')"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-33:0:scrapy/core/engine.py:ExecutionEngine._handle_downloader_output",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Downloader output dispatch keeps its request/response routing and returned Deferred.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected calls supply Failure through the intended extra[\"failure\"] protocol. Exact old FailureFormatter extracts exc_info, but DEFAULT_LOGGING attaches that filter only to the scrapy logger; Python ancestor logger filters do not run on propagated child records. The after migrates callers to direct exc_info while removing that central filter. This supports a project traceback-transport problem, not thirteen independently isolated old caller algorithm defects or an automatic claim that all logging is cosmetic.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Logger names, configured filter/handler attachment, propagation, old log-record consumers and failure_to_exc_info determine observability and attribution. Exact old tests intentionally inspect record.failure; the new test changes that schema. Any independently admitted diagnostic/non-style contract still needs explicit scope adjudication.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected functional positive/after-negative under the matched logging protocol. Scheduling, item/feed/cache/signal results are unchanged in the inspected paths. Traceback output is not universally certified, and omitted custom filters/handlers or arbitrary Failure-like values can change behavior.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "One scrapy-33 FailureFormatter/direct-exc_info migration across thirteen selected components. Preserve centralized filter-placement and schema dependence; component/test counts are not independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        d.addErrback(lambda f: logger.error('Error while enqueuing downloader output',\n                                            extra={'spider': spider, 'failure': f}))\n        return d\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        d.addErrback(lambda f: logger.error('Error while enqueuing downloader output',\n                                            exc_info=failure_to_exc_info(f),\n                                            extra={'spider': spider}))\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "record.exc_info = (failure.type, failure.value, failure.tb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "'filters': ['failure_formatter']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.5.1",
+          "needle": "if (not self.disabled) and self.filter(record):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-33:0:scrapy/core/engine.py:ExecutionEngine._next_request_from_scheduler",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Scheduler download chain keeps request removal, rescheduling and callback order.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected calls supply Failure through the intended extra[\"failure\"] protocol. Exact old FailureFormatter extracts exc_info, but DEFAULT_LOGGING attaches that filter only to the scrapy logger; Python ancestor logger filters do not run on propagated child records. The after migrates callers to direct exc_info while removing that central filter. This supports a project traceback-transport problem, not thirteen independently isolated old caller algorithm defects or an automatic claim that all logging is cosmetic.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Logger names, configured filter/handler attachment, propagation, old log-record consumers and failure_to_exc_info determine observability and attribution. Exact old tests intentionally inspect record.failure; the new test changes that schema. Any independently admitted diagnostic/non-style contract still needs explicit scope adjudication.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected functional positive/after-negative under the matched logging protocol. Scheduling, item/feed/cache/signal results are unchanged in the inspected paths. Traceback output is not universally certified, and omitted custom filters/handlers or arbitrary Failure-like values can change behavior.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "One scrapy-33 FailureFormatter/direct-exc_info migration across thirteen selected components. Preserve centralized filter-placement and schema dependence; component/test counts are not independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "logger.info('Error while handling downloader output',\n                                           extra={'spider': spider, 'failure': f})"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "logger.info('Error while handling downloader output',\n                                           exc_info=failure_to_exc_info(f),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "record.exc_info = (failure.type, failure.value, failure.tb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "'filters': ['failure_formatter']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.5.1",
+          "needle": "if (not self.disabled) and self.filter(record):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-33:0:scrapy/core/scraper.py:Scraper._itemproc_finished",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Item completion keeps counters, DropItem routing and scraped/dropped signals.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected calls supply Failure through the intended extra[\"failure\"] protocol. Exact old FailureFormatter extracts exc_info, but DEFAULT_LOGGING attaches that filter only to the scrapy logger; Python ancestor logger filters do not run on propagated child records. The after migrates callers to direct exc_info while removing that central filter. This supports a project traceback-transport problem, not thirteen independently isolated old caller algorithm defects or an automatic claim that all logging is cosmetic.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Logger names, configured filter/handler attachment, propagation, old log-record consumers and failure_to_exc_info determine observability and attribution. Exact old tests intentionally inspect record.failure; the new test changes that schema. Any independently admitted diagnostic/non-style contract still needs explicit scope adjudication.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected functional positive/after-negative under the matched logging protocol. Scheduling, item/feed/cache/signal results are unchanged in the inspected paths. Traceback output is not universally certified, and omitted custom filters/handlers or arbitrary Failure-like values can change behavior.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "One scrapy-33 FailureFormatter/direct-exc_info migration across thirteen selected components. Preserve centralized filter-placement and schema dependence; component/test counts are not independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "extra={'spider': spider, 'failure': output}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "failure_to_exc_info(output)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "record.exc_info = (failure.type, failure.value, failure.tb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "'filters': ['failure_formatter']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.5.1",
+          "needle": "if (not self.disabled) and self.filter(record):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-33:0:scrapy/core/scraper.py:Scraper._log_download_errors",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Download error handling keeps IgnoreRequest suppression and failure identity routing.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected calls supply Failure through the intended extra[\"failure\"] protocol. Exact old FailureFormatter extracts exc_info, but DEFAULT_LOGGING attaches that filter only to the scrapy logger; Python ancestor logger filters do not run on propagated child records. The after migrates callers to direct exc_info while removing that central filter. This supports a project traceback-transport problem, not thirteen independently isolated old caller algorithm defects or an automatic claim that all logging is cosmetic.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Logger names, configured filter/handler attachment, propagation, old log-record consumers and failure_to_exc_info determine observability and attribution. Exact old tests intentionally inspect record.failure; the new test changes that schema. Any independently admitted diagnostic/non-style contract still needs explicit scope adjudication.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected functional positive/after-negative under the matched logging protocol. Scheduling, item/feed/cache/signal results are unchanged in the inspected paths. Traceback output is not universally certified, and omitted custom filters/handlers or arbitrary Failure-like values can change behavior.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "One scrapy-33 FailureFormatter/direct-exc_info migration across thirteen selected components. Preserve centralized filter-placement and schema dependence; component/test counts are not independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "extra={'spider': spider, 'failure': download_failure}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "failure_to_exc_info(download_failure)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "record.exc_info = (failure.type, failure.value, failure.tb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "'filters': ['failure_formatter']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.5.1",
+          "needle": "if (not self.disabled) and self.filter(record):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-33:0:scrapy/core/scraper.py:Scraper.enqueue_scrape",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Scrape queuing keeps slot registration, finish callbacks and returned Deferred.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected calls supply Failure through the intended extra[\"failure\"] protocol. Exact old FailureFormatter extracts exc_info, but DEFAULT_LOGGING attaches that filter only to the scrapy logger; Python ancestor logger filters do not run on propagated child records. The after migrates callers to direct exc_info while removing that central filter. This supports a project traceback-transport problem, not thirteen independently isolated old caller algorithm defects or an automatic claim that all logging is cosmetic.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Logger names, configured filter/handler attachment, propagation, old log-record consumers and failure_to_exc_info determine observability and attribution. Exact old tests intentionally inspect record.failure; the new test changes that schema. Any independently admitted diagnostic/non-style contract still needs explicit scope adjudication.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected functional positive/after-negative under the matched logging protocol. Scheduling, item/feed/cache/signal results are unchanged in the inspected paths. Traceback output is not universally certified, and omitted custom filters/handlers or arbitrary Failure-like values can change behavior.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "One scrapy-33 FailureFormatter/direct-exc_info migration across thirteen selected components. Preserve centralized filter-placement and schema dependence; component/test counts are not independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "extra={'spider': spider, 'failure': f}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "failure_to_exc_info(f)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "record.exc_info = (failure.type, failure.value, failure.tb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "'filters': ['failure_formatter']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.5.1",
+          "needle": "if (not self.disabled) and self.filter(record):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-33:0:scrapy/core/scraper.py:Scraper.handle_spider_error",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Spider error handling keeps CloseSpider, error signals and exception statistics.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected calls supply Failure through the intended extra[\"failure\"] protocol. Exact old FailureFormatter extracts exc_info, but DEFAULT_LOGGING attaches that filter only to the scrapy logger; Python ancestor logger filters do not run on propagated child records. The after migrates callers to direct exc_info while removing that central filter. This supports a project traceback-transport problem, not thirteen independently isolated old caller algorithm defects or an automatic claim that all logging is cosmetic.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Logger names, configured filter/handler attachment, propagation, old log-record consumers and failure_to_exc_info determine observability and attribution. Exact old tests intentionally inspect record.failure; the new test changes that schema. Any independently admitted diagnostic/non-style contract still needs explicit scope adjudication.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected functional positive/after-negative under the matched logging protocol. Scheduling, item/feed/cache/signal results are unchanged in the inspected paths. Traceback output is not universally certified, and omitted custom filters/handlers or arbitrary Failure-like values can change behavior.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "One scrapy-33 FailureFormatter/direct-exc_info migration across thirteen selected components. Preserve centralized filter-placement and schema dependence; component/test counts are not independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "extra={'spider': spider, 'failure': _failure}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "failure_to_exc_info(_failure)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "record.exc_info = (failure.type, failure.value, failure.tb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "'filters': ['failure_formatter']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.5.1",
+          "needle": "if (not self.disabled) and self.filter(record):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-33:0:scrapy/downloadermiddlewares/robotstxt.py:RobotsTxtMiddleware._logerror",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Robots error handler keeps IgnoreRequest suppression and return behavior.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected calls supply Failure through the intended extra[\"failure\"] protocol. Exact old FailureFormatter extracts exc_info, but DEFAULT_LOGGING attaches that filter only to the scrapy logger; Python ancestor logger filters do not run on propagated child records. The after migrates callers to direct exc_info while removing that central filter. This supports a project traceback-transport problem, not thirteen independently isolated old caller algorithm defects or an automatic claim that all logging is cosmetic.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Logger names, configured filter/handler attachment, propagation, old log-record consumers and failure_to_exc_info determine observability and attribution. Exact old tests intentionally inspect record.failure; the new test changes that schema. Any independently admitted diagnostic/non-style contract still needs explicit scope adjudication.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected functional positive/after-negative under the matched logging protocol. Scheduling, item/feed/cache/signal results are unchanged in the inspected paths. Traceback output is not universally certified, and omitted custom filters/handlers or arbitrary Failure-like values can change behavior.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "One scrapy-33 FailureFormatter/direct-exc_info migration across thirteen selected components. Preserve centralized filter-placement and schema dependence; component/test counts are not independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "extra={'spider': spider, 'failure': failure}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "failure_to_exc_info(failure)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "record.exc_info = (failure.type, failure.value, failure.tb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "'filters': ['failure_formatter']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.5.1",
+          "needle": "if (not self.disabled) and self.filter(record):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-33:0:scrapy/extensions/feedexport.py:FeedExporter.close_spider",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Feed completion keeps exporter finish, storage and returned Deferred.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected calls supply Failure through the intended extra[\"failure\"] protocol. Exact old FailureFormatter extracts exc_info, but DEFAULT_LOGGING attaches that filter only to the scrapy logger; Python ancestor logger filters do not run on propagated child records. The after migrates callers to direct exc_info while removing that central filter. This supports a project traceback-transport problem, not thirteen independently isolated old caller algorithm defects or an automatic claim that all logging is cosmetic.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Logger names, configured filter/handler attachment, propagation, old log-record consumers and failure_to_exc_info determine observability and attribution. Exact old tests intentionally inspect record.failure; the new test changes that schema. Any independently admitted diagnostic/non-style contract still needs explicit scope adjudication.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected functional positive/after-negative under the matched logging protocol. Scheduling, item/feed/cache/signal results are unchanged in the inspected paths. Traceback output is not universally certified, and omitted custom filters/handlers or arbitrary Failure-like values can change behavior.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "One scrapy-33 FailureFormatter/direct-exc_info migration across thirteen selected components. Preserve centralized filter-placement and schema dependence; component/test counts are not independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "extra={'spider': spider, 'failure': f}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "failure_to_exc_info(f)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "record.exc_info = (failure.type, failure.value, failure.tb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "'filters': ['failure_formatter']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.5.1",
+          "needle": "if (not self.disabled) and self.filter(record):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-33:0:scrapy/log.py:err",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Deprecated error adapter keeps its level/message selection and changes traceback transport.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected calls supply Failure through the intended extra[\"failure\"] protocol. Exact old FailureFormatter extracts exc_info, but DEFAULT_LOGGING attaches that filter only to the scrapy logger; Python ancestor logger filters do not run on propagated child records. The after migrates callers to direct exc_info while removing that central filter. This supports a project traceback-transport problem, not thirteen independently isolated old caller algorithm defects or an automatic claim that all logging is cosmetic.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Logger names, configured filter/handler attachment, propagation, old log-record consumers and failure_to_exc_info determine observability and attribution. Exact old tests intentionally inspect record.failure; the new test changes that schema. Any independently admitted diagnostic/non-style contract still needs explicit scope adjudication.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected functional positive/after-negative under the matched logging protocol. Scheduling, item/feed/cache/signal results are unchanged in the inspected paths. Traceback output is not universally certified, and omitted custom filters/handlers or arbitrary Failure-like values can change behavior.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "One scrapy-33 FailureFormatter/direct-exc_info migration across thirteen selected components. Preserve centralized filter-placement and schema dependence; component/test counts are not independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "extra={'failure': failure}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "failure_to_exc_info(failure)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "record.exc_info = (failure.type, failure.value, failure.tb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "'filters': ['failure_formatter']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.5.1",
+          "needle": "if (not self.disabled) and self.filter(record):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-33:0:scrapy/pipelines/files.py:FilesPipeline.media_to_download",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "File cache/stat path keeps expiry, checksum results and failure callback order.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected calls supply Failure through the intended extra[\"failure\"] protocol. Exact old FailureFormatter extracts exc_info, but DEFAULT_LOGGING attaches that filter only to the scrapy logger; Python ancestor logger filters do not run on propagated child records. The after migrates callers to direct exc_info while removing that central filter. This supports a project traceback-transport problem, not thirteen independently isolated old caller algorithm defects or an automatic claim that all logging is cosmetic.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Logger names, configured filter/handler attachment, propagation, old log-record consumers and failure_to_exc_info determine observability and attribution. Exact old tests intentionally inspect record.failure; the new test changes that schema. Any independently admitted diagnostic/non-style contract still needs explicit scope adjudication.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected functional positive/after-negative under the matched logging protocol. Scheduling, item/feed/cache/signal results are unchanged in the inspected paths. Traceback output is not universally certified, and omitted custom filters/handlers or arbitrary Failure-like values can change behavior.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "One scrapy-33 FailureFormatter/direct-exc_info migration across thirteen selected components. Preserve centralized filter-placement and schema dependence; component/test counts are not independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "extra={'spider': info.spider, 'failure': f}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "failure_to_exc_info(f)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "record.exc_info = (failure.type, failure.value, failure.tb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "'filters': ['failure_formatter']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.5.1",
+          "needle": "if (not self.disabled) and self.filter(record):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-33:0:scrapy/pipelines/media.py:MediaPipeline._process_request",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Media request path keeps fingerprint cache, waiters and its final waiting Deferred.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected calls supply Failure through the intended extra[\"failure\"] protocol. Exact old FailureFormatter extracts exc_info, but DEFAULT_LOGGING attaches that filter only to the scrapy logger; Python ancestor logger filters do not run on propagated child records. The after migrates callers to direct exc_info while removing that central filter. This supports a project traceback-transport problem, not thirteen independently isolated old caller algorithm defects or an automatic claim that all logging is cosmetic.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Logger names, configured filter/handler attachment, propagation, old log-record consumers and failure_to_exc_info determine observability and attribution. Exact old tests intentionally inspect record.failure; the new test changes that schema. Any independently admitted diagnostic/non-style contract still needs explicit scope adjudication.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected functional positive/after-negative under the matched logging protocol. Scheduling, item/feed/cache/signal results are unchanged in the inspected paths. Traceback output is not universally certified, and omitted custom filters/handlers or arbitrary Failure-like values can change behavior.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "One scrapy-33 FailureFormatter/direct-exc_info migration across thirteen selected components. Preserve centralized filter-placement and schema dependence; component/test counts are not independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "extra={'spider': info.spider, 'failure': f}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "failure_to_exc_info(f)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "record.exc_info = (failure.type, failure.value, failure.tb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "'filters': ['failure_formatter']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.5.1",
+          "needle": "if (not self.disabled) and self.filter(record):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-33:0:scrapy/pipelines/media.py:MediaPipeline.item_completed",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Media completion keeps LOG_FAILED_RESULTS gating and returns the same item.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected calls supply Failure through the intended extra[\"failure\"] protocol. Exact old FailureFormatter extracts exc_info, but DEFAULT_LOGGING attaches that filter only to the scrapy logger; Python ancestor logger filters do not run on propagated child records. The after migrates callers to direct exc_info while removing that central filter. This supports a project traceback-transport problem, not thirteen independently isolated old caller algorithm defects or an automatic claim that all logging is cosmetic.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Logger names, configured filter/handler attachment, propagation, old log-record consumers and failure_to_exc_info determine observability and attribution. Exact old tests intentionally inspect record.failure; the new test changes that schema. Any independently admitted diagnostic/non-style contract still needs explicit scope adjudication.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected functional positive/after-negative under the matched logging protocol. Scheduling, item/feed/cache/signal results are unchanged in the inspected paths. Traceback output is not universally certified, and omitted custom filters/handlers or arbitrary Failure-like values can change behavior.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "One scrapy-33 FailureFormatter/direct-exc_info migration across thirteen selected components. Preserve centralized filter-placement and schema dependence; component/test counts are not independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "extra={'spider': info.spider, 'failure': value}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "failure_to_exc_info(value)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "record.exc_info = (failure.type, failure.value, failure.tb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "'filters': ['failure_formatter']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.5.1",
+          "needle": "if (not self.disabled) and self.filter(record):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-33:0:scrapy/utils/signal.py:send_catch_log_deferred.logerror",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Signal error closure keeps dont_log filtering and returns the same Failure.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old selected calls supply Failure through the intended extra[\"failure\"] protocol. Exact old FailureFormatter extracts exc_info, but DEFAULT_LOGGING attaches that filter only to the scrapy logger; Python ancestor logger filters do not run on propagated child records. The after migrates callers to direct exc_info while removing that central filter. This supports a project traceback-transport problem, not thirteen independently isolated old caller algorithm defects or an automatic claim that all logging is cosmetic.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Logger names, configured filter/handler attachment, propagation, old log-record consumers and failure_to_exc_info determine observability and attribution. Exact old tests intentionally inspect record.failure; the new test changes that schema. Any independently admitted diagnostic/non-style contract still needs explicit scope adjudication.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated old selected functional positive/after-negative under the matched logging protocol. Scheduling, item/feed/cache/signal results are unchanged in the inspected paths. Traceback output is not universally certified, and omitted custom filters/handlers or arbitrary Failure-like values can change behavior.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The coordinated selected edit does not isolate an old violation under its matched producer/consumer interface; retain that distinction from project-wide behavior.",
+      "dependence_reason": "One scrapy-33 FailureFormatter/direct-exc_info migration across thirteen selected components. Preserve centralized filter-placement and schema dependence; component/test counts are not independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "extra={'spider': spider, 'failure': failure}"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "failure_to_exc_info(failure)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "record.exc_info = (failure.type, failure.value, failure.tb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/log.py",
+          "ref": "6dccb3a9b320a8d0808764ac8e6e88e663e2d52c^",
+          "needle": "'filters': ['failure_formatter']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.5.1",
+          "needle": "if (not self.disabled) and self.filter(record):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-34:0:scrapy/item.py:ItemMeta.__new__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Item metaclass begins preserving a class-level fields mapping instead of deriving declarations alone.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Exact old docs declare fields using Field class attributes and describe Item.fields as the collected metadata dictionary, not explicitly a class-dictionary declaration input. New tests introduce fields={...}. Whether this was a prior supported declaration form remains unresolved; the fix title and metadata dictionary existence alone do not supply that duty.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Synthetic _class inheritance, Field scanning, DictItem admission and old declaration API are required. The after may mutate a fields mapping inherited by reference when scanning additional fields; positive inheritance tests do not certify parent/sibling isolation.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved old-positive/after-negative until class-map admission is established. Shared inherited-map mutation and all multiple-inheritance combinations remain explicit concerns, not a certified negative.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve historical runtime support, accepted inputs or behavioral policy before treating new behavior as an established old defect.",
+      "dependence_reason": "Preserve fix-family:84b358af12f4830d1345 and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\n        fields = {}\n        new_attrs = {}\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "fields = getattr(_class, 'fields', {})"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "docs/topics/items.rst",
+          "ref": "773ea5a5ef76426dd91a8669542d2602082a5746^",
+          "needle": "Items are declared using a simple class definition syntax and :class:`Field`"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-35:0:scrapy/crawler.py:_get_spider_loader",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Default spider-loader setting masks the still-supported deprecated manager setting.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old function explicitly recognizes/deprecates SPIDER_MANAGER_CLASS, but reads SPIDER_LOADER_CLASS first. Exact old default_settings always supplies the latter, so the legacy fallback never wins for a user who only configures the old name. Trying the explicitly present legacy name first restores that deprecation-period compatibility.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Settings.get default semantics, automatic default population, load_object and ISpiderLoader/from_settings contracts are required. Simultaneously configured conflicting new/old options need separate precedence policy.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Only legacy custom manager with ordinary new default populated and a compatible class. Conflicting explicit names, falsy values and every custom factory are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the common before-only runtime/API knowledge policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:dd97f96ffef538769ea3 and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "cls_path = settings.get('SPIDER_LOADER_CLASS',"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "cls_path = settings.get('SPIDER_MANAGER_CLASS',"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/settings/default_settings.py",
+          "ref": "c3d3a9491412d2a91b0927a05908593dcd329e4a^",
+          "needle": "SPIDER_LOADER_CLASS = 'scrapy.spiderloader.SpiderLoader'"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-36:0:scrapy/utils/misc.py:create_instance",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Factory dispatcher newly rejects None-returning plugin factories.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Exact old middleware manager unconditionally appends the factory result and logs its class as enabled; old extension docs say NotConfigured disables it, otherwise it is enabled. This explains the confusing no-op extension. However, the factory itself violates the expected instance convention, and old dispatch has no explicit validation promise. Resolve whether the selected helper had a pre-existing rejection duty or the change adds diagnostic hardening.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Actual plugin from_crawler/from_settings return contract, manager hook discovery and enable/disable conventions are necessary. The None setting used to disable a class is distinct from returning None from its factory.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved historical selected old-positive/after-negative for newly required TypeError. Arbitrary wrong return types and factory __qualname__ availability remain unchecked or conditional.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve historical runtime support, accepted inputs or behavioral policy before treating new behavior as an established old defect.",
+      "dependence_reason": "Preserve fix-family:fc57b4348d549a39b11a and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return objcls.from_settings(settings, *args, **kwargs)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if instance is None:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/middleware.py",
+          "ref": "cf9be5344a89dd8e14f8241ec69de9c984ec1e05^",
+          "needle": "middlewares.append(mw)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "docs/topics/extensions.rst",
+          "ref": "cf9be5344a89dd8e14f8241ec69de9c984ec1e05^",
+          "needle": "disabled. Otherwise, the extension will be enabled."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-37:0:scrapy/http/request/__init__.py:Request._set_url",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Request URL validation treats a colon anywhere as proof of a scheme.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old setter already raises Missing scheme for scheme-less URLs. A colon in /foo:bar is part of a relative path and does not supply a URL scheme. The after rejects this concrete relative-path case with its separator/data check; that narrow repair is distinct from complete URI grammar validation.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "safe_url_string/escape_ajax normalization and supported Request scheme/handler grammar are needed. The before body does not define those external transformations.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Colon-bearing relative path /foo:bar rejection only. Embedded ://, empty/invalid scheme prefixes, data case variants, other nonhierarchical schemes and mutation before validation remain outside the negative.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the common before-only runtime/API knowledge policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:689615b7dd409b15496b and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if ':' not in self._url:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if ('://' not in self._url) and (not self._url.startswith('data:')):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-39:0:scrapy/spiders/__init__.py:Spider.start_requests",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Spider default hook appears overridden when an instance-bound method is compared to the class function.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Descriptor identity can cause a false deprecation warning for the inherited default hook. Both default branches still yield Request(url,dont_filter=True), while actual overrides remain called. The retained new test requires warning suppression/counts, not a changed request result; a prior non-style warning-as-error or other functional obligation is not established.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Python2/3 descriptors, custom hook binding and warning filters determine observability. Do not automatically dismiss diagnostics as style or promote a hypothetical warning-as-error setup as an established old witness.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved paired non-style functional negative. Default request equivalence is conditional on the exact inherited make_requests_from_url implementation; arbitrary instance monkeypatches and warning policies are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve historical runtime support, accepted inputs or behavioral policy before treating new behavior as an established old defect.",
+      "dependence_reason": "Preserve fix-family:71489a5cc115c214384c and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if self.make_requests_from_url is not Spider.make_requests_from_url:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if cls.make_requests_from_url is not Spider.make_requests_from_url:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-3:0:scrapy/downloadermiddlewares/redirect.py:RedirectMiddleware.process_response",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Redirect middleware newly treats triple-slash locations as authority-style host changes.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The new regression requires ///host/path to change the destination host. Standards-oriented URL joining can instead interpret it as an absolute path with empty authority. An old browser-compatibility/tolerant-header promise is not established by this new assertion, so preserve existing policy ambiguity.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "safe_url_string, urljoin/browser tolerance versions, Headers byte representation and redirect policy determine interpretation.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved historical old-positive/after-negative until triple-slash interpretation is established. Collapsing all leading slashes is not a general URL resolution or redirect-security guarantee.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Resolve historical runtime support, accepted inputs or behavioral policy before treating new behavior as an established old defect.",
+      "dependence_reason": "Same RedirectMiddleware history as scrapy-27 option handling and scrapy-10 encoding policy. Distinct mechanisms and version links do not prove independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "location = safe_url_string(response.headers['location'])"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "location = request_scheme + '://' + location.lstrip('/')"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-40:0:scrapy/exporters.py:PythonItemExporter._serialize_value",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Python exporter sends non-string scalar values to encoders that reject them.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old exporter docs say values without a serializer are unchanged except string encoding. Retained to_bytes/to_unicode explicitly reject non-string objects. Therefore scalar booleans/numbers/datetimes reach a TypeError in the old PythonItemExporter instead of preserving native values; the after only encodes text/bytes and returns other scalars unchanged.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Exporter serialize_field recursion, native-value contract and exact to_bytes/to_unicode accepted types are external. XML scalar text conversion is a different output duty.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Ordinary native scalar numbers/booleans/datetimes and existing text encoding paths only. Custom serializers, invalid encoded bytes, cycles, container subclasses and a universal native identity/deep-copy guarantee are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the common before-only runtime/API knowledge policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:056945e6ea60fd218778 and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return to_bytes(value, encoding=self.encoding)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if isinstance(value, (six.text_type, bytes)):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "docs/topics/exporters.rst",
+          "ref": "f1d971a5c0cdfe0f4fe5619146cd6818324fc98e^",
+          "needle": "value unchanged except for ``unicode`` values which are encoded to"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_012.json",
+          "path": "scrapy/utils/python.py",
+          "ref": "f1d971a5c0cdfe0f4fe5619146cd6818324fc98e^",
+          "needle": "raise TypeError('to_bytes must receive a unicode, str or bytes '"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-4:0:scrapy/contracts/__init__.py:ContractsManager._clean_req.eb_wrapper",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Contract errback reverses exception type and instance in unittest error reporting.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "results.addError expects the sys.exc_info-style tuple (exception type, instance, traceback). Old code passes value before type, preventing correct error reporting for an actual callback Failure; the after restores the established tuple protocol. This affects recording an error rather than merely wording a diagnostic.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Closure results/method, _create_testcase, Twisted Failure attributes and unittest result consumption are necessary. They are omitted from the selected nested body.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Ordinary exception Failure in the contract errback and matched TestResult only. All custom result implementations, non-Exception failures and callback success paths are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the common before-only runtime/API knowledge policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:bd59462c0825f3ad1dfb and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "exc_info = failure.value, failure.type, failure.getTracebackObject()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "exc_info = failure.type, failure.value, failure.getTracebackObject()"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_scrapy-7:0:scrapy/http/request/form.py:_get_form_url",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Form submission URL joining does not strip HTML action whitespace.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing form submission semantics use the HTML action with leading/trailing HTML whitespace stripped. The old helper joins the resolved lxml action directly, retaining an action such as space-path-newline in affected versions. The after reads the raw action, strips HTML5 whitespace and joins once; absent action retains the page base.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "HTML form submission whitespace semantics, actual lxml action getter, get_base_url and urljoin version are required. The exact dependency tag is comparison context, not installed-version proof.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional witness concerns encoding, stream recovery, settings, serialization, request construction or error recording. No demonstrated attacker-to-authority boundary follows from these symptoms alone. Proxy credentials, URL processing and decompression are not automatically general security positives or negatives.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Leading/trailing HTML5 whitespace in a present action with valid base only. Missing/empty document bases, exotic URL whitespace, parser versions that already strip and arbitrary explicit overrides are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the common before-only runtime/API knowledge policy and numerical input budget.",
+      "dependence_reason": "Later _get_form_url history after scrapy-25 redundant helper/document-base producer change; preserve version overlap and distinct selected relevance.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return urljoin(form.base_url, form.action)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return urljoin(form.base_url, strip_html5_whitespace(action))"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41125:0:scrapy/downloadermiddlewares/httpauth.py:HttpAuthMiddleware.process_request",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Automatic spider Basic credentials are attached to unrelated request destinations.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old spider_opened constructs Basic credentials from http_user/http_pass, and selected process_request attaches them to every request lacking Authorization. A crawler following an attacker-influenced off-domain link or redirect can therefore disclose those credentials to that destination. The explicit trusted-domain mode in the fix bounds automatic addition; the advisory-backed confidentiality duty is distinct from treating all URL policy changes as security defects.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Credential creation and ownership, attacker-influenced request generation, middleware ordering, explicit nonempty trusted-domain configuration and retained domain matcher determine the boundary. The four-line before body does not alone establish these premises.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Demonstrated confidentiality boundary: crawler-owned Basic credentials for an intended domain are sent to an attacker-influenced unrelated request destination. The full fixing middleware/docs/tests and retained exact matcher support contextual attribution; a CVE identifier alone is not the finding. Restrict the negative to automatic addition under explicit nonempty trusted-domain configuration.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Automatic addition to an unrelated domain under explicit nonempty trusted-domain policy only. First-request trust, explicit None/all-domain mode, existing Authorization, redirect-carried headers, subdomain trust, scheme/port exact-origin separation and netloc normalization are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the common before-only runtime/API knowledge policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:de38da3cf52d375a4c6b and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "request.headers[b'Authorization'] = auth"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not self.domain or url_is_from_any_domain(request.url, [self.domain]):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.auth = basic_auth_header(usr, pwd)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    def test_no_auth(self):"
+        }
+      ]
+    }
+  ]
+}

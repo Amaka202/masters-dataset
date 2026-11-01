@@ -1,0 +1,1134 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-053",
+  "review_date": "2026-10-30",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All operator2/Gerapy2/DRF2/django-s3file2/mjml-python2 training candidates in requested ten-row batch; six mechanical families.",
+  "selection_rule": {
+    "repositories": [
+      "github.com/canonical/operator",
+      "github.com/codingjoe/django-s3file",
+      "github.com/encode/django-rest-framework",
+      "github.com/felixschwarz/mjml-python",
+      "github.com/gerapy/gerapy"
+    ],
+    "candidate_count": 10,
+    "discovery_categories": [
+      "SEC-HTML-ESCAPING",
+      "SEC-RESOURCE-AUTHORIZATION",
+      "SEC-SECRET-ARGUMENT-EXPOSURE",
+      "SEC-SHELL-QUOTING"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Four missing-context, three selected-attribution, one security-boundary and two introduced paired-negative deferrals. Gerapy parse literal argv retains shell-only JSON apostrophes; s3file helper prints computed folder capability before rejecting invalid input. DRF linkifier requires matched sibling autoescape policy, while long-header primitive lacks a retained lower-trust writer. Operator actual chained exception hook/file transport and MJML entity/component/default pipeline retained; outer/nested and coordinated representations not independent. Four pins retain241 inert texts/twenty exact peers/six parents/twelve archive inventories. BeautifulSoup package source archive hash matches retained PyPI metadata and is read without extraction/import/install; named Juju file transport compared, not presumed installed. Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/template/parser/secret/signature/storage/subprocess/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:135138148360192:121262139825682",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Secret secret_set passes value contents in argv, retained by subprocess failure and chained exception logging; after transports private temporary-file references.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Distinguish secret argv/traceback exposure from shell interpretation; shell removal from target argv/JSON preservation; HTML text escaping from intentional safe markup and coordinated autoescape policy; signed upload-folder capability from storage-location confinement; entity preservation from arbitrary MJML sanitization. Keep nested/outer representations and introduced after failures explicit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing public add/set contract handles secret payload (including password examples), validates mapping/key grammar and calls backend. Backend _run uses subprocess.run(check=True), chains CalledProcessError as ModelError, and actual ops/log exception hook forwards exception info to Juju logs. Named CPython3.10.14 error retains/formats command; no inference of shell execution is needed.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched runner, uncaught exception/logging lifecycle, Juju log reader privileges, validated keys and private temp creation/cleanup. Disclosure requires a failed call that escapes to logging or other diagnostic collection; not every successful invocation logs its values. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/runtime/template/browser/storage/subprocess contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-authority log/diagnostic reader who is not permitted the secret can receive value-bearing command in chained traceback. Existing secret-role model is distinct from logging access; actual deployment access remains a prerequisite. No automatic anonymous exposure or same-user filesystem secrecy claim.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After writes UTF-8 values under TemporaryDirectory and passes key#file=path with runner inside context. Named CPython creates0700 directory; validated key grammar excludes slash traversal. Named Juju3.5.3 shared upsert parses file suffix and reads bytes for both add/set. Cleanup executes on normal/error exit. Scope is contents removed from these argv/traceback commands, not stderr echoed by hook tool, labels/descriptions, all log systems, same-uid/root file access or every Juju version.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Actual secret-to-command-to-chained-log path and file-transport repair supported; defer runner/log-reader/runtime context and keep one family.",
+      "dependence_reason": "Ten representations span six mechanical families, not ten independent issues. Operator add/set share one secret-argv family; Gerapy parse/configure share one shell fix but have different after duties. DRF filters are distinct historical fixes. S3 middleware/helper/form are coordinated. MJML outer applyAttributes contains nested parse; preserve source overlap, canonical IDs/bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm installed versions, supported user/caller/backend/template policy, lower-authority log/storage/browser/process access, and common before-only knowledge/representation. Named comparisons do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/template/parser/secret/signature/storage/subprocess/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                args.append(f'{k}={v}')\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    f.write(v)\n                args.append(f'{k}#file={tmp}/{k}')\n            self._run_for_secret('secret-set', *args)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "ops/model.py",
+          "ref": "0dbffcb6d83ec6470782af06b1015b718f9d40d1",
+          "needle": "result = subprocess.run(args, **kwargs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "ops/model.py",
+          "ref": "0dbffcb6d83ec6470782af06b1015b718f9d40d1",
+          "needle": "raise ModelError(e.stderr) from e"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "ops/model.py",
+          "ref": "0dbffcb6d83ec6470782af06b1015b718f9d40d1",
+          "needle": "_key_re = re.compile(r'^([a-z](?:-?[a-z0-9]){2,})$')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v3.10.14",
+          "needle": "        self.returncode = returncode\n        self.cmd = cmd\n        self.output = output\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v3.10.14",
+          "needle": "raise CalledProcessError(retcode, process.args,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "ops/log.py",
+          "ref": "0dbffcb6d83ec6470782af06b1015b718f9d40d1",
+          "needle": "logger.error('Uncaught exception while in charm code:', exc_info=(etype, value, tb))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "ops/log.py",
+          "ref": "0dbffcb6d83ec6470782af06b1015b718f9d40d1",
+          "needle": "sys.excepthook = except_hook"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.14",
+          "needle": "_os.mkdir(file, 0o700)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.14",
+          "needle": "class TemporaryDirectory:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "worker/uniter/runner/jujuc/secret-add.go",
+          "ref": "v3.5.3",
+          "needle": "If a key has the '#file' suffix, the value is read from the corresponding file."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_DELIVERY.json",
+          "path": "core/secrets/createsecret.go",
+          "ref": "v3.5.3",
+          "needle": "content, err := os.ReadFile(value)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_DELIVERY.json",
+          "path": "core/secrets/createsecret.go",
+          "ref": "v3.5.3",
+          "needle": "data[key] = string(content)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "ops/model.py",
+          "ref": "0dbffcb6d83ec6470782af06b1015b718f9d40d1",
+          "needle": "                default) means to use the Juju default, which is never rotate.\n\n        Raises:\n            ValueError: if the secret is empty, or the secret key is invalid.\n        \"\"\"\n        Secret._validate_content(content)\n        id = self._backend.secret_add(\n            content,\n            label=label,\n            description=description,\n            expire=_calculate_expiry(expire),\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "worker/uniter/runner/jujuc/secret-set.go",
+          "ref": "v3.5.3",
+          "needle": "return c.secretUpsertCommand.Init(args[1:])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.14",
+          "needle": "self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:135138148360192:88893528466386",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Secret secret_add passes value contents in argv, retained by subprocess failure and chained exception logging; after transports private temporary-file references.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Distinguish secret argv/traceback exposure from shell interpretation; shell removal from target argv/JSON preservation; HTML text escaping from intentional safe markup and coordinated autoescape policy; signed upload-folder capability from storage-location confinement; entity preservation from arbitrary MJML sanitization. Keep nested/outer representations and introduced after failures explicit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing public add/set contract handles secret payload (including password examples), validates mapping/key grammar and calls backend. Backend _run uses subprocess.run(check=True), chains CalledProcessError as ModelError, and actual ops/log exception hook forwards exception info to Juju logs. Named CPython3.10.14 error retains/formats command; no inference of shell execution is needed.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched runner, uncaught exception/logging lifecycle, Juju log reader privileges, validated keys and private temp creation/cleanup. Disclosure requires a failed call that escapes to logging or other diagnostic collection; not every successful invocation logs its values. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/runtime/template/browser/storage/subprocess contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-authority log/diagnostic reader who is not permitted the secret can receive value-bearing command in chained traceback. Existing secret-role model is distinct from logging access; actual deployment access remains a prerequisite. No automatic anonymous exposure or same-user filesystem secrecy claim.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After writes UTF-8 values under TemporaryDirectory and passes key#file=path with runner inside context. Named CPython creates0700 directory; validated key grammar excludes slash traversal. Named Juju3.5.3 shared upsert parses file suffix and reads bytes for both add/set. Cleanup executes on normal/error exit. Scope is contents removed from these argv/traceback commands, not stderr echoed by hook tool, labels/descriptions, all log systems, same-uid/root file access or every Juju version.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Actual secret-to-command-to-chained-log path and file-transport repair supported; defer runner/log-reader/runtime context and keep one family.",
+      "dependence_reason": "Ten representations span six mechanical families, not ten independent issues. Operator add/set share one secret-argv family; Gerapy parse/configure share one shell fix but have different after duties. DRF filters are distinct historical fixes. S3 middleware/helper/form are coordinated. MJML outer applyAttributes contains nested parse; preserve source overlap, canonical IDs/bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm installed versions, supported user/caller/backend/template policy, lower-authority log/storage/browser/process access, and common before-only knowledge/representation. Named comparisons do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/template/parser/secret/signature/storage/subprocess/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        for k, v in content.items():\n            args.append(f'{k}={v}')\n        result = self._run('secret-add', *args, return_output=True)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    f.write(v)\n                args.append(f'{k}#file={tmp}/{k}')\n            result = self._run('secret-add', *args, return_output=True)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "ops/model.py",
+          "ref": "0dbffcb6d83ec6470782af06b1015b718f9d40d1",
+          "needle": "result = subprocess.run(args, **kwargs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "ops/model.py",
+          "ref": "0dbffcb6d83ec6470782af06b1015b718f9d40d1",
+          "needle": "raise ModelError(e.stderr) from e"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "ops/model.py",
+          "ref": "0dbffcb6d83ec6470782af06b1015b718f9d40d1",
+          "needle": "_key_re = re.compile(r'^([a-z](?:-?[a-z0-9]){2,})$')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v3.10.14",
+          "needle": "        self.returncode = returncode\n        self.cmd = cmd\n        self.output = output\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "Lib/subprocess.py",
+          "ref": "v3.10.14",
+          "needle": "raise CalledProcessError(retcode, process.args,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "ops/log.py",
+          "ref": "0dbffcb6d83ec6470782af06b1015b718f9d40d1",
+          "needle": "logger.error('Uncaught exception while in charm code:', exc_info=(etype, value, tb))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "ops/log.py",
+          "ref": "0dbffcb6d83ec6470782af06b1015b718f9d40d1",
+          "needle": "sys.excepthook = except_hook"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.14",
+          "needle": "_os.mkdir(file, 0o700)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.14",
+          "needle": "class TemporaryDirectory:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "worker/uniter/runner/jujuc/secret-add.go",
+          "ref": "v3.5.3",
+          "needle": "If a key has the '#file' suffix, the value is read from the corresponding file."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_DELIVERY.json",
+          "path": "core/secrets/createsecret.go",
+          "ref": "v3.5.3",
+          "needle": "content, err := os.ReadFile(value)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_DELIVERY.json",
+          "path": "core/secrets/createsecret.go",
+          "ref": "v3.5.3",
+          "needle": "data[key] = string(content)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "ops/model.py",
+          "ref": "0dbffcb6d83ec6470782af06b1015b718f9d40d1",
+          "needle": "                default) means to use the Juju default, which is never rotate.\n\n        Raises:\n            ValueError: if the secret is empty, or the secret key is invalid.\n        \"\"\"\n        Secret._validate_content(content)\n        id = self._backend.secret_add(\n            content,\n            label=label,\n            description=description,\n            expire=_calculate_expiry(expire),\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "worker/uniter/runner/jujuc/secret-set.go",
+          "ref": "v3.5.3",
+          "needle": "return c.secretUpsertCommand.Init(args[1:])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.14",
+          "needle": "self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:158385455163425:203264623519386",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Authenticated parse POST interpolates request values into shell text; after removes shell but retains shell-only quote delimiters in literal JSON argv.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Distinguish secret argv/traceback exposure from shell interpretation; shell removal from target argv/JSON preservation; HTML text escaping from intentional safe markup and coordinated autoescape policy; signed upload-folder capability from storage-location confinement; entity preservation from arbitrary MJML sanitization. Keep nested/outer representations and introduced after failures explicit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Actual POST/IsAuthenticated route maps JSON arguments to gerapy parse. Old POSIX shell removes intentionally added single-quote delimiters before CLI argparse str2json receives valid JSON. New discrete argv keeps those quotes. Historical str2json calls json.loads and returns None on failure; parser then uses fallback headers/cookies and omits meta. Existing request-parameter preservation duty predates patch tests.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need route/auth permissions, POSIX shell/token behavior, CLI argparse converters and parser consumer. A normal nonempty header/cookie/meta object demonstrates the after mismatch without shell metacharacters. Body str2body also falls back to quote-wrapped raw string. Do not infer every authenticated crawler manager lacks all code-execution powers. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/runtime/template/browser/storage/subprocess contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Under a deployment where API user can debug a crawler but not run arbitrary host shell commands, request-controlled unquoted URL/spider/arguments or broken manual quoting grants extra shell interpretation. IsAuthenticated is a reachability gate, not escaping. Intentional project Python execution may overlap capabilities and must be considered separately.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "shell=False plus argv removes this shell sink under POSIX matched subprocess semantics. But retained apostrophes around serialized headers/cookies/meta become literal argv characters; json.loads rejects them and str2json returns None, dropping ordinary supplied values at existing consumer. Non-GET body can retain extra quote characters too. Introduced argument-transport regression, not residual shell execution; selected paired negative unestablished.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Selected old shell interpretation and local shell removal supported, but ordinary CLI JSON/header preservation regresses. Explicitly defer paired-negative use.",
+      "dependence_reason": "Ten representations span six mechanical families, not ten independent issues. Operator add/set share one secret-argv family; Gerapy parse/configure share one shell fix but have different after duties. DRF filters are distinct historical fixes. S3 middleware/helper/form are coordinated. MJML outer applyAttributes contains nested parse; preserve source overlap, canonical IDs/bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm installed versions, supported user/caller/backend/template policy, lower-authority log/storage/browser/process access, and common before-only knowledge/representation. Named comparisons do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/template/parser/secret/signature/storage/subprocess/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "p = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        p = Popen(cmd, shell=False, stdin=PIPE,\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/server/core/views.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "from subprocess import Popen, PIPE"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/server/core/urls.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "url(r'^api/project/(\\S+)/parse', views.project_parse"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/server/core/urls.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "url(r'^api/project/(\\S+)/configure', views.project_configure"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/cmd/__init__.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "parser_parse.add_argument('--headers', default=None, type=str2json"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/server/core/utils.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "    \"\"\"\n    try:\n        return json.loads(v)\n    except:\n        return None\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "gerapy/server/core/parser.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "request.headers = args.headers if args.headers else request.headers"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/server/core/views.py",
+          "ref": "49bcb19be5e0320e7e1535f34fe00f16a3cf3b28",
+          "needle": "'headers': \"'\" + json.dumps(data.get('headers', {}), ensure_ascii=False) + \"'\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/server/core/utils.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "def str2json(v):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "gerapy/server/core/parser.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "request.meta.update(args.meta)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "gerapy/server/core/parser.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "request.cookies = args.cookies if args.cookies else request.cookies"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "New shell=False argv retains old shell-only apostrophes around JSON headers/cookies/meta. Existing argparse str2json catches json.loads failure and returns None, so parser drops ordinary nonempty supplied values; body fallback can retain quotes. Source-contract deduction without executing shell, CLI, JSON payload or request."
+    },
+    {
+      "pair_id": "CVEfixes:158385455163425:254738641063566",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Authenticated configure route applies incomplete project-name denylist then invokes POSIX shell; after passes argv with shell=False.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Distinguish secret argv/traceback exposure from shell interpretation; shell removal from target argv/JSON preservation; HTML text escaping from intentional safe markup and coordinated autoescape policy; signed upload-folder capability from storage-location confinement; entity preservation from arbitrary MJML sanitization. Keep nested/outer representations and introduced after failures explicit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Route regex permits non-whitespace characters including shell backticks; old regex removes many characters but not backticks/parentheses/pipe. POST performs Project.filter.update, which need not find a row, before launching command, so no matching stored name is required for reaching shell parsing. Existing generate CLI takes a single project argument and looks up configuration; request data should not become shell control.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need URL decoding/regex, authenticated user capability boundary, POSIX shell, real Popen import and generate CLI. New whitespace-removal policy plus literal argv may intentionally reject/change unsupported names; do not label every such policy change accidental. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/runtime/template/browser/storage/subprocess contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "For admitted authenticated API user without arbitrary host-shell capability, route name containing retained POSIX syntax can invoke unintended shell behavior before generator lookup. Prior database update does not sanitize or guarantee existence. No unauthenticated RCE or universal platform/shell claim.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After three argv elements and shell=False avoid shell parsing of project name. Remaining generator paths/options/configured Python/code-generation capabilities and project confinement are separate. No supported ordinary JSON-argument regression from parse sibling is attributed to this distinct configure argv.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Selected incomplete shell denylist and argv repair supported with actual route/generator, but deployment/user capability/runtime context exceeds selected before.",
+      "dependence_reason": "Ten representations span six mechanical families, not ten independent issues. Operator add/set share one secret-argv family; Gerapy parse/configure share one shell fix but have different after duties. DRF filters are distinct historical fixes. S3 middleware/helper/form are coordinated. MJML outer applyAttributes contains nested parse; preserve source overlap, canonical IDs/bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm installed versions, supported user/caller/backend/template policy, lower-authority log/storage/browser/process access, and common before-only knowledge/representation. Named comparisons do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/template/parser/secret/signature/storage/subprocess/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "cmd = ' '.join(['gerapy', 'generate', project_name])"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "cmd = ['gerapy', 'generate', project_name]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/server/core/views.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "from subprocess import Popen, PIPE"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/server/core/urls.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "url(r'^api/project/(\\S+)/parse', views.project_parse"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/server/core/urls.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "url(r'^api/project/(\\S+)/configure', views.project_configure"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/cmd/__init__.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "parser_parse.add_argument('--headers', default=None, type=str2json"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/server/core/utils.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "    \"\"\"\n    try:\n        return json.loads(v)\n    except:\n        return None\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "gerapy/server/core/parser.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "request.headers = args.headers if args.headers else request.headers"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/server/core/utils.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "configuration = Project.objects.get(name=project_name).configuration"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/cmd/generate.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "generate_project(project)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "gerapy/cmd/__init__.py",
+          "ref": "f1cd46d80328497c016fbac12c9239b9dcaef047",
+          "needle": "parser_generate.add_argument('project', type=str"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:48963824798023:131468085631728",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Long comma-separated response header marked safe without escaping header text; after escapes text before injecting deliberate line-break markup.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Distinguish secret argv/traceback exposure from shell interpretation; shell removal from target argv/JSON preservation; HTML text escaping from intentional safe markup and coordinated autoescape policy; signed upload-folder capability from storage-location confinement; entity preservation from arbitrary MJML sanitization. Keep nested/outer representations and introduced after failures explicit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old filter promises breaking long header values, not interpreting their markup. Browsable renderer passes response.items to template; template uses val|break_long_headers|urlize. Branch requires length>160 and comma. Named Django4.2.13 escape always escapes text including SafeString, while mark_safe opts output out of template escaping and urlize preserves safe-input trust.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need a real lower-trust response-header writer and victim browsable rendering. Retained renderer supplies application response headers but does not itself prove attacker control of arbitrary markup-bearing header. Request URI reflection is not silently assumed to survive upstream URI quoting. Header newline rejection is separate from HTML escaping. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/runtime/template/browser/storage/subprocess contracts are adjudication-only, never selective detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Conditional attacker-influenced markup in a qualifying header would be trusted HTML in browsable output. No particular retained application header producer establishes that crossing, so keep unresolved boundary rather than infer deployed XSS from unsafe primitive alone.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After escape(header) before split/join preserves deliberate br tags while encoding source markup under named helper. Short/no-comma branch remains ordinary template handling. Bounded negative covers qualifying text, not every custom header writer, arbitrary safe-input contract or all renderer output.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Existing literal-header duty and local escaping repair supported; actual lower-trust header producer/browser delivery unresolved.",
+      "dependence_reason": "Ten representations span six mechanical families, not ten independent issues. Operator add/set share one secret-argv family; Gerapy parse/configure share one shell fix but have different after duties. DRF filters are distinct historical fixes. S3 middleware/helper/form are coordinated. MJML outer applyAttributes contains nested parse; preserve source overlap, canonical IDs/bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm installed versions, supported user/caller/backend/template policy, lower-authority log/storage/browser/process access, and common before-only knowledge/representation. Named comparisons do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/template/parser/secret/signature/storage/subprocess/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "header = mark_safe('<br> ' + ', <br>'.join(header.split(',')))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "header = mark_safe('<br> ' + ', <br>'.join(escape(header).split(',')))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "rest_framework/renderers.py",
+          "ref": "fe92f0dd0d4c587eed000c7de611ddbff241bd6a",
+          "needle": "response_headers = dict(sorted(response.items()))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "rest_framework/templates/rest_framework/base.html",
+          "ref": "fe92f0dd0d4c587eed000c7de611ddbff241bd6a",
+          "needle": "{{ val|break_long_headers|urlize }}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "rest_framework/templatetags/rest_framework.py",
+          "ref": "fe92f0dd0d4c587eed000c7de611ddbff241bd6a",
+          "needle": "from django.utils.html import escape, format_html, smart_urlquote"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "django/utils/html.py",
+          "ref": "4.2.13",
+          "needle": "return SafeString(html.escape(str(text)))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "django/utils/safestring.py",
+          "ref": "4.2.13",
+          "needle": "def mark_safe(s):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "django/utils/html.py",
+          "ref": "4.2.13",
+          "needle": "if hasattr(text, \"__html__\"):"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:55043073450094:92208459400040",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Linkifier final safety marker supports enabled autoescape; security correction also requires sibling template policy change, not a newly isolated escaping algorithm.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Distinguish secret argv/traceback exposure from shell interpretation; shell removal from target argv/JSON preservation; HTML text escaping from intentional safe markup and coordinated autoescape policy; signed upload-folder capability from storage-location confinement; entity preservation from arbitrary MJML sanitization. Keep nested/outer representations and introduced after failures explicit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old doc explicitly promises clickable links and conditional autoescaping. Old ordinary-input autoescape=True already escapes every URL/text piece, but returns plain joined str so template can escape generated anchor again. Matched base template explicitly disables autoescape; same fix removes that policy and selected after marks fully joined escaped output safe. Conditional escaping decisions preserve autoescape=False/SafeData behavior. Functional output repair is real; old selected escaping algorithm is not independently proved to cause default-template XSS.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need filter registration needs_autoescape, Django template final escaping/SafeData, matched before/after template and actual response content. Do not treat advisory or new tests as old selected defect. Old template-off path and selected default-autoescape behavior are different configurations. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/runtime/template/browser/storage/subprocess contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Old unescaped default-template rendering can expose lower-trust content when its renderer supplies it, but selected routine honors autoescape=False by design. Sibling template enabling escaping is the security policy change; selected safety marker permits correctly escaped links to remain links. No independent security defect assigned to outer join merely because patch is required for compatibility.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After all words follow conditional escaping and final mark_safe avoids double escaping under enabled autoescape. Intentional SafeData/autoescape=False trust persists; therefore not a general XSS-negative function. Selected security attribution/negative is unestablished apart from coordinated template policy.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve functional clickable-output repair and exact sibling autoescape change, but defer selected local security attribution rather than use broad advisory title.",
+      "dependence_reason": "Ten representations span six mechanical families, not ten independent issues. Operator add/set share one secret-argv family; Gerapy parse/configure share one shell fix but have different after duties. DRF filters are distinct historical fixes. S3 middleware/helper/form are coordinated. MJML outer applyAttributes contains nested parse; preserve source overlap, canonical IDs/bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm installed versions, supported user/caller/backend/template policy, lower-authority log/storage/browser/process access, and common before-only knowledge/representation. Named comparisons do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/template/parser/secret/signature/storage/subprocess/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return ''.join(words)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return mark_safe(''.join(words))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "rest_framework/templates/rest_framework/base.html",
+          "ref": "e3bd4b90488bab756694ce271a9615460783f987",
+          "needle": "{% autoescape off %}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "rest_framework/templates/rest_framework/base.html",
+          "ref": "4bb9a3c48427867ef1e46f7dee945a4c25a4f9b8",
+          "needle": "{{ content|urlize_quoted_links }}</pre>"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "rest_framework/renderers.py",
+          "ref": "e3bd4b90488bab756694ce271a9615460783f987",
+          "needle": "content = renderer.render(data, accepted_media_type, renderer_context)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "rest_framework/templatetags/rest_framework.py",
+          "ref": "e3bd4b90488bab756694ce271a9615460783f987",
+          "needle": "from django.utils.safestring import SafeData, mark_safe"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "django/template/base.py",
+          "ref": "1.11.29",
+          "needle": "return conditional_escape(value)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "django/utils/html.py",
+          "ref": "1.11.29",
+          "needle": "if hasattr(text, '__html__'):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "django/utils/safestring.py",
+          "ref": "1.11.29",
+          "needle": "def mark_safe(s):"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:56455623515815:4280509275020",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Middleware storage iterator opens request-selected stored objects without upload-folder authorization; after verifies folder token but prints derived token before comparison.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Distinguish secret argv/traceback exposure from shell interpretation; shell removal from target argv/JSON preservation; HTML text escaping from intentional safe markup and coordinated autoescape policy; signed upload-folder capability from storage-location confinement; entity preservation from arbitrary MJML sanitization. Keep nested/outer representations and introduced after failures explicit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing widget allocates random per-form upload_folder and presigned policy limits upload keys there, while old iterator accepts any key relative to storage location. Middleware converts these objects to request.FILES for normal application upload handling. This is missing authorized-upload provenance inside configured storage, not unrestricted host-filesystem traversal. New Signer salt matches widget and JS transports folder token.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need storage location/backend, actual middleware installation, random folder capability producer, signed parent comparison and downstream application save/publication permissions. Existing stored object id/key must be known and app must use injected files. No universal anonymous bucket read/deletion claim. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/runtime/template/browser/storage/subprocess contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional admitted form submitter can nominate another known object inside storage root as their upload, bypassing the widget per-folder upload capability. Actual app processing may copy/publish/move that object. Matched signature enforcement rejects other parents, but log-reader capability must be separated from ordinary browser access.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After rejects wrong-parent signature and paths outside configured storage before open. However it prints signer.signature(path.parent) and supplied signature to stdout BEFORE comparison, even on an invalid token and before file-existence checks. Named Signer is deterministic secret-key/salt HMAC without timestamp, so output exposes valid bearer authorization for nominated parent to any lower-trust stdout/log recipient; it is not merely logging an invalid supplied credential. Conditional introduced credential-channel regression, not proof every deployment exposes logs. Selected paired negative unestablished; no signature or storage operation executed.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Record local folder-auth repair and introduced generated-capability stdout disclosure; log access prerequisites remain explicit and paired-negative use deferred.",
+      "dependence_reason": "Ten representations span six mechanical families, not ten independent issues. Operator add/set share one secret-argv family; Gerapy parse/configure share one shell fix but have different after duties. DRF filters are distinct historical fixes. S3 middleware/helper/form are coordinated. MJML outer applyAttributes contains nested parse; preserve source overlap, canonical IDs/bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm installed versions, supported user/caller/backend/template policy, lower-authority log/storage/browser/process access, and common before-only knowledge/representation. Named comparisons do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/template/parser/secret/signature/storage/subprocess/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "f = storage.open(str(path.relative_to(location)))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not constant_time_compare(signer.signature(path.parent), signature):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "s3file/forms.py",
+          "ref": "03f6ff81278a616619726ba3c51a71fec8a9f9e2",
+          "needle": "base64.urlsafe_b64encode(uuid.uuid4().bytes)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "s3file/forms.py",
+          "ref": "03f6ff81278a616619726ba3c51a71fec8a9f9e2",
+          "needle": "[\"starts-with\", \"$key\", str(self.upload_folder)]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "s3file/forms.py",
+          "ref": "68ccd2c621a40eb66fdd6af2be9d5fcc9c373318",
+          "needle": "defaults[\"data-s3f-signature\"] = signer.signature(self.upload_folder)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "s3file/static/s3file/js/s3file.js",
+          "ref": "68ccd2c621a40eb66fdd6af2be9d5fcc9c373318",
+          "needle": "hiddenSignatureInput.name = name + '-s3f-signature'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "django/core/signing.py",
+          "ref": "3.2.13",
+          "needle": "return base64_hmac(self.salt + 'signer', value, self.key, algorithm=self.algorithm)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "README.md",
+          "ref": "03f6ff81278a616619726ba3c51a71fec8a9f9e2",
+          "needle": "Files are later moved by Django when"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "storages/backends/s3boto3.py",
+          "ref": "1.12.3",
+          "needle": "def _normalize_name(self, name):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "s3file/middleware.py",
+          "ref": "68ccd2c621a40eb66fdd6af2be9d5fcc9c373318",
+          "needle": "print(signer.signature(path.parent), signature)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "django/core/signing.py",
+          "ref": "3.2.13",
+          "needle": "class Signer:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "django/core/signing.py",
+          "ref": "3.2.13",
+          "needle": "class TimestampSigner(Signer):"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "New helper emits valid deterministic folder signature for requested parent to stdout before validating submitted signature. If stdout/log audience is lower trust than that capability, it discloses newly added authorization material, including on rejected requests. Not a reproduced bypass or assertion that all logs are attacker-readable."
+    },
+    {
+      "pair_id": "CVEfixes:56455623515815:77996930519844",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "S3 middleware forwards arbitrary POST-selected stored objects; after transports required signature to matched enforcement helper.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Distinguish secret argv/traceback exposure from shell interpretation; shell removal from target argv/JSON preservation; HTML text escaping from intentional safe markup and coordinated autoescape policy; signed upload-folder capability from storage-location confinement; entity preservation from arbitrary MJML sanitization. Keep nested/outer representations and introduced after failures explicit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old request.POST controls field names and paths; get_files_from_storage opens them and middleware injects request.FILES before get_response. New missing-signature rejection alone does not validate parent capability: matched helper/form changes do actual enforcement. Existing request upload provenance duty is supported for selected chain, not an isolated old wrapper policy beyond its insecure consumer.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched form/JS signature producer, helper cryptography/backend confinement, middleware placement and downstream view permissions. New if paths skips empty-field replacement; no admitted ordinary contract here requires old replacement of existing files by an empty list. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/runtime/template/browser/storage/subprocess contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Same conditional request-to-stored-object injection as iterator; authenticate/authorize downstream app use separately. Wrapper signature presence is not cryptographic proof, nor an independent issue from matched helper.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After requires transport token and forwards it to parent verifier, translating path violations to PermissionDenied. Coordinated helper prints computed token before checking it; no isolated selected negative or globally clean middleware claimed. Preserve wrapper/helper dependence.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Defer coordinated wrapper security representation; actual old storage read/enforcement belongs to helper and its after token-output concern remains explicit.",
+      "dependence_reason": "Ten representations span six mechanical families, not ten independent issues. Operator add/set share one secret-argv family; Gerapy parse/configure share one shell fix but have different after duties. DRF filters are distinct historical fixes. S3 middleware/helper/form are coordinated. MJML outer applyAttributes contains nested parse; preserve source overlap, canonical IDs/bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm installed versions, supported user/caller/backend/template policy, lower-authority log/storage/browser/process access, and common before-only knowledge/representation. Named comparisons do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/template/parser/secret/signature/storage/subprocess/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "list(self.get_files_from_storage(paths))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "list(self.get_files_from_storage(paths, signature))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "s3file/forms.py",
+          "ref": "03f6ff81278a616619726ba3c51a71fec8a9f9e2",
+          "needle": "base64.urlsafe_b64encode(uuid.uuid4().bytes)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "s3file/forms.py",
+          "ref": "03f6ff81278a616619726ba3c51a71fec8a9f9e2",
+          "needle": "[\"starts-with\", \"$key\", str(self.upload_folder)]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "s3file/forms.py",
+          "ref": "68ccd2c621a40eb66fdd6af2be9d5fcc9c373318",
+          "needle": "defaults[\"data-s3f-signature\"] = signer.signature(self.upload_folder)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "s3file/static/s3file/js/s3file.js",
+          "ref": "68ccd2c621a40eb66fdd6af2be9d5fcc9c373318",
+          "needle": "hiddenSignatureInput.name = name + '-s3f-signature'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "django/core/signing.py",
+          "ref": "3.2.13",
+          "needle": "return base64_hmac(self.salt + 'signer', value, self.key, algorithm=self.algorithm)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "README.md",
+          "ref": "03f6ff81278a616619726ba3c51a71fec8a9f9e2",
+          "needle": "Files are later moved by Django when"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "storages/backends/s3boto3.py",
+          "ref": "1.12.3",
+          "needle": "def _normalize_name(self, name):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "s3file/middleware.py",
+          "ref": "68ccd2c621a40eb66fdd6af2be9d5fcc9c373318",
+          "needle": "print(signer.signature(path.parent), signature)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "s3file/middleware.py",
+          "ref": "68ccd2c621a40eb66fdd6af2be9d5fcc9c373318",
+          "needle": "raise PermissionDenied(\"No signature provided.\")"
+        }
+      ],
+      "additional_after_concerns": [
+        "Matched new enforcement helper prints derived valid parent capability before comparison; wrapper has no independent after-negative certification."
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:81679705043896:14857560379839",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Outer attribute processor contains nested entity serializer before literal insertion into MJML component HTML.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Distinguish secret argv/traceback exposure from shell interpretation; shell removal from target argv/JSON preservation; HTML text escaping from intentional safe markup and coordinated autoescape policy; signed upload-folder capability from storage-location confinement; entity preservation from arbitrary MJML sanitization. Keep nested/outer representations and introduced after failures explicit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old application input is parsed by BeautifulSoup(html.parser); named4.12.3 converts entities into text data. formatter=None returns string characters unchanged; default minimal serializes ampersand/angle text as entities. Actual mj-text getContent/render inserts content directly into div. Existing escaped text must remain text across MJML-to-HTML, although intentional HTML elements are allowed. No new arbitrary-markup sanitizer duty is inferred.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need BeautifulSoup entity/formatter runtime, component and skeleton consumer, application lower-trust escaped text insertion and downstream browser/email behavior. Both selected spans capture same parse; raw formatted output alone does not prove every mail client executes scripts. Custom components/styles/includes are separate trust surfaces. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/runtime/template/browser/storage/subprocess contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional application escapes lower-trust text inside otherwise trusted MJML. Old entity decode followed by formatter=None reactivates characters as output HTML, crossing intended text/markup boundary; browser/client outcome depends on actual renderer and policy. Named minimal formatter preserves text while allowing intended element markup. No server execution or universally active email scripts claim.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After uses minimal formatter for selected component content, preserving escaped text under named bs4 contract. Not arbitrary HTML sanitization/include confinement. Later htmlAttributes block still uses formatter=None, but default starts empty and bounded retrieval found no built-in setter; custom head/component use can enable it, so this alternate path is outside certified selected mechanism rather than a demonstrated default residual. Outer span contains identical nested edit with no independent selected issue/negative.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Preserve outer/nested containment and defer outer independent security representation.",
+      "dependence_reason": "Ten representations span six mechanical families, not ten independent issues. Operator add/set share one secret-argv family; Gerapy parse/configure share one shell fix but have different after duties. DRF filters are distinct historical fixes. S3 middleware/helper/form are coordinated. MJML outer applyAttributes contains nested parse; preserve source overlap, canonical IDs/bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm installed versions, supported user/caller/backend/template policy, lower-authority log/storage/browser/process access, and common before-only knowledge/representation. Named comparisons do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/template/parser/secret/signature/storage/subprocess/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "content = _mjml.decode_contents(formatter=None)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "content = _mjml.decode_contents()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "mjml/mjml2html.py",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "mjml_doc = BeautifulSoup(xml_fp, 'html.parser')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "setup.cfg",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "beautifulsoup4"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "bs4/builder/_htmlparser.py",
+          "ref": "4.12.3",
+          "needle": "        data = data or \"\\N{REPLACEMENT CHARACTER}\"\n        self.handle_data(data)\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "bs4/element.py",
+          "ref": "4.12.3",
+          "needle": "if formatter is None:\n            return s"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "bs4/element.py",
+          "ref": "4.12.3",
+          "needle": "    def output_ready(self, formatter=\"minimal\"):\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "bs4/formatter.py",
+          "ref": "4.12.3",
+          "needle": "HTMLFormatter.REGISTRY[\"minimal\"] = HTMLFormatter("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_DELIVERY.json",
+          "path": "bs4/dammit.py",
+          "ref": "4.12.3",
+          "needle": "def substitute_xml(cls, value, make_quoted_attribute=False):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "mjml/core/api.py",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "return self.content.strip()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "mjml/elements/mj_text.py",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "return '<div ' + self.html_attrs(style='text') + '>' + content_html + '</div>'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "mjml/mjml2html.py",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "if globalDatas.htmlAttributes:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "mjml/mjml2html.py",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "content = contentSoup.decode_contents(formatter=None)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "mjml/mjml2html.py",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "'htmlAttributes'     : {}"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:81679705043896:158678979153150",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Nested component parser serializes entity-decoded text without escaping before literal insertion into MJML component HTML.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Distinguish secret argv/traceback exposure from shell interpretation; shell removal from target argv/JSON preservation; HTML text escaping from intentional safe markup and coordinated autoescape policy; signed upload-folder capability from storage-location confinement; entity preservation from arbitrary MJML sanitization. Keep nested/outer representations and introduced after failures explicit.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old application input is parsed by BeautifulSoup(html.parser); named4.12.3 converts entities into text data. formatter=None returns string characters unchanged; default minimal serializes ampersand/angle text as entities. Actual mj-text getContent/render inserts content directly into div. Existing escaped text must remain text across MJML-to-HTML, although intentional HTML elements are allowed. No new arbitrary-markup sanitizer duty is inferred.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need BeautifulSoup entity/formatter runtime, component and skeleton consumer, application lower-trust escaped text insertion and downstream browser/email behavior. Both selected spans capture same parse; raw formatted output alone does not prove every mail client executes scripts. Custom components/styles/includes are separate trust surfaces. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and project/runtime/template/browser/storage/subprocess contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional application escapes lower-trust text inside otherwise trusted MJML. Old entity decode followed by formatter=None reactivates characters as output HTML, crossing intended text/markup boundary; browser/client outcome depends on actual renderer and policy. Named minimal formatter preserves text while allowing intended element markup. No server execution or universally active email scripts claim.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After uses minimal formatter for selected component content, preserving escaped text under named bs4 contract. Not arbitrary HTML sanitization/include confinement. Later htmlAttributes block still uses formatter=None, but default starts empty and bounded retrieval found no built-in setter; custom head/component use can enable it, so this alternate path is outside certified selected mechanism rather than a demonstrated default residual. No ordinary selected after regression established under default component pipeline.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Actual entity-to-text-to-component chain supports selected repair; defer runtime/application/client/before-only context.",
+      "dependence_reason": "Ten representations span six mechanical families, not ten independent issues. Operator add/set share one secret-argv family; Gerapy parse/configure share one shell fix but have different after duties. DRF filters are distinct historical fixes. S3 middleware/helper/form are coordinated. MJML outer applyAttributes contains nested parse; preserve source overlap, canonical IDs/bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending alias/backport/root-cause/representation adjudication.",
+      "open_questions": [
+        "Researcher confirm installed versions, supported user/caller/backend/template policy, lower-authority log/storage/browser/process access, and common before-only knowledge/representation. Named comparisons do not certify deployment or all versions.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed proof. No retained application/dependency/template/parser/secret/signature/storage/subprocess/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "content = _mjml.decode_contents(formatter=None)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "content = _mjml.decode_contents()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "mjml/mjml2html.py",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "mjml_doc = BeautifulSoup(xml_fp, 'html.parser')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "setup.cfg",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "beautifulsoup4"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "bs4/builder/_htmlparser.py",
+          "ref": "4.12.3",
+          "needle": "        data = data or \"\\N{REPLACEMENT CHARACTER}\"\n        self.handle_data(data)\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "bs4/element.py",
+          "ref": "4.12.3",
+          "needle": "if formatter is None:\n            return s"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "bs4/element.py",
+          "ref": "4.12.3",
+          "needle": "    def output_ready(self, formatter=\"minimal\"):\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTRACTS.json",
+          "path": "bs4/formatter.py",
+          "ref": "4.12.3",
+          "needle": "HTMLFormatter.REGISTRY[\"minimal\"] = HTMLFormatter("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_DELIVERY.json",
+          "path": "bs4/dammit.py",
+          "ref": "4.12.3",
+          "needle": "def substitute_xml(cls, value, make_quoted_attribute=False):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "mjml/core/api.py",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "return self.content.strip()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "mjml/elements/mj_text.py",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "return '<div ' + self.html_attrs(style='text') + '>' + content_html + '</div>'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "mjml/mjml2html.py",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "if globalDatas.htmlAttributes:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "mjml/mjml2html.py",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "content = contentSoup.decode_contents(formatter=None)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_053_CONTEXT.json",
+          "path": "mjml/mjml2html.py",
+          "ref": "136697fcb39956f62136644aea03fd6e7da96bb1",
+          "needle": "'htmlAttributes'     : {}"
+        }
+      ]
+    }
+  ]
+}

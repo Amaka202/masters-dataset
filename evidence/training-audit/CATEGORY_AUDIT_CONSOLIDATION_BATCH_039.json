@@ -1,0 +1,437 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-039",
+  "review_date": "2026-10-27",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All five TensorFlow training candidates/all discovery statuses, including null-category serializer exclusion, across two mechanical families.",
+  "selection_rule": {
+    "repository": "github.com/tensorflow/tensorflow",
+    "discovery_categories": [
+      null,
+      "SEC-DESERIALIZATION-ALLOWLIST",
+      "SEC-NONREENTRANT-LOCK-DEADLOCK"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "One coordinated producer nonrepair exclusion, one retired YAML reader task-scope deferral and three lock security-boundary deferrals. Actual YAML after retires both APIs despite safe_load-oriented commit title; reader unsafe_load/fallback execute Python constructors before Keras custom-object mapping, while serializer is not that load sink. Intentional breaking retirement is not an accidental after regression or preserved YAML roundtrip. Old primitive-lock same-thread reentry is supported through matched initial tracing, lower cache and callback lifetimes, and legitimate old pickle-state restoration; actual lower-trust admission remains unresolved. Restored SavedModel wrapper lacks original Python function and calls concrete graphs; it is not automatically callback/Function.__setstate__ delivery. After RLock negative is owning-thread reacquisition only; infinite recursion/RecursionError and cross-thread/graph/pickle/model safety remain separate. Three pins retain56 inert texts/eight exact archive peers/two resolved parents/two explicit404 requests. Explicit path/commit-changed-file retrieval is not exhaustive repository/dynamic integration search. CPython3.9.7/PyYAML3.13/5.4.1 and old security policy are historical comparisons, not installed/all-range proof. Preserve all833 ledger events/statuses/categories/hashes/families, prior authored batches, canonical bytes/splits and45 protected inputs. Five functions/two families are not independent issue counts; all retained programs/payloads/vulnerability-target requests/upstream tests stay inert. Researcher approval pending.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-37678:0:tensorflow/python/keras/engine/training.py:Model.to_yaml",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Model.to_yaml serializes existing model configuration; coordinated producer retirement is not selected unsafe deserialization.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery categories and null producer exclusion. Unsafe YAML Python-object construction is distinct from YAML serialization, generic model/graph program authority, pickle execution and callback reentrancy. Primitive-lock same-thread reacquisition is not every recursive graph or all-thread deadlock mechanism. No new leaf, approved taxonomy/eligibility or independent issue count.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Old API returns yaml.dump(self._updated_config(), **kwargs). Its docstring explicitly links the separate model_from_yaml reader, whose unsafe_load precedes Keras class deserialization. The producer does not parse supplied YAML or invoke that reader. It can serialize already present Python objects and any model/custom representer may run trusted extension code, but no matched lower-trust producer path establishes unintended selected construction. Actual after raises RuntimeError, despite a commit title discussing safe_load; release Breaking Changes explicitly retires both methods.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old model-config producer/custom representer trust and separate reader binding before assigning an object-construction defect to serialization. Shared CVE/fix/title does not establish selected attribution. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Calls, model policies, dependency/runtime bindings, pickle state producer, saved-model wrapper, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only and never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Reader lower-trust object construction must not be inherited by this output-only selected API. Model and custom representer authority is conditional and already programmatic; no selected old deserialization boundary is demonstrated.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After rejects producer calls before dumping and leaves no YAML producer functionality. This is coordinated intentional retirement, not a demonstrated old serializer defect or an unintended after compatibility regression. No clean selected-security negative is established. JSON/H5 suggestions are separate APIs and do not certify their safety.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected producer is retired with its reader without a demonstrated old selected unsafe-load violation; preserve the existing null-category exclusion as a nonrepair proposal.",
+      "dependence_reason": "Five selected functions/two mechanical families are not independently adjudicated issues. YAML producer/reader share fix-family:986b29b2a7b44ac79883 and intentional retirement; serialization is not the reader unsafe-construction sink. The two upper Function lifecycle allocations and lower graph-tracing allocation share fix-family:52759c4af03628253f54 and a coordinated fix. Same-file copies, matching callback/lock semantics and dependency/policy comparisons do not establish extra issues, selected-function equality, backport completeness or automatic family mergers. YAML parent and later lock parent are different snapshots; later YAML retirement must not be imported into the earlier YAML before contract.",
+      "open_questions": [
+        "Researcher confirm optional PyYAML/runtime bindings, lower-trust declarative model input and allowed custom classes, API-retirement eligibility, supported finite recursive callable/restored-state scenarios, callback control versus ordinary model data and service exception/worker/sandbox boundaries. Dependencies are comparisons, not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No TensorFlow/Keras/model/callback/graph/tracing/recursive/lock/thread/pickle/YAML/load/constructor/dependency/application program, payload, vulnerability-target request or upstream test executes. Archived files and retrieved source/dependency/test text stay inert; no extraction/import/install of retained programs. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return yaml.dump(self._updated_config(), **kwargs)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    \"\"\"\n    raise RuntimeError(\n        'Method `model.to_yaml()` has been removed due to security risk of '\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "tensorflow/python/keras/saving/model_config.py",
+          "ref": "e1ec21ffbd969144d7cae7c71561faa970673d76",
+          "needle": "config = yaml.unsafe_load(yaml_string)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "RELEASE.md",
+          "ref": "23d6383eb6c14084a8fc3bdf164043b974818012",
+          "needle": "replaced to raise a `RuntimeError`"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "lib3/yaml/__init__.py",
+          "ref": "5.4.1",
+          "needle": "return dump_all([data], stream, Dumper=Dumper, **kwds)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-37678:0:tensorflow/python/keras/saving/model_config.py:model_from_yaml",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "YAML reader constructs arbitrary Python objects before the Keras custom-object boundary, then intentionally retires the API.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery categories and null producer exclusion. Unsafe YAML Python-object construction is distinct from YAML serialization, generic model/graph program authority, pickle execution and callback reentrancy. Primitive-lock same-thread reacquisition is not every recursive graph or all-thread deadlock mechanism. No new leaf, approved taxonomy/eligibility or independent issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Public old reader accepts YAML text/open file describing model configuration and a custom_objects class/function mapping. It first calls yaml.unsafe_load, falling back on AttributeError to yaml.load, then invokes layer deserialize(config, custom_objects). Retained PyYAML5.4.1 unsafe_load binds UnsafeLoader/Constructor; Python object-apply resolution imports and invokes named Python objects before Keras sees the config. Retained3.13 has no unsafe_load and load defaults to Loader/Constructor with the same object-apply route. Modern default yaml.load changes do not make the explicitly unsafe5.4.1 branch safe, and these two comparisons are not all-version proof. No safety promise that arbitrary executable models are sandboxed is inferred; the narrow contract is declarative configuration versus prior unrestricted Python construction.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need optional import/dependency behavior, version-specific loader constructor chain, actual YAML supplier/custom-object policy and process permissions. The selected unsafe call is visible, but exact old fallback binding and application-level admission are outside this selected function. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Calls, model policies, dependency/runtime bindings, pickle state producer, saved-model wrapper, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only and never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Under actual lower-trust YAML-text control and matched dependency, declared Python object constructors execute before custom_objects can constrain Keras classes. This is a concrete data-to-Python-execution boundary at parse time, conditional on caller input admission/permissions. Historical TensorFlow policy requires treating executable models as programs and sandboxing; the claim is not safe arbitrary-model execution or a reproduced exploit.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After unconditionally raises RuntimeError before parsing/importing YAML constructors or Keras deserialization. It removes this reader route, not a safe preserving YAML parser. Release notes explicitly announce the breaking retirement and JSON/H5 alternatives. Ordinary old YAML roundtrips no longer work by design; that declared policy is not an independently introduced accidental regression. Negative is retired-route-only, not universal YAML/JSON/H5/custom-layer/model safety; repair-pair eligibility remains unresolved.",
+      "experimental_subset_proposal": "defer_task_scope",
+      "subset_reason": "The selected unsafe reader has a conditional data-to-Python-construction boundary, but after intentionally disables all YAML input. Researcher must decide whether feature-retirement pairs fit the repair/negative task; do not call declared retirement an unintended after regression or silently certify preserved roundtrip functionality.",
+      "dependence_reason": "Five selected functions/two mechanical families are not independently adjudicated issues. YAML producer/reader share fix-family:986b29b2a7b44ac79883 and intentional retirement; serialization is not the reader unsafe-construction sink. The two upper Function lifecycle allocations and lower graph-tracing allocation share fix-family:52759c4af03628253f54 and a coordinated fix. Same-file copies, matching callback/lock semantics and dependency/policy comparisons do not establish extra issues, selected-function equality, backport completeness or automatic family mergers. YAML parent and later lock parent are different snapshots; later YAML retirement must not be imported into the earlier YAML before contract.",
+      "open_questions": [
+        "Researcher confirm optional PyYAML/runtime bindings, lower-trust declarative model input and allowed custom classes, API-retirement eligibility, supported finite recursive callable/restored-state scenarios, callback control versus ordinary model data and service exception/worker/sandbox boundaries. Dependencies are comparisons, not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No TensorFlow/Keras/model/callback/graph/tracing/recursive/lock/thread/pickle/YAML/load/constructor/dependency/application program, payload, vulnerability-target request or upstream test executes. Archived files and retrieved source/dependency/test text stay inert; no extraction/import/install of retained programs. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "config = yaml.unsafe_load(yaml_string)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "Method `model_from_yaml()` has been removed"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "config = yaml.load(yaml_string)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    config = yaml.load(yaml_string)\n  from tensorflow.python.keras.layers import deserialize  # pylint: disable=g-import-not-at-top\n  return deserialize(config, custom_objects=custom_objects)\n\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "lib3/yaml/__init__.py",
+          "ref": "5.4.1",
+          "needle": "return load(stream, UnsafeLoader)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTRACTS.json",
+          "path": "lib3/yaml/loader.py",
+          "ref": "5.4.1",
+          "needle": "class UnsafeLoader(Reader, Scanner, Parser, Composer, Constructor, Resolver):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "lib3/yaml/constructor.py",
+          "ref": "5.4.1",
+          "needle": "return cls(*args, **kwds)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "lib3/yaml/constructor.py",
+          "ref": "5.4.1",
+          "needle": "'tag:yaml.org,2002:python/object/apply:'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "lib3/yaml/__init__.py",
+          "ref": "3.13",
+          "needle": "def load(stream, Loader=Loader):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTRACTS.json",
+          "path": "lib3/yaml/loader.py",
+          "ref": "3.13",
+          "needle": "class Loader(Reader, Scanner, Parser, Composer, Constructor, Resolver):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "RELEASE.md",
+          "ref": "23d6383eb6c14084a8fc3bdf164043b974818012",
+          "needle": "replaced to raise a `RuntimeError`"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTRACTS.json",
+          "path": "SECURITY.md",
+          "ref": "e1ec21ffbd969144d7cae7c71561faa970673d76",
+          "needle": "TensorFlow itself is not a sandbox."
+        }
+      ],
+      "task_scope": "unresolved_nonstyle_eligibility",
+      "task_scope_reason": "Researcher decide intentional full-API retirement eligibility for the existing security/correctness repair-pair task. Local unsafe construction is removed, but no supported model input remains through this function; do not silently equate retirement with functionality-preserving repair or an accidental after regression."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41213:0:tensorflow/python/eager/def_function.py:Function.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Upper tf.function constructor installs a non-reentrant lock held across first-call tracing and callback reentry.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery categories and null producer exclusion. Unsafe YAML Python-object construction is distinct from YAML serialization, generic model/graph program authority, pickle execution and callback reentrancy. Primitive-lock same-thread reacquisition is not every recursive graph or all-thread deadlock mechanism. No new leaf, approved taxonomy/eligibility or independent issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old Function represents a wrapped Python callable; _call acquires self._lock, first-call _initialize creates a lower tracing function and forces its concrete definition before finally releasing the outer lock. _defun_with_scope invokes the wrapped Python function during tracing. A supported finite Python-value recursive callback can reenter this same wrapper while the same thread holds its primitive lock. Python Lock blocks even for its current acquiring thread; RLock permits reentry. Functional expected-result/termination follows the admitted finite callable/tracing duty; new recursive tests corroborate rather than independently create that duty. Eager-functions mode bypasses this tracing path.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Selected constructor contains allocation but not _call acquisition, finally release, initial cache/state, graph callback or eager-mode branch. Need matched whole-file/helper tracing flow and callback/argument support. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Calls, model policies, dependency/runtime bindings, pickle state producer, saved-model wrapper, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only and never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Retained callback/graph tracing supports same-thread blocking for a finite recursive Python callable, but actual lower-trust data-to-that-trusted-callback admission/service consequences are not established. Giving an actor arbitrary Python callback code already gives process-level computation authority under the historical model-as-program policy. SavedModel RestoredFunction explicitly lacks the original Python function and selects restored ConcreteFunction graphs; its constructor use does not itself deliver arbitrary Python recursion or use Function.__setstate__. A graph cycle is not automatically the same Python-lock reentry. Preserve the conditional correctness mechanism, defer a concrete security delivery, and do not declare all untrusted models safe or unsafe solely from this change.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After uses threading.RLock for the selected lifecycle and coordinated other allocations. Under retained CPython3.9.7 semantics, same owning thread reacquires without blocking, with one release required per acquisition; upper initialization uses finally and lower callers use context managers. This removes the witnessed primitive-lock self-reacquisition mechanism. Finite Python-value recursion differs from unbounded/Tensor-dependent tracing; a new test intentionally expects RecursionError for one form, not successful compilation. No bounded recursion/work, cross-thread ordering/fairness, pickle/graph/model safety or complete availability is certified. No independently supported after-contract failure is established under this scoped reentrancy duty.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Actual old same-thread reacquisition is supported under the omitted tracing/callback lifecycle. A matched lower-trust actor/operation path is not established by arbitrary Python model authority or the new recursive tests; defer security delivery and keep function-only context unresolved.",
+      "dependence_reason": "Five selected functions/two mechanical families are not independently adjudicated issues. YAML producer/reader share fix-family:986b29b2a7b44ac79883 and intentional retirement; serialization is not the reader unsafe-construction sink. The two upper Function lifecycle allocations and lower graph-tracing allocation share fix-family:52759c4af03628253f54 and a coordinated fix. Same-file copies, matching callback/lock semantics and dependency/policy comparisons do not establish extra issues, selected-function equality, backport completeness or automatic family mergers. YAML parent and later lock parent are different snapshots; later YAML retirement must not be imported into the earlier YAML before contract.",
+      "open_questions": [
+        "Researcher confirm optional PyYAML/runtime bindings, lower-trust declarative model input and allowed custom classes, API-retirement eligibility, supported finite recursive callable/restored-state scenarios, callback control versus ordinary model data and service exception/worker/sandbox boundaries. Dependencies are comparisons, not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No TensorFlow/Keras/model/callback/graph/tracing/recursive/lock/thread/pickle/YAML/load/constructor/dependency/application program, payload, vulnerability-target request or upstream test executes. Archived files and retrieved source/dependency/test text stay inert; no extraction/import/install of retained programs. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    \"\"\"\n    self._lock = threading.Lock()\n    self._python_function = python_function\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    \"\"\"\n    self._lock = threading.RLock()\n    self._python_function = python_function\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._lock.acquire()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._initialize(args, kwds, add_initializers_to=initializers)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "out = weak_wrapped_fn().__wrapped__(*args, **kwds)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return self._python_function(*args, **kwds)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "tensorflow/python/framework/func_graph.py",
+          "ref": "0fec20b7091bfc10987e35118d1b2fc0b0d6cd58",
+          "needle": "func_outputs = python_func(*func_args, **func_kwargs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTRACTS.json",
+          "path": "SECURITY.md",
+          "ref": "0fec20b7091bfc10987e35118d1b2fc0b0d6cd58",
+          "needle": "The same is true if the untrusted party provides Python code"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "tensorflow/python/saved_model/function_deserialization.py",
+          "ref": "0fec20b7091bfc10987e35118d1b2fc0b0d6cd58",
+          "needle": "We do not have access to the original python function"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "Doc/library/threading.rst",
+          "ref": "v3.9.7",
+          "needle": "the same thread may acquire it again without blocking;"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41213:0:tensorflow/python/eager/def_function.py:Function.__setstate__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Restored Function reinstalls the same primitive lock required for later reentrant callback tracing.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery categories and null producer exclusion. Unsafe YAML Python-object construction is distinct from YAML serialization, generic model/graph program authority, pickle execution and callback reentrancy. Primitive-lock same-thread reacquisition is not every recursive graph or all-thread deadlock mechanism. No new leaf, approved taxonomy/eligibility or independent issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old __getstate__ copies dict and removes lock/descriptor/call-stat caches, while __setstate__ restores state and reinstalls threading.Lock. A pre-fix pickle test already roundtrips untraced Function objects and invokes their restored callables. For a legitimately restored finite recursive callable whose recursive lookup targets the restored wrapper, subsequent _call/first tracing reacquires the selected restored lock and blocks in the same manner as construction. This is a conditional restored-lifecycle invariant, not a claim every pickled callback/alias/traced object is supported or every ordinary restored invocation deadlocks. Distinguish trusted legitimate state restoration from accepting attacker-controlled pickle.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matching old __getstate__/pickle-state producer, callback binding to the restored instance, uninitialized/tracing state and later _call lifetime. None appears in the short selected restorer, and SavedModel constructor restoration is a different path. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Calls, model policies, dependency/runtime bindings, pickle state producer, saved-model wrapper, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only and never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Retained callback/graph tracing supports same-thread blocking for a finite recursive Python callable, but actual lower-trust data-to-that-trusted-callback admission/service consequences are not established. Giving an actor arbitrary Python callback code already gives process-level computation authority under the historical model-as-program policy. SavedModel RestoredFunction explicitly lacks the original Python function and selects restored ConcreteFunction graphs; its constructor use does not itself deliver arbitrary Python recursion or use Function.__setstate__. A graph cycle is not automatically the same Python-lock reentry. Preserve the conditional correctness mechanism, defer a concrete security delivery, and do not declare all untrusted models safe or unsafe solely from this change.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After uses threading.RLock for the selected lifecycle and coordinated other allocations. Under retained CPython3.9.7 semantics, same owning thread reacquires without blocking, with one release required per acquisition; upper initialization uses finally and lower callers use context managers. This removes the witnessed primitive-lock self-reacquisition mechanism. Finite Python-value recursion differs from unbounded/Tensor-dependent tracing; a new test intentionally expects RecursionError for one form, not successful compilation. No bounded recursion/work, cross-thread ordering/fairness, pickle/graph/model safety or complete availability is certified. No independently supported after-contract failure is established under this scoped reentrancy duty.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Actual old same-thread reacquisition is supported under the omitted tracing/callback lifecycle. A matched lower-trust actor/operation path is not established by arbitrary Python model authority or the new recursive tests; defer security delivery and keep function-only context unresolved.",
+      "dependence_reason": "Five selected functions/two mechanical families are not independently adjudicated issues. YAML producer/reader share fix-family:986b29b2a7b44ac79883 and intentional retirement; serialization is not the reader unsafe-construction sink. The two upper Function lifecycle allocations and lower graph-tracing allocation share fix-family:52759c4af03628253f54 and a coordinated fix. Same-file copies, matching callback/lock semantics and dependency/policy comparisons do not establish extra issues, selected-function equality, backport completeness or automatic family mergers. YAML parent and later lock parent are different snapshots; later YAML retirement must not be imported into the earlier YAML before contract.",
+      "open_questions": [
+        "Researcher confirm optional PyYAML/runtime bindings, lower-trust declarative model input and allowed custom classes, API-retirement eligibility, supported finite recursive callable/restored-state scenarios, callback control versus ordinary model data and service exception/worker/sandbox boundaries. Dependencies are comparisons, not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No TensorFlow/Keras/model/callback/graph/tracing/recursive/lock/thread/pickle/YAML/load/constructor/dependency/application program, payload, vulnerability-target request or upstream test executes. Archived files and retrieved source/dependency/test text stay inert; no extraction/import/install of retained programs. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    self.__dict__ = state\n    self._lock = threading.Lock()\n    self._descriptor_cache = weakref.WeakKeyDictionary()\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    self.__dict__ = state\n    self._lock = threading.RLock()\n    self._descriptor_cache = weakref.WeakKeyDictionary()\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "result = self.__dict__.copy()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "del result[\"_lock\"]"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._lock.acquire()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "out = weak_wrapped_fn().__wrapped__(*args, **kwds)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "tensorflow/python/eager/def_function_test.py",
+          "ref": "0fec20b7091bfc10987e35118d1b2fc0b0d6cd58",
+          "needle": "cloned = pickle.loads(pickle.dumps(func))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "tensorflow/python/eager/def_function_test.py",
+          "ref": "0fec20b7091bfc10987e35118d1b2fc0b0d6cd58",
+          "needle": "self.assertEqual(self.evaluate(cloned(x)), self.evaluate(func(x)))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "tensorflow/python/saved_model/function_deserialization.py",
+          "ref": "0fec20b7091bfc10987e35118d1b2fc0b0d6cd58",
+          "needle": "super(RestoredFunction, self).__init__("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "Doc/library/threading.rst",
+          "ref": "v3.9.7",
+          "needle": "the same thread may acquire it again without blocking;"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41213:0:tensorflow/python/eager/function.py:Function.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Lower graph Function allocates a primitive lock held while tracing Python code before cache insertion.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery categories and null producer exclusion. Unsafe YAML Python-object construction is distinct from YAML serialization, generic model/graph program authority, pickle execution and callback reentrancy. Primitive-lock same-thread reacquisition is not every recursive graph or all-thread deadlock mechanism. No new leaf, approved taxonomy/eligibility or independent issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old lower Function.__call__ and concrete-function getters hold self._lock across _maybe_define_function. That method explicitly requires caller-held lock and, on a cache miss, calls _create_graph_function before inserting into primary cache. _create_graph_function invokes func_graph_from_py_func with the wrapped Python function; matched helper executes that function. Finite recursive entry to the same lower Function can acquire this same held primitive lock, including through the coordinated upper wrapper where both old locks must be reentrant. Correct functional tracing of supported finite Python-value recursion and synchronization lifecycle establish the local invariant; not every recursive Tensor/graph computation is a valid trace.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Constructor allocation alone omits caller-held lock, pre-insertion trace, callback invocation, cache-key/input support and upper-layer coordination. Need those matched sources and actual lower-trust delivery. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Calls, model policies, dependency/runtime bindings, pickle state producer, saved-model wrapper, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only and never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Retained callback/graph tracing supports same-thread blocking for a finite recursive Python callable, but actual lower-trust data-to-that-trusted-callback admission/service consequences are not established. Giving an actor arbitrary Python callback code already gives process-level computation authority under the historical model-as-program policy. SavedModel RestoredFunction explicitly lacks the original Python function and selects restored ConcreteFunction graphs; its constructor use does not itself deliver arbitrary Python recursion or use Function.__setstate__. A graph cycle is not automatically the same Python-lock reentry. Preserve the conditional correctness mechanism, defer a concrete security delivery, and do not declare all untrusted models safe or unsafe solely from this change.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After uses threading.RLock for the selected lifecycle and coordinated other allocations. Under retained CPython3.9.7 semantics, same owning thread reacquires without blocking, with one release required per acquisition; upper initialization uses finally and lower callers use context managers. This removes the witnessed primitive-lock self-reacquisition mechanism. Finite Python-value recursion differs from unbounded/Tensor-dependent tracing; a new test intentionally expects RecursionError for one form, not successful compilation. No bounded recursion/work, cross-thread ordering/fairness, pickle/graph/model safety or complete availability is certified. No independently supported after-contract failure is established under this scoped reentrancy duty.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Actual old same-thread reacquisition is supported under the omitted tracing/callback lifecycle. A matched lower-trust actor/operation path is not established by arbitrary Python model authority or the new recursive tests; defer security delivery and keep function-only context unresolved.",
+      "dependence_reason": "Five selected functions/two mechanical families are not independently adjudicated issues. YAML producer/reader share fix-family:986b29b2a7b44ac79883 and intentional retirement; serialization is not the reader unsafe-construction sink. The two upper Function lifecycle allocations and lower graph-tracing allocation share fix-family:52759c4af03628253f54 and a coordinated fix. Same-file copies, matching callback/lock semantics and dependency/policy comparisons do not establish extra issues, selected-function equality, backport completeness or automatic family mergers. YAML parent and later lock parent are different snapshots; later YAML retirement must not be imported into the earlier YAML before contract.",
+      "open_questions": [
+        "Researcher confirm optional PyYAML/runtime bindings, lower-trust declarative model input and allowed custom classes, API-retirement eligibility, supported finite recursive callable/restored-state scenarios, callback control versus ordinary model data and service exception/worker/sandbox boundaries. Dependencies are comparisons, not installed/all-version proof.",
+        "Conditional source deductions, not reproduced outcomes. No TensorFlow/Keras/model/callback/graph/tracing/recursive/lock/thread/pickle/YAML/load/constructor/dependency/application program, payload, vulnerability-target request or upstream test executes. Archived files and retrieved source/dependency/test text stay inert; no extraction/import/install of retained programs. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._lock = threading.Lock()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._lock = threading.RLock()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Caller must hold self._lock."
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "graph_function = self._create_graph_function(args, kwargs)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._function_cache.primary[cache_key] = graph_function"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "          _backward_name(self._func_graph.name))\n      func_graph_module.func_graph_from_py_func(\n          name=backwards_graph.name,\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "tensorflow/python/framework/func_graph.py",
+          "ref": "0fec20b7091bfc10987e35118d1b2fc0b0d6cd58",
+          "needle": "func_outputs = python_func(*func_args, **func_kwargs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "tensorflow/python/eager/def_function_test.py",
+          "ref": "afac8158d43691661ad083f6dd9e56f327c1dcb7",
+          "needle": "with self.assertRaises(RecursionError):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTEXT.json",
+          "path": "Doc/library/threading.rst",
+          "ref": "v3.9.7",
+          "needle": "   The class implementing primitive lock objects.  Once a thread has acquired a\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_039_CONTRACTS.json",
+          "path": "SECURITY.md",
+          "ref": "0fec20b7091bfc10987e35118d1b2fc0b0d6cd58",
+          "needle": "TensorFlow itself is not a sandbox."
+        }
+      ]
+    }
+  ]
+}

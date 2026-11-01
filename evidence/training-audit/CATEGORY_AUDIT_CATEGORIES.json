@@ -1,0 +1,1025 @@
+{
+  "version": "0.42",
+  "previous_versions": ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "0.10", "0.11", "0.12", "0.13", "0.14", "0.15", "0.16", "0.17", "0.18", "0.19", "0.20", "0.21", "0.22", "0.23", "0.24", "0.25", "0.26", "0.27", "0.28", "0.29", "0.30", "0.31", "0.32", "0.33", "0.34", "0.35", "0.36", "0.37", "0.38", "0.39", "0.40", "0.41"],
+  "status": "draft_training_only_not_frozen",
+  "defined_from": "training source/fix evidence only; no predictions",
+  "categories": [
+    {
+      "category_id": "CORR-INPUT-GRAMMAR-VALIDATION",
+      "name": "A structural input delimiter is mistaken for a valid grammar component",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An established input-validation contract requires a structural component, but a substring-only test accepts that delimiter in an unrelated position; inspect normalization, accepted grammar and actual rejection contract.",
+      "exclude": "Security validation without an evidenced trust boundary, newly forbidden formerly supported inputs, or a claim that a substring check implements a complete URL or other grammar.",
+      "training_seed": "HaPy-Bug:bugs-in-py_scrapy-37:0:scrapy/http/request/__init__.py:Request._set_url",
+      "notes": "Scrapy accepts /foo:bar merely because it contains a colon. The new hierarchical marker/data exception rejects the witnessed relative path but still is not a parsed, anchored scheme grammar. Mutating _url before raising is unchanged; permitted non-hierarchical schemes require history review. Consolidate general validation leaves before freeze."
+    },
+    {
+      "category_id": "CORR-URL-NORMALIZATION",
+      "name": "URL-bearing input is resolved before required contextual normalization",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A URL-bearing attribute or header is resolved without normalization required by an established context-specific contract, producing a wrong destination; inspect raw value, effective base, normalization helper and versioned resolver semantics.",
+      "exclude": "Byte-encoding loss, missing base-context propagation, generic URL joining assumed broken, security destination validation, or a newly chosen tolerant interpretation without an existing contract.",
+      "training_seed": "HaPy-Bug:bugs-in-py_scrapy-7:0:scrapy/http/request/form.py:_get_form_url",
+      "notes": "Scrapy strips HTML5 boundary spaces from raw form action before joining. Separately, scrapy-3 chooses authority-style interpretation for triple leading slashes; that tolerance remains ambiguous pending existing-policy evidence. URL normalization is not authorization or SSRF safety; same-function successive fixes need dependence reconciliation."
+    },
+    {
+      "category_id": "CORR-SCALAR-REPRESENTATION-CONTRACT",
+      "name": "A native-value serializer unnecessarily sends scalars through text conversion",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A serializer whose existing contract preserves native scalar values applies a bytes/text-only converter to non-string leaves, aborting or losing required scalar representation; inspect exporter purpose, recursive paths and converter type checks.",
+      "exclude": "Text writers requiring scalar stringification, new scalar support without an old contract, encoding loss for actual strings, or claims that preserving Python values makes all downstream serializers accept them.",
+      "training_seed": "HaPy-Bug:bugs-in-py_scrapy-40:0:scrapy/exporters.py:PythonItemExporter._serialize_value",
+      "notes": "Pinned to_bytes/to_unicode reject boolean, integer, float and datetime leaves. PythonItemExporter advertises native Python values for downstream serialization; after encodes only strings and retains other leaves. This is the opposite interface direction from the XML scalar-stringification label; consolidate under a principled representation parent if useful."
+    },
+    {
+      "category_id": "CORR-ERROR-REPORTING-PROTOCOL",
+      "name": "An error adapter supplies a malformed exception tuple to its result consumer",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An established error-result API requires a sys.exc_info-style type/value/traceback tuple, but an adapter swaps components and prevents required error recording; inspect the consumer and actual failing callback path.",
+      "exclude": "Cosmetic diagnostic wording, logging-filter migrations without an established functional contract, wrong exception classification, or assuming a traceback formatting change repairs every error-handling path.",
+      "training_seed": "HaPy-Bug:bugs-in-py_scrapy-4:0:scrapy/contracts/__init__.py:ContractsManager._clean_req.eb_wrapper",
+      "notes": "The errback passes value,type,traceback to unittest.addError rather than type,value,traceback. Retained real TextTestResult regression and pinned CPython result consumer establish required error recording, unlike logging-only siblings. Nested wrapper requires closure context; no callback or exception formatter was executed."
+    },
+    {
+      "category_id": "CORR-COMMAND-ARGUMENT-REWRITE",
+      "name": "A command correction duplicates operands or inserts an option in an invalid position",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An existing command-correction operation composes old and suggested arguments without respecting the command's established operand/option structure, yielding a duplicated operand or invalid option placement; inspect token producer, substitution helper and retained command contract.",
+      "exclude": "Shell injection without an evidenced trust boundary, shell-word tokenization errors classified as delimiter parsing, new command features, or claiming a string replacement handles all quoting and option grammars.",
+      "training_seed": "HaPy-Bug:bugs-in-py_thefuck-31:0:thefuck/rules/git_diff_staged.py:get_new_command",
+      "notes": "Appending --staged after a diff filename is rejected; inserting it after diff repairs retained examples. Git push additionally duplicates explicit upstream arguments unless removed before composition. Full command token lists are cached/mutated in older versions and reconstructed without quoting; residual grammar and successor repairs remain explicit questions."
+    },
+    {
+      "category_id": "CORR-RULE-APPLICABILITY",
+      "name": "A correction rule matches output without the operation state that makes it applicable",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A rule admits an existing command or successful output because of an incidental diagnostic substring instead of the required command state or instruction, leading to an inapplicable correction or failing consumer; inspect rule guard, state helper and correction consumer.",
+      "exclude": "Merely adding a new supported command, policy changes without an existing applicability contract, security filtering, or claiming a more specific substring is a complete structured output parser.",
+      "training_seed": "HaPy-Bug:bugs-in-py_thefuck-5:0:thefuck/rules/git_push.py:match",
+      "notes": "A successful branch named feature/set-upstream triggers an upstream-error rule whose generator expects a git push instruction absent from the output. no_command also needs the executable to be absent, though which does not resolve all shell aliases/functions and the new access loses an empty-token guard. Keep functional and non-security eligibility conditional."
+    },
+    {
+      "category_id": "CORR-SHORT-SEQUENCE-ACCESS",
+      "name": "A parser or mutator accesses a tail element absent from an admitted short input",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A supported command with fewer components than a parser assumes reaches indexing or pop of a missing tail element, raising instead of the established skip/correction result; inspect sequence production, earlier mutations and expected short-input behavior.",
+      "exclude": "Forbidden malformed short inputs, empty initial-sequence access already classified separately, arbitrary IndexError suppression, or assuming one guarded tail pop validates every option-argument combination.",
+      "training_seed": "HaPy-Bug:bugs-in-py_thefuck-9:0:thefuck/rules/git_push.py:get_new_command",
+      "notes": "Removing terminal -u leaves no operand for the second pop; a narrow IndexError catch repairs the retained correction. git_fix_stash reads token 1 for a supported plain git command and should instead decline. Preserve successor relationship: thefuck-11 after code is exactly thefuck-9 before code."
+    },
+    {
+      "category_id": "SEC-BYTESTRING-COMPARISON",
+      "name": "Generated bytestring comparison includes padding and omits logical length",
+      "domain": "security",
+      "include": "Compiler-generated equality compares a fixed backing word instead of logical bytes and length, so dirty padding changes equality or trailing zero bytes disappear; inspect storage layout, emitted comparison and security-sensitive contract use.",
+      "exclude": "Ordinary Python string equality, timing claims, a hashing-helper refactor that already hashed logical length, or universal smart-contract safety inferred from changing the comparison.",
+      "training_seed": "HaPy-Bug:cve_CVE-2022-24787:0:vyper/codegen/expr.py:Expr.parse_Compare",
+      "notes": "Vyper short equal-capacity bytestring path loads a whole word without length comparison. Routing equality/inequality through logical-length keccak removes the retained dirty-padding/trailing-NUL witnesses subject to hash assumptions. Compiler Python produces EVM IR; no contract was compiled or executed. Both selected functions are one family, but keccak256_helper itself already hashes the logical span."
+    },
+    {
+      "category_id": "SEC-ABI-RETURN-VALIDATION",
+      "name": "External contract return values bypass declared-type runtime validation",
+      "domain": "security",
+      "include": "A compiler exposes lower-trust external returndata to expressions or copies without enforcing the declared integer or dynamic-data bounds; inspect return type inference, encoding tags, allocation and actual clamp-emitting consumers.",
+      "exclude": "Encoding-enum retirement alone, equivalent incoming-calldata validation, unrelated compiler panics, every generated-memory defect, or assuming one return validator proves all offsets, allocations and expressions safe.",
+      "training_seed": "HaPy-Bug:cve_CVE-2022-24845:0:vyper/codegen/external_call.py:_unpack_returndata",
+      "notes": "Vyper 049dbdc performs strict make_setter decoding at call time and removes JSON_ABI's dynamic-size validation exemption. Full fix names both complex-expression scalar validation and JSON dynamic-data bounds; keep one conservative family pending explicit issue adjudication. Helpers merely retiring enum names are not independently defective. Returndata minimum-size checking remains conditional on skip_contract_check."
+    },
+    {
+      "category_id": "SEC-SOCKET-LIFECYCLE-RACE",
+      "name": "A worker closes a socket while the event-loop thread is selecting it",
+      "domain": "security",
+      "include": "A response-writing worker can synchronously close a socket retained in the event loop's select set, causing an unhandled invalid-descriptor failure across an availability boundary; inspect worker entry points, close sink, descriptor collection and error handling.",
+      "exclude": "Generic races without lifecycle evidence, request framing defects, new flag forwarding alone, or assuming a close-control default of True independently prevents worker closure.",
+      "training_seed": "HaPy-Bug:cve_CVE-2022-31015:0:src/waitress/channel.py:HTTPChannel.write_soon",
+      "notes": "Waitress passes do_close=False from both task-thread flush entry points through the coordinated helpers to dispatcher.send. Main-loop handle_write retains closure ownership. Existing send calls still default to closing; the mitigation is conditional on repaired worker callers. poll catches EINTR only; no race, socket or request was executed."
+    },
+    {
+      "category_id": "CORR-BUFFER-RECOVERY-REPLAY",
+      "name": "Partial-read recovery re-appends data already consumed from a retained buffer",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An established partial-read recovery path appends a whole retained buffer although part was already returned, duplicating logical output; inspect unread-count bookkeeping and the recoverable-error contract.",
+      "exclude": "Counting duplicate entities, all decompression errors assumed recoverable, or claiming an unread-suffix slice handles a zero unread count without checking negative-zero slicing.",
+      "training_seed": "HaPy-Bug:bugs-in-py_scrapy-11:0:scrapy/utils/gz.py:gunzip",
+      "notes": "Scrapy appends GzipFile.extrabuf after read errors; older CPython retains consumed prefix and separately records extrasize. Taking the unread suffix addresses positive-unread-count replay. The -0 slice still means the full buffer; Python runtime/private-buffer compatibility and residual cases remain questions. Binary regression fixtures were not decompressed."
+    },
+    {
+      "category_id": "CORR-BYTES-TEXT-CONTRACT",
+      "name": "A text value crosses an interface requiring bytes, or vice versa",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An existing operation supplies str to a bytes-only sink, combines text and bytes, or supplies bytes to a text-only parser under a supported runtime, raising instead of fulfilling its established contract; inspect both interface ends and runtime support.",
+      "exclude": "Lossy character decoding or wrong codec already classified as text encoding, new-runtime feature additions without an old support contract, or attributing protocol security merely to converting a value to bytes.",
+      "training_seed": "HaPy-Bug:bugs-in-py_scrapy-23:0:scrapy/downloadermiddlewares/httpproxy.py:HttpProxyMiddleware._get_proxy",
+      "notes": "Scrapy Python 3 proxy Basic encoding feeds text to base64, then its header writer combines text with bytes. Sitemap robots parsing likewise feeds response.body to startswith('Sitemap:'). Tunneling transport requires byte requests. Preserve runtime/API-history eligibility questions; these are not network-security negatives. Consolidate representation/encoding leaves before freeze."
+    },
+    {
+      "category_id": "CORR-SERIALIZER-SCALAR-CONTRACT",
+      "name": "An admitted scalar is sent unnormalized to a string serializer",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A recursive serializer accepts scalar item values but forwards non-string scalars to a text-only writer without the established textual conversion, aborting supported serialization; inspect scalar production and the actual writer.",
+      "exclude": "New scalar support without an existing contract, metadata-only normalization, HTML/XML security claims without a boundary, or asserting that str preserves raw byte strings and every custom object's semantics.",
+      "training_seed": "HaPy-Bug:bugs-in-py_scrapy-22:0:scrapy/exporters.py:XmlItemExporter._export_xml_field",
+      "notes": "Scrapy's retained XML regression requires float, boolean, integer and datetime text. Before passes them to _xg_characters, whose Python 2 branch calls decode and whose Python 3 branch forwards directly to XMLGenerator. Unicode strings remain separate; bytes-to-str and custom serialization remain outside the witnessed negative."
+    },
+    {
+      "category_id": "SEC-CREDENTIAL-DESTINATION-SCOPE",
+      "name": "Globally configured credentials are attached outside their intended destination scope",
+      "domain": "security",
+      "include": "Request middleware automatically attaches configured credentials to destinations beyond their intended domain policy; inspect credential configuration, destination matching and generated request paths.",
+      "exclude": "Redirect-header retention alone, explicitly authorized all-destination credentials, or assuming a domain/subdomain policy enforces an exact scheme-host-port origin.",
+      "training_seed": "HaPy-Bug:cve_CVE-2021-41125:0:scrapy/downloadermiddlewares/httpauth.py:HttpAuthMiddleware.process_request",
+      "notes": "Scrapy formerly adds Basic Authorization to every request without a header. Explicit domain or first-request default constrains automatic addition; None still permits all destinations and existing headers remain unchanged. Pinned helper compares lowercased netloc with domain/suffix; ports, userinfo and first-request trust require review. Consolidate credential-boundary leaves before freeze."
+    },
+    {
+      "category_id": "SEC-NONREENTRANT-LOCK-DEADLOCK",
+      "name": "Recursive callback tracing reacquires a non-reentrant lock held by the same thread",
+      "domain": "security",
+      "include": "A callback or model tracing path can recursively re-enter an object while its non-reentrant lock remains held, blocking on same-thread reacquisition; inspect lock construction/restoration, acquisition scope and lower-trust model reachability.",
+      "exclude": "Every ordinary Lock allocation, different-thread lock-order deadlocks, arbitrary untrusted Python execution already granting equivalent capabilities, or claiming RLock bounds recursion and all model resource consumption.",
+      "training_seed": "HaPy-Bug:cve_CVE-2021-41213:0:tensorflow/python/eager/def_function.py:Function.__init__",
+      "notes": "TensorFlow changes both Function layers and state restoration to RLock. _call/_initialize and graph creation retain locks while tracing callbacks. Constructors need consumer context; all three selected functions share one CVE/fix, and a retained regression expects RecursionError rather than unlimited successful recursion."
+    },
+    {
+      "category_id": "SEC-CONTENT-FILTER-EARLY-BYPASS",
+      "name": "Presence of an unrelated allowed token bypasses required whole-message filtering",
+      "domain": "security",
+      "include": "A whole-message security/moderation filter returns an allowed result merely because an unrelated permitted token is present, skipping independently prohibited content; inspect filter configuration, message provenance and enforcement consumer.",
+      "exclude": "Intended per-token exemptions applied only to that token, regex complexity, or assuming all messages/channels use an enabled filter or every matching message is deleted.",
+      "training_seed": "HaPy-Bug:cve_CVE-2021-41250:0:bot/exts/filters/filtering.py:Filtering._has_watch_regex_match",
+      "notes": "Python Discord bot exits on any URL before checking prohibited token patterns. Removing the early exit allows the remaining token to trigger configured moderation; clean_input normalizes characters but does not remove the URL. Deployment/filter policy remains contextual."
+    },
+    {
+      "category_id": "SEC-ACTIVE-DATA-URI-POLICY",
+      "name": "An image data-URI exemption admits script-capable embedded content",
+      "domain": "security",
+      "include": "An HTML sanitizer exempts image data URIs without distinguishing script-capable SVG/XML content, allowing active content through the sanitization boundary; inspect MIME recognition, attribute cleaner and consuming browser/context.",
+      "exclude": "Ordinary HTML entity escaping, every data URI or passive image, claims of script execution in every image embedding context, or complete sanitizer safety inferred from one MIME restriction.",
+      "training_seed": "HaPy-Bug:cve_CVE-2021-43818:0:src/lxml/html/clean.py:_is_javascript_scheme",
+      "notes": "lxml Cleaner exempts data:image/...;base64 before malicious-scheme checks. New subtype XML/SVG rejection removes the retained SVG and compressed SVG data links. Pattern definitions and actual sanitizer/browser use remain required context; no payload, regex or browser was executed."
+    },
+    {
+      "category_id": "SEC-SUBPROCESS-OPTION-INJECTION",
+      "name": "A subprocess data argument is interpreted as an executable option",
+      "domain": "security",
+      "include": "Lower-trust data passed as an argv element can be interpreted by the invoked program as an option/configuration directive rather than the intended operand, enabling unintended capabilities; inspect option grammar, argument order and input reachability.",
+      "exclude": "Shell-text quoting defects, generic subprocess calls, intentionally trusted command options, or assuming argv separation prevents option injection.",
+      "training_seed": "HaPy-Bug:cve_CVE-2022-24065:0:cookiecutter/vcs.py:clone",
+      "notes": "Cookiecutter hg checkout passes checkout directly after the subcommand. Added -- terminates Mercurial option parsing for this operand; git and clone URL handling are unchanged. Retained mock assertions verify intended argv shape, not exploit reproduction or all Mercurial versions."
+    },
+    {
+      "category_id": "CORR-INDEXER-DIMENSION-VALIDATION",
+      "name": "Indexing dispatch bypasses required indexer dimensionality validation",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An indexing branch accepts an indexer with unsupported dimensionality through a raw extraction fallback instead of the established rejection path; inspect actual dispatch, fallback and exception/output contract.",
+      "exclude": "Supported new-axis operations, mere error wording, ordinary tensor reshaping defects, or assuming all multidimensional indexing is invalid.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-61:0:pandas/core/series.py:Series._get_with",
+      "notes": "Selected integer-key branch calls _get_values, whose ValueError fallback returns a raw multidimensional array; iloc enforces the retained three-dimensional-key rejection regression. This does not remove other intentionally supported raw extraction paths. Consolidate validation leaves before freeze."
+    },
+    {
+      "category_id": "SEC-TOKEN-ALGORITHM-POLICY",
+      "name": "Authentication-token acceptance omits the required flow-specific algorithm policy",
+      "domain": "security",
+      "include": "An authentication-token consumer accepts an unsigned or otherwise prohibited algorithm because a required algorithm/flow policy check is absent or not invoked; inspect parser verification, trusted request context and token-return path.",
+      "exclude": "An unsigned token explicitly permitted on an authenticated code-flow channel, forwarding newly introduced exception context alone, or a claim that claims checks establish signature verification.",
+      "training_seed": "HaPy-Bug:cve_CVE-2020-26244:0:src/oic/oic/__init__.py:Client._verify_id_token",
+      "notes": "pyoidc rejects alg=none outside response_type=['code'] and adds client verification to Consumer.parse_authz. Algorithm defaults, upstream JWS parsing and saved authorization-request state remain contextual; same-CVE helpers are one family, not independent issues."
+    },
+    {
+      "category_id": "SEC-RSA-PADDING-ORACLE",
+      "name": "Private RSA decryption exposes secret-dependent padding validity",
+      "domain": "security",
+      "include": "PKCS#1 v1.5 private decryption returns distinguishable failures or follows secret-dependent padding checks, exposing decrypted-padding validity to an observable consumer; inspect private operation, padding scan and protocol/API error propagation.",
+      "exclude": "Public ciphertext length/modulus rejection alone, public encryption/signature verification refactors, or assuming masked Python source is a constant-time implementation.",
+      "training_seed": "HaPy-Bug:cve_CVE-2020-26263:0:tlslite/utils/rsakey.py:RSAKey.decrypt",
+      "notes": "tlslite-ng replaces early padding-dependent returns with full scanning and deterministic implicit rejection. The retained patch and advisory explicitly disclaim CPython side-channel resistance: no approved constant-time or universally repaired negative follows."
+    },
+    {
+      "category_id": "CORR-RESULT-CONSTRUCTOR",
+      "name": "Result construction bypasses the established subclass constructor contract",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A transformation constructs a base-class result instead of the established subclass-provided result constructor, losing a required result class/API; inspect constructor hooks and a concrete result-type contract.",
+      "exclude": "Scalar/array dtype loss without a subclass contract, new unsupported subclass features, arbitrary metadata preservation, or assuming invoking a constructor hook propagates all metadata.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-78:0:pandas/core/frame.py:DataFrame._reduce",
+      "notes": "The final reduction branch hardcodes Series whereas another branch already uses _constructor_sliced; retained numeric/boolean reduction regressions require SubclassedSeries. Scope is this construction branch, not every reduction or metadata hook."
+    },
+    {
+      "category_id": "CORR-EMPTY-REDUCTION",
+      "name": "A reduction requiring an element is applied to admitted empty data",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A supported empty input reaches a reduction without an identity or empty-result policy, aborting an operation that has an established empty-input result; inspect the reduction and caller/regression contract.",
+      "exclude": "Direct sequence indexing, forbidden empty inputs, or claims that an empty guard repairs overflow or nonempty sentinel ordering.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-33:0:pandas/core/arrays/integer.py:IntegerArray._values_for_argsort",
+      "notes": "Nullable integer sorting computes min even when no missing entries need replacement; retained empty value_counts regression establishes a result. Consolidate empty-input leaves before freeze. No arbitrary NumPy/dataset code executed."
+    },
+    {
+      "category_id": "CORR-AXIS-POSITION-REMAP",
+      "name": "Successive axis removal updates positions using the wrong removed coordinate",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An iterative structural transformation removes a level/axis but remaps remaining positions against the iteration counter instead of the actual removed coordinate, selecting wrong subsequent levels; inspect ordered transformations and value/axis regressions.",
+      "exclude": "Style-only empty-list checks, arbitrary axis ordering preferences, or incompatible measurement units without a removal/remapping mechanism.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-38:0:pandas/core/reshape/reshape.py:_unstack_multiple",
+      "notes": "MultiIndex-column unstack adjusts clocs against i rather than val. Sequential single-level unstack supplies the retained result oracle. Consolidate coordinate/context leaves using training evidence before freeze."
+    },
+    {
+      "category_id": "SEC-PREDICTABLE-FILE-TARGET",
+      "name": "A predictable shared-directory file target accepts an attacker-controlled link",
+      "domain": "security",
+      "include": "A process writes a predictable file in a shared lower-trust directory through a link-following sink, allowing a local attacker to redirect writes under the process identity; inspect path producer, actual writer, directory trust and permission preconditions.",
+      "exclude": "Secure atomic temporary creation, arbitrary trusted explicit file selection, or claiming moving a default into CWD guarantees safe operation in hostile directories or on existing links.",
+      "training_seed": "HaPy-Bug:cve_CVE-2017-15111:0:keycloak_httpd_client/keycloak_cli.py:main",
+      "notes": "Keycloak CLI default /tmp/program.log reaches RotatingFileHandler. Changed relative filename also reaches os.makedirs('') in the unchanged configure_logging helper, so functioning after-code is not certified; reconcile paired-negative eligibility."
+    },
+    {
+      "category_id": "SEC-HTTP-FRAMING-DISAGREEMENT",
+      "name": "HTTP parsing disagrees with a front end on message boundaries",
+      "domain": "security",
+      "include": "A lower-trust HTTP stream is framed differently by a backend and a relevant front end because of line delimiters, transfer-coding interpretation or invalid header normalization, permitting request-boundary desynchronization; inspect parser stages, consumed-byte handling and concrete deployment conditions.",
+      "exclude": "Every HTTP syntax relaxation, chunk-only hardening without demonstrated differential framing, response-header courtesy changes, or automatic cache-poisoning/authorization claims without a consuming deployment.",
+      "training_seed": "HaPy-Bug:cve_CVE-2019-16785:0:waitress/parser.py:HTTPRequestParser.parse_header",
+      "notes": "Waitress LF framing, Transfer-Encoding list fallthrough and later special-whitespace validation are related mechanisms, not independently approved issues. 16785/16786 share a mechanical family; 16789 starts from the earlier fixed parse_header hash and needs incomplete-fix lineage review."
+    },
+    {
+      "category_id": "SEC-GENERATED-SOURCE-INJECTION",
+      "name": "Lower-trust specification data is emitted as executable generated source",
+      "domain": "security",
+      "include": "A code generator inserts lower-trust specification text into source identifiers or literals without context-appropriate validation/escaping, allowing generated source syntax to be altered when subsequently imported or executed; inspect data producer, concrete template and file writer.",
+      "exclude": "Immediate eval already classified separately, constant import compatibility changes, or claiming generation alone executes the injected code or a quote-only fix repairs every source context.",
+      "training_seed": "HaPy-Bug:cve_CVE-2020-15142:0:openapi_python_client/parser/properties.py:EnumProperty.values_from_list",
+      "notes": "Enum values supply raw uppercase keys and double-quoted literal values to enum.pyi. Supplemental exact-commit template is retained separately. New key sanitization and quote escaping leave backslash/newline context, post-sanitization collisions and default/value matching to reconcile."
+    },
+    {
+      "category_id": "CORR-LOOKUP-VALIDATION",
+      "name": "Lookup dispatch bypasses required missing-label rejection",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A label lookup is dispatched as permissive reindexing or nested selection, bypassing established rejection of absent labels; inspect key normalization, downstream validation and the existing lookup contract.",
+      "exclude": "Intentionally permissive reindex APIs, exception wording alone, or a new rejection policy without evidence that the old lookup contract required it.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-19:0:pandas/core/indexing.py:_LocIndexer._getitem_axis",
+      "notes": "Flat MultiIndex keys are wrapped into nested tuples and bypass ordinary iterable missing-label validation. Pandas-21 similarly sends non-list containers to reindex while lists use loc. API-transition history still requires explicit eligibility review."
+    },
+    {
+      "category_id": "CORR-METADATA-INVALIDATION",
+      "name": "Transformation retains semantic metadata no longer valid for its result",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A value-changing transformation unconditionally copies semantic metadata whose invariant no longer holds, requiring invalidation or result-aware recomputation; inspect the invariant and an observable metadata contract.",
+      "exclude": "Required metadata lost during reconstruction, mere display changes, or assuming every transformation must discard metadata regardless of invariant preservation.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-20:0:pandas/tseries/offsets.py:MonthOffset.apply_index",
+      "notes": "Calendar offset shifts can destroy original datetime spacing; timezone localization across DST likewise invalidates frequency. Retained regressions explicitly check freq; downstream functional eligibility and consolidation with metadata/context categories remain pending."
+    },
+    {
+      "category_id": "SEC-CREDENTIAL-DIAGNOSTIC-DISCLOSURE",
+      "name": "Credential-bearing resource metadata is propagated into diagnostics",
+      "domain": "security",
+      "include": "A credential-bearing resource URI or configuration value enters an exception/log diagnostic outside its intended audience without required omission/redaction; inspect credential producer, formatting, propagation and access conditions.",
+      "exclude": "Nonsecret identifiers, token-bearing backend request paths classified separately, validation-only logging already covered separately, or assuming every error reaches an unauthorized reader.",
+      "training_seed": "HaPy-Bug:cve_CVE-2013-0212:0:glance/store/swift.py:BaseStore.add",
+      "notes": "Glance Swift single-tenant location.get_uri includes configured user/key in Duplicate/NotFound messages; multi-tenant ACL paths need separate credential-provenance proof. Keystone secret option marking is a contextual producer for DEBUG masking. Consolidate diagnostic/redaction leaves before freeze."
+    },
+    {
+      "category_id": "CORR-SEMANTIC-TYPE-VALIDATION",
+      "name": "Representation compatibility is mistaken for semantic type compatibility",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An operation accepts an unsupported semantic input type because it can be converted or reinterpreted at the representation level, producing values contrary to an existing reject-or-preserve contract; inspect type validation and concrete consuming conversion.",
+      "exclude": "Newly supported coercions, mere exception wording, supported conversions losing their required dtype already covered separately, or security input validation without a demonstrated boundary.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-17:0:pandas/core/arrays/datetimelike.py:DatetimeLikeArrayMixin._validate_insert_value",
+      "notes": "Datetime/timedelta insertion validator lets unsupported numeric/different-semantic objects reach .view(int64), reinterpreting NumPy scalar bits. Stricter validation plus matched scalar unboxing rejects incompatible labels; old string-to-object fallback is preserved separately."
+    },
+    {
+      "category_id": "CORR-MASK-TARGET-PREDICATE",
+      "name": "Conditional update selects positions using the wrong operand's predicate",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A selective update derives its position mask from replacement data instead of the target state whose elements may be changed, overwriting values required to remain unchanged; inspect both masks, code sentinels and the update contract.",
+      "exclude": "Label/position reordering alone, intended full replacement, new update features, or claiming the mask fix also guarantees copy/alias safety.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-161:0:pandas/core/arrays/categorical.py:Categorical.fillna",
+      "notes": "Categorical fillna with Series chooses nonmissing replacement codes instead of missing target codes, overwriting valid originals. New target mask preserves nonmissing values; both versions may alias self._codes and require separate mutation review."
+    },
+    {
+      "category_id": "CORR-OPTION-PROPAGATION",
+      "name": "Dispatch omits an explicit execution option required by the consumer",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A wrapper accepts an established execution option but omits it on an existing dispatch branch, causing a functional result/order difference under the downstream default; inspect option producer, consumer and actual expected output.",
+      "exclude": "Warning-only forwarding, environment resource precedence, deliberately changing omitted/default values, or new optional features without an old functional contract.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-166:0:pandas/core/frame.py:DataFrame._join_compat",
+      "notes": "Unique-index list joins omit sort in concat while DataFrame join forwards it. Retained regression checks unsorted index order as well as warnings; duplicate-index fallback still omits sort. Consolidate with existing context/default/configuration and fill-limit cases before freeze."
+    },
+    {
+      "category_id": "SEC-TOKEN-CHAINING-POLICY",
+      "name": "Token-derived authentication loses account or parent validity constraints",
+      "domain": "security",
+      "include": "Creating credentials from an existing token omits required current account-status revalidation or inheritance of the parent's expiration, allowing derived authorization beyond the account/parent validity policy; inspect source token, current identity, token backend defaults and issue lifecycle.",
+      "exclude": "Permitted refresh policies, ordinary password-only errors, session revocation without credential chaining, or assuming distinct validity submechanisms in one CVE are automatically one independent issue.",
+      "training_seed": "HaPy-Bug:cve_CVE-2012-3426:2:keystone/service.py:TokenController.authenticate",
+      "notes": "Keystone token branch trusts embedded user status after disable; one patch rechecks current identity. Successive patch carries old expires to avoid renewed default lifetime. Same CVE/mechanical family and shared function snapshot, but account-disable, password revocation and expiration submechanisms require explicit independence/negative-scope decisions."
+    },
+    {
+      "category_id": "CORR-ARITHMETIC-ZERO-SEMANTICS",
+      "name": "Arithmetic dispatch omits required zero-operand result normalization",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An admitted arithmetic path omits established zero-operand handling, returning a wrong infinity/NaN/value classification; inspect operation direction, dtype, missing-value fill and matched scalar/vector contract.",
+      "exclude": "All-zero normalization requiring finite/zero output covered separately, warning suppression without numerical change, or claiming every zero denominator should yield infinity.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-159:0:pandas/core/frame.py:DataFrame._combine_frame",
+      "notes": "Pandas raw-array reverse floor division with fill_value omits dispatch_fill_zeros, producing wrong NaN versus Inf. Retained regression establishes numerical contract separately from warning-only changes; exact helper/version semantics remain contextual."
+    },
+    {
+      "category_id": "SEC-TOKEN-URI-LOGGING",
+      "name": "Bearer token is exposed in a backend object/request URI retained in logs",
+      "domain": "security",
+      "include": "A live bearer credential is embedded in a backend object/request path logged outside the token's intended audience, permitting replay by log readers; inspect token lifecycle, URI producer, request/log sink and access conditions.",
+      "exclude": "Every URI containing an identifier, command argument or validator-message disclosure, or assuming token-derived opaque object naming secures all inbound URLs, headers, caches and historical logs.",
+      "training_seed": "CVEfixes:88203329489273:122152526863630",
+      "notes": "Swauth raw token becomes Swift .token object name and backend GET/PUT/DELETE URI. Coordinated SHA512-derived naming removes raw bearer from that storage path; memcache keys and remote validation URLs still use raw token. Requires matching object producers, migration and affected logging policy."
+    },
+    {
+      "category_id": "CORR-TEXT-CAPACITY",
+      "name": "Fixed-width text storage truncates a required replacement value",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "Text conversion allocates fixed-width storage sized before a required replacement is inserted, silently truncating that value under an existing serialization contract; inspect width selection, assignment and output consumer.",
+      "exclude": "Lossy text encoding, source whitespace formatting, general memory corruption, or claiming replacement-width allocation preserves all longer original values.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-153:0:pandas/core/internals/blocks.py:Block.to_native_types",
+      "notes": "Pandas CSV native conversion infers Unicode width from existing values, then inserts na_rep. Regression establishes a longer null marker is truncated; explicit na_rep width repairs that case but mixed longer non-null values require separate scrutiny. Correctness scope still pending."
+    },
+    {
+      "category_id": "SEC-AUTHENTICATION-ID-COLLATION",
+      "name": "Authentication lookup conflates distinct external identities under database collation",
+      "domain": "security",
+      "include": "An authentication identity lookup relies on database equality whose collation admits distinct case-sensitive external identifiers, returning another principal's account; inspect external ID contract, effective collation and exact-result verification.",
+      "exclude": "Intentional case-insensitive usernames, equivalent policy-value normalization, ordinary metadata casing, or assuming all databases/collations conflate these identifiers.",
+      "training_seed": "CVEfixes:76527847222406:227743625808788",
+      "notes": "social-app-django MySQL/MariaDB uid lookup may return a case-insensitive match for a different third-party uid. Fix filters candidates then requires exact Python uid equality; provider identity and historical schema uniqueness remain contextual."
+    },
+    {
+      "category_id": "CORR-METADATA-PRESERVATION",
+      "name": "Reconstruction drops required semantic metadata",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "Object reconstruction omits existing semantic metadata required for downstream lookup or structural roundtrip, such as index names becoming column identities; inspect the metadata producer and functional consumer.",
+      "exclude": "Display preferences without a functional contract, new metadata features, dtype conversion covered by dtype preservation, or position/value misalignment without metadata loss.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-139:0:pandas/core/groupby/grouper.py:Grouping.__init__",
+      "notes": "Categorical group index omits self.name, losing original group column identity on reset_index. Not just output typography. Existing metadata-normalization/context categories still require consolidation from training evidence."
+    },
+    {
+      "category_id": "SEC-TEMPLATE-SOURCE-INJECTION",
+      "name": "Lower-trust value is spliced into template source before evaluation",
+      "domain": "security",
+      "include": "Request/data text is concatenated into trusted template source and subsequently evaluated as template syntax instead of bound as a value; inspect composition, render call and input reachability.",
+      "exclude": "Intentionally user-authored template source lacking a sandbox, HTML-only escaping, or claiming arbitrary host execution without engine/capability evidence.",
+      "training_seed": "CVEfixes:69649546428286:109184701196132",
+      "notes": "psiTurk inserts request mode into HTML source before render_template_string. Coordinated helper inserts fixed {{ mode }} placeholder and caller passes mode as data. Source/data separation, not a claim that arbitrary templates are sandboxed."
+    },
+    {
+      "category_id": "SEC-BUFFER-COPY-CAPACITY",
+      "name": "Allocated buffer does not cover the copy primitive's write extent",
+      "domain": "security",
+      "include": "Buffer allocation covers logical content length but not a word-rounded or otherwise larger write span required by its copy primitive, permitting corruption across the intended memory boundary; inspect allocator, offsets, copy contract and reachable layout.",
+      "exclude": "Python memory unsafety inferred solely from byte-array operations, unbounded input resource consumption, or claiming every invocation corrupts live data without layout and length preconditions.",
+      "training_seed": "CVEfixes:56029322906472:256529640774935",
+      "notes": "Vyper concat IR uses byte offsets into a logical-length allocation while copy_bytes may store a full 32-byte word. Extra allocation provides padding while logical output type remains unchanged. EVM contract memory corruption, not Python host buffer overflow; supplemental core.py must be retained/pinned."
+    },
+    {
+      "category_id": "SEC-SECRET-COMPARISON-TIMING",
+      "name": "Security-token comparison uses a data-dependent equality operation",
+      "domain": "security",
+      "include": "A reachable secret/token verification uses ordinary equality rather than an appropriate timing-resistant primitive, exposing a conditional comparison oracle; inspect token stability, runtime semantics, request path and observability.",
+      "exclude": "Every equality operation, public values, claims of practical remote recovery without timing evidence, or assuming a comparison change repairs token lifecycle, replay or every cryptographic weakness.",
+      "training_seed": "CVEfixes:48590208344136:28955515216088",
+      "notes": "Oppia CSRF validator compares reconstructed token with ==; coordinated change uses compare_digest on bytes plus nonce/SHA256 token format. Advisory's one-second limit needs reconciliation: old verifier recomputes using submitted issued_on, not necessarily current second. No timing attack reproduced."
+    },
+    {
+      "category_id": "CORR-SORTED-INPUT-PRECONDITION",
+      "name": "A consumer requiring sorted data receives admitted unsorted input",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A supported unsorted input is passed to an algorithm whose established contract requires monotonic/sorted reference data, producing incorrect results; inspect consumer semantics and coordinated permutation of associated values.",
+      "exclude": "Forbidden unsorted input, arbitrary sorting preferences, label/position identity errors without a sorting precondition, or claiming sorting resolves duplicate-coordinate or every numerical edge case.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-115:0:pandas/core/missing.py:interpolate_1d",
+      "notes": "NumPy interpolation requires increasing reference x; Pandas accepts descending/unsorted indexes. Fix sorts valid reference x and matching y together while preserving query/output order."
+    },
+    {
+      "category_id": "SEC-CREDENTIAL-GUESS-THROTTLE",
+      "name": "Credential verification permits repeated guesses without required throttling",
+      "domain": "security",
+      "include": "A reachable credential-check path exposes repeated guesses without the intended attempt bound, lockout or equivalent effective rate control; inspect session/authentication prerequisites, verification and policy enforcement.",
+      "exclude": "Every login without a local counter, existing effective external throttles, missing reauthentication where no verification existed, or claiming a per-session logout is global/account-level rate limiting.",
+      "training_seed": "CVEfixes:32844630046494:57993624181022",
+      "notes": "rdiffweb current-password change check gains five-failure session logout; old nonempty current password was already checked by set_password. Authenticated-session guessing and external controls remain contextual."
+    },
+    {
+      "category_id": "SEC-REDIRECT-BODY-DISCLOSURE",
+      "name": "Redirect method conversion retains a sensitive request body",
+      "domain": "security",
+      "include": "Automatic redirect changes a body-bearing request to GET but retains sensitive body content for a destination outside its intended audience; inspect recursion, status/method conversion and destination trust.",
+      "exclude": "Credential headers stripped under a separate policy, unchanged-method redirects, redirects without sensitive content, or assuming every 301/302/303 branch is affected identically.",
+      "training_seed": "CVEfixes:32334089898807:226939113103692",
+      "notes": "urllib3 PoolManager 303 branch changes method only; fix clears body and prepares entity headers before recursive request. Compromised redirecting/destination service and sensitive content are prerequisites."
+    },
+    {
+      "category_id": "SEC-INPUT-DECODE-AVAILABILITY",
+      "name": "Lower-trust malformed text aborts processing at an unhandled decoding boundary",
+      "domain": "security",
+      "include": "Admitted lower-trust bytes raise an unhandled decoding error across an established availability boundary; inspect effective encoding, error policy, catch scope and entry point.",
+      "exclude": "Any Unicode failure assumed security relevant, forbidden malformed inputs, or claiming request/CLI abortion demonstrates process-wide or distributed denial of service.",
+      "training_seed": "CVEfixes:31512558439467:61343381612260",
+      "notes": "markdown-it-py CLI file reader catches OSError but not UnicodeDecodeError. UTF-8 errors=ignore avoids that decode failure; dropped bytes and stdout encoding remain separate issues."
+    },
+    {
+      "category_id": "CORR-DTYPE-PRESERVATION",
+      "name": "Transformation loses a required semantic dtype",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A supported transformation converts values through a generic representation and loses a dtype required by its existing contract, changing subsequent operations or roundtrip identity; inspect conversion and reconstruction.",
+      "exclude": "New dtype support without an existing requirement, documented intentional coercion, shape-only errors or preservation claims without extension-type semantics.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-105:0:pandas/core/frame.py:DataFrame.transpose",
+      "notes": "Homogeneous extension-typed DataFrame transpose passes through generic .values and loses extension dtype. New per-row extension reconstruction preserves it, but dictionary construction can collapse duplicate source index labels."
+    },
+    {
+      "category_id": "CORR-LABEL-ALIGNMENT",
+      "name": "Label-based alignment loses required positional identity",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "Deduplication or label-based reindexing replaces distinct required positions or assigns values to the wrong labels, violating an established index/value correspondence; inspect duplicate-label semantics, operation mode and expected mapping.",
+      "exclude": "Intentional label aggregation, counting repeated representations of one entity, unsupported duplicate labels, or shape differences without an index/value identity defect.",
+      "training_seed": "HaPy-Bug:bugs-in-py_pandas-100:0:pandas/core/generic.py:NDFrame.pct_change",
+      "notes": "pct_change without frequency already preserves positions; unconditional index deduplication and reindex broadcast first occurrence results over distinct repeated labels. Frequency-based alignment retains its separate policy."
+    },
+    {
+      "category_id": "SEC-INPUT-SIZE-BOUND",
+      "name": "Lower-trust field size is unbounded before resource-consuming processing",
+      "domain": "security",
+      "include": "A reachable lower-trust field exceeds its intended size limit and is accepted for storage or resource-consuming processing across an availability boundary; inspect validation, caller, consumer and effective upstream limits.",
+      "exclude": "Every missing length check, harmless large trusted inputs, regex backtracking without a size/storage mechanism, or claiming a per-field cap bounds whole requests, request frequency or all resource use.",
+      "training_seed": "CVEfixes:30114110222170:31102574426848",
+      "notes": "Sydent client-secret regex allows arbitrarily long matching strings; request-token caller forwards them after validation. New 255-character cap limits accepted field size; downstream persistence and server body limits still need pinning."
+    },
+    {
+      "category_id": "CORR-CONFIGURATION-PRECEDENCE",
+      "name": "A consumer ignores an established configuration override",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An operation uses a hardcoded fallback despite an established environment/configuration override selecting its resource location or behaviour; inspect the existing configuration producer, consumer and explicit-argument precedence.",
+      "exclude": "New configuration features without an old supported contract, intended per-operation overrides, security trust of configuration sources, or unsupported claims that all consumers dynamically reload settings.",
+      "training_seed": "HaPy-Bug:bugs-in-py_keras-5:0:keras/utils/data_utils.py:get_file",
+      "notes": "Keras backend already honours KERAS_HOME but get_file defaults to ~/.keras. Explicit cache_dir retains priority and unwritable-directory fallback remains. Supplemental backend source must be retained/pinned before approval."
+    },
+    {
+      "category_id": "CORR-ZERO-DENOMINATOR",
+      "name": "An admitted empty contribution produces a zero normalization denominator",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An accepted all-zero mask or other empty contribution set reaches normalization by zero, violating an established finite/zero-result contract; inspect denominator construction, producer admissibility and numerical runtime semantics.",
+      "exclude": "Unsupported zero inputs, arbitrary epsilon changes, resource-availability claims without a security boundary, or assuming one stabilized denominator repairs unrelated zero divisions or nonfinite inputs.",
+      "training_seed": "HaPy-Bug:bugs-in-py_keras-6:0:keras/engine/training_utils.py:weighted_masked_objective.weighted",
+      "notes": "All-zero Keras mask yields masked score zero and mean(mask)=0; adding positive backend epsilon avoids this 0/0. All-zero sample weights retain a separate unchanged denominator."
+    },
+    {
+      "category_id": "SEC-INTERNAL-REQUEST-OPTION-INJECTION",
+      "name": "Lower-trust metadata supplies privileged internal request options",
+      "domain": "security",
+      "include": "Lower-trust URL or content metadata is merged into headers/options interpreted internally as privileged network controls, such as proxy selection, without the intended allowlist; inspect metadata preservation, request consumer and control-header handling.",
+      "exclude": "Ordinary outgoing HTTP header content without an internal control boundary, arbitrary SSRF inferred from a constrained extractor URL, or unconditional cookie disclosure despite TLS/secure-cookie policy.",
+      "training_seed": "CVEfixes:269613202485738:37557201162683",
+      "notes": "yt-dlp Vimeo unsmuggles arbitrary http_headers into requests; clean_proxies consumes Ytdl-Request-Proxy as routing control. Fix permits only referer metadata. Generic advisory reachability and Vimeo URL constraints remain distinct."
+    },
+    {
+      "category_id": "SEC-SENSITIVE-ACTION-REAUTH",
+      "name": "Sensitive credential change accepts a session without required reauthentication",
+      "domain": "security",
+      "include": "An authenticated session can change a sensitive credential without the required current-password or equivalent step-up verification; inspect session prerequisites, credential mutation and actual reauthentication policy.",
+      "exclude": "Unauthenticated login fail-open, authorized recovery/reset flows, arbitrary missing password prompts, or assuming all authenticated actions require reauthentication.",
+      "training_seed": "CVEfixes:267181908008455:238947164217209",
+      "notes": "ZenML self-password update previously requires only active session; fix requires and verifies old password. Other-user password-update prohibition is a separate authorization policy, not proof of a preexisting global permission bypass."
+    },
+    {
+      "category_id": "SEC-CORS-ORIGIN-BOUNDARY",
+      "name": "Credentialed CORS origin policy omits a hostname boundary",
+      "domain": "security",
+      "include": "An attacker-controlled origin passes a hostname suffix check without the required label/authority boundary, receiving credentialed CORS approval; inspect reflected allow-origin, credential flag, configured host and browser cookie policy together.",
+      "exclude": "Every reflected origin, wildcard responses without usable credentials, CSRF inferred without a state-changing consumer, or universal cross-site cookie access independent of browser policy.",
+      "training_seed": "CVEfixes:26695807228249:162601659861075",
+      "notes": "Sentry endswith(basehost) permits an unrelated hostname ending in the same characters. New delimiter-aware suffixes restrict this check; base-hostname is empty by default and cookie blocking limits practical impact. Nested wrapper and outer decorator overlap."
+    },
+    {
+      "category_id": "CORR-INCLUSIVE-RANGE-BOUNDARY",
+      "name": "Inclusive endpoint is omitted by an exclusive range or count",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A documented inclusive index endpoint is treated as exclusive when enumerating, sampling or counting supported elements, omitting a valid boundary element or batch; inspect endpoint initialization and caller iteration counts together.",
+      "exclude": "An intentionally half-open range, newly introduced endpoint semantics, or assuming a local range repair also fixes an unchanged upstream batch count.",
+      "training_seed": "HaPy-Bug:bugs-in-py_keras-28:0:keras/preprocessing/sequence.py:TimeseriesGenerator.__getitem__",
+      "notes": "Keras TimeseriesGenerator defaults end_index to len(data)-1 but passes it as exclusive high/stop. Coordinated __len__ repair is also needed when the omitted endpoint requires another batch."
+    },
+    {
+      "category_id": "SEC-KDF-OUTPUT-LENGTH",
+      "name": "Key derivation block accounting violates requested key length",
+      "domain": "security",
+      "include": "Cryptographic derivation uses incorrect digest units or generated-block accounting, returning too little key material or violating valid output limits; inspect algorithm byte units, empty accumulators and consumer length handling.",
+      "exclude": "Generic hashing, unsupported claims that every short output is accepted as a key, or declaring all KDF security repaired by a length fix.",
+      "training_seed": "CVEfixes:244808149279171:209006482891260",
+      "notes": "HKDF expansion counts an empty initial block and divides a byte digest_size by eight. Small positive requests can return empty; actual boundary is the inspected loop, not advisory shorthand."
+    },
+    {
+      "category_id": "SEC-XML-ENTITY-EXPANSION",
+      "name": "Lower-trust XML entity expansion exceeds the intended parsing policy",
+      "domain": "security",
+      "include": "A reachable lower-trust XML input can declare/expand entities under a parser policy permitting excessive work; inspect preprocessing, parser/runtime limits and entity rejection rather than inferring vulnerability from XML use.",
+      "exclude": "Automatic external-file/entity-read claims for ElementTree, entity declarations removed by preprocessing without a demonstrated bypass, or universal resource-safety claims from entity rejection.",
+      "training_seed": "CVEfixes:242878475820738:123050402643066",
+      "notes": "LangChain completion parser replaces standard ElementTree with defusedxml. Internal entity expansion depends on Expat protections; synchronous streaming strips pre-root text and needs distinct reachability evidence."
+    },
+    {
+      "category_id": "SEC-VALIDATION-SECRET-LOGGING",
+      "name": "Validation diagnostics disclose sensitive input to a lower-trust log",
+      "domain": "security",
+      "include": "Validation messages containing sensitive values or input fragments are emitted to a log accessible outside the input's intended audience; inspect validator formatting, input provenance, caller mode and log access.",
+      "exclude": "Every diagnostic log, secret argument exposure in another category, or assuming a new optional suppression flag makes default calls confidential.",
+      "training_seed": "CVEfixes:229990830827943:214136784713157",
+      "notes": "cloud-init schema messages can contain hashed passwords; coordinated boot caller disables detail logging. Default log_details=True and strict exceptions still disclose details by design."
+    },
+    {
+      "category_id": "SEC-POLICY-CASE-NORMALIZATION",
+      "name": "Security-policy producer and consumer disagree on case normalization",
+      "domain": "security",
+      "include": "Security policy admits equivalent mixed-case values but persists/forwards them without canonicalization to a case-sensitive enforcement consumer, omitting required restrictions; inspect accepted input, stored representation and enforcement branch.",
+      "exclude": "Cosmetic casing, generic metadata conversion, redaction/header normalization already categorized separately, or assuming a case-sensitive check fails open without tracing resulting enforcement.",
+      "training_seed": "CVEfixes:217851213906490:116742559636325",
+      "notes": "Nova accepts protocol names through upper-case validation but stores original spelling; firewall lowercase-only branches omit port/type limits. Producer now lowercases; consumer fix also canonicalizes existing stored rules."
+    },
+    {
+      "category_id": "CORR-CSV-RECORD-SEPARATION",
+      "name": "Text-stream newline translation duplicates CSV record boundaries",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "CSV writer record terminators interact with runtime text-stream newline translation to introduce extra machine-observable rows; inspect writer dialect, stream settings, runtime and established record-count contract.",
+      "exclude": "Line-ending preferences without a record/consumer contract, source newline roundtrip, or assuming every Python/platform branch has duplicate translation.",
+      "training_seed": "HaPy-Bug:bugs-in-py_keras-15:0:keras/callbacks.py:CSVLogger.on_train_begin",
+      "notes": "Keras CSVLogger Python-3 Windows text stream translates the newline in csv.excel CRLF again. New io.open receives newline='\\n' from coordinated constructor; regression checks physical row and column counts."
+    },
+    {
+      "category_id": "CORR-TENSOR-SHAPE",
+      "name": "Tensor transformation discards or mismatches required axes",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An established tensor/array contract requires axes or rank to be preserved/aligned, but reshaping, flattening or shape construction removes or mismatches them, producing wrong broadcasting, comparison or rejected valid inputs.",
+      "exclude": "Unsupported shapes introduced as a feature, arbitrary numerical differences, or claims about every backend without inspecting operation semantics.",
+      "training_seed": "HaPy-Bug:bugs-in-py_keras-12:0:keras/metrics.py:sparse_categorical_accuracy",
+      "notes": "Flattening sparse labels collapses sample/time axes while argmax predictions retain them. Rank-aware singleton squeeze preserves the comparison shape."
+    },
+    {
+      "category_id": "SEC-NULL-TOKEN-AVAILABILITY",
+      "name": "Untrusted parsed content reaches an invalid non-null token assumption",
+      "domain": "security",
+      "include": "A reachable lower-trust parse/render path admits absent token children or attributes but asserts or consumes them as present, aborting processing across an availability boundary; inspect producer invariants and the actual failing consumer.",
+      "exclude": "Assertions on unreachable states, arbitrary externally constructed objects without a lower-trust path, or treating one request failure as demonstrated process-wide denial of service.",
+      "training_seed": "CVEfixes:216019655045289:62090590228869",
+      "notes": "markdown-it-py nested image parser can assign children=None; renderInlineAsText asserts that a nested image has children even though its entry iteration already accepts None. Other same-fix guards require independent reachability evidence."
+    },
+    {
+      "category_id": "SEC-LOG-RECORD-INJECTION",
+      "name": "Untrusted record delimiters forge entries in a text log",
+      "domain": "security",
+      "include": "Lower-trust values containing record delimiters are embedded unescaped into a line-oriented log, allowing forged or corrupted records; inspect input provenance and sink/formatter behaviour.",
+      "exclude": "Secret disclosure through otherwise well-formed logs, every interpolated log value, or assuming CR/LF escaping secures all terminals, encodings or structured logging consumers.",
+      "training_seed": "CVEfixes:215110358699111:206722156245723",
+      "notes": "pyLoad API login logs request usernames even on failed authentication. Fix replaces CR/LF with literal backslash sequences; advisory demonstrates the sibling UI login, not automatically the API route. No request or payload executed."
+    },
+    {
+      "category_id": "SEC-LOG-FILE-PERMISSIONS",
+      "name": "Sensitive log output has excessive filesystem read permissions",
+      "domain": "security",
+      "include": "Sensitive process output reaches a file readable by principals outside its intended audience because file-creation or retained permissions, or log-sink process identity, are insufficient; inspect sensitive writers, sink configuration and effective file-mode enforcement.",
+      "exclude": "Every log labelled sensitive, shell injection inferred from an authorized sink command, or a umask change claimed to revoke permissions on existing files or repair all output modes.",
+      "training_seed": "CVEfixes:210298379809037:3672336208227",
+      "notes": "cloud-init restricts log-sink subprocess umask/GID in one fix; a separate later fix enforces restrictive mode on existing logs. A umask change alone never repairs existing modes. Sensitive writers, direct redirection and effective filesystem policy still need review."
+    },
+    {
+      "category_id": "SEC-WORKSPACE-DIRECTORY-TRUST",
+      "name": "Build or cache workspace accepts an existing lower-trust directory",
+      "domain": "security",
+      "include": "A predictable build/cache directory is reused based only on existence or writability without required ownership, permission or symlink checks, allowing another local user to supply artifacts; inspect directory selection and artifact consumers.",
+      "exclude": "Secure atomic creation alone treated as vulnerable, arbitrary filesystem traversal, race-free guarantees from separate path checks, or POSIX ownership guarantees applied to Windows ACLs without evidence.",
+      "training_seed": "CVEfixes:203256363645183:11151637562554",
+      "notes": "SciPy weave default directory accepts pre-existing writable locations for compiled modules/catalogs. Coordinated helpers validate POSIX owner/mode and reject symlinks; pathname checks do not establish race-free or universal Windows security."
+    },
+    {
+      "category_id": "SEC-REGEX-POLICY-INJECTION",
+      "name": "Untrusted literal identity or path is interpreted as authorization regex syntax",
+      "domain": "security",
+      "include": "Lower-trust identity/path data is interpolated into a security-policy regular expression without literal escaping, broadening authorized matches; inspect policy templates, data admission and the permission consumer.",
+      "exclude": "Backtracking complexity, administrator-authored regex rules, ordinary matching of untrusted text against a fixed pattern, or a claim that escaping these interpolation defaults secures every dynamic substitution.",
+      "training_seed": "CVEfixes:193597207056014:180205556361792",
+      "notes": "Radicale owner templates interpolate login into an anchored collection regex; authenticated metacharacter usernames can broaden ownership. Fix escapes login/path defaults; later captured-group format substitution remains a separate boundary. No regex or exploit executed."
+    },
+    {
+      "category_id": "SEC-HTTP-METHOD-RESTRICTION",
+      "name": "Privileged mutation is reachable through a request method intended to be read-only",
+      "domain": "security",
+      "include": "A privileged state-changing branch accepts GET or another intended safe request method because the required submission-method guard is absent; inspect request parameter binding, the mutation helper and effective method checks.",
+      "exclude": "Read-only handlers, a method restriction already enforced elsewhere, or treating POST/PUT/PATCH/DELETE acceptance alone as complete token/origin-based CSRF protection.",
+      "training_seed": "CVEfixes:195726106913384:219684865331048",
+      "notes": "rdiffweb user deletion previously validated fields without checking submission method. validate_on_submit adds a POST/PUT/PATCH/DELETE gate and blocks the evidenced GET deletion; it does not introduce an unpredictable token or origin check."
+    },
+    {
+      "category_id": "CORR-ERROR-CLASSIFICATION",
+      "name": "Failure is classified with the wrong machine-observable error status",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An established invalid-input/operation outcome is reported through the wrong exception or exit-status class, affecting a documented or regression-established machine-consumer contract; inspect actual framework handling, not wording alone.",
+      "exclude": "Diagnostic wording-only edits, changing one nonzero code without an established contract, or assuming failed input was previously accepted successfully when it already raised a different error.",
+      "training_seed": "HaPy-Bug:bugs-in-py_black-3:0:black.py:main",
+      "notes": "Missing explicit --config reaches FileError (exit 1) before; Click path existence validation classifies it as an invalid parameter (exit 2) after. Existing callback already rejects the missing file."
+    },
+    {
+      "category_id": "SEC-CSRF-REQUEST-BINDING",
+      "name": "Privileged state-changing request lacks required anti-forgery binding",
+      "domain": "security",
+      "include": "A lower-trust page can cause a privileged ambient-context state change without the required unpredictable token or origin/initiator binding; inspect the state-changing consumer and real request-scheme/backend reachability.",
+      "exclude": "Read-only resources, missing tokens where another effective request-binding mechanism is established, credential-source disagreement classified separately, or automatic code-execution claims without the downstream trigger.",
+      "training_seed": "CVEfixes:178113201707295:223374160760278",
+      "notes": "qutebrowser local qute://settings/set changes browser configuration from a request URL. Fix adds token checking plus coordinated backend initiator checks; changing editor.command alone is not proof a command already ran."
+    },
+    {
+      "category_id": "SEC-OUTBOUND-IP-POLICY",
+      "name": "Untrusted outbound destinations bypass the required network-address policy",
+      "domain": "security",
+      "include": "A server-side request path accepts a lower-trust destination but uses a client or resolver that omits required IP-range restrictions; inspect destination provenance, request consumer, client construction and effective configuration.",
+      "exclude": "Browser open redirects, a mere client getter rename, ordinary trusted-service requests, or a claim that client substitution blocks all SSRF regardless of configured ranges, DNS, redirects or proxy routing.",
+      "training_seed": "CVEfixes:176582709279069:111252387670231",
+      "notes": "Synapse key-revocation and push consumers gain an IP-policy client. This exact fix still requires effective ip_range_blacklist configuration; deprecated federation-only ranges do not automatically cover these paths."
+    },
+    {
+      "category_id": "SEC-SECURITY-STATUS-LIFECYCLE",
+      "name": "Security indicator forgets an exception across the protected object's lifecycle",
+      "domain": "security",
+      "include": "A displayed security decision uses transient state that is reset while an underlying security exception remains effective, falsely reporting the protected resource as verified; inspect exception writers, reset events, status consumer and actual warning policy.",
+      "exclude": "Cosmetic colour preferences, a certificate verification bypass inferred solely from an indicator, or an ordinary stale UI value without a security assurance contract.",
+      "training_seed": "CVEfixes:174601873543324:246961049692720",
+      "notes": "qutebrowser resets a per-load SSL-error flag although accepted certificate exceptions can persist; new shared host history preserves warning status. This repairs an assurance indicator, not the user's certificate-acceptance policy."
+    },
+    {
+      "category_id": "SEC-PREDICTABLE-RANDOMNESS",
+      "name": "Non-cryptographic randomness used for a security-sensitive unpredictable value",
+      "domain": "security",
+      "include": "A security-sensitive nonce/authenticator/secret requires unpredictability but is generated using a non-cryptographic PRNG; inspect generator binding and actual protocol consumer.",
+      "exclude": "Ordinary simulation/random selection, short identifiers without an unpredictability requirement, or a claim that secure randomness repairs every weakness in the surrounding protocol.",
+      "training_seed": "CVEfixes:172449381401451:241591290952780",
+      "notes": "pyrad's sixteen-byte RADIUS authenticator uses module random.randrange before the fix and a module-bound random.SystemRandom afterwards; consumer participates in password hiding and reply verification. No recovery attack or entropy measurement executed."
+    },
+    {
+      "category_id": "SEC-DYNAMIC-CODE-EVALUATION",
+      "name": "Untrusted data is reconstructed as executable Python expression text",
+      "domain": "security",
+      "include": "Lower-trust values are interpolated into Python source passed to eval or an equivalent evaluator, allowing data to alter executable syntax; inspect actual data provenance and evaluation scope.",
+      "exclude": "AST parsing without evaluation, fixed trusted expressions, shell-command injection, or assuming an allowlist of outer function names neutralizes interpolated arguments.",
+      "training_seed": "CVEfixes:169359888393033:257191987727214",
+      "notes": "Eve reconstructs ObjectId call text from an AST string value before eval; direct constructor calls remove this second source interpretation."
+    },
+    {
+      "category_id": "SEC-UNTRUSTED-CONFIG-DISCOVERY",
+      "name": "Automatic configuration search includes a lower-trust execution source",
+      "domain": "security",
+      "include": "Automatic configuration discovery searches a lower-trust location and loads executable configuration under the invoking user's privileges without explicit selection; inspect path precedence and loading consumer.",
+      "exclude": "Explicitly authorized configuration files, ordinary data-only lookup without an execution boundary, or a claim that removing automatic CWD insertion secures every configurable path.",
+      "training_seed": "CVEfixes:170496016594366:244080015169881",
+      "notes": "Jupyter prepends current working directory to config search; fix removes implicit CWD entry while explicit config_dir and environment-derived paths remain."
+    },
+    {
+      "category_id": "CORR-EXPECTED-EXCEPTION-RECOVERY",
+      "name": "Expected recoverable input condition aborts the surrounding operation",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A supported input or execution-environment condition raises a specific exception which should be handled locally to skip/recover and continue; source, caller and contract evidence establish recoverability.",
+      "exclude": "Blanket exception suppression, unexpected failures that should propagate, or assuming all filesystem exceptions have the same recovery policy.",
+      "training_seed": "HaPy-Bug:bugs-in-py_black-16:0:black.py:gen_python_files_in_dir",
+      "notes": "Outside-root symlink resolution makes relative_to raise ValueError and abort file discovery; fix skips only symlinks and rethrows other ValueErrors."
+    },
+    {
+      "category_id": "CORR-EMPTY-SEQUENCE-INDEX",
+      "name": "Indexing assumes a supported sequence is nonempty",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "Direct indexing raises on an empty sequence admitted by the input contract; fix uses an empty-safe access or guard and preserves the required empty-input behaviour.",
+      "exclude": "Inputs forbidden to be empty, missing None dereference guards, or attributing unrelated empty-input failures to the changed access.",
+      "training_seed": "HaPy-Bug:bugs-in-py_black-17:0:black.py:lib2to3_parse",
+      "notes": "src_txt[-1] raises for empty source; [-1:] is empty-safe. File byte decoding has a separate same-fix empty-input repair."
+    },
+    {
+      "category_id": "SEC-URL-AUTHORITY-BOUNDARY",
+      "name": "Textual URL prefix accepts a different authority across a request boundary",
+      "domain": "security",
+      "include": "A security restriction uses raw URL prefix matching rather than a parsed authority comparison, allowing an untrusted different-host URL to reach a downstream request path; inspect URL normalization and consumer.",
+      "exclude": "Ordinary URL joining, open redirects without server-side fetching, or claiming a netloc check eliminates DNS, redirects, same-host or all SSRF risks.",
+      "training_seed": "CVEfixes:16045330331841:14752033584585",
+      "notes": "LangChain recursive links can use a hostname extending the base URL string; new exact netloc check supplements rather than replaces path-prefix policy."
+    },
+    {
+      "category_id": "CORR-NEWLINE-ROUNDTRIP",
+      "name": "Input newline convention is lost at a text output boundary",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "Input decoding normalizes newline information which output must preserve under an established byte/format contract; inspect both read and write settings and decide non-style eligibility.",
+      "exclude": "Every newline normalization labelled a defect, runtime bytes/text encoding mismatch without newline involvement, or unsupported claims of preserving every mixed line ending.",
+      "training_seed": "HaPy-Bug:bugs-in-py_black-18:0:black.py:format_file_in_place",
+      "notes": "Black detects one source newline convention and reuses it for output; non-style task eligibility remains unresolved and mixed-newline/empty inputs require separate review."
+    },
+    {
+      "category_id": "SEC-AUTHORIZATION-SUBJECT-RACE",
+      "name": "Authorization subject can change between identification and policy evaluation",
+      "domain": "security",
+      "include": "Authorization identifies a requester through a mutable/reusable identifier and evaluates privileges after the represented subject can change; inspect identity lookup, policy API and affected runtime.",
+      "exclude": "Generic races without an authorization boundary, stable subject identifiers without substitution evidence, or a claim that any bus-name check repairs all policy bypasses.",
+      "training_seed": "CVEfixes:14419046919723:91406307512176",
+      "notes": "Polkit unix-process PID/start-time zero subject replaced with authenticated system-bus-name; local D-Bus and policy conditions remain contextual."
+    },
+    {
+      "category_id": "SEC-REDIRECT-CREDENTIAL-STRIPPING",
+      "name": "Redirect handling fails to remove credentials across an origin boundary",
+      "domain": "security",
+      "include": "Sensitive request headers survive a redirect to a different origin because the removal policy or header-name comparison is incomplete; inspect header representation, retry policy and origin predicate.",
+      "exclude": "Open redirect without credential forwarding, secret redaction at an output sink, or assuming a particular header mapping is case-sensitive without evidence.",
+      "training_seed": "CVEfixes:149319880724034:47804040618780",
+      "notes": "urllib3 removal is case-sensitive on ordinary mappings; coordinated Retry normalization and incomplete-fix lineage CVE-2018-20060 matter."
+    },
+    {
+      "category_id": "SEC-SESSION-INVALIDATION",
+      "name": "Authentication lifecycle change preserves sessions that require invalidation",
+      "domain": "security",
+      "include": "A logout, invalid-authentication or credential-change path omits required session invalidation/rotation or revocation of other authenticated sessions; inspect the session backend, persistence boundary and surrounding authentication lifecycle.",
+      "exclude": "Every session.clear call labelled fixation, unrelated stale UI state, or inferring complete logout/login safety from one corrected branch.",
+      "training_seed": "CVEfixes:150634550859605:5044383212015",
+      "notes": "Horizon invalid-session branch delegates to logout/flush; rdiffweb password change deletes other database sessions while retaining the current session. Different lifecycle submechanisms share this provisional category but not an issue family; backend semantics and persistence remain contextual."
+    },
+    {
+      "category_id": "SEC-TEMPLATE-SANDBOX",
+      "name": "Lower-trust template source evaluated without the required sandbox",
+      "domain": "security",
+      "include": "Attacker-controlled template source reaches a template engine with capabilities beyond its intended trust boundary; distinguish executable template source from values passed into a fixed template.",
+      "exclude": "Ordinary trusted templates, assuming context strings are recursively interpreted as template source, or treating sandboxing as HTML escaping or a universal resource bound.",
+      "training_seed": "CVEfixes:151134756098358:165179803376669",
+      "notes": "MLflow CardTab renders self.template in ordinary Jinja; lower-trust template provenance and privilege boundary remain unresolved, so seed is ambiguous."
+    },
+    {
+      "category_id": "SEC-REGEX-BACKTRACKING",
+      "name": "Regular expression permits excessive backtracking on untrusted input",
+      "domain": "security",
+      "include": "Overlapping/ambiguous repeated regex components cause excessive matching work on a supported untrusted input family; inspect the actual pattern, engine and reachable call path.",
+      "exclude": "Regex use alone, unsupported exact complexity claims, or ordinary linear scanning labelled ReDoS without pattern/failure-path evidence.",
+      "training_seed": "CVEfixes:139435414054923:11275476978704",
+      "notes": "Overlapping whitespace/tab repeats followed by a required non-whitespace character; function-only input omits the module-level pattern. No adversarial execution performed."
+    },
+    {
+      "category_id": "SEC-FRAME-EMBEDDING-POLICY",
+      "name": "Missing restriction on embedding a sensitive UI in frames",
+      "domain": "security",
+      "include": "A web application omits an intended anti-framing response policy, permitting UI redressing under the affected browser/deployment conditions; inspect response-hook registration and advisory context.",
+      "exclude": "Generic XSS or CSRF inferred from missing headers, or assuming clickjacking remains possible where an equivalent effective frame-ancestors/proxy policy exists.",
+      "training_seed": "CVEfixes:139002217364155:237393673783038",
+      "notes": "Application factory registers a new after_request X-Frame-Options DENY hook; effective other middleware/proxy policy and sensitive UI actions remain contextual."
+    },
+    {
+      "category_id": "SEC-INPUT-WORK-AMPLIFICATION",
+      "name": "Attacker-controlled input multiplicity amplifies expensive work",
+      "domain": "security",
+      "include": "Untrusted input count or repetition drives expensive operations without an adequate bound/deduplication/batching policy, with evidence of an availability boundary and affected call path.",
+      "exclude": "Any linear loop labelled denial of service, ordinary performance improvements without attacker reachability, or a batching fix claimed to bound all CPU/memory work.",
+      "training_seed": "CVEfixes:138897089159194:112470919962405",
+      "notes": "Nova affinity hints trigger one compute lookup per supplied UUID, including duplicates; new map avoids that lookup multiplicity but still scales with instance/input counts."
+    },
+    {
+      "category_id": "SEC-UPLOAD-DISPOSITION-POLICY",
+      "name": "Unsafe inline rendering policy for untrusted uploaded content",
+      "domain": "security",
+      "include": "A serving/proxy path overrides upload safety metadata and permits inline rendering of attacker-controlled active content; establish Content-Type, disposition, origin and proxy behaviour.",
+      "exclude": "Generic missing HTML escaping, harmless filename changes, or unconditional XSS claims where CSP/browser/storage configuration already mitigates execution.",
+      "training_seed": "CVEfixes:138361432817692:139264948810741",
+      "notes": "S3 Content-Type versus app disposition mismatch; preserve S3 policy and use signed attachment override. Requires proxy/cache and browser context."
+    },
+    {
+      "category_id": "SEC-REDACTION-KEY-MATCH",
+      "name": "Sensitive-field matching misses equivalent key representations",
+      "domain": "security",
+      "include": "A sensitive-field policy uses inconsistent key/path normalization and omits protected values from redaction; establish actual key representation, policy and lower-trust output sink.",
+      "exclude": "Assuming added sensitive-field policy entries prove an existing case-normalization defect, or treating all missing redaction as a selected-function log leak.",
+      "training_seed": "CVEfixes:135933521508434:50738315137669",
+      "notes": "Tentative case-sensitive matching mechanism; real mixed-case sensitive inputs remain unestablished. Same patch also expands the policy outside the selected function."
+    },
+    {
+      "category_id": "SEC-SECRET-ARGUMENT-EXPOSURE",
+      "name": "Sensitive values exposed through command arguments and diagnostic propagation",
+      "domain": "security",
+      "include": "Secret contents are embedded in process arguments that can be retained in exceptions, logs or command auditing; inspect the runner and disclosure conditions.",
+      "exclude": "Shell injection inferred from an argument list, assuming all process arguments are publicly readable, or claiming file transport makes all metadata/diagnostics confidential.",
+      "training_seed": "CVEfixes:135138148360192:121262139825682",
+      "notes": "Juju secret commands preserve CalledProcessError as exception cause; access to resulting logs is an additional prerequisite."
+    },
+    {
+      "category_id": "CORR-COORDINATE-UNITS",
+      "name": "Position calculations mix incompatible counting units",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A position/length is compared with another measured in different units, such as raw character offsets versus expanded display columns; consumer/caller establishes the unit contract.",
+      "exclude": "Arbitrary numeric changes or formatter presentation cases admitted without checking task eligibility.",
+      "training_seed": "HaPy-Bug:bugs-in-py_black-10:0:blib2to3/pgen2/driver.py:Driver._partially_consume_prefix",
+      "notes": "Mechanism supported by len(indent) caller; comment-indentation-only task eligibility remains unresolved."
+    },
+    {
+      "category_id": "CORR-OMITTED-OPTION-DEFAULT",
+      "name": "Omitted option is replaced with a value that overrides required downstream defaults",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A caller or serializer turns an omitted optional setting into an explicit value, preventing the documented downstream default/automatic selection; inspect both ends of the option flow.",
+      "exclude": "Intentional documented defaults or an assumed server policy without supporting evidence.",
+      "training_seed": "HaPy-Bug:bugs-in-py_ansible-9:0:lib/ansible/modules/packaging/os/redhat_subscription.py:Rhsm.subscribe_by_pool_ids",
+      "notes": "Two functions jointly preserve omitted pool quantity and omit --quantity; one shared issue family."
+    },
+    {
+      "category_id": "CORR-PATH-NORMALIZATION",
+      "name": "Path normalization discards meaningful root or separator structure",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "Path splitting/joining loses structural markers required by a supported path grammar; source/fix evidence establishes the intended root and resulting path.",
+      "exclude": "Security confinement claims, URL composition or unsupported path formats inferred only from platform names.",
+      "training_seed": "HaPy-Bug:bugs-in-py_ansible-8:0:lib/ansible/plugins/shell/powershell.py:ShellModule.join_path",
+      "notes": "Dropping empty backslash-separated components destroys a UNC root. No general safety claim for all joins."
+    },
+    {
+      "category_id": "SEC-TLS-PEER-VERIFICATION",
+      "name": "TLS connection omits required server identity verification",
+      "domain": "security",
+      "include": "A TLS client uses a non-verifying context/default where certificate and hostname authentication are required; library/runtime and configuration evidence must support that behaviour.",
+      "exclude": "Claiming encryption implies authentication, treating every missing explicit context as vulnerable regardless of library defaults, or assuming plaintext modes are repaired.",
+      "training_seed": "CVEfixes:134004227435086:248871026127822",
+      "notes": "SMTP_SSL/STARTTLS defaults in the affected runtime; explicit SERVER_AUTH context repairs configured TLS paths, not mandatory transport encryption."
+    },
+    {
+      "category_id": "SEC-PATH-CONFINEMENT",
+      "name": "Filesystem operation escapes its permitted root",
+      "domain": "security",
+      "include": "An untrusted path reaches a filesystem operation without ensuring that its resolved target remains inside the intended root; caller/helper evidence establishes the boundary.",
+      "exclude": "Authorized arbitrary-path selection, mere relative-path use without a trust boundary, and claims that a pre-operation realpath check eliminates filesystem races.",
+      "training_seed": "CVEfixes:132813494207412:155029054060270",
+      "notes": "Guest image file injection joins untrusted path to mount root and writes as root; after helper checks realpath plus directory separator. No race-free or universal symlink-safety claim."
+    },
+    {
+      "category_id": "SEC-SQL-PARAMETERIZATION",
+      "name": "Untrusted values interpolated into SQL syntax",
+      "domain": "security",
+      "include": "Values potentially originating from untrusted input, including stored values, are concatenated into SQL without safe parameter binding; inspect provenance and the execution sink.",
+      "exclude": "Generated placeholder names concatenated while values remain bound, or assuming every database read contains attacker-controlled content.",
+      "training_seed": "CVEfixes:1325909346881:221623144355917",
+      "notes": "Stored user IDs interpolated into an IN clause; user creation/identifier constraints and database adapter remain conditional context."
+    },
+    {
+      "category_id": "CORR-CONTEXT-PROPAGATION",
+      "name": "Incorrect caller context passed to a decision-making helper",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A helper receives a substituted or incomplete identity/context instead of the actual caller context, changing an established branch or required operation; both caller and consumer must be inspected.",
+      "exclude": "Diagnostic-only identity differences without an established correctness contract, and security-boundary identity mismatches assigned to a security category.",
+      "training_seed": "HaPy-Bug:bugs-in-py_ansible-6:0:lib/ansible/galaxy/collection.py:_get_collection_info",
+      "notes": "An installed collection is passed as its own parent instead of preserving parent=None for a top-level requirement. Black-6 also loses target-dependent tokenizer mode when forwarding grammar alone. Each coordinated repair keeps its own shared family, not multiple independent issues."
+    },
+    {
+      "category_id": "CORR-METADATA-NORMALIZATION",
+      "name": "Metadata representation is not normalized for its consumer",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "Parsed metadata of an accepted but unexpected type/empty representation is passed to a consumer requiring a normalized form; source traces establish the incompatible operation and intended fallback/coercion.",
+      "exclude": "General text-encoding defects, speculative schema validation gaps, or a claim that a narrow conversion validates all metadata.",
+      "training_seed": "HaPy-Bug:bugs-in-py_ansible-6:0:lib/ansible/galaxy/collection.py:CollectionRequirement.from_path",
+      "notes": "Numeric manifest versions reach string split through constructor/add_requirement; empty version fallback is limited to the documented resolver case."
+    },
+    {
+      "category_id": "SEC-CSRF-CREDENTIAL-SOURCE",
+      "name": "CSRF validation bypass through inconsistent credential-source selection",
+      "domain": "security",
+      "include": "A caller decides whether CSRF validation is required using different missing/empty credential semantics from a helper that falls back to ambient cookies, enabling a cookie-authenticated operation without its required CSRF check.",
+      "exclude": "Token error-code changes without evidence they bypass CSRF, or treating every falsey/defaulting expression as a CSRF defect.",
+      "training_seed": "CVEfixes:127733048439986:116675720247251",
+      "notes": "Requires cross-function source/guard reasoning; the cookie fallback function alone does not show the missing CSRF check."
+    },
+    {
+      "category_id": "CORR-INCOMPLETE-CASE-HANDLING",
+      "name": "A supported input or platform case is omitted",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A branch restricts processing to an incomplete set of documented/supported cases, causing a valid alternative to be misclassified or skipped; source/fix evidence establishes that alternative.",
+      "exclude": "Unsupported-platform feature additions or an assumed missing case without a demonstrated existing behaviour requirement.",
+      "training_seed": "HaPy-Bug:bugs-in-py_ansible-3:0:lib/ansible/module_utils/facts/system/distribution.py:DistributionFiles.parse_distribution_file_Debian",
+      "notes": "Kali identification from os-release as well as legacy lsb-release; this label does not establish correctness of every release-field parser."
+    },
+    {
+      "category_id": "SEC-SHELL-QUOTING",
+      "name": "Insufficient shell-specific escaping of untrusted command data",
+      "domain": "security",
+      "include": "Untrusted data enters shell command text without sufficient shell-specific quoting/escaping, either absent or using rules that fail to neutralize that shell's expansion/special-character semantics; platform, helper and command-use evidence must support the mechanism.",
+      "exclude": "Generic subprocess use, POSIX-only assumptions applied to Windows, or a claim that any general quoting helper guarantees all command contexts safe.",
+      "training_seed": "CVEfixes:1244687962110:150148805336597",
+      "notes": "Windows cmd percent expansion in q-format/--exec path; related incomplete fix CVE-2023-40581 needs root-cause-family review rather than automatic independent counting."
+    },
+    {
+      "category_id": "CORR-DUPLICATE-COUNTING",
+      "name": "Duplicate representations counted as distinct entities",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "Multiple fields/representations of one entity increment an aggregate that should count the entity once; supported data shape and fix establish the unit.",
+      "exclude": "Arbitrary arithmetic errors, intentional per-field counts, or incorrect architecture assumptions without source evidence.",
+      "training_seed": "HaPy-Bug:bugs-in-py_ansible-16:0:lib/ansible/module_utils/facts/hardware/linux.py:LinuxHardware.get_cpu_facts",
+      "notes": "POWER cpuinfo processor and cpu entries describe the same logical CPU; architecture absence remains a separate limitation."
+    },
+    {
+      "category_id": "SEC-DESERIALIZATION-ALLOWLIST",
+      "name": "Overbroad global/class resolution or object construction during deserialization",
+      "domain": "security",
+      "include": "Deserialization permits lower-trust input to resolve globals/classes or construct objects beyond the intended safe type/module/name allowlist; inspect resolver or loader policy, input provenance and version-dependent constructors.",
+      "exclude": "General authentication labels copied from metadata, arbitrary import usage outside deserialization, or claims that every class in a repaired allowlist is safe.",
+      "training_seed": "CVEfixes:120631548427910:278843542455116",
+      "notes": "Shinken removes a namespace-prefix bypass; pystemon switches main/included YAML to safe constructors but its lower-trust config boundary remains ambiguous. Neither repair proves universal deserialization safety; do not equate all FullLoader versions with unsafe legacy Loader."
+    },
+    {
+      "category_id": "CORR-STATE-TRANSITION",
+      "name": "Incorrect conditional or ordering of state-changing operations",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An operation required for a valid state transition is omitted or ordered incorrectly; expected transition semantics must be established beyond a changed conditional alone.",
+      "exclude": "Assuming a skipped branch omits an operation when another branch already emits it, or inferring device-state semantics solely from a small patch.",
+      "training_seed": "HaPy-Bug:bugs-in-py_ansible-15:0:lib/ansible/modules/network/eos/eos_eapi.py:map_obj_to_commands",
+      "notes": "Tentative seed: VRF branch already emits state commands; changed pre/post-VRF ordering needs device/protocol context."
+    },
+    {
+      "category_id": "SEC-AUTHENTICATION-FAIL-OPEN",
+      "name": "Authentication failure path grants credentials or success",
+      "domain": "security",
+      "include": "Failure or nonmatching branches of a required authentication-factor check reach a credential/success sink instead of rejection, supported by source/fix evidence.",
+      "exclude": "Resource authorization defects after valid authentication, merely absent rate limiting, or token issuance already gated by an external check not yet inspected.",
+      "training_seed": "CVEfixes:117926336683275:241445532745346",
+      "notes": "Do not equate MFA bypass after password validation with passwordless or arbitrary-account compromise."
+    },
+    {
+      "category_id": "CORR-URL-COMPOSITION",
+      "name": "Incorrect base/path composition for API navigation",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An API prefix is duplicated or a required path component lost when composing a continuation/resource URL; exact helper semantics and expected response shape support the failure.",
+      "exclude": "Automatic assumptions about urllib.urljoin, generic networking failures or SSRF without a demonstrated security boundary.",
+      "training_seed": "HaPy-Bug:bugs-in-py_ansible-14:0:lib/ansible/galaxy/api.py:GalaxyAPI.fetch_role_related",
+      "notes": "Source _urljoin is a string path join, not standard urllib URL resolution."
+    },
+    {
+      "category_id": "SEC-RESOURCE-AUTHORIZATION",
+      "name": "Missing resource-scoped authorization or credential binding",
+      "domain": "security",
+      "include": "A token, session or authenticated principal is accepted for a resource without the required resource/tenant binding or access check, with source/advisory support.",
+      "exclude": "Identity-format mismatches without an authorization boundary, merely absent authentication decorators, or access checks performed elsewhere but not yet inspected.",
+      "training_seed": "CVEfixes:117598388949513:82029386428256",
+      "notes": "Invitation validity is distinct from authorization to use it for the current request's organization."
+    },
+    {
+      "category_id": "CORR-DELIMITER-PARSING",
+      "name": "Ambiguous delimiter handling across input formats",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A separator used in one accepted input format is incorrectly applied to another, corrupting a valid value; fix distinguishes formats before splitting.",
+      "exclude": "Security URL-policy claims or malformed inputs unsupported by the documented accepted formats.",
+      "training_seed": "HaPy-Bug:bugs-in-py_ansible-13:0:lib/ansible/cli/galaxy.py:GalaxyCLI.execute_install",
+      "notes": "Colon in an HTTP(S) URL or existing file path must not be interpreted as the collection-version separator."
+    },
+    {
+      "category_id": "SEC-CONTEXT-ID-MISMATCH",
+      "name": "Inconsistent resource identity across security-relevant operations",
+      "domain": "security",
+      "include": "Redundant request/event resource identifiers can disagree while related validation or state-building operations use different identities; source/advisory connects the mismatch to a security consequence.",
+      "exclude": "Ordinary identifier refactoring, generic resource-exhaustion labels or unrelated CVE-level CWE tags without function-level evidence.",
+      "training_seed": "CVEfixes:11686217607665:112408625396745",
+      "notes": "Room identity consistency mechanism; reported federation DoS is conditional on the wider event-processing path, not a locally reproduced outcome."
+    },
+    {
+      "category_id": "CORR-TEXT-ENCODING",
+      "name": "Runtime-sensitive bytes/text encoding mismatch",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "Text containing supported non-ASCII characters is read, written or converted using incompatible runtime/encoding assumptions; the failure path and runtime must be established.",
+      "exclude": "An ordinary environment lookup assumed broken on modern Python solely because an old compatibility patch replaced it.",
+      "training_seed": "HaPy-Bug:bugs-in-py_ansible-12:0:lib/ansible/plugins/lookup/env.py:LookupModule.run",
+      "notes": "Tentative mechanism: seed commit describes UTF-8 failure, but selected function alone lacks runtime/compatibility-layer context."
+    },
+    {
+      "category_id": "CORR-NULL-BOUNDARY",
+      "name": "Missing None guard at a structure boundary",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "Dereference of a possibly absent neighbour/sentinel at a valid boundary; fix guards the absent value.",
+      "exclude": "General attribute typos, arbitrary exceptions, or security impact inferred solely from module purpose.",
+      "training_seed": "HaPy-Bug:bugs-in-py_ansible-10:0:lib/ansible/modules/system/pamd.py:PamdService.remove",
+      "notes": "Specific tail-removal mechanism only; not a claim that all boundary bugs in the function were fixed."
+    },
+    {
+      "category_id": "CORR-WHITESPACE-LOSS",
+      "name": "Loss of meaningful whitespace in literal text",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "Broad whitespace stripping changes literal user/configuration text whose boundary spaces must be preserved; source/fix intent supports that requirement.",
+      "exclude": "Whitespace-only style changes, intended normalisation, or unrelated parser changes in the same commit.",
+      "training_seed": "HaPy-Bug:bugs-in-py_ansible-11:0:lib/ansible/modules/network/ios/ios_banner.py:map_config_to_obj",
+      "notes": "Three affected functions share one banner fix family; after-code correctness beyond space preservation is unestablished."
+    },
+    {
+      "category_id": "SEC-OPEN-REDIRECT",
+      "name": "Unvalidated request-controlled redirect destination",
+      "domain": "security",
+      "include": "A request-controlled URL reaches a redirect without the required host/scheme restriction, supported by source/fix evidence.",
+      "exclude": "Fixed internal destinations, adequately validated destinations, or authentication/authorisation defects inferred from redirect code alone.",
+      "training_seed": "CVEfixes:10359193764684:159089906724155",
+      "notes": "Validate imported redirect/safety helper semantics; multiple functions or fixes for one CVE remain one provisional family."
+    },
+    {
+      "category_id": "SEC-HTML-ESCAPING",
+      "name": "Missing context-appropriate HTML escaping",
+      "domain": "security",
+      "include": "Untrusted data reaches an HTML rendering sink without required escaping; provenance of the data and sink behaviour must be supported, not inferred from a CVE alone.",
+      "exclude": "JSON or URL encoding treated as HTML escaping; sanitisation changes without evidence of untrusted input or HTML rendering.",
+      "training_seed": "CVEfixes:105128253049467:106084771301413",
+      "notes": "Tentative category from a training patch. This seed remains ambiguous: attacker control and downstream Problem rendering are not established."
+    },
+    {
+      "category_id": "SEC-UNTRUSTED-FILE-READ",
+      "name": "Untrusted input interpreted as a local file to read",
+      "domain": "security",
+      "include": "Input intended as data is accepted as a local file path and opened without the intended trust boundary; supporting evidence establishes untrusted reachability.",
+      "exclude": "Legitimate authorised file selection, arbitrary URL validation, or a disclosure/exfiltration claim without supporting evidence.",
+      "training_seed": "CVEfixes:100270733587701:2276167366811",
+      "notes": "Function exposes a read primitive; remote provenance of the argument requires caller/advisory context."
+    }
+  ]
+}

@@ -1,0 +1,384 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-044",
+  "review_date": "2026-10-27",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All four urllib3 training candidates/all statuses including null percent-encoding exclusion; four mechanical families.",
+  "selection_rule": {
+    "repository": "github.com/urllib3/urllib3",
+    "discovery_categories": [
+      null,
+      "SEC-REDIRECT-BODY-DISCLOSURE",
+      "SEC-REDIRECT-CREDENTIAL-STRIPPING",
+      "SEC-REGEX-BACKTRACKING"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Two missing-context, one residual paired-negative and one nonrepair exclusion. Header-casing repair is supported under matched Retry/origin/transport contracts, but same exact 2018 after still replays a private byte body on allowed cross-origin 303 GET transition; this is residual, not casing introduction. Later 2023 manager independently clears body and content headers, not an identical selected after-to-before chain. Percent pair adds helper rather than repairing CVE-described later findall/replace loop; resolved 1.25.7/1.25.8 show later loop-to-subn comparison and old Python3 tests already require bytes rejection. Greedy authority partition repair is separate; direct parser/initial-manager delivery is conditional and standard urljoin may reject the retained unmatched-bracket shape earlier in redirect paths. Four pins retain186 inert texts/eight exact peers/four resolved first parents/eight archive inventories and missing-path provenance. RFC7231/9110, named CPython runtime and historical version comparisons establish bounded semantics, not installed/all-version proofs or benchmarks. Four functions/four families are not adjudicated independent issues. Preserve all833 ledger events/statuses/categories/hashes/families, canonical bytes/splits,45 protected inputs and prior evidence. Approval remains pending; before-only numerical budget/ordinary-knowledge policy unfrozen; no retained program/payload/vulnerability-target request/upstream test executes.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:149319880724034:47804040618780",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Ordinary case-sensitive request mappings bypass configured unsafe-header removal on cross-origin redirects; after casing repair retains a separate 303-body failure.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate configured cross-origin sensitive-header stripping, 303 method/body transition, component encoding/percent-normalization cost and greedy authority splitting. Advisory provenance does not establish selected repair; an unsafe redirect response is not arbitrary control of caller credentials, and a malformed URL filtered by an earlier parser is not an admitted DoS path.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old Retry documents removing configured header names before the redirected request, defaults to Authorization, and PoolManager explicitly implements that cross-host duty. HTTP field-name case insensitivity is historical RFC7230 grammar, not new policy. Old exact dict.pop misses differently cased keys in admitted ordinary dictionaries; downstream transport emits their actual key/value. Matched is_same_host compares scheme/host/defaulted port, and response supplies a redirect Location. After lowercases configured policy and actual names together. Separately, both selected versions convert 303 to GET without clearing original body; RFC7231 already describes a retrieval at a non-equivalent resource, not replay of original action content.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old Retry default/configuration and after normalization, dict versus HTTPHeaderDict lookup, same-host/response semantics and recursive transport path. Function alone does not define its configured names or actual wire transmission; default-manager headers are copied, explicitly supplied mappings follow their own mutation path. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Regex/global expansion, Retry/header/response/transport helpers, protocol versions, callers/configuration, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only; never selectively inject them as detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "With permitted redirects/retry budget, caller-supplied reusable credential under a differently cased configured header can reach a different scheme/host/port selected by Location because lookup misses it. Actor needs control of redirect delivery/destination and an originally supplied secret; redirect=False, exhausted/disabled retries or an already case-insensitive mapping can block that shape. Source supports conditional credential disclosure, not a deployed victim or bypass of every application policy.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Matched after repairs configured-header casing only. Its same function still preserves kw body when 303 changes method to GET and recursively sends to another origin. Matched pool passes body into httplib.request; retained CPython3.6.6 forwards non-None bytes to send regardless of GET, so an ordinary replayable private byte body is not implicitly discarded by method selection. This is residual across this pair, not introduced by casing. The later retained 2023 pair independently repairs that transition; no selected-string equality, direct adjacency or claim about every intervening release. Because this known after behavior defeats a generally negative selected-function representation, defer paired-negative use while retaining mechanism-local casing support.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve supported casing repair but explicitly defer the selected after as a paired negative because its independently source-supported 303 transition retains original content. Runtime/Retry/header/origin helpers also exceed currently frozen detection context.",
+      "dependence_reason": "Four functions/four mechanical families are not four independently adjudicated issues. Two PoolManager.urlopen revisions overlap in source lineage but have distinct header-casing and method/body mechanisms; their selected strings/files are not an identical after-to-before chain. Two parse_url revisions concern a mislinked percent-normalization pair and a separate greedy subauthority regex, not one CPU issue by shared name/CVE source. Backports/aliases, public advisory references, merge metadata, repository identity and connected blocks remain dependence descriptors, not independent counts. Preserve canonical IDs and all discovery history.",
+      "open_questions": [
+        "Researcher confirm admitted caller/redirect/header/body types, retry/redirect/origin policy, actual lower-trust URL or response delivery, runtime/dependency and upstream filters, error/resource containment, and intended experimental representation. Resolve common before-only knowledge/context policy and issue identities; no installed/all-version or universally clean after certification.",
+        "Conditional source deductions, not reproduced outcomes. No retained HTTP/URL/header/body/redirect/regex/percent-normalizer/parser/transport/credential/dependency/runtime/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "kw['headers'].pop(header, None)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if header.lower() in retries.remove_headers_on_redirect:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTEXT.json",
+          "path": "src/urllib3/util/retry.py",
+          "ref": "a252e2549ff797fe13e688f05296fa496e0c469a",
+          "needle": "Sequence of headers to remove from the request"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTEXT.json",
+          "path": "src/urllib3/util/retry.py",
+          "ref": "a252e2549ff797fe13e688f05296fa496e0c469a",
+          "needle": "DEFAULT_REDIRECT_HEADERS_BLACKLIST = frozenset(['Authorization'])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTEXT.json",
+          "path": "src/urllib3/util/retry.py",
+          "ref": "adb358f8e06865406d1f05e581a16cbea2136fbc",
+          "needle": "h.lower() for h in remove_headers_on_redirect"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTEXT.json",
+          "path": "src/urllib3/connectionpool.py",
+          "ref": "a252e2549ff797fe13e688f05296fa496e0c469a",
+          "needle": "return (scheme, host, port) == (self.scheme, self.host, self.port)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTEXT.json",
+          "path": "src/urllib3/response.py",
+          "ref": "a252e2549ff797fe13e688f05296fa496e0c469a",
+          "needle": "return self.headers.get('location')"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "method = 'GET'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTEXT.json",
+          "path": "src/urllib3/connectionpool.py",
+          "ref": "adb358f8e06865406d1f05e581a16cbea2136fbc",
+          "needle": "body=body, headers=headers,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_RUNTIME.json",
+          "path": "Lib/http/client.py",
+          "ref": "v3.6.6",
+          "needle": "self.endheaders(body, encode_chunked=encode_chunked)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_RUNTIME.json",
+          "path": "Lib/http/client.py",
+          "ref": "v3.6.6",
+          "needle": "self.send(chunk)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTRACTS.json",
+          "path": "rfc7231.txt",
+          "ref": "RFC7231",
+          "needle": "a retrieval request targeting that URI"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return self.urlopen(method, redirect_location, **kw)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Both exact matched 2018 selected versions change 303 method to GET while retaining a replayable byte body in recursive kwargs. Same-ref connectionpool passes that body through to the HTTP transport, and named CPython3.6.6 sends it independently of GET. Under allowed cross-origin redirect/retry and private original content, destination receives that content despite the retrieval transition. This is a supported residual, not an introduced casing regression or an assertion that the 2018 after equals the 2023 before."
+    },
+    {
+      "pair_id": "CVEfixes:32334089898807:226939113103692",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "303 redirect switches method to GET but forwards original request body and content-specific headers.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate configured cross-origin sensitive-header stripping, 303 method/body transition, component encoding/percent-normalization cost and greedy authority splitting. Advisory provenance does not establish selected repair; an unsafe redirect response is not arbitrary control of caller credentials, and a malformed URL filtered by an earlier parser is not an admitted DoS path.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The pre-fix function explicitly invokes RFC7231 303 method semantics but carries unchanged body through its recursive call. RFC9110 predates this 2023 repair and describes changing to a retrieval request and removing content-specific fields when method changes. Matched pool/connection request path accepts body separately from method. Thus byte-backed private request content may be emitted to the redirected resource even after method changes. This is existing redirect behavior, not a newly admitted method/body combination merely because tests were added.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need same-ref PoolManager/pool body propagation, Retry budget, response Location/origin semantics and HTTPHeaderDict construction/discard behavior. The exact helper introduced alongside this call determines which fields are cleared and that original input mapping is copied rather than edited. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Regex/global expansion, Retry/header/response/transport helpers, protocol versions, callers/configuration, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only; never selectively inject them as detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "If an admitted request with private reusable bytes receives an allowed 303 to a lower-trust destination, old recursion resends those bytes under GET. Destination only needs to receive the redirected request, not read the initial origin response through a browser or possess a victim session. A bytes witness avoids assuming a consumed generator/file rewinds successfully. Blocked redirects, no private original body, exhausted budget and caller-level URL restrictions qualify delivery. This is conditional cross-origin content disclosure, not arbitrary all-method or all-redirect leakage.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After explicitly replaces body with None and constructs an HTTPHeaderDict copy, whose matched helper case-insensitively discards Content-Encoding/Language/Location/Type/Length, Digest and Last-Modified. This fixes the witnessed 303 body/content-header transition; original caller headers are not mutated by that constructor. Shared pool redirect repair is coordinated but selected manager has its own old recursive forwarding defect. Other statuses, caller-specified chunk framing, arbitrary sensitive-header policy, HEAD choice and all URL/transport behaviors are not globally certified. No independently supported introduced failure of an established old contract is assigned here.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Local old body-forwarding and matched repair are supported, but body/headers/Retry/response helper contracts are outside the bounded selected before text and common ordinary-knowledge policy remains unfrozen.",
+      "dependence_reason": "Four functions/four mechanical families are not four independently adjudicated issues. Two PoolManager.urlopen revisions overlap in source lineage but have distinct header-casing and method/body mechanisms; their selected strings/files are not an identical after-to-before chain. Two parse_url revisions concern a mislinked percent-normalization pair and a separate greedy subauthority regex, not one CPU issue by shared name/CVE source. Backports/aliases, public advisory references, merge metadata, repository identity and connected blocks remain dependence descriptors, not independent counts. Preserve canonical IDs and all discovery history.",
+      "open_questions": [
+        "Researcher confirm admitted caller/redirect/header/body types, retry/redirect/origin policy, actual lower-trust URL or response delivery, runtime/dependency and upstream filters, error/resource containment, and intended experimental representation. Resolve common before-only knowledge/context policy and issue identities; no installed/all-version or universally clean after certification.",
+        "Conditional source deductions, not reproduced outcomes. No retained HTTP/URL/header/body/redirect/regex/percent-normalizer/parser/transport/credential/dependency/runtime/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if response.status == 303:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "kw[\"body\"] = None"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return self.urlopen(method, redirect_location, **kw)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "HTTPHeaderDict(kw[\"headers\"])._prepare_for_method_change()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTEXT.json",
+          "path": "src/urllib3/_collections.py",
+          "ref": "4e98d57809dacab1cbe625fddeec1a290c478ea9",
+          "needle": "Remove content-specific header fields before changing the request"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTEXT.json",
+          "path": "src/urllib3/_collections.py",
+          "ref": "4e98d57809dacab1cbe625fddeec1a290c478ea9",
+          "needle": "self.discard(header)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTEXT.json",
+          "path": "src/urllib3/connectionpool.py",
+          "ref": "3c6e079d1395ae815484b4a8f0ed7657a4dc8d0f",
+          "needle": "                url,\n                body=body,\n                headers=headers,\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTRACTS.json",
+          "path": "rfc9110.txt",
+          "ref": "RFC9110",
+          "needle": "       15.4.4.  303 See Other\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-7212:0:src/urllib3/util/url.py:parse_url",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Selected revision introduces component-specific encoding helper, not the CVE-described repeated percent-replacement repair.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate configured cross-origin sensitive-header stripping, 303 method/body transition, component encoding/percent-normalization cost and greedy authority splitting. Advisory provenance does not establish selected repair; an unsafe redirect response is not arbitrary control of caller credentials, and a malformed URL filtered by an earlier parser is not an admitted DoS path.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Exact old parser calls vendored IRIReference.from_string, whose matched encode_component counts percent matches once and walks bytes; selected after calls a newly introduced _encode_invalid_chars that likewise counts once and walks bytes. Neither has the CVE-described per-match full-component replace loop. Public advisory references this commit but cannot overrule source chronology. Resolved 1.25.7 has that later findall/for/replace loop; resolved 1.25.8 instead normalizes via one PERCENT_RE.subn callback, not the advisory hypothetical dedup algorithm. Tags establish version comparisons, not the exact intervening causal commit or installed versions. No independently admitted ordinary old correctness/security positive is established for this selected released pair.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact vendored before IRI/normalizer and after helper, field allowlists and historical supported input/runtime behavior. Python3 bytes cannot become an invented regression solely from removal of decode: the pre-fix tests already explicitly expect TypeError for binary URLs, while Python2 byte acceptance is separately specified. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Regex/global expansion, Retry/header/response/transport helpers, protocol versions, callers/configuration, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only; never selectively inject them as detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The named CPU flaw belongs to a later repeated-normalization helper, absent from this selected pair. Component-specific encoding changes may have separate functional semantics, but source/CVE provenance does not establish their lower-trust consequence or an isolated old security repair. Preserve null category/exclusion rather than assign security by advisory association or certify all parsers safe.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No selected security-fix negative is established, because the claimed old quadratic-loop positive is absent. Introduction of the helper and a linked advisory do not constitute the later loop repair. Pre-fix Python3 bytes rejection is explicit, so that failure is not labeled a newly introduced supported-input regression. Do not replace or rewrite this canonical pair with later version sources; those remain inert comparison evidence.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "Preserve the complete null-category mislinked-fix exclusion: neither exact selected side contains the advisory-described quadratic loop, and the actual version comparison shows a later loop-to-subn repair. No canonical source substitution or automatic alternative correctness admission.",
+      "dependence_reason": "Four functions/four mechanical families are not four independently adjudicated issues. Two PoolManager.urlopen revisions overlap in source lineage but have distinct header-casing and method/body mechanisms; their selected strings/files are not an identical after-to-before chain. Two parse_url revisions concern a mislinked percent-normalization pair and a separate greedy subauthority regex, not one CPU issue by shared name/CVE source. Backports/aliases, public advisory references, merge metadata, repository identity and connected blocks remain dependence descriptors, not independent counts. Preserve canonical IDs and all discovery history.",
+      "open_questions": [
+        "Researcher confirm admitted caller/redirect/header/body types, retry/redirect/origin policy, actual lower-trust URL or response delivery, runtime/dependency and upstream filters, error/resource containment, and intended experimental representation. Resolve common before-only knowledge/context policy and issue identities; no installed/all-version or universally clean after certification.",
+        "Conditional source deductions, not reproduced outcomes. No retained HTTP/URL/header/body/redirect/regex/percent-normalizer/parser/transport/credential/dependency/runtime/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "iri_ref = rfc3986.IRIReference.from_string(url, encoding=\"utf-8\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "_encode_invalid_chars(split_iri['path'], PATH_CHARS)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTEXT.json",
+          "path": "src/urllib3/packages/rfc3986/iri.py",
+          "ref": "a0d2bfd6098fe996fca74b80cbe473236187157c",
+          "needle": "normalizers.encode_component(split_iri['path'], encoding)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTEXT.json",
+          "path": "src/urllib3/packages/rfc3986/normalizers.py",
+          "ref": "a0d2bfd6098fe996fca74b80cbe473236187157c",
+          "needle": "percent_encodings = len(PERCENT_MATCHER.findall("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "percent_encodings = len(normalizers.PERCENT_MATCHER.findall("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTRACTS.json",
+          "path": "src/urllib3/util/url.py",
+          "ref": "37ba61a8b8120cbd866d057eaa3936f4b140dee0",
+          "needle": "for enc in percent_encodings:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTRACTS.json",
+          "path": "src/urllib3/util/url.py",
+          "ref": "37ba61a8b8120cbd866d057eaa3936f4b140dee0",
+          "needle": "component = component.replace(enc, enc.upper())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTRACTS.json",
+          "path": "src/urllib3/util/url.py",
+          "ref": "2a57bc5758075a9248cc0d87f66a2ff678338478",
+          "needle": "component, percent_encodings = PERCENT_RE.subn("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTRACTS.json",
+          "path": "cves/2020/7xxx/CVE-2020-7212.json",
+          "ref": "retrieved-2026-10-27",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"The _encode_invalid_chars function in util/url.py in the urllib3 library 1.25.2 through 1.25.7 for Python allows a denial of service (CPU consumption) because of an inefficient algorithm. The percent_encodings array contains all matches of percent encodings. It is not deduplicated. For a URL of length N, the size of percent_encodings may be up to O(N). The next step (normalize existing percent-encoded bytes) also takes up to O(N) for each step, so the total time is O(N^2). If percent_encodings were deduplicated, the time to compute _encode_invalid_chars would be O(kN), where k is at most 484 ((10+6*2)^2).\"\n                }\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTEXT.json",
+          "path": "test/test_util.py",
+          "ref": "a0d2bfd6098fe996fca74b80cbe473236187157c",
+          "needle": "def test_parse_url_bytes_type_error_python_3(self):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-33503:0:src/urllib3/util/url.py:parse_url",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Greedy optional userinfo and permissive host repetition revisit many authority partitions before failure.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate configured cross-origin sensitive-header stripping, 303 method/body transition, component encoding/percent-normalization cost and greedy authority splitting. Advisory provenance does not establish selected repair; an unsafe redirect response is not arbitrary control of caller credentials, and a malformed URL filtered by an earlier parser is not an admitted DoS path.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Matched expanded SUBAUTHORITY_PAT has optional greedy (.*)@ followed by REG_NAME_PAT, whose repeated negated class itself admits @. For an authority with many candidate @ delimiters and invalid suffix, the backtracking engine can rescan long host suffixes at successive partitions before rejecting. Retained CPython3.9.5 repeat/backtracking implementation supplies a named-runtime comparison, not a measured timing claim. Old public parser promises parsing/LocationParseError semantics and production PoolManager calls it on the initial URL before connection construction; returning a prompt rejection of malformed lower-trust input should not require disproportionate repeated candidate scanning.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Before selected text names but does not expand SUBAUTHORITY_RE, URI_RE or host alternatives, nor define the regex engine. Need exact patterns/runtime, allowed input length and actual lower-trust caller/filter/resource model. These adjudication facts cannot be selectively supplied as before-only input. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Regex/global expansion, Retry/header/response/transport helpers, protocol versions, callers/configuration, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only; never selectively inject them as detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "If a service passes lower-trust URL strings directly into the public parser or matched initial PoolManager URL path without a prior length/syntax bound, malformed authorities can consume disproportionate CPU before any destination request is created. Actual service deployment/concurrency/caps remain conditional. The retained many-@ plus unmatched-bracket upstream test is only inert regression intent; CPython urljoin/urlsplit can reject that bracket first on a redirect path, so do not claim this exact shape reaches every redirect consumer. Direct old PoolManager parse happens before that redirect join. No SSRF destination acceptance or wall-clock DoS reproduction is claimed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After rpartition selects the final delimiter once and _HOST_PORT_RE contains only host/port alternatives, removing repeated userinfo/host repartition for the witnessed failing authorities. Malformed host/port still routes through caught AttributeError/ValueError to LocationParseError. Matched percent helper already uses single subn and is a different mechanism from the mislinked 2020 pair. This does not prove all regex/IDNA/normalization operations linear, all outputs byte-identical, all callers reachable or every parser/SSRF case safe; no independently established old-contract after regression is assigned.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Selected repair removes the supported repeated-partition cost mechanism under retained backtracking semantics, but pattern expansion/runtime and application input bounds/delivery exceed selected before text; preserve mechanism-local negative and context deferral.",
+      "dependence_reason": "Four functions/four mechanical families are not four independently adjudicated issues. Two PoolManager.urlopen revisions overlap in source lineage but have distinct header-casing and method/body mechanisms; their selected strings/files are not an identical after-to-before chain. Two parse_url revisions concern a mislinked percent-normalization pair and a separate greedy subauthority regex, not one CPU issue by shared name/CVE source. Backports/aliases, public advisory references, merge metadata, repository identity and connected blocks remain dependence descriptors, not independent counts. Preserve canonical IDs and all discovery history.",
+      "open_questions": [
+        "Researcher confirm admitted caller/redirect/header/body types, retry/redirect/origin policy, actual lower-trust URL or response delivery, runtime/dependency and upstream filters, error/resource containment, and intended experimental representation. Resolve common before-only knowledge/context policy and issue identities; no installed/all-version or universally clean after certification.",
+        "Conditional source deductions, not reproduced outcomes. No retained HTTP/URL/header/body/redirect/regex/percent-normalizer/parser/transport/credential/dependency/runtime/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "auth, host, port = SUBAUTHORITY_RE.match(authority).groups()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "auth, _, host_port = authority.rpartition(\"@\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "SUBAUTHORITY_PAT = (u\"^(?:(.*)@)?(%s|%s|%s)(?::([0-9]{0,5}))?$\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "REG_NAME_PAT = r\"(?:[^\\[\\]%:/?#]|%[a-fA-F0-9]{2})*\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "_HOST_PORT_PAT = (\"^(%s|%s|%s)(?::([0-9]{0,5}))?$\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_CONTEXT.json",
+          "path": "src/urllib3/poolmanager.py",
+          "ref": "2698537d52f8ff1f0bbb1d45cf018b118e91f637",
+          "needle": "        \"\"\"\n        u = parse_url(url)\n        return self.connection_from_host(\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_RUNTIME.json",
+          "path": "Modules/sre_lib.h",
+          "ref": "v3.9.5",
+          "needle": "case SRE_OP_MAX_UNTIL:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_RUNTIME.json",
+          "path": "Modules/sre_lib.h",
+          "ref": "v3.9.5",
+          "needle": "and backtrack from there"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_044_RUNTIME.json",
+          "path": "Lib/urllib/parse.py",
+          "ref": "v3.9.5",
+          "needle": "raise ValueError(\"Invalid IPv6 URL\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "component, percent_encodings = PERCENT_RE.subn("
+        }
+      ]
+    }
+  ]
+}

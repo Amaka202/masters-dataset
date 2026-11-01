@@ -1,0 +1,765 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-027",
+  "review_date": "2026-10-26",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All eight tlslite-ng training candidates across every discovery status, explicitly including all seven null-category rows in one mechanical family.",
+  "selection_rule": {
+    "repository": "github.com/tlsfuzzer/tlslite-ng",
+    "discovery_categories": [
+      "SEC-RSA-PADDING-ORACLE",
+      null
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 831,
+    "sha256": "9ca57ede950e4495ca81ef3c279a6ff7d312196473e270b47ad37fb68886c5c3"
+  },
+  "interpretation": "Four explicit paired-negative deferrals, three existing-contract deferrals and one nonrepair-exclusion proposal. Preserve the old TLS premaster randomization path and distinguish conditional secret-dependent timing from a plaintext network error oracle or demonstrated exploit. After regressions affect valid shorter PSS encodings in sign/verify, explicit native signature width in PKCS1 verification, and d state on freshly generated OpenSSL private keys. These are shared integration mechanisms, not independent issue counts. Withdraw four blanket nonrepair discovery exclusions: the public/private PEM backend promise conflicts, PSS public representative range gains a distinct old-standard guard, and signing/encryption byte adapters change oversized-input admission whose exact old raw API duty remains unresolved. Append four ambiguous revision2 events with null categories unchanged; preserve the entire827-event prefix, original selected hashes/families/source bytes/splits, prior batches and45 protected inputs. Eight rows/one family are not independent issues. All TLS/network/crypto/key/backend/parser/PRF/hash/PEM/ASN1/dependency/application programs, timing experiments and upstream tests remain inert; findings are source deductions, not reproduced results.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-26263:0:tlslite/utils/keyfactory.py:_parseKeyHelper",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Private-key factory preserves native keys after the new OpenSSL parser exports d.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Private decryption secret-padding observability is distinct from public signature representative/length validation, PSS encoded-message width, private-key backend state and public/private PEM format admission. Do not call public verification an RSA decryption oracle or turn standards/API-contract uncertainty into a forced existing leaf. Preserve all seven null discovery categories. Source/API familiarity policy and final security/correctness placement remain pending.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Old _parseKeyHelper first rejects a missing private component when private=True, then public=True produces a public-only key. Both priorities remain. Before, OpenSSL_RSAKey.__getattr__ exposes only n/e, so hasattr(d) isFalse and its already usable native private key is returned. After OpenSSL.parse additionally attaches d for the new rejection PRF but not p/q/dP/dQ/qInv; blindly taking the old d-based conversion branch on that newly changed producer would fail. The new m2cryptoLoaded/type branch preserves the native object instead. That is matched after integration, not a demonstrated old conversion bug. Pure-Python parsing still yields an exact Python_RSAKey eligible for the same private conversion.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old versus new OpenSSL parser/__getattr__, factory conversion fields and exact parsePEMKey producers. Do not combine the new d-bearing native object with the old helper to manufacture a preexisting failure; hypothetical arbitrary key subclasses are not a retained caller. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Old callers/helpers/backend/standard contracts, after, fixtures, metadata, advisories, labels and answers remain adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "This local factory processes operator key material and backend selection, not client ciphertext or secret decoded padding. The public/private flags preserve their old private-admission/public-stripping order. No unauthorized key disclosure or local decryption-oracle repair is isolated.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No selected old-positive/new-negative oracle pair is established. After native preservation is appropriate for the new producer, but it does not initialize generated native keys for the new base decrypt PRF; that distinct after failure is retained on decrypt, not borrowed as another old factory defect.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The helper preserves its matched old private/public key admission while adapting to newly exported OpenSSL private-exponent state. No isolated old selected decryption-padding repair is established.",
+      "dependence_reason": "Preserve fix-family:b2e9c637bb4c34391a63 and exact/AST/span/history links. All eight functions are one coordinated CVE/fix family, with shared base-class files, native/Python byte adapters, factory/parser changes and TLS consumers. Two PSS rows share one encoded-width integration defect; native signature-length loss and generated-key exponent state are other after mechanisms, not eight independently adjudicated issues. Seven null categories remain null; aliases/backports/root-cause independence and final representation stay pending.",
+      "open_questions": [
+        "Researcher confirm exact supported old PEM/backend/invalid-input/standard contracts, deployed interpreter/backend versions, real lower-trust TLS/API delivery and timing observability, selected attribution, bounded after-negative and final category/issue identity. No actual deployment or exploit is asserted.",
+        "All findings are source deductions, not reproduced results. No TLS/network/RSA/PSS/signature/padding/crypto/hash/HMAC/PRF/key-generation/PEM/ASN1/parser/regex/OpenSSL/M2Crypto/PyCrypto/backend/compiler/interpreter/dependency/application program, payload, timing experiment or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if hasattr(key, \"d\"):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "assert type(key) in (OpenSSL_RSAKey, ), type(key)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if public:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if private and not key.hasPrivateKey():"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "key.q, key.dP,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/openssl_rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "if name == 'e':"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/openssl_rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "elif name == 'n':"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/openssl_rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368",
+          "needle": "key.d = py_key.d"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/openssl_rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368",
+          "needle": "            key._hasPrivateKey = True\n            return key\n        generate = staticmethod(generate)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/python_key.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368",
+          "needle": "return Python_RSAKey(n, e, d, p, q, dP, dQ, qInv)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-26263:0:tlslite/utils/python_rsakey.py:Python_RSAKey.parsePEM",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Private PEM parser delegation also admits SPKI public PEM, whose old per-backend support promise is inconsistent.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Private decryption secret-padding observability is distinct from public signature representative/length validation, PSS encoded-message width, private-key backend state and public/private PEM format admission. Do not call public verification an RSA decryption oracle or turn standards/API-contract uncertainty into a forced existing leaf. Preserve all seven null discovery categories. Source/API familiarity policy and final security/correctness placement remain pending.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old Python_RSAKey.parsePEM and parseAsPublicKey docs explicitly describe private PEM input; returning a public projection of a private key is already supported. Conversely the exact old parsePEMKey parameter docs promise a PEM-encoded public or private key, and its OpenSSL backend accepts PUBLIC KEY while its Python backend does not. After delegates to Python_Key, which adds a PUBLIC KEY/SPKI n/e parser while preserving the old PKCS8/SSLeay private dispatch. Whether this closes a previously required Python-backend public-input hole or expands a private-only parser contract must be reconciled from these competing old APIs; it is not settled by the broad security advisory. The old parsePEM was already made static via a following parsePEM=staticmethod(parsePEM) rebinding, so the decorator itself is not an old binding repair.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old factory format/backend docs, parseAsPublicKey distinction, static rebinding and the new generic parser. A changed method name/delegation and newly supported public format alone do not prove a prior private-parser defect or a new feature across every caller. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Old callers/helpers/backend/standard contracts, after, fixtures, metadata, advisories, labels and answers remain adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Operator PEM admission and public projection are not the client-ciphertext secret-padding sink. No selected padding-oracle repair or unauthorized private-key exposure is established. Separate a possible old general public-format compatibility duty from the CVE mechanism.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Private PKCS8/SSLeay behavior is moved to the corresponding generic parser routines, while public SPKI admission is additional. No isolated old-positive/new-negative padding pair is certified; format/backend support and final classification remain pending. No PEM/ASN1 parser, callback or key material is executed.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "A new format/encoded-width admission behavior may address an old general API requirement, but exact old backend-specific format or invalid-input duty is unresolved. Withdraw blanket nonrepair exclusion without assigning a padding-oracle leaf.",
+      "dependence_reason": "Preserve fix-family:b2e9c637bb4c34391a63 and exact/AST/span/history links. All eight functions are one coordinated CVE/fix family, with shared base-class files, native/Python byte adapters, factory/parser changes and TLS consumers. Two PSS rows share one encoded-width integration defect; native signature-length loss and generated-key exponent state are other after mechanisms, not eight independently adjudicated issues. Seven null categories remain null; aliases/backports/root-cause independence and final representation stay pending.",
+      "open_questions": [
+        "Researcher confirm exact supported old PEM/backend/invalid-input/standard contracts, deployed interpreter/backend versions, real lower-trust TLS/API delivery and timing observability, selected attribution, bounded after-negative and final category/issue identity. No actual deployment or exploit is asserted.",
+        "All findings are source deductions, not reproduced results. No TLS/network/RSA/PSS/signature/padding/crypto/hash/HMAC/PRF/key-generation/PEM/ASN1/parser/regex/OpenSSL/M2Crypto/PyCrypto/backend/compiler/interpreter/dependency/application program, payload, timing experiment or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "raise SyntaxError(\"Not a PEM private key file\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return Python_Key.parsePEM(s, passwordCallback)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "parsePEM = staticmethod(parsePEM)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_PEERS.json",
+          "path": "tlslite/utils/keyfactory.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "\n    :type s: str\n    :param s: A string containing a PEM-encoded public or private key.\n\n    :type private: bool\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_PEERS.json",
+          "path": "tlslite/utils/keyfactory.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "Parse a PEM-formatted public key."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/openssl_rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "elif s.startswith(\"-----BEGIN PUBLIC KEY-----\"):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/python_key.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368",
+          "needle": "elif pemSniff(s, \"PUBLIC KEY\"):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/python_key.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368",
+          "needle": "return Python_RSAKey(n, e)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/python_key.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368",
+          "needle": "return Python_Key._parse_ssleay(bytes)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-26263:0:tlslite/utils/rsakey.py:RSAKey.RSASSA_PSS_sign",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "PSS signing byte-adapter migration wrongly equates encoded-message width with RSA signature width.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Private decryption secret-padding observability is distinct from public signature representative/length validation, PSS encoded-message width, private-key backend state and public/private PEM format admission. Do not call public verification an RSA decryption oracle or turn standards/API-contract uncertainty into a forced existing leaf. Preserve all seven null discovery categories. Source/API familiarity policy and final security/correctness placement remain pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old EMSA-PSS explicitly encodes to ceil((modBits-1)/8), then RSASSA_PSS_sign accepts its integer m<n and returns a modulus-width signature. RFC8017 predates this fix and explicitly distinguishes emLen=k-1 when modBits-1 is divisible by8. Python_RSAKey initialization/PEM parsing admit valid non-byte-aligned moduli. For ordinary full-width EM the selected private operation/serialization is coordinated refactoring; it is not a private decryption-padding oracle repair. Valid shorter PSS EM must still be signable.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need EMSA_PSS_encode, numBytes/divceil, Python private-key admission and byte-helper width guard, plus normative PSS emLen-versus-k conversion. An actual loaded native backend is not assumed for the Python witness. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Old callers/helpers/backend/standard contracts, after, fixtures, metadata, advisories, labels and answers remain adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Signing known encoded/hash input does not inspect attacker ciphertext for secret type2 decryption padding. No old selected RSA-padding oracle or new unauthorized-signing capability follows from this adapter change. The evidenced after issue is supported PSS correctness/availability, not a demonstrated authentication bypass.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "For an admitted valid RSA modulus of bit length8b+1 (e.g.1025 bits), the existing EMSA_PSS_encode call uses emBits=modBits-1 and returns emLen=k-1 (128 bytes when k=129). Old signing converts that integer, checks m<n and serializes the resulting signature to k bytes, consistent with RFC8017. The new Python base _raw_private_key_op_bytes insists that its input already have lengthk, raises ValueError on the valid k-1 encoding, and the selected sign maps it to MessageTooLongError. Imported/constructed Python_RSAKey keys have no byte-aligned-modulus restriction; do not rely on the separate generate(bits) routine for this input. This introduces a supported PSS signing regression on a previously valid domain. The historical native no-padding comparison also requires full input width, but no OpenSSL failure or key/signature is executed.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Matched old PSS/verification/decryption duties are established, but after violates an existing encoded-width, signature-length or generated-key-state contract. Explicitly defer paired-negative use; prior local padding-oracle repair attribution is assessed separately from these after failures.",
+      "dependence_reason": "Preserve fix-family:b2e9c637bb4c34391a63 and exact/AST/span/history links. All eight functions are one coordinated CVE/fix family, with shared base-class files, native/Python byte adapters, factory/parser changes and TLS consumers. Two PSS rows share one encoded-width integration defect; native signature-length loss and generated-key exponent state are other after mechanisms, not eight independently adjudicated issues. Seven null categories remain null; aliases/backports/root-cause independence and final representation stay pending.",
+      "open_questions": [
+        "Researcher confirm exact supported old PEM/backend/invalid-input/standard contracts, deployed interpreter/backend versions, real lower-trust TLS/API delivery and timing observability, selected attribution, bounded after-negative and final category/issue identity. No actual deployment or exploit is asserted.",
+        "All findings are source deductions, not reproduced results. No TLS/network/RSA/PSS/signature/padding/crypto/hash/HMAC/PRF/key-generation/PEM/ASN1/parser/regex/OpenSSL/M2Crypto/PyCrypto/backend/compiler/interpreter/dependency/application program, payload, timing experiment or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "S = numberToByteArray(s, numBytes(self.n))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "ret = self._raw_private_key_op_bytes(EM)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "EM = self.EMSA_PSS_encode(mHash, numBits(self.n) - 1, hAlg, sLen)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if len(message) != numBytes(n):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "raise MessageTooLongError(\"Encode output too long\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        :param sLen: length of salt\"\"\"\n        hashLen = getattr(hashlib, hAlg)().digest_size\n        emLen = divceil(emBits, 8)\n        if emLen < hashLen + sLen + 2:\n            raise EncodingError(\"The ending limit too short for \" +\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_PEERS.json",
+          "path": "tlslite/utils/python_rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "self.n = n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_PEERS.json",
+          "path": "tlslite/utils/python_rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "n = bytesToNumber(privateKeyP.getChild(1).value)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/cryptomath.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "return (bits + 7) // 8"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_CONTRACTS.json",
+          "path": "rfc8017.txt",
+          "ref": "RFC8017",
+          "needle": "Note that the octet length of EM will be one less than k if"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_CONTRACTS.json",
+          "path": "rfc8017.txt",
+          "ref": "RFC8017",
+          "needle": "\n          c.  Convert the signature representative s to a signature S of\n              length k octets (see Section 4.1):\n\n                 S = I2OSP (s, k).\n\n      3.  Output the signature S.\n\n8.1.2.  Signature Verification Operation\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_BACKEND.json",
+          "path": "crypto/rsa/rsa_none.c",
+          "ref": "OpenSSL_1_1_0l",
+          "needle": "if (flen < tlen)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "For an admitted valid RSA modulus of bit length8b+1 (e.g.1025 bits), the existing EMSA_PSS_encode call uses emBits=modBits-1 and returns emLen=k-1 (128 bytes when k=129). Old signing converts that integer, checks m<n and serializes the resulting signature to k bytes, consistent with RFC8017. The new Python base _raw_private_key_op_bytes insists that its input already have lengthk, raises ValueError on the valid k-1 encoding, and the selected sign maps it to MessageTooLongError. Imported/constructed Python_RSAKey keys have no byte-aligned-modulus restriction; do not rely on the separate generate(bits) routine for this input. This introduces a supported PSS signing regression on a previously valid domain. The historical native no-padding comparison also requires full input width, but no OpenSSL failure or key/signature is executed."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-26263:0:tlslite/utils/rsakey.py:RSAKey.RSASSA_PSS_verify",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "PSS verification adds public representative-range rejection but loses the shorter EMSA encoding width.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Private decryption secret-padding observability is distinct from public signature representative/length validation, PSS encoded-message width, private-key backend state and public/private PEM format admission. Do not call public verification an RSA decryption oracle or turn standards/API-contract uncertainty into a forced existing leaf. Preserve all seven null discovery categories. Source/API familiarity policy and final security/correctness placement remain pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old Python_RSAKey._rawPublicKeyOp reduces its argument modulo n and this selected verifier checks only signature byte length, not s<n. Under the explicit condition that a valid signature representative s has s+n<256**k, a k-byte representation of s+n follows the same old modular exponentiation and verification as s. RFC8017 RSAVP1 requires out-of-range rejection. The new base public-byte adapter adds that range guard, so blanket old nonrepair exclusion misses a distinct public-verification admission change; its security/correctness leaf remains unresolved, not borrowed from decryption. Separately the old selected verifier already uses the correct shorter PSS emLen for modBits=8b+1, which the new adapter loses.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need public backend modular semantics, exact signature length/range admission, PSS decoder and numBytes/divceil contracts. Preserve the s+n fits-k-bytes condition and do not claim it for every key/signature or execute an equivalent-signature witness. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Old callers/helpers/backend/standard contracts, after, fixtures, metadata, advisories, labels and answers remain adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Public representative canonicality differs from a secret decryption-padding oracle. Accepting an equivalent out-of-range signature is not automatically signature forgery, a new-message signature or authorization bypass; its downstream security significance needs an actual consumer. The witnessed standard/admission and after-width obligations are distinct from the advisory-wide RSA decrypt finding.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "For the same valid modBits=8b+1 domain, old verification serializes the recovered representative to emLen=ceil((modBits-1)/8)=k-1. After the shared public byte helper serializes it to k bytes instead, retaining a leading zero and shifting the maskedDB/H fields consumed by unchanged EMSA_PSS_verify. At1025 bits this is129 bytes supplied where the normative and old EM is128; the signature itself correctly remains129 bytes. This is an introduced encoded-message conversion contract regression, shared with the signing adapter mismatch, not a new valid-signature test invented after the change. No concrete hash/signature result or rejection of every possible shifted encoding is claimed; the source-width/field misalignment invalidates unqualified negative eligibility. No key, signature, hash or verification program is executed.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Matched old PSS/verification/decryption duties are established, but after violates an existing encoded-width, signature-length or generated-key-state contract. Explicitly defer paired-negative use; prior local padding-oracle repair attribution is assessed separately from these after failures.",
+      "dependence_reason": "Preserve fix-family:b2e9c637bb4c34391a63 and exact/AST/span/history links. All eight functions are one coordinated CVE/fix family, with shared base-class files, native/Python byte adapters, factory/parser changes and TLS consumers. Two PSS rows share one encoded-width integration defect; native signature-length loss and generated-key exponent state are other after mechanisms, not eight independently adjudicated issues. Seven null categories remain null; aliases/backports/root-cause independence and final representation stay pending.",
+      "open_questions": [
+        "Researcher confirm exact supported old PEM/backend/invalid-input/standard contracts, deployed interpreter/backend versions, real lower-trust TLS/API delivery and timing observability, selected attribution, bounded after-negative and final category/issue identity. No actual deployment or exploit is asserted.",
+        "All findings are source deductions, not reproduced results. No TLS/network/RSA/PSS/signature/padding/crypto/hash/HMAC/PRF/key-generation/PEM/ASN1/parser/regex/OpenSSL/M2Crypto/PyCrypto/backend/compiler/interpreter/dependency/application program, payload, timing experiment or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "EM = numberToByteArray(m, divceil(numBits(self.n) - 1, 8))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "EM = self._raw_public_key_op_bytes(S)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if len(bytearray(S)) != len(numberToByteArray(self.n)):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if c_int >= n:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return numberToByteArray(enc_int, numBytes(n))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "maskedDB = EM[0:emLen - hashLen - 1]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "H = EM[emLen - hashLen - 1:emLen - hashLen - 1 + hashLen]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_PEERS.json",
+          "path": "tlslite/utils/python_rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "m = powMod(c, self.e, self.n)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_CONTRACTS.json",
+          "path": "rfc8017.txt",
+          "ref": "RFC8017",
+          "needle": "If the signature representative s is not between 0 and n - 1,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_CONTRACTS.json",
+          "path": "rfc8017.txt",
+          "ref": "RFC8017",
+          "needle": "EM = I2OSP (m, emLen)."
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "For the same valid modBits=8b+1 domain, old verification serializes the recovered representative to emLen=ceil((modBits-1)/8)=k-1. After the shared public byte helper serializes it to k bytes instead, retaining a leading zero and shifting the maskedDB/H fields consumed by unchanged EMSA_PSS_verify. At1025 bits this is129 bytes supplied where the normative and old EM is128; the signature itself correctly remains129 bytes. This is an introduced encoded-message conversion contract regression, shared with the signing adapter mismatch, not a new valid-signature test invented after the change. No concrete hash/signature result or rejection of every possible shifted encoding is claimed; the source-width/field misalignment invalidates unqualified negative eligibility. No key, signature, hash or verification program is executed."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-26263:0:tlslite/utils/rsakey.py:RSAKey._raw_pkcs1_sign",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Type1 signing gains exact padded-block width checking; old invalid-input obligation needs explicit scope.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Private decryption secret-padding observability is distinct from public signature representative/length validation, PSS encoded-message width, private-key backend state and public/private PEM format admission. Do not call public verification an RSA decryption oracle or turn standards/API-contract uncertainty into a forced existing leaf. Preserve all seven null discovery categories. Source/API familiarity policy and final security/correctness placement remain pending.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "For an ordinary full-byte-width modulus of k octets and raw input lengthk-2, _addPKCS1Padding computes a negative padding length and returns 00||blockType||00||input of lengthk+1. Its leading zero keeps the numeric representative below an ordinary full-width modulus, so the old m>=n guard alone need not reject this oversized encoding; the new base byte adapter rejects len!=k. Thus this is not globally equivalent plumbing on every input. RFC8017 imposes at least8 padding octets and corresponding message/digest bounds, but whether this raw API promises strict invalid-input rejection or requires caller prevalidation must be established for its exact supported API domain; hashAlg=None raw signing and generic encryption are not interchangeable with arbitrary high-level message hashing. Preserve that old-contract question instead of a blanket nonrepair claim or forced padding-oracle category.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need raw helper call path, _addPKCS1Padding negative/short pad handling, public sign/encrypt documentation, backend width-versus-integer guards and standards. Do not use a new byte guard or newly added fixture as the sole proof of old invalid-input duty. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Old callers/helpers/backend/standard contracts, after, fixtures, metadata, advisories, labels and answers remain adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "These paths create padding and apply private signing/public encryption; they do not expose secret type2 decrypted-padding validity. No old selected padding oracle or concrete security delivery follows. A different invalid-input format/canonicality defect would need its own supported API and downstream boundary.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "On the documented valid padding domain, old and new perform the same integer operation and fixed-width serialization. On oversized/short-padding domains they are not uniformly equivalent, and len==k alone is not a minimum8-padding guarantee. Since the exact old raw invalid-input requirement remains unresolved here, neither a universal repair nor a universal after-format failure is certified. No padding/randomness/hash/RSA operation executes.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "A new format/encoded-width admission behavior may address an old general API requirement, but exact old backend-specific format or invalid-input duty is unresolved. Withdraw blanket nonrepair exclusion without assigning a padding-oracle leaf.",
+      "dependence_reason": "Preserve fix-family:b2e9c637bb4c34391a63 and exact/AST/span/history links. All eight functions are one coordinated CVE/fix family, with shared base-class files, native/Python byte adapters, factory/parser changes and TLS consumers. Two PSS rows share one encoded-width integration defect; native signature-length loss and generated-key exponent state are other after mechanisms, not eight independently adjudicated issues. Seven null categories remain null; aliases/backports/root-cause independence and final representation stay pending.",
+      "open_questions": [
+        "Researcher confirm exact supported old PEM/backend/invalid-input/standard contracts, deployed interpreter/backend versions, real lower-trust TLS/API delivery and timing observability, selected attribution, bounded after-negative and final category/issue identity. No actual deployment or exploit is asserted.",
+        "All findings are source deductions, not reproduced results. No TLS/network/RSA/PSS/signature/padding/crypto/hash/HMAC/PRF/key-generation/PEM/ASN1/parser/regex/OpenSSL/M2Crypto/PyCrypto/backend/compiler/interpreter/dependency/application program, payload, timing experiment or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "c = self._rawPrivateKeyOp(m)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return self._raw_private_key_op_bytes(paddedBytes)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            raise AssertionError()\n        paddedBytes = self._addPKCS1Padding(bytes, 1)\n        m = bytesToNumber(paddedBytes)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if len(message) != numBytes(n):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "padLength = (numBytes(self.n) - (len(bytes)+3))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "padding = bytearray([0,blockType] + pad + [0])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_PEERS.json",
+          "path": "tlslite/utils/rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "sigBytes = self._raw_pkcs1_sign(bytes)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_CONTRACTS.json",
+          "path": "rfc8017.txt",
+          "ref": "RFC8017",
+          "needle": "The length of PS will be at least eight octets."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_CONTRACTS.json",
+          "path": "rfc8017.txt",
+          "ref": "RFC8017",
+          "needle": "If emLen < tLen + 11,"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-26263:0:tlslite/utils/rsakey.py:RSAKey._raw_pkcs1_verify",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "PKCS1 verification byte-adapter migration loses its explicit signature-width gate on the native override.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Private decryption secret-padding observability is distinct from public signature representative/length validation, PSS encoded-message width, private-key backend state and public/private PEM format admission. Do not call public verification an RSA decryption oracle or turn standards/API-contract uncertainty into a forced existing leaf. Preserve all seven null discovery categories. Source/API familiarity policy and final security/correctness placement remain pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old verifier explicitly checks signature lengthk and representative<n before a public operation, then compares the recovered encoding. Python base adapter preserves these checks. But the same-version native override bypasses them in Python and delegates to M2Crypto/OpenSSL; historical native public decrypt intentionally allows leading-zero-shortened inputs. Fixed-width admission is an existing selected contract, not inferred solely from RFC or new tests. Ordinary equal-length canonical verification is refactored, not a secret private-decryption oracle repair.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual polymorphic helper dispatch, old explicit length guard, exact native wrapper and historical OpenSSL no-padding input/output widths. Keep Python/base versus native overrides separate; a helper name does not imply that every override preserves its contract. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Old callers/helpers/backend/standard contracts, after, fixtures, metadata, advisories, labels and answers remain adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Signature length is public. A new shorter equivalent encoding can affect strict signature canonicality, but no ability to sign a new message, authenticate without a valid signature or learn secret decrypted padding is established. Native version and a suitable leading-zero valid signature are prerequisites; no deployed backend or exploit is asserted.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Before _raw_pkcs1_verify explicitly rejects every signature whose byte length differs from numBytes(n), irrespective of backend. After delegates that check to _raw_public_key_op_bytes. Its Python base enforces equality, but OpenSSL_RSAKey overrides it with direct M2Crypto rsa_public_decrypt(no_padding), without the Python check. In retained M2Crypto0.27.0 plus OpenSSL1.1.0l comparison, native public decrypt intentionally permits shorter inputs (its comment mentions chopped leading zeros), checks only flen>num and s>=n, exponentiates the same integer and returns a modulus-width buffer. Given a valid fixed-width signature beginning with zero, removing that zero therefore produces the same checkBytes and the after verifier accepts it; before rejected it immediately. This is an introduced loss of the explicit fixed-width signature contract, conditional on that valid leading-zero signature and a compatible native backend. It is not a new-message forgery, secret-padding oracle, all-backend failure or deployed-version proof. No signature/backend operation executes.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Matched old PSS/verification/decryption duties are established, but after violates an existing encoded-width, signature-length or generated-key-state contract. Explicitly defer paired-negative use; prior local padding-oracle repair attribution is assessed separately from these after failures.",
+      "dependence_reason": "Preserve fix-family:b2e9c637bb4c34391a63 and exact/AST/span/history links. All eight functions are one coordinated CVE/fix family, with shared base-class files, native/Python byte adapters, factory/parser changes and TLS consumers. Two PSS rows share one encoded-width integration defect; native signature-length loss and generated-key exponent state are other after mechanisms, not eight independently adjudicated issues. Seven null categories remain null; aliases/backports/root-cause independence and final representation stay pending.",
+      "open_questions": [
+        "Researcher confirm exact supported old PEM/backend/invalid-input/standard contracts, deployed interpreter/backend versions, real lower-trust TLS/API delivery and timing observability, selected attribution, bounded after-negative and final category/issue identity. No actual deployment or exploit is asserted.",
+        "All findings are source deductions, not reproduced results. No TLS/network/RSA/PSS/signature/padding/crypto/hash/HMAC/PRF/key-generation/PEM/ASN1/parser/regex/OpenSSL/M2Crypto/PyCrypto/backend/compiler/interpreter/dependency/application program, payload, timing experiment or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if len(sigBytes) != numBytes(self.n):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "checkBytes = self._raw_public_key_op_bytes(sigBytes)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        c = bytesToNumber(sigBytes)\n        if c >= self.n:\n            return False\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if len(ciphertext) != numBytes(n):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/openssl_rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368",
+          "needle": "return bytearray(m2.rsa_public_decrypt(self.rsa, bytes(ciphertext),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_CONTRACTS.json",
+          "path": "M2Crypto-0.27.0/SWIG/_rsa.i",
+          "ref": "0.27.0",
+          "needle": "PyObject *rsa_public_decrypt("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_BACKEND.json",
+          "path": "crypto/rsa/rsa_ossl.c",
+          "ref": "OpenSSL_1_1_0l",
+          "needle": "\n    /*\n     * This check was for equality but PGP does evil things and chops off the\n     * top '0' bytes\n     */\n    if (flen > num) {\n        RSAerr(RSA_F_RSA_OSSL_PRIVATE_DECRYPT,\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_BACKEND.json",
+          "path": "crypto/rsa/rsa_ossl.c",
+          "ref": "OpenSSL_1_1_0l",
+          "needle": "RSA_F_RSA_OSSL_PUBLIC_DECRYPT, RSA_R_DATA_GREATER_THAN_MOD_LEN"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_BACKEND.json",
+          "path": "crypto/rsa/rsa_ossl.c",
+          "ref": "OpenSSL_1_1_0l",
+          "needle": "    j = BN_bn2binpad(ret, buf, num);\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_BACKEND.json",
+          "path": "crypto/rsa/rsa_ossl.c",
+          "ref": "OpenSSL_1_1_0l",
+          "needle": "memcpy(to, buf, (r = i));"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Before _raw_pkcs1_verify explicitly rejects every signature whose byte length differs from numBytes(n), irrespective of backend. After delegates that check to _raw_public_key_op_bytes. Its Python base enforces equality, but OpenSSL_RSAKey overrides it with direct M2Crypto rsa_public_decrypt(no_padding), without the Python check. In retained M2Crypto0.27.0 plus OpenSSL1.1.0l comparison, native public decrypt intentionally permits shorter inputs (its comment mentions chopped leading zeros), checks only flen>num and s>=n, exponentiates the same integer and returns a modulus-width buffer. Given a valid fixed-width signature beginning with zero, removing that zero therefore produces the same checkBytes and the after verifier accepts it; before rejected it immediately. This is an introduced loss of the explicit fixed-width signature contract, conditional on that valid leading-zero signature and a compatible native backend. It is not a new-message forgery, secret-padding oracle, all-backend failure or deployed-version proof. No signature/backend operation executes."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-26263:0:tlslite/utils/rsakey.py:RSAKey.decrypt",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Private PKCS1 decryption branches on secret padding; implicit rejection adds a missing generated-native-key state dependency.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Private decryption secret-padding observability is distinct from public signature representative/length validation, PSS encoded-message width, private-key backend state and public/private PEM format admission. Do not call public verification an RSA decryption oracle or turn standards/API-contract uncertainty into a forced existing leaf. Preserve all seven null discovery categories. Source/API familiarity policy and final security/correctness placement remain pending.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old decrypt performs a private RSA operation then returns early for secret prefix failure and scans only until a secret separator. RFC5246 requires failure-indistinguishable processing; its old caller RSAKeyExchange already randomizes missing/wrong-length/version-mismatched premaster secrets, so do not equate this internal None with a plaintext network alert. The source still contains secret-dependent work, and matched TLSConnection selects RSAKeyExchange for negotiated certificate/RSA suites and passes client-controlled encrypted premaster data before CertificateVerify/Finished. After scans the whole decoded block and selects deterministic synthetic output for invalid secret padding, while returning None only on publicly invalid length/range in the base-helper contract. The source and full advisory explicitly warn that CPython is not side-channel secure; no constant-time certification follows.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need negotiated static-RSA cipher suite, TLS key exchange and downstream premaster/Finished path, actual private backend and interpreter/timing conditions, plus PRF/helpers and every key producer. End-to-end response/latency distinguishability is not established by counting internal return branches. Native generation versus PEM parse exposes a separate supported after-state failure. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Old callers/helpers/backend/standard contracts, after, fixtures, metadata, advisories, labels and answers remain adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A network client on an admitted static-RSA TLS handshake supplies encrypted premaster data processed using the server-held private key; direct RSA API users require their own response/timing exposure. This is a conditional lower-trust private-decryption path with secret-dependent work, not a reproduced remotely exploitable oracle, padding-specific alert or recovered key. Cipher negotiation, key/backend availability, any handshake admission/client-auth policy and measurable observation channel remain prerequisites. Old premaster randomization and after CPython warnings must be retained, not replaced by the advisory title.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After removes the explicit secret-padding None shape and full-buffer early exit only under its helper/state assumptions; synthetic plaintext is an intentional security interface change, not automatically a correctness regression from the old invalid-padding return doc. Neither constant time nor general oracle freedom is certified. Old generateRSAKey defaults to the available OpenSSL implementation and OpenSSL_RSAKey.generate returns a private native wrapper with _hasPrivateKey=True, n/e available via __getattr__, and no d attribute. The same generated key could use old inherited decrypt, which only needed its raw private operation. After base decrypt, following a successful raw operation for a public-valid ciphertext, derives _key_hash from self.d on the first ordinary call. The unchanged native generate method never attaches d, and __getattr__ raises AttributeError for it. Only the changed PEM parse method attaches d; it does not repair objects produced by generateRSAKey. Thus freshly generated native private keys encounter an introduced supported decrypt failure before implicit rejection or plaintext return. Bound the witness to successful key generation and raw operation with an ordinary compatible M2Crypto/OpenSSL backend; parsed native keys and Python keys have a different state contract. No key/ciphertext is generated or decrypted.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Matched old PSS/verification/decryption duties are established, but after violates an existing encoded-width, signature-length or generated-key-state contract. Explicitly defer paired-negative use; prior local padding-oracle repair attribution is assessed separately from these after failures.",
+      "dependence_reason": "Preserve fix-family:b2e9c637bb4c34391a63 and exact/AST/span/history links. All eight functions are one coordinated CVE/fix family, with shared base-class files, native/Python byte adapters, factory/parser changes and TLS consumers. Two PSS rows share one encoded-width integration defect; native signature-length loss and generated-key exponent state are other after mechanisms, not eight independently adjudicated issues. Seven null categories remain null; aliases/backports/root-cause independence and final representation stay pending.",
+      "open_questions": [
+        "Researcher confirm exact supported old PEM/backend/invalid-input/standard contracts, deployed interpreter/backend versions, real lower-trust TLS/API delivery and timing observability, selected attribution, bounded after-negative and final category/issue identity. No actual deployment or exploit is asserted.",
+        "All findings are source deductions, not reproduced results. No TLS/network/RSA/PSS/signature/padding/crypto/hash/HMAC/PRF/key-generation/PEM/ASN1/parser/regex/OpenSSL/M2Crypto/PyCrypto/backend/compiler/interpreter/dependency/application program, payload, timing experiment or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if decBytes[0] != 0 or decBytes[1] != 2:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._key_hash = secureHash(numberToByteArray(self.d, numBytes(n)),"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for x in range(1, len(decBytes)-1):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for pos, val in em_bytes:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "because of cPython implementation details IT IS NOT"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/keyexchange.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "premasterSecret = self.privateKey.decrypt("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/keyexchange.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "randomPreMasterSecret = getRandomBytes(48)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/tlsconnection.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "            keyExchange = RSAKeyExchange(cipherSuite, clientHello,\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/tlsconnection.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "keyExchange.processClientKeyExchange(clientKeyExchange)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_PEERS.json",
+          "path": "tlslite/utils/keyfactory.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "return OpenSSL_RSAKey.generate(bits)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/openssl_rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368",
+          "needle": "key.rsa = m2.rsa_generate_key(bits, 3, f)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/openssl_rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368",
+          "needle": "            key.rsa = m2.rsa_generate_key(bits, 3, f)\n            key._hasPrivateKey = True\n            return key\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/openssl_rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368",
+          "needle": "raise AttributeError"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027.json",
+          "path": "tlslite/utils/openssl_rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368",
+          "needle": "key.d = py_key.d"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_CONTRACTS.json",
+          "path": "rfc5246.txt",
+          "ref": "RFC5246",
+          "needle": "(through, e.g., timing, log files, or other channels.)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_CONTRACTS.json",
+          "path": "advisories/GHSA-wvcv-832q-fjg7",
+          "ref": "2024-11-13T23:01:34Z",
+          "needle": "the patches depend on Python processing the individual bytes"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_CONTRACTS.json",
+          "path": "M2Crypto-0.27.0/SWIG/_rsa.i",
+          "ref": "0.27.0",
+          "needle": "PyObject *rsa_generate_key("
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Old generateRSAKey defaults to the available OpenSSL implementation and OpenSSL_RSAKey.generate returns a private native wrapper with _hasPrivateKey=True, n/e available via __getattr__, and no d attribute. The same generated key could use old inherited decrypt, which only needed its raw private operation. After base decrypt, following a successful raw operation for a public-valid ciphertext, derives _key_hash from self.d on the first ordinary call. The unchanged native generate method never attaches d, and __getattr__ raises AttributeError for it. Only the changed PEM parse method attaches d; it does not repair objects produced by generateRSAKey. Thus freshly generated native private keys encounter an introduced supported decrypt failure before implicit rejection or plaintext return. Bound the witness to successful key generation and raw operation with an ordinary compatible M2Crypto/OpenSSL backend; parsed native keys and Python keys have a different state contract. No key/ciphertext is generated or decrypted.",
+      "additional_after_concerns": [
+        "Neither a no-branch-looking Python loop nor deterministic rejection is proof of a constant-time or oracle-free after program. The selected source and full advisory explicitly retain CPython side-channel limitations; actual interpreter/backend timing and downstream observability are not measured or certified."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2020-26263:0:tlslite/utils/rsakey.py:RSAKey.encrypt",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Type2 encryption gains exact padded-block width checking; old invalid-input obligation needs explicit scope.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Private decryption secret-padding observability is distinct from public signature representative/length validation, PSS encoded-message width, private-key backend state and public/private PEM format admission. Do not call public verification an RSA decryption oracle or turn standards/API-contract uncertainty into a forced existing leaf. Preserve all seven null discovery categories. Source/API familiarity policy and final security/correctness placement remain pending.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "For an ordinary full-byte-width modulus of k octets and raw input lengthk-2, _addPKCS1Padding computes a negative padding length and returns 00||blockType||00||input of lengthk+1. Its leading zero keeps the numeric representative below an ordinary full-width modulus, so the old m>=n guard alone need not reject this oversized encoding; the new base byte adapter rejects len!=k. Thus this is not globally equivalent plumbing on every input. RFC8017 imposes at least8 padding octets and corresponding message/digest bounds, but whether this raw API promises strict invalid-input rejection or requires caller prevalidation must be established for its exact supported API domain; hashAlg=None raw signing and generic encryption are not interchangeable with arbitrary high-level message hashing. Preserve that old-contract question instead of a blanket nonrepair claim or forced padding-oracle category.",
+      "selected_relevance": "conditional_runtime_repair",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need raw helper call path, _addPKCS1Padding negative/short pad handling, public sign/encrypt documentation, backend width-versus-integer guards and standards. Do not use a new byte guard or newly added fixture as the sole proof of old invalid-input duty. Common bounded before-only numerical context budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Old callers/helpers/backend/standard contracts, after, fixtures, metadata, advisories, labels and answers remain adjudication-only, never selectively injected detection inputs.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "These paths create padding and apply private signing/public encryption; they do not expose secret type2 decrypted-padding validity. No old selected padding oracle or concrete security delivery follows. A different invalid-input format/canonicality defect would need its own supported API and downstream boundary.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "On the documented valid padding domain, old and new perform the same integer operation and fixed-width serialization. On oversized/short-padding domains they are not uniformly equivalent, and len==k alone is not a minimum8-padding guarantee. Since the exact old raw invalid-input requirement remains unresolved here, neither a universal repair nor a universal after-format failure is certified. No padding/randomness/hash/RSA operation executes.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "A new format/encoded-width admission behavior may address an old general API requirement, but exact old backend-specific format or invalid-input duty is unresolved. Withdraw blanket nonrepair exclusion without assigning a padding-oracle leaf.",
+      "dependence_reason": "Preserve fix-family:b2e9c637bb4c34391a63 and exact/AST/span/history links. All eight functions are one coordinated CVE/fix family, with shared base-class files, native/Python byte adapters, factory/parser changes and TLS consumers. Two PSS rows share one encoded-width integration defect; native signature-length loss and generated-key exponent state are other after mechanisms, not eight independently adjudicated issues. Seven null categories remain null; aliases/backports/root-cause independence and final representation stay pending.",
+      "open_questions": [
+        "Researcher confirm exact supported old PEM/backend/invalid-input/standard contracts, deployed interpreter/backend versions, real lower-trust TLS/API delivery and timing observability, selected attribution, bounded after-negative and final category/issue identity. No actual deployment or exploit is asserted.",
+        "All findings are source deductions, not reproduced results. No TLS/network/RSA/PSS/signature/padding/crypto/hash/HMAC/PRF/key-generation/PEM/ASN1/parser/regex/OpenSSL/M2Crypto/PyCrypto/backend/compiler/interpreter/dependency/application program, payload, timing experiment or upstream test executes. Only independently authored retrieval/viewing/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "c = self._rawPublicKeyOp(m)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return self._raw_public_key_op_bytes(paddedBytes)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "paddedBytes = self._addPKCS1Padding(bytes, 2)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if len(ciphertext) != numBytes(n):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "padLength = (numBytes(self.n) - (len(bytes)+3))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "padding = bytearray([0,blockType] + pad + [0])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_PEERS.json",
+          "path": "tlslite/utils/rsakey.py",
+          "ref": "c28d6d387bba59d8bd5cb3ba15edc42edf54b368^",
+          "needle": "sigBytes = self._raw_pkcs1_sign(bytes)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_CONTRACTS.json",
+          "path": "rfc8017.txt",
+          "ref": "RFC8017",
+          "needle": "The length of PS will be at least eight octets."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_027_CONTRACTS.json",
+          "path": "rfc8017.txt",
+          "ref": "RFC8017",
+          "needle": "If emLen < tLen + 11,"
+        }
+      ]
+    }
+  ]
+}

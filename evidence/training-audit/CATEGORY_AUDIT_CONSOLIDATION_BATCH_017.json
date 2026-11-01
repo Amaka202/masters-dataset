@@ -1,0 +1,227 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-017",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "Re-review complete three-case Thefuck command-argument-rewrite leaf to correct Boolean -u grammar in one review; other two proposals revalidated unchanged.",
+  "selection_rule": {
+    "repository": "github.com/nvbn/thefuck",
+    "discovery_categories": [
+      "CORR-COMMAND-ARGUMENT-REWRITE"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 808,
+    "sha256": "590e37fbe1828b68634fccc089589b9abba27a909946a53f7a789a0a72410642"
+  },
+  "interpretation": "Metadata-only clarification supersedes the command-rewrite reviews in immutable batch016. Git -u is Boolean; a redundant trailing flag does not itself make the old terminal correction incorrect. Exact historical parser comparison supports a newly introduced terminal-pop regression as well as quoting loss. No discovery event, current proposal count/type, taxonomy, protected input or dependence changes. The other two leaf cases are revalidated unchanged, not new observations. All sources remain inert; no Git, shell, parser, dataset/dependency program or upstream test executes.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-11:0:thefuck/rules/git_push.py:get_new_command",
+      "review_revision": 2,
+      "source_discovery_revision": 1,
+      "mechanism": "Upstream suggestion composition duplicates an existing -u/--set-upstream operand; its repair introduces unquoted reconstruction.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old git_push already corrects missing upstream and preserves extra options. In git push -u origin, -u is a Boolean flag and origin is the positional repository, not an argument consumed by that flag. Old composition duplicates the repository among refspecs. Removing the flag plus following positional repository repairs that bounded case. The implementation comment calling the next token its argument is not Git grammar.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matching old git_support admits Git/hub and expands aliases; replace_argument splices text, while Command.script_parts caches shell-split tokens. Exact old generic splitter is retained, not executed. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only. Historical Git v2.9.3 comparison source/docs retain OPT_BIT/PARSE_OPT_NOARG, repeated idempotent bit setting and option parsing after positional operands. This is historical grammar comparison, not installed/deployed-version proof.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "The explicit -u origin fixture gets one intended repository and upstream correction after. But terminal git push -u could already be corrected before as git push --set-upstream origin master -u: the retained Git parser accepts a repeated Boolean flag even after positional operands, and sets the same upstream bit. New second pop instead raises IndexError. This establishes a source-deduced newly introduced terminal-option regression, not just a different failure on an already-broken old suggestion. Separately, joining shell-split tokens without quoting loses protected --receive-pack=\"custom receive\" argument spelling, and cached tokens are mutated. No whole-after negative, network/push success or reproduced execution is claimed; the later exact revision catches the missing pop but retains quoting/state concerns.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Preserve the repaired old mechanism while explicitly withholding a clean after-function negative under the recorded argument-preservation failure.",
+      "dependence_reason": "Keep mechanical family fix-family:009e12ce6279ee4125d2 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes.",
+        "Batch017 corrects only historical Boolean -u grammar/terminal-regression metadata; preserve immutable batch016 and all existing discovery/eligibility/dependence decisions."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return replace_argument(command.script, 'push', push_upstream)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    if upstream_option_index is not -1:\n        command.script_parts.pop(upstream_option_index)\n        command.script_parts.pop(upstream_option_index)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/utils.py",
+          "ref": "db7dffdb44ae5c7be8de088765463fbda96197d1^",
+          "needle": "u' {} '.format(from_), u' {} '.format(to), 1)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/types.py",
+          "ref": "db7dffdb44ae5c7be8de088765463fbda96197d1^",
+          "needle": "self._script_parts = shell.split_command(self.script)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "thefuck/specific/git.py",
+          "ref": "db7dffdb44ae5c7be8de088765463fbda96197d1^",
+          "needle": "if not is_app(command, 'git', 'hub'):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016_TOKENIZERS.json",
+          "path": "thefuck/shells/generic.py",
+          "ref": "db7dffdb44ae5c7be8de088765463fbda96197d1^",
+          "needle": "return shlex.split(command)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    assert get_new_command(Command('git push -u origin', stderr=stderr))\\"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_017_GIT.json",
+          "path": "builtin/push.c",
+          "ref": "v2.9.3",
+          "needle": "OPT_BIT('u', \"set-upstream\", &flags"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_017_GIT.json",
+          "path": "parse-options.h",
+          "ref": "v2.9.3",
+          "needle": "#define OPT_BIT(s, l, v, h, b)      { OPTION_BIT, (s), (l), (v), NULL, (h), \\\n\t\t\t\t      PARSE_OPT_NOARG, NULL, (b) }"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_017_GIT.json",
+          "path": "parse-options.c",
+          "ref": "v2.9.3",
+          "needle": "*(int *)opt->value |= opt->defval;\n\t\treturn 0;\n\n\tcase OPTION_NEGBIT:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_017_GIT.json",
+          "path": "builtin/push.c",
+          "ref": "v2.9.3",
+          "needle": "argc = parse_options(argc, argv, prefix, options, push_usage, 0);"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_017_GIT.json",
+          "path": "parse-options.c",
+          "ref": "v2.9.3",
+          "needle": "if (ctx->flags & PARSE_OPT_STOP_AT_NON_OPTION)\n\t\t\t\treturn PARSE_OPT_NON_OPTION;\n\t\t\tctx->out[ctx->cpidx++] = ctx->argv[0];"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Two introduced after concerns are supported contextually: newly unquoted reconstruction and newly failing terminal Boolean -u. Old terminal correction retains one remote/refspec and redundantly sets the same Boolean flag; retained historical parser bitwise-OR and no-stop-at-positional behavior substantiate that bounded grammar. This explicitly corrects the overstatement in authored batch016 that old terminal-option output was already incorrect. Git v2.9.3 is comparison evidence, not a deployment assertion; no Git/parser/shell is executed."
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-25:0:thefuck/rules/mkdir_p.py:get_new_command",
+      "review_revision": 2,
+      "source_discovery_revision": 1,
+      "mechanism": "Anchored mkdir rewrite does not cover newly targeted HDFS-prefixed commands.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old broad matcher admits text containing mkdir and No such file or directory, but old docs/tests establish ordinary mkdir. Commit explicitly adds hdfs dfs -mkdir support. Broad matching alone does not settle a historical HDFS correction duty versus an unsupported-feature overmatch; preserve ambiguity.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need supported historical command language and sudo wrapper admission; a prefixed HDFS example from new tests does not supply an old contract. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Word-boundary rewrite yields the retained HDFS -mkdir -p form, but that is not a validated old-duty negative and is not universal shell token rewriting.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "The conditional change is visible, but a supported old obligation or runtime/configuration path is not established.",
+      "dependence_reason": "Keep mechanical family fix-family:2b98589f7b542bb22c7d and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes.",
+        "Revalidated unchanged within the complete three-case Thefuck command-rewrite leaf for batch017 metadata correction; this is not a new candidate, vote, issue or eligibility decision."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return re.sub('^mkdir (.*)'"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return re.sub('\\\\bmkdir (.*)'"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return ('mkdir' in command.script"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_016.json",
+          "path": "README.md",
+          "ref": "298c04f89c081dc16c8653aa017ca85dd14bfad6^",
+          "needle": "* `mkdir_p` &ndash; adds `-p` when you trying to create directory without parent;"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    (Command('hdfs dfs -mkdir foo/bar/baz'), 'hdfs dfs -mkdir -p foo/bar/baz'),"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_thefuck-31:0:thefuck/rules/git_diff_staged.py:get_new_command",
+      "review_revision": 2,
+      "source_discovery_revision": 1,
+      "mechanism": "Staged diff flag is appended after a filename instead of before path operands.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current draft discovery leaf or null exclusion boundary. Historical API/runtime duty, selected attribution, context sufficiency, after failures and security delivery are separate decisions; command suggestions are not executed commands.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old matcher already admits git diff foo. Retained commit records fatal bad flag --staged used after filename for the old generated correction. Inserting the option immediately after diff repairs that existing path-bearing command; it is not a new filename feature.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old Git argument ordering, git_support decorator and applicability consumer. The source body alone does not define Git path/option grammar or shell selection. The common before-only numerical budget and ordinary runtime/API knowledge policy remain unfrozen; helpers, callers, tests, after code and labels stay adjudication-only.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a functional command-generation/configuration/sequence witness or intentional API/policy change. No realistic lower-trust source-to-executed-command, privilege or victim-delivery boundary is demonstrated. Archive cleanup and shell evaluation elsewhere do not automatically turn this selected edit into an exploit or security repair.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For retained bare git diff and git diff foo, after places --staged before the filename. Global string replace does not establish arbitrary option, quoting, command-chain or repeated diff-token correctness.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual selected repair is supported, but essential old producer/decorator/consumer/runtime behavior is omitted from the strict selected before body.",
+      "dependence_reason": "Keep mechanical family fix-family:1352a8197a67e7a16158 and all exact/AST/same-function history/dependence links. Repeated git_push revisions, the two selected class-migration methods and the branch matcher/generator are not independent issues by row count.",
+      "open_questions": [
+        "Researcher confirm exact supported old API, runtime/shell/configuration and uniform before-only admission; keep final eligibility and independent issue identities pending.",
+        "All deductions use retained source/test/contract text only. No shell, Git, archive, executable discovery, dependency/application program or upstream test executes.",
+        "Revalidated unchanged within the complete three-case Thefuck command-rewrite leaf for batch017 metadata correction; this is not a new candidate, vote, issue or eligibility decision."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return '{} --staged'.format(command.script)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return command.script.replace(' diff', ' diff --staged')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'--staged' not in command.script"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    (Command('git diff foo'), 'git diff --staged foo')])"
+        }
+      ]
+    }
+  ]
+}

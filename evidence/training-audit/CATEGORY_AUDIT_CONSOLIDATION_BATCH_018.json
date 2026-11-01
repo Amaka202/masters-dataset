@@ -1,0 +1,1558 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-018",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All21 Synapse training candidates, including supported/ambiguous discoveries and both null-category downloader exclusions.",
+  "selection_rule": {
+    "repository": "github.com/matrix-org/synapse",
+    "discovery_categories": [
+      "SEC-CONTEXT-ID-MISMATCH",
+      "SEC-INPUT-SIZE-BOUND",
+      "SEC-OUTBOUND-IP-POLICY",
+      "SEC-PATH-CONFINEMENT",
+      "SEC-REGEX-BACKTRACKING",
+      null
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 808,
+    "sha256": "590e37fbe1828b68634fccc089589b9abba27a909946a53f7a789a0a72410642"
+  },
+  "interpretation": "Matched historical source contracts and lower-trust delivery inspected as inert text. Preserve all discovery statuses and the complete808-event ledger. Separate body-authoritative room context, configured direct/literal IP enforcement and proxy limitations, true well-known size repair, two already-bounded sibling migrations with missing raises, wildcard-run mitigation plus old range-feature loss, remote media lifecycle from local/cache generated IDs, and newly installed validator attribution. All proposals and independent issue identities remain pending; protected release inputs, splits, source bytes and taxonomy are unchanged. No application/dependency program, network/DNS/proxy interaction, parser, filesystem operation or upstream test executes.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:11686217607665:112408625396745",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "URI room identifier selects event-version semantics independently of the body room identifier.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The existing federation operation must parse/build and authenticate the event using that event room version. Old transport forwards the URI room separately from content; the selected method uses that URI room for version lookup, while the builder/PDU and subsequent room-specific checks use the body room. Different admitted rooms/versions can therefore disagree. After requires the body room_id and uses it for the version lookup, removing the redundant argument.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old signed federation transport, body-to-event builder/parser and room-version store semantics; room ACL/signature/event authorization still constrain which malformed requests progress. The exchange builder and send-join/leave PDU consumers are distinct paths, not interchangeable witnesses. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A malicious federating server can sign its own request and choose both URI and body; federation authentication does not itself force those identifiers to agree. The retained CVE-2020-26257 context describes malformed-event/federation-DoS impact. This is event-context binding, not XSS merely because source metadata names CWE-79. No arbitrary cross-room authorization bypass or reproduced denial of service is asserted.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Matched after uses one authoritative body room_id for both version lookup and event construction. It does not reject every URI/body disagreement: it removes the URI from this semantic decision. Negative is limited to this two-source room-version mismatch; existing ACL/signature/auth checks remain prerequisites, not universal event validity guarantees.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual security repair is supported, but the essential matched old caller/helper/policy is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:21689e6ce71c2e150488 and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        \"\"\"\n        room_version = await self.store.get_room_version_id(room_id)\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.store.get_room_version_id(event_dict[\"room_id\"])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/federation/transport/server.py",
+          "ref": "3ce2f303f15f6ac3dc352298972dc6e04d9b7a8b^",
+          "needle": "on_exchange_third_party_invite_request("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/events/builder.py",
+          "ref": "3ce2f303f15f6ac3dc352298972dc6e04d9b7a8b^",
+          "needle": "room_id=key_values[\"room_id\"]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "commit.patch",
+          "ref": "3ce2f303f15f6ac3dc352298972dc6e04d9b7a8b",
+          "needle": "+        assert_params_in_dict(event_dict, [\"room_id\"])"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:174094634022423:224624237818749",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "URI room identifier selects event-version semantics independently of the body room identifier.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The existing federation operation must parse/build and authenticate the event using that event room version. Old transport forwards the URI room separately from content; the selected method uses that URI room for version lookup, while the builder/PDU and subsequent room-specific checks use the body room. Different admitted rooms/versions can therefore disagree. After requires the body room_id and uses it for the version lookup, removing the redundant argument.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old signed federation transport, body-to-event builder/parser and room-version store semantics; room ACL/signature/event authorization still constrain which malformed requests progress. The exchange builder and send-join/leave PDU consumers are distinct paths, not interchangeable witnesses. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A malicious federating server can sign its own request and choose both URI and body; federation authentication does not itself force those identifiers to agree. The retained CVE-2020-26257 context describes malformed-event/federation-DoS impact. This is event-context binding, not XSS merely because source metadata names CWE-79. No arbitrary cross-room authorization bypass or reproduced denial of service is asserted.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Matched after uses one authoritative body room_id for both version lookup and event construction. It does not reject every URI/body disagreement: it removes the URI from this semantic decision. Negative is limited to this two-source room-version mismatch; existing ACL/signature/auth checks remain prerequisites, not universal event validity guarantees.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual security repair is supported, but the essential matched old caller/helper/policy is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:21689e6ce71c2e150488 and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        logger.debug(\"on_send_join_request: content: %s\", content)\n\n        room_version = await self.store.get_room_version(room_id)\n        pdu = event_from_pdu_json(content, room_version)\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        logger.debug(\"on_send_join_request: content: %s\", content)\n\n        assert_params_in_dict(content, [\"room_id\"])\n        room_version = await self.store.get_room_version(content[\"room_id\"])\n        pdu = event_from_pdu_json(content, room_version)\n\n        origin_host, _ = parse_server_name(origin)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/federation/transport/server.py",
+          "ref": "3ce2f303f15f6ac3dc352298972dc6e04d9b7a8b^",
+          "needle": "        #   match those given in content\n        content = await self.handler.on_send_join_request(origin, content, context)\n        return 200, (200, content)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/federation/federation_base.py",
+          "ref": "3ce2f303f15f6ac3dc352298972dc6e04d9b7a8b^",
+          "needle": "def event_from_pdu_json("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "commit.patch",
+          "ref": "3ce2f303f15f6ac3dc352298972dc6e04d9b7a8b",
+          "needle": "         logger.debug(\"on_send_join_request: content: %s\", content)\n \n-        room_version = await self.store.get_room_version(room_id)\n+        assert_params_in_dict(content, [\"room_id\"])\n+        room_version = await self.store.get_room_version(content[\"room_id\"])\n         pdu = event_from_pdu_json(content, room_version)\n \n"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:174094634022423:257127434682979",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "URI room identifier selects event-version semantics independently of the body room identifier.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The existing federation operation must parse/build and authenticate the event using that event room version. Old transport forwards the URI room separately from content; the selected method uses that URI room for version lookup, while the builder/PDU and subsequent room-specific checks use the body room. Different admitted rooms/versions can therefore disagree. After requires the body room_id and uses it for the version lookup, removing the redundant argument.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old signed federation transport, body-to-event builder/parser and room-version store semantics; room ACL/signature/event authorization still constrain which malformed requests progress. The exchange builder and send-join/leave PDU consumers are distinct paths, not interchangeable witnesses. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A malicious federating server can sign its own request and choose both URI and body; federation authentication does not itself force those identifiers to agree. The retained CVE-2020-26257 context describes malformed-event/federation-DoS impact. This is event-context binding, not XSS merely because source metadata names CWE-79. No arbitrary cross-room authorization bypass or reproduced denial of service is asserted.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Matched after uses one authoritative body room_id for both version lookup and event construction. It does not reject every URI/body disagreement: it removes the URI from this semantic decision. Negative is limited to this two-source room-version mismatch; existing ACL/signature/auth checks remain prerequisites, not universal event validity guarantees.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual security repair is supported, but the essential matched old caller/helper/policy is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:21689e6ce71c2e150488 and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        logger.debug(\"on_send_leave_request: content: %s\", content)\n\n        room_version = await self.store.get_room_version(room_id)\n        pdu = event_from_pdu_json(content, room_version)\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        logger.debug(\"on_send_leave_request: content: %s\", content)\n\n        assert_params_in_dict(content, [\"room_id\"])\n        room_version = await self.store.get_room_version(content[\"room_id\"])\n        pdu = event_from_pdu_json(content, room_version)\n\n        origin_host, _ = parse_server_name(origin)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/federation/transport/server.py",
+          "ref": "3ce2f303f15f6ac3dc352298972dc6e04d9b7a8b^",
+          "needle": "    async def on_PUT(self, origin, content, query, room_id, event_id):\n        content = await self.handler.on_send_leave_request(origin, content, room_id)\n        return 200, (200, content)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/federation/federation_base.py",
+          "ref": "3ce2f303f15f6ac3dc352298972dc6e04d9b7a8b^",
+          "needle": "def event_from_pdu_json("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "commit.patch",
+          "ref": "3ce2f303f15f6ac3dc352298972dc6e04d9b7a8b",
+          "needle": "         logger.debug(\"on_send_join_request: content: %s\", content)\n \n-        room_version = await self.store.get_room_version(room_id)\n+        assert_params_in_dict(content, [\"room_id\"])\n+        room_version = await self.store.get_room_version(content[\"room_id\"])\n         pdu = event_from_pdu_json(content, room_version)\n \n"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:176582709279069:111252387670231",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Selected constructor supplies an HTTP dependency without the intended outbound denied-IP policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old FederationHandler supplies SimpleHttpClient without a blacklist; its _check_signature takes key_validity_url from a third-party invite public-key object after signature/context prerequisites, and _check_key_revocation calls get_json on it. Matched server getters/client/configuration establish a real policy dependency change, rather than merely renaming a getter. Broad safety remains conditional on effective denied ranges.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched old source-to-HTTP consumer and new getter, config defaults, DNS reactor wrapper, literal-IP agent and proxy endpoint. Old federation_ip_range_blacklist remains separate: specifying it alone does not populate new ip_range_blacklist for pushes or key revocation. Exact reader defaults are [] plus 0.0.0.0/::; generated sample private-network ranges are not unconditional runtime defaults. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "The key-validity URL is supplied through third-party invitation state/public keys; successful signature/context validation and an affected request path are required before the GET. The retained CVE-2021-21273 advisory and consumers support lower-trust destinations crossing the homeserver network boundary. Method/body and authentication/context restrictions remain explicit; this is not a browser redirect or arbitrary request-body capability.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For configured denied literal IPs the new agent rejects before dispatch, and for direct connections the resolver suppresses results when a denied IP is present. This is a bounded denied-address negative only. ProxyAgent forwards destination URI/CONNECT hostname to the configured proxy, whose destination DNS/policy is outside this local resolver; no proxy-side or universal SSRF guarantee. Empty new configuration does not suddenly deny all private networks, and the deprecated federation-only ranges do not backfill this new client.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual security repair is supported, but the essential matched old caller/helper/policy is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:851c75f30ade809e3e9b and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.http_client = hs.get_simple_http_client()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.http_client = hs.get_proxied_blacklisted_http_client()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/server.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746^",
+          "needle": "return SimpleHttpClient(self)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/server.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "ip_blacklist=self.config.ip_range_blacklist,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/http/client.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "\n        if self._ip_blacklist:\n            # If we have an IP blacklist, we need to use a DNS resolver which\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/http/client.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "if not has_bad_ip:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/http/client.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "ip_address = IPAddress(h.hostname)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_POLICY.json",
+          "path": "synapse/config/federation.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "ip_range_blacklist = config.get(\"ip_range_blacklist\", [])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_POLICY.json",
+          "path": "synapse/config/federation.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "\"federation_ip_range_blacklist\", ip_range_blacklist"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/http/proxyagent.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "request_path = uri"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_POLICY.json",
+          "path": "synapse/http/connectproxyclient.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "self.sendCommand(b\"CONNECT\", b\"%s:%d\" % (self.host, self.port))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "response = await self.http_client.get_json(url, {\"public_key\": public_key})"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if \"key_validity_url\" in public_key_object:"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:178276127127766:15962689512385",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Selected constructor supplies an HTTP dependency without the intended outbound denied-IP policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old HttpPusher obtains its URL from registered pusher data and supplies a proxied HTTP client with no blacklist. Existing notification and badge consumers POST constrained push-protocol JSON to that URL; registration is authenticated, not an anonymous arbitrary-method HTTP proxy. Matched server getters/client/configuration establish a real policy dependency change, rather than merely renaming a getter. Broad safety remains conditional on effective denied ranges.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need the matched old source-to-HTTP consumer and new getter, config defaults, DNS reactor wrapper, literal-IP agent and proxy endpoint. Old federation_ip_range_blacklist remains separate: specifying it alone does not populate new ip_range_blacklist for pushes or key revocation. Exact reader defaults are [] plus 0.0.0.0/::; generated sample private-network ranges are not unconditional runtime defaults. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Authenticated users can register pusher data; normal notification/badge processing supplies the later outbound POST. The retained CVE-2021-21273 advisory and consumers support lower-trust destinations crossing the homeserver network boundary. Method/body and authentication/context restrictions remain explicit; this is not a browser redirect or arbitrary request-body capability.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For configured denied literal IPs the new agent rejects before dispatch, and for direct connections the resolver suppresses results when a denied IP is present. This is a bounded denied-address negative only. ProxyAgent forwards destination URI/CONNECT hostname to the configured proxy, whose destination DNS/policy is outside this local resolver; no proxy-side or universal SSRF guarantee. Empty new configuration does not suddenly deny all private networks, and the deprecated federation-only ranges do not backfill this new client.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual security repair is supported, but the essential matched old caller/helper/policy is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:851c75f30ade809e3e9b and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.http_client = hs.get_proxied_http_client()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.http_client = hs.get_proxied_blacklisted_http_client()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/server.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746^",
+          "needle": "return SimpleHttpClient(self)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/server.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "ip_blacklist=self.config.ip_range_blacklist,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/http/client.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "\n        if self._ip_blacklist:\n            # If we have an IP blacklist, we need to use a DNS resolver which\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/http/client.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "if not has_bad_ip:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/http/client.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "ip_address = IPAddress(h.hostname)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_POLICY.json",
+          "path": "synapse/config/federation.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "ip_range_blacklist = config.get(\"ip_range_blacklist\", [])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_POLICY.json",
+          "path": "synapse/config/federation.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "\"federation_ip_range_blacklist\", ip_range_blacklist"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/http/proxyagent.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "request_path = uri"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_POLICY.json",
+          "path": "synapse/http/connectproxyclient.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746",
+          "needle": "self.sendCommand(b\"CONNECT\", b\"%s:%d\" % (self.host, self.port))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.url, notification_dict"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/client/v1/pusher.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746^",
+          "needle": "data=content[\"data\"],"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/client/v1/pusher.py",
+          "ref": "30fba6210834a4ecd91badf0c8f3eb278b72e746^",
+          "needle": "    async def on_GET(self, request):\n        requester = await self.auth.get_user_by_req(request)\n        user = requester.user\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-21274:0:synapse/http/client.py:SimpleHttpClient.get_file",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Already-bounded downloader adapts a shared reader/error type and introduces a missing-raise path.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Before already passes max_size to readBodyToFile. The matched old protocol writes received chunks, checks length >= max_size when non-None, and errbacks SynapseError. The actual advisory omission is the separate well-known resolver readBody call, not this downloader. A helper rename/error adaptation is not a selected old size-limit repair.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old/new reader and exception flow, optional max_size and caller-supplied stream. Do not borrow unbounded resolver behavior for a different method or confuse default max_size=None with failing to enforce an explicitly supplied limit. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "These methods can process remote data, but remote input alone does not establish the named old missing-well-known-bound vulnerability here. Preserve the null discovery exclusion and shared resolver family. The newly introduced error-handling defect is distinct from an old security-positive label.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No paired negative. When the new reader errbacks BodyExceededMaxSize, the selected except constructs SynapseError without raising it. Awaited assignment did not complete; SimpleHttpClient then returns unassigned length, while the federation client reads it in completion logging before returning. Before propagated a structured size error. This is a source-deduced introduced error path, not executed behavior and not evidence that the after method silently returns oversized content.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected downloader already forwarded an enforced optional size bound. Shared reader/error migration does not add the advisory resolver limit, and introduces a separate after error.",
+      "dependence_reason": "Preserve fix-family:3c1abc26fa399e8b2cdd and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "readBodyToFile(response, output_stream, max_size)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except BodyExceededMaxSize:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if self.max_size is not None and self.length >= self.max_size:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.deferred.errback(BodyExceededMaxSize())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_ADVISORIES.json",
+          "path": "cves/2021/21xxx/CVE-2021-21274.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "\"cveId\": \"CVE-2021-21274\""
+        }
+      ],
+      "additional_after_concerns": [
+        "Introduced BodyExceededMaxSize handler constructs but does not raise SynapseError, then accesses an unassigned length. Retain this after concern separately; this selected before method already enforced supplied limits and is not an old advisory-positive example."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-21274:0:synapse/http/federation/well_known_resolver.py:WellKnownResolver._make_well_known_request",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Federation well-known resolution buffers an unbounded remote response, including redirected bodies.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old MatrixFederationAgent requests well-known delegation for eligible named destinations; the resolver wraps its agent in RedirectAgent and selected _make_well_known_request calls unbounded readBody before status handling. After supplies WELL_KNOWN_MAX_SIZE=50*1024 to the matched streaming reader and treats BodyExceededMaxSize as temporary failure without another retry. This repairs an existing remote-response resource boundary.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual federation request/delegation caller, redirect wrapper, size constant and shared Deferred/body protocol. A size argument without its helper does not establish enforcement. The selected resolver catches the size exception itself; the two sibling downloader missing-raise paths are not on this resolver catch path. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Federation with untrusted homeservers allows a malicious homeserver to redirect its well-known resource to a large body; retained CVE-2021-21274 context identifies this delivery. Restricting federation peers changes exposure. Neither malicious code execution nor an exact resource-exhaustion measurement is inferred.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "For a delivered body reaching the configured threshold, the matched protocol errbacks, replaces its Deferred and loses the transport; this resolver maps that class to a temporary fetch failure without size-error retry. It writes each received chunk before checking >=, so memory/stream output can overshoot by a chunk. This is not an exact 50KiB allocation ceiling, timeout guarantee or universal resource bound.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual security repair is supported, but the essential matched old caller/helper/policy is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:3c1abc26fa399e8b2cdd and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "readBody(response)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "read_body_with_max_size(response, body_stream, WELL_KNOWN_MAX_SIZE)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._well_known_agent = RedirectAgent(agent)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "WELL_KNOWN_MAX_SIZE = 50 * 1024"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/http/federation/matrix_federation_agent.py",
+          "ref": "ff5c4da1289cb5e097902b3e55b771be342c29d6^",
+          "needle": "self._well_known_resolver.get_well_known(parsed_uri.hostname)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+            self.deferred.errback(BodyExceededMaxSize())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_ADVISORIES.json",
+          "path": "cves/2021/21xxx/CVE-2021-21274.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "\"cveId\": \"CVE-2021-21274\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-21274:0:synapse/http/matrixfederationclient.py:MatrixFederationHttpClient.get_file",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Already-bounded downloader adapts a shared reader/error type and introduces a missing-raise path.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Before already passes max_size to readBodyToFile. The matched old protocol writes received chunks, checks length >= max_size when non-None, and errbacks SynapseError. The actual advisory omission is the separate well-known resolver readBody call, not this downloader. A helper rename/error adaptation is not a selected old size-limit repair.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old/new reader and exception flow, optional max_size and caller-supplied stream. Do not borrow unbounded resolver behavior for a different method or confuse default max_size=None with failing to enforce an explicitly supplied limit. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "These methods can process remote data, but remote input alone does not establish the named old missing-well-known-bound vulnerability here. Preserve the null discovery exclusion and shared resolver family. The newly introduced error-handling defect is distinct from an old security-positive label.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No paired negative. When the new reader errbacks BodyExceededMaxSize, the selected except constructs SynapseError without raising it. Awaited assignment did not complete; SimpleHttpClient then returns unassigned length, while the federation client reads it in completion logging before returning. Before propagated a structured size error. This is a source-deduced introduced error path, not executed behavior and not evidence that the after method silently returns oversized content.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected downloader already forwarded an enforced optional size bound. Shared reader/error migration does not add the advisory resolver limit, and introduces a separate after error.",
+      "dependence_reason": "Preserve fix-family:3c1abc26fa399e8b2cdd and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "readBodyToFile(response, output_stream, max_size)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "except BodyExceededMaxSize:"
+        },
+        {
+          "kind": "fix",
+          "needle": "-class _ReadBodyToFileProtocol(protocol.Protocol):"
+        },
+        {
+          "kind": "fix",
+          "needle": "+            self.deferred.errback(BodyExceededMaxSize())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_ADVISORIES.json",
+          "path": "cves/2021/21xxx/CVE-2021-21274.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "\"cveId\": \"CVE-2021-21274\""
+        }
+      ],
+      "additional_after_concerns": [
+        "Introduced BodyExceededMaxSize handler constructs but does not raise SynapseError, then accesses an unassigned length. Retain this after concern separately; this selected before method already enforced supplied limits and is not an old advisory-positive example."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-29471:0:synapse/push/push_rule_evaluator.py:_glob_matches",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Old wildcard runs expand into successive ambiguous regex quantifiers; the replacement also drops supported character-class matching.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing authenticated push-rule registration stores event_match conditions, which the bulk evaluator applies to other senders events. Old _glob_to_re expands every * separately to .*? and every ? to ., so adjacent wildcard runs create avoidable repeated search work; caching compiled regexes does not bound per-match work. The new shared converter collapses contiguous wildcard runs. Separately, the old helper explicitly implements [abc], [a-z] and [!a-z] ranges as intended behavior, not incidental regex syntax.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old converter/constants, condition registration/validation, bulk event consumer and new shared glob_to_regex. Do not transfer a changed shared ACL/TLS consumer into a separate selected vulnerability or claim an exponent/timing result. Old character-class support is visible in implementation and accepted pattern plumbing; real user reliance/final supported grammar remains for researcher adjudication. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Authenticated users can submit custom conditions; event_match then searches event content during server-side push evaluation. Bulk processing skips a rule owners own event, so a realistic trigger needs an applicable other-sender event in the shared room, not merely submitting a self-sent message. Retained CVE-2021-29471 corroborates moderate-event matching denial of service; this is a shared service resource boundary, not raw untrusted regex injection.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "New contiguous ?/* run compression supports that bounded ambiguity mitigation; separated runs and all regex complexity are not certified linear. A formerly supported [ab]* glob can match apple through old explicit class translation, whereas new re.escape on the non-wildcard [ab] chunk treats brackets literally and no longer matches it. Preserve this source-deduced introduced old-feature loss rather than certify a clean after function. New tests do not themselves supply the old contract; the old explicit range branch and accepted condition path do.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Keep the contextual resource-exhaustion repair while withholding a clean after-function negative under an explicitly supported old glob feature loss.",
+      "dependence_reason": "Preserve fix-family:a83bab17e4582d8a8557 and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "r = _glob_to_re(glob, word_boundary)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "r = glob_to_regex(glob, word_boundary)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "# handle [abc], [a-z] and [!a-z] style ranges."
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "r = r.replace(r\"\\*\", \".*?\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/client/v1/push_rule.py",
+          "ref": "03318a766cac9f8b053db2214d9c332a977d226c^",
+          "needle": "\n        requester = await self.auth.get_user_by_req(request)\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/client/v1/push_rule.py",
+          "ref": "03318a766cac9f8b053db2214d9c332a977d226c^",
+          "needle": "conditions=conditions,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/push/bulk_push_rule_evaluator.py",
+          "ref": "03318a766cac9f8b053db2214d9c332a977d226c^",
+          "needle": "if event.sender == uid:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return _glob_matches(pattern, body, word_boundary=True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/util/__init__.py",
+          "ref": "03318a766cac9f8b053db2214d9c332a977d226c",
+          "needle": "chunks.append(re.escape(chunk))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/util/__init__.py",
+          "ref": "03318a766cac9f8b053db2214d9c332a977d226c",
+          "needle": "chunks.append(\".{%d,}\" % qmarks)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_ADVISORIES.json",
+          "path": "cves/2021/29xxx/CVE-2021-29471.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "\"cveId\": \"CVE-2021-29471\""
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Matched old helper deliberately supports bracket classes, accepted through the old condition pattern path; the new shared converter escapes them literally. This supports a provisional introduced range-matching regression independently of the repaired contiguous-wildcard work issue. No regex/parser is executed and final supported-language/eligibility adjudication is pending."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41281:0:synapse/rest/media/v1/filepath.py:MediaFilePaths.local_media_thumbnail_dir",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Local thumbnail directory deletion gains lexical checks without an established malicious local-ID path.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old local IDs are random_string(24), not chosen upload names. The selected directory is passed to shutil.rmtree by local-media deletion; exact admin lookup rejects unknown IDs before dispatch. The old arbitrary-string helper contract and reachable attacker influence remain unresolved; do not manufacture a positive using remote server_name inputs absent from this API.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need random-ID producer, local DB/admin gates, FileInfo routing and deletion permission/lifecycle. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The public remote-media advisory does not establish attacker-controlled local IDs here. Local uploads generate random letters, local requests require a DB row, and exact administrative DeleteMediaByID requires an administrator, local server name and get_local_media(media_id) success. Arbitrary request media IDs are not automatically stored local filesystem IDs. Malicious preexisting DB rows or unsupported direct helper calls are not assumed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Matched after rejects non-allowed/empty/dot/dotdot components and lexically checks the completed path. This is only conditional lexical hardening, not an established old exploit/new negative pair. The jail uses normpath/commonpath without resolving every descendant symlink and the class asserts POSIX; no symlink/race, arbitrary ID or cross-platform guarantee.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Lexical hardening is visible, but the matched generated-ID/DB/encoder path does not establish attacker-controlled components at this selected sink or an old obligation for arbitrary synthetic strings.",
+      "dependence_reason": "Preserve fix-family:f18d7e8d00b44377518f and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            media_id[2:4],\n            media_id[4:],\n        )\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            \"local_thumbnails\",\n            _validate_path_component(media_id[0:2]),\n            _validate_path_component(media_id[2:4]),\n            _validate_path_component(media_id[4:]),\n        )\n\n    @_wrap_with_jail_check\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_repository.py",
+          "ref": "91f2bd090^",
+          "needle": "media_id = random_string(24)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_POLICY.json",
+          "path": "synapse/rest/admin/media.py",
+          "ref": "91f2bd090^",
+          "needle": "if await self.store.get_local_media(media_id) is None:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_POLICY.json",
+          "path": "synapse/rest/admin/media.py",
+          "ref": "91f2bd090^",
+          "needle": "    async def on_POST(self, request: SynapseRequest) -> Tuple[int, JsonDict]:\n        await assert_requester_is_admin(self.auth, request)\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_repository.py",
+          "ref": "91f2bd090^",
+          "needle": "thumbnail_dir = self.filepaths.local_media_thumbnail_dir(media_id)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ALLOWED_CHARACTERS.issuperset(name) or name in FORBIDDEN_NAMES:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41281:0:synapse/rest/media/v1/filepath.py:MediaFilePaths.local_media_thumbnail_rel",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Local thumbnail storage/fetch gains lexical checks without an established malicious local-ID path.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old local IDs are random_string(24), not chosen upload names. Thumbnail requests are DB-gated; generated thumbnail methods are crop/scale and encoder output types are restricted to JPEG/PNG. Newly validating media slices and a composite filename does not prove an admitted old malformed component. The old arbitrary-string helper contract and reachable attacker influence remain unresolved; do not manufacture a positive using remote server_name inputs absent from this API.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need random-ID producer, local DB/admin gates, FileInfo routing and dynamic encoder/content-type/method and stored metadata admission. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The public remote-media advisory does not establish attacker-controlled local IDs here. Local uploads generate random letters, local requests require a DB row, and exact administrative DeleteMediaByID requires an administrator, local server name and get_local_media(media_id) success. Arbitrary request media IDs are not automatically stored local filesystem IDs. Malicious preexisting DB rows or unsupported direct helper calls are not assumed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Matched after rejects non-allowed/empty/dot/dotdot components and lexically checks the completed path. This is only conditional lexical hardening, not an established old exploit/new negative pair. The jail uses normpath/commonpath without resolving every descendant symlink and the class asserts POSIX; no symlink/race, arbitrary ID or cross-platform guarantee.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Lexical hardening is visible, but the matched generated-ID/DB/encoder path does not establish attacker-controlled components at this selected sink or an old obligation for arbitrary synthetic strings.",
+      "dependence_reason": "Preserve fix-family:f18d7e8d00b44377518f and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            \"local_thumbnails\", media_id[0:2], media_id[2:4], media_id[4:], file_name\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            _validate_path_component(media_id[2:4]),\n            _validate_path_component(media_id[4:]),\n            _validate_path_component(file_name),\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_repository.py",
+          "ref": "91f2bd090^",
+          "needle": "media_id = random_string(24)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_POLICY.json",
+          "path": "synapse/rest/admin/media.py",
+          "ref": "91f2bd090^",
+          "needle": "if await self.store.get_local_media(media_id) is None:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_POLICY.json",
+          "path": "synapse/rest/admin/media.py",
+          "ref": "91f2bd090^",
+          "needle": "    async def on_POST(self, request: SynapseRequest) -> Tuple[int, JsonDict]:\n        await assert_requester_is_admin(self.auth, request)\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/thumbnail_resource.py",
+          "ref": "91f2bd090^",
+          "needle": "        m_type: str,\n    ) -> None:\n        media_info = await self.store.get_local_media(media_id)\n\n        if not media_info:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ALLOWED_CHARACTERS.issuperset(name) or name in FORBIDDEN_NAMES:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/thumbnailer.py",
+          "ref": "91f2bd090^",
+          "needle": "FORMATS = {\"image/jpeg\": \"JPEG\", \"image/png\": \"PNG\"}"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41281:0:synapse/rest/media/v1/filepath.py:MediaFilePaths.remote_media_filepath_rel",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unchecked remote origin escapes the intended path subtree during download/storage.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old parse_media_id decodes request server_name without validation; public download routing forwards it to the remote-media repository. That caller enforces an optional exact federation whitelist, then uses the unchanged remote origin with a locally generated random filesystem ID. MediaStorage turns this selected relative path into a local path, creates parent directories and opens the file for writing before the remote download completes.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need request routing/decoding, media repository enablement/whitelist, random filesystem-ID distinction, FileInfo routing and exact download/storage sink. All12 selected path/validator rows share one lifecycle/fix family. Do not transfer a write claim to a fallback reader or a cleanup operation. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An unauthenticated download request can supply the remote origin when media is enabled and an exact federation whitelist does not reject it. Retained CVE-2021-41281 corroborates traversal/download placement and explicitly limits attacker control: the last two directories and basename come from random filesystem IDs. This is conditional filesystem placement/location influence; it does not establish an attacker-chosen complete filename or arbitrary file overwrite/disclosure.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Matched _validate_path_component rejects slash/backslash, empty and dot/dotdot components on the asserted POSIX platform. Its jail decorator additionally normalizes/checks the returned path under real_base_path. No descendant-symlink/race, universal provider or unrestricted filesystem negative. Random suffixes and the specific read/write/cleanup prerequisites remain material.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual security repair is supported, but the essential matched old caller/helper/policy is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:f18d7e8d00b44377518f and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            \"remote_content\", server_name, file_id[0:2], file_id[2:4], file_id[4:]\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            \"remote_content\",\n            _validate_path_component(server_name),\n            _validate_path_component(file_id[0:2]),\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/_base.py",
+          "ref": "91f2bd090^",
+          "needle": "server_name = server_name_bytes.decode(\"utf-8\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/download_resource.py",
+          "ref": "91f2bd090^",
+          "needle": "await self.media_repo.get_remote_media(request, server_name, media_id, name)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_repository.py",
+          "ref": "91f2bd090^",
+          "needle": "            Resolves once a response has successfully been written to request\n        \"\"\"\n        if (\n            self.federation_domain_whitelist is not None\n            and server_name not in self.federation_domain_whitelist\n        ):\n            raise FederationDeniedError(server_name)\n\n        self.mark_recently_accessed(server_name, media_id)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_repository.py",
+          "ref": "91f2bd090^",
+          "needle": "file_id = random_string(24)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_storage.py",
+          "ref": "91f2bd090^",
+          "needle": "return self.filepaths.remote_media_filepath_rel("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_storage.py",
+          "ref": "91f2bd090^",
+          "needle": "with open(fname, \"wb\") as f:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ALLOWED_CHARACTERS.issuperset(name) or name in FORBIDDEN_NAMES:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_ADVISORIES.json",
+          "path": "cves/2021/41xxx/CVE-2021-41281.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "\"cveId\": \"CVE-2021-41281\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41281:0:synapse/rest/media/v1/filepath.py:MediaFilePaths.remote_media_thumbnail_dir",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unchecked remote origin escapes the intended path subtree during later remote-cache thumbnail cleanup.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old parse_media_id decodes request server_name without validation; public download routing forwards it to the remote-media repository. That caller enforces an optional exact federation whitelist, then uses the unchanged remote origin with a locally generated random filesystem ID. Persisted media_origin/filesystem_id later feed delete_old_remote_media, whose selected directory result reaches shutil.rmtree. Reachability requires a stored malicious origin plus cleanup; it is not the initial write operation.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need request routing/decoding, media repository enablement/whitelist, random filesystem-ID distinction, FileInfo routing and exact later remote-cache thumbnail cleanup sink. All12 selected path/validator rows share one lifecycle/fix family. Do not transfer a write claim to a fallback reader or a cleanup operation. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An unauthenticated download request can supply the remote origin when media is enabled and an exact federation whitelist does not reject it. Retained CVE-2021-41281 corroborates traversal/download placement and explicitly limits attacker control: the last two directories and basename come from random filesystem IDs. For cleanup, persistence of that origin and later cleanup permissions/time are additional prerequisites.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Matched _validate_path_component rejects slash/backslash, empty and dot/dotdot components on the asserted POSIX platform. This selected absolute directory helper has no _wrap_with_jail_check decorator; component validation supplies the lexical boundary. No descendant-symlink/race, universal provider or unrestricted filesystem negative. Random suffixes and the specific read/write/cleanup prerequisites remain material.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual security repair is supported, but the essential matched old caller/helper/policy is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:f18d7e8d00b44377518f and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            self.base_path,\n            \"remote_thumbnail\",\n            server_name,\n            file_id[0:2],\n            file_id[2:4],\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            self.base_path,\n            \"remote_thumbnail\",\n            _validate_path_component(server_name),\n            _validate_path_component(file_id[0:2]),\n            _validate_path_component(file_id[2:4]),\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/_base.py",
+          "ref": "91f2bd090^",
+          "needle": "server_name = server_name_bytes.decode(\"utf-8\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/download_resource.py",
+          "ref": "91f2bd090^",
+          "needle": "await self.media_repo.get_remote_media(request, server_name, media_id, name)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_repository.py",
+          "ref": "91f2bd090^",
+          "needle": "            Resolves once a response has successfully been written to request\n        \"\"\"\n        if (\n            self.federation_domain_whitelist is not None\n            and server_name not in self.federation_domain_whitelist\n        ):\n            raise FederationDeniedError(server_name)\n\n        self.mark_recently_accessed(server_name, media_id)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_repository.py",
+          "ref": "91f2bd090^",
+          "needle": "file_id = random_string(24)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_repository.py",
+          "ref": "91f2bd090^",
+          "needle": "thumbnail_dir = self.filepaths.remote_media_thumbnail_dir("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_repository.py",
+          "ref": "91f2bd090^",
+          "needle": "                shutil.rmtree(thumbnail_dir, ignore_errors=True)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ALLOWED_CHARACTERS.issuperset(name) or name in FORBIDDEN_NAMES:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_ADVISORIES.json",
+          "path": "cves/2021/41xxx/CVE-2021-41281.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "\"cveId\": \"CVE-2021-41281\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41281:0:synapse/rest/media/v1/filepath.py:MediaFilePaths.remote_media_thumbnail_rel",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unchecked remote origin escapes the intended path subtree during thumbnail write/read.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old parse_media_id decodes request server_name without validation; public download routing forwards it to the remote-media repository. That caller enforces an optional exact federation whitelist, then uses the unchanged remote origin with a locally generated random filesystem ID. Generated remote thumbnails retain that origin in FileInfo and MediaStorage uses this selected path for writes and fetches. Encoder/method policy constrains the filename but does not sanitize server_name.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need request routing/decoding, media repository enablement/whitelist, random filesystem-ID distinction, FileInfo routing and exact thumbnail write/read sink. All12 selected path/validator rows share one lifecycle/fix family. Do not transfer a write claim to a fallback reader or a cleanup operation. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An unauthenticated download request can supply the remote origin when media is enabled and an exact federation whitelist does not reject it. Retained CVE-2021-41281 corroborates traversal/download placement and explicitly limits attacker control: the last two directories and basename come from random filesystem IDs. This is conditional filesystem placement/location influence; it does not establish an attacker-chosen complete filename or arbitrary file overwrite/disclosure.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Matched _validate_path_component rejects slash/backslash, empty and dot/dotdot components on the asserted POSIX platform. Its jail decorator additionally normalizes/checks the returned path under real_base_path. No descendant-symlink/race, universal provider or unrestricted filesystem negative. Random suffixes and the specific read/write/cleanup prerequisites remain material.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual security repair is supported, but the essential matched old caller/helper/policy is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:f18d7e8d00b44377518f and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        file_name = \"%i-%i-%s-%s-%s\" % (width, height, top_level_type, sub_type, method)\n        return os.path.join(\n            \"remote_thumbnail\",\n            server_name,\n            file_id[0:2],\n            file_id[2:4],\n            file_id[4:],\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        file_name = \"%i-%i-%s-%s-%s\" % (width, height, top_level_type, sub_type, method)\n        return os.path.join(\n            \"remote_thumbnail\",\n            _validate_path_component(server_name),\n            _validate_path_component(file_id[0:2]),\n            _validate_path_component(file_id[2:4]),\n            _validate_path_component(file_id[4:]),\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/_base.py",
+          "ref": "91f2bd090^",
+          "needle": "server_name = server_name_bytes.decode(\"utf-8\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/download_resource.py",
+          "ref": "91f2bd090^",
+          "needle": "await self.media_repo.get_remote_media(request, server_name, media_id, name)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_repository.py",
+          "ref": "91f2bd090^",
+          "needle": "            Resolves once a response has successfully been written to request\n        \"\"\"\n        if (\n            self.federation_domain_whitelist is not None\n            and server_name not in self.federation_domain_whitelist\n        ):\n            raise FederationDeniedError(server_name)\n\n        self.mark_recently_accessed(server_name, media_id)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_repository.py",
+          "ref": "91f2bd090^",
+          "needle": "file_id = random_string(24)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_storage.py",
+          "ref": "91f2bd090^",
+          "needle": "return self.filepaths.remote_media_thumbnail_rel("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_storage.py",
+          "ref": "91f2bd090^",
+          "needle": "with open(fname, \"wb\") as f:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ALLOWED_CHARACTERS.issuperset(name) or name in FORBIDDEN_NAMES:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_ADVISORIES.json",
+          "path": "cves/2021/41xxx/CVE-2021-41281.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "\"cveId\": \"CVE-2021-41281\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41281:0:synapse/rest/media/v1/filepath.py:MediaFilePaths.remote_media_thumbnail_rel_legacy",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Unchecked remote origin escapes the intended path subtree during legacy thumbnail read fallback.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old parse_media_id decodes request server_name without validation; public download routing forwards it to the remote-media repository. That caller enforces an optional exact federation whitelist, then uses the unchanged remote origin with a locally generated random filesystem ID. MediaStorage.fetch_media and ensure_media_is_in_local_cache try this legacy path when a thumbnail has no method in its old filename. This is an existing-file/provider fallback, not the path used to write a newly downloaded legacy thumbnail.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need request routing/decoding, media repository enablement/whitelist, random filesystem-ID distinction, FileInfo routing and exact legacy thumbnail read fallback sink. All12 selected path/validator rows share one lifecycle/fix family. Do not transfer a write claim to a fallback reader or a cleanup operation. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An unauthenticated download request can supply the remote origin when media is enabled and an exact federation whitelist does not reject it. Retained CVE-2021-41281 corroborates traversal/download placement and explicitly limits attacker control: the last two directories and basename come from random filesystem IDs. For legacy reads, matching cache/provider metadata and an existing file at the random-suffix path are additional prerequisites.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Matched _validate_path_component rejects slash/backslash, empty and dot/dotdot components on the asserted POSIX platform. Its jail decorator additionally normalizes/checks the returned path under real_base_path. No descendant-symlink/race, universal provider or unrestricted filesystem negative. Random suffixes and the specific read/write/cleanup prerequisites remain material.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual security repair is supported, but the essential matched old caller/helper/policy is omitted from the selected before function.",
+      "dependence_reason": "Preserve fix-family:f18d7e8d00b44377518f and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        file_name = \"%i-%i-%s-%s\" % (width, height, top_level_type, sub_type)\n        return os.path.join(\n            \"remote_thumbnail\",\n            server_name,\n            file_id[0:2],\n            file_id[2:4],\n            file_id[4:],\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        file_name = \"%i-%i-%s-%s\" % (width, height, top_level_type, sub_type)\n        return os.path.join(\n            \"remote_thumbnail\",\n            _validate_path_component(server_name),\n            _validate_path_component(file_id[0:2]),\n            _validate_path_component(file_id[2:4]),\n            _validate_path_component(file_id[4:]),\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/_base.py",
+          "ref": "91f2bd090^",
+          "needle": "server_name = server_name_bytes.decode(\"utf-8\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/download_resource.py",
+          "ref": "91f2bd090^",
+          "needle": "await self.media_repo.get_remote_media(request, server_name, media_id, name)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_repository.py",
+          "ref": "91f2bd090^",
+          "needle": "            Resolves once a response has successfully been written to request\n        \"\"\"\n        if (\n            self.federation_domain_whitelist is not None\n            and server_name not in self.federation_domain_whitelist\n        ):\n            raise FederationDeniedError(server_name)\n\n        self.mark_recently_accessed(server_name, media_id)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_repository.py",
+          "ref": "91f2bd090^",
+          "needle": "file_id = random_string(24)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_storage.py",
+          "ref": "91f2bd090^",
+          "needle": "                self.filepaths.remote_media_thumbnail_rel_legacy(\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_storage.py",
+          "ref": "91f2bd090^",
+          "needle": "return FileResponder(open(local_path, \"rb\"))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ALLOWED_CHARACTERS.issuperset(name) or name in FORBIDDEN_NAMES:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_ADVISORIES.json",
+          "path": "cves/2021/41xxx/CVE-2021-41281.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "\"cveId\": \"CVE-2021-41281\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41281:0:synapse/rest/media/v1/filepath.py:MediaFilePaths.url_cache_filepath_dirs_to_delete",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "URL-cache empty parent-directory cleanup validates generated IDs without establishing attacker-controlled path components.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old URL preview _download_url generates file_id as current ISO date + underscore + random_string(16), then stores that ID separately from the remote URL/body/Content-Disposition. Legacy two-level ID layout is also retained. Expiry selects IDs from get_expired_url_cache/get_url_cache_media_before; empty parent-directory cleanup consumes those DB IDs. The loose date-prefix classifier can accept synthetic malformed strings, but that alone does not establish an old production duty or a reachable attacker-controlled ID.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact generated and legacy ID provenance, DB expiry/storage and FileInfo routing, plus empty parent-directory cleanup consumer. rmtree of the thumbnail directory is distinct from rmdir of empty parents; basename content from a remote site is not a storage ID. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "A lower-trust URL/response exists, but matched producer chooses the storage identifier locally. No retained route places arbitrary remote body/URL text in these selected ID slices. The remote-server traversal advisory does not automatically cover URL-cache IDs. Keep security delivery and arbitrary-string API duty unresolved rather than assume database compromise.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "New validation covers both date and legacy branches before lexical jail checking, with list results checked individually for cleanup helpers. Legitimate generated IDs remain compatible. This establishes conditional lexical rejection only; not an approved old positive, exact universal delete/read/write confinement, symlink/race guarantee or proof of every historical ID producer.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Lexical hardening is visible, but the matched generated-ID/DB/encoder path does not establish attacker-controlled components at this selected sink or an old obligation for arbitrary synthetic strings.",
+      "dependence_reason": "Preserve fix-family:f18d7e8d00b44377518f and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        \"The dirs to try and remove if we delete the media_id file\"\n        if NEW_FORMAT_ID_RE.match(media_id):\n            return [os.path.join(self.base_path, \"url_cache\", media_id[:10])]\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    self.base_path, \"url_cache\", _validate_path_component(media_id[:10])\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/preview_url_resource.py",
+          "ref": "91f2bd090^",
+          "needle": "file_id = datetime.date.today().isoformat() + \"_\" + random_string(16)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/preview_url_resource.py",
+          "ref": "91f2bd090^",
+          "needle": "media_ids = await self.store.get_expired_url_cache(now)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if isinstance(path_or_paths, list):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ALLOWED_CHARACTERS.issuperset(name) or name in FORBIDDEN_NAMES:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41281:0:synapse/rest/media/v1/filepath.py:MediaFilePaths.url_cache_filepath_rel",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "URL-cache cached body storage/fetch validates generated IDs without establishing attacker-controlled path components.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old URL preview _download_url generates file_id as current ISO date + underscore + random_string(16), then stores that ID separately from the remote URL/body/Content-Disposition. Legacy two-level ID layout is also retained. FileInfo routes URL-cache files/thumbnails by that generated ID; remote URL text is not substituted for it. The loose date-prefix classifier can accept synthetic malformed strings, but that alone does not establish an old production duty or a reachable attacker-controlled ID.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact generated and legacy ID provenance, DB expiry/storage and FileInfo routing, plus cached body storage/fetch consumer. rmtree of the thumbnail directory is distinct from rmdir of empty parents; basename content from a remote site is not a storage ID. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "A lower-trust URL/response exists, but matched producer chooses the storage identifier locally. No retained route places arbitrary remote body/URL text in these selected ID slices. The remote-server traversal advisory does not automatically cover URL-cache IDs. Keep security delivery and arbitrary-string API duty unresolved rather than assume database compromise.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "New validation covers both date and legacy branches before lexical jail checking, with list results checked individually for cleanup helpers. Legitimate generated IDs remain compatible. This establishes conditional lexical rejection only; not an approved old positive, exact universal delete/read/write confinement, symlink/race guarantee or proof of every historical ID producer.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Lexical hardening is visible, but the matched generated-ID/DB/encoder path does not establish attacker-controlled components at this selected sink or an old obligation for arbitrary synthetic strings.",
+      "dependence_reason": "Preserve fix-family:f18d7e8d00b44377518f and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    def url_cache_filepath_rel(self, media_id: str) -> str:\n        if NEW_FORMAT_ID_RE.match(media_id):\n            # Media id is of the form <DATE><RANDOM_STRING>\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                \"url_cache\",\n                _validate_path_component(media_id[:10]),\n                _validate_path_component(media_id[11:]),\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/preview_url_resource.py",
+          "ref": "91f2bd090^",
+          "needle": "file_id = datetime.date.today().isoformat() + \"_\" + random_string(16)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_storage.py",
+          "ref": "91f2bd090^",
+          "needle": "return self.filepaths.url_cache_filepath_rel(file_info.file_id)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if isinstance(path_or_paths, list):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ALLOWED_CHARACTERS.issuperset(name) or name in FORBIDDEN_NAMES:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41281:0:synapse/rest/media/v1/filepath.py:MediaFilePaths.url_cache_thumbnail_directory_rel",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "URL-cache thumbnail-tree deletion validates generated IDs without establishing attacker-controlled path components.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old URL preview _download_url generates file_id as current ISO date + underscore + random_string(16), then stores that ID separately from the remote URL/body/Content-Disposition. Legacy two-level ID layout is also retained. Expiry selects IDs from get_expired_url_cache/get_url_cache_media_before; thumbnail-tree deletion consumes those DB IDs. The loose date-prefix classifier can accept synthetic malformed strings, but that alone does not establish an old production duty or a reachable attacker-controlled ID.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact generated and legacy ID provenance, DB expiry/storage and FileInfo routing, plus thumbnail-tree deletion consumer. rmtree of the thumbnail directory is distinct from rmdir of empty parents; basename content from a remote site is not a storage ID. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "A lower-trust URL/response exists, but matched producer chooses the storage identifier locally. No retained route places arbitrary remote body/URL text in these selected ID slices. The remote-server traversal advisory does not automatically cover URL-cache IDs. Keep security delivery and arbitrary-string API duty unresolved rather than assume database compromise.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "New validation covers both date and legacy branches before lexical jail checking, with list results checked individually for cleanup helpers. Legitimate generated IDs remain compatible. This establishes conditional lexical rejection only; not an approved old positive, exact universal delete/read/write confinement, symlink/race guarantee or proof of every historical ID producer.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Lexical hardening is visible, but the matched generated-ID/DB/encoder path does not establish attacker-controlled components at this selected sink or an old obligation for arbitrary synthetic strings.",
+      "dependence_reason": "Preserve fix-family:f18d7e8d00b44377518f and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\n        if NEW_FORMAT_ID_RE.match(media_id):\n            return os.path.join(\"url_cache_thumbnails\", media_id[:10], media_id[11:])\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            return os.path.join(\n                \"url_cache_thumbnails\",\n                _validate_path_component(media_id[:10]),\n                _validate_path_component(media_id[11:]),\n            )\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/preview_url_resource.py",
+          "ref": "91f2bd090^",
+          "needle": "file_id = datetime.date.today().isoformat() + \"_\" + random_string(16)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/preview_url_resource.py",
+          "ref": "91f2bd090^",
+          "needle": "thumbnail_dir = self.filepaths.url_cache_thumbnail_directory(media_id)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if isinstance(path_or_paths, list):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ALLOWED_CHARACTERS.issuperset(name) or name in FORBIDDEN_NAMES:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41281:0:synapse/rest/media/v1/filepath.py:MediaFilePaths.url_cache_thumbnail_dirs_to_delete",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "URL-cache thumbnail parent-directory cleanup validates generated IDs without establishing attacker-controlled path components.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old URL preview _download_url generates file_id as current ISO date + underscore + random_string(16), then stores that ID separately from the remote URL/body/Content-Disposition. Legacy two-level ID layout is also retained. Expiry selects IDs from get_expired_url_cache/get_url_cache_media_before; thumbnail parent-directory cleanup consumes those DB IDs. The loose date-prefix classifier can accept synthetic malformed strings, but that alone does not establish an old production duty or a reachable attacker-controlled ID.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact generated and legacy ID provenance, DB expiry/storage and FileInfo routing, plus thumbnail parent-directory cleanup consumer. rmtree of the thumbnail directory is distinct from rmdir of empty parents; basename content from a remote site is not a storage ID. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "A lower-trust URL/response exists, but matched producer chooses the storage identifier locally. No retained route places arbitrary remote body/URL text in these selected ID slices. The remote-server traversal advisory does not automatically cover URL-cache IDs. Keep security delivery and arbitrary-string API duty unresolved rather than assume database compromise.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "New validation covers both date and legacy branches before lexical jail checking, with list results checked individually for cleanup helpers. Legitimate generated IDs remain compatible. This establishes conditional lexical rejection only; not an approved old positive, exact universal delete/read/write confinement, symlink/race guarantee or proof of every historical ID producer.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Lexical hardening is visible, but the matched generated-ID/DB/encoder path does not establish attacker-controlled components at this selected sink or an old obligation for arbitrary synthetic strings.",
+      "dependence_reason": "Preserve fix-family:f18d7e8d00b44377518f and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        # E.g.: 2017-09-28-fsdRDt24DS234dsf\n        if NEW_FORMAT_ID_RE.match(media_id):\n            return [\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    \"url_cache_thumbnails\",\n                    _validate_path_component(media_id[:10]),\n                    _validate_path_component(media_id[11:]),\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/preview_url_resource.py",
+          "ref": "91f2bd090^",
+          "needle": "file_id = datetime.date.today().isoformat() + \"_\" + random_string(16)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/preview_url_resource.py",
+          "ref": "91f2bd090^",
+          "needle": "dirs = self.filepaths.url_cache_thumbnail_dirs_to_delete(media_id)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if isinstance(path_or_paths, list):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ALLOWED_CHARACTERS.issuperset(name) or name in FORBIDDEN_NAMES:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41281:0:synapse/rest/media/v1/filepath.py:MediaFilePaths.url_cache_thumbnail_rel",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "URL-cache thumbnail file storage/fetch validates generated IDs without establishing attacker-controlled path components.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old URL preview _download_url generates file_id as current ISO date + underscore + random_string(16), then stores that ID separately from the remote URL/body/Content-Disposition. Legacy two-level ID layout is also retained. FileInfo routes URL-cache files/thumbnails by that generated ID; remote URL text is not substituted for it. The loose date-prefix classifier can accept synthetic malformed strings, but that alone does not establish an old production duty or a reachable attacker-controlled ID.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact generated and legacy ID provenance, DB expiry/storage and FileInfo routing, plus thumbnail file storage/fetch consumer. rmtree of the thumbnail directory is distinct from rmdir of empty parents; basename content from a remote site is not a storage ID. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "A lower-trust URL/response exists, but matched producer chooses the storage identifier locally. No retained route places arbitrary remote body/URL text in these selected ID slices. The remote-server traversal advisory does not automatically cover URL-cache IDs. Keep security delivery and arbitrary-string API duty unresolved rather than assume database compromise.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "New validation covers both date and legacy branches before lexical jail checking, with list results checked individually for cleanup helpers. Legitimate generated IDs remain compatible. This establishes conditional lexical rejection only; not an approved old positive, exact universal delete/read/write confinement, symlink/race guarantee or proof of every historical ID producer.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Lexical hardening is visible, but the matched generated-ID/DB/encoder path does not establish attacker-controlled components at this selected sink or an old obligation for arbitrary synthetic strings.",
+      "dependence_reason": "Preserve fix-family:f18d7e8d00b44377518f and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\n        if NEW_FORMAT_ID_RE.match(media_id):\n            return os.path.join(\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            return os.path.join(\n                \"url_cache_thumbnails\",\n                _validate_path_component(media_id[:10]),\n                _validate_path_component(media_id[11:]),\n                _validate_path_component(file_name),\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/preview_url_resource.py",
+          "ref": "91f2bd090^",
+          "needle": "file_id = datetime.date.today().isoformat() + \"_\" + random_string(16)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/media_storage.py",
+          "ref": "91f2bd090^",
+          "needle": "return self.filepaths.url_cache_thumbnail_rel("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if isinstance(path_or_paths, list):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ALLOWED_CHARACTERS.issuperset(name) or name in FORBIDDEN_NAMES:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41281:0:synapse/util/stringutils.py:parse_and_validate_server_name",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Stricter server-name helper is newly installed in the media request parser, rather than repairing an old invocation there.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve the current discovery leaf or null exclusion. Separate old API duty, actual selected enforcement, before-only observability, lower-trust delivery and after failures. A shared advisory, sink or helper migration does not make every component an old positive.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old helper accepts any bracketed interior when the closing bracket exists and uses a permissive host regex; new IPv6/label syntax checks visibly tighten it. But the old vulnerable media parser only decodes server_name and never invokes this helper. The same fix adds that caller invocation as well as per-component path validation. Prior media enforcement cannot be attributed to an uncalled old validator.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need existing endpoint consumers and their supported malformed-host duty, parser/regex/valid_ipv6 semantics and the exact media caller installation. A bad bracketed synthetic string exposes parser permissiveness, not by itself an old selected validator-to-filesystem vulnerability. The common numerical before-only budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched callers/helpers/configuration, tests, advisories, after code and labels are adjudication-only; never selectively inject them into detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The advisory media route crosses a real remote-origin/filesystem boundary, but selected old helper involvement in that route is not demonstrated. Stricter host syntax is not denied-address enforcement, DNS rebinding prevention or a complete media-storage boundary. Preserve the ambiguous discovery and coordinated attribution.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After validates nonempty bracket contents with valid_ipv6 and tightens host-label syntax; the new caller rejects malformed server names before media routing. Those are coordinated syntax defenses, not an isolated old-positive/new-negative proof for this selected helper. No server parser/network/dependency code executes.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Newly installing validation in a media caller does not isolate an old validator-to-filesystem enforcement failure in this selected helper.",
+      "dependence_reason": "Preserve fix-family:f18d7e8d00b44377518f and all exact/AST/function-history/span links. The21 Synapse rows occupy five conservative fix families: room-context binding, outbound-client policy, well-known size, push glob and media paths. Writers, readers, cleanup, constructors and validator wiring are not independent issues by row count; audited independent issue count remains unset.",
+      "open_questions": [
+        "Researcher confirm supported historical runtime/API/configuration, exact selected security delivery, bounded after behavior and uniform before-only admission; final eligibility and independent issue identities remain pending.",
+        "All observations are inert-text deductions, not reproduced failures. No Synapse/Twisted, network/DNS/proxy request, event/URL/path/regex parser, storage/cleanup operation, dataset/dependency program or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        return host, port\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not ipv6_address or not valid_ipv6(ipv6_address):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018.json",
+          "path": "synapse/rest/media/v1/_base.py",
+          "ref": "91f2bd090^",
+          "needle": "server_name = server_name_bytes.decode(\"utf-8\")"
+        },
+        {
+          "kind": "fix",
+          "needle": "+        parse_and_validate_server_name(server_name)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "VALID_HOST_REGEX = re.compile("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_018_ADVISORIES.json",
+          "path": "cves/2021/41xxx/CVE-2021-41281.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "\"cveId\": \"CVE-2021-41281\""
+        }
+      ]
+    }
+  ]
+}

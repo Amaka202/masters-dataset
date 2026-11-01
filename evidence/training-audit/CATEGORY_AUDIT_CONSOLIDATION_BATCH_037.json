@@ -1,0 +1,514 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-037",
+  "review_date": "2026-10-26",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All six markdown-it-py training candidates/all discovery statuses across two mechanical families; no null categories.",
+  "selection_rule": {
+    "repository": "github.com/executablebooks/markdown-it-py",
+    "discovery_categories": [
+      "SEC-INPUT-DECODE-AVAILABILITY",
+      "SEC-NULL-TOKEN-AVAILABILITY"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "One missing-context, four selected-attribution and one paired-negative deferral. Ordinary core producers populate top-level inline child lists; ordinary image producer supplies alt, and old recursive helper already tolerates None at entry. Only its recursive nested-image assertion has the matched standard producer witness; four companion guards do not become four isolated availability defects. CLI strict decode failure is conditional on locale/runtime/file bytes; lower-trust security delivery and a tolerant-invalid-byte duty remain unestablished. Forced UTF8-ignore after loses valid old cp1252 locale text, an introduced data-preservation regression, so defer its paired negative without inventing a new old security positive. CLI parent already has the earlier renderer guards; no mixed-version regression proof or automatic family merge. Three evidence pins retain134 inert texts/eight exact archive peers, two resolved parents/four archive inventories and explicit missing paths; CommonMark0.30 and CPython3.9.16 are semantic comparisons, not installed/all-version proof. Preserve all833 ledger events, discovery statuses/categories/source hashes/families, prior batches, canonical bytes/splits and45 protected inputs. Six functions/two families are not independent issue counts. No retained programs, payloads, vulnerability requests or upstream tests execute; conditional source deductions only.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:216019655045289:108733513148703",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Top-level render guard hardening has no isolated old null-inline witness under matched standard core invariants.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve null-token producer/consumer availability versus CLI input-decoding availability as separate discovery leaves, not a generic exception category. Distinguish legitimate nested empty-image state from unproven top-level/custom-token states and encoding-policy change from established old security duty. No new leaf or approved category/eligibility/issue count.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old ParserCore runs block then inline before replacements/smartquotes. The inline pass explicitly initializes missing top-level children to [] before parsing. Paragraph and inlineMode block producers already supply lists, and MarkdownIt.parse promises inline tokens containing a list. Nested image children=None instead occurs inside the inline child list, not in state.tokens as a top-level inline token. Thus the known nested-image witness does not reach this top-level assertion. Custom rules/tokens can differ, but documented extensibility alone does not establish that every arbitrarily constructed None state is an admitted old rendering/typography contract.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old top-level Token shape, core ordering/preset and actual custom producer contract. The old selected assertion alone does not establish that its None state is admitted. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Producer/caller/preset/plugin/runtime/encoding/specification facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No matched lower-trust standard producer reaches this selected top-level null assertion. A constructed invalid/custom state can fail with assertions enabled, but no deployed custom-plugin/input path or availability boundary is established. The sibling recursive failure cannot be borrowed as this selected sink.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After skips inline children that are None or empty; standard empty-list rendering already returned empty text before. Nonempty normal lists still enter renderInline. This is a guard behavior, not a certified selected-security negative or whole-parser availability proof. No independently supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Normal matched producers do not violate this selected guard; the shared fix and recursive sibling defect do not establish an isolated old selected failure. Defer selected attribution and preserve custom-token/plugin contract questions rather than force eligibility or exclusion.",
+      "dependence_reason": "Six selected functions/two mechanical families are not independently adjudicated issues. Five null-token rows share fix-family:fc48c41f9113151c3468 and one fix; three renderer methods overlap one full file but only recursive alt extraction has the established standard nested-image witness. Typographer top-level guards do not inherit that nested producer. CLI decode repair belongs to fix-family:ded9e86059c11b5779b8; its parent renderer already contains the earlier guards, so do not backfill the old recursive assertion into the later CLI snapshot. A shared availability consequence, full-file history or earlier-after/later-context equality is not selected-function equality, an automatic family merger or independent issue proof.",
+      "open_questions": [
+        "Researcher confirm supported custom-token/plugin contracts and installed lower-trust Markdown consumer, exception containment, assertion optimization, locale/default input encoding, stdout representability and any declared CLI encoding policy. Historical runtime/spec comparisons and new fixtures do not certify deployed/all-version behavior.",
+        "Conditional source deductions, not reproduced outcomes. No markdown-it-py/Markdown/parser/renderer/HTML/regex/CLI/codec/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            if token.type == \"inline\":\n                assert token.children is not None\n                result += self.renderInline(token.children, options, env)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            if token.type == \"inline\":\n                if token.children:\n                    result += self.renderInline(token.children, options, env)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "result += self.renderInline(token.children, options, env)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/rules_core/inline.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "token.children = []"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/parser_core.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "(\"inline\", inline)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/rules_core/block.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "token.children = []"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/rules_block/paragraph.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "token.children = []"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/main.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "\"inline\" will contain list of inline tokens"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/rules_inline/image.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "token.children = tokens or None"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:216019655045289:160931086829041",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Image entry guard is coordinated hardening; old helper already accepts absent entry children and ordinary image producer supplies alt.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve null-token producer/consumer availability versus CLI input-decoding availability as separate discovery leaves, not a generic exception category. Distinguish legitimate nested empty-image state from unproven top-level/custom-token states and encoding-policy change from established old security duty. No new leaf or approved category/eligibility/issue count.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old inline image rule always sets attrs with src and alt before rendering, and sets children to parsed tokens or None. Old selected image passes None to renderInlineAsText, whose entry loop is tokens or []; that call returns empty text rather than failing to iterate. For an outer image with nonempty children containing an empty nested image, the later recursive helper assertion fails; replacing only this selected entry guard leaves that helper failure. Removing the attrs assertion does not establish a supported ordinary producer missing alt. Token.attrs is a dictionary and attrSet can add keys, but generic token construction is not a proven admitted old image contract.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact old image producer, Token.attrs/attrSet and recursive helper behavior, plus actual custom-producer obligations. Distinguish entry None from recursive image-token None. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Producer/caller/preset/plugin/runtime/encoding/specification facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The actual nested-image availability witness is in the recursive helper. Both ordinary outer attrs and entry None handling satisfy old selected checks; no independent selected lower-trust missing-alt violation is established.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After explicitly stores empty alt when no children and otherwise calls the helper; this preserves ordinary empty-image semantics. The same-fix recursive helper guard repairs the nested case. No isolated selected-function security negative is approved and no independently supported after regression is established. Do not revive superseded revision1 iterable-None failure reasoning.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Normal matched producers do not violate this selected guard; the shared fix and recursive sibling defect do not establish an isolated old selected failure. Defer selected attribution and preserve custom-token/plugin contract questions rather than force eligibility or exclusion.",
+      "dependence_reason": "Six selected functions/two mechanical families are not independently adjudicated issues. Five null-token rows share fix-family:fc48c41f9113151c3468 and one fix; three renderer methods overlap one full file but only recursive alt extraction has the established standard nested-image witness. Typographer top-level guards do not inherit that nested producer. CLI decode repair belongs to fix-family:ded9e86059c11b5779b8; its parent renderer already contains the earlier guards, so do not backfill the old recursive assertion into the later CLI snapshot. A shared availability consequence, full-file history or earlier-after/later-context equality is not selected-function equality, an automatic family merger or independent issue proof.",
+      "open_questions": [
+        "Researcher confirm supported custom-token/plugin contracts and installed lower-trust Markdown consumer, exception containment, assertion optimization, locale/default input encoding, stdout representability and any declared CLI encoding policy. Historical runtime/spec comparisons and new fixtures do not certify deployed/all-version behavior.",
+        "Conditional source deductions, not reproduced outcomes. No markdown-it-py/Markdown/parser/renderer/HTML/regex/CLI/codec/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "token.attrs and \"alt\" in token.attrs"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "token.attrSet(\"alt\", \"\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for token in tokens or []:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/rules_inline/image.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "token.attrs = {\"src\": href, \"alt\": \"\"}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/rules_inline/image.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "token.children = tokens or None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/token.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "        \"\"\"Set `name` attribute to `value`. Override old value if exists.\"\"\"\n        self.attrs[name] = value\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/renderer.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "assert token.children is not None\n                result += self.renderInlineAsText"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:216019655045289:62090590228869",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Recursive alt-text extraction asserts on a legitimate nested image whose empty parsed children are None.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve null-token producer/consumer availability versus CLI input-decoding availability as separate discovery leaves, not a generic exception category. Distinguish legitimate nested empty-image state from unproven top-level/custom-token states and encoding-policy change from established old security duty. No new leaf or approved category/eligibility/issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old image rule parses image-description content into a fresh list, then stores tokens or None. An outer description containing an empty nested image therefore has a nonempty list with an image token whose children are None. Old outer image attrs include alt, so entry image assertion passes and renderInlineAsText receives that list. Its recursive image branch asserts children is not None before recursion, despite its own entry accepting None through tokens or []. CommonMark0.30 permits nested image descriptions and recommends plain-string alt content; old README promises baseline CommonMark parsing. The new fixture corroborates the exact nested empty-image path but is not the sole old duty proof. This assertion failure requires assertions enabled; optimized Python removes it.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual rules_inline.image producer, standard preset/core order, image renderer caller and assertion-enabled runtime; selected helper alone cannot establish admitted None or actual request/file provenance. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Producer/caller/preset/plugin/runtime/encoding/specification facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Where a process renders lower-trust Markdown with this standard producer and assertions enabled, the author can interrupt the current rendering operation via the short nested-empty-image state. CLI and public render propagate the failure absent an outer consumer handler. This is conditional input-to-rendering availability, not demonstrated service/process-wide outage, resource exhaustion or proof a particular network deployment exists.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After recursively visits only nonempty image children; None/empty nested image contributes empty text, while text and softbreak contributions remain. Both outer image rendering and helper are retained. Negative is confined to the witnessed nested-empty-image assertion under this producer, not all malformed Markdown, recursion/resource limits, HTML/XSS policy, plugins or process availability. No independently supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The matched standard producer/consumer chain establishes a local recursive failure, but before-only admission needs omitted producer invariants, runtime assertion policy and lower-trust consumer facts. Defer without selective context injection; only mechanism-local after behavior is supported.",
+      "dependence_reason": "Six selected functions/two mechanical families are not independently adjudicated issues. Five null-token rows share fix-family:fc48c41f9113151c3468 and one fix; three renderer methods overlap one full file but only recursive alt extraction has the established standard nested-image witness. Typographer top-level guards do not inherit that nested producer. CLI decode repair belongs to fix-family:ded9e86059c11b5779b8; its parent renderer already contains the earlier guards, so do not backfill the old recursive assertion into the later CLI snapshot. A shared availability consequence, full-file history or earlier-after/later-context equality is not selected-function equality, an automatic family merger or independent issue proof.",
+      "open_questions": [
+        "Researcher confirm supported custom-token/plugin contracts and installed lower-trust Markdown consumer, exception containment, assertion optimization, locale/default input encoding, stdout representability and any declared CLI encoding policy. Historical runtime/spec comparisons and new fixtures do not certify deployed/all-version behavior.",
+        "Conditional source deductions, not reproduced outcomes. No markdown-it-py/Markdown/parser/renderer/HTML/regex/CLI/codec/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            elif token.type == \"image\":\n                assert token.children is not None\n                result += self.renderInlineAsText(token.children, options, env)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            elif token.type == \"image\":\n                if token.children:\n                    result += self.renderInlineAsText(token.children, options, env)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for token in tokens or []:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/rules_inline/image.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "state.md.inline.parse(content, state.md, state.env, tokens)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/rules_inline/image.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "token.children = tokens or None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/renderer.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "token.attrSet(\"alt\", self.renderInlineAsText(token.children, options, env))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/main.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "return self.renderer.render(self.parse(src, env), self.options, env)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/presets/commonmark.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "\"image\","
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTRACTS.json",
+          "path": "spec.txt",
+          "ref": "0.30",
+          "needle": "![foo ![bar](/url)](/url2)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTRACTS.json",
+          "path": "Doc/reference/simple_stmts.rst",
+          "ref": "v3.9.16",
+          "needle": "code generator emits no code for an assert statement when optimization is"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "tests/test_port/fixtures/issue-fixes.md",
+          "ref": "ae03c6107dfa18e648f6fdd1280f5b89092d5d49",
+          "needle": "Fix CVE-2023-26303"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:270384747407054:206421848895534",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Typographer replacements guard addresses top-level inline children, not the nested image assertion.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve null-token producer/consumer availability versus CLI input-decoding availability as separate discovery leaves, not a generic exception category. Distinguish legitimate nested empty-image state from unproven top-level/custom-token states and encoding-policy change from established old security duty. No new leaf or approved category/eligibility/issue count.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old ParserCore runs block then inline before replacements/smartquotes. The inline pass explicitly initializes missing top-level children to [] before parsing. Paragraph and inlineMode block producers already supply lists, and MarkdownIt.parse promises inline tokens containing a list. Nested image children=None instead occurs inside the inline child list, not in state.tokens as a top-level inline token. Thus the known nested-image witness does not reach this top-level assertion. Custom rules/tokens can differ, but documented extensibility alone does not establish that every arbitrarily constructed None state is an admitted old rendering/typography contract. Replacements runs only when typographer is enabled; after local null skip precedes abbreviation/rare-pattern substitutions. Default CommonMark has typographer=False and does not enable replacements, while documented opt-in still retains the inline-list producer invariant.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need typographer/rule activation, top-level core-state invariants and a supported lower-trust custom producer. Regex presence and shared CVE do not establish that state. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Producer/caller/preset/plugin/runtime/encoding/specification facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No matched lower-trust standard producer reaches this selected top-level null assertion. A constructed invalid/custom state can fail with assertions enabled, but no deployed custom-plugin/input path or availability boundary is established. The sibling recursive failure cannot be borrowed as this selected sink.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After continues past None children, leaving normal nonnull replacement branches unchanged. This does not certify a selected reachable availability repair, plugin behavior or all typography/parser semantics. No independently supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Normal matched producers do not violate this selected guard; the shared fix and recursive sibling defect do not establish an isolated old selected failure. Defer selected attribution and preserve custom-token/plugin contract questions rather than force eligibility or exclusion.",
+      "dependence_reason": "Six selected functions/two mechanical families are not independently adjudicated issues. Five null-token rows share fix-family:fc48c41f9113151c3468 and one fix; three renderer methods overlap one full file but only recursive alt extraction has the established standard nested-image witness. Typographer top-level guards do not inherit that nested producer. CLI decode repair belongs to fix-family:ded9e86059c11b5779b8; its parent renderer already contains the earlier guards, so do not backfill the old recursive assertion into the later CLI snapshot. A shared availability consequence, full-file history or earlier-after/later-context equality is not selected-function equality, an automatic family merger or independent issue proof.",
+      "open_questions": [
+        "Researcher confirm supported custom-token/plugin contracts and installed lower-trust Markdown consumer, exception containment, assertion optimization, locale/default input encoding, stdout representability and any declared CLI encoding policy. Historical runtime/spec comparisons and new fixtures do not certify deployed/all-version behavior.",
+        "Conditional source deductions, not reproduced outcomes. No markdown-it-py/Markdown/parser/renderer/HTML/regex/CLI/codec/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "assert token.children is not None"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if token.children is None:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not state.md.options.typographer:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/rules_core/inline.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "token.children = []"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/parser_core.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "(\"replacements\", replace)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/rules_inline/image.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "token.children = tokens or None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "docs/using.md",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "Both of these components require typography to be turned on"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:31512558439467:61343381612260",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "CLI strict locale decoding can abort conversion; forced UTF-8-ignore after also corrupts valid old locale-encoded Markdown.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve null-token producer/consumer availability versus CLI input-decoding availability as separate discovery leaves, not a generic exception category. Distinguish legitimate nested empty-image state from unproven top-level/custom-token states and encoding-policy change from established old security duty. No new leaf or approved category/eligibility/issue count.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old pyproject exposes markdown-it command entry and supports Python>=3.7; main calls convert, which iterates filenames and calls selected convert_file. The old reader is text-mode open without explicit encoding/errors, so effective locale/runtime selects strict decoding. A UnicodeDecodeError is not OSError and escapes this catch, stopping the current CLI batch. Retain that source consequence without inventing an old obligation to accept every malformed byte string or treating intentional decode rejection as automatically a security defect. Separately old declared file-to-HTML conversion and chosen locale reader establish preservation of ordinary valid locale-decoded text, the duty violated by the new encoding choice.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual locale/default encoding and UTF-8-mode policy, admitted file provenance, caller exception containment, supported Python/codec semantics and stdout encoding. A CLI user selecting a local file is not by itself an external attacker/service trust boundary. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Producer/caller/preset/plugin/runtime/encoding/specification facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Malformed file bytes can abort this CLI invocation before later files, but actual lower-trust file admission and security-relevant batch/service consequence remain unestablished. CVE provenance alone does not establish them. The supported after data-loss regression is correctness evidence, not a new old-code security positive.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Old advertised command-line usage converts one or more Markdown files, with no UTF-8-only input requirement in retained old CLI/docs. Its text open uses locale/default encoding; CPython3.9.16 open/TextIOWrapper documents that choice and default strict errors. In a retained-supported Python3.9 environment whose effective default is cp1252 with UTF-8 mode off, an ordinary locale-encoded word cafe-with-e-acute (final byte0xE9 followed by a line ending) decodes to the intended Unicode text before normal Markdown rendering; choose stdout supporting that character. The after forces utf8 and ignore: the same byte is an invalid/incomplete UTF-8 sequence and is silently removed, losing admitted source text in HTML instead of preserving it. cp1252 mapping explicitly maps0xE9 to U+00E9. This is a supported introduced locale-input compatibility/data-preservation regression under those conditions, distinct from intentionally dropping genuinely malformed UTF-8. CommonMark does not mandate a byte encoding and permits limited implementations; that spec alone neither imposes all-encoding support nor proves an old UTF-8-only contract. UTF-8-default environments and ordinary valid UTF-8 files can be unaffected. No codec, parser, file conversion or upstream test executes.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "A supported introduced loss of previously valid locale-decoded text prevents a clean paired negative. Keep malformed-byte exception behavior separate from unresolved lower-trust security delivery and old tolerant-input obligation; do not invent an old security positive from the after regression.",
+      "dependence_reason": "Six selected functions/two mechanical families are not independently adjudicated issues. Five null-token rows share fix-family:fc48c41f9113151c3468 and one fix; three renderer methods overlap one full file but only recursive alt extraction has the established standard nested-image witness. Typographer top-level guards do not inherit that nested producer. CLI decode repair belongs to fix-family:ded9e86059c11b5779b8; its parent renderer already contains the earlier guards, so do not backfill the old recursive assertion into the later CLI snapshot. A shared availability consequence, full-file history or earlier-after/later-context equality is not selected-function equality, an automatic family merger or independent issue proof.",
+      "open_questions": [
+        "Researcher confirm supported custom-token/plugin contracts and installed lower-trust Markdown consumer, exception containment, assertion optimization, locale/default input encoding, stdout representability and any declared CLI encoding policy. Historical runtime/spec comparisons and new fixtures do not certify deployed/all-version behavior.",
+        "Conditional source deductions, not reproduced outcomes. No markdown-it-py/Markdown/parser/renderer/HTML/regex/CLI/codec/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "with open(filename, \"r\") as fin:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "with open(filename, \"r\", encoding=\"utf8\", errors=\"ignore\") as fin:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for filename in filenames:\n        convert_file(filename)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "except OSError:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "pyproject.toml",
+          "ref": "6491bc2491a07a8072e5d40f27eab6430585c42c",
+          "needle": "requires-python = \">=3.7\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "pyproject.toml",
+          "ref": "6491bc2491a07a8072e5d40f27eab6430585c42c",
+          "needle": "markdown-it = \"markdown_it.cli.parse:main\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "README.md",
+          "ref": "6491bc2491a07a8072e5d40f27eab6430585c42c",
+          "needle": "Parse one or more markdown files, convert each to HTML, and print to stdout"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTRACTS.json",
+          "path": "Doc/library/functions.rst",
+          "ref": "v3.9.16",
+          "needle": "``locale.getpreferredencoding(False)`` is called to get the current locale"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTRACTS.json",
+          "path": "Doc/library/functions.rst",
+          "ref": "v3.9.16",
+          "needle": "* ``'ignore'`` ignores errors.  Note that ignoring encoding errors"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTRACTS.json",
+          "path": "Lib/encodings/cp1252.py",
+          "ref": "v3.9.16",
+          "needle": "0xE9 -> LATIN SMALL LETTER E WITH ACUTE"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTRACTS.json",
+          "path": "spec.txt",
+          "ref": "0.30",
+          "needle": "This spec does not specify an encoding;"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/renderer.py",
+          "ref": "6491bc2491a07a8072e5d40f27eab6430585c42c",
+          "needle": "            if token.type == \"inline\":\n                if token.children:\n                    result += self.renderInline(token.children, options, env)\n"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Old advertised command-line usage converts one or more Markdown files, with no UTF-8-only input requirement in retained old CLI/docs. Its text open uses locale/default encoding; CPython3.9.16 open/TextIOWrapper documents that choice and default strict errors. In a retained-supported Python3.9 environment whose effective default is cp1252 with UTF-8 mode off, an ordinary locale-encoded word cafe-with-e-acute (final byte0xE9 followed by a line ending) decodes to the intended Unicode text before normal Markdown rendering; choose stdout supporting that character. The after forces utf8 and ignore: the same byte is an invalid/incomplete UTF-8 sequence and is silently removed, losing admitted source text in HTML instead of preserving it. cp1252 mapping explicitly maps0xE9 to U+00E9. This is a supported introduced locale-input compatibility/data-preservation regression under those conditions, distinct from intentionally dropping genuinely malformed UTF-8. CommonMark does not mandate a byte encoding and permits limited implementations; that spec alone neither imposes all-encoding support nor proves an old UTF-8-only contract. UTF-8-default environments and ordinary valid UTF-8 files can be unaffected. No codec, parser, file conversion or upstream test executes."
+    },
+    {
+      "pair_id": "CVEfixes:76685702559682:97086518402464",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Smartquotes top-level null guard does not inherit nested-image lower-trust reachability.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve null-token producer/consumer availability versus CLI input-decoding availability as separate discovery leaves, not a generic exception category. Distinguish legitimate nested empty-image state from unproven top-level/custom-token states and encoding-policy change from established old security duty. No new leaf or approved category/eligibility/issue count.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old ParserCore runs block then inline before replacements/smartquotes. The inline pass explicitly initializes missing top-level children to [] before parsing. Paragraph and inlineMode block producers already supply lists, and MarkdownIt.parse promises inline tokens containing a list. Nested image children=None instead occurs inside the inline child list, not in state.tokens as a top-level inline token. Thus the known nested-image witness does not reach this top-level assertion. Custom rules/tokens can differ, but documented extensibility alone does not establish that every arbitrarily constructed None state is an admitted old rendering/typography contract. Smartquotes additionally requires typographer enabled and a top-level inline content match for QUOTE_RE; the known nested image path does not establish those gates or a null top-level list.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need quote/content gating, typographer/rule configuration, matched top-level producer and any supported custom-rule contract. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Producer/caller/preset/plugin/runtime/encoding/specification facts, after, labels, IDs, metadata, tests, advisories and answers are adjudication-only; none becomes selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No matched lower-trust standard producer reaches this selected top-level null assertion. A constructed invalid/custom state can fail with assertions enabled, but no deployed custom-plugin/input path or availability boundary is established. The sibling recursive failure cannot be borrowed as this selected sink.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After only calls process_inlines when children is not None; normal lists still enter the same quote processing. The new assertion guard is not proof of an old reachable selected defect or a universal quote/parser availability negative. No independently supported after-contract failure is established.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Normal matched producers do not violate this selected guard; the shared fix and recursive sibling defect do not establish an isolated old selected failure. Defer selected attribution and preserve custom-token/plugin contract questions rather than force eligibility or exclusion.",
+      "dependence_reason": "Six selected functions/two mechanical families are not independently adjudicated issues. Five null-token rows share fix-family:fc48c41f9113151c3468 and one fix; three renderer methods overlap one full file but only recursive alt extraction has the established standard nested-image witness. Typographer top-level guards do not inherit that nested producer. CLI decode repair belongs to fix-family:ded9e86059c11b5779b8; its parent renderer already contains the earlier guards, so do not backfill the old recursive assertion into the later CLI snapshot. A shared availability consequence, full-file history or earlier-after/later-context equality is not selected-function equality, an automatic family merger or independent issue proof.",
+      "open_questions": [
+        "Researcher confirm supported custom-token/plugin contracts and installed lower-trust Markdown consumer, exception containment, assertion optimization, locale/default input encoding, stdout representability and any declared CLI encoding policy. Historical runtime/spec comparisons and new fixtures do not certify deployed/all-version behavior.",
+        "Conditional source deductions, not reproduced outcomes. No markdown-it-py/Markdown/parser/renderer/HTML/regex/CLI/codec/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without filesystem extraction/import/install. Only independently authored retrieval/view/hash/bookkeeping/audit-validator tooling executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "assert token.children is not None"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if token.children is not None:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if token.type != \"inline\" or not QUOTE_RE.search(token.content):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/rules_core/inline.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "token.children = []"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/parser_core.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "(\"smartquotes\", smartquotes)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "markdown_it/presets/commonmark.py",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "\"typographer\": False"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_037_CONTEXT.json",
+          "path": "docs/using.md",
+          "ref": "2c93e0b6a8aec7e5a6e1bdef502de7d95ec2a192",
+          "needle": "Both of these components require typography to be turned on"
+        }
+      ]
+    }
+  ]
+}

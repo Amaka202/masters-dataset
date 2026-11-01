@@ -1,0 +1,1271 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-014",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All 30 remaining Black training candidates outside the completed broad-leaf batch, every status and null category; includes one CVEfixes source.",
+  "selection_rule": {
+    "repository": "github.com/psf/black",
+    "discovery_categories": [
+      null,
+      "CORR-COORDINATE-UNITS",
+      "CORR-EMPTY-SEQUENCE-INDEX",
+      "CORR-ERROR-CLASSIFICATION",
+      "CORR-EXPECTED-EXCEPTION-RECOVERY",
+      "CORR-NEWLINE-ROUNDTRIP",
+      "CORR-TEXT-ENCODING",
+      "SEC-REGEX-BACKTRACKING"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 807,
+    "sha256": "7a3bae6bdb33eccbbb4d19dc40f1e2f6f2a99f15dd94827f6fc607a72e57bf65"
+  },
+  "interpretation": "Selected before/after spans and unique evidence anchors verified. Historical support, function attribution, non-style scope and after-side failures assessed separately. Dataset/dependency code, formatter/parser/tokenizer/regex/CLI/process-pool programs, payloads and upstream tests remain inert. Only own retrieval, hashing, bookkeeping and audit-validator tests execute. Source deductions are not reproductions; researcher approval and independent issue decisions remain pending.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:139435414054923:11275476978704",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Overlapping whitespace/tab repeats cause excessive backtracking on untrusted docstring prefixes.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The full old strings.py defines FIRST_NON_WHITESPACE_RE as stdlib re pattern r\"\\s*\\t+\\s*(\\S)\". Tabs match all three repeated regions; a long tab/whitespace prefix without required non-whitespace can force repeated redistribution. The retained CVE-2024-21503 description expressly identifies this function and the untrusted-input prerequisite. The fix removes this pattern and uses direct stripping/prefix slicing. No exponent, benchmark or executed exploit is claimed.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The selected body omits the regex pattern, engine and fix_docstring caller. Source provenance and an actual application formatting untrusted inputs establish the availability boundary conditionally; the CVE name alone is not the finding. These premises cannot be selectively injected into detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional availability boundary: attacker-influenced source docstrings reach a formatter operated by another party, causing excessive overlapping-repeat backtracking. Retained advisory expressly requires running Black on untrusted input. That context is essential; ordinary local trusted formatting is not automatically an attack, and no adversarial input is executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Removal of this specific backtracking matcher from leading-tab expansion only. No total formatter resource bound, universal regex safety or deployed-version proof. Whitespace-only lines remain unexpanded in both versions; do not call that a new failure.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old mechanism while deferring admission under the uniform bounded before-only context/runtime knowledge policy.",
+      "dependence_reason": "Preserve fix-family:81f1c35aceebb19c0743 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "match = FIRST_NON_WHITESPACE_RE.match(line)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "stripped_line = line.lstrip()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "FIRST_NON_WHITESPACE_RE: Final = re.compile(r\"\\s*\\t+\\s*(\\S)\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "lines = lines_with_leading_tabs_expanded(docstring)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-10:0:blib2to3/pgen2/driver.py:Driver._partially_consume_prefix",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Prefix splitting compares tab-expanded positions with raw-character indentation lengths.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old parse_tokens caller stores len(value) in indent_columns and passes that raw length on DEDENT. The helper counts spaces once but tabs as four before comparing current_column with column. The fix makes both sides raw-character counts; exact old coordinate production supports the local mismatch independently of the new regression.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Caller coordinate units and comment attachment determine the mechanism. Retained regression establishes comment indentation/placement, but a non-presentation semantic or downstream-tool consequence is not established. Decide whether this formatter-output duty is in the selected non-style task.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved task-positive/negative. Raw-coordinate comparison is repaired for the bounded tab-prefix case, not general visual tab stops or executable-code semantics.",
+      "experimental_subset_proposal": "defer_task_scope",
+      "subset_reason": "Preserve the old local duty separately from unresolved non-style task eligibility; do not silently treat presentation as a semantic defect.",
+      "dependence_reason": "Preserve fix-family:9b45632d5fc90ef40637 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "current_column += 4"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "elif char in ' \\t':"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "indent_columns.append(len(value))"
+        }
+      ],
+      "task_scope": "unresolved_nonstyle_eligibility",
+      "task_scope_reason": "Caller coordinate units and comment attachment determine the mechanism. Retained regression establishes comment indentation/placement, but a non-presentation semantic or downstream-tool consequence is not established. Decide whether this formatter-output duty is in the selected non-style task."
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-15:0:black.py:DebugVisitor.show",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Debug AST display newly accepts pre-parsed Leaf/Node inputs.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "feature_expansion_not_prior_repair",
+      "contract_reason": "Old show explicitly accepts code: str and parses it before visiting. The after broadens to Union[str, Leaf, Node], parsing only strings. The old string-input behavior remains; existing support for direct tree arguments is not demonstrated.",
+      "selected_relevance": "new_feature_implementation",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The declared old input domain and parse/visit protocol distinguish debugging convenience expansion from the public fmt-off repair elsewhere.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No supported old-positive pair for newly admitted tree arguments; preserve the canonical selected record without inheriting the formatter repair.",
+      "experimental_subset_proposal": "propose_feature_exclusion",
+      "subset_reason": "New admitted debug input types extend the interface without showing an old supported-input failure; proposed exclusion remains researcher-pending.",
+      "dependence_reason": "Preserve fix-family:3d40d72ad5ae482bb83f and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "list(v.visit(lib2to3_parse(code)))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if isinstance(code, str):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-15:0:black.py:EmptyLineTracker.maybe_empty_lines",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Empty-line tracking removes a special case for the retired UnformattedLines representation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old early return intentionally avoids injecting blank lines into explicitly unformatted output. After normalization hides that content in ordinary standalone-comment leaves, the dedicated subclass disappears. No old violation is isolated by removing its matching bypass.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Old pragma exceptions, UnformattedLines visitation and new hidden-comment/container contracts are essential. Exact old README promises fmt-off blocks remain unformatted, but that public duty does not independently blame every changed helper. Preserve its separate non-style task-scope question from batch005.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected before-positive/after-negative. Assess the matched complete pragma pipeline; do not mix new hidden-comment producers with old UnformattedLines consumers or claim universal pragma correctness.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3d40d72ad5ae482bb83f and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if isinstance(current_line, UnformattedLines):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "before, after = self._maybe_empty_lines(current_line)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "README.md",
+          "ref": "df2ae3bbe6c45298aabb6c04e85cb353205626f1^",
+          "needle": "blocks that start with `# fmt: off` and end with `# fmt: on`."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-15:0:black.py:LineGenerator.line",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Line generation retires selectable line classes after moving fmt-off handling into a prior pass.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old line(type=...) constructs and preserves the explicitly requested subclass while updating depth. The new caller no longer requests UnformattedLines. No failure under the old subclass-selection contract follows from removing the parameter.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Old pragma exceptions, UnformattedLines visitation and new hidden-comment/container contracts are essential. Exact old README promises fmt-off blocks remain unformatted, but that public duty does not independently blame every changed helper. Preserve its separate non-style task-scope question from batch005.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected before-positive/after-negative. Assess the matched complete pragma pipeline; do not mix new hidden-comment producers with old UnformattedLines consumers or claim universal pragma correctness.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3d40d72ad5ae482bb83f and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.current_line = type(depth=complete_line.depth + indent)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.current_line = Line(depth=complete_line.depth + indent)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "README.md",
+          "ref": "df2ae3bbe6c45298aabb6c04e85cb353205626f1^",
+          "needle": "blocks that start with `# fmt: off` and end with `# fmt: on`."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-15:0:black.py:LineGenerator.visit_default",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Default visitation removes exception-based pragma switching when a new earlier pass handles pragmas.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old comment generator raises FormatOn/FormatOff and this selected caller catches them, trims prefixes and switches visitor state. The new normalization pass replaces that protocol. A cross-function pragma defect is contextual, but removal of a matched catch/dispatch path does not localize independent blame here.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Old pragma exceptions, UnformattedLines visitation and new hidden-comment/container contracts are essential. Exact old README promises fmt-off blocks remain unformatted, but that public duty does not independently blame every changed helper. Preserve its separate non-style task-scope question from batch005.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected before-positive/after-negative. Assess the matched complete pragma pipeline; do not mix new hidden-comment producers with old UnformattedLines consumers or claim universal pragma correctness.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3d40d72ad5ae482bb83f and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "except FormatOff as f_off:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for comment in generate_comments(node):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "README.md",
+          "ref": "df2ae3bbe6c45298aabb6c04e85cb353205626f1^",
+          "needle": "blocks that start with `# fmt: off` and end with `# fmt: on`."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-15:0:black.py:generate_comments",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Comment generation stops emitting control exceptions after consumers retire them.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old generate_comments deliberately signals recognized standalone fmt pragmas through FormatOn/FormatOff; old visitors catch those signals. The after emits only comments because normalization occurs earlier. The signal producer is not defective merely because the whole protocol changes.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Old pragma exceptions, UnformattedLines visitation and new hidden-comment/container contracts are essential. Exact old README promises fmt-off blocks remain unformatted, but that public duty does not independently blame every changed helper. Preserve its separate non-style task-scope question from batch005.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected before-positive/after-negative. Assess the matched complete pragma pipeline; do not mix new hidden-comment producers with old UnformattedLines consumers or claim universal pragma correctness.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3d40d72ad5ae482bb83f and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "            if pc.type == STANDALONE_COMMENT:\n                raise FormatOff(pc.consumed)\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "yield Leaf(pc.type, pc.value, prefix=\"\\n\" * pc.newlines)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "README.md",
+          "ref": "df2ae3bbe6c45298aabb6c04e85cb353205626f1^",
+          "needle": "blocks that start with `# fmt: off` and end with `# fmt: on`."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-15:0:black.py:generate_ignored_nodes",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Ignored-node enumeration now excludes ENDMARKER under a changed container/caller domain.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The fix also stops container_of climbing to file_input and invokes the hiding pass outside brackets. The old helper was called only by bracket-depth-gated hide_fmt_off. The new terminal guard is useful in that broadened traversal, but a reachable independent old endmarker/code-loss witness is not established.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Old pragma exceptions, UnformattedLines visitation and new hidden-comment/container contracts are essential. Exact old README promises fmt-off blocks remain unformatted, but that public duty does not independently blame every changed helper. Preserve its separate non-style task-scope question from batch005.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected before-positive/after-negative. Assess the matched complete pragma pipeline; do not mix new hidden-comment producers with old UnformattedLines consumers or claim universal pragma correctness.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3d40d72ad5ae482bb83f and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "while container is not None:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "while container is not None and container.type != token.ENDMARKER:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "README.md",
+          "ref": "df2ae3bbe6c45298aabb6c04e85cb353205626f1^",
+          "needle": "blocks that start with `# fmt: off` and end with `# fmt: on`."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-15:0:black.py:normalize_fmt_off",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Fmt-off normalization delegates to a replacement helper that now handles all code.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old wrapper explicitly handles bracket regions only; outside-bracket pragma support is implemented in the old visitor state machine. The wrapper correctly repeats its helper until no conversion remains. Changed helper invocation alone does not isolate a wrapper defect.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Old pragma exceptions, UnformattedLines visitation and new hidden-comment/container contracts are essential. Exact old README promises fmt-off blocks remain unformatted, but that public duty does not independently blame every changed helper. Preserve its separate non-style task-scope question from batch005.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected before-positive/after-negative. Assess the matched complete pragma pipeline; do not mix new hidden-comment producers with old UnformattedLines consumers or claim universal pragma correctness.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3d40d72ad5ae482bb83f and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "try_again = hide_fmt_off(node)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "try_again = convert_one_fmt_off_pair(node)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "README.md",
+          "ref": "df2ae3bbe6c45298aabb6c04e85cb353205626f1^",
+          "needle": "blocks that start with `# fmt: off` and end with `# fmt: on`."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-15:0:black.py:split_line",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Line splitting drops the exemption for a retired unformatted-line subclass.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old UnformattedLines are deliberately emitted without splitting; the new pass encodes them as standalone-comment lines that already take the remaining is_comment exemption. The old guard enforces its intended representation contract; its removal is coordinated cleanup.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Old pragma exceptions, UnformattedLines visitation and new hidden-comment/container contracts are essential. Exact old README promises fmt-off blocks remain unformatted, but that public duty does not independently blame every changed helper. Preserve its separate non-style task-scope question from batch005.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected before-positive/after-negative. Assess the matched complete pragma pipeline; do not mix new hidden-comment producers with old UnformattedLines consumers or claim universal pragma correctness.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3d40d72ad5ae482bb83f and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if isinstance(line, UnformattedLines) or line.is_comment:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if line.is_comment:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "README.md",
+          "ref": "df2ae3bbe6c45298aabb6c04e85cb353205626f1^",
+          "needle": "blocks that start with `# fmt: off` and end with `# fmt: on`."
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-16:0:black.py:gen_python_files_in_dir",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "An outside-root symlink aborts whole-tree discovery at relative_to.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old generator eagerly resolves each child relative to root before filtering. An ordinary symlink under the scanned directory can resolve outside root and raise ValueError; main eagerly consumes the generator, losing subsequent discovery. After catches only that exception, skips only a symlink and rethrows otherwise. The old traversal duty is distinct from a new security confinement promise.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Pathlib resolve/relative_to semantics, stable filesystem assumptions, main consumption and the accepted scan tree are external. New mocked tests corroborate the skip-vs-rethrow distinction without reproducing a traversal.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Continue discovery after a stable outside-root symlink and retain non-symlink ValueError propagation only. No permission, cycle, TOCTOU or filesystem security guarantee; old code aborts before following the resolved target for formatting.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old mechanism while deferring admission under the uniform bounded before-only context/runtime knowledge policy.",
+      "dependence_reason": "Preserve fix-family:37ab320b532b3170bd37 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "normalized_path = \"/\" + child.resolve().relative_to(root).as_posix()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if child.is_symlink():"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-17:0:black.py:lib2to3_parse",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Direct empty-string parsing indexes before checking whether source has a last character.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old format_str calls lib2to3_parse directly, unlike file-formatting paths with a prior empty-content guard. The parser accepts a string without an explicit nonempty precondition and indexes src_txt[-1]. The empty-safe suffix avoids that IndexError and inserts the normalizing newline; the separate decoder repair is not its only caller route.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Empty-source admission, pinned grammar acceptance of the normalized newline, driver conversion and format_str are external to the selected body. Do not supply them selectively in the before-only task.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Only empty-string last-character indexing. File-empty handling also needs its matching decoder repair; no general parse, all-whitespace or grammar guarantee. Its before hash equals the earlier Black-18 parser after hash; preserve chronological dependence.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old mechanism while deferring admission under the uniform bounded before-only context/runtime knowledge policy.",
+      "dependence_reason": "Preserve fix-family:60e3ff72ee7fafd4cff1 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if src_txt[-1] != \"\\n\":"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if src_txt[-1:] != \"\\n\":"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-18:0:black.py:format_file_in_place",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "File-in-place formatting changes transport-level newline/encoding policy and introduces an empty-input helper failure.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old text wrappers normalize line endings and choose runtime/platform output translation. The after detects source convention and supplies it explicitly. Exact old README permits formatting changes and promises AST equivalence, but does not establish a byte-level LF/CRLF preservation obligation; the new now-preserves changelog/test cannot alone make it an old defect. Stdin additionally depends on actual old stream configuration.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Resolve prior newline/encoding transport contract and non-style eligibility independently. prepare_input, tokenize.detect_encoding and binary-backed standard streams are outside the selected function; new raw-buffer requirements may alter supported embedding interfaces.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved newline-positive/negative while the old duty and task scope remain unresolved. Separately, after prepare_input indexes lines[0] although retained CPython3.6.5 detect_encoding returns [] for empty bytes; old decoded-empty contents reached NothingChanged and returned False. Both file and stdin after routes now fail before that guard. This is a source-deduced introduced empty-input regression, not a reason to relabel the old newline case as a supported positive.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Establish the historical accepted-input/environment/exit-policy obligation before calling the new behavior an old defect.",
+      "dependence_reason": "Preserve fix-family:f5aa1b49a1bfbc1eecee and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "with tokenize.open(src) as src_buffer:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "newline, encoding, src_contents = prepare_input(buf.read())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "README.md",
+          "ref": "00a302560b92951c22f0f4c8d618cf63de39bd57^",
+          "needle": "reformatted code still produces a valid AST that is equivalent to the"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "Lib/tokenize.py",
+          "ref": "v3.6.5",
+          "needle": "if not first:\n        return default, []"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if src_contents.strip() == \"\":"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "newline = \"\\r\\n\" if b\"\\r\\n\" == lines[0][-2:] else \"\\n\""
+        }
+      ],
+      "additional_after_concerns": [
+        "Introduced empty-input regression: matching old file/stdin empty text reaches NothingChanged and returns False; new prepare_input(empty bytes) indexes an empty detected-lines list before formatting. Distinct from unresolved historical newline duty and non-style scope; no source/dependency code executed."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-18:0:black.py:format_stdin_to_stdout",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Stdin/stdout formatting changes transport-level newline/encoding policy and introduces an empty-input helper failure.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old text wrappers normalize line endings and choose runtime/platform output translation. The after detects source convention and supplies it explicitly. Exact old README permits formatting changes and promises AST equivalence, but does not establish a byte-level LF/CRLF preservation obligation; the new now-preserves changelog/test cannot alone make it an old defect. Stdin additionally depends on actual old stream configuration.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Resolve prior newline/encoding transport contract and non-style eligibility independently. prepare_input, tokenize.detect_encoding and binary-backed standard streams are outside the selected function; new raw-buffer requirements may alter supported embedding interfaces.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved newline-positive/negative while the old duty and task scope remain unresolved. Separately, after prepare_input indexes lines[0] although retained CPython3.6.5 detect_encoding returns [] for empty bytes; old decoded-empty contents reached NothingChanged and returned False. Both file and stdin after routes now fail before that guard. This is a source-deduced introduced empty-input regression, not a reason to relabel the old newline case as a supported positive.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Establish the historical accepted-input/environment/exit-policy obligation before calling the new behavior an old defect.",
+      "dependence_reason": "Preserve fix-family:f5aa1b49a1bfbc1eecee and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "src = sys.stdin.read()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "newline, encoding, src = prepare_input(sys.stdin.buffer.read())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "README.md",
+          "ref": "00a302560b92951c22f0f4c8d618cf63de39bd57^",
+          "needle": "reformatted code still produces a valid AST that is equivalent to the"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "Lib/tokenize.py",
+          "ref": "v3.6.5",
+          "needle": "if not first:\n        return default, []"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if src_contents.strip() == \"\":"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "newline = \"\\r\\n\" if b\"\\r\\n\" == lines[0][-2:] else \"\\n\""
+        }
+      ],
+      "additional_after_concerns": [
+        "Introduced empty-input regression: matching old file/stdin empty text reaches NothingChanged and returns False; new prepare_input(empty bytes) indexes an empty detected-lines list before formatting. Distinct from unresolved historical newline duty and non-style scope; no source/dependency code executed."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-18:0:black.py:lib2to3_parse",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Parser final-newline selection becomes unconditional LF after boundary normalization moves to I/O.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old file/stdin reads already supply universal-newline text. The old parser CRLF branch is inactive on that matched path; the after simplifies the missing-terminator suffix. No independent direct-API failure on raw CRLF text is established. Both selected bodies still index src_txt[-1]; the later Black-17 empty-index repair is separate.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched I/O normalization, direct parser input contract and tokenizer grammar are required. The new helper empty-input failure is not a selected parser repair or evidence that the old CRLF choice was defective.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated parser old-positive/after-negative. Keep the actual shared after-to-before version link with Black-17 and the separate new I/O empty-input regression.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:f5aa1b49a1bfbc1eecee and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "nl = \"\\r\\n\" if \"\\r\\n\" in src_txt[:1024] else \"\\n\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "src_txt += \"\\n\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-1:0:black.py:reformat_many",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Multi-file formatting gains a fallback when constructing a process pool raises OSError.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old local doc explicitly says it uses a ProcessPoolExecutor. Old README advertises Python3.6+ but does not establish an AWS Lambda/no-shared-memory support promise or that multiprocessing is optional. The commit newly permits those restricted environments. Conditional constructor failure is real, but historical support/fallback duty must be established before calling it an old supported-environment defect.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Process-pool construction, environment restrictions, scheduler behavior and old deployment support are essential. Retained CPython3.8.3 run_in_executor(None,...) creates a default ThreadPoolExecutor, not necessarily serial execution. A version tag is comparison evidence, not deployed-version proof.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved historical old-positive/negative until restricted-environment support is resolved. Even after, DIFF still constructs multiprocessing.Manager in the scheduler; task errors, worker_count=None on Windows and shutdown/signal failures remain outside the new construction fallback.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Establish the historical accepted-input/environment/exit-policy obligation before calling the new behavior an old defect.",
+      "dependence_reason": "Preserve fix-family:24054721f822f864f5e3 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "executor = ProcessPoolExecutor(max_workers=worker_count)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        executor = ProcessPoolExecutor(max_workers=worker_count)\n    except OSError:\n        # we arrive here if the underlying system does not support multi-processing\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "README.md",
+          "ref": "c0a7582e3d4cc8bec3b7f5a6c52b36880dcb57d7^",
+          "needle": "It requires Python 3.6.0+ to"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "Lib/asyncio/base_events.py",
+          "ref": "v3.8.3",
+          "needle": "executor = concurrent.futures.ThreadPoolExecutor()"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-1:0:black.py:schedule_formatting",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Scheduler widens an executor type annotation without changing the runtime body.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Only executor: Executor becomes executor: Optional[Executor]. Old scheduler already forwards None to loop.run_in_executor at runtime; the actual new recovery is in its caller. No annotation-enforcement or separately in-scope typing defect is established.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Caller construction fallback and runtime default-executor semantics distinguish type documentation from local repaired behavior. DIFF Manager construction remains unchanged.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No selected runtime before-positive/after-negative. This proposed nonrepair exclusion is not a feature-admission judgment or deletion of the canonical pair.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected edit does not repair established runtime behavior: annotation-only contract documentation or diagnostic guidance is not automatically a repaired positive.",
+      "dependence_reason": "Preserve fix-family:24054721f822f864f5e3 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "executor: Executor,"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "executor: Optional[Executor],"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-20:0:black.py:format_file_in_place",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Diff labels discard directory identity by using only the source basename.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old src.name makes distinct same-basename files share diff labels, while the after preserves the supplied path string. A per-file identity duty is visible in the diff operation, but evidence does not establish an in-scope patch consumer or semantic failure; transformation and write-back behavior are unchanged.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Decide whether displayed diff identity is an eligible non-style output contract or establish a concrete downstream consumer. A bugfix title/new exact-output expectation is insufficient. Distinguish useful diagnostics from automatically style-only findings.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved task-positive/negative. Only DIFF labels change; supplied paths may still be relative and no absolute, canonical, apply-patch or filesystem-confinement promise is established.",
+      "experimental_subset_proposal": "defer_task_scope",
+      "subset_reason": "Preserve the old local duty separately from unresolved non-style task eligibility; do not silently treat presentation as a semantic defect.",
+      "dependence_reason": "Preserve fix-family:c79cbfe51fb338bacab8 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "src_name = f\"{src.name}  (original)\""
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "src_name = f\"{src}  (original)\""
+        }
+      ],
+      "task_scope": "unresolved_nonstyle_eligibility",
+      "task_scope_reason": "Decide whether displayed diff identity is an eligible non-style output contract or establish a concrete downstream consumer. A bugfix title/new exact-output expectation is insufficient. Distinguish useful diagnostics from automatically style-only findings."
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-21:0:black.py:dump_to_file",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Diagnostic Unicode writes use an implicit platform codec that can reject admitted text.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old dump_to_file promises to dump str output and is called with source/AST diagnostics. On an advertised runtime whose default codec cannot encode that text, text writes raise UnicodeEncodeError and prevent the returned log or intended diagnostic. Explicit UTF8 removes that bounded failure; this is not merely changed error wording.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Default locale codec, ordinary Unicode source provenance, tempfile semantics and diagnostic callers are external. A modern UTF8 default does not invalidate the conditional old failure, and a specific installed Windows codec is not inferred from the patch.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "UTF8-encodable ordinary text on affected default-codec environments only. Lone surrogates, I/O failures, reader compatibility, permissions and temporary-file disclosure are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old mechanism while deferring admission under the uniform bounded before-only context/runtime knowledge policy.",
+      "dependence_reason": "Preserve fix-family:b67217d74d777c4e14dd and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "mode=\"w\", prefix=\"blk_\", suffix=\".log\", delete=False"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "mode=\"w\", prefix=\"blk_\", suffix=\".log\", delete=False, encoding=\"utf8\""
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-22:0:black.py:Line.__str__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Line rendering adapts dictionary iteration to indexed-comment iteration.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Both render all entries admitted by their own representation. Old merging/attachment and standalone splitting happen elsewhere; the dict.values spelling itself does not discard comments.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched Line storage, old last_non_delimiter/maybe_adapt_standalone_comment, new comments_after/append_safe, split dispatch and rendering are essential. Comment preservation/stability and semantic type-tool duties must be demonstrated separately; ordinary comment layout is not automatically an execution defect or automatically irrelevant.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative. Preserve all Black-22 components in one conservative family and its successive comment/type-comment histories; do not use a new producer with an old consumer or count each edited method as an independent issue.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3c0e9941c83ed421eec2 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for comment in self.comments.values():"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for _, comment in self.comments:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-22:0:black.py:Line.append",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Leaf append retires the old standalone-to-trailing-comment adaptation helper.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old helper embeds newline/indent prefixes in trailing metadata; after keeps standalone comments as leaves for new splitters. The helper dispatch participates in a coordinated layout/stability repair, but no selected old code loss, crash or non-style semantic failure is isolated.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched Line storage, old last_non_delimiter/maybe_adapt_standalone_comment, new comments_after/append_safe, split dispatch and rendering are essential. Comment preservation/stability and semantic type-tool duties must be demonstrated separately; ordinary comment layout is not automatically an execution defect or automatically irrelevant.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative. Preserve all Black-22 components in one conservative family and its successive comment/type-comment histories; do not use a new producer with an old consumer or count each edited method as an independent issue.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3c0e9941c83ed421eec2 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if self.maybe_adapt_standalone_comment(leaf):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not self.append_comment(leaf):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-22:0:black.py:Line.append_comment",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Comment attachment changes merged last-nondelimiter entries into ordered indexed comments.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old comments may share one Leaf.value while retaining their text and synthetic prefixes. New indexed entries enable separate splitting and newly retain standalone leaves. Merging metadata is not automatically deleting comment text; an exact old code/pragma loss or stability trace is not established here.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched Line storage, old last_non_delimiter/maybe_adapt_standalone_comment, new comments_after/append_safe, split dispatch and rendering are essential. Comment preservation/stability and semantic type-tool duties must be demonstrated separately; ordinary comment layout is not automatically an execution defect or automatically irrelevant.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative. Preserve all Black-22 components in one conservative family and its successive comment/type-comment histories; do not use a new producer with an old consumer or count each edited method as an independent issue.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3c0e9941c83ed421eec2 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.comments[after].value += str(comment)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.comments.append((after, comment))"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-22:0:black.py:Line.is_comment",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Comment-line classification tightens when the representation newly permits mixed comment/code leaves.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old bracket adaptation normally removes standalone comments from the leaf list. Testing the old first-leaf predicate against the new mixed-line representation manufactures a mismatched witness. A comments-only truthiness state without leaves likewise needs a reachable old producer before alleging IndexError.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched Line storage, old last_non_delimiter/maybe_adapt_standalone_comment, new comments_after/append_safe, split dispatch and rendering are essential. Comment preservation/stability and semantic type-tool duties must be demonstrated separately; ordinary comment layout is not automatically an execution defect or automatically irrelevant.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative. Preserve all Black-22 components in one conservative family and its successive comment/type-comment histories; do not use a new producer with an old consumer or count each edited method as an independent issue.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3c0e9941c83ed421eec2 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return bool(self) and self.leaves[0].type == STANDALONE_COMMENT"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return len(self.leaves) == 1 and self.leaves[0].type == STANDALONE_COMMENT"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-22:0:black.py:Line.maybe_remove_trailing_comma",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Trailing-comma removal now adjusts comments indexed by the new storage representation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Tuple-preserving removal predicates are unchanged. Old comments attach to the last non-delimiter, not the removed comma; new comma-indexed entries require reindexing. Old pop combined with new storage is not the matched before program.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched Line storage, old last_non_delimiter/maybe_adapt_standalone_comment, new comments_after/append_safe, split dispatch and rendering are essential. Comment preservation/stability and semantic type-tool duties must be demonstrated separately; ordinary comment layout is not automatically an execution defect or automatically irrelevant.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative. Preserve all Black-22 components in one conservative family and its successive comment/type-comment histories; do not use a new producer with an old consumer or count each edited method as an independent issue.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3c0e9941c83ed421eec2 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        if closing.type == token.RBRACE:\n            self.leaves.pop()\n            return True\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        if closing.type == token.RBRACE:\n            self.remove_trailing_comma()\n            return True\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-22:0:black.py:delimiter_split",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Delimiter splitting adds safe standalone-comment boundaries for the new leaf representation.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old producers embed standalone comments in metadata with newline prefixes; the new append_safe invariant applies to a different mixed-leaf domain. The patch also moves prefix normalization to a decorator rather than deleting it. Retained fixture intent does not isolate an old non-style failure in this selected function.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched Line storage, old last_non_delimiter/maybe_adapt_standalone_comment, new comments_after/append_safe, split dispatch and rendering are essential. Comment preservation/stability and semantic type-tool duties must be demonstrated separately; ordinary comment layout is not automatically an execution defect or automatically irrelevant.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative. Preserve all Black-22 components in one conservative family and its successive comment/type-comment histories; do not use a new producer with an old consumer or count each edited method as an independent issue.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3c0e9941c83ed421eec2 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        current_line.append(leaf, preformatted=True)\n        comment_after = line.comments.get(id(leaf))\n        if comment_after:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "\n            current_line = Line(depth=line.depth, inside_brackets=line.inside_brackets)\n            current_line.append(leaf)\n\n    for leaf in line.leaves:\n        yield from append_to_line(leaf)\n\n        for comment_after in line.comments_after(leaf):\n            yield from append_to_line(comment_after)\n\n        lowest_depth = min(lowest_depth, leaf.bracket_depth)\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-22:0:black.py:left_hand_split",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Left-hand split changes a single mapped-comment lookup into an indexed-comment iterator.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Bracket head/body/tail partition, prefix normalization and success checks are unchanged. The old mapped entry can already contain multiple comments as text. More entries in the new representation do not prove independent old dropped comments or a wrong bracket split.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched Line storage, old last_non_delimiter/maybe_adapt_standalone_comment, new comments_after/append_safe, split dispatch and rendering are essential. Comment preservation/stability and semantic type-tool duties must be demonstrated separately; ordinary comment layout is not automatically an execution defect or automatically irrelevant.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative. Preserve all Black-22 components in one conservative family and its successive comment/type-comment histories; do not use a new producer with an old consumer or count each edited method as an independent issue.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3c0e9941c83ed421eec2 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    # Since body is a new indent level, remove spurious leading whitespace.\n    if body_leaves:\n        normalize_prefix(body_leaves[0], inside_brackets=True)\n    # Build the new lines.\n    for result, leaves in (\n        (head, head_leaves), (body, body_leaves), (tail, tail_leaves)\n    ):\n        for leaf in leaves:\n            result.append(leaf, preformatted=True)\n            comment_after = line.comments.get(id(leaf))\n            if comment_after:\n                result.append(comment_after, preformatted=True)\n    bracket_split_succeeded_or_raise(head, body, tail)\n    for result in (head, body, tail):\n        if result:\n            yield result\n\n\ndef right_hand_split(line: Line, py36: bool = False) -> Iterator[Line]:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    if body_leaves:\n        normalize_prefix(body_leaves[0], inside_brackets=True)\n    # Build the new lines.\n    for result, leaves in (\n        (head, head_leaves), (body, body_leaves), (tail, tail_leaves)\n    ):\n        for leaf in leaves:\n            result.append(leaf, preformatted=True)\n            for comment_after in line.comments_after(leaf):\n                result.append(comment_after, preformatted=True)\n    bracket_split_succeeded_or_raise(head, body, tail)\n    for result in (head, body, tail):\n        if result:\n            yield result\n\n\ndef right_hand_split(line: Line, py36: bool = False) -> Iterator[Line]:\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-22:0:black.py:right_hand_split",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Right-hand split adapts comment lookup while retaining its reverse-bracket partition.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Matched old storage permits a merged text entry; new comments_after iterates indexed entries. No independent old reverse partition or comment-loss defect is isolated. The caller separately broadens RHS dispatch under the new standalone representation.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched Line storage, old last_non_delimiter/maybe_adapt_standalone_comment, new comments_after/append_safe, split dispatch and rendering are essential. Comment preservation/stability and semantic type-tool duties must be demonstrated separately; ordinary comment layout is not automatically an execution defect or automatically irrelevant.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative. Preserve all Black-22 components in one conservative family and its successive comment/type-comment histories; do not use a new producer with an old consumer or count each edited method as an independent issue.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3c0e9941c83ed421eec2 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    # Since body is a new indent level, remove spurious leading whitespace.\n    if body_leaves:\n        normalize_prefix(body_leaves[0], inside_brackets=True)\n    # Build the new lines.\n    for result, leaves in (\n        (head, head_leaves), (body, body_leaves), (tail, tail_leaves)\n    ):\n        for leaf in leaves:\n            result.append(leaf, preformatted=True)\n            comment_after = line.comments.get(id(leaf))\n            if comment_after:\n                result.append(comment_after, preformatted=True)\n    bracket_split_succeeded_or_raise(head, body, tail)\n    for result in (head, body, tail):\n        if result:\n            yield result\n\n\ndef bracket_split_succeeded_or_raise(head: Line, body: Line, tail: Line) -> None:\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "    if body_leaves:\n        normalize_prefix(body_leaves[0], inside_brackets=True)\n    # Build the new lines.\n    for result, leaves in (\n        (head, head_leaves), (body, body_leaves), (tail, tail_leaves)\n    ):\n        for leaf in leaves:\n            result.append(leaf, preformatted=True)\n            for comment_after in line.comments_after(leaf):\n                result.append(comment_after, preformatted=True)\n    bracket_split_succeeded_or_raise(head, body, tail)\n    for result in (head, body, tail):\n        if result:\n            yield result\n\n\ndef bracket_split_succeeded_or_raise(head: Line, body: Line, tail: Line) -> None:\n"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-22:0:black.py:split_line",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Split dispatch gains standalone-comment separation under a coordinated representation change.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "New mixed-leaf lines must be split even when short, and pure comment lines bypass splitting. Old producers use synthetic newline-prefixed metadata instead; the new line.contains_standalone_comments state is not an old admissible witness by itself. The overall comments3 fixture shows layout/stability intent without localizing a task-eligible old failure.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Matched Line storage, old last_non_delimiter/maybe_adapt_standalone_comment, new comments_after/append_safe, split dispatch and rendering are essential. Comment preservation/stability and semantic type-tool duties must be demonstrated separately; ordinary comment layout is not automatically an execution defect or automatically irrelevant.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated selected old-positive/after-negative. Preserve all Black-22 components in one conservative family and its successive comment/type-comment histories; do not use a new producer with an old consumer or count each edited method as an independent issue.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "A coordinated selected edit does not isolate an old violation under its own matched producer/helper/consumer interfaces.",
+      "dependence_reason": "Preserve fix-family:3c0e9941c83ed421eec2 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if len(line_str) <= line_length and '\\n' not in line_str:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "and not line.contains_standalone_comments"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-23:0:black.py:assert_equivalent",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Equivalence-check failure gains diagnostic guidance without making unsupported syntax parseable.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "no_selected_runtime_repair",
+      "contract_reason": "Both versions reject source the running Python AST cannot parse. The new message gives the runtime version and --fast guidance and no longer suppresses exception context; it does not make Python3 AST accept Python2 statements or repair equivalence comparison. Wider grammar admission is implemented elsewhere, and no required machine-error/chaining contract is established.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Keep the AST checker, extended grammar and explicit inability to use --safe on deprecated syntax separate. An exception-message/context change is not necessarily a local repaired detection mechanism.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No supported selected runtime before-positive/after-negative for guidance-only changes; canonical record and same-commit parser dependence are retained.",
+      "experimental_subset_proposal": "propose_nonrepair_exclusion",
+      "subset_reason": "The selected edit does not repair established runtime behavior: annotation-only contract documentation or diagnostic guidance is not automatically a repaired positive.",
+      "dependence_reason": "Preserve fix-family:49a8167d4ed2e1aa0add and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "raise AssertionError(f\"cannot parse source: {exc}\") from None"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "major, minor = sys.version_info[:2]"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-3:0:black.py:main",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Missing configuration changes from an explicit file-error status to early usage-error classification.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve narrow discovery leaves and null assignments. Separate historical duty, actual runtime support, selected attribution, non-style task scope, after behavior and issue identity. New tests and patch titles do not establish old guarantees.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old read_pyproject_toml already tries opening the supplied config and deliberately maps OSError to click.FileError. Retained Click7.1.2 FileError inherits status1; Path validation raises usage/parameter error status2. The new test requires2, but missing config was already rejected and a prior promise to classify it specifically as usage error is not established. Machine observability alone does not prove the old status policy was defective.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Click Path existence checking, eager callback order and exception classes establish the conditional classification trace. Actual supported Click version and historical per-mode exit policy require adjudication; the selected decorated main is221 lines and must not be silently truncated for a context budget.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The bounded functional mechanism concerns source formatting, traversal, serialization, diagnostics or runtime error policy. No demonstrated attacker-to-authority boundary follows from that symptom alone; source-code provenance and downstream consumers need separate analysis.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved historical paired negative until exit-policy duty is resolved. The after changes missing explicit --config validation only; parsing errors, file races, unreadable files and all check/format outcomes are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Establish the historical accepted-input/environment/exit-policy obligation before calling the new behavior an old defect.",
+      "dependence_reason": "Preserve fix-family:78f5d8eb7991cb573e67 and recorded exact/AST/history/overlap links. Multiple changed functions, source versions, fixtures and branches are not independent adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution, common before-only runtime/API knowledge policy and numerical context budget.",
+        "All traces are deductions from inert source, not execution or reproduced failures. Decide issue identity and mechanism-local after scope separately."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "exists=False, file_okay=True, dir_okay=False, readable=True, allow_dash=False"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "exists=True, file_okay=True, dir_okay=False, readable=True, allow_dash=False"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "except (toml.TomlDecodeError, OSError) as e:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "src/click/exceptions.py",
+          "ref": "7.1.2",
+          "needle": "class FileError(ClickException):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "src/click/exceptions.py",
+          "ref": "7.1.2",
+          "needle": "exit_code = 1"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_014.json",
+          "path": "src/click/exceptions.py",
+          "ref": "7.1.2",
+          "needle": "exit_code = 2"
+        }
+      ]
+    }
+  ]
+}

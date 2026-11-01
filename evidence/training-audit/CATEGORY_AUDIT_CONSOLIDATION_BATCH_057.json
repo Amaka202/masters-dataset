@@ -1,0 +1,826 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-057",
+  "review_date": "2026-10-31",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "Every candidate/status/category in complete repository queues of immutable operational plan 057.",
+  "selection_rule": {
+    "repositories": [
+      "github.com/lxml/lxml",
+      "github.com/mansuf/mangadex-downloader",
+      "github.com/mindsdb/mindsdb",
+      "github.com/miurahr/py7zr",
+      "github.com/mnbikeways/database",
+      "github.com/mongodb/mongo-python-driver",
+      "github.com/mozilla/pollbot",
+      "github.com/naparuba/shinken",
+      "github.com/oppia/oppia",
+      "github.com/peering-manager/peering-manager"
+    ],
+    "candidate_count": 10,
+    "discovery_categories": [
+      null,
+      "SEC-ACTIVE-DATA-URI-POLICY",
+      "SEC-DESERIALIZATION-ALLOWLIST",
+      "SEC-OPEN-REDIRECT",
+      "SEC-PATH-CONFINEMENT",
+      "SEC-SECRET-COMPARISON-TIMING",
+      "SEC-SQL-PARAMETERIZATION",
+      "SEC-TEMPLATE-SANDBOX",
+      "SEC-TLS-PEER-VERIFICATION",
+      "SEC-UNTRUSTED-FILE-READ"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Whole planned ten queues: five missing-context, two existing-contract deferrals (actual HTTP/TLS relevance and historical template-author authority), one unresolved Python-vs-native security boundary, two introduced after-contract regressions. mnbikeways commit API404 preserved; released exact before ref fix^ is not independently resolved first-parent evidence. Preserve canonical null category, aliases/backports/source overlap and all pending researcher decisions. Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:100270733587701:2276167366811",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Remote batch-list content can trigger implicit local open/read; removing it from URL validator also breaks retained explicit file:localpath input.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Remote batch-list content can trigger implicit local open/read; removing it from URL validator also breaks retained explicit file:localpath input. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old parser advertises URL or file and marks file syntax from startswith(file). Actual validate caller strips file: prefix, reads remote HTTP(S) location into r.text, then calls selected validate_url. Old selected function tests whole supplied text for existing pathname and opens it, so attacker remote list can nominate local path instead of just URLs. Explicit local file: syntax is also existing supported input, not newly invented test demand.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need remote-list operator invocation and attacker control of list response, local file readability and _validate failure/output behavior. No arbitrary host execution or demonstrated exfiltration inferred from read alone. Ordinary explicit local list file with valid URLs provides a separate functional regression witness. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Remote lower-trust list text becomes local filesystem capability under caller identity. Plain operator-chosen local file remains intentional feature; distinguish it from remote-content-directed second read.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Selected after no longer opens supplied text, closing remote-content implicit-open branch. But caller still treats args.file local path as pathname and passes it unchanged; new _try_read is only in non-file branch. Thus explicit file:localpath of existing valid list reaches URL validator as literal pathname and fails instead of reading supported list. Introduced coordinated operation regression; do not label full after negative by ignoring advertised local-file syntax.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch057 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need remote-list operator invocation and attacker control of list response, local file readability and _validate failure/output behavior. No arbitrary host execution or demonstrated exfiltration inferred from read alone. Ordinary explicit local list file with valid URLs provides a separate functional regression witness.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if os.path.exists(url):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for _url in url.splitlines():"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "mangadex_downloader/cli/args_parser.py",
+          "ref": "972b1d4ec1439bab11cee3c21068d57a2c0535e3",
+          "needle": "file = urls.startswith('file')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "mangadex_downloader/cli/args_parser.py",
+          "ref": "972b1d4ec1439bab11cee3c21068d57a2c0535e3",
+          "needle": "setattr(namespace, 'file', file)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "mangadex_downloader/cli/args_parser.py",
+          "ref": "972b1d4ec1439bab11cee3c21068d57a2c0535e3",
+          "needle": "MangaDex URL or a file containing MangaDex URLs."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "mangadex_downloader/cli/validator.py",
+          "ref": "972b1d4ec1439bab11cee3c21068d57a2c0535e3",
+          "needle": "file_path = r.text"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "mangadex_downloader/cli/validator.py",
+          "ref": "972b1d4ec1439bab11cee3c21068d57a2c0535e3",
+          "needle": "args.URL = validate_url(file_path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "mangadex_downloader/cli/validator.py",
+          "ref": "439cc2825198ebc12b3310c95c39a8c7710c9b42",
+          "needle": "elif not os.path.exists(file_path):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "mangadex_downloader/cli/validator.py",
+          "ref": "439cc2825198ebc12b3310c95c39a8c7710c9b42",
+          "needle": "file_content = _try_read(urls)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "mangadex_downloader/cli/validator.py",
+          "ref": "439cc2825198ebc12b3310c95c39a8c7710c9b42",
+          "needle": "args.URL = validate_url(file_path)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Existing parser flags explicit file:localpath and caller strips prefix but still passes local pathname to now data-only selected validator. New _try_read executes only when args.file False. Existing readable valid URL-list file therefore no longer works via supported explicit syntax. No filesystem, downloader, URL validator or request executed."
+    },
+    {
+      "pair_id": "CVEfixes:120631548427910:278843542455116",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Safe unpickler exempts every shinken namespace module/global from allowlist; after both module and global must be explicit.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Safe unpickler exempts every shinken namespace module/global from allowlist; after both module and global must be explicit. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old safe-unpickle comments explicitly disallow external code execution; loads installs selected find_class as Python2 cPickle find_global hook. Actual old HTTP daemon takes POST form value, decompresses it then SafeUnpickler.loads before method invocation. Namespace-prefix bypass allows __import__/getattr of unlisted globals in shinken.*, not just admitted data classes. Named CPython2.7.18 assigns find_global to find_class hook; supported callback contract retained.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exposed internal monitoring endpoint/network permission and allowed global capabilities, authenticated transport policy and Python2 runtime. Parent-process stdin config load is distinct trusted path, not automatically remote. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-trust monitoring-node POST reaches global resolution under daemon authority. Package prefix is not an authority boundary; exact unrestricted callable/RCE consequence remains unexecuted and not universally certified for all allowlisted symbols.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After removes prefix exemptions and expands explicit data-type allowlist. Narrow negative is prefix escape from module/name checks, not universal safe pickle, safe constructors/reduce behavior or network authentication. Intentional explicit-type narrowing is not automatically regression without historical admitted required class proof.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch057 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need exposed internal monitoring endpoint/network permission and allowed global capabilities, authenticated transport policy and Python2 runtime. Parent-process stdin config load is distinct trusted path, not automatically remote.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "and not module.startswith('shinken.')"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if module not in cls.PICKLE_SAFE:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "shinken/safepickle.py",
+          "ref": "8163d645e801fa43ee1704f099a4684f120e667b",
+          "needle": "pickle_obj.find_global = cls.find_class"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "shinken/safepickle.py",
+          "ref": "8163d645e801fa43ee1704f099a4684f120e667b",
+          "needle": "so we don't allow external code to be executed"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "shinken/safepickle.py",
+          "ref": "2dae40fd1e713aec9e1966a0ab7a580b9180cff2",
+          "needle": "if name not in cls.PICKLE_SAFE[module]:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "shinken/http_daemon.py",
+          "ref": "8163d645e801fa43ee1704f099a4684f120e667b",
+          "needle": "v = bottle.request.forms.get(aname, None)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "shinken/http_daemon.py",
+          "ref": "8163d645e801fa43ee1704f099a4684f120e667b",
+          "needle": "v = zlib.decompress(v)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "shinken/http_daemon.py",
+          "ref": "8163d645e801fa43ee1704f099a4684f120e667b",
+          "needle": "v = SafeUnpickler.loads(v)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "Modules/cPickle.c",
+          "ref": "v2.7.18",
+          "needle": "Py_XSETREF(self->find_class, value)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:163251012542330:157935365534160",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Dremio connect removes verify=False but actual constructor always builds HTTP URL; supported HTTPS use of selected flag is unresolved.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Dremio connect removes verify=False but actual constructor always builds HTTP URL; supported HTTPS use of selected flag is unresolved. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Existing connect authenticates to configured Dremio; old and after constructor both build http://host:port. TLS certificate policy applies only after reaching HTTPS, not to this plain HTTP construction. Named Requests2.31 cert_verify branches on https and verify, default session verify=True, and supports redirects; a hypothetical HTTPS redirect/base_url mutation is not evidence of an actual supported producer. Broad advisory/flag spelling cannot establish old selected TLS violation.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need admitted HTTPS redirect, custom base_url mutation or scheme-configurable producer, exact Requests version and client/remote policy. Matched check_connection calls self.connect but does not change base_url. HTTP credential confidentiality and JSON interpolation are separate concerns, not an invented TLS-positive finding. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Network observer on ordinary HTTP can see credentials both sides, but new flag removal does not repair that path. Do not transfer a sibling handler HTTPS configuration or CVE-wide effect to this selected HTTP handler.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "No established TLS-positive/negative pair for ordinary retained construction. Default verification matters only for HTTPS under compatible Requests; no general encryption/security or default HTTP repair claim. Preserve unresolved existing supported scenario rather than approving absence of explicit False.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch057 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need admitted HTTPS redirect, custom base_url mutation or scheme-configurable producer, exact Requests version and client/remote policy. Matched check_connection calls self.connect but does not change base_url. HTTP credential confidentiality and JSON interpolation are separate concerns, not an invented TLS-positive finding.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "data=data, verify=False"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "headers=headers, data=data)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "mindsdb/integrations/handlers/dremio_handler/dremio_handler.py",
+          "ref": "bc5d275345028a952a78b2a0b6e27957feec6b93",
+          "needle": "self.base_url = f\"http://"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "mindsdb/integrations/handlers/dremio_handler/dremio_handler.py",
+          "ref": "083afcf6567cf51aa7d89ea892fd97689919053b",
+          "needle": "self.base_url = f\"http://"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "mindsdb/integrations/handlers/dremio_handler/dremio_handler.py",
+          "ref": "bc5d275345028a952a78b2a0b6e27957feec6b93",
+          "needle": "            self.connect()\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "requests/adapters.py",
+          "ref": "v2.31.0",
+          "needle": "if url.lower().startswith(\"https\") and verify:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "requests/sessions.py",
+          "ref": "v2.31.0",
+          "needle": "self.verify = True"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "requests/sessions.py",
+          "ref": "v2.31.0",
+          "needle": "allow_redirects=True"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:203919246286501:208032134566857",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Django route bid/eid request strings enter outer pgr_dijkstra SQL arguments; after separate placeholders/parameter tuple.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Django route bid/eid request strings enter outer pgr_dijkstra SQL arguments; after separate placeholders/parameter tuple. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing route computation accepts endpoint IDs as values, not SQL syntax. Exact released before full file imports django.db.connection and RouterAjax(View) reads GET bid/eid, str conversion preserves syntax. Inner pgr query is constant source. After uses %s placeholders and separate strings. Named Django1.7.11 PostgreSQL backend supplies psycopg cursor; installed adapter/schema and routing remain unpinned.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual route mounting/auth, database backend/version/permissions and valid pgr_dijkstra query schema. Upstream commit API404 is retained; no independently resolved first parent/caller archive. Exact released peer before remains ref fix^ with canonical snapshot URL, not fabricated parent SHA. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional lower-trust GET value changes database statement under application authority before; after adapter must bind as value. Missing/null/non-numeric inputs can still error rather than inject. Not arbitrary tables/statements/access without route prerequisite.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Mechanism-local bid/eid source/value separation only. Constant query correctness, result join, computational cost and all other SQL routes not certified; unavailable upstream context remains unresolved.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch057 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need actual route mounting/auth, database backend/version/permissions and valid pgr_dijkstra query schema. Upstream commit API404 is retained; no independently resolved first parent/caller archive. Exact released peer before remains ref fix^ with canonical snapshot URL, not fabricated parent SHA.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "str(id1)+\",\"+str(id2)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "(str(id1),str(id2),)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "from django.db import connection"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "class RouterAjax(View):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "django/db/backends/postgresql_psycopg2/base.py",
+          "ref": "1.7.11",
+          "needle": "def create_cursor(self):"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:270676284544259:16805301901977",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Archive filename lexical relative_to permits embedded parent traversal; new resolved sanitizer closes name escape but default symlink extraction passes None to path validator.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Archive filename lexical relative_to permits embedded parent traversal; new resolved sanitizer closes name escape but default symlink extraction passes None to path validator. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Existing extractall defaults to current directory and explicitly supports archive symlinks. Old remove_relative_path_marker only strips leading ./; lexical relative_to does not normalize embedded .., and worker writes registered paths. After selected delegates to resolve-based sanitizer and passes path to worker for link-target checks. Named pathlib3.10 supports lexical-vs-resolved distinction; no actual archive extraction performed.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need lower-trust archive filename/target fields, platform/filesystem semantics, output root and worker matching. Existing default path=None is advertised extractall behavior, and ordinary symlink whose target is inside CWD is a valid historical case. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional untrusted archive name can cause worker filesystem writes outside chosen root before. after sanitizer resolves member-name target before relative_to; worker link checks are a coordinated separate boundary, not credited to selected function alone or race-free extraction.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Introduced after regression: default path=None is passed unchanged by selected _extract to Worker.extract, then _extract_single calls is_target_path_valid(path,...) for normal symlink. Helper immediately calls path.is_absolute() and catches only ValueError, so None raises AttributeError. Before creates ordinary symlink. An otherwise valid in-root symlink archive cannot complete default extraction; paired negative explicitly deferred. Resolved output symlink/TOCTOU/return_dict modes remain distinct.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch057 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need lower-trust archive filename/target fields, platform/filesystem semantics, output root and worker matching. Existing default path=None is advertised extractall behavior, and ordinary symlink whose target is inside CWD is a valid historical case.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "outfilename.relative_to(path)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "outfilename = get_sanitized_output_path(outname, path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "py7zr/helpers.py",
+          "ref": "04e3af5ae5092137ee7b015b85efac1c7fd8974e",
+          "needle": "if path.startswith(RELATIVE_PATH_MARKER):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "py7zr/helpers.py",
+          "ref": "1bb43f17515c7f69673a1c88ab9cc72a7bbef406",
+          "needle": "outfile.resolve().relative_to(path)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "py7zr/helpers.py",
+          "ref": "1bb43f17515c7f69673a1c88ab9cc72a7bbef406",
+          "needle": "if path.is_absolute():"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "py7zr/py7zr.py",
+          "ref": "1bb43f17515c7f69673a1c88ab9cc72a7bbef406",
+          "needle": "def extractall(self, path: Optional[Any] = None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "py7zr/py7zr.py",
+          "ref": "1bb43f17515c7f69673a1c88ab9cc72a7bbef406",
+          "needle": "self._extract(path=path, return_dict=False, callback=callback)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "py7zr/py7zr.py",
+          "ref": "1bb43f17515c7f69673a1c88ab9cc72a7bbef406",
+          "needle": "def extract(self, fp: BinaryIO, path: Optional[pathlib.Path]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "py7zr/py7zr.py",
+          "ref": "1bb43f17515c7f69673a1c88ab9cc72a7bbef406",
+          "needle": "                            dst: str = ofp.read().decode(\"utf-8\")\n                            if is_target_path_valid(path, fileish.parent.joinpath(dst)):\n                                # fileish.unlink(missing_ok=True) > py3.7\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "py7zr/py7zr.py",
+          "ref": "04e3af5ae5092137ee7b015b85efac1c7fd8974e",
+          "needle": "fileish.symlink_to(sym_target)"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "Advertised default extractall path=None reaches new worker link-target validator through selected after path argument; is_target_path_valid immediately invokes None.is_absolute and only catches ValueError. Ordinary in-root symlink extraction raises AttributeError instead of previous symlink creation. No archive/filesystem/decompressor or retained test executed."
+    },
+    {
+      "pair_id": "CVEfixes:272686085211766:5753808187305",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Trailing-slash 404 normalization preserves double-leading-slash authority before; after emits exactly one leading slash.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Trailing-slash 404 normalization preserves double-leading-slash authority before; after emits exactly one leading slash. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old middleware actually dispatches non-JSON404 HTTP responses/exceptions to selected helper. request.path is decoded relative URL path in exact aiohttp3.6.2; HTTPFound uses HTTPMove setting Location=str(URL(location)). Before rstrip leaves initial //, a network-path reference rather than origin-relative path. Requirement is same-origin slash canonicalization, not prohibition of intentional external links elsewhere.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need raw client/proxy/aiohttp path preservation and browser Location interpretation; branch requires trailing slash and non-JSON404 content type. Exact requirements pin aiohttp3.6.2; URL serializer/browser behavior not executed or universally certified. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional attacker URL carrying double-leading slash in retained path redirects browser to external authority when followed. Authentication/CSRF are not demonstrated causes. JSON404 branch remains separate and is not redirected.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After strips all surrounding slashes then prepends one, closing this authority-prefix form. No all-encoding/backslash/proxy-path redirect safety or missing Content-Type resilience claim.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch057 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need raw client/proxy/aiohttp path preservation and browser Location interpretation; branch requires trailing slash and non-JSON404 content type. Exact requirements pin aiohttp3.6.2; URL serializer/browser behavior not executed or universally certified.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "web.HTTPFound(request.path.rstrip('/'))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "web.HTTPFound('/' + request.path.strip('/'))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "pollbot/middlewares.py",
+          "ref": "78539afa363b200ef004f40531665826f234eab3",
+          "needle": "error_pages({404: handle_404"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "pollbot/middlewares.py",
+          "ref": "78539afa363b200ef004f40531665826f234eab3",
+          "needle": "override = overrides.get(ex.status)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "requirements.txt",
+          "ref": "78539afa363b200ef004f40531665826f234eab3",
+          "needle": "aiohttp==3.6.2"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "aiohttp/web_exceptions.py",
+          "ref": "v3.6.2",
+          "needle": "self.headers['Location'] = str(URL(location))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "aiohttp/web_request.py",
+          "ref": "v3.6.2",
+          "needle": "return self._rel_url.path"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:48590208344136:28955515216088",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "CSRF validator ordinary secret-token equality becomes compare_digest on bytes with coordinated nonce/token format update.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "CSRF validator ordinary secret-token equality becomes compare_digest on bytes with coordinated nonce/token format update. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old BaseHandler obtains csrf_token and validates against current user before processing guarded payload. Old producer HMACs user ID and supplied issued_on second, with48-hour age limit. New producer adds nonce/SHA256 and three-part form; selected after recomputes with received nonce then timing-resistant bytes comparison. Future-issued timestamps remain not explicitly rejected, but forgery still requires valid MAC; no unauthenticated future-token manufacture inferred.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need CPython equality/timing observability, user-bound request exposure and matched producer. Old expected token uses attacker-supplied issued_on, not current second; advisory one-second attack-window wording does not follow from this verifier. Retained age limit48h is not measured attack viability. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional secret-dependent comparison timing can aid guesses if remotely distinguishable. No actual recovery/RCE/account takeover, constant-time whole-request or nonce replay prevention assertion. Nonce is authenticated but not single-use server state.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After compares UTF-8 bytes through hmac.compare_digest under matched producer, avoids non-ASCII str issue from batch055. Token-format policy migration is intentional/coordinated, not old-token compatibility regression by default. Other parsing, issuance, rate limiting and overall timing remain outside mechanism-local negative.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch057 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need CPython equality/timing observability, user-bound request exposure and matched producer. Old expected token uses attacker-supplied issued_on, not current second; advisory one-second attack-window wording does not follow from this verifier. Retained age limit48h is not measured attack viability.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if authentic_token == token:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if hmac.compare_digest("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "core/controllers/base.py",
+          "ref": "3a05c3558a292f3db9e658e60e708c266c003fd0",
+          "needle": "csrf_token = self.request.get('csrf_token')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "core/controllers/base.py",
+          "ref": "3a05c3558a292f3db9e658e60e708c266c003fd0",
+          "needle": "self.user_id, csrf_token)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "core/controllers/base.py",
+          "ref": "3a05c3558a292f3db9e658e60e708c266c003fd0",
+          "needle": "_CSRF_TOKEN_AGE_SECS: Final = 60 * 60 * 48"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "core/controllers/base.py",
+          "ref": "3a05c3558a292f3db9e658e60e708c266c003fd0",
+          "needle": "issued_on_str = str(int(issued_on))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "core/controllers/base.py",
+          "ref": "b89bf808378c1236874b5797a7bda32c77b4af23",
+          "needle": "nonce = base64.urlsafe_b64encode(os.urandom(20))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "core/controllers/base.py",
+          "ref": "b89bf808378c1236874b5797a7bda32c77b4af23",
+          "needle": "return cls._create_token(user_id, cls._get_current_time())"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:70110356486212:172131364294403",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Renderer switches unrestricted Jinja Environment to sandbox, but historical lower-trust template-author authority policy remains unresolved.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Renderer switches unrestricted Jinja Environment to sandbox, but historical lower-trust template-author authority policy remains unresolved. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Actual old ExportTemplate TextField is editable through model form and renders template with full model queryset as dataset; Configuration and Email use same renderer with context. Loader retrieves DB template objects; custom filters have application/model access. Named Jinja3.1.2 matches minimum requirement and ordinary Environment allows attribute/call access whereas sandbox rejects private/internal attributes and unsafe/alters_data callables. That explains changed capability, not by itself whether historical template editors were fully trusted host-program authors.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual editor permissions/roles and intended restriction between template language and host capabilities; generic edit view file404 preserved, package __init__ proves object_views is actual module location. Third-party template warning/new sandbox alone must not back-project an old restrictive policy. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Conditional lower-trust app template editor or imported template could reach host capabilities under old environment, but old admitted author trust is unresolved. Application edit permission is not automatically host execution permission; conversely intentional trusted code authors are not automatically attackers.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Sandbox default attribute/call guards narrow capability under exact comparison. Custom filters/extensions and DB loader still expose application operations; traceback return persists. No complete sandbox isolation, safe all extension/filter code or HTML autoescape guarantee.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch057 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need actual editor permissions/roles and intended restriction between template language and host capabilities; generic edit view file404 preserved, package __init__ proves object_views is actual module location. Third-party template warning/new sandbox alone must not back-project an old restrictive policy.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "environment = Environment("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "environment = SandboxedEnvironment("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "extras/models/models.py",
+          "ref": "0d714d1f30f29b6221142eac4d4accebd154f0f3",
+          "needle": "self.template, {\"dataset\": self.content_type.model_class().objects.all()}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "devices/models.py",
+          "ref": "0d714d1f30f29b6221142eac4d4accebd154f0f3",
+          "needle": "self.template, context, trim=self.jinja2_trim"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "messaging/models.py",
+          "ref": "0d714d1f30f29b6221142eac4d4accebd154f0f3",
+          "needle": "self.subject, variables"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "requirements.txt",
+          "ref": "0d714d1f30f29b6221142eac4d4accebd154f0f3",
+          "needle": "Jinja2>=3.1.2"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "peering_manager/jinja2/loaders.py",
+          "ref": "0d714d1f30f29b6221142eac4d4accebd154f0f3",
+          "needle": "o = model.objects.get(**lookup)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "src/jinja2/sandbox.py",
+          "ref": "3.1.2",
+          "needle": "return not (attr.startswith(\"_\") or is_internal_attribute(obj, attr))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_DELIVERY.json",
+          "path": "extras/forms.py",
+          "ref": "0d714d1f30f29b6221142eac4d4accebd154f0f3",
+          "needle": "class ExportTemplateForm("
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-2132:0:bson/__init__.py:_get_object",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Python BSON embedded object with $ref but missing $id raises KeyError; after defaults id=None, distinct from disclosed native NULL dereference.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Python BSON embedded object with $ref but missing $id raises KeyError; after defaults id=None, distinct from disclosed native NULL dereference. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old DBRef constructor permits arbitrary id including None while collection/database types checked. Python decoder recognizes any $ref object and unconditionally pops missing $id; after supports constructing None-id reference. Public BSON.decode dispatches to native _bson_to_dict if extension imports, Python fallback otherwise. Native C flaw cannot be assigned to selected Python pop merely because same fix/CVE. Functional missing-key fallback contract is supported; security service availability consequence remains untraced.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual Python fallback selection, lower-trust BSON supplier and exception handling in service consumer. Malformed document need not crash process; Python KeyError differs from native C memory dereference. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "No retained process/service boundary showing attacker-triggered Python exception terminates higher-trust availability. Native crash and broadly named deserialization advisory are not automatic selected security evidence. Preserve null discovery category and ambiguity.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After pop default avoids this selected missing-id KeyError and DBRef accepts None. Not every malformed reference/type/length or native memory safety; optional extension dispatch and downstream validation remain separate.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch057 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need actual Python fallback selection, lower-trust BSON supplier and exception handling in service consumer. Malformed document need not crash process; Python KeyError differs from native C memory dereference.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "object.pop(\"$id\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "object.pop(\"$id\", None)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "bson/__init__.py",
+          "ref": "a9d14571b85b19c6d69cc46349216cab477fa695",
+          "needle": "_bson_to_dict = _cbson._bson_to_dict"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "bson/__init__.py",
+          "ref": "a9d14571b85b19c6d69cc46349216cab477fa695",
+          "needle": "(document, _) = _bson_to_dict(self, as_class, tz_aware, uuid_subtype)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "bson/dbref.py",
+          "ref": "a9d14571b85b19c6d69cc46349216cab477fa695",
+          "needle": "self.__id = id"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTRACTS.json",
+          "path": "bson/dbref.py",
+          "ref": "a9d14571b85b19c6d69cc46349216cab477fa695",
+          "needle": "if not isinstance(collection, basestring):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-43818:0:src/lxml/html/clean.py:_is_javascript_scheme",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Image data-URI broad exemption includes active SVG/XML before; after classifies matched subtype and rejects SVG/XML.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Image data-URI broad exemption includes active SVG/XML before; after classifies matched subtype and rejects SVG/XML. Preserve precise source/operation/authority/encoding/representation boundaries rather than inheriting advisory wording.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old Cleaner javascript policy rewrites document links with _remove_javascript_link; it unquotes/removes whitespace then selected predicate exempts any data:image/...;base64. Actual old regex is anchored and broad subtype. After anchored subtype finder rejects matches containing xml/svg, then exempts remaining image URI. This is active data-document policy, not generic URL redirect, MIME magic validation or arbitrary trusted SVG execution.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need lower-trust HTML passed to Cleaner with javascript policy enabled and viewer context where surviving data URL can execute active content. Browser CSP/embedding may prevent execution, so not every img embedding script claim. Module regex definitions are essential common external context. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After/labels/IDs/metadata/tests/advisories/answers and caller/helper/runtime/configuration evidence are adjudication-only, never selective detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional sanitized attacker HTML carries active image document URL into later browser capable of executing it. Passive image allowance is intentional; not all data URLs are equivalent or universally executable.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Mechanism-local rejection of evidenced SVG/XML image subtype forms under exact regex/cleaner chain; no complete MIME parser, payload decode, every compressed/obfuscated subtype or all Cleaner CVE sites certified. Predicate now returns Boolean instead of match/None, actual consumer only tests truthiness.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer requested scope/context explicitly; no researcher approval or automatic independent-issue assignment.",
+      "dependence_reason": "Planned batch057 is an operational queue, not an independence unit. Preserve canonical IDs/bytes/splits and all discovery revisions/statuses/categories, source overlap, same-fix/history/backport aliases and family/connected-block descriptors. Researcher adjudication of independent roots remains pending.",
+      "open_questions": [
+        "Need lower-trust HTML passed to Cleaner with javascript policy enabled and viewer context where surviving data URL can execute active content. Browser CSP/embedding may prevent execution, so not every img embedding script claim. Module regex definitions are essential common external context.",
+        "Researcher confirm supported historical contracts, installed versions, actual lower-trust producers/consumers/principals and common before-only knowledge policy; new tests/advisory titles or consumers alone do not establish old duty.",
+        "Conditional inert-source deductions, not reproduced behavior or installed/all-version/deployed certification. No retained application/dependency/template/parser/browser/ORM/authentication/filesystem/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if _is_image_dataurl(s):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if _is_unsafe_image_type(image_type):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "src/lxml/html/clean.py",
+          "ref": "12fa9669007180a7bb87d990c375cf91ca5b664a",
+          "needle": "r'^data:image/.+;base64'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "src/lxml/html/clean.py",
+          "ref": "f2330237440df7e8f39c3ad1b1aa8852be3b27c0",
+          "needle": "r'^data:image/(.+);base64,'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "src/lxml/html/clean.py",
+          "ref": "f2330237440df7e8f39c3ad1b1aa8852be3b27c0",
+          "needle": "re.compile(r\"(xml|svg)\", re.I).findall"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "src/lxml/html/clean.py",
+          "ref": "12fa9669007180a7bb87d990c375cf91ca5b664a",
+          "needle": "doc.rewrite_links(self._remove_javascript_link"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_057_CONTEXT.json",
+          "path": "src/lxml/html/clean.py",
+          "ref": "f2330237440df7e8f39c3ad1b1aa8852be3b27c0",
+          "needle": "new = _substitute_whitespace('', unquote_plus(link))"
+        }
+      ]
+    }
+  ]
+}

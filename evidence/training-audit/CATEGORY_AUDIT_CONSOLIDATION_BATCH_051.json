@@ -1,0 +1,1106 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-051",
+  "review_date": "2026-10-30",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "User-requested ten-candidate batch: every Starlette4/Horizon3/MSS3 training candidate, all statuses/categories; four mechanical families.",
+  "selection_rule": {
+    "repositories": [
+      "github.com/encode/starlette",
+      "github.com/openstack/horizon",
+      "github.com/open-mss/mss"
+    ],
+    "candidate_count": 10,
+    "discovery_categories": [
+      "SEC-INPUT-WORK-AMPLIFICATION",
+      "SEC-OPEN-REDIRECT",
+      "SEC-PATH-CONFINEMENT",
+      "SEC-SESSION-INVALIDATION"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Three missing-context, four selected-attribution, two security-boundary and one introduced paired-negative deferral. MSS nested/factory overlap preserved; upload root repair introduces failed-safe_join None-to-os.fspath TypeError instead of prior404. Starlette parse is old allocator while request/initializer/old callback are coordinated representations, not independently proved local repairs. Horizon earlier signed-cookie default differs from later cache default, so stateful key fixation cannot be assumed for default signed cookies or conflated with copied signed-cookie replay. Later redirect guard has real hidden-next/form/Location chain and already cycles keys. Four evidence pins retain150 inert texts/twenty exact peers/four first parents/eight archive inventories; missing paths retained as provenance. Ten-row operational batching changes no source/split/dependence/approval policy. Conditional inert-source deductions, not reproduced outcomes or installed/all-version/deployed proof. No retained application/dependency/parser/session/file/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:150634550859605:5044383212015",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Invalid session teardown clears data but preserves a stateful session key; shared logout helper flushes backend state, while default signed-cookie fixation attribution remains unresolved.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate backend session-key rotation from stateless signed-cookie replay and token revocation; open redirect origin checks from authentication; untrusted helper root from relative filename confinement and failure handling; multipart count-policy enforcement from configuration/wrapper plumbing and code movement. Preserve nested source overlap and bounded negatives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old function explicitly treats missing authenticated-user keys as an expired session and clears before NotAuthorized. Named Django1.4 clear empties cache and marks modified, whereas flush deletes and creates; new matched middleware installs user_logout and deletes cached identity. But exact old dashboard default is signed_cookies, not a database/cache key backend, with local-settings override allowed. Signed-cookie save derives key from current data and signature; do not assume a known prelogin cookie retains its bytes after authentication.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need matched middleware helper, default versus overridden backend, response save, cookie knowledge/planting and later login. Invalid session has incomplete identity by definition, so possession of that malformed cookie alone demonstrates no authenticated victim capability. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project callers/helpers/configuration/template/session/parser/framework contracts are adjudication-only, never selective detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "A conditional stateful-backend fixation lifecycle needs a lower-authority party able to plant/know a valid existing session key and later victim authentication without rotation. Default signed-cookie contents/signature change when login data changes, and copied old signed-cookie replay is a different mechanism. No actual old default-path extra privilege crossing is established by clear versus flush alone; retain boundary deferral.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After helper flushes and drops cached identity under matching middleware; stateful key deletion/rotation is mechanism-local. It does not revoke Keystone tokens, all other sessions or copied signed cookies, and sibling login adds its own cycle_key. Those distinct mechanisms are not silently certified or attributed here.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Retain local teardown and historical helper/backend semantics, but preserve unresolved lower-trust fixation delivery/default signed-cookie applicability. Do not promote helper substitution to a default session-hijack finding.",
+      "dependence_reason": "Ten candidate representations span four mechanical families, not ten independent issues. MSS outer create_app contains selected nested code handler; uploads shares fix/CVE but differs in file/root mechanism. Four Starlette rows are coordinated parser/wrapper/constructor/callback views of one count-policy family. Two Horizon2012 session rows share one family; later login redirect is another family and has a different configured session backend. Preserve IDs/source bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending lineage/alias/backport/root-cause/representation adjudication. Operational ten-row batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed runtime/framework/parser/backend and proxy/route/static-root policy, lower-authority input/cookie control, ordinary before-only knowledge and experimental representation; named comparison contracts do not certify installed/deployed/all-version behavior.",
+        "Conditional inert-source deductions, not reproduced outcomes or installed/all-version/deployed proof. No retained application/dependency/parser/session/file/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "request.session.clear()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "request.user_logout()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "openstack_dashboard/settings.py",
+          "ref": "0f952bcdc525c59380742f96945a24146aab6193",
+          "needle": "SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "openstack_dashboard/settings.py",
+          "ref": "0f952bcdc525c59380742f96945a24146aab6193",
+          "needle": "from local.local_settings import *"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "tools/pip-requires",
+          "ref": "0f952bcdc525c59380742f96945a24146aab6193",
+          "needle": "Django>=1.4"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "horizon/middleware.py",
+          "ref": "041b1c44c7d6cf5429505067c32f8f35166a8bab",
+          "needle": "request.session.flush()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/contrib/sessions/backends/base.py",
+          "ref": "1.4",
+          "needle": "def clear(self):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/contrib/sessions/backends/base.py",
+          "ref": "1.4",
+          "needle": "self.delete()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/contrib/sessions/backends/base.py",
+          "ref": "1.4",
+          "needle": "        self.delete()\n        self.create()\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/contrib/sessions/middleware.py",
+          "ref": "1.4",
+          "needle": "request.session.save()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/contrib/sessions/backends/signed_cookies.py",
+          "ref": "1.4",
+          "needle": "We load the data from the key itself"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/contrib/sessions/backends/signed_cookies.py",
+          "ref": "1.4",
+          "needle": "return signing.dumps(session_cache, compress=True,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "horizon/users.py",
+          "ref": "0f952bcdc525c59380742f96945a24146aab6193",
+          "needle": "request._cached_user = get_user_from_request(request)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "horizon/views/auth_forms.py",
+          "ref": "041b1c44c7d6cf5429505067c32f8f35166a8bab",
+          "needle": "request.session.cycle_key()"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:177610503639025:25048083255114",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Public code route joins multi-segment request filename to documentation directory without confinement before content/download reads.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate backend session-key rotation from stateless signed-cookie replay and token revocation; open redirect origin checks from authentication; untrusted helper root from relative filename confinement and failure handling; multipart count-policy enforcement from configuration/wrapper plumbing and code movement. Preserve nested source overlap and bounded negatives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Route <path:filename> admits relative directory components and old os.path.join retains parent traversal. Existing code-gallery root, neighboring send_from_directory routes and actual get_content/open establish a confined static-content duty predating new tests. Template renders converted text as safe content, so admitted existing UTF-8 text can be disclosed even though Markdown/download transformations may change bytes.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need STATIC_LOCATION configuration, path routing/decoding and helper/template behavior; no assumption every binary file or deployment is readable. Attacker must reach the registered route and target a readable existing text file outside intended gallery root. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project callers/helpers/configuration/template/session/parser/framework contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A lower-trust web client controls filename but not server gallery files; traversal-bearing route components can select outside readable text. Normalization at a proxy/browser can constrain literal spellings, so delivery requires server routing receives the components. Exact route has no per-route login decorator; no request was executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After safe_join rejects lexical escape/absolute alternatives before get_content and explicit file check makes missing downloads404. Scope is lexical code-route confinement under named Werkzeug2.3.8, not symlink/race/realpath or all routes. No supported ordinary selected regression assigned.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Old local read and selected lexical repair are supported, but exact routing/static-root/template/helper facts are essential project context; defer function-only eligibility and preserve overlap with outer factory.",
+      "dependence_reason": "Ten candidate representations span four mechanical families, not ten independent issues. MSS outer create_app contains selected nested code handler; uploads shares fix/CVE but differs in file/root mechanism. Four Starlette rows are coordinated parser/wrapper/constructor/callback views of one count-policy family. Two Horizon2012 session rows share one family; later login redirect is another family and has a different configured session backend. Preserve IDs/source bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending lineage/alias/backport/root-cause/representation adjudication. Operational ten-row batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed runtime/framework/parser/backend and proxy/route/static-root policy, lower-authority input/cookie control, ordinary before-only knowledge and experimental representation; named comparison contracts do not certify installed/deployed/all-version behavior.",
+        "Conditional inert-source deductions, not reproduced outcomes or installed/all-version/deployed proof. No retained application/dependency/parser/session/file/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "_file = os.path.join(STATIC_LOCATION, 'code', filename)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "_file = werkzeug.security.safe_join(STATIC_LOCATION, \"code\", filename)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "mslib/index.py",
+          "ref": "75a1e483aceb58efbbb9a3c6b7a333bfd5fc5f18",
+          "needle": "from mslib.mswms.gallery_builder import STATIC_LOCATION"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "mslib/index.py",
+          "ref": "75a1e483aceb58efbbb9a3c6b7a333bfd5fc5f18",
+          "needle": "with codecs.open(filename, 'r', 'utf-8') as f:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "mslib/static/templates/content.html",
+          "ref": "75a1e483aceb58efbbb9a3c6b7a333bfd5fc5f18",
+          "needle": "{{ content|safe }}"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "mslib/mswms/gallery_builder.py",
+          "ref": "75a1e483aceb58efbbb9a3c6b7a333bfd5fc5f18",
+          "needle": "STATIC_LOCATION = mswms_settings._gallerypath"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "src/werkzeug/security.py",
+          "ref": "2.3.8",
+          "needle": "or filename.startswith(\"../\")"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "src/werkzeug/security.py",
+          "ref": "2.3.8",
+          "needle": "return None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "src/werkzeug/routing/converters.py",
+          "ref": "2.3.8",
+          "needle": "class PathConverter(BaseConverter):"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:177610503639025:69341272094741",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Outer application factory includes the same nested code-route defect; no separate outer initialization root cause is established.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate backend session-key rotation from stateless signed-cookie replay and token revocation; open redirect origin checks from authentication; untrusted helper root from relative filename confinement and failure handling; multipart count-policy enforcement from configuration/wrapper plumbing and code movement. Preserve nested source overlap and bounded negatives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Full selected factory contains the nested code route and get_content reader. Only selected production changes are that inner safe_join/None/isfile repair; sibling xstatic/theme routes already use send_from_directory. Existing confined-content duty is supported for that nested branch, not an independent faulty factory decision.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need outer/nested source containment, registration/configuration and same helper contracts. Large outer span and inner span cannot become independent observations or be selectively shortened after labels are known. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project callers/helpers/configuration/template/session/parser/framework contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Same conditional lower-trust filename-to-outside-text read as nested handler; no additional boundary from app creation or neighboring safe routes.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "Whole-factory after contains repaired nested code path, but selected outer component has no separately isolated negative or independent issue. Preserve canonical source/ID and defer experimental representation rather than delete it or certify all routes.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Nested repair/source overlap is established; defer outer independent selected attribution/representation and retain both canonical IDs in the same family.",
+      "dependence_reason": "Ten candidate representations span four mechanical families, not ten independent issues. MSS outer create_app contains selected nested code handler; uploads shares fix/CVE but differs in file/root mechanism. Four Starlette rows are coordinated parser/wrapper/constructor/callback views of one count-policy family. Two Horizon2012 session rows share one family; later login redirect is another family and has a different configured session backend. Preserve IDs/source bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending lineage/alias/backport/root-cause/representation adjudication. Operational ten-row batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed runtime/framework/parser/backend and proxy/route/static-root policy, lower-authority input/cookie control, ordinary before-only knowledge and experimental representation; named comparison contracts do not certify installed/deployed/all-version behavior.",
+        "Conditional inert-source deductions, not reproduced outcomes or installed/all-version/deployed proof. No retained application/dependency/parser/session/file/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "_file = os.path.join(STATIC_LOCATION, 'code', filename)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "_file = werkzeug.security.safe_join(STATIC_LOCATION, \"code\", filename)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "mslib/index.py",
+          "ref": "75a1e483aceb58efbbb9a3c6b7a333bfd5fc5f18",
+          "needle": "def get_content(filename, overrides=None):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "mslib/index.py",
+          "ref": "f23033729ee930b97f8bdbd07df0174311c9b658",
+          "needle": "if _file is None:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "src/werkzeug/security.py",
+          "ref": "2.3.8",
+          "needle": "Safely join zero or more untrusted path components to a base"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:234315831912053:127782130225341",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Upload route lets request name alter the trusted send_from_directory root; after fixes root but passes None from failed safe_join into path conversion.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate backend session-key rotation from stateless signed-cookie replay and token revocation; open redirect origin checks from authentication; untrusted helper root from relative filename confinement and failure handling; multipart count-policy enforcement from configuration/wrapper plumbing and code movement. Preserve nested source overlap and bounded negatives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "send_from_directory requires a trusted directory and confines only its filename argument. Old fs.path.join(base_path,name) normalizes a name equal to a parent segment to base parent before that helper sees filename; single-segment route permits that name, though it does not permit arbitrarily many slash-separated parents. An outside readable sibling file can then be served under the wrong trusted root. Named PyFilesystem2.4.16 join collapses backreferences. Flask/Werkzeug helper contract also promises404 for unsafe/missing paths.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need route converter, configured upload root and parent contents, PyFilesystem join, Flask/Werkzeug helper and server error handler. After None is a failed path value, not a safely rejected response. Normal routes surrounding uploads authenticate separately; this route has no such decorator. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project callers/helpers/configuration/template/session/parser/framework contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An admitted lower-trust client can alter the helper root by one parent level via name, then use a safe relative filename for a readable non-upload sibling. Filename helper confinement does not constrain the already shifted root. No arbitrary slash-depth, symlink-free or all-platform claim.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After keeps configured base root and safe-joins both untrusted components, blocking old root shift. However an unsafe filename containing a leading parent reference was rejected by the old send_from_directory path guard as404. New inner safe_join returns None; unchanged Flask2.3.3 wrapper forwards it and Werkzeug2.3.8 calls os.fspath(path) before its own None/NotFound check. CPython path protocol rejects None with TypeError, causing an unhandled server error under ordinary production error handling instead of the prior404. This is an introduced invalid-path failure, not evidence the protected file is still returned. Defer paired-negative use; no request/helper/runtime executed.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Old wrong-root disclosure and local root repair are supported, but failed safe_join result introduces named-helper invalid-path404-to-TypeError failure. Keep explicit after regression and unestablished selected negative.",
+      "dependence_reason": "Ten candidate representations span four mechanical families, not ten independent issues. MSS outer create_app contains selected nested code handler; uploads shares fix/CVE but differs in file/root mechanism. Four Starlette rows are coordinated parser/wrapper/constructor/callback views of one count-policy family. Two Horizon2012 session rows share one family; later login redirect is another family and has a different configured session backend. Preserve IDs/source bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending lineage/alias/backport/root-cause/representation adjudication. Operational ten-row batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed runtime/framework/parser/backend and proxy/route/static-root policy, lower-authority input/cookie control, ordinary before-only knowledge and experimental representation; named comparison contracts do not certify installed/deployed/all-version behavior.",
+        "Conditional inert-source deductions, not reproduced outcomes or installed/all-version/deployed proof. No retained application/dependency/parser/session/file/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return send_from_directory(fs.path.join(base_path, name), filename)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return send_from_directory(base_path, werkzeug.security.safe_join(\"\", name, filename))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "mslib/mscolab/conf.py",
+          "ref": "75a1e483aceb58efbbb9a3c6b7a333bfd5fc5f18",
+          "needle": "UPLOAD_FOLDER = os.path.join(DATA_DIR, 'uploads')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "mslib/mscolab/server.py",
+          "ref": "75a1e483aceb58efbbb9a3c6b7a333bfd5fc5f18",
+          "needle": "@APP.route('/uploads/<name>/<path:filename>', methods=[\"GET\"])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "fs/path.py",
+          "ref": "v2.4.16",
+          "needle": "path = normpath(\"/\".join(relpaths))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "fs/path.py",
+          "ref": "v2.4.16",
+          "needle": "components.pop()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "src/werkzeug/routing/converters.py",
+          "ref": "2.3.8",
+          "needle": "only one path segment."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "src/werkzeug/security.py",
+          "ref": "2.3.8",
+          "needle": "return None"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "src/flask/helpers.py",
+          "ref": "2.3.3",
+          "needle": "directory, path, **_prepare_send_file_kwargs(**kwargs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "src/werkzeug/utils.py",
+          "ref": "2.3.8",
+          "needle": "path = safe_join(os.fspath(directory), os.fspath(path))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "src/werkzeug/utils.py",
+          "ref": "2.3.8",
+          "needle": "    if path is None:\n        raise NotFound()\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_DELIVERY.json",
+          "path": "Lib/os.py",
+          "ref": "v3.10.13",
+          "needle": "provided path is not str, bytes, or os.PathLike, TypeError is raised."
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_regression",
+      "paired_negative_assessment_reason": "New nested safe_join can return None for a previously404 unsafe relative filename; Flask forwards it and Werkzeug os.fspath(path) rejects None before NotFound handling. Conditional named-version invalid-path regression, not reproduced filesystem access or residual disclosure."
+    },
+    {
+      "pair_id": "CVEfixes:260563088955056:150058504831751",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Logout clear retains a stateful backend key; new helper flushes and clears cached identity, but configured signed-cookie applicability must remain explicit.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate backend session-key rotation from stateless signed-cookie replay and token revocation; open redirect origin checks from authentication; untrusted helper root from relative filename confinement and failure handling; multipart count-policy enforcement from configuration/wrapper plumbing and code movement. Preserve nested source overlap and bounded negatives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old logout promises to clear session/log out and calls clear; old successful login writes scoped token/user data with no key cycling. Named Django1.4 stateful backends distinguish clear from delete/create and response middleware saves data under retained key. New helper flushes and drops cached user, while same commit separately adds login cycle_key. Exact default signed-cookie backend stores signed data in key itself; it does not share stateful fixation semantics, though local settings can override.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need complete old/new auth helper/login, backend, response middleware, known-key planting and user authentication lifecycle. Do not substitute later Horizon cache-engine default into this earlier signed-cookie revision. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project callers/helpers/configuration/template/session/parser/framework contracts are adjudication-only, never selective detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Conditional known stateful session ID reused across logout/login may become victim-authenticated again if attacker can fix/know the victim key and old login does not rotate it. For default signed cookies login changes the signed contents, so known prelogin cookie alone does not establish this crossing. Possession/replay of an already authenticated copied signed cookie is distinct and not repaired by flush; no universal session revocation claim.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Under admitted stateful backend, matched helper deletes old key/creates new and clears identity; selected logout negative is only that lifecycle. Sibling login cycle_key is separately coordinated. No certification of copied signed-cookie replay, Keystone token revocation, concurrent requests or every auth path, and no automatic ordinary regression assigned.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Preserve conditional stateful teardown evidence but defer lower-trust/default-backend fixation applicability. Clear versus flush alone is not a default signed-cookie takeover witness, and later backend/login changes are not backfilled.",
+      "dependence_reason": "Ten candidate representations span four mechanical families, not ten independent issues. MSS outer create_app contains selected nested code handler; uploads shares fix/CVE but differs in file/root mechanism. Four Starlette rows are coordinated parser/wrapper/constructor/callback views of one count-policy family. Two Horizon2012 session rows share one family; later login redirect is another family and has a different configured session backend. Preserve IDs/source bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending lineage/alias/backport/root-cause/representation adjudication. Operational ten-row batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed runtime/framework/parser/backend and proxy/route/static-root policy, lower-authority input/cookie control, ordinary before-only knowledge and experimental representation; named comparison contracts do not certify installed/deployed/all-version behavior.",
+        "Conditional inert-source deductions, not reproduced outcomes or installed/all-version/deployed proof. No retained application/dependency/parser/session/file/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "request.session.clear()"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "request.user_logout()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "openstack_dashboard/settings.py",
+          "ref": "0f952bcdc525c59380742f96945a24146aab6193",
+          "needle": "SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "openstack_dashboard/settings.py",
+          "ref": "0f952bcdc525c59380742f96945a24146aab6193",
+          "needle": "from local.local_settings import *"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "tools/pip-requires",
+          "ref": "0f952bcdc525c59380742f96945a24146aab6193",
+          "needle": "Django>=1.4"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "horizon/middleware.py",
+          "ref": "041b1c44c7d6cf5429505067c32f8f35166a8bab",
+          "needle": "request.session.flush()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/contrib/sessions/backends/base.py",
+          "ref": "1.4",
+          "needle": "def clear(self):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/contrib/sessions/backends/base.py",
+          "ref": "1.4",
+          "needle": "self.delete()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/contrib/sessions/backends/base.py",
+          "ref": "1.4",
+          "needle": "        self.delete()\n        self.create()\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/contrib/sessions/middleware.py",
+          "ref": "1.4",
+          "needle": "request.session.save()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/contrib/sessions/backends/signed_cookies.py",
+          "ref": "1.4",
+          "needle": "We load the data from the key itself"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/contrib/sessions/backends/signed_cookies.py",
+          "ref": "1.4",
+          "needle": "return signing.dumps(session_cache, compress=True,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "horizon/views/auth_forms.py",
+          "ref": "0f952bcdc525c59380742f96945a24146aab6193",
+          "needle": "request.session['token'] = token.id"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "horizon/views/auth_forms.py",
+          "ref": "041b1c44c7d6cf5429505067c32f8f35166a8bab",
+          "needle": "request.session.cycle_key()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/contrib/sessions/backends/db.py",
+          "ref": "1.4",
+          "needle": "Session.objects.get(session_key=session_key).delete()"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:263921828310577:134398136383837",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Request form wrapper participates in coordinated per-form file/field-count repair; old allocating parse has no count policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate backend session-key rotation from stateless signed-cookie replay and token revocation; open redirect origin checks from authentication; untrusted helper root from relative filename confinement and failure handling; multipart count-policy enforcement from configuration/wrapper plumbing and code movement. Preserve nested source overlap and bounded negatives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old documented request.form consumes HTTP multipart stream; installed optional python-multipart invokes registered callbacks. Old callback enqueues messages and parse allocates one spooled file per filename part, retaining completed file/field items with no count cap. Small fields/files accumulate object/memory overhead; file data beyond spool threshold can consume disk/file handles. max_file_size is a rollover threshold, not total upload/part count cap. Same consumer duty is contextual resource handling of lower-trust HTTP input, independently of new tests. Selected wrapper/initializer/old message callback is correct interface/state/event plumbing; new defaults/enforcement also change in siblings, so code movement or necessity alone does not isolate its old local defect.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual application use of request.form, optional multipart package, stream callbacks, allocation/retention and finite policy. Plain URL-encoded FormParser remains separate. Existing finite default in new constructor protects old-style calls too; selected wrapper additionally exposes customization. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project callers/helpers/configuration/template/session/parser/framework contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional application endpoint invokes documented form parser on attacker-supplied multipart. Unbounded number of small valid fields/files consumes shared memory/objects; larger spooled files add handles/disk. Network bytes/ingress/server limits affect impact, and no request-size amplification ratio or every deployment is claimed. Named python-multipart0.0.5 callback propagates raised exceptions, so new synchronous header counter rejects excess before that part allocation.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After constructor defaults1000 each initialize counters; header callback rejects greater counts before allocation and parse writes/seeks files asynchronously after each chunk. Wrapper maps MultiPartException to400 with app scope and forwards finite overrides. Local negative is coordinated finite multipart counts only, not total bytes, single field size, request rate, parser cleanup/global DoS safety or later cached-form lower limits. Explicit infinite overrides intentionally remove a bound. No isolated selected negative is established for ancillary/plumbing representation; defer attribution.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Defer ancillary selected attribution; coordinated finite policy/enforcement and real old allocation sink are retained without treating four family representations as independent issues.",
+      "dependence_reason": "Ten candidate representations span four mechanical families, not ten independent issues. MSS outer create_app contains selected nested code handler; uploads shares fix/CVE but differs in file/root mechanism. Four Starlette rows are coordinated parser/wrapper/constructor/callback views of one count-policy family. Two Horizon2012 session rows share one family; later login redirect is another family and has a different configured session backend. Preserve IDs/source bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending lineage/alias/backport/root-cause/representation adjudication. Operational ten-row batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed runtime/framework/parser/backend and proxy/route/static-root policy, lower-authority input/cookie control, ordinary before-only knowledge and experimental representation; named comparison contracts do not certify installed/deployed/all-version behavior.",
+        "Conditional inert-source deductions, not reproduced outcomes or installed/all-version/deployed proof. No retained application/dependency/parser/session/file/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "multipart_parser = MultiPartParser(self.headers, self.stream())"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                        max_files=max_files,\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "tempfile = SpooledTemporaryFile(max_size=self.max_file_size)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "items.append((field_name, _user_safe_decode(data, charset)))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "if self._current_files > self.max_files:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "if self._current_fields > self.max_fields:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "max_files: typing.Union[int, float] = 1000,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/requests.py",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "multipart_parser = MultiPartParser(self.headers, self.stream())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "multipart/multipart.py",
+          "ref": "0.0.5",
+          "needle": "func()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.13",
+          "needle": "self._file = _io.BytesIO()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.13",
+          "needle": "newfile = self._file = TemporaryFile(**self._TemporaryFileArgs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/requests.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "self._get_form(max_files=max_files, max_fields=max_fields)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "self._file_parts_to_write.clear()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "docs/requests.md",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "The request body, parsed as form data or multipart:"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:36472038322479:162236672662356",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Header-finished callback participates in coordinated per-form file/field-count repair; old allocating parse has no count policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate backend session-key rotation from stateless signed-cookie replay and token revocation; open redirect origin checks from authentication; untrusted helper root from relative filename confinement and failure handling; multipart count-policy enforcement from configuration/wrapper plumbing and code movement. Preserve nested source overlap and bounded negatives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old documented request.form consumes HTTP multipart stream; installed optional python-multipart invokes registered callbacks. Old callback enqueues messages and parse allocates one spooled file per filename part, retaining completed file/field items with no count cap. Small fields/files accumulate object/memory overhead; file data beyond spool threshold can consume disk/file handles. max_file_size is a rollover threshold, not total upload/part count cap. Same consumer duty is contextual resource handling of lower-trust HTTP input, independently of new tests. Selected wrapper/initializer/old message callback is correct interface/state/event plumbing; new defaults/enforcement also change in siblings, so code movement or necessity alone does not isolate its old local defect.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual application use of request.form, optional multipart package, stream callbacks, allocation/retention and finite policy. Plain URL-encoded FormParser remains separate. Existing finite default in new constructor protects old-style calls too; selected wrapper additionally exposes customization. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project callers/helpers/configuration/template/session/parser/framework contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional application endpoint invokes documented form parser on attacker-supplied multipart. Unbounded number of small valid fields/files consumes shared memory/objects; larger spooled files add handles/disk. Network bytes/ingress/server limits affect impact, and no request-size amplification ratio or every deployment is claimed. Named python-multipart0.0.5 callback propagates raised exceptions, so new synchronous header counter rejects excess before that part allocation.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After constructor defaults1000 each initialize counters; header callback rejects greater counts before allocation and parse writes/seeks files asynchronously after each chunk. Wrapper maps MultiPartException to400 with app scope and forwards finite overrides. Local negative is coordinated finite multipart counts only, not total bytes, single field size, request rate, parser cleanup/global DoS safety or later cached-form lower limits. Explicit infinite overrides intentionally remove a bound. No isolated selected negative is established for ancillary/plumbing representation; defer attribution.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Defer ancillary selected attribution; coordinated finite policy/enforcement and real old allocation sink are retained without treating four family representations as independent issues.",
+      "dependence_reason": "Ten candidate representations span four mechanical families, not ten independent issues. MSS outer create_app contains selected nested code handler; uploads shares fix/CVE but differs in file/root mechanism. Four Starlette rows are coordinated parser/wrapper/constructor/callback views of one count-policy family. Two Horizon2012 session rows share one family; later login redirect is another family and has a different configured session backend. Preserve IDs/source bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending lineage/alias/backport/root-cause/representation adjudication. Operational ten-row batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed runtime/framework/parser/backend and proxy/route/static-root policy, lower-authority input/cookie control, ordinary before-only knowledge and experimental representation; named comparison contracts do not certify installed/deployed/all-version behavior.",
+        "Conditional inert-source deductions, not reproduced outcomes or installed/all-version/deployed proof. No retained application/dependency/parser/session/file/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "message = (MultiPartMessage.HEADERS_FINISHED, b\"\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if self._current_files > self.max_files:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "tempfile = SpooledTemporaryFile(max_size=self.max_file_size)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "items.append((field_name, _user_safe_decode(data, charset)))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "if self._current_files > self.max_files:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "if self._current_fields > self.max_fields:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "max_files: typing.Union[int, float] = 1000,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/requests.py",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "multipart_parser = MultiPartParser(self.headers, self.stream())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "multipart/multipart.py",
+          "ref": "0.0.5",
+          "needle": "func()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.13",
+          "needle": "self._file = _io.BytesIO()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.13",
+          "needle": "newfile = self._file = TemporaryFile(**self._TemporaryFileArgs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/requests.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "self._get_form(max_files=max_files, max_fields=max_fields)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "self._file_parts_to_write.clear()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "docs/requests.md",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "The request body, parsed as form data or multipart:"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:36472038322479:239590225477148",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Multipart parse consumer participates in coordinated per-form file/field-count repair; old allocating parse has no count policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate backend session-key rotation from stateless signed-cookie replay and token revocation; open redirect origin checks from authentication; untrusted helper root from relative filename confinement and failure handling; multipart count-policy enforcement from configuration/wrapper plumbing and code movement. Preserve nested source overlap and bounded negatives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old documented request.form consumes HTTP multipart stream; installed optional python-multipart invokes registered callbacks. Old callback enqueues messages and parse allocates one spooled file per filename part, retaining completed file/field items with no count cap. Small fields/files accumulate object/memory overhead; file data beyond spool threshold can consume disk/file handles. max_file_size is a rollover threshold, not total upload/part count cap. Same consumer duty is contextual resource handling of lower-trust HTTP input, independently of new tests. Selected old parse is the actual allocation/retention sink.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual application use of request.form, optional multipart package, stream callbacks, allocation/retention and finite policy. Plain URL-encoded FormParser remains separate. Existing finite default in new constructor protects old-style calls too; selected wrapper additionally exposes customization. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project callers/helpers/configuration/template/session/parser/framework contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional application endpoint invokes documented form parser on attacker-supplied multipart. Unbounded number of small valid fields/files consumes shared memory/objects; larger spooled files add handles/disk. Network bytes/ingress/server limits affect impact, and no request-size amplification ratio or every deployment is claimed. Named python-multipart0.0.5 callback propagates raised exceptions, so new synchronous header counter rejects excess before that part allocation.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After constructor defaults1000 each initialize counters; header callback rejects greater counts before allocation and parse writes/seeks files asynchronously after each chunk. Wrapper maps MultiPartException to400 with app scope and forwards finite overrides. Local negative is coordinated finite multipart counts only, not total bytes, single field size, request rate, parser cleanup/global DoS safety or later cached-form lower limits. Explicit infinite overrides intentionally remove a bound. No supported ordinary selected after regression assigned under matching callback/constructor.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Actual old allocation sink and coordinated count repair are supported, but application/parser/callback/default-policy context exceeds selected before; defer function-only eligibility.",
+      "dependence_reason": "Ten candidate representations span four mechanical families, not ten independent issues. MSS outer create_app contains selected nested code handler; uploads shares fix/CVE but differs in file/root mechanism. Four Starlette rows are coordinated parser/wrapper/constructor/callback views of one count-policy family. Two Horizon2012 session rows share one family; later login redirect is another family and has a different configured session backend. Preserve IDs/source bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending lineage/alias/backport/root-cause/representation adjudication. Operational ten-row batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed runtime/framework/parser/backend and proxy/route/static-root policy, lower-authority input/cookie control, ordinary before-only knowledge and experimental representation; named comparison contracts do not certify installed/deployed/all-version behavior.",
+        "Conditional inert-source deductions, not reproduced outcomes or installed/all-version/deployed proof. No retained application/dependency/parser/session/file/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "tempfile = SpooledTemporaryFile(max_size=self.max_file_size)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return FormData(self.items)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "tempfile = SpooledTemporaryFile(max_size=self.max_file_size)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "items.append((field_name, _user_safe_decode(data, charset)))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "if self._current_files > self.max_files:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "if self._current_fields > self.max_fields:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "max_files: typing.Union[int, float] = 1000,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/requests.py",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "multipart_parser = MultiPartParser(self.headers, self.stream())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "multipart/multipart.py",
+          "ref": "0.0.5",
+          "needle": "func()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.13",
+          "needle": "self._file = _io.BytesIO()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.13",
+          "needle": "newfile = self._file = TemporaryFile(**self._TemporaryFileArgs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/requests.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "self._get_form(max_files=max_files, max_fields=max_fields)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "self._file_parts_to_write.clear()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "docs/requests.md",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "The request body, parsed as form data or multipart:"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:36472038322479:60485491536528",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Multipart constructor participates in coordinated per-form file/field-count repair; old allocating parse has no count policy.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate backend session-key rotation from stateless signed-cookie replay and token revocation; open redirect origin checks from authentication; untrusted helper root from relative filename confinement and failure handling; multipart count-policy enforcement from configuration/wrapper plumbing and code movement. Preserve nested source overlap and bounded negatives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old documented request.form consumes HTTP multipart stream; installed optional python-multipart invokes registered callbacks. Old callback enqueues messages and parse allocates one spooled file per filename part, retaining completed file/field items with no count cap. Small fields/files accumulate object/memory overhead; file data beyond spool threshold can consume disk/file handles. max_file_size is a rollover threshold, not total upload/part count cap. Same consumer duty is contextual resource handling of lower-trust HTTP input, independently of new tests. Selected wrapper/initializer/old message callback is correct interface/state/event plumbing; new defaults/enforcement also change in siblings, so code movement or necessity alone does not isolate its old local defect.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual application use of request.form, optional multipart package, stream callbacks, allocation/retention and finite policy. Plain URL-encoded FormParser remains separate. Existing finite default in new constructor protects old-style calls too; selected wrapper additionally exposes customization. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project callers/helpers/configuration/template/session/parser/framework contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Conditional application endpoint invokes documented form parser on attacker-supplied multipart. Unbounded number of small valid fields/files consumes shared memory/objects; larger spooled files add handles/disk. Network bytes/ingress/server limits affect impact, and no request-size amplification ratio or every deployment is claimed. Named python-multipart0.0.5 callback propagates raised exceptions, so new synchronous header counter rejects excess before that part allocation.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After constructor defaults1000 each initialize counters; header callback rejects greater counts before allocation and parse writes/seeks files asynchronously after each chunk. Wrapper maps MultiPartException to400 with app scope and forwards finite overrides. Local negative is coordinated finite multipart counts only, not total bytes, single field size, request rate, parser cleanup/global DoS safety or later cached-form lower limits. Explicit infinite overrides intentionally remove a bound. No isolated selected negative is established for ancillary/plumbing representation; defer attribution.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Defer ancillary selected attribution; coordinated finite policy/enforcement and real old allocation sink are retained without treating four family representations as independent issues.",
+      "dependence_reason": "Ten candidate representations span four mechanical families, not ten independent issues. MSS outer create_app contains selected nested code handler; uploads shares fix/CVE but differs in file/root mechanism. Four Starlette rows are coordinated parser/wrapper/constructor/callback views of one count-policy family. Two Horizon2012 session rows share one family; later login redirect is another family and has a different configured session backend. Preserve IDs/source bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending lineage/alias/backport/root-cause/representation adjudication. Operational ten-row batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed runtime/framework/parser/backend and proxy/route/static-root policy, lower-authority input/cookie control, ordinary before-only knowledge and experimental representation; named comparison contracts do not certify installed/deployed/all-version behavior.",
+        "Conditional inert-source deductions, not reproduced outcomes or installed/all-version/deployed proof. No retained application/dependency/parser/session/file/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.messages: typing.List[typing.Tuple[MultiPartMessage, bytes]] = []"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._current_files = 0"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "tempfile = SpooledTemporaryFile(max_size=self.max_file_size)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "items.append((field_name, _user_safe_decode(data, charset)))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "if self._current_files > self.max_files:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "if self._current_fields > self.max_fields:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "max_files: typing.Union[int, float] = 1000,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/requests.py",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "multipart_parser = MultiPartParser(self.headers, self.stream())"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "multipart/multipart.py",
+          "ref": "0.0.5",
+          "needle": "func()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.13",
+          "needle": "self._file = _io.BytesIO()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "Lib/tempfile.py",
+          "ref": "v3.10.13",
+          "needle": "newfile = self._file = TemporaryFile(**self._TemporaryFileArgs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/requests.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "self._get_form(max_files=max_files, max_fields=max_fields)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "starlette/formparsers.py",
+          "ref": "8c74c2c8dba7030154f8af18e016136bea1938fa",
+          "needle": "self._file_parts_to_write.clear()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "docs/requests.md",
+          "ref": "5771a78c14d577bd1743ed2e948c91589dd30e20",
+          "needle": "The request body, parsed as form data or multipart:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2012-3540:0:horizon/views/auth_forms.py:Login.handle",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Successful Horizon login redirects to request next without origin restriction; matched after checks built absolute origin before either redirect sink.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate backend session-key rotation from stateless signed-cookie replay and token revocation; open redirect origin checks from authentication; untrusted helper root from relative filename confinement and failure handling; multipart count-policy enforcement from configuration/wrapper plumbing and code movement. Preserve nested source overlap and bounded negatives.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old form documents redirect to user home, but request.REQUEST next overrides it after successful tenant/scoped login. Actual template preserves next in hidden field; SelfHandlingForm only handles matching valid POST, so valid victim credentials/form remain required. Named Django1.4 shortcuts treats a URL as redirect target and HttpResponseRedirect puts it in Location. Existing trusted login continuation duty supports foreign-origin rejection without inferring credential forwarding.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need login form/template POST gate, Django build_absolute_uri/same_origin/redirect, ordinary successful authentication and trusted Host/proxy policy. This later exact dashboard uses cache sessions, unlike earlier signed-cookie fixation rows; selected login already cycles session key before redirect fix. Common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. After, labels/IDs/metadata/tests/advisories/answers and project callers/helpers/configuration/template/session/parser/framework contracts are adjudication-only, never selective detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A lower-trust link supplies external next on real login page; template posts it through hidden next while victim authenticates normally to trusted service. Successful response can navigate to hostile origin, enabling trusted-login phishing continuation. Attacker need not know victim password or receive the Keystone token; no automatic token exfiltration/session-fixation claim.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After builds absolute target and current request then compares scheme/hostname/port using named Django1.4 Python2.6+ same_origin; different authority/scheme is dropped and home fallback selected for both branches. Relative same-origin continuation remains; default-port textual None versus explicit port may reject an equivalent origin and malformed URL/runtime/Host normalization remain bounded. Intentional safety tightening is not automatically a supported ordinary regression; no universal URL/browser-parser equivalence claim.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Existing request-to-Location foreign-origin continuation and selected guard are supported with real template/form/Django contracts. Defer function-only policy/Host/runtime context, retaining both successful branches and separating session/credential claims.",
+      "dependence_reason": "Ten candidate representations span four mechanical families, not ten independent issues. MSS outer create_app contains selected nested code handler; uploads shares fix/CVE but differs in file/root mechanism. Four Starlette rows are coordinated parser/wrapper/constructor/callback views of one count-policy family. Two Horizon2012 session rows share one family; later login redirect is another family and has a different configured session backend. Preserve IDs/source bytes/splits, discovery revisions/categories, family/connected-block descriptors and pending lineage/alias/backport/root-cause/representation adjudication. Operational ten-row batching changes no issue grouping.",
+      "open_questions": [
+        "Researcher confirm actual installed runtime/framework/parser/backend and proxy/route/static-root policy, lower-authority input/cookie control, ordinary before-only knowledge and experimental representation; named comparison contracts do not certify installed/deployed/all-version behavior.",
+        "Conditional inert-source deductions, not reproduced outcomes or installed/all-version/deployed proof. No retained application/dependency/parser/session/file/runtime program, payload, vulnerability-target request or upstream test executes. Archives read in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "redirect_to = request.REQUEST.get(REDIRECT_FIELD_NAME, \"\")"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "request.build_absolute_uri(redirect_to),"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_DELIVERY.json",
+          "path": "horizon/templates/horizon/auth/_login.html",
+          "ref": "648b07895c3e09218e165ec0f61bca7e3d6eb691",
+          "needle": "<input type=\"hidden\" name=\"{{ redirect_field_name }}\" value=\"{{ next }}\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_DELIVERY.json",
+          "path": "horizon/forms/base.py",
+          "ref": "648b07895c3e09218e165ec0f61bca7e3d6eb691",
+          "needle": "if request.method != 'POST' or"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_DELIVERY.json",
+          "path": "horizon/forms/base.py",
+          "ref": "648b07895c3e09218e165ec0f61bca7e3d6eb691",
+          "needle": "if not form.is_valid():"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "horizon/views/auth_forms.py",
+          "ref": "648b07895c3e09218e165ec0f61bca7e3d6eb691",
+          "needle": "            return shortcuts.redirect(redirect)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/http/__init__.py",
+          "ref": "1.4",
+          "needle": "        super(HttpResponseRedirect, self).__init__()\n        self['Location'] = iri_to_uri(redirect_to)\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/http/__init__.py",
+          "ref": "1.4",
+          "needle": "location = urljoin(current_uri, location)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/utils/http.py",
+          "ref": "1.4",
+          "needle": "return (p1.scheme, p1.hostname, p1.port) == (p2.scheme, p2.hostname, p2.port)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTRACTS.json",
+          "path": "django/shortcuts/__init__.py",
+          "ref": "1.4",
+          "needle": "return redirect_class(to)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_051_CONTEXT.json",
+          "path": "openstack_dashboard/settings.py",
+          "ref": "648b07895c3e09218e165ec0f61bca7e3d6eb691",
+          "needle": "SESSION_ENGINE = 'django.contrib.sessions.backends.cache'"
+        }
+      ]
+    }
+  ]
+}

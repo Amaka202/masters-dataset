@@ -1,0 +1,1487 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-023",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All16 OpenStack Glance training candidates across all statuses; no null-category candidates exist in this repository.",
+  "selection_rule": {
+    "repository": "github.com/openstack/glance",
+    "discovery_categories": [
+      "SEC-CREDENTIAL-DIAGNOSTIC-DISCLOSURE",
+      "SEC-RESOURCE-AUTHORIZATION",
+      "SEC-VALIDATION-SECRET-LOGGING"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 825,
+    "sha256": "82a7ed0370f99633102502587bb7f84cfd867aee911c754570fb24bfffa40229"
+  },
+  "interpretation": "Training-only matched old-contract/delivery review: seven missing-context, eight security-boundary and one residual paired-negative deferral. Exact owner versus visibility checks support two API-order defects, but v2 after still queues builtin id. Six Swift add/get diagnostics have exact client-visible error consumers; three deletion rows instead have absorbing raw-URI-log wrappers, two ACL rows normally lack credentials and three parser rows need malformed-private-input/log audience. Fourteen Swift candidates/backports remain one family; v2 advisory explicitly describes incomplete v1 fix without establishing issue independence. Preserve every discovery event, previous authored batch, source byte/split and45 protected inputs. All application, auth/policy, DB/SQL, Swift/storage, HTTP/WSGI/parser, dependency programs, requests and upstream tests remain inert; deductions are not reproduced failures.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2012-4573:1:glance/api/v1/images.py:Controller.delete",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "v1 backend destruction or queueing occurs before registry owner authorization.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old SQL image_get checks visibility, which includes public or shared images. check_mutate_authorization separately restricts mutations to admin or matching owner; image_update/image_destroy invoke it. The old mutating decorator rejects read_only contexts but is not an ownership check. Generic action policy uses an empty resource target and permissive defaults; passing it and reading a public non-protected image does not authorize deletion. Old backend effect precedes the owner check, so a nonowner with ordinary writable request context and action-policy admission can destroy image data before the later registry/DB rejection. This is an existing cross-tenant authorization duty, not a newly restrictive policy. Exact old BaseController forwards request context to registry metadata lookup; registry update/delete preserve that context and delegate to SQL owner checks. The selected function itself misorders these operations.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need mutating/read-only wrapper, generic policy, BaseController metadata visibility, registry context/client forwarding, registry mutation endpoints, SQL owner checks and actual store effect. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A nonadmin authenticated caller, non-read-only context, admitted delete action and readable public/shared victim image with protected false and nonempty location supply the source-supported route. Default immediate deletion is sufficient: the service store deletes by URI, not by caller ownership. Backend/service credentials and OS/store success matter. A private unreadable or protected image is not the witness, and no identity-header forgery, anonymous access or actual deployment is assumed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After completes both registry mutations before invoking backend delete/queue. A registry Forbidden/NotFound now exits before the witnessed unauthorized backend effect. This is a bounded authorization-order negative, not transaction rollback, guaranteed authorized cleanup, retry safety, all backend failures or all credential/log confidentiality.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The local historical repair and conditional trust-boundary path are supported, but essential old producer/caller/authorization/backend contracts are unavailable in the proposed before-only function.",
+      "dependence_reason": "Preserve fix-family:c2bbe07a761cb2da3788 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "registry.update_image_metadata(req.context, id, {'status': status})"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "registry.delete_image_metadata(req.context, id)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "safe_delete_from_backend(image['location'],"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "safe_delete_from_backend(image['location'],"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_CONTRACTS.json",
+          "path": "glance/api/v1/controller.py",
+          "ref": "6ab0992e5472ae3f9bef0d2ced41030655d9d2bc^",
+          "needle": "return registry.get_image_metadata(context, image_id)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/db/sqlalchemy/api.py",
+          "ref": "6ab0992e5472ae3f9bef0d2ced41030655d9d2bc^",
+          "needle": "def check_mutate_authorization(context, image_ref):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/db/sqlalchemy/api.py",
+          "ref": "6ab0992e5472ae3f9bef0d2ced41030655d9d2bc^",
+          "needle": "return image['owner'] == context.owner"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/db/sqlalchemy/api.py",
+          "ref": "6ab0992e5472ae3f9bef0d2ced41030655d9d2bc^",
+          "needle": "if image['is_public']:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/registry/api/v1/images.py",
+          "ref": "6ab0992e5472ae3f9bef0d2ced41030655d9d2bc^",
+          "needle": "deleted_image = self.db_api.image_destroy(req.context, id)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/registry/api/v1/images.py",
+          "ref": "6ab0992e5472ae3f9bef0d2ced41030655d9d2bc^",
+          "needle": "            if purge_props == \"true\":\n                updated_image = self.db_api.image_update(req.context, id,\n                                                         image_data, True)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/registry/__init__.py",
+          "ref": "6ab0992e5472ae3f9bef0d2ced41030655d9d2bc^",
+          "needle": "c.delete_image(image_id)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/common/utils.py",
+          "ref": "6ab0992e5472ae3f9bef0d2ced41030655d9d2bc^",
+          "needle": "if req.context.read_only:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "etc/policy.json",
+          "ref": "6ab0992e5472ae3f9bef0d2ced41030655d9d2bc^",
+          "needle": "\"default\": \"\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "6ab0992e5472ae3f9bef0d2ced41030655d9d2bc^",
+          "needle": "return delete_from_backend(context, uri, **kwargs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "cves/2012/4xxx/CVE-2012-4573.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "remote authenticated users"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2012-5482:0:glance/api/v2/images.py:ImagesController.delete",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "v2 backend destruction precedes DB owner authorization; after retains wrong delayed-delete identifier.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old SQL image_get checks visibility, which includes public or shared images. check_mutate_authorization separately restricts mutations to admin or matching owner; image_update/image_destroy invoke it. The old mutating decorator rejects read_only contexts but is not an ownership check. Generic action policy uses an empty resource target and permissive defaults; passing it and reading a public non-protected image does not authorize deletion. Old backend effect precedes the owner check, so a nonowner with ordinary writable request context and action-policy admission can destroy image data before the later registry/DB rejection. This is an existing cross-tenant authorization duty, not a newly restrictive policy. Exact _get_image calls db_api.image_get, while image_update/image_destroy enforce ownership only after the old store effect. Immediate safe_delete_from_backend ignores its image_id argument and deletes the supplied URI, so the unchanged builtin-id typo does not block that unauthorized immediate witness.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need _get_image/SQL visibility versus mutation duties, request policy/read_only gate, default store helpers, delayed-delete queue identity and scrubber consumer. The builtin id argument must be traced rather than assumed to prevent every deletion. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A nonadmin authenticated caller, non-read-only context, admitted delete action and readable public/shared victim image with protected false and nonempty location supply the source-supported route. Default immediate deletion is sufficient: the service store deletes by URI, not by caller ownership. Backend/service credentials and OS/store success matter. A private unreadable or protected image is not the witness, and no identity-header forgery, anonymous access or actual deployment is assumed.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After owner-authorized DB operations now precede the backend effect. However both sides pass id, not parameter image_id, to the delayed-delete helper. In the retained unshadowed module this is Python builtin id. The helper names its queue file str(image_id); authorized delayed deletes on the same service process therefore share a wrong identifier filename rather than their real image IDs. A second pending delete collides, and the scrubber uses the filename as registry image ID. This is a residual supported delayed-delete failure, not introduced by the reordering. Immediate helper does not use the ID; distinguish the repaired security gate from invalidating the complete after negative.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "The historical authorization-order violation is supported, but the after retains a concrete delayed-delete identifier/queue failure, so it cannot serve as an unqualified paired negative.",
+      "dependence_reason": "Preserve fix-family:12cd3ade3e707f664f90 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.db_api.image_update(req.context, image_id, {'status': status})"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.db_api.image_destroy(req.context, image_id)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "image['location'], id)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "image['location'], id)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "image = self.db_api.image_get(context, image_id)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/db/sqlalchemy/api.py",
+          "ref": "b591304b8980d8aca8fa6cda9ea1621aca000c88^",
+          "needle": "def check_mutate_authorization(context, image_ref):\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/db/sqlalchemy/api.py",
+          "ref": "b591304b8980d8aca8fa6cda9ea1621aca000c88^",
+          "needle": "return image['owner'] == context.owner"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "b591304b8980d8aca8fa6cda9ea1621aca000c88^",
+          "needle": "return delete_from_backend(context, uri, **kwargs)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "b591304b8980d8aca8fa6cda9ea1621aca000c88^",
+          "needle": "file_path = os.path.join(datadir, str(image_id))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "glance/store/__init__.py",
+          "ref": "b591304b8980d8aca8fa6cda9ea1621aca000c88",
+          "needle": "file_path = os.path.join(datadir, str(image_id))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "glance/store/scrubber.py",
+          "ref": "b591304b8980d8aca8fa6cda9ea1621aca000c88^",
+          "needle": "delete_work.append((id, uri, now))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "glance/store/scrubber.py",
+          "ref": "b591304b8980d8aca8fa6cda9ea1621aca000c88^",
+          "needle": "self.registry.update_image(id, {'status': 'deleted'})"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "glance/common/utils.py",
+          "ref": "b591304b8980d8aca8fa6cda9ea1621aca000c88^",
+          "needle": "if req.context.read_only:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "glance/api/policy.py",
+          "ref": "b591304b8980d8aca8fa6cda9ea1621aca000c88^",
+          "needle": "'default': policy.TrueCheck()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "cves/2012/5xxx/CVE-2012-5482.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "                    \"lang\": \"en\",\n                    \"value\": \"The v2 API in OpenStack Glance Grizzly, Folsom (2012.2), and Essex (2012.1) allows remote authenticated users to delete arbitrary non-protected images via an image deletion request.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2012-4573.\"\n                }\n"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Unchanged id (builtin), rather than image_id, is passed to delayed deletion. Exact helper stores work by str(image_id) and scrubber takes filename as registry image ID. Two authorized delayed deletes in one process collide on the same wrong queue filename; the first work item also carries the wrong registry identifier. Existing before failure remains after; no introduced regression or executed queue/DB request is claimed."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:0:glance/store/swift.py:BaseStore.add",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Swift object PUT conflict interpolates single-tenant service credentials into a client-visible Duplicate error.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old location builder stores backend service user/key in single-tenant mode and serializes them into the Swift URI. Percent quoting in newer versions is reversible encoding, not redaction; the older builder uses its historical credential spelling. Matching Location.get_store_uri delegates to store_location.get_uri, despite its misleading public-API-URI docstring. Removing a full private location from an error is an existing credential confidentiality duty, not a new feature, image-data authorization repair or log-record-injection mechanism. Selected add raises Duplicate on a Swift409 caught inside the object/chunk PUT block. Exact v1 _upload formats that exception into HTTPConflict and logs the message. A duplicate registry ID rejected earlier or container setup outside this try is not automatically this witness; the backend409 must actually occur during an admitted upload.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need single-tenant configuration/builder/URI serialization, backend exception type/status and v1 admitted upload-to-HTTP409 propagation. Three releases retain their own API/producer wrappers, not a mixed-version chain. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An authenticated image uploader with its own admitted upload can receive the service endpoint credentials in HTTP409 when backend409 occurs within the selected try. Service credentials need not belong to that tenant. Backend failure state can be environmental; no ability to force409 by merely reusing an image ID or actual deployment is assumed. This is a concrete error-response audience, not hypothetical log access alone.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After Duplicate text is constant and no longer interpolates location.get_uri. This closes that selected409-message path. Successful return of a credential-bearing location is still intentional internal metadata for reading backend content, not automatically another public leak. Other backend exception strings, notifications, logging and unrelated credential outputs are not certified clean.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The local historical repair and conditional trust-boundary path are supported, but essential old producer/caller/authorization/backend contracts are unavailable in the proposed before-only function.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "location.get_uri())"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "this location"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.key = self._option_get('swift_store_key')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'key': self.key"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def get_uri(self):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "msg = _(\"Attempt to upload duplicate image: %s\") % e"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "raise HTTPConflict(explanation=msg, request=req)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/common/exception.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "super(GlanceException, self).__init__(message)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "cves/2013/0xxx/CVE-2013-0212.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "Swift single tenant mode"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:0:glance/store/swift.py:BaseStore.delete",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Swift deletion NotFound diagnostic contains credentials, while an unchanged caller also logs the original URI.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old location builder stores backend service user/key in single-tenant mode and serializes them into the Swift URI. Percent quoting in newer versions is reversible encoding, not redaction; the older builder uses its historical credential spelling. Matching Location.get_store_uri delegates to store_location.get_uri, despite its misleading public-API-URI docstring. Removing a full private location from an error is an existing credential confidentiality duty, not a new feature, image-data authorization repair or log-record-injection mechanism. Selected delete interpolates get_uri/get_store_uri on backend404. Exact immediate-delete wrapper catches NotFound and emits its own raw URI rather than returning selected exception text to the HTTP caller. Newer safe_delete_from_backend warns; the oldest schedule_delete_from_backend logs an error and returns in finally. Therefore the GET HTTP404 proof cannot be borrowed for DELETE.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need location provenance, selected404 branch, old delete helper absorption, exact log severity/audience, delayed scrubber paths and after helper. Direct-call or exception existence alone is not public response delivery. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Normal single-tenant producer can supply private credentials, but retained immediate API caller absorbs selected NotFound and logs its own URI. Unauthorized readership of those warning/error logs or another concrete lower-trust exception consumer has not been established. The advisory supplies context, not a substitute for that selected audience; default private operator logs are not automatically a boundary crossing.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After selected exception is static, but exact same-version after wrapper still logs the original full URI on this failure. This is a residual broader confidentiality concern under lower-trust log access, not an introduced message regression or proof of a clean end-to-end negative. The selected edit cannot remove caller-side raw URI output. Do not assign the unchanged wrapper defect as an additional local selected bug.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "The selected diagnostic change is real, but actual private-credential admission or lower-trust log/error readership and delivery remain unresolved. Shared advisory/patch membership is insufficient.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        except swiftclient.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_uri()\n                raise exception.NotFound(_(\"Swift could not find image at \"\n                                           \"uri %(uri)s\") % locals())\n            else:\n                raise\n\n    def _create_container_if_missing(self, container, connection):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                connection.delete_object(location.container, location.obj)\n\n        except swiftclient.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_uri()\n                msg = _(\"Swift could not find image at URI.\")\n                raise exception.NotFound(msg)\n            else:\n                raise\n\n    def _create_container_if_missing(self, container, connection):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.key = self._option_get('swift_store_key')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'key': self.key"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def get_uri(self):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "        store_cls = importutils.import_class(store_entry)\n    except exception.NotFound:\n        raise BackendException('Unable to load store. '\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "LOG.warn(msg % uri)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "glance/store/__init__.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89",
+          "needle": "LOG.warn(msg % uri)"
+        }
+      ],
+      "additional_after_concerns": [
+        "Matched after immediate-delete wrapper continues to log its credential-bearing uri on NotFound. Removing the selected exception interpolation alone does not sanitize that caller output; realistic unauthorized log readership remains unresolved, and no end-to-end clean negative is claimed."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:0:glance/store/swift.py:BaseStore.get",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Swift missing-object error exposes a stored credential-bearing URI through an image GET response.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old location builder stores backend service user/key in single-tenant mode and serializes them into the Swift URI. Percent quoting in newer versions is reversible encoding, not redaction; the older builder uses its historical credential spelling. Matching Location.get_store_uri delegates to store_location.get_uri, despite its misleading public-API-URI docstring. Removing a full private location from an error is an existing credential confidentiality duty, not a new feature, image-data authorization repair or log-record-injection mechanism. The matched get_from_backend constructs the old Location and calls selected get. Exact v1 _get_from_store translates NotFound to HTTPNotFound with the exception text; show first obtains an authorized active image and calls it for nonzero size. An active, readable image with backend object missing supplies a realistic inconsistency witness without granting direct backend access.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need stored single-tenant location provenance, exact get_store_uri/get_uri wrapper, store dispatcher, active-image/size/request authorization and exception-to-HTTP404 consumer. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A nonadmin allowed to read an active nonzero-size image can request its missing Swift object and receive the backend service credentials in HTTP404. The full metadata URI is private even if image bytes are readable; caller code removes location on successful output. An unreadable image or zero-size shortcut is not the witness. No missing-object induction or actual backend deployment is presumed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After selected NotFound text is constant; matched HTTP404 no longer carries this URI through that exception. The unchanged local ResponseIndexable is not a second repair. Other backend exception strings, diagnostics, successful metadata audiences and complete Swift behavior are outside this mechanism-local negative.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The local historical repair and conditional trust-boundary path are supported, but essential old producer/caller/authorization/backend contracts are unavailable in the proposed before-only function.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        except swiftclient.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_uri()\n                raise exception.NotFound(_(\"Swift could not find image at \"\n                                           \"uri %(uri)s\") % locals())\n            else:\n                raise\n\n        class ResponseIndexable(glance.store.Indexable):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    resp_chunk_size=self.CHUNKSIZE)\n        except swiftclient.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_uri()\n                msg = _(\"Swift could not find image at URI.\")\n                raise exception.NotFound(msg)\n            else:\n                raise\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.key = self._option_get('swift_store_key')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'key': self.key"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def get_uri(self):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "return store.get(loc)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "raise HTTPNotFound(explanation=\"%s\" % e)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "image_meta = self.get_active_image_meta_or_404(req, id)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "if image_meta.get('size') == 0:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "        image_meta = self.get_image_meta_or_404(req, id)\n        del image_meta['location']\n        return {\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_CONTRACTS.json",
+          "path": "glance/api/v1/controller.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "if image['status'] != 'active':"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:0:glance/store/swift.py:MultiTenantStore.set_acls",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "ACL-only NotFound diagnostic has no demonstrated private credential-bearing normal location.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Credential confidentiality is an existing duty, but old multi-tenant production omits service user/key (mainline) or explicitly clears key and uses a separate context token (Folsom). The location URI therefore normally omits credential text. The selected sink removes a full URI, but the single-tenant password-disclosure witness from siblings is not established on this multi-tenant-only ACL path. A legacy/custom credential-bearing stored location or separately sensitive endpoint boundary would need real accepted provenance.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need mode-specific producer, credential-string guard, token-based connection, ACL caller/metadata provenance, backend404 and actual exception/error/log audience. A shared patch or permissive direct method call does not establish normal secret admission. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The ordinary multi-tenant URI has no service password and its separate context auth token is not interpolated by get_uri. No proven private-credential input/audience crossing is retained for this ACL-only sink. Possible migration/custom metadata and sensitive endpoint names remain open, not ruled safe or borrowed from single-tenant add/get.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After constant message omits the selected full URI, conditional on reaching backend404. Since an old secret-bearing admitted input and unauthorized audience are unestablished, no old-positive/new-negative credential pair is approved. Unrelated ACL policy, mutable default lists, authentication and backend errors are not certified.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "The selected diagnostic change is real, but actual private-credential admission or lower-trust log/error readership and delivery remain unresolved. Shared advisory/patch membership is insufficient.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        except swiftclient.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_uri()\n                raise exception.NotFound(_(\"Swift could not find image at \"\n                                           \"uri %(uri)s\") % locals())\n            else:\n                raise\n\n    def create_location(self, image_id):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "            connection.post_container(location.container, headers=headers)\n        except swiftclient.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_uri()\n                msg = _(\"Swift could not find image at URI.\")\n                raise exception.NotFound(msg)\n            else:\n                raise\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def _get_credstring(self):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "preauthtoken=self.context.auth_tok"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'auth_or_store_url': self.storage_url"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "store.set_acls("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_CONTRACTS.json",
+          "path": "glance/api/v1/controller.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "store.set_acls("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "cves/2013/0xxx/CVE-2013-0212.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "Swift single tenant mode"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:0:glance/store/swift.py:StoreLocation.parse_uri",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Swift URI validation logs raw URI/credential fragments on malformed-input branches.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old location builder stores backend service user/key in single-tenant mode and serializes them into the Swift URI. Percent quoting in newer versions is reversible encoding, not redaction; the older builder uses its historical credential spelling. Matching Location.get_store_uri delegates to store_location.get_uri, despite its misleading public-API-URI docstring. Removing a full private location from an error is an existing credential confidentiality duty, not a new feature, image-data authorization repair or log-record-injection mechanism. Selected old multi-scheme, malformed-credential and short-path branches format uri/creds into operational logs. Mainline uses DEBUG, older backports ERROR. This is a data-confidentiality flow if the input contains live private credentials; fixed user:pass examples in guidance are literals, not live secrets. The oldest account:user grammar differs from newer percent-unquoting, without proving a separate issue.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need malformed private backend location provenance, constructor/parse dispatch, configured log level/sink and unauthorized audience. An attacker logging its own already-known URI does not by itself disclose service credentials. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Source proves potential secret-bearing values enter DEBUG or ERROR logs, not that log readers lack credential authority or that an admitted request supplies another principal private malformed URI. Backend credentials are plausible in stored/configured locations, but malformed-state delivery and actual lower-trust log audience remain unresolved. Mainline DEBUG must also be enabled; older ERROR does not alone prove public access.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After removes live uri/creds from the three changed diagnostic branches. The explanatory user:pass strings are fixed examples. Parser acceptance/credential grammar, arbitrary exception reprs, all backend logs and successful URI-return audiences are not certified. No URL/credential parser, logger or failing URI is executed.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "The selected diagnostic change is real, but actual private-credential admission or lower-trust log/error readership and delivery remain unresolved. Shared advisory/patch membership is insufficient.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Invalid store uri %(uri)s"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "Invalid store URI: %(reason)s"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.key = self._option_get('swift_store_key')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'key': self.key"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def get_uri(self):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Badly formed credentials '%(creds)s'"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "Badly formed credentials in Swift URI."
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Badly formed Swift URI: %s"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "Badly formed Swift URI."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/location.py",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "self.store_location.parse_uri(uri)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "etc/glance-api.conf",
+          "ref": "e96273112b5b5da58d970796b7cfce04c5030a89^",
+          "needle": "# Show debugging output in logs (sets DEBUG log level output)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "cves/2013/0xxx/CVE-2013-0212.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "misconfigured or unusable"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:1:glance/store/swift.py:Store.add",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Swift object PUT conflict interpolates single-tenant service credentials into a client-visible Duplicate error.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old location builder stores backend service user/key in single-tenant mode and serializes them into the Swift URI. Percent quoting in newer versions is reversible encoding, not redaction; the older builder uses its historical credential spelling. Matching Location.get_store_uri delegates to store_location.get_uri, despite its misleading public-API-URI docstring. Removing a full private location from an error is an existing credential confidentiality duty, not a new feature, image-data authorization repair or log-record-injection mechanism. Selected add raises Duplicate on a Swift409 caught inside the object/chunk PUT block. Exact v1 _upload formats that exception into HTTPConflict and logs the message. A duplicate registry ID rejected earlier or container setup outside this try is not automatically this witness; the backend409 must actually occur during an admitted upload.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need single-tenant configuration/builder/URI serialization, backend exception type/status and v1 admitted upload-to-HTTP409 propagation. Three releases retain their own API/producer wrappers, not a mixed-version chain. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An authenticated image uploader with its own admitted upload can receive the service endpoint credentials in HTTP409 when backend409 occurs within the selected try. Service credentials need not belong to that tenant. Backend failure state can be environmental; no ability to force409 by merely reusing an image ID or actual deployment is assumed. This is a concrete error-response audience, not hypothetical log access alone.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After Duplicate text is constant and no longer interpolates location.get_uri. This closes that selected409-message path. Successful return of a credential-bearing location is still intentional internal metadata for reading backend content, not automatically another public leak. Other backend exception strings, notifications, logging and unrelated credential outputs are not certified clean.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The local historical repair and conditional trust-boundary path are supported, but essential old producer/caller/authorization/backend contracts are unavailable in the proposed before-only function.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "location.get_uri())"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "this location"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.key = self._option_get('swift_store_key')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'key': self.key"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def get_uri(self):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/location.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "return self.store_location.get_uri()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "msg = _(\"Attempt to upload duplicate image: %s\") % e"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "raise HTTPConflict(explanation=msg, request=req)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/common/exception.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "super(GlanceException, self).__init__(message)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "cves/2013/0xxx/CVE-2013-0212.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "Swift single tenant mode"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:1:glance/store/swift.py:Store.delete",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Swift deletion NotFound diagnostic contains credentials, while an unchanged caller also logs the original URI.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old location builder stores backend service user/key in single-tenant mode and serializes them into the Swift URI. Percent quoting in newer versions is reversible encoding, not redaction; the older builder uses its historical credential spelling. Matching Location.get_store_uri delegates to store_location.get_uri, despite its misleading public-API-URI docstring. Removing a full private location from an error is an existing credential confidentiality duty, not a new feature, image-data authorization repair or log-record-injection mechanism. Selected delete interpolates get_uri/get_store_uri on backend404. Exact immediate-delete wrapper catches NotFound and emits its own raw URI rather than returning selected exception text to the HTTP caller. Newer safe_delete_from_backend warns; the oldest schedule_delete_from_backend logs an error and returns in finally. Therefore the GET HTTP404 proof cannot be borrowed for DELETE.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need location provenance, selected404 branch, old delete helper absorption, exact log severity/audience, delayed scrubber paths and after helper. Direct-call or exception existence alone is not public response delivery. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Normal single-tenant producer can supply private credentials, but retained immediate API caller absorbs selected NotFound and logs its own URI. Unauthorized readership of those warning/error logs or another concrete lower-trust exception consumer has not been established. The advisory supplies context, not a substitute for that selected audience; default private operator logs are not automatically a boundary crossing.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After selected exception is static, but exact same-version after wrapper still logs the original full URI on this failure. This is a residual broader confidentiality concern under lower-trust log access, not an introduced message regression or proof of a clean end-to-end negative. The selected edit cannot remove caller-side raw URI output. Do not assign the unchanged wrapper defect as an additional local selected bug.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "The selected diagnostic change is real, but actual private-credential admission or lower-trust log/error readership and delivery remain unresolved. Shared advisory/patch membership is insufficient.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        except swiftclient.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_store_uri()\n                raise exception.NotFound(_(\"Swift could not find image at \"\n                                         \"uri %(uri)s\") % locals())\n            else:\n                raise\n\n    def set_acls(self, location, public=False, read_tenants=[],\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                swift_conn.delete_container(loc.container)\n\n        except swiftclient.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_store_uri()\n                msg = _(\"Swift could not find image at URI.\")\n                raise exception.NotFound(msg)\n            else:\n                raise\n\n    def set_acls(self, location, public=False, read_tenants=[],\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.key = self._option_get('swift_store_key')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'key': self.key"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def get_uri(self):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/location.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "return self.store_location.get_uri()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "        store_cls = importutils.import_class(store_entry)\n    except exception.NotFound:\n        raise BackendException('Unable to load store. '\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "LOG.warn(msg % uri)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "glance/store/__init__.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1",
+          "needle": "LOG.warn(msg % uri)"
+        }
+      ],
+      "additional_after_concerns": [
+        "Matched after immediate-delete wrapper continues to log its credential-bearing uri on NotFound. Removing the selected exception interpolation alone does not sanitize that caller output; realistic unauthorized log readership remains unresolved, and no end-to-end clean negative is claimed."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:1:glance/store/swift.py:Store.get",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Swift missing-object error exposes a stored credential-bearing URI through an image GET response.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old location builder stores backend service user/key in single-tenant mode and serializes them into the Swift URI. Percent quoting in newer versions is reversible encoding, not redaction; the older builder uses its historical credential spelling. Matching Location.get_store_uri delegates to store_location.get_uri, despite its misleading public-API-URI docstring. Removing a full private location from an error is an existing credential confidentiality duty, not a new feature, image-data authorization repair or log-record-injection mechanism. The matched get_from_backend constructs the old Location and calls selected get. Exact v1 _get_from_store translates NotFound to HTTPNotFound with the exception text; show first obtains an authorized active image and calls it for nonzero size. An active, readable image with backend object missing supplies a realistic inconsistency witness without granting direct backend access.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need stored single-tenant location provenance, exact get_store_uri/get_uri wrapper, store dispatcher, active-image/size/request authorization and exception-to-HTTP404 consumer. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A nonadmin allowed to read an active nonzero-size image can request its missing Swift object and receive the backend service credentials in HTTP404. The full metadata URI is private even if image bytes are readable; caller code removes location on successful output. An unreadable image or zero-size shortcut is not the witness. No missing-object induction or actual backend deployment is presumed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After selected NotFound text is constant; matched HTTP404 no longer carries this URI through that exception. The unchanged local ResponseIndexable is not a second repair. Other backend exception strings, diagnostics, successful metadata audiences and complete Swift behavior are outside this mechanism-local negative.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The local historical repair and conditional trust-boundary path are supported, but essential old producer/caller/authorization/backend contracts are unavailable in the proposed before-only function.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        except swiftclient.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_store_uri()\n                raise exception.NotFound(_(\"Swift could not find image at \"\n                                         \"uri %(uri)s\") % locals())\n            else:\n                raise\n\n        class ResponseIndexable(glance.store.Indexable):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                resp_chunk_size=self.CHUNKSIZE)\n        except swiftclient.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_store_uri()\n                msg = _(\"Swift could not find image at URI.\")\n                raise exception.NotFound(msg)\n            else:\n                raise\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.key = self._option_get('swift_store_key')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'key': self.key"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def get_uri(self):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/location.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "return self.store_location.get_uri()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "return store.get(loc)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "raise HTTPNotFound(explanation=\"%s\" % e)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "image_meta = self.get_active_image_meta_or_404(req, id)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "if image_meta.get('size') == 0:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "        image_meta = self.get_image_meta_or_404(req, id)\n        del image_meta['location']\n        return {\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_CONTRACTS.json",
+          "path": "glance/api/v1/controller.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "if image['status'] != 'active':"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:1:glance/store/swift.py:Store.set_acls",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "ACL-only NotFound diagnostic has no demonstrated private credential-bearing normal location.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Credential confidentiality is an existing duty, but old multi-tenant production omits service user/key (mainline) or explicitly clears key and uses a separate context token (Folsom). The location URI therefore normally omits credential text. The selected sink removes a full URI, but the single-tenant password-disclosure witness from siblings is not established on this multi-tenant-only ACL path. A legacy/custom credential-bearing stored location or separately sensitive endpoint boundary would need real accepted provenance.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need mode-specific producer, credential-string guard, token-based connection, ACL caller/metadata provenance, backend404 and actual exception/error/log audience. A shared patch or permissive direct method call does not establish normal secret admission. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "The ordinary multi-tenant URI has no service password and its separate context auth token is not interpolated by get_uri. No proven private-credential input/audience crossing is retained for this ACL-only sink. Possible migration/custom metadata and sensitive endpoint names remain open, not ruled safe or borrowed from single-tenant add/get.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After constant message omits the selected full URI, conditional on reaching backend404. Since an old secret-bearing admitted input and unauthorized audience are unestablished, no old-positive/new-negative credential pair is approved. Unrelated ACL policy, mutable default lists, authentication and backend errors are not certified.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "The selected diagnostic change is real, but actual private-credential admission or lower-trust log/error readership and delivery remain unresolved. Shared advisory/patch membership is insufficient.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                                             \"uri %(uri)s\") % locals())\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                    msg = _(\"Swift could not find image at URI.\")\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def _get_credstring(self):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.key = None  # multi-tenant uses tokens"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        \"\"\"\n        if self.multi_tenant:\n            loc = location.store_location\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "store.set_acls("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_CONTRACTS.json",
+          "path": "glance/api/v1/controller.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "store.set_acls("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "cves/2013/0xxx/CVE-2013-0212.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "Swift single tenant mode"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:1:glance/store/swift.py:StoreLocation.parse_uri",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Swift URI validation logs raw URI/credential fragments on malformed-input branches.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old location builder stores backend service user/key in single-tenant mode and serializes them into the Swift URI. Percent quoting in newer versions is reversible encoding, not redaction; the older builder uses its historical credential spelling. Matching Location.get_store_uri delegates to store_location.get_uri, despite its misleading public-API-URI docstring. Removing a full private location from an error is an existing credential confidentiality duty, not a new feature, image-data authorization repair or log-record-injection mechanism. Selected old multi-scheme, malformed-credential and short-path branches format uri/creds into operational logs. Mainline uses DEBUG, older backports ERROR. This is a data-confidentiality flow if the input contains live private credentials; fixed user:pass examples in guidance are literals, not live secrets. The oldest account:user grammar differs from newer percent-unquoting, without proving a separate issue.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need malformed private backend location provenance, constructor/parse dispatch, configured log level/sink and unauthorized audience. An attacker logging its own already-known URI does not by itself disclose service credentials. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Source proves potential secret-bearing values enter DEBUG or ERROR logs, not that log readers lack credential authority or that an admitted request supplies another principal private malformed URI. Backend credentials are plausible in stored/configured locations, but malformed-state delivery and actual lower-trust log audience remain unresolved. Mainline DEBUG must also be enabled; older ERROR does not alone prove public access.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After removes live uri/creds from the three changed diagnostic branches. The explanatory user:pass strings are fixed examples. Parser acceptance/credential grammar, arbitrary exception reprs, all backend logs and successful URI-return audiences are not certified. No URL/credential parser, logger or failing URI is executed.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "The selected diagnostic change is real, but actual private-credential admission or lower-trust log/error readership and delivery remain unresolved. Shared advisory/patch membership is insufficient.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Invalid store uri %(uri)s"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "Invalid store URI: %(reason)s"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.key = self._option_get('swift_store_key')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'key': self.key"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def get_uri(self):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/location.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "return self.store_location.get_uri()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Badly formed credentials '%(creds)s'"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "Badly formed credentials in Swift URI."
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Badly formed Swift URI: %s"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "Badly formed Swift URI."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/location.py",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "self.store_location.parse_uri(uri)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "etc/glance-api.conf",
+          "ref": "96a470be64adcef97f235ca96ed3c59ed954a4c1^",
+          "needle": "# Show debugging output in logs (sets DEBUG log level output)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "cves/2013/0xxx/CVE-2013-0212.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "misconfigured or unusable"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:2:glance/store/swift.py:Store.add",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Swift object PUT conflict interpolates single-tenant service credentials into a client-visible Duplicate error.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old location builder stores backend service user/key in single-tenant mode and serializes them into the Swift URI. Percent quoting in newer versions is reversible encoding, not redaction; the older builder uses its historical credential spelling. Matching Location.get_store_uri delegates to store_location.get_uri, despite its misleading public-API-URI docstring. Removing a full private location from an error is an existing credential confidentiality duty, not a new feature, image-data authorization repair or log-record-injection mechanism. Selected add raises Duplicate on a Swift409 caught inside the object/chunk PUT block. Exact v1 _upload formats that exception into HTTPConflict and logs the message. A duplicate registry ID rejected earlier or container setup outside this try is not automatically this witness; the backend409 must actually occur during an admitted upload.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need single-tenant configuration/builder/URI serialization, backend exception type/status and v1 admitted upload-to-HTTP409 propagation. Three releases retain their own API/producer wrappers, not a mixed-version chain. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "An authenticated image uploader with its own admitted upload can receive the service endpoint credentials in HTTP409 when backend409 occurs within the selected try. Service credentials need not belong to that tenant. Backend failure state can be environmental; no ability to force409 by merely reusing an image ID or actual deployment is assumed. This is a concrete error-response audience, not hypothetical log access alone.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After Duplicate text is constant and no longer interpolates location.get_uri. This closes that selected409-message path. Successful return of a credential-bearing location is still intentional internal metadata for reading backend content, not automatically another public leak. Other backend exception strings, notifications, logging and unrelated credential outputs are not certified clean.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The local historical repair and conditional trust-boundary path are supported, but essential old producer/caller/authorization/backend contracts are unavailable in the proposed before-only function.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "location.get_uri())"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "this location"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.key = self._option_get('swift_store_key')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'key': self.key"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def get_uri(self):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/location.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "return self.store_location.get_uri()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "msg = _(\"Attempt to upload duplicate image: %s\") % e"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "raise HTTPConflict(msg, request=req)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/common/exception.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "return self._error_string"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "cves/2013/0xxx/CVE-2013-0212.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "Swift single tenant mode"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:2:glance/store/swift.py:Store.delete",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Swift deletion NotFound diagnostic contains credentials, while an unchanged caller also logs the original URI.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old location builder stores backend service user/key in single-tenant mode and serializes them into the Swift URI. Percent quoting in newer versions is reversible encoding, not redaction; the older builder uses its historical credential spelling. Matching Location.get_store_uri delegates to store_location.get_uri, despite its misleading public-API-URI docstring. Removing a full private location from an error is an existing credential confidentiality duty, not a new feature, image-data authorization repair or log-record-injection mechanism. Selected delete interpolates get_uri/get_store_uri on backend404. Exact immediate-delete wrapper catches NotFound and emits its own raw URI rather than returning selected exception text to the HTTP caller. Newer safe_delete_from_backend warns; the oldest schedule_delete_from_backend logs an error and returns in finally. Therefore the GET HTTP404 proof cannot be borrowed for DELETE.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need location provenance, selected404 branch, old delete helper absorption, exact log severity/audience, delayed scrubber paths and after helper. Direct-call or exception existence alone is not public response delivery. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Normal single-tenant producer can supply private credentials, but retained immediate API caller absorbs selected NotFound and logs its own URI. Unauthorized readership of those warning/error logs or another concrete lower-trust exception consumer has not been established. The advisory supplies context, not a substitute for that selected audience; default private operator logs are not automatically a boundary crossing.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After selected exception is static, but exact same-version after wrapper still logs the original full URI on this failure. This is a residual broader confidentiality concern under lower-trust log access, not an introduced message regression or proof of a clean end-to-end negative. The selected edit cannot remove caller-side raw URI output. Do not assign the unchanged wrapper defect as an additional local selected bug.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "The selected diagnostic change is real, but actual private-credential admission or lower-trust log/error readership and delivery remain unresolved. Shared advisory/patch membership is insufficient.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        except swift_client.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_store_uri()\n                raise exception.NotFound(_(\"Swift could not find image at \"\n                                         \"uri %(uri)s\") % locals())\n            else:\n                raise\n\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                swift_conn.delete_object(loc.container, loc.obj)\n\n        except swift_client.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_store_uri()\n                msg = _(\"Swift could not find image at URI.\")\n                raise exception.NotFound(msg)\n            else:\n                raise\n\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.key = self._option_get('swift_store_key')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'key': self.key"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def get_uri(self):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/location.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "return self.store_location.get_uri()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "exception.NotFound):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "logger.error(msg)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "glance/store/__init__.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7",
+          "needle": "logger.error(msg)"
+        }
+      ],
+      "additional_after_concerns": [
+        "Matched after immediate-delete wrapper continues to log its credential-bearing uri on NotFound. Removing the selected exception interpolation alone does not sanitize that caller output; realistic unauthorized log readership remains unresolved, and no end-to-end clean negative is claimed."
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:2:glance/store/swift.py:Store.get",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Swift missing-object error exposes a stored credential-bearing URI through an image GET response.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old location builder stores backend service user/key in single-tenant mode and serializes them into the Swift URI. Percent quoting in newer versions is reversible encoding, not redaction; the older builder uses its historical credential spelling. Matching Location.get_store_uri delegates to store_location.get_uri, despite its misleading public-API-URI docstring. Removing a full private location from an error is an existing credential confidentiality duty, not a new feature, image-data authorization repair or log-record-injection mechanism. The matched get_from_backend constructs the old Location and calls selected get. Exact v1 _get_from_store translates NotFound to HTTPNotFound with the exception text; show first obtains an authorized active image and calls it for nonzero size. An active, readable image with backend object missing supplies a realistic inconsistency witness without granting direct backend access.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need stored single-tenant location provenance, exact get_store_uri/get_uri wrapper, store dispatcher, active-image/size/request authorization and exception-to-HTTP404 consumer. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A nonadmin allowed to read an active nonzero-size image can request its missing Swift object and receive the backend service credentials in HTTP404. The full metadata URI is private even if image bytes are readable; caller code removes location on successful output. An unreadable image or zero-size shortcut is not the witness. No missing-object induction or actual backend deployment is presumed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After selected NotFound text is constant; matched HTTP404 no longer carries this URI through that exception. The unchanged local ResponseIndexable is not a second repair. Other backend exception strings, diagnostics, successful metadata audiences and complete Swift behavior are outside this mechanism-local negative.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "The local historical repair and conditional trust-boundary path are supported, but essential old producer/caller/authorization/backend contracts are unavailable in the proposed before-only function.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "        except swift_client.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_store_uri()\n                raise exception.NotFound(_(\"Swift could not find image at \"\n                                         \"uri %(uri)s\") % locals())\n            else:\n                raise\n\n        class ResponseIndexable(glance.store.Indexable):\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "                resp_chunk_size=self.CHUNKSIZE)\n        except swift_client.ClientException, e:\n            if e.http_status == httplib.NOT_FOUND:\n                uri = location.get_store_uri()\n                msg = _(\"Swift could not find image at URI.\")\n                raise exception.NotFound(msg)\n            else:\n                raise\n\n"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.key = self._option_get('swift_store_key')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'key': self.key"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def get_uri(self):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/location.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "return self.store_location.get_uri()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/__init__.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "return store.get(loc)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "raise HTTPNotFound(explanation=\"%s\" % e)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "image_meta = self.get_active_image_meta_or_404(req, id)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "if image_meta.get('size') == 0:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/api/v1/images.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "        image_meta = self.get_image_meta_or_404(req, id)\n        del image_meta['location']\n        return {\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_CONTRACTS.json",
+          "path": "glance/api/v1/controller.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "if image['status'] != 'active':"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-0212:2:glance/store/swift.py:StoreLocation.parse_uri",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Swift URI validation logs raw URI/credential fragments on malformed-input branches.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve existing resource-authorization, credential-diagnostic-disclosure or validation-secret-logging leaf. Distinguish visibility/generic policy from owner mutation, private backend credentials from user-known URI data, client-visible errors from operational logs, and default token/credential-free ACL locations from single-tenant service locations. No consequence-only relabelling or independent-issue count follows.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The exact old location builder stores backend service user/key in single-tenant mode and serializes them into the Swift URI. Percent quoting in newer versions is reversible encoding, not redaction; the older builder uses its historical credential spelling. Matching Location.get_store_uri delegates to store_location.get_uri, despite its misleading public-API-URI docstring. Removing a full private location from an error is an existing credential confidentiality duty, not a new feature, image-data authorization repair or log-record-injection mechanism. Selected old multi-scheme, malformed-credential and short-path branches format uri/creds into operational logs. Mainline uses DEBUG, older backports ERROR. This is a data-confidentiality flow if the input contains live private credentials; fixed user:pass examples in guidance are literals, not live secrets. The oldest account:user grammar differs from newer percent-unquoting, without proving a separate issue.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need malformed private backend location provenance, constructor/parse dispatch, configured log level/sink and unauthorized audience. An attacker logging its own already-known URI does not by itself disclose service credentials. The common before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Matched helpers/callers, globals, policy/configuration, after, tests, advisories and answers are adjudication-only, never selectively added to detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Source proves potential secret-bearing values enter DEBUG or ERROR logs, not that log readers lack credential authority or that an admitted request supplies another principal private malformed URI. Backend credentials are plausible in stored/configured locations, but malformed-state delivery and actual lower-trust log audience remain unresolved. Mainline DEBUG must also be enabled; older ERROR does not alone prove public access.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After removes live uri/creds from the three changed diagnostic branches. The explanatory user:pass strings are fixed examples. Parser acceptance/credential grammar, arbitrary exception reprs, all backend logs and successful URI-return audiences are not certified. No URL/credential parser, logger or failing URI is executed.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "The selected diagnostic change is real, but actual private-credential admission or lower-trust log/error readership and delivery remain unresolved. Shared advisory/patch membership is insufficient.",
+      "dependence_reason": "Preserve fix-family:5cb6317f7f89a4bc3366 and exact/AST/span/history relationships. Fourteen Swift rows across three historical commits are one CVE-linked mechanical family, not14 independent disclosures. The v1 and v2 authorization rows retain distinct families; the retained v2 advisory explicitly calls it an incomplete-fix follow-up to v1, so do not infer independence or merge issue identities merely from different API versions/CVEs. All16 rows/three mechanical families are review units, not adjudicated issues.",
+      "open_questions": [
+        "Researcher confirm the exact old supported backend/policy/runtime, selected attribution, request/error/log audience and bounded after-negative. Actual deployments, final eligibility and independent issue identities remain pending.",
+        "All findings are inert-source deductions, not reproduced results. No Glance/auth/policy, DB/SQL, Swift/backend/storage, HTTP/WSGI/URL/parser, dependency/application program, request, payload or upstream test executes."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Invalid store uri %(uri)s"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "Invalid store URI: %(reason)s"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.key = self._option_get('swift_store_key')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "'key': self.key"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def get_uri(self):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/location.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "return self.store_location.get_uri()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Badly formed credentials '%(creds)s'"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "Badly formed credentials in Swift URI."
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Badly formed Swift URI: %s"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "Badly formed Swift URI."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023.json",
+          "path": "glance/store/location.py",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "self.store_location.parse_uri(uri)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "etc/glance-api.conf",
+          "ref": "37d4d96bf88c2bf3e7e9511b5e321cf4bed364b7^",
+          "needle": "# Show debugging output in logs (sets DEBUG log level output)\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_023_DELIVERY.json",
+          "path": "cves/2013/0xxx/CVE-2013-0212.json",
+          "ref": "main snapshot 2026-10-25",
+          "needle": "misconfigured or unusable"
+        }
+      ]
+    }
+  ]
+}

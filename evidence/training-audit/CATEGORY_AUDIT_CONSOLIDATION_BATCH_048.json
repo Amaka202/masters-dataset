@@ -1,0 +1,452 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-048",
+  "review_date": "2026-10-29",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All four cloud-init training candidates/all discovery statuses; three mechanical families including shared2023 metadata/main-log fix.",
+  "selection_rule": {
+    "repository": "github.com/canonical/cloud-init",
+    "discovery_categories": [
+      "SEC-LOG-FILE-PERMISSIONS",
+      "SEC-REDACTION-KEY-MATCH",
+      "SEC-VALIDATION-SECRET-LOGGING"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Three missing-context and one selected-attribution deferrals. Old public instance JSON and source-provider policies establish real privacy duty, but known lower-case Vultr user/vendor fields need newly expanded policy rather than proving an isolated old case-normalization miss; retain ambiguous discovery history. LXD after extends defaults while preserving dotted keys, and JSON keys are strings, so no invented lost-policy/integer-key regression. Old RANDOM password stderr follows default tee into new permissive output files; after child umask0037/optional adm GID bounds new pipe-created modes and companion writer separately moves passwords to console. Named service/tee/POSIX contracts support conditional0644-to0640 creation, not existing-file chmod or all command policies. Old non-strict boot schema warning includes repr-bearing validator errors and can reach permissive main log; after exact boot caller requests log_details=False while API default/strict CLI detail remains. Main-log FileHandler creates before initialize, old preserve_mode=True retains excess mode and new False applies0640 through empty append/chmod without truncating log; old Vultr DEBUG writer supplies a real secret-bearing conditional source. Distinguish output/main/public-JSON sinks and2021/2022/2023 lineages without assuming independent issues. Three pins retain359 inert texts/eight exact peers/three resolved first parents/six archive inventories and missing/redirect provenance. Named dependencies/runtime/POSIX comparisons are not installed/all-version/deployed proof; no supported after contract failure is assigned under retained admitted shapes. Conditional inert-source deductions, not reproduced outcomes. No retained cloud-init/metadata/credential/configuration/schema/validator/logging/output/shell/process/tee/filesystem/permission/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Datasource/policy/serialization/redaction/public-file/configuration/schema/caller/validator/logging/output/password/service/umask/permission/ownership/runtime contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+  "reviews": [
+    {
+      "pair_id": "CVEfixes:135933521508434:50738315137669",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Metadata classifier lowercases candidate keys/paths while the coordinated policy newly adds user/vendor fields; old isolated case-miss witness remains unestablished.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate supplied sensitive-key policy from case normalization, metadata paths/catalogs/redaction and public serialization; stdout/stderr pipe-created file mode from main-log retained mode and ownership; validator error construction/detail suppression from configuration validity/strict exceptions; intended console disclosure from unprivileged local file readership. Configured shell command is not itself injection. Shared CVE/commit titles, helper necessity and companion changes establish no isolated old selected duty.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old process_instance_metadata catalogs paths matching its supplied sensitive_keys and preserves original key paths for the redactor. persist_instance_data supplies datasource policy, serializes through JSON first and writes a root-sensitive0600 file plus a redacted world-readable JSON. Old default policy is only merged_cfg/security-credentials; the retained LXD override adds lower-case user.meta-data/user.vendor-data/user.user-data. Literal retrieval across all2023 source-provider members locates those actual policies and EC2 helper special handling of lower-case security-credentials. This establishes old policy-driven redaction duty, not an independently promised case-insensitive matching contract. Same-ref Vultr producer supplies lower-case user-data/vendor-data, which are absent from the old default policy: adding those policy entries does causal work even without selected normalization.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need actual caller policy, complete provider producer, JSON key conversion, redaction and public-file writer. A hypothetical mixed-case field or a helper reading Azure compute.userData does not prove that a case variant of an already-protected old key reached this public record. Public JSON exposure of a newly protected field must not be reassigned as a normalization-only old positive. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Datasource/policy/serialization/redaction/public-file/configuration/schema/caller/validator/logging/output/password/service/umask/permission/ownership/runtime contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "There is a real conditional confidentiality boundary in the broader pipeline: guest-local readers of world-readable instance-data.json need not be allowed to see user/vendor credentials. The Vultr lower-case example supports policy expansion outside the selected function, not isolated old casing. No retained actual mixed-case old-protected field establishes the selected boundary; preserve the ambiguous discovery event/category and defer selected attribution rather than borrow the companion policy/log fixes or infer that every provider leaks every field.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After lowercases only comparison candidates and retains original paths for redaction, consistent with the newly lower-case user/vendor policy. LXD after explicitly extends the new defaults while retaining its dotted keys and adding cloud-init dotted variants; it does not drop old dotted protections. JSON roundtrip makes caller keys strings, so do not invent an integer-key .lower crash from arbitrary direct API input. Default lower-case sensitive paths still work; selected function does not enforce file modes or redact by itself. No isolated selected-component clean negative is established while the old local mechanism is unresolved; no supported introduced regression is assigned under retained producers.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "The old public metadata privacy pipeline is supported, but actual known lower-case user/vendor fields need newly expanded policy rather than proving an old normalization miss. Preserve ambiguous discovery history and explicitly defer selected attribution; coordinated necessity is not an isolated old selected security positive.",
+      "dependence_reason": "Four selected functions/three mechanical families are not four independently adjudicated issues. Metadata classifier and filesystem initializer share exact2023 CVE/fix/parent but address different sinks/components: public instance JSON policy versus main log mode. The2021 output-pipe permission/password-console repair targets cloud-init-output.log; the2022 schema-warning suppression targets detailed boot diagnostics also reaching the main log;2023 main-log chmod/policy/Vultr logging changes do not automatically establish identical root cause or independent issue identity across these disclosures. Retain actual version/sink/writer/permission distinctions and pending lineage/backport/issue adjudication, canonical IDs/source bytes/splits, discovery status/category and source/family/connected-block descriptors.",
+      "open_questions": [
+        "Researcher confirm actual datasource metadata and old policy casing, full public-file/redaction state, logging/output configuration, boot stage/order, installed validator/Python/service/tee versions, effective umask/UID/GID/ACL/SGID state and log readers versus credential authority. Named runtime/validator/service/utility/POSIX comparisons are not installed/all-version/deployed proof. No real file modes, log contents, password generation or initialization were exercised. Resolve common before-only context/knowledge and independent issue/lineage policy.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained cloud-init/metadata/credential/configuration/schema/validator/logging/output/shell/process/tee/filesystem/permission/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if key in sensitive_keys or sub_key_path in sensitive_keys:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "key.lower() in sensitive_keys"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "sensitive_keys=self.sensitive_metadata_keys"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\"merged_cfg\",\n        \"security-credentials\","
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "write_json(json_sensitive_file, processed_data, mode=0o600)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "write_json(json_file, redact_sensitive_keys(processed_data))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/sources/DataSourceLXD.py",
+          "ref": "c1b4722036a1ad3f683b7942db4d07639f88dcd2",
+          "needle": "        \"user.meta-data\",\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/sources/DataSourceVultr.py",
+          "ref": "c1b4722036a1ad3f683b7942db4d07639f88dcd2",
+          "needle": "self.userdata_raw = self.metadata[\"user-data\"]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/sources/helpers/ec2.py",
+          "ref": "c1b4722036a1ad3f683b7942db4d07639f88dcd2",
+          "needle": "if field_name == \"security-credentials\":"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "        (\"userdata\", None),\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/sources/DataSourceLXD.py",
+          "ref": "a378b7e4f47375458651c0972e7cd813f6fe0a6b",
+          "needle": "] = sources.DataSource.sensitive_metadata_keys + ("
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/sources/DataSourceLXD.py",
+          "ref": "a378b7e4f47375458651c0972e7cd813f6fe0a6b",
+          "needle": "\"user.user-data\","
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "json.loads(content),"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:210298379809037:3672336208227",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Default tee pipe receives sensitive stderr while inheriting permissive creation mask; after sets child umask and optional adm GID.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate supplied sensitive-key policy from case normalization, metadata paths/catalogs/redaction and public serialization; stdout/stderr pipe-created file mode from main-log retained mode and ownership; validator error construction/detail suppression from configuration validity/strict exceptions; intended console disclosure from unprivileged local file readership. Configured shell command is not itself injection. Shared CVE/commit titles, helper necessity and companion changes establish no isolated old selected duty.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old default05_logging.cfg sends both stdout/stderr to tee -a /var/log/cloud-init-output.log. redirect_output creates that shell pipe, dup2s stdout and also stderr to the same stream when formats match. Old cc_set_passwords generates RANDOM/R passwords, applies them through distro.chpasswd, then writes username/password pairs to sys.stderr. Thus actual sensitive output reaches this selected sink, not merely an advisory claim. Named coreutils8.32 tee uses fopen in append mode; POSIX2018 fopen creation mode is0666 subject to process mask. Matched systemd unit has no UMask override and named v247 default is0022, yielding0644 for a new ordinary file under the admitted default service shape. Existing output/log confidentiality duty is real; custom configured command text is not itself an injection witness.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need old default config, boot/module output routing, random-password writer, tee/fopen/service/default-mask and actual file/ACL/privilege state. Missing/previous output file and inherited mask are causal. The shell pipe policy and direct > or >> Python-open branches differ; stdout/stderr sharing is one sink, not two independent issues. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Datasource/policy/serialization/redaction/public-file/configuration/schema/caller/validator/logging/output/password/service/umask/permission/ownership/runtime contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A non-root/non-adm local account with filesystem access can read an old newly created0644 output log and recover another configured user's emitted random password. Password generation, module execution and permissive creation state are prerequisites; login/exposure timing, account lock/expiry and service policy remain conditional. The reader need not control cloud-config or execute the root-owned tee command. Authorized console readers are a distinct boundary. Existing private logs or an already restrictive parent mask avoid this particular new-file witness.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After runs a preexec closure in each pipe child, sets umask0037 and optionally sets adm GID before exec; retained CPython POSIX contracts apply it in the child. Default tee new-file creation then has no other-read bits (ordinary0666 becomes0640), with actual ownership also subject to directory/OS policy. The coordinated password writer separately moves output to /dev/console, so do not attribute that emission change to this function or claim masking alone changed stderr content. This is no chmod of existing files, direct-open branch fix, arbitrary pipeline policy, ACL/SGID/ownership certification or universal secret-output protection. No independently supported ordinary after regression is assigned for the retained root-service/default-pipe shape.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Conditional old default-pipe credential disclosure and bounded new-file permission repair are supported with actual writer/caller/service/utility contracts, but those facts are outside bounded selected before text. Defer common-context eligibility and distinguish new pipe files from existing logs/direct-open paths and the separate console-writer change.",
+      "dependence_reason": "Four selected functions/three mechanical families are not four independently adjudicated issues. Metadata classifier and filesystem initializer share exact2023 CVE/fix/parent but address different sinks/components: public instance JSON policy versus main log mode. The2021 output-pipe permission/password-console repair targets cloud-init-output.log; the2022 schema-warning suppression targets detailed boot diagnostics also reaching the main log;2023 main-log chmod/policy/Vultr logging changes do not automatically establish identical root cause or independent issue identity across these disclosures. Retain actual version/sink/writer/permission distinctions and pending lineage/backport/issue adjudication, canonical IDs/source bytes/splits, discovery status/category and source/family/connected-block descriptors.",
+      "open_questions": [
+        "Researcher confirm actual datasource metadata and old policy casing, full public-file/redaction state, logging/output configuration, boot stage/order, installed validator/Python/service/tee versions, effective umask/UID/GID/ACL/SGID state and log readers versus credential authority. Named runtime/validator/service/utility/POSIX comparisons are not installed/all-version/deployed proof. No real file modes, log contents, password generation or initialization were exercised. Resolve common before-only context/knowledge and independent issue/lineage policy.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained cloud-init/metadata/credential/configuration/schema/validator/logging/output/shell/process/tee/filesystem/permission/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                owith = \"wb\"\n            new_fp = open(arg, owith)\n        elif mode == \"|\":\n            proc = subprocess.Popen(arg, shell=True, stdin=subprocess.PIPE)\n            new_fp = proc.stdin\n        else:\n            raise TypeError(\"Invalid type for output format: %s\" % outfmt)\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "os.umask(0o037)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "config/cloud.cfg.d/05_logging.cfg",
+          "ref": "c6726c2bbe82b738bd0a7fb308496a497c797d5f",
+          "needle": "output: {all: '| tee -a /var/log/cloud-init-output.log'}"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if errfmt == outfmt:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/config/cc_set_passwords.py",
+          "ref": "c6726c2bbe82b738bd0a7fb308496a497c797d5f",
+          "needle": "sys.stderr.write(\"%s\\n%s\\n\" % blurb)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/config/cc_set_passwords.py",
+          "ref": "c6726c2bbe82b738bd0a7fb308496a497c797d5f",
+          "needle": "p = rand_user_password()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/config/cc_set_passwords.py",
+          "ref": "b794d426b9ab43ea9d6371477466070d86e10668",
+          "needle": "stderr=False, fallback_to_stdout=False"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/util.py",
+          "ref": "b794d426b9ab43ea9d6371477466070d86e10668",
+          "needle": "conpath = \"/dev/console\""
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTRACTS.json",
+          "path": "src/tee.c",
+          "ref": "v8.32",
+          "needle": "descriptors[i] = fopen (files[i], mode_string);"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTRACTS.json",
+          "path": "src/core/execute.c",
+          "ref": "v247",
+          "needle": "c->umask = 0022;"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTRACTS.json",
+          "path": "src/core/execute.c",
+          "ref": "v247",
+          "needle": "(void) umask(context->umask);"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTRACTS.json",
+          "path": "Doc/library/subprocess.rst",
+          "ref": "v3.8.8",
+          "needle": "child process just before the child is executed."
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "os.setgid(group_id)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:229990830827943:214136784713157",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Non-strict schema errors include user-data values in warning logs; matched boot caller after explicitly suppresses details.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate supplied sensitive-key policy from case normalization, metadata paths/catalogs/redaction and public serialization; stdout/stderr pipe-created file mode from main-log retained mode and ownership; validator error construction/detail suppression from configuration validity/strict exceptions; intended console disclosure from unprivileged local file readership. Configured shell command is not itself injection. Shared CVE/commit titles, helper necessity and companion changes establish no isolated old selected duty.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old boot main validates init.cfg non-strictly when userdata_raw exists. The selected validator formats every jsonschema error.message into LOG.warning; default logging routes warning to stderr and DEBUG-or-higher main FileHandler. Old schema admits secret-bearing chpasswd list configurations and must report invalid forms: a mistyped list containing a mapping with a password is rejected through oneOf. Named admitted jsonschema3.2.0 and4.6.0 construct oneOf errors with repr(instance), so sensitive configuration data can reach the warning without inferring it solely from new tests. Main FileHandler can create0644 under ordinary0022; the old initializer preserves existing mode despite requesting0640. That main-log path differs from the already-hardened output-pipe file in this later version.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need exact boot caller and config/error schema, installed jsonschema message behavior, default handler/log permissions and readership. The diagnostic duty includes malformed configuration, so an error-bearing config is an intended validator input, not a new schema feature. Strict exceptions, missing-jsonschema early return and CLI detail mode are different paths. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Datasource/policy/serialization/redaction/public-file/configuration/schema/caller/validator/logging/output/password/service/umask/permission/ownership/runtime contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A lower-authority guest-local reader of a permissive main log can obtain secret material owned by the provisioning/user-data authority when validation of that data emits a repr-bearing error. This does not require that the reader can submit root cloud-config. Real malformed secret-bearing config, validator installed, boot non-strict call and relevant readable log are necessary; different permissions/handlers or no such error avoid the disclosure. Tests/advisory alone are not the source of the old error-value mechanism.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After adds log_details=True for API compatibility, but exact boot main passes strict=False, log_details=False, producing only the fixed instruction to run privileged schema --system. The schema still validates and detailed error strings may be constructed internally, but this warning no longer logs them in that path. Default invocations still emit detail and strict=True still raises detail; do not certify all call sites or all exception/log content. Existing CLI strict detail is intentionally retained rather than a broken requirement to erase every diagnostic. No supported ordinary after regression is assigned under the matched suppressed boot path.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched boot/config/schema/validator/main-log contracts support conditional old diagnostic disclosure and exact caller-selected suppression. Defer eligibility under common before-only context; negative is only the suppressed non-strict warning, not default invocations/strict errors or universal log confidentiality.",
+      "dependence_reason": "Four selected functions/three mechanical families are not four independently adjudicated issues. Metadata classifier and filesystem initializer share exact2023 CVE/fix/parent but address different sinks/components: public instance JSON policy versus main log mode. The2021 output-pipe permission/password-console repair targets cloud-init-output.log; the2022 schema-warning suppression targets detailed boot diagnostics also reaching the main log;2023 main-log chmod/policy/Vultr logging changes do not automatically establish identical root cause or independent issue identity across these disclosures. Retain actual version/sink/writer/permission distinctions and pending lineage/backport/issue adjudication, canonical IDs/source bytes/splits, discovery status/category and source/family/connected-block descriptors.",
+      "open_questions": [
+        "Researcher confirm actual datasource metadata and old policy casing, full public-file/redaction state, logging/output configuration, boot stage/order, installed validator/Python/service/tee versions, effective umask/UID/GID/ACL/SGID state and log readers versus credential authority. Named runtime/validator/service/utility/POSIX comparisons are not installed/all-version/deployed proof. No real file modes, log contents, password generation or initialization were exercised. Resolve common before-only context/knowledge and independent issue/lineage policy.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained cloud-init/metadata/credential/configuration/schema/validator/logging/output/shell/process/tee/filesystem/permission/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\"Invalid cloud-config provided:\\n%s\", \"\\n\".join(messages)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if log_details:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/cmd/main.py",
+          "ref": "4eab80c9db89fcdae4d16c33d8f123cfa1aa62dd",
+          "needle": "validate_cloudconfig_schema(config=init.cfg, strict=False)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/cmd/main.py",
+          "ref": "4d467b14363d800b2185b89790d57871f11ea88c",
+          "needle": "config=init.cfg, strict=False, log_details=False"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/config/schemas/schema-cloud-config-v1.json",
+          "ref": "4eab80c9db89fcdae4d16c33d8f123cfa1aa62dd",
+          "needle": "\"description\": \"List of ``username:password`` pairs."
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTRACTS.json",
+          "path": "jsonschema/_validators.py",
+          "ref": "v3.2.0",
+          "needle": "            break\n        all_errors.extend(errs)\n    else:\n        yield ValidationError(\n            \"%r is not valid under any of the given schemas\" % (instance,),\n            context=all_errors,\n        )\n\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTRACTS.json",
+          "path": "jsonschema/_validators.py",
+          "ref": "v4.6.0",
+          "needle": "            break\n        all_errors.extend(errs)\n    else:\n        yield ValidationError(\n            f\"{instance!r} is not valid under any of the given schemas\",\n            context=all_errors,\n        )\n\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "config/cloud.cfg.d/05_logging.cfg",
+          "ref": "4eab80c9db89fcdae4d16c33d8f123cfa1aa62dd",
+          "needle": "args=('/var/log/cloud-init.log', 'a', 'UTF-8')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/stages.py",
+          "ref": "4eab80c9db89fcdae4d16c33d8f123cfa1aa62dd",
+          "needle": "preserve_mode=True"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/util.py",
+          "ref": "4eab80c9db89fcdae4d16c33d8f123cfa1aa62dd",
+          "needle": "mode = get_permissions(filename)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "strict: bool = False,"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "log_details: bool = True,"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "raise SchemaValidationError(errors)"
+        }
+      ]
+    },
+    {
+      "pair_id": "CVEfixes:24576305371879:42840899937464",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Filesystem initialization preserves an already-created permissive main-log mode; after enforces0640 before ownership attempts.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate supplied sensitive-key policy from case normalization, metadata paths/catalogs/redaction and public serialization; stdout/stderr pipe-created file mode from main-log retained mode and ownership; validator error construction/detail suppression from configuration validity/strict exceptions; intended console disclosure from unprivileged local file readership. Configured shell command is not itself injection. Shared CVE/commit titles, helper necessity and companion changes establish no isolated old selected duty.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old main setupLogging precedes init.initialize, which invokes this initializer. Default logging configuration uses DEBUG FileHandler for /var/log/cloud-init.log. Named CPython FileHandler opens in append mode with ordinary builtins open and does not independently chmod; with default0022 a new file is0644. Exact util.ensure_file calls write_file with empty append content; preserve_mode=True reads existing permission and replaces the requested0640 value, and write_file ultimately chmods to that retained mode. chownbyname changes ownership, not other-read bits. Old Vultr same-ref writer explicitly logs vendor JSON/userdata at DEBUG after data fetch, supplying a real conditional credential-bearing writer beyond an abstract private-log assertion.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need same-ref logging/service/startup order, ensure_file/write_file/chmod and default configuration, actual prior log mode/ownership/readers and datasource sensitive writer. No retained code was run and no real filesystem was chmodded. The empty append operation does not truncate existing logs; do not invent a data-loss regression. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Datasource/policy/serialization/redaction/public-file/configuration/schema/caller/validator/logging/output/password/service/umask/permission/ownership/runtime contracts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection context.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Under an admitted default root boot with a FileHandler-created0644 main log, preserve_mode keeps the other-readable mode even after root:adm ownership succeeds. A non-root/non-adm local reader can see any sensitive vendor/user-data logged by an enabled affected datasource such as old Vultr. The reader need not control log path, metadata server or root provisioning config. Actual datasource secrets, logging level, file/mask/ACL and guest access are conditional; ownership alone does not remove the disclosure boundary.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After preserve_mode=False makes empty append retain existing log contents while write_file applies requested0640 before the selected ownership loop. This removes excess POSIX other-read bits at initialization for the configured file, including an existing0644 file, unlike the2021 pipe-child new-file-only policy. It is not proof of privacy before this point, across other logs/ACLs/alternate handlers or for arbitrary filesystem races. The same commit also suppresses Vultr secret messages and expands instance-JSON policy, separate causal changes. Enforcing the explicitly requested standard0640 is not treated as an accidental custom-mode regression; no supported ordinary after failure is assigned under the retained log contract.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Conditional old retained-mode secret disclosure and exact selected chmod enforcement are supported with real caller/helper/default writer contracts. Those facts remain outside bounded before text; defer common-context eligibility and keep negative limited to mode at this initialization point, separate from policy/writer suppression and other log histories.",
+      "dependence_reason": "Four selected functions/three mechanical families are not four independently adjudicated issues. Metadata classifier and filesystem initializer share exact2023 CVE/fix/parent but address different sinks/components: public instance JSON policy versus main log mode. The2021 output-pipe permission/password-console repair targets cloud-init-output.log; the2022 schema-warning suppression targets detailed boot diagnostics also reaching the main log;2023 main-log chmod/policy/Vultr logging changes do not automatically establish identical root cause or independent issue identity across these disclosures. Retain actual version/sink/writer/permission distinctions and pending lineage/backport/issue adjudication, canonical IDs/source bytes/splits, discovery status/category and source/family/connected-block descriptors.",
+      "open_questions": [
+        "Researcher confirm actual datasource metadata and old policy casing, full public-file/redaction state, logging/output configuration, boot stage/order, installed validator/Python/service/tee versions, effective umask/UID/GID/ACL/SGID state and log readers versus credential authority. Named runtime/validator/service/utility/POSIX comparisons are not installed/all-version/deployed proof. No real file modes, log contents, password generation or initialization were exercised. Resolve common before-only context/knowledge and independent issue/lineage policy.",
+        "Conditional inert-source deductions, not reproduced outcomes. No retained cloud-init/metadata/credential/configuration/schema/validator/logging/output/shell/process/tee/filesystem/permission/runtime/dependency/application program, payload, vulnerability-target request or upstream test executes. Read archive members in memory without extraction/import/install; own retrieval/view/hash/bookkeeping/audit-validator tools only."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "util.ensure_file(log_file, mode=0o640, preserve_mode=True)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "util.ensure_file(log_file, mode=0o640, preserve_mode=False)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/cmd/main.py",
+          "ref": "c1b4722036a1ad3f683b7942db4d07639f88dcd2",
+          "needle": "logging.setupLogging(init.cfg)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/cmd/main.py",
+          "ref": "c1b4722036a1ad3f683b7942db4d07639f88dcd2",
+          "needle": "init.initialize()"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._initialize_filesystem()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "config/cloud.cfg.d/05_logging.cfg",
+          "ref": "c1b4722036a1ad3f683b7942db4d07639f88dcd2",
+          "needle": "args=('/var/log/cloud-init.log', 'a', 'UTF-8')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/util.py",
+          "ref": "c1b4722036a1ad3f683b7942db4d07639f88dcd2",
+          "needle": "path, content=\"\", omode=\"ab\", mode=mode, preserve_mode=preserve_mode"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/util.py",
+          "ref": "c1b4722036a1ad3f683b7942db4d07639f88dcd2",
+          "needle": "mode = get_permissions(filename)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/util.py",
+          "ref": "c1b4722036a1ad3f683b7942db4d07639f88dcd2",
+          "needle": "chmod(filename, mode)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTRACTS.json",
+          "path": "Lib/logging/__init__.py",
+          "ref": "v3.10.4",
+          "needle": "return open_func(self.baseFilename, self.mode,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/sources/DataSourceVultr.py",
+          "ref": "c1b4722036a1ad3f683b7942db4d07639f88dcd2",
+          "needle": "LOG.debug(util.json_dumps(self.metadata[\"vendor-data\"]))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTEXT.json",
+          "path": "cloudinit/sources/DataSourceVultr.py",
+          "ref": "c1b4722036a1ad3f683b7942db4d07639f88dcd2",
+          "needle": "LOG.debug(self.userdata_raw)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_048_CONTRACTS.json",
+          "path": "src/core/execute.c",
+          "ref": "v247",
+          "needle": "c->umask = 0022;"
+        }
+      ]
+    }
+  ]
+}

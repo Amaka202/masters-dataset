@@ -1,0 +1,1063 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-005",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All twenty Black training candidates in the three broad discovery leaves at the fixed checkpoint. Other functions and fixtures are inert adjudication context, not additional reviewed inputs or independent issues.",
+  "selection_rule": {
+    "repository": "github.com/psf/black",
+    "discovery_categories": [
+      "CORR-INCOMPLETE-CASE-HANDLING",
+      "CORR-STATE-TRANSITION",
+      "CORR-CONTEXT-PROPAGATION"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 754,
+    "sha256": "eaa4791bbadd525598b380a23254c45c26fd4f091b5670aa81399f592f030f3d"
+  },
+  "interpretation": "Exact selected functions and complete fixes inspected as text. Manual traces are source-based deductions, not execution or reproduced tests. Separate layout policy, explicit pragma control, semantic comments, supported grammar, selected repair attribution, missing context and mechanism-local after scope. All researcher decisions pending; no dataset parser, formatter, regex, fixture, hook, vulnerability program or test executed.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-11:0:black.py:split_line",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Short-line fast return can collapse comma-associated parameter type comments onto a complete definition line.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Semantic type comments are not automatically ordinary comment style; an established eligible preservation duty is still needed.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old comments_after associates comments with leaves, but Line.__str__ appends all comments after all code leaves. A short definition with an argument type comment can therefore move that comment away from its parameter. The old README promises AST equivalence and recognizes typing stubs/special comments, which does not by itself prove an existing per-parameter type-comment guarantee. New fixture/commit wording cannot settle feature-versus-repair scope.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The selected guard exposes only a short-line decision. Comment association/rendering, helper shortness, parameter versus function type-comment semantics and prior support are outside it.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The candidate is annotation association in intentionally formatted source. No attacker-to-authority crossing or downstream security decision is established; source execution and type-checker trust remain separate.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conditional bypass of the short-line fast path for comma-attached comments beginning # type: only. Splitting can still fall back to the original line after CannotSplit; all semantic comments and full type-tool preservation are not certified.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer the prior eligible type-comment contract; do not dismiss semantic comments as style or promote an AST-equivalence assertion into type-checker equivalence.",
+      "dependence_reason": "One split-line fixing family; individual parameter comments and typing-tool consumers are not independent bugs.",
+      "open_questions": [
+        "Establish a prior parameter-type-comment preservation contract and the relevant external typing specification.",
+        "Keep AST, runtime and type-tool equivalence distinct; qualify CannotSplit fallback and common before-only context."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not line.should_explode and is_line_short_enough("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if leaf.type == token.COMMA and is_special_comment(comment):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for comment in itertools.chain.from_iterable(self.comments.values()):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return self.comments.get(id(leaf), [])"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_005.json",
+          "path": "README.md",
+          "ref": "024c9cab55da7bd3236fd88759c9735d6149b464^",
+          "needle": "reformatted code still produces a valid AST that is equivalent to the"
+        },
+        {
+          "kind": "fix",
+          "needle": "+def f(\n+    a,  # type: int\n+):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-12:0:black.py:BracketTracker.maybe_decrement_after_for_loop_variable",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "A nested membership in prematurely closes the virtual for-target bracket region.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Depth-qualified region termination, not generic decrementing or layout preference.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old increment explicitly raises virtual depth between for and in. Old mark invokes the decrement before matching real closing brackets. In the retained nested-membership target, an inner in lowers depth too early, consumes a wrong opening match and can leave the later closing parenthesis without its stored key. The depth stack constrains termination to the original region depth.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The selected method does not define virtual-depth creation, mark ordering or bracket-match keys. Those omitted invariants establish why an inner in differs from the target terminator.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Witnessed consequence is a formatter state/key failure on source tokens. No adversarial resource bound or privilege boundary is established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Termination at the recorded for-target depth with the jointly changed stack initialization/increment only. Not a drop-in method replacement, a general grammar guarantee or execution of the unusual assignment target.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Contextual non-layout failure is supported; defer before-only admission for critical state/consumer invariants.",
+      "dependence_reason": "All four Black-12 helpers share one fixing family. For/lambda witnesses may differ, but no independent issue split is adjudicated.",
+      "open_questions": [
+        "Confirm the manual nested-token/state trace and shared-family root causes without running the fixture.",
+        "Apply one missing-state-context rule to both terminating helpers."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if self._for_loop_variable and leaf.type == token.NAME and leaf.value == \"in\":"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "and self._for_loop_depths[-1] == self.depth"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "opening_bracket = self.bracket_match.pop((self.depth, leaf.type))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.bracket_match[self.depth, BRACKET[leaf.type]] = leaf"
+        },
+        {
+          "kind": "fix",
+          "needle": "+for ((x in {}) or {})['a'] in x:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-12:0:black.py:BracketTracker.maybe_decrement_after_lambda_arguments",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "A dictionary or slice colon inside a lambda default prematurely ends its virtual argument region.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Lambda region-depth termination is distinct from arbitrary colon parsing and from producer storage changes.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old mark calls this decrement before closing-bracket lookup. A lambda enters virtual depth one; a default dictionary opens at that depth, but its colon lowers virtual depth early, so its closing brace looks up the wrong depth key. The selected after guard requires the lambda entry depth and ignores deeper colons.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The method refers to an omitted increment explanation. Class fields, virtual-depth ordering and real bracket matching are critical outside-function premises.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "This is a source-token state failure without an established lower-trust security consumer or security resource guarantee.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Nested dictionary/slice colon handling with the coordinated depth stack only; full nested-lambda grammar and standalone replacement remain unapproved.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer strict before-only eligibility despite the contextually supported state failure.",
+      "dependence_reason": "Same four-function Black-12 family as for-target tracking; two token classes do not certify two independent issues.",
+      "open_questions": [
+        "Confirm the manual default-dictionary state witness and the common state-context eligibility rule.",
+        "Keep coordinated stack initialization/producer changes with this consumer."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if self._lambda_arguments and leaf.type == token.COLON:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "and self._lambda_argument_depths[-1] == self.depth"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.maybe_decrement_after_lambda_arguments(leaf)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "opening_bracket = self.bracket_match.pop((self.depth, leaf.type))"
+        },
+        {
+          "kind": "fix",
+          "needle": "+pem_spam = lambda l, spam = {"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-12:0:black.py:BracketTracker.maybe_increment_for_loop_variable",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "A for-region counter producer becomes an entry-depth-stack producer for a repaired consumer.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Necessary state representation plumbing is not automatically a locally defective producer.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Both versions raise depth on for and return the same boolean under their respective class representations. Wrong early termination occurs in the decrement/mark consumer; an old entry-depth recording requirement did not exist in this producer interface.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Class initialization and the faulty terminating consumer determine why a stack is needed; the selected producer alone does not expose that violation.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "State storage enables a functional parser repair; no isolated security boundary is shown.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated producer positive/repair negative established. Comparing a stack-writing method with old counter fields manufactures a mixed-version failure.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Defer selected attribution consistently with the prior coordinated producer cases.",
+      "dependence_reason": "One Black-12 four-helper family, not a new independent issue for storing additional state.",
+      "open_questions": [
+        "Decide repair-only producer eligibility under the same rule as Thefuck and Cookiecutter.",
+        "Retain matching counter/stack versions and conservative issue dependence."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._for_loop_variable += 1"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._for_loop_depths.append(self.depth)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if self._for_loop_variable and leaf.type == token.NAME and leaf.value == \"in\":"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    _for_loop_depths: List[int] = Factory(list)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-12:0:black.py:BracketTracker.maybe_increment_lambda_arguments",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "A lambda-region counter producer becomes an entry-depth-stack producer.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate the changed producer representation from the defective colon-termination decision.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old and new methods both increase depth on lambda. Recording entry depth supports the repaired decrement guard, but the old producer correctly implements its original counter interface; no separate old producer violation is established.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The consumer, mark ordering and class state are unavailable in this function-only input.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "No security trust or authority crossing is established by recording lambda depth.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated producer repair negative; old counter fields and new stack consumers cannot be mixed.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Defer component attribution rather than inheriting the consumer positive.",
+      "dependence_reason": "Keep all four Black-12 methods in their existing family pending actual root-cause adjudication.",
+      "open_questions": [
+        "Use the same repair-component decision as the for-region producer.",
+        "Do not treat four related changed functions as four independent bugs."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self._lambda_arguments += 1"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self._lambda_argument_depths.append(self.depth)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if self._lambda_arguments and leaf.type == token.COLON:"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    _lambda_argument_depths: List[int] = Factory(list)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-13:0:blib2to3/pgen2/tokenize.py:generate_tokens",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Stashed async becomes ASYNC before for outside async-def state.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "New input-language support and an existing supported grammar defect require separate evidence.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The old grammar already has optional ASYNC in comp_for, but the old tokenizer promotes stashed async only before def. The exact pre-fix README distinguishes Python3.6+ execution requirements from input formatting and mentions running on Python3.7, without proving this newly introduced normal-function syntax was already promised. Commit/fixture explicitly add that Python3.7 case. Neither runtime support nor the grammar production alone settles prior input-language eligibility.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Full-function classification is visible, but the supported input-language version and downstream grammar token requirements are external. The 226-line function also awaits the common budget policy.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Token classification affects accepted syntax. No authority crossing, exploit reachability or adversarial resource guarantee is established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conditional async-for promotion only, without entering async-def state on for. This does not fix the later await-expression-outside-async-def problem or prove all Python3.7 syntax.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer the prior input-language contract, not automatically a feature exclusion or a runtime-support finding.",
+      "dependence_reason": "After hash exactly equals the Black-6 tokenizer before hash. This is a shared source version; the later await failure is a distinct follow-up mechanism, not automatic independence or an issue merge.",
+      "open_questions": [
+        "Establish the exact pre-fix input-language promise separately from the interpreter requirement.",
+        "Preserve the later tokenizer source-version link and specify a common long-function budget."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if token == 'def':"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if token in ('def', 'for'):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if token == 'def':\n                                async_def = True"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_005.json",
+          "path": "blib2to3/Grammar.txt",
+          "ref": "883689366ce0f0e0ddd66d81360c61abfd19b01a^",
+          "needle": "comp_for: [ASYNC] 'for' exprlist 'in' or_test [comp_iter]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_005.json",
+          "path": "README.md",
+          "ref": "883689366ce0f0e0ddd66d81360c61abfd19b01a^",
+          "needle": "Python 3.6.0+ to run but you can reformat Python 2 code with it, too."
+        },
+        {
+          "kind": "fix",
+          "needle": "+    return (i*2 async for i in arange(42))"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-14:0:black.py:get_future_imports",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "An aliased future import creates an import_as_name node rejected or skipped by shallow extraction.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Structural alias recognition, not arbitrary import spelling or complete future-language semantics.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old Grammar.txt admits NAME as NAME and pytree.convert collapses single-child nodes. Thus a lone aliased future name retains import_as_name while an unaliased one collapses; the old import_as_names assertion rejects the former. Multiple imports retain a list containing alias nodes that the old shallow scan skips. Existing format_str always calls this extractor; unicode_literals is a meaningful witness, unlike parser-only fixture names.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The selected assertion is visible but the actual concrete-tree shape and conversion collapse rule are missing.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witness is a parser assertion or missed semantic flag. No selected security trust boundary is demonstrated; downstream formatting semantics are a separate review obligation.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Original-name extraction for the demonstrated single/list alias forms. Fixture names with_function or print are not proof of executable future features; all malformed/import forms remain outside scope.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer before-only admission for critical grammar/CST facts despite contextual local support.",
+      "dependence_reason": "One future-import extraction family. Two structural manifestations and multiple aliases do not automatically create independent issues.",
+      "open_questions": [
+        "Use meaningful supported future names and retain parser-only fixture limitations.",
+        "Freeze the missing-CST-context rule without adding grammar/test answers to inputs."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "assert import_from_child.type == syms.import_as_names"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "elif child.type == syms.import_as_name:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "future_imports = get_future_imports(src_node)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_005.json",
+          "path": "blib2to3/Grammar.txt",
+          "ref": "dd8bde6d2fbfe8a7a11093e761a0cb5837efa96a^",
+          "needle": "import_as_name: NAME ['as' NAME]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_005.json",
+          "path": "blib2to3/pytree.py",
+          "ref": "dd8bde6d2fbfe8a7a11093e761a0cb5837efa96a^",
+          "needle": "if len(children) == 1:\n            return children[0]"
+        },
+        {
+          "kind": "fix",
+          "needle": "+        self.assertEqual({\"unicode_literals\"}, black.get_future_imports(node))"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-23:0:black.py:lib2to3_parse",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "A grammar retaining exec as a statement keyword rejects a supported Python3 exec identifier.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate the already-supported modern identifier repair from newly accepted deprecated Python2 forms.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Retained README diff states all Python3.6 syntax support before the change. Exact old grammar still contains exec_stmt; old pygram removes only print from that grammar, and Parser.classify gives reserved words their keyword label. The valid modern exec=False parameter is therefore rejected. The first new grammar removes both keywords.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The selected function omits keyword tables, classification and the GRAMMARS constant. A grammar variable name alone is insufficient evidence of identifier rejection.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witnessed refusal concerns a legal identifier, not executing exec. No eval/exec payload or source fixture is executed and no security repair is inferred from that keyword.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Acceptance of the evidenced nonempty modern input with matching new grammar tables only. Empty input still indexes src_txt[-1]; Python2 AST safe checks and general multi-grammar correctness remain outside scope.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer strict before-only admission for missing grammar tables and language contract.",
+      "dependence_reason": "Keep the shared fix with its diagnostic-only companion; later grammar selection cases are version-linked review units, not independent issue proof.",
+      "open_questions": [
+        "Do not substitute new deprecated-language support for the modern identifier witness.",
+        "Retain the empty-input residual and exact missing grammar context."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "grammar = pygram.python_grammar_no_print_statement"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "for grammar in GRAMMARS:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_005.json",
+          "path": "blib2to3/pygram.py",
+          "ref": "6316e293ac30a2837ec20eba289fd28a2a18cf89^",
+          "needle": "del python_grammar_no_print_statement.keywords[\"print\"]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_005_GRAMMARS.json",
+          "path": "blib2to3/Grammar.txt",
+          "ref": "6316e293ac30a2837ec20eba289fd28a2a18cf89^",
+          "needle": "exec_stmt: 'exec' expr ['in' test [',' test]]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_005.json",
+          "path": "blib2to3/pgen2/parse.py",
+          "ref": "6316e293ac30a2837ec20eba289fd28a2a18cf89^",
+          "needle": "ilabel = self.grammar.keywords.get(value)"
+        },
+        {
+          "kind": "fix",
+          "needle": " all of the new syntax supported on Python 3.6 but also *effectively all*"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-2:0:black.py:generate_ignored_nodes",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "A fmt:on marker inside a decorated container is missed by an outer-prefix-only ignored-region scan.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "An explicit formatter-control command has a documented functional contract; its non-style task eligibility is a separate question.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The old selected docstring explicitly promises to stop at fmt:on. The converter hides all yielded nodes as a standalone comment, so missing a nested resumption marker changes the requested control range. This existing control obligation differs from an optional layout preference; whether that is eligible non-style correctness for this experiment remains unfrozen.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Decorated-tree nesting, prefix propagation, same-column helpers and the hiding consumer are missing. Exact pytree Node.prefix delegates to its first child; ignoring that would invent a negative-path or nontermination claim.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Ignoring a local formatting pragma does not establish a security authorization or sandbox boundary. The hidden source is not being executed by this review.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No approved task-level negative. The new child scan relies on a matching descendant being found and does not advance the outer container in that branch. Qualify it by actual tree/column invariants; do not claim a reproduced infinite loop or universal progress.",
+      "experimental_subset_proposal": "defer_task_scope",
+      "subset_reason": "Defer task scope explicitly while retaining the old control contract; missing tree context and conditional progress also need resolution.",
+      "dependence_reason": "One ignored-region fix family. The decorator and subsequent definition are one control-range witness, not separate bugs.",
+      "open_questions": [
+        "Decide explicit formatter-control non-style eligibility separately from existence of its contract.",
+        "Verify actual descendant/prefix/column progress invariants as text before any broader negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "generate all leaves until `# fmt: on`."
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if contains_fmt_on_at_column(container, leaf.column):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if contains_fmt_on_at_column(child, leaf.column):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "ignored_nodes = list(generate_ignored_nodes(leaf))"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_005.json",
+          "path": "blib2to3/pytree.py",
+          "ref": "892eddacd215d685e136686b7f629ade70adca83",
+          "needle": "return self.children[0].prefix"
+        },
+        {
+          "kind": "fix",
+          "needle": "+# fmt: on\n+def f(): pass"
+        }
+      ],
+      "task_scope": "unresolved_nonstyle_eligibility",
+      "task_scope_reason": "Control-pragma compliance is an existing documented formatter function, but the experimental non-style correctness boundary is not frozen. Preserve that distinction instead of claiming no old contract or automatically excluding all formatter behavior."
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-4:0:black.py:EmptyLineTracker.maybe_empty_lines",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Initial blank-line accounting emits leading newlines that the next formatting pass strips, failing safe-mode stability.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Supported idempotence/safe-mode failure, not merely a preferred number of blank lines.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old class state starts previous_line=None and previous_after=0; the helper counts and consumes prefix newlines. The retained leading-backslash fixture exposes initial prefix newlines after tokenization. Old format_str strips leading whitespace on the next pass, and non-fast format_file_contents invokes assert_stable, which raises on changed second output. The new initial-state guard sets before=0.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Initial class state, prefix helper, the stripping caller and failing stability consumer are outside this selected method.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Safe-mode AssertionError is a functional failure; no attacker reachability, availability guarantee or privileged consumer is established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Initial leading-newline instability on the retained prefix path only; not all idempotence, blank-line policies or source equivalence. Token/prefix tracing is source-based, not a reproduced formatter run.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer strict function-only admission for critical helper/caller state rather than dismissing it as cosmetic.",
+      "dependence_reason": "One initial-state/stability family. First and second passes are dependent observations of the same witness.",
+      "open_questions": [
+        "Confirm the exact retained backslash/prefix trace without running the tokenizer or formatter.",
+        "Keep the documented safe-mode failure distinct from ordinary layout preferences."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "before -= self.previous_after"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "else before - self.previous_after"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "src_node = lib2to3_parse(src_contents.lstrip(), mode.target_versions)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "before = first_leaf.prefix.count(\"\\n\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not fast:\n        assert_equivalent(src_contents, dst_contents)\n        assert_stable(src_contents, dst_contents, mode=mode)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "newdst = format_str(dst, mode=mode)"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-5:0:black.py:Line.maybe_remove_trailing_comma",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Single optional trailing comma in typedargslist is protected as though needed for tuple semantics.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "The retained expectation changes optional signature layout, not demonstrated tuple or parameter semantics.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old code distinguishes arglist from tuple commas but omits typedargslist. Adding it removes an optional comma in valid one-line definitions. The retained fixture changes def f(a,) to def f(a), with unchanged parameter meaning; the new equivalence/stability assertions do not prove either failed before. An eligible non-layout violation or an approved formatter-policy task remains unestablished.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Concrete parent/depth metadata and the intended normalization policy are external; the function alone does not establish why retaining this legal comma is a task-positive defect.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Optional signature punctuation shows no selected trust/authority crossing; future malformed output or downstream security impact needs separate evidence.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Typedargslist optional-comma removal only. Do not claim changed tuple semantics, every starred/version case, general signature safety or a repaired runtime failure.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer prior eligible contract rather than automatically retaining or excluding a formatter-policy change.",
+      "dependence_reason": "Shares Black-5 family with the body builder. Its before source is later than the Black-8 builder version; shared-function history is dependence, not independent issue proof.",
+      "open_questions": [
+        "Establish a non-layout/stability failure or explicitly approve formatter-policy scope.",
+        "Keep tuple protection and supported starred-argument versions outside a blanket negative."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if leaf.parent and leaf.parent.type == syms.arglist:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if leaf.parent and leaf.parent.type in {"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if commas > 1:\n            self.remove_trailing_comma()"
+        },
+        {
+          "kind": "fix",
+          "needle": "+def f(a,):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-5:0:black.py:bracket_split_build_line",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "A split definition body without any comma receives a new trailing comma.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "The all-leaves comma test is not exact top-level single-argument recognition.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The old builder adds import commas; the new case also covers definitions containing no comma anywhere in the leaf list. The retained regression demonstrates one-line optional-comma normalization, not a selected split-body crash or instability. Tests for a companion function cannot establish that this body builder independently violated a prior eligible contract.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Caller body classification, nested comma leaves and downstream splitting/removal policy are omitted.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The change normalizes local source punctuation; no actual trust boundary or security enforcement obligation is demonstrated.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conditional punctuation insertion for the new no-comma definition branch, not all single-parameter signatures. Nested commas can suppress the branch, and starred-argument language safety needs separate context.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer the eligible pre-existing body-normalization duty and an actual old failing trace.",
+      "dependence_reason": "Same Black-5 two-function family. This exact before hash equals Black-8 after hash, linking a prior comment/comma repair without making the later policy change the same issue.",
+      "open_questions": [
+        "Find an old supported split-body failure rather than inheriting the companion fixture result.",
+        "Distinguish nested leaf commas from top-level parameter count and preserve the shared-version link."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if original.is_import:\n                for i in range(len(leaves) - 1, -1, -1):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "no_commas = original.is_def and not any("
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if original.is_import or no_commas:"
+        },
+        {
+          "kind": "fix",
+          "needle": "+def f(a:int=1,):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-6:0:black.py:lib2to3_parse",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Target-aware grammar orchestration becomes grammar-plus-tokenizer-config orchestration.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "A failing entry point establishes pipeline reachability, not an independently defective newly extended API client.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old TargetVersion already includes PY37/PY38 and the complete string path reaches the tokenizer that misclassifies await outside async-def state. The shared supported failure is real contextually. However, old get_grammars/Driver/tokenizer expose no tokenizer-config interface to forward; the selected change adopts new ParserConfig plumbing rather than dropping an available old argument.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Target feature tables, configuration selection, Driver storage and keyword classification are outside the selected function.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The witness is supported-source parsing refusal. No source is executed and no lower-trust security consumer is established.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated orchestration positive/repair negative established. Modern mode works only with matching new producer, holder and tokenizer; mixing the new caller with the old constructor is not an old defect.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Discovery becomes ambiguous for component attribution; defer the repair-only orchestration decision while retaining the core tokenizer finding.",
+      "dependence_reason": "One five-function Black-6 repair family. Existing-version grammar cases and default/modern modes are not additional independent issue counts.",
+      "open_questions": [
+        "Apply the same repair-only API-client rule as other coordinated producers/holders.",
+        "Keep a true whole-path failure distinct from a selected-function local repair."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for grammar in get_grammars(set(target_versions)):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "tokenizer_config=parser_config.tokenizer_config,"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "    PY37 = 7\n    PY38 = 8"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "result = drv.parse_string(src_txt, True)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+class ParserConfig:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-6:0:blib2to3/pgen2/driver.py:Driver.__init__",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Driver gains an optional tokenizer-configuration field for coordinated consumers.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "A holder/API extension is not automatically a missing-attribute or mutable-default bug in the old implementation.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old matching callers supply grammar/convert only, and old consumers read no tokenizer_config field. The added holder enables the shared modern-tokenization repair, but the old constructor stores its actual old arguments correctly. The retained added TokenizerConfig is frozen, so its default instance is not evidence of a mutable-default defect.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The selected constructor has neither target semantics nor the failing classification; callers and consumers determine both.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "No authorization/trust boundary or unsafe object sharing is established by this configuration holder.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No established constructor-local repair negative. The new frozen config defaults to legacy-false and does not itself repair modern tokenization.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Defer selected-component eligibility; do not inherit the whole regression positive.",
+      "dependence_reason": "Keep with four other Black-6 components and the same core tokenization witness.",
+      "open_questions": [
+        "Preserve frozen-default semantics and matching old interfaces.",
+        "Resolve repair-only holder eligibility with the other coordinated components."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def __init__(self, grammar, convert=None, logger=None):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "self.tokenizer_config = tokenizer_config"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "tokens = tokenize.generate_tokens(io.StringIO(text).readline)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+@dataclass(frozen=True)\n+class TokenizerConfig:\n+    async_is_reserved_keyword: bool = False\n+\n class TokenError(Exception): pass"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-6:0:blib2to3/pgen2/driver.py:Driver.parse_stream_raw",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "Stream parsing forwards newly added Driver configuration to the newly extended tokenizer.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "New forwarding capability is not an old dropped config parameter or an independently demonstrated stream-only defect.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "Old Driver and tokenizer have no config interface. parse_stream delegates to this method, but the retained modern regression uses the string path. The new default remains legacy-false, and a direct modern stream requirement under the old interface is not independently established by that regression.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Supported stream-entry use, target-mode producer and tokenizer semantics are external to this four-line method.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "No attacker-controlled stream or security availability contract is established; the stream is never consumed in this review.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated stream-edge negative; the new holder/modern-mode producer/tokenizer must be coordinated. The default new stream call still has legacy semantics.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Revise discovery support to ambiguous selected attribution; defer component eligibility instead of certifying a stream repair from string-path tests.",
+      "dependence_reason": "Same five-function Black-6 family. Two entry methods are not two independent observed failures.",
+      "open_questions": [
+        "Establish the exact supported stream entry contract before strengthening component support.",
+        "Keep default legacy behavior distinct from explicitly selected modern configuration."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "tokens = tokenize.generate_tokens(stream.readline)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "tokens = tokenize.generate_tokens(stream.readline, config=self.tokenizer_config)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return self.parse_stream_raw(stream, debug)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    async_is_reserved_keyword: bool = False\n+\n class TokenError(Exception): pass"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-6:0:blib2to3/pgen2/driver.py:Driver.parse_string",
+      "review_revision": 1,
+      "source_discovery_revision": 2,
+      "mechanism": "String parsing forwards the new Driver tokenizer configuration.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Actual failing-path reachability does not isolate an old-interface-correct forwarder as a separate repaired function.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "The archived top-level parser calls Driver.parse_string, so this edge is on the shared modern failure path. Its old tokenizer accepts only readline and its old holder has no config; there is no old supplied configuration this method lost. The new edge must be judged with matching producers and consumers, not against an invented old missing field.",
+      "selected_relevance": "coordinated_component_not_isolated",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The caller target, holder/default and actual tokenizer mode/grammar requirements are omitted.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Parsing text here is not executing it. No security authority crossing or selected code-execution sink is established.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "No isolated forwarding-edge repair negative established; a new default Driver retains legacy tokenization. Explicit modern mode requires the entire coordinated chain.",
+      "experimental_subset_proposal": "defer_selected_attribution",
+      "subset_reason": "Discovery becomes ambiguous for selected attribution, preserving the supported core classification defect separately.",
+      "dependence_reason": "One Black-6 five-function family; string-path reachability is stronger than the stream evidence but does not certify independence or a separate root.",
+      "open_questions": [
+        "Keep shared-failure reachability separate from selected attribution.",
+        "Apply the same old-interface test to both stream and string forwarding methods."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "tokens = tokenize.generate_tokens(io.StringIO(text).readline)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "config=self.tokenizer_config,"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "def __init__(self, grammar, convert=None, logger=None):"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    async_is_reserved_keyword: bool = False\n+\n class TokenError(Exception): pass"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-6:0:blib2to3/pgen2/tokenize.py:generate_tokens",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Legacy async-def state gating emits NAME instead of AWAIT in supported modern generator expressions.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "The token-classification decision is the supported local mechanism; mode/config plumbing and all-language validation are separate.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Exact old target tables already include PY37/PY38. In the full selected tokenizer, async_def starts false and is entered only after async def; in an ordinary def an await token therefore reaches NAME. The retained grammar allows AWAIT in power and the new fixture places it inside a generator expression. New modern mode removes that state restriction while preserving older identifier support in legacy mode.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The full branch is selected, but the declared target, grammar token expectations and mode producer are missing. The 227-line input requires the same common numerical budget policy as other long functions.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Misclassification refuses supported source; no authority boundary, exploit reachability or adversarial resource bound is demonstrated.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "AWAIT/ASYNC classification outside async-def only when modern config is selected with matching callers. Default remains legacy, so the isolated after function is not a universal negative; all mixed targets and grammar correctness are unapproved.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Keep contextual mechanism support but defer strict before-only admission for target/grammar/config premises.",
+      "dependence_reason": "Same five-function Black-6 family. Before hash equals Black-13 after hash; that earlier async-for fix did not fix await-valued/filter generator expressions. A shared version is not certified ancestry or issue independence.",
+      "open_questions": [
+        "Freeze target-language/API assumptions and the common long-function budget.",
+        "Do not treat legacy-default after code as repaired for modern input without its actual new mode producer."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if token in ('async', 'await'):\n                        if async_def:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if async_is_reserved_keyword or async_def:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "tok = (NAME, token, spos, epos, line)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "class TokenizerConfig:\n    async_is_reserved_keyword: bool = False"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_005.json",
+          "path": "blib2to3/Grammar.txt",
+          "ref": "f8617f975d56e81cfb4070ce65584f7b29a77e7a^",
+          "needle": "power: [AWAIT] atom trailer*"
+        },
+        {
+          "kind": "fix",
+          "needle": "+        self.invokeBlack([str(source_path), \"--target-version\", \"py37\"])"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-7:0:black.py:normalize_invisible_parens",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Tuple assignment targets receive optional parentheses and a transferred prefix for long-line splitting.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "A long-target layout fixture is not proof of old runtime failure, AST change or instability.",
+      "existing_contract": "unresolved_existing_contract",
+      "contract_reason": "The retained source/expected fixture wraps a long target and reformats the value tuple. Both target forms have the same assignment semantics. Prefix transfer could matter for comments, but the retained witness has no relevant prefix/comment failure. New equivalence/stability assertions do not demonstrate an old failure; an eligible existing obligation remains unresolved.",
+      "selected_relevance": "unresolved_supported_case",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Concrete-tree target shape, caller parens_after policy and downstream split/comment handling are omitted.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "Local source layout and prefix movement establish no trust boundary; assignment examples are never executed.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Conditional tuple-target wrapping/prefix transfer only, not arbitrary comment preservation, runtime assignment correctness or all-format stability.",
+      "experimental_subset_proposal": "defer_existing_contract",
+      "subset_reason": "Defer eligible existing-contract evidence; do not automatically exclude a formatter feature merely because the current witness shows layout.",
+      "dependence_reason": "One target-wrapping family. Prefix relocation and wrapping are coordinated parts of the same selected change.",
+      "open_questions": [
+        "Find an actual old non-layout, stability or semantic-prefix failure before positive admission.",
+        "Preserve common context rules instead of adding answer-bearing tree/caller information."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "check_lpar = False\n    for index, child in enumerate(list(node.children)):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "and child.type == syms.testlist_star_expr"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "new_child.prefix = prefix"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    def test_tuple_assign(self) -> None:"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-8:0:black.py:bracket_split_build_line",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "A trailing standalone comment is mistaken for the last code token, causing an extra import comma after comments.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Supported invalid-source output trace, not optional comma style or an automatic claim of comment deletion.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old builder appends a comma after trailing comment leaves even when Path already has one. Exact Line.append_comment retains these standalone leaves in the body; append_safe/standalone-comment or delimiter splitting separates later code from comment lines. The extra comma can therefore become its own separator line after an already terminated import item. The after backward scan skips comments and preserves or inserts the last code comma.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "The local append position is visible but the mixed leaf/comment representation, split consumers and invalid rendered syntax consequence are critical omitted facts.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "The demonstrated consequence is malformed formatted source, with no established attacker-to-privilege or security enforcement boundary. Downstream execution is outside the review.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Import-body final comma placement relative to the retained standalone comments only. All-comment bodies, other signature policies and all formatter equivalence/stability are not certified; this is a manual source trace, not reproduced output.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer before-only admission despite the supported contextual invalid-output mechanism.",
+      "dependence_reason": "After hash equals Black-5 builder before hash. Preserve this exact-version/history dependence without merging the later optional-signature policy or declaring independent issues.",
+      "open_questions": [
+        "Confirm the exact manual leaf-to-rendered-output path, not just the insertion position.",
+        "Keep the later signature policy and prior comment fix as separately reasoned mechanisms within version dependence."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if leaves[-1].type != token.COMMA:\n                    leaves.append(Leaf(token.COMMA, \",\"))"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if leaves[i].type == STANDALONE_COMMENT:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "leaves.insert(i + 1, Leaf(token.COMMA, \",\"))"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "raise ValueError(\"cannot append to standalone comments\")"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "\"\"\"Split standalone comments from the rest of the line.\"\"\""
+        },
+        {
+          "kind": "fix",
+          "needle": "+    no_comma_here_yet\n+    #  and some comments,"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:bugs-in-py_black-9:0:black.py:get_grammars",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Python2-restricted selection omits the print-function grammar required by future print_function.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Supported target-specific grammar admission, not universal print-call failure or proof all Python2 syntax is covered.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old TargetVersion includes PY27 and explicitly restricts it to the default statement grammar. Exact pygram provides the no-print grammar and old Parser.classify reserves print when present in the keyword map. The retained future print_function fixture uses a keyword argument file=sys.stderr that statement grammar rejects. Adding no-print grammar before legacy fallback fixes this already supported target case.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Selected alternatives are visible, but actual keyword tables, future syntax and retry consumer are external.",
+      "security_screen": "functional_witness_no_demonstrated_security_boundary",
+      "security_reason": "A print identifier/keyword mismatch is a functional parse refusal; no payload, privilege crossing or security guarantee is established.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Availability of print-function grammar when targets include Python2 only. Not complete mixed-target compatibility, runtime Python2 execution, all future semantics or a stricter dialect validator.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Defer before-only admission for critical grammar/target/consumer context.",
+      "dependence_reason": "Same parser-selection history as earlier Black-23 and later Black-6 configuration evolution; common functions do not prove identical roots or independence.",
+      "open_questions": [
+        "Preserve target-restricted versus unrestricted behavior and exact grammar provenance.",
+        "Reconcile parser history without summing it as independent bug evidence."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return [pygram.python_grammar]"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "return [pygram.python_grammar_no_print_statement, pygram.python_grammar]"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "result = drv.parse_string(src_txt, True)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_005.json",
+          "path": "blib2to3/pygram.py",
+          "ref": "d6db1c12a8e14833fe22da377cddc2bd1f43dc14^",
+          "needle": "del python_grammar_no_print_statement.keywords[\"print\"]"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_005.json",
+          "path": "blib2to3/pgen2/parse.py",
+          "ref": "d6db1c12a8e14833fe22da377cddc2bd1f43dc14^",
+          "needle": "ilabel = self.grammar.keywords.get(value)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_005_GRAMMARS.json",
+          "path": "blib2to3/Grammar.txt",
+          "ref": "d6db1c12a8e14833fe22da377cddc2bd1f43dc14^",
+          "needle": "print_stmt: 'print'"
+        },
+        {
+          "kind": "fix",
+          "needle": "+        mode = black.FileMode(target_versions={black.TargetVersion.PY27})"
+        }
+      ]
+    }
+  ]
+}

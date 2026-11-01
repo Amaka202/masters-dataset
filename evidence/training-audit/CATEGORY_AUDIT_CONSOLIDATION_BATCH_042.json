@@ -1,0 +1,381 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-042",
+  "review_date": "2026-10-27",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "All four Keystone training candidates/all discovery statuses across three mechanical families; no null categories.",
+  "selection_rule": {
+    "repository": "github.com/openstack/keystone",
+    "discovery_categories": [
+      "SEC-CREDENTIAL-DIAGNOSTIC-DISCLOSURE",
+      "SEC-RESOURCE-AUTHORIZATION",
+      "SEC-TOKEN-CHAINING-POLICY"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 833,
+    "sha256": "e9d9086397f5b960af9df2784a0e0073bf7afeaa9b5edceca61b382bc9e8744a"
+  },
+  "interpretation": "Two missing-context, one residual paired-negative and one security-boundary deferral. Old disable producer leaves token snapshots; selected current-user gate repairs disabled-user token minting even if companion revocation cannot enumerate. Its after-selected text equals the next expiry-before positive, so whole-function negative remains deferred: fresh default expiry reset predates this fix, not an introduced regression. Next selected fix inherits original finite expiry; explicit None is preexisting nonexpiry policy, not a new defect. EC2 valid signature is not current tenant authority: last-role removal clears membership/revokes tokens but old EC2 reissues a tenant-scoped identity accepted by Keystone validation. S3 shares authenticate, not another issue; downstream zero-role operation privileges remain qualified. Secret flags fix existing DEBUG root/group option dump under admitted oslo.config1.1.0 comparison, but unauthorized log audience remains unresolved. Three pins retain219 inert texts/eight exact peers/four resolved parents/eight complete archive inventories and absent-path provenance. Earlier selected-after/later selected-before equality is not full-file equality or direct-parent adjacency. Four functions/three families are not independent issues; preserve all833 ledger events/statuses/categories/hashes/families, prior authored evidence, canonical bytes/splits and45 protected inputs. No retained program, payload, vulnerability-target request or upstream test executes.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2012-3426:2:keystone/service.py:TokenController.authenticate",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Token-derived authentication trusts cached embedded user state after an administrator disables that account.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate current-account disablement, parent-credential lifetime attenuation, current tenant membership and secret diagnostic metadata. Signature possession is not current tenant authority, and DEBUG value emission is not automatic unauthorized log delivery. Same CVE/leaf/shared selected syntax does not erase distinct submechanisms; no new leaf or eligibility approval.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old password branch rejects disabled user state, while token branch gets a stored user snapshot without current identity lookup. Old admin update_user/set_user_enabled changes the identity record without token deletion; KVS/SQL token reads validate stored expiry rather than live enabled state, so a surviving unexpired token and still-admitted tenant can mint a new token after disable. Old authentication duty and actual disable producer establish this current-state boundary without treating new tests as the contract. After selected branch fetches current user and denies False; companion update_user additionally attempts token deletion, explicitly admitting backends without token listing.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need public POST route, identity update producer, stored snapshot behavior, token lookup/default expiry, still-admitted tenant and backend revocation capability. Function shows branch asymmetry but not all lifecycle semantics. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Backend state/defaults/expiry/revocation/role semantics, service routes, config/logger/helper/global facts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Holder of a surviving unexpired credential for a now-disabled account can obtain a new token under the matched old KVS/identity path without supplying a password. This crosses current account-disable authority, not arbitrary-user impersonation. Tenant/metadata/catalog gates and successful store issuance remain prerequisites. Direct use of previously issued tokens and unsupported backend revocation remain distinct from new token minting.",
+      "paired_negative_scope": "not_established_for_selected_component",
+      "negative_reason": "After current enabled=False denies token-derived issuance before new token creation; password error status changes are not another selected security mechanism. However this after-selected text exactly equals the next expiry candidate before, still omits inherited expires, and its matched KVS creator defaults to now plus configured lifetime. An enabled caller can continue expiry-extending token delegation; that supported residual bounds the full-function paired negative. No invented introduction chronology: expiry reset already existed before the disabled-user fix.",
+      "experimental_subset_proposal": "defer_paired_negative",
+      "subset_reason": "Disabled-user chaining is locally repaired, but the same after-selected text is independently supported as the next vulnerable expiry-chaining before. Preserve source/version link and explicit residual after-contract deferral; do not label the full selected function a clean paired negative.",
+      "dependence_reason": "Four functions/three mechanical families are not independent issues. Two authenticate revisions share fix-family:97c3ca1b625d16c01c36 and identical earlier selected-after/later selected-before text, but actual commit parents differ: do not infer direct parent adjacency, full-file identity or two independent CVEs. Disabled-current-user and expiry-cap delegation are distinct mechanisms in that conservative family; earlier after remains later before-positive. EC2/S3 subclass routes share fix-family:b92029975d0a5679c00e and one authorization mechanism, not two issues. Config cherry-pick fix-family:1af00b852fbd0b81e7b3 is one source representation, not another independently adjudicated issue; no cross-project merge from shared oslo/API names.",
+      "open_questions": [
+        "Researcher confirm effective backends, live token/expiry/clock/revocation state, role removal and credential persistence, actual extension routes/service consumers/policies, DEBUG log destinations and lower-trust readership; resolve uniform before-only input/tool-knowledge policy and issue identities. No arbitrary-account/no-signature/all-service privilege claim.",
+        "Conditional source deductions, not reproduced outcomes. No retained Keystone/auth/token/credential/crypto/signature/HTTP/LDAP/SQL/DB/config/logging/parser/regex/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "user_ref = old_token_ref['user']"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "current_user_ref = self.identity_api.get_user("
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not user_ref.get('enabled', True):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "                       action='authenticate',\n                       conditions=dict(method=['POST']))\n        mapper.connect('/tokens/{token_id}',\n"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not current_user_ref.get('enabled', True):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/identity/core.py",
+          "ref": "3c9c38a8e08dd0300a04edb843a0b3e49486e86f",
+          "needle": "    def set_user_enabled(self, context, user_id, user):\n        return self.update_user(context, user_id, user)\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/token/backends/kvs.py",
+          "ref": "3c9c38a8e08dd0300a04edb843a0b3e49486e86f",
+          "needle": "or token['expires'] > datetime.datetime.utcnow()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/token/backends/kvs.py",
+          "ref": "3c9c38a8e08dd0300a04edb843a0b3e49486e86f",
+          "needle": "data_copy['expires'] = self._get_default_expire_time()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/token/core.py",
+          "ref": "3c9c38a8e08dd0300a04edb843a0b3e49486e86f",
+          "needle": "return datetime.datetime.utcnow() + expire_delta"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/identity/core.py",
+          "ref": "628149b3dc6b58b91fd08e6ca8d91c728ccb8626",
+          "needle": "except exception.NotImplemented:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/token/backends/kvs.py",
+          "ref": "628149b3dc6b58b91fd08e6ca8d91c728ccb8626",
+          "needle": "data_copy['expires'] = self._get_default_expire_time()"
+        }
+      ],
+      "paired_negative_assessment": "unresolved_contract_failure",
+      "paired_negative_assessment_reason": "Exact earlier selected-after equals later selected-before, not necessarily full-file or commit-parent identity. Both matched creators assign a fresh configured lifetime when token branch omits expires, admitting repeated delegation beyond the finite parent credential bound. This residual is independently supported by before-era backend expiry enforcement/defaults and scope-only authentication API, not just later tests or CVE title; retain the disable-specific negative but defer whole-selected-function paired-negative use."
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2012-3426:3:keystone/service.py:TokenController.authenticate",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Scope-changing token delegation resets finite parent expiry because token creation omits the expires field.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate current-account disablement, parent-credential lifetime attenuation, current tenant membership and secret diagnostic metadata. Signature possession is not current tenant authority, and DEBUG value emission is not automatic unauthorized log delivery. Same CVE/leaf/shared selected syntax does not erase distinct submechanisms; no new leaf or eligibility approval.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old API describes issuing a tenant-scoped token from an existing credential, not fresh password authentication. Matched KVS/SQL readers reject expired finite tokens, creators use a fresh now+CONF.token.expiration only when expires is absent, and token formatter returns expiry to the caller. Thus a finite parent can be exchanged before its deadline for a child valid beyond that credential bound and repeated, undermining the old enforced expiration through a scope-change operation. Existing None/nonexpiring tokens are a distinct supported backend state; do not invent a finite bound for them. The current-enabled gate is already present in this before snapshot.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need backend expiry lookup/default/explicit-field behavior, configured finite positive lifetime, time-of-exchange and actual tenant admission/response consumer. Omission alone cannot prove whether a backend renews, bounds or rejects. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Backend state/defaults/expiry/revocation/role semantics, service routes, config/logger/helper/global facts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A holder of a still-valid finite parent token can extend credential lifetime without renewed password verification under the matched old public route/backend. It is not acceptance of an already expired parent, arbitrary tenant access or unconditional infinite lifetime in one issue. Repeated successful exchanges before the current deadline are required for indefinite extension.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After token branch explicitly passes old_token_ref.expires; matched KVS and SQL creators preserve explicit expiry rather than supplying a fresh default, and readers retain original finite deadline. None is carried as None, not a newly introduced nonexpiry bug. Negative is inherited finite-bound token delegation only, not all revocation/password/tenant assertion/cache/clock/backend/diagnostic secrecy behavior. No independently supported after-contract failure is established in this selected repair.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched backend/controller contracts support the conditional selected repair; omitted service/backend/state/lifecycle contracts prevent strict before-only function admission. Keep the bounded negative and no automatic production/all-backend certification.",
+      "dependence_reason": "Four functions/three mechanical families are not independent issues. Two authenticate revisions share fix-family:97c3ca1b625d16c01c36 and identical earlier selected-after/later selected-before text, but actual commit parents differ: do not infer direct parent adjacency, full-file identity or two independent CVEs. Disabled-current-user and expiry-cap delegation are distinct mechanisms in that conservative family; earlier after remains later before-positive. EC2/S3 subclass routes share fix-family:b92029975d0a5679c00e and one authorization mechanism, not two issues. Config cherry-pick fix-family:1af00b852fbd0b81e7b3 is one source representation, not another independently adjudicated issue; no cross-project merge from shared oslo/API names.",
+      "open_questions": [
+        "Researcher confirm effective backends, live token/expiry/clock/revocation state, role removal and credential persistence, actual extension routes/service consumers/policies, DEBUG log destinations and lower-trust readership; resolve uniform before-only input/tool-knowledge policy and issue identities. No arbitrary-account/no-signature/all-service privilege claim.",
+        "Conditional source deductions, not reproduced outcomes. No retained Keystone/auth/token/credential/crypto/signature/HTTP/LDAP/SQL/DB/config/logging/parser/regex/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "elif 'token' in auth:"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "expires=old_token_ref['expires']"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "Alternatively, this call accepts auth with only a token and tenant"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "if not current_user_ref.get('enabled', True):"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/token/backends/kvs.py",
+          "ref": "9a841f3ba93d5a0bd1f56cc897415258ed6cf877",
+          "needle": "if 'expires' not in data:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/token/backends/kvs.py",
+          "ref": "9a841f3ba93d5a0bd1f56cc897415258ed6cf877",
+          "needle": "or token['expires'] > datetime.datetime.utcnow()"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/token/backends/sql.py",
+          "ref": "9a841f3ba93d5a0bd1f56cc897415258ed6cf877",
+          "needle": "if 'expires' not in data_copy:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/token/core.py",
+          "ref": "9a841f3ba93d5a0bd1f56cc897415258ed6cf877",
+          "needle": "return datetime.datetime.utcnow() + expire_delta"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/token/backends/kvs.py",
+          "ref": "29e74e73a6e51cffc0371b32354558391826a4aa",
+          "needle": "if 'expires' not in data:"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/service.py",
+          "ref": "9a841f3ba93d5a0bd1f56cc897415258ed6cf877",
+          "needle": "expires = token_ref['expires']"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2012-5571:0:keystone/contrib/ec2/core.py:Ec2Controller.authenticate",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Valid EC2 secret signature mints a tenant-scoped token after all current roles/membership are removed.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate current-account disablement, parent-credential lifetime attenuation, current tenant membership and secret diagnostic metadata. Signature possession is not current tenant authority, and DEBUG value emission is not automatic unauthorized log delivery. Same CVE/leaf/shared selected syntax does not erase distinct submechanisms; no new leaf or eligibility approval.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Matched old role-removal controller removes the last role, drops user/tenant membership and revokes issued tokens, establishing that role removal revokes that scope. SQL metadata removes the role ID and returns an empty role list; ordinary password authentication separately checks current tenant membership. Existing EC2 credential access/secret mapping plus valid signature does not establish current membership. Old selected EC2 path still uses stored tenant/user and creates a token with empty metadata roles. Keystone token validation fetches that issued token and optionally checks tenant ID, not current membership, supplying a real accepted scoped-identity consumer even though downstream role policies can deny operations.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need role-removal/SQL metadata contract, still-existing credential and valid signature, enabled extension route, token store/validator and eventual service policy. Selection alone cannot establish that zero roles means revoked scope or whether a consumer accepts the claim. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Backend state/defaults/expiry/revocation/role semantics, service routes, config/logger/helper/global facts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection input.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "A former tenant member retaining a valid EC2 credential/signature can regain a Keystone-accepted tenant-scoped identity after role/membership/token revocation. Not an unsigned arbitrary-account path; require credential persistence, existing user/tenant, accepted signed data and reachable configured extension. Inherited S3 endpoint overrides signature verification but shares authenticate. Do not infer every downstream operation is authorized with zero roles or count subclass route as another issue.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After current metadata roles must be nonempty and each role lookup runs before catalog/token creation, rejecting the matched no-role state with Unauthorized. Negative is revoked zero-role scope reissuance only, not enabled-account state, role validity in every backend, signature fallback, all old-token revocation or all downstream privileges. The admin-call documentation and FIXME service-token check remain separate gates/risks, not a newly introduced regression.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Matched backend/controller contracts support the conditional selected repair; omitted service/backend/state/lifecycle contracts prevent strict before-only function admission. Keep the bounded negative and no automatic production/all-backend certification.",
+      "dependence_reason": "Four functions/three mechanical families are not independent issues. Two authenticate revisions share fix-family:97c3ca1b625d16c01c36 and identical earlier selected-after/later selected-before text, but actual commit parents differ: do not infer direct parent adjacency, full-file identity or two independent CVEs. Disabled-current-user and expiry-cap delegation are distinct mechanisms in that conservative family; earlier after remains later before-positive. EC2/S3 subclass routes share fix-family:b92029975d0a5679c00e and one authorization mechanism, not two issues. Config cherry-pick fix-family:1af00b852fbd0b81e7b3 is one source representation, not another independently adjudicated issue; no cross-project merge from shared oslo/API names.",
+      "open_questions": [
+        "Researcher confirm effective backends, live token/expiry/clock/revocation state, role removal and credential persistence, actual extension routes/service consumers/policies, DEBUG log destinations and lower-trust readership; resolve uniform before-only input/tool-knowledge policy and issue identities. No arbitrary-account/no-signature/all-service privilege claim.",
+        "Conditional source deductions, not reproduced outcomes. No retained Keystone/auth/token/credential/crypto/signature/HTTP/LDAP/SQL/DB/config/logging/parser/regex/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "for role_id in metadata_ref.get('roles', []):"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not roles:"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.check_signature(creds_ref, credentials)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "raise exception.Unauthorized(message='User not valid for tenant.')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/identity/core.py",
+          "ref": "ddb40198c9323ff8dc82a44a72e456a7bfe736b8",
+          "needle": "        self.identity_api.remove_role_from_user_and_tenant(\n                context, user_id, tenant_id, role_id)\n        roles = self.identity_api.get_roles_for_user_and_tenant(\n                context, user_id, tenant_id)\n        if not roles:\n            self.identity_api.remove_user_from_tenant(\n                    context, tenant_id, user_id)\n        self.token_api.revoke_tokens(context, user_id, tenant_id)\n\n"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/identity/backends/sql.py",
+          "ref": "ddb40198c9323ff8dc82a44a72e456a7bfe736b8",
+          "needle": "roles.remove(role_id)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/identity/backends/sql.py",
+          "ref": "ddb40198c9323ff8dc82a44a72e456a7bfe736b8",
+          "needle": "raise AssertionError('Invalid tenant')"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/service.py",
+          "ref": "ddb40198c9323ff8dc82a44a72e456a7bfe736b8",
+          "needle": "return token_ref"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/service.py",
+          "ref": "ddb40198c9323ff8dc82a44a72e456a7bfe736b8",
+          "needle": "o['access']['token']['tenant'] = token_ref['tenant']"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/contrib/s3/core.py",
+          "ref": "ddb40198c9323ff8dc82a44a72e456a7bfe736b8",
+          "needle": "class S3Controller(ec2.Ec2Controller):"
+        }
+      ]
+    },
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2013-2006:0:keystone/common/config.py:configure",
+      "review_revision": 1,
+      "source_discovery_revision": 1,
+      "mechanism": "Admin bootstrap token and LDAP password omit secret metadata used by existing DEBUG configuration diagnostics.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Separate current-account disablement, parent-credential lifetime attenuation, current tenant membership and secret diagnostic metadata. Signature possession is not current tenant authority, and DEBUG value emission is not automatic unauthorized log delivery. Same CVE/leaf/shared selected syntax does not erase distinct submechanisms; no new leaf or eligibility approval.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old configure registers admin_token and ldap.password through register_str, which forwards kwargs into cfg.StrOpt. Old bin/keystone-all explicitly calls CONF.log_opt_values after logging setup when CONF.debug. Old requirement admits oslo.config>=1.1.0; retained1.1.0 documentation declares secret values must not leak into logs, default secret=False leaves values raw, and dump code sanitizes both root and grouped options. Thus old metadata causes actual configured values to enter the startup diagnostic sink under DEBUG. This is established old redaction duty, not a new logging feature, but the comparison does not pin an installed dependency.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Need registration wrapper, exact dependency sanitizer/default, actual DEBUG startup call/log destination, nondefault sensitive values and log audience versus credential authority. Selected registration has neither sink nor audience. The common bounded before-only numerical budget and ordinary runtime/API/tool-knowledge policy remain unfrozen. Backend state/defaults/expiry/revocation/role semantics, service routes, config/logger/helper/global facts, after, IDs, labels, metadata, tests, advisories and answers are adjudication-only, never selectively injected detection input.",
+      "security_screen": "unresolved_boundary",
+      "security_reason": "Startup dump emits configured bootstrap admin bearer token and LDAP binding password rather than only public option names. Admin-token middleware uses equality against configured token to set is_admin, so the value has real privilege significance. Exploitation requires DEBUG logging and a recipient unauthorized to know/use those credentials; code alone does not establish a less-authorized log reader or actual deployed permissions. Default ADMIN weakness, generic log access and other credentials are separate mechanisms. Retain security-boundary deferral without denying the supported value-emission trace.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "After both registrations set secret=True; the admitted comparison masks their root/group dump values with asterisks, while leaving actual configuration values usable. Negative is those two fields through secret-honoring config dump only: not secret length, every dependency/version/log path, existing log history, default ADMIN, config-file/LDAP transport security or other unmarked passwords. No independently supported after-contract regression is established.",
+      "experimental_subset_proposal": "defer_security_boundary",
+      "subset_reason": "Retained config dump and admitted dependency establish value emission/masking, but DEBUG use/nondefault sensitive data plus a less-authorized log recipient are prerequisites not established as an actual deployment. Defer the security delivery dimension without discarding local metadata mechanism.",
+      "dependence_reason": "Four functions/three mechanical families are not independent issues. Two authenticate revisions share fix-family:97c3ca1b625d16c01c36 and identical earlier selected-after/later selected-before text, but actual commit parents differ: do not infer direct parent adjacency, full-file identity or two independent CVEs. Disabled-current-user and expiry-cap delegation are distinct mechanisms in that conservative family; earlier after remains later before-positive. EC2/S3 subclass routes share fix-family:b92029975d0a5679c00e and one authorization mechanism, not two issues. Config cherry-pick fix-family:1af00b852fbd0b81e7b3 is one source representation, not another independently adjudicated issue; no cross-project merge from shared oslo/API names.",
+      "open_questions": [
+        "Researcher confirm effective backends, live token/expiry/clock/revocation state, role removal and credential persistence, actual extension routes/service consumers/policies, DEBUG log destinations and lower-trust readership; resolve uniform before-only input/tool-knowledge policy and issue identities. No arbitrary-account/no-signature/all-service privilege claim.",
+        "Conditional source deductions, not reproduced outcomes. No retained Keystone/auth/token/credential/crypto/signature/HTTP/LDAP/SQL/DB/config/logging/parser/regex/dependency/application program, payload, vulnerability-target request or upstream test executes. Archive members read in memory without extraction/import/install; only independently authored retrieval/view/hash/bookkeeping/audit-validator tools execute."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "register_str('admin_token', default='ADMIN')"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "register_str('admin_token', secret=True, default='ADMIN')"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "register_str('password', group='ldap', default=None)"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "register_str('password', group='ldap', secret=True, default=None)"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "return conf.register_opt(cfg.StrOpt(*args, **kw), group=group)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "bin/keystone-all",
+          "ref": "5929850979b0ccf348c1b913961d581ccac9732c",
+          "needle": "CONF.log_opt_values(logging.getLogger(CONF.prog), logging.DEBUG)"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "tools/pip-requires",
+          "ref": "5929850979b0ccf348c1b913961d581ccac9732c",
+          "needle": "oslo.config>=1.1.0"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTRACTS.json",
+          "path": "oslo/config/cfg.py",
+          "ref": "1.1.0",
+          "needle": "return value if not opt.secret else"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTRACTS.json",
+          "path": "oslo/config/cfg.py",
+          "ref": "1.1.0",
+          "needle": "secret=False, required=False,"
+        },
+        {
+          "kind": "supplement",
+          "file": "CATEGORY_AUDIT_CONSOLIDATION_EVIDENCE_042_CONTEXT.json",
+          "path": "keystone/middleware/core.py",
+          "ref": "5929850979b0ccf348c1b913961d581ccac9732c",
+          "needle": "context['is_admin'] = (token == CONF.admin_token)"
+        }
+      ]
+    }
+  ]
+}

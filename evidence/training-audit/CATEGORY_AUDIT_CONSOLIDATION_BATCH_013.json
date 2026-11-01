@@ -1,0 +1,68 @@
+{
+  "schema_version": "1",
+  "batch_id": "consolidation-013",
+  "review_date": "2026-10-25",
+  "scope": "training_only",
+  "status": "assistant_proposals_not_approved",
+  "researcher_status": "pending",
+  "selection": "Metadata correction for the Scrapy credential-destination-scope candidate; no newly reviewed candidate.",
+  "selection_rule": {
+    "repository": "github.com/scrapy/scrapy",
+    "discovery_categories": [
+      "SEC-CREDENTIAL-DESTINATION-SCOPE"
+    ]
+  },
+  "discovery_ledger_checkpoint": {
+    "events": 805,
+    "sha256": "01d082abd0bde3518a4bc6ce51e94593afae71533c1fc02592869171d946c2f6"
+  },
+  "interpretation": "Both archived selected spans and unique evidence anchors verified. Retained source, fixes, docs, tests and dependency comparison texts remain inert adjudication-only evidence, never detection input. No crawler, request, parser, URL helper, compressor/decompressor, callback, network payload, dataset/dependency program or upstream test executes. Source deductions are not reproduced failures. Researcher approval remains pending.",
+  "reviews": [
+    {
+      "pair_id": "HaPy-Bug:cve_CVE-2021-41125:0:scrapy/downloadermiddlewares/httpauth.py:HttpAuthMiddleware.process_request",
+      "review_revision": 2,
+      "source_discovery_revision": 1,
+      "mechanism": "Automatic spider Basic credentials are attached to unrelated request destinations.",
+      "existing_narrow_leaf": null,
+      "taxonomy_boundary": "Preserve discovery leaves and null assignments. Runtime/admission policy, selected relevance, diagnostic contract, task scope and after failure are separate judgments. A method, branch, CVE or mechanical family is not an independent adjudicated issue.",
+      "existing_contract": "supported_under_retained_contract",
+      "contract_reason": "Old spider_opened constructs Basic credentials from http_user/http_pass, and selected process_request attaches them to every request lacking Authorization. A crawler following an attacker-influenced off-domain link or redirect can therefore disclose those credentials to that destination. The explicit trusted-domain mode in the fix bounds automatic addition; the advisory-backed confidentiality duty is distinct from treating all URL policy changes as security defects.",
+      "selected_relevance": "local_repair_supported",
+      "function_only_context": "requires_missing_project_contract",
+      "context_reason": "Credential creation and ownership, attacker-influenced request generation, middleware ordering, explicit nonempty trusted-domain configuration and retained domain matcher determine the boundary. The four-line before body does not alone establish these premises.",
+      "security_screen": "demonstrated_security_boundary",
+      "security_reason": "Demonstrated confidentiality boundary: crawler-owned Basic credentials for an intended domain are sent to an attacker-influenced unrelated request destination. The full fixing middleware/docs/tests and retained exact matcher support contextual attribution; a CVE identifier alone is not the finding. Restrict the negative to automatic addition under explicit nonempty trusted-domain configuration.",
+      "paired_negative_scope": "mechanism_local_only",
+      "negative_reason": "Automatic addition to an unrelated domain under explicit nonempty trusted-domain policy only. First-request trust, explicit None/all-domain mode, existing Authorization, redirect-carried headers, subdomain trust, scheme/port exact-origin separation and netloc normalization are not certified.",
+      "experimental_subset_proposal": "defer_missing_context",
+      "subset_reason": "Preserve the contextual old duty; strict admission awaits the common before-only runtime/API knowledge policy and numerical input budget.",
+      "dependence_reason": "Preserve fix-family:de38da3cf52d375a4c6b and recorded exact/AST/history/overlap links. Backend, test and function counts do not establish independent issues.",
+      "open_questions": [
+        "Researcher confirm historical duty, selected attribution and the uniform before-only runtime/API/context policy and numerical input budget.",
+        "All traces are deductions from inert source, not executed or reproduced behavior. Adjudicate issue identity and the bounded after negative independently.",
+        "This review corrects the batch012 generic non-security screen to match its already explicit credential-confidentiality trace. Existing contract, context deferral, negative limits and discovery event are unchanged; batch012 bytes are preserved."
+      ],
+      "anchors": [
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "request.headers[b'Authorization'] = auth"
+        },
+        {
+          "kind": "archive",
+          "side": "after",
+          "needle": "if not self.domain or url_is_from_any_domain(request.url, [self.domain]):"
+        },
+        {
+          "kind": "archive",
+          "side": "before",
+          "needle": "self.auth = basic_auth_header(usr, pwd)"
+        },
+        {
+          "kind": "fix",
+          "needle": "+    def test_no_auth(self):"
+        }
+      ]
+    }
+  ]
+}

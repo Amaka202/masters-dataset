@@ -6,12 +6,17 @@ import json
 from pathlib import Path
 import shutil
 
+from package_training_audit import audit_files
+
 
 PREFIX = "HAPY_CVEFIXES_ADMITTED"
 PACKAGE_FILES = (
     ".gitignore", "README.md", "LICENSE.md", "attribution/README.md",
     "documentation/DATASET_GUIDE.md", "documentation/REPRODUCING.md",
     "scripts/package_dataset.py", "scripts/stage_workspace.py", "scripts/verify_package.py",
+    "scripts/package_training_audit.py", "documentation/training-audit/README.md",
+    "scripts/test_package_training_audit.py",
+    "documentation/research/README.md", "evidence/verification/SECURITY_ADMISSION_RELEASE_MANIFEST.json",
     "data/dataset.json",
 )
 EXTRA_FILES = (
@@ -49,6 +54,8 @@ def fingerprint(path):
 def destination(name):
     if name.endswith(".py"):
         folder = "scripts"
+    elif name.startswith(("CATEGORY_AUDIT", "EXPERIMENT_")):
+        folder = "documentation/training-audit" if name.endswith(".md") else "evidence/training-audit"
     elif name == "README.md" or name in (
         "DATASET_DECISION.md", "SECURITY_ADMISSION_FINDINGS.md", "SECURITY_EXPANSION_FINDINGS.md"
     ):
@@ -91,9 +98,18 @@ def package(source, root):
     for name, expected in release["files"].items():
         if Path(name).name != name or fingerprint(source / name) != expected:
             raise ValueError(f"Source release fingerprint mismatch: {name}")
-    mapping = {name: destination(name) for name in sorted(set(release["files"]) | set(EXTRA_FILES))}
+    audit_names, audit_status = audit_files(source)
+    mapping = {name: destination(name) for name in sorted(set(release["files"]) | set(EXTRA_FILES) | audit_names)}
+    if audit_status is not None:
+        # The audit lock includes a later workspace README relocation. Preserve the
+        # published base README/release manifest and stage the audit-era copies.
+        for name in ('README.md', 'SECURITY_ADMISSION_RELEASE_MANIFEST.json'):
+            mapping[name] = 'evidence/training-audit/protected-inputs/'+name
     previous_path = root / "PACKAGE_MANIFEST.json"
-    previous = json.loads(previous_path.read_text())["files"] if previous_path.exists() else {}
+    previous_manifest = json.loads(previous_path.read_text()) if previous_path.exists() else {}
+    previous = previous_manifest.get("files", {})
+    if previous_manifest.get("training_audit") and audit_status is None:
+        raise ValueError("Refreshing this package requires its training-audit source workspace")
     for relative in list(mapping.values()) + ["data/dataset.json"]:
         target = root / relative
         if target.exists() and (relative not in previous or fingerprint(target) != previous[relative]):
@@ -118,6 +134,8 @@ def package(source, root):
         "source_files": mapping,
         "files": {path.relative_to(root).as_posix(): fingerprint(path) for path in paths},
     }
+    if audit_status is not None:
+        manifest["training_audit"] = audit_status
     (root / "PACKAGE_MANIFEST.json").write_text(json.dumps(manifest, indent=2) + "\n")
     print(json.dumps({key: value for key, value in manifest.items() if key not in ("source_files", "files")}, indent=2))
     print(f"Packaged {len(paths)} files; {sum(item['bytes'] for item in manifest['files'].values()):,} bytes")

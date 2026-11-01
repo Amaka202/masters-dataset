@@ -1,0 +1,270 @@
+{
+  "version": "0.1",
+  "created": "2026-10-25",
+  "status": "assistant_proposal_training_only_not_frozen",
+  "source_taxonomy_version": "0.42",
+  "purpose": "Propose a reporting hierarchy over discovery mechanisms; retain every leaf definition and candidate decision for adjudication. Parent membership is not an assertion that mechanisms or issues are equivalent.",
+  "researcher_status": "pending",
+  "rules": [
+    "Use training definitions/evidence only; held-out bytes may be checked for integrity but must not inform taxonomy or eligibility proposals.",
+    "Exactly one proposed primary parent per discovery leaf, with original leaf retained; never overwrite ledger labels or canonical records.",
+    "Security and correctness parents remain separate. Correctness origin still requires an explicit non-security screen; security linkage still requires a demonstrated trust boundary.",
+    "Choose the most specific evidenced leaf before using broad incomplete-case/state/context labels; unresolved overlaps require explicit review, not automatic relabelling.",
+    "Classify the causal mechanism rather than the consequence or changed syntax. A defect causing an exception can still be a representation, grammar or context defect.",
+    "Parent grouping is a training-derived proposal, not a fixed final category count or a response to support thresholds. Preserve distinct leaf interfaces and assumptions.",
+    "Eligibility, bounded-context sufficiency, paired-negative validity and independence remain separate pending decisions for every candidate, including assistant-supported cases.",
+    "Count family/repository unions within a parent directly; do not sum child-family counts. Mechanical families and dependence components are not independently adjudicated issues.",
+    "Zero supported discovery cases do not mean impossible mechanisms or zero held-out prevalence; retain tentative leaves for training-evidence resolution before freeze.",
+    "Cues in generated work queues are literal-text retrieval aids with exact source fields, not automatic eligibility or observability decisions."
+  ],
+  "parents": [
+    {
+      "parent_id": "C-REPRESENTATION",
+      "name": "Text, bytes and serialization representation contracts",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "Established operations lose required value representation across codec, bytes/text, scalar serialization, capacity, whitespace or record/newline boundaries.",
+      "exclude": "Type admission before a conversion, structural dtype/axis identity, presentation-only changes without a functional contract, and security interpretation boundaries.",
+      "boundary_rule": "Retain direction: XML requires textual scalar leaves whereas native Python export preserves scalars. Trimming required URL-attribute whitespace is normalization, not meaningful literal-space loss. Newline/style eligibility remains unresolved.",
+      "leaf_categories": ["CORR-TEXT-ENCODING", "CORR-BYTES-TEXT-CONTRACT", "CORR-SERIALIZER-SCALAR-CONTRACT", "CORR-SCALAR-REPRESENTATION-CONTRACT", "CORR-TEXT-CAPACITY", "CORR-WHITESPACE-LOSS", "CORR-NEWLINE-ROUNDTRIP", "CORR-CSV-RECORD-SEPARATION"]
+    },
+    {
+      "parent_id": "C-STRUCTURAL-IDENTITY",
+      "name": "Structural, dtype and semantic metadata identity",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A supported transformation loses, mismatches or incorrectly retains an established dtype, constructor, coordinate, label, shape or semantic metadata invariant.",
+      "exclude": "Arbitrary display preferences, intentionally changed representation, numerical algorithms with correct structural identity, and newly introduced subclass/type features.",
+      "boundary_rule": "Preservation and invalidation are opposite invariant obligations; never replace them with a generic always-preserve rule. Constructor class, dtype, metadata and value/label identity stay distinct leaves.",
+      "leaf_categories": ["CORR-DTYPE-PRESERVATION", "CORR-LABEL-ALIGNMENT", "CORR-METADATA-PRESERVATION", "CORR-METADATA-INVALIDATION", "CORR-RESULT-CONSTRUCTOR", "CORR-TENSOR-SHAPE", "CORR-AXIS-POSITION-REMAP"]
+    },
+    {
+      "parent_id": "C-CONTEXT-CONFIGURATION",
+      "name": "Caller context, options and configuration precedence",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An existing operation receives substituted context, loses a supplied option, forces an omitted value or masks an established configuration override.",
+      "exclude": "New interfaces/features, diagnostic-only forwarding, intentional policy changes and security identity/binding defects.",
+      "boundary_rule": "Omitted downstream default, explicit option propagation and configuration-source precedence are not aliases. Inspect producer and consumer; a caller adapting to a new callee is not automatically a defective pair.",
+      "leaf_categories": ["CORR-CONTEXT-PROPAGATION", "CORR-OPTION-PROPAGATION", "CORR-OMITTED-OPTION-DEFAULT", "CORR-CONFIGURATION-PRECEDENCE"]
+    },
+    {
+      "parent_id": "C-ADMISSION-DISPATCH",
+      "name": "Input admission and operation dispatch contracts",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A supported validation/dispatch contract admits an invalid structural or semantic form, bypasses required lookup checks or fails to select the operation for an established case.",
+      "exclude": "Newly supported cases, text conversion after valid admission, intentional API/policy revisions and security authorization/filtering without a separate boundary analysis.",
+      "boundary_rule": "Use specific grammar, semantic-type, dimensionality, lookup or rule-applicability leaf when evidenced. Incomplete-case handling is a residual discovery bucket requiring case-by-case refinement, not a generic final diagnosis.",
+      "leaf_categories": ["CORR-INPUT-GRAMMAR-VALIDATION", "CORR-SEMANTIC-TYPE-VALIDATION", "CORR-INDEXER-DIMENSION-VALIDATION", "CORR-LOOKUP-VALIDATION", "CORR-RULE-APPLICABILITY", "CORR-INCOMPLETE-CASE-HANDLING"]
+    },
+    {
+      "parent_id": "C-PARSING-COMPOSITION",
+      "name": "Value normalization, parsing and resource/command composition",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "Accepted structured values are split, normalized, joined or rewritten under the wrong grammar or consumer representation, losing their intended component identity.",
+      "exclude": "Lossy byte codecs, incorrect caller base context, security destination/command policy, and tolerant interpretations introduced as new features.",
+      "boundary_rule": "Distinguish raw delimiter parsing from command option positioning and from URL normalization/resolution. Metadata coercion requires an established accepted-type contract; normalization is not validation or authorization.",
+      "leaf_categories": ["CORR-URL-NORMALIZATION", "CORR-URL-COMPOSITION", "CORR-PATH-NORMALIZATION", "CORR-DELIMITER-PARSING", "CORR-COMMAND-ARGUMENT-REWRITE", "CORR-METADATA-NORMALIZATION"]
+    },
+    {
+      "parent_id": "C-COLLECTION-BOUNDARIES",
+      "name": "Empty, short and endpoint collection contracts",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An admitted empty/short/boundary state violates a required access, reduction or endpoint-enumeration precondition.",
+      "exclude": "Forbidden empty/short inputs, unconditional exception suppression, numerical zero normalization and newly changed endpoint policy.",
+      "boundary_rule": "Retain absent-neighbor, empty sequence, missing tail, empty reduction and inclusive endpoint witnesses. A local guard need not repair other boundaries or the caller's unchanged iteration count.",
+      "leaf_categories": ["CORR-SHORT-SEQUENCE-ACCESS", "CORR-EMPTY-SEQUENCE-INDEX", "CORR-NULL-BOUNDARY", "CORR-INCLUSIVE-RANGE-BOUNDARY", "CORR-EMPTY-REDUCTION"]
+    },
+    {
+      "parent_id": "C-ALGORITHMIC-INVARIANTS",
+      "name": "Numerical, measurement and selective-update invariants",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An established algorithm uses wrong zero-result semantics, incompatible units, unsorted reference data, entity-counting unit or target mask.",
+      "exclude": "Arbitrary numeric/output differences, warning-only changes, unsupported inputs and security cryptographic or resource bounds.",
+      "boundary_rule": "Keep each causal invariant: arithmetic zero may require infinity while zero-contribution normalization may require finite zero. Sorting must permute associated values; deduplication/counting and update-target masks are distinct.",
+      "leaf_categories": ["CORR-ARITHMETIC-ZERO-SEMANTICS", "CORR-ZERO-DENOMINATOR", "CORR-COORDINATE-UNITS", "CORR-SORTED-INPUT-PRECONDITION", "CORR-DUPLICATE-COUNTING", "CORR-MASK-TARGET-PREDICATE"]
+    },
+    {
+      "parent_id": "C-RECOVERY-STATE",
+      "name": "Expected recovery and state-transition integrity",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "A supported recoverable condition aborts progress, recovery replays consumed data, or required transition operations are omitted/misordered.",
+      "exclude": "Unexpected failures that should propagate, diagnostics alone, unsupported recovery promises and security lifecycle/availability boundaries.",
+      "boundary_rule": "State-transition is broad and must retain explicit starting/target state and actual operations; ordering cannot be inferred from a diff alone. Buffer replay is not generic duplicate counting.",
+      "leaf_categories": ["CORR-EXPECTED-EXCEPTION-RECOVERY", "CORR-BUFFER-RECOVERY-REPLAY", "CORR-STATE-TRANSITION"]
+    },
+    {
+      "parent_id": "C-ERROR-CONTRACTS",
+      "name": "Machine-consumed error classification and result protocols",
+      "domain": "correctness_candidate_pending_security_screen",
+      "include": "An established machine consumer receives the wrong error class/status or a malformed exception-result protocol.",
+      "exclude": "Cosmetic wording, warning/logging migrations without a functional contract and arbitrary changes between nonzero exits.",
+      "boundary_rule": "An operation already failing with a different status was not previously accepted. Error tuple ordering can prevent required error recording; logging visibility alone needs its own admitted contract.",
+      "leaf_categories": ["CORR-ERROR-CLASSIFICATION", "CORR-ERROR-REPORTING-PROTOCOL"]
+    },
+    {
+      "parent_id": "S-AUTHORIZATION-BINDING",
+      "name": "Authorization identity, resource and enforcement binding",
+      "domain": "security",
+      "include": "A principal, resource identifier or accepted policy representation loses the binding required by an actual authorization consumer.",
+      "exclude": "Authentication-factor checks, merely absent decorators, ordinary metadata casing and speculative authorization impact without a consumer.",
+      "boundary_rule": "Resource scope, redundant ID disagreement, subject races, case normalization and literal-to-policy-regex injection retain distinct prerequisites; shared consequence does not merge issues.",
+      "leaf_categories": ["SEC-RESOURCE-AUTHORIZATION", "SEC-CONTEXT-ID-MISMATCH", "SEC-AUTHORIZATION-SUBJECT-RACE", "SEC-POLICY-CASE-NORMALIZATION", "SEC-REGEX-POLICY-INJECTION"]
+    },
+    {
+      "parent_id": "S-AUTHENTICATION-LIFECYCLE",
+      "name": "Authentication, credential validity and session lifecycle",
+      "domain": "security",
+      "include": "Authentication identity/factor/algorithm, derived-token validity, required reauthentication, guessing controls or session invalidation fails under an established account policy.",
+      "exclude": "Resource authorization after valid authentication, permitted refresh policies, harmless equality and rate controls assumed absent without inspecting effective controls.",
+      "boundary_rule": "Do not turn MFA bypass into passwordless compromise, parent-expiry preservation into universal token revocation, or session-level logout into global throttling. Keep distinct lifecycle leaves.",
+      "leaf_categories": ["SEC-AUTHENTICATION-FAIL-OPEN", "SEC-AUTHENTICATION-ID-COLLATION", "SEC-TOKEN-ALGORITHM-POLICY", "SEC-TOKEN-CHAINING-POLICY", "SEC-SESSION-INVALIDATION", "SEC-SENSITIVE-ACTION-REAUTH", "SEC-CREDENTIAL-GUESS-THROTTLE"]
+    },
+    {
+      "parent_id": "S-BROWSER-REQUEST-BINDING",
+      "name": "Browser request, origin and method policy",
+      "domain": "security",
+      "include": "Ambient-authority browser actions or credentialed responses lack required initiator/token, credential-source, origin or request-method restrictions.",
+      "exclude": "Read-only operations, equivalent effective protections and claims that restricting request method alone implements complete CSRF protection.",
+      "boundary_rule": "CORS response-reading permission, CSRF request binding, ambient-cookie source selection and submission-method gating are related browser boundaries, not interchangeable vulnerabilities.",
+      "leaf_categories": ["SEC-CSRF-REQUEST-BINDING", "SEC-CSRF-CREDENTIAL-SOURCE", "SEC-HTTP-METHOD-RESTRICTION", "SEC-CORS-ORIGIN-BOUNDARY"]
+    },
+    {
+      "parent_id": "S-SECRET-EXPOSURE",
+      "name": "Sensitive-data exposure through operational outputs and storage",
+      "domain": "security",
+      "include": "Established sensitive values reach diagnostics, object/request paths, process arguments or readable log files beyond their intended audience, or required redaction misses equivalent fields.",
+      "exclude": "Nonsecret identifiers, hypothetical public visibility and claims that one sink redaction secures all logs/caches or existing file modes.",
+      "boundary_rule": "Trace secret producer, actual sink and reader permissions for each leaf. New redaction policy entries do not prove key-normalization failure; umask does not fix existing files.",
+      "leaf_categories": ["SEC-CREDENTIAL-DIAGNOSTIC-DISCLOSURE", "SEC-TOKEN-URI-LOGGING", "SEC-VALIDATION-SECRET-LOGGING", "SEC-REDACTION-KEY-MATCH", "SEC-SECRET-ARGUMENT-EXPOSURE", "SEC-LOG-FILE-PERMISSIONS"]
+    },
+    {
+      "parent_id": "S-DESTINATION-ISOLATION",
+      "name": "Network destination, redirect and outbound credential isolation",
+      "domain": "security",
+      "include": "A network request/redirect or automatically attached sensitive content crosses its intended destination boundary because destination selection, routing control or credential removal is insufficient.",
+      "exclude": "Ordinary URL joining, trusted destinations, redirects without sensitive forwarding and universal SSRF claims from one host/IP check.",
+      "boundary_rule": "Open redirect, server-side destination/IP checks, internal proxy-option injection, initial credential scope and redirect body/header disclosure remain distinct. Scheme-host-port origin and domain/subdomain policy are not equivalent.",
+      "leaf_categories": ["SEC-OPEN-REDIRECT", "SEC-URL-AUTHORITY-BOUNDARY", "SEC-OUTBOUND-IP-POLICY", "SEC-INTERNAL-REQUEST-OPTION-INJECTION", "SEC-CREDENTIAL-DESTINATION-SCOPE", "SEC-REDIRECT-BODY-DISCLOSURE", "SEC-REDIRECT-CREDENTIAL-STRIPPING"]
+    },
+    {
+      "parent_id": "S-TRANSPORT-ASSURANCE",
+      "name": "Transport peer verification and truthful assurance state",
+      "domain": "security",
+      "include": "A required TLS peer verification is absent or an assurance indicator forgets an effective verification exception across its lifecycle.",
+      "exclude": "Encryption alone assumed authentication, cosmetic color changes and claims that correcting an indicator repairs certificate acceptance policy.",
+      "boundary_rule": "Actual verification and reporting of retained exceptions are separate obligations; preserve runtime defaults and exception-lifecycle context.",
+      "leaf_categories": ["SEC-TLS-PEER-VERIFICATION", "SEC-SECURITY-STATUS-LIFECYCLE"]
+    },
+    {
+      "parent_id": "S-DATA-INTERPRETATION",
+      "name": "Data crosses an executable language or option interpretation boundary",
+      "domain": "security",
+      "include": "Lower-trust values become Python/generated/template/shell/SQL syntax or executable program options instead of remaining data operands.",
+      "exclude": "Authorized source/option authorship, generic subprocess/regex use and escaping rules transferred across incompatible language contexts.",
+      "boundary_rule": "Retain sink-specific grammars. Argv separation does not stop option injection; HTML escaping is not template-source separation; generated source is not executed merely by being written.",
+      "leaf_categories": ["SEC-DYNAMIC-CODE-EVALUATION", "SEC-GENERATED-SOURCE-INJECTION", "SEC-TEMPLATE-SOURCE-INJECTION", "SEC-SHELL-QUOTING", "SEC-SUBPROCESS-OPTION-INJECTION", "SEC-SQL-PARAMETERIZATION"]
+    },
+    {
+      "parent_id": "S-EXECUTION-TRUST",
+      "name": "Trust and capability controls for loaded executable content",
+      "domain": "security",
+      "include": "Lower-trust templates, deserialized constructors/globals or automatically discovered executable configuration receive capabilities beyond their intended trust boundary.",
+      "exclude": "Trusted explicit configuration/template authorship, parsing without construction/evaluation and universal sandbox/allowlist safety claims.",
+      "boundary_rule": "Do not conflate data inserted into trusted source with deliberately supplied source lacking a sandbox. Template-sandbox leaf has only ambiguous training evidence at this checkpoint.",
+      "leaf_categories": ["SEC-TEMPLATE-SANDBOX", "SEC-DESERIALIZATION-ALLOWLIST", "SEC-UNTRUSTED-CONFIG-DISCOVERY"]
+    },
+    {
+      "parent_id": "S-WEB-CONTENT-POLICY",
+      "name": "Browser content interpretation, serving and embedding policy",
+      "domain": "security",
+      "include": "Untrusted rendered/served content or frame embedding crosses an established browser-facing interpretation policy.",
+      "exclude": "Assuming every HTML value executes, template evaluation, harmless file types and missing headers where equivalent effective policy exists.",
+      "boundary_rule": "HTML escaping, active data URI filtering, upload disposition/origin policy and anti-framing are distinct leaves requiring consuming browser/deployment evidence.",
+      "leaf_categories": ["SEC-HTML-ESCAPING", "SEC-ACTIVE-DATA-URI-POLICY", "SEC-UPLOAD-DISPOSITION-POLICY", "SEC-FRAME-EMBEDDING-POLICY"]
+    },
+    {
+      "parent_id": "S-FILESYSTEM-TRUST",
+      "name": "Filesystem path, target and artifact trust boundaries",
+      "domain": "security",
+      "include": "Lower-trust inputs select files outside an intended root, become unintended local reads/writes or supply artifacts via predictable existing workspaces.",
+      "exclude": "Authorized arbitrary paths, secure atomic creation and claims of race-free confinement from separate pathname checks.",
+      "boundary_rule": "Read primitive, root escape, predictable symlink target and pre-existing workspace trust are distinct mechanisms; inspect actual sink and process identity for each.",
+      "leaf_categories": ["SEC-PATH-CONFINEMENT", "SEC-UNTRUSTED-FILE-READ", "SEC-PREDICTABLE-FILE-TARGET", "SEC-WORKSPACE-DIRECTORY-TRUST"]
+    },
+    {
+      "parent_id": "S-AVAILABILITY-BOUNDARIES",
+      "name": "Input/resource limits, parser failures and concurrent lifecycle availability",
+      "domain": "security",
+      "include": "An established lower-trust availability boundary is affected by input size/work, costly parsing, unhandled admitted states, lock reentry or socket-close lifecycle races.",
+      "exclude": "Ordinary performance changes, trusted computation, one request failure presented as proven process-wide outage and universal safety claims from a local bound/guard.",
+      "boundary_rule": "Retain size, multiplicity, regex, entity expansion, decode/null failure, lock and socket leaves. Non-reentrant lock and descriptor lifetime are not generic parser DoS; no exact complexity or reproduction is inferred.",
+      "leaf_categories": ["SEC-INPUT-SIZE-BOUND", "SEC-INPUT-WORK-AMPLIFICATION", "SEC-REGEX-BACKTRACKING", "SEC-XML-ENTITY-EXPANSION", "SEC-INPUT-DECODE-AVAILABILITY", "SEC-NULL-TOKEN-AVAILABILITY", "SEC-NONREENTRANT-LOCK-DEADLOCK", "SEC-SOCKET-LIFECYCLE-RACE"]
+    },
+    {
+      "parent_id": "S-HTTP-FRAMING",
+      "name": "Differential HTTP message framing",
+      "domain": "security",
+      "include": "Relevant HTTP frontend/backend parsers disagree on message boundaries after nonstandard length, coding, line or whitespace interpretation.",
+      "exclude": "Every syntax relaxation, standalone decoder correctness without a production boundary and universal smuggling safety claims.",
+      "boundary_rule": "Retained as a standalone parent rather than forced into availability or generic input validation; require concrete differential parsing and error/consumption behavior.",
+      "leaf_categories": ["SEC-HTTP-FRAMING-DISAGREEMENT"]
+    },
+    {
+      "parent_id": "S-CRYPTOGRAPHIC-INVARIANTS",
+      "name": "Cryptographic derivation, unpredictability and observable verification",
+      "domain": "security",
+      "include": "A cryptographic protocol requires output length, unpredictable values or resistance to observable secret/padding distinctions that the inspected implementation fails to provide.",
+      "exclude": "Generic equality/randomness, public-data validation and claims masked Python source proves constant time or practical exploitation.",
+      "boundary_rule": "KDF length, nonce generation, ordinary secret comparison and RSA padding oracles have different assumptions and measurements; preserve each leaf and protocol consumer.",
+      "leaf_categories": ["SEC-KDF-OUTPUT-LENGTH", "SEC-PREDICTABLE-RANDOMNESS", "SEC-SECRET-COMPARISON-TIMING", "SEC-RSA-PADDING-ORACLE"]
+    },
+    {
+      "parent_id": "S-GENERATED-CONTRACT-INVARIANTS",
+      "name": "Generated contract representation, validation and memory extents",
+      "domain": "security",
+      "include": "Compiler-emitted contract operations violate logical bytestring equality, external-return type bounds or copy/allocation memory extents across an evidenced contract security boundary.",
+      "exclude": "Python host memory unsafety inferred from code generation, enum-only refactors, equivalent helper changes and universal contract safety.",
+      "boundary_rule": "Keep equality, ABI validation and copy capacity separate. Adjudication concerns emitted IR/layout and consuming contract use; Python function text is not the executed contract.",
+      "leaf_categories": ["SEC-BYTESTRING-COMPARISON", "SEC-ABI-RETURN-VALIDATION", "SEC-BUFFER-COPY-CAPACITY"]
+    },
+    {
+      "parent_id": "S-CONTENT-ENFORCEMENT",
+      "name": "Whole-message content policy enforcement",
+      "domain": "security",
+      "include": "An unrelated permitted token short-circuits required moderation of independently prohibited content.",
+      "exclude": "Intended per-token exemption, ordinary regex matching and claims every deployment enables the filter.",
+      "boundary_rule": "Retain standalone policy semantics; do not fold moderation into resource authorization or HTML escaping merely to reduce category count.",
+      "leaf_categories": ["SEC-CONTENT-FILTER-EARLY-BYPASS"]
+    },
+    {
+      "parent_id": "S-LOG-RECORD-INTEGRITY",
+      "name": "Operational log record integrity",
+      "domain": "security",
+      "include": "Lower-trust record delimiters forge or corrupt entries in an actual line-oriented log sink.",
+      "exclude": "Secret disclosure through intact records, every interpolated value and complete terminal/encoding safety claims.",
+      "boundary_rule": "Record integrity is separate from confidentiality and browser HTML interpretation; preserve sink-specific delimiter and formatter evidence.",
+      "leaf_categories": ["SEC-LOG-RECORD-INJECTION"]
+    }
+  ],
+  "priority_boundary_reviews": [
+    {"leaf_categories": ["CORR-INCOMPLETE-CASE-HANDLING", "CORR-STATE-TRANSITION", "CORR-CONTEXT-PROPAGATION"], "decision": "Refine broad mechanisms using existing per-candidate training evidence; separate supported alternatives and actual state/context contracts from features and coordinated interfaces."},
+    {"leaf_categories": ["CORR-NEWLINE-ROUNDTRIP", "SEC-TEMPLATE-SANDBOX", "SEC-REDACTION-KEY-MATCH"], "decision": "No current assistant-supported training cases. Resolve evidence/eligibility or retain explicit tentative/unresolved status; do not promote based on parent support."},
+    {"leaf_categories": ["CORR-SERIALIZER-SCALAR-CONTRACT", "CORR-SCALAR-REPRESENTATION-CONTRACT"], "decision": "Same parent, opposite interface direction. Retain leaf-specific expected result and never call the fixes equivalent."},
+    {"leaf_categories": ["SEC-HTTP-METHOD-RESTRICTION", "SEC-CSRF-REQUEST-BINDING", "SEC-CORS-ORIGIN-BOUNDARY"], "decision": "Do not transfer complete CSRF protection, response-read access or mutation reachability between distinct browser-boundary mechanisms."},
+    {"leaf_categories": ["SEC-SECRET-COMPARISON-TIMING", "SEC-RSA-PADDING-ORACLE"], "decision": "After-code constant-time properties remain unproven; preserve conditional negative scope and actual runtime/protocol observability."}
+  ],
+  "curated_lineage_reviews": [
+    {
+      "earlier_pair_id": "HaPy-Bug:bugs-in-py_thefuck-11:0:thefuck/rules/git_push.py:get_new_command",
+      "later_pair_id": "HaPy-Bug:bugs-in-py_thefuck-9:0:thefuck/rules/git_push.py:get_new_command",
+      "relation": "introduced_regression_followup",
+      "evidence": "Exact earlier after/later before function hash plus retained later commit explicitly cites introducing PR559; both latest ledger reasons document terminal -u second-pop failure.",
+      "proposal": "One conservative version-dependence review block; original upstream-operand repair and introduced short-tail regression remain distinct mechanism leaves. Independent issue split/merge pending."
+    },
+    {
+      "earlier_pair_id": "HaPy-Bug:bugs-in-py_thefuck-17:0:thefuck/shells/bash.py:Bash.app_alias",
+      "later_pair_id": "HaPy-Bug:bugs-in-py_thefuck-16:0:thefuck/shells/bash.py:Bash.app_alias",
+      "relation": "coordinated_handoff_then_scope_repair",
+      "evidence": "Exact earlier after/later before function hash and inspected paired reader migration followed by per-invocation environment-scope change.",
+      "proposal": "One conservative version-dependence review block with caller-component eligibility unresolved; preserve all shared-fix shell siblings. Independent issue split/merge pending."
+    }
+  ]
+}

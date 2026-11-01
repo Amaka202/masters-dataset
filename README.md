@@ -7,6 +7,14 @@ correctness analysis. Maintained by Chiamaka Umeh.
 the experimental protocol and issue labels have not been independently frozen
 or adjudicated.
 
+**Update: 1 November 2026.** Training review now covers all 742 training pairs.
+The student has approved conservative experiment-selection principles; case-level
+eligibility and the final experimental subset are still being resolved. Read the
+[supervisor discussion note](documentation/training-audit/EXPERIMENT_SELECTION_DECISIONS.md)
+and [training-audit guide](documentation/training-audit/README.md). The original
+1,052-pair source pool and split files are unchanged; they are not yet the final
+scored experimental subset.
+
 ## Start with the dataset
 
 **[`data/dataset.json`](data/dataset.json) is the complete dataset as one JSON
@@ -72,6 +80,8 @@ are required for this command):
 
 ```sh
 python3 scripts/verify_package.py
+# Also reproduce the later training audit and eligibility preflight:
+python3 scripts/verify_package.py --audit
 ```
 
 This checks package fingerprints, JSON/JSONL equivalence and runs the preserved
